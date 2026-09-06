@@ -1,0 +1,61 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run unit tests
+        working-directory: skills/legal-process-parser
+        run: |
+          python -m pip install jsonschema pypdf
+          python -m unittest discover -s tests -v
+      - name: Validate skill metadata
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          text = Path("skills/legal-process-parser/SKILL.md").read_text(encoding="utf-8")
+          match = re.match(r"^---\nname: ([a-z0-9-]+)\ndescription: (.+)\n---\n", text)
+          assert match, "invalid SKILL.md frontmatter"
+          assert len(match.group(1)) <= 64
+          assert match.group(2).strip()
+          print("SKILL.md metadata OK")
+          PY
+      - name: Validate universal routing
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          router = json.loads(Path("routing/task-router.json").read_text(encoding="utf-8"))
+          assert set(router["tasks"]) == {"ingest", "analyze", "petition", "deadlines", "evidence", "audit"}
+          assert Path("AI_ENTRYPOINT.md").is_file()
+          assert Path("llms.txt").is_file()
+          print("Universal routing OK")
+          PY
+      - name: Validate schemas and compile scripts
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for path in Path("skills/legal-process-parser/schemas").glob("*.json"):
+              json.loads(path.read_text(encoding="utf-8"))
+          print("JSON schemas OK")
+          PY
+          python -m compileall -q skills/legal-process-parser/scripts
+      - name: Build platform packages
+        run: python scripts/build_platform_packages.py --output .ci-artifacts
+      - name: Execute isolated platform packages
+        run: python scripts/verify_packages.py .ci-artifacts
+      - name: Verify installed wheel resources
+        run: |
+          python -m pip wheel . --no-deps --wheel-dir .ci-artifacts
+          python scripts/verify_wheel.py .ci-artifacts/legal_process_parser-0.11.0-py3-none-any.whl

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/lucianumm/AuditorProcessual/schemas/fact_evidence_norm_request.schema.json",
+  "title": "Matriz de rastreabilidade fato-prova-norma-pedido",
+  "type": "object",
+  "required": ["schema_version", "task", "status", "classification", "rows", "rules"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "task": {"type": "string"},
+    "status": {"enum": ["review_required", "passed"]},
+    "classification": {"type": "object"},
+    "norm_candidates": {"type": "array"},
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["row_id", "fact", "evidence", "norms", "requests", "row_status"],
+        "properties": {
+          "row_id": {"type": "string"},
+          "fact": {"type": "object"},
+          "evidence": {"type": "array"},
+          "norms": {"type": "array"},
+          "requests": {"type": "array"},
+          "row_status": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "unresolved": {"type": "array", "items": {"type": "string"}},
+    "rules": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

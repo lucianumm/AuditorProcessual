@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/lucianumm/AuditorProcessual/schemas/case_memory.schema.json",
+  "title": "Memória cumulativa do processo",
+  "type": "object",
+  "required": ["schema_version", "corpus_revision", "documents", "update"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "engine_version": {"type": "string"},
+    "corpus_revision": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "documents": {"type": "array", "items": {"type": "object"}},
+    "update": {
+      "type": "object",
+      "required": ["added_documents", "requires_legal_reassessment"],
+      "properties": {
+        "added_documents": {"type": "array", "items": {"type": "string", "pattern": "^[a-f0-9]{64}$"}},
+        "requires_legal_reassessment": {"type": "boolean"},
+        "previous_revision": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    },
+    "current_manifest": {"type": "string"},
+    "previous_memory": {"type": ["string", "null"]}
+  },
+  "additionalProperties": true
+}

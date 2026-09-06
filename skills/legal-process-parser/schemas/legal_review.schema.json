@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/lucianumm/AuditorProcessual/schemas/legal_review.schema.json",
+  "title": "Revisão jurídica estruturada pelo modelo",
+  "description": "Contrato provider-neutral para transformar o corpus preservado em análise ou peça sem perder fontes, contrapontos e pendências.",
+  "type": "object",
+  "required": ["corpus_revision", "task", "strategy", "reviewed_pages", "page_reviews", "facts", "client_records", "norms", "issues", "requests", "paragraphs", "research_closure", "unresolved"],
+  "properties": {
+    "page_reviews": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["page_id", "content_revision", "relevance", "findings", "fact_ids", "reviewed_by"], "properties": {
+      "page_id": {"type": "string"}, "content_revision": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+      "relevance": {"enum": ["relevant", "context", "technical", "blank"]},
+      "findings": {"type": "string", "minLength": 1}, "fact_ids": {"type": "array", "items": {"type": "string"}}, "reviewed_by": {"type": "string", "minLength": 1}
+    }}},
+    "title": {"type": "string"},
+    "corpus_revision": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "task": {"enum": ["analyze", "petition", "audit"]},
+    "piece_type": {"enum": ["inicial", "contestacao", "replica", "pericia", "recurso", "cumprimento", "manifestacao"]},
+    "strategy": {
+      "type": "object",
+      "required": ["objective", "jurisdiction", "domain", "phase"],
+      "properties": {
+        "objective": {"type": "string", "minLength": 1},
+        "jurisdiction": {"type": "string", "minLength": 1},
+        "domain": {"type": "string", "minLength": 1},
+        "phase": {"type": "string", "minLength": 1},
+        "represented_party": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "reviewed_pages": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^[a-f0-9]{64}:[1-9][0-9]*$"},
+      "uniqueItems": true
+    },
+    "facts": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/fact"}
+    },
+    "client_records": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/client_record"}
+    },
+    "norms": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/norm"}
+    },
+    "issues": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/issue"}
+    },
+    "requests": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/request"}
+    },
+    "paragraphs": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/paragraph"}
+    },
+    "conflicts": {"type": "array", "items": {"type": "object"}},
+    "decision_grounds": {"type": "array", "items": {"type": "object"}},
+    "calculations": {"type": "array", "items": {"type": "object"}},
+    "periods": {"type": "array", "items": {"type": "object"}},
+    "research_closure": {
+      "type": "object",
+      "required": ["searched_topics", "stop_reason"],
+      "properties": {
+        "searched_topics": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "stop_reason": {"type": "string", "minLength": 1},
+        "excluded_sources": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
+    "related_processes_reason": {"type": "string"},
+    "unresolved": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["source_sha256", "pdf_page", "document_id", "quote"],
+      "properties": {
+        "source_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "pdf_page": {"type": "integer", "minimum": 1},
+        "document_id": {"type": "string", "minLength": 1},
+        "piece": {"type": "string"},
+        "court_page": {"type": ["integer", "null"]},
+        "layer": {"enum": ["text", "vision"]},
+        "image_id": {"type": "string"},
+        "quote": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    },
+    "client_record": {
+      "type": "object",
+      "required": ["id", "text", "conversation_reference"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "text": {"type": "string", "minLength": 1},
+        "conversation_reference": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    },
+    "fact": {
+      "type": "object",
+      "required": ["id", "text", "nature", "origin", "support"],
+      "properties": {
+        "support": {"type": "object", "required": ["assessment", "reason", "reviewed_by"], "properties": {"assessment": {"enum": ["direct", "inference", "client_account", "disputed"]}, "reason": {"type": "string", "minLength": 1}, "reviewed_by": {"type": "string", "minLength": 1}}},
+        "id": {"type": "string", "minLength": 1},
+        "text": {"type": "string", "minLength": 1},
+        "nature": {"enum": ["fato", "alegacao", "prova", "decisao", "inferencia", "lacuna"]},
+        "origin": {"enum": ["client", "document"]},
+        "sources": {"type": "array", "items": {"$ref": "#/$defs/source"}},
+        "client_record_id": {"type": "string"},
+        "evidence_needed": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "norm": {
+      "type": "object",
+      "required": ["id", "kind", "url", "accessed_on", "title", "provision", "quote", "official_text", "temporal_analysis", "jurisdiction", "hierarchy", "case_fit", "reviewed_by", "status", "capture_id"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["constitution", "statute", "regulation", "local_act", "precedent", "administrative_act", "other"]},
+        "url": {"type": "string", "format": "uri", "pattern": "^https://"},
+        "capture_id": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "accessed_on": {"type": "string", "format": "date"},
+        "title": {"type": "string", "minLength": 1},
+        "provision": {"type": "string", "minLength": 1},
+        "quote": {"type": "string", "minLength": 1},
+        "official_text": {"type": "string", "minLength": 1},
+        "temporal_analysis": {"type": "string", "minLength": 1},
+        "jurisdiction": {"type": "string", "minLength": 1},
+        "hierarchy": {"type": "string", "minLength": 1},
+        "case_fit": {"type": "string", "minLength": 1},
+        "reviewed_by": {"type": "string", "minLength": 1},
+        "status": {"const": "verified"},
+        "court": {"type": "string"},
+        "case_number": {"type": "string"},
+        "decision_date": {"type": "string", "format": "date"},
+        "holding": {"type": "string"},
+        "binding_status": {"type": "string"},
+        "distinguishing": {"type": "string"},
+        "current_status": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "issue": {
+      "type": "object",
+      "required": ["id", "fact_ids", "norm_ids", "question", "subsumption", "counterargument", "response", "conclusion", "evidence_assessment", "requirements", "research"],
+      "properties": {
+        "research": {"type": "object", "required": ["material_law", "procedure", "temporal_scope", "jurisdiction", "contrary_authorities", "closure_reason"], "additionalProperties": {"type": "string", "minLength": 1}},
+        "id": {"type": "string", "minLength": 1},
+        "fact_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "norm_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "request_ids": {"type": "array", "items": {"type": "string"}},
+        "question": {"type": "string", "minLength": 1},
+        "subsumption": {"type": "string", "minLength": 1},
+        "counterargument": {"type": "string", "minLength": 1},
+        "response": {"type": "string", "minLength": 1},
+        "conclusion": {"type": "string", "minLength": 1},
+        "evidence_assessment": {"type": "string", "minLength": 1},
+        "requirements": {"type": "array", "minItems": 1, "items": {"type": "object"}}
+      },
+      "additionalProperties": true
+    },
+    "request": {
+      "type": "object",
+      "required": ["id", "issue_ids", "fact_ids", "origin", "text", "compatibility"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "issue_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "fact_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "origin": {"enum": ["existing", "user", "proposed"]},
+        "text": {"type": "string", "minLength": 1},
+        "compatibility": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    },
+    "paragraph": {
+      "type": "object",
+      "required": ["id", "section", "text", "fact_ids", "norm_ids", "issue_ids", "request_ids"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "section": {"type": "string", "minLength": 1},
+        "text": {"type": "string", "minLength": 1},
+        "fact_ids": {"type": "array", "items": {"type": "string"}},
+        "norm_ids": {"type": "array", "items": {"type": "string"}},
+        "issue_ids": {"type": "array", "items": {"type": "string"}},
+        "request_ids": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

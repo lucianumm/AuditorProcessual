@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "legal-process-parser"
+version = "0.11.0"
+description = "Pipeline local de ingestão, narrativa jurídica e rastreabilidade de processos."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+authors = [{name = "Lucianum (lucianumm)"}]
+dependencies = []
+
+[project.optional-dependencies]
+review = ["jsonschema>=4.23"]
+pdf = ["pypdf>=5.0", "pdf2image>=1.17", "Pillow>=10"]
+ocr = ["pypdf>=5.0", "pdf2image>=1.17", "pytesseract>=0.3.13", "Pillow>=10"]
+
+[project.scripts]
+legal-process-parser = "scripts.ingest_document:main"
+
+[tool.setuptools]
+package-dir = {"" = "skills/legal-process-parser"}
+packages = ["scripts", "references", "schemas", "templates"]
+
+[tool.setuptools.package-data]
+references = ["*.json", "*.md"]
+schemas = ["*.json"]
+templates = ["*.json", "*.md"]

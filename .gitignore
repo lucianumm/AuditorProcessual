@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+processo_saida/
+saida/
+outputs/
+*.pdf
+*.docx
+*.zip
+build/
+dist/
+*.egg-info/
+.coverage

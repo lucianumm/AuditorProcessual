@@ -1,0 +1,22 @@
+{
+  "name": "auditor-processual",
+  "version": "0.11.0",
+  "description": "Legal Process Parser para ingestão, narrativa jurídica e rastreabilidade assistida de processos.",
+  "author": {
+    "name": "Lucianum (lucianumm)",
+    "url": "https://www.instagram.com/lucianum/"
+  },
+  "homepage": "https://github.com/lucianumm/AuditorProcessual",
+  "repository": "https://github.com/lucianumm/AuditorProcessual",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Auditor Processual",
+    "shortDescription": "Parser jurídico rastreável.",
+    "longDescription": "Inclui a skill Legal Process Parser e um pipeline Python local para estruturar processos, construir narrativa jurídica afirmativa e preservar cobertura, referências e segurança documental.",
+    "developerName": "lucianum7",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Use Legal Process Parser. Inspecione os materiais enviados, o manifesto e relatorio_processual.md; execute apenas a tarefa solicitada; escreva em narrativa jurídica afirmativa com fonte por página; pesquise e confira a legislação oficial ampla antes de formular a tese; pergunte somente quando houver ambiguidade, conflito ou dado indispensável ausente."
+  }
+}

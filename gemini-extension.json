@@ -1,0 +1,6 @@
+{
+  "name": "auditor-processual",
+  "version": "0.11.0",
+  "description": "Legal Process Parser com roteamento por tarefa, preservação cumulativa e narrativa jurídica rastreável.",
+  "contextFileName": "GEMINI.md"
+}

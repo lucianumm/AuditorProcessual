@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/lucianumm/AuditorProcessual/schemas/legal_basis.schema.json",
+  "title": "Plano provider-neutral de base legal e redação",
+  "type": "object",
+  "required": ["schema_version", "jurisdiction", "area", "classification_confidence", "legal_sources", "verification"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "task": {"type": "string"},
+    "jurisdiction": {"type": "string"},
+    "area": {"type": ["string", "null"]},
+    "domain_key": {"type": ["string", "null"]},
+    "classification_confidence": {"enum": ["high", "medium", "low"]},
+    "classification_ambiguous": {"type": "boolean"},
+    "pages_considered": {"type": "integer", "minimum": 0},
+    "domain_evidence": {"type": "array"},
+    "legal_sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "reference", "url", "verification_status"],
+        "properties": {
+          "name": {"type": "string"},
+          "reference": {"type": "string"},
+          "url": {"type": "string", "format": "uri"},
+          "purpose": {"type": "string"},
+          "verification_status": {"type": "string"},
+          "must_quote_only_after_verification": {"type": "boolean"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "writing_profile": {"type": "object"},
+    "verification": {"type": "object"},
+    "writing_rules": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

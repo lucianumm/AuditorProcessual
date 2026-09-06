@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0",
+  "default_task": "ingest",
+  "load_order": [
+    "AI_ENTRYPOINT.md",
+    "skills/legal-process-parser/SKILL.md",
+    "routing/task-router.json",
+    "the_selected_task_reference",
+    "the_user_corpus_or_generated_indexes"
+  ],
+  "tasks": {
+    "ingest": {
+      "description": "Extração integral, preservação, páginas, imagens e localização.",
+      "references": [
+        "skills/legal-process-parser/references/extraction_rules.md",
+        "skills/legal-process-parser/references/visual_description_rules.md",
+        "skills/legal-process-parser/references/vision_processing_rules.md",
+        "skills/legal-process-parser/references/context_memory_rules.md"
+      ],
+      "artifacts": ["processo_estruturado.md", "pages.jsonl", "passages.jsonl", "index.jsonl", "image_inventory.json", "case_memory.json", "memoria_processual.md", "relatorio_processual.md"]
+    },
+    "analyze": {
+      "description": "Contexto integral, cronologia, controvérsias, provas, riscos e próximos passos.",
+      "references": [
+        "skills/legal-process-parser/references/procedural_analysis_rules.md",
+        "skills/legal-process-parser/references/procedural_progression_rules.md",
+        "skills/legal-process-parser/references/legal_analysis_rules.md",
+        "skills/legal-process-parser/references/legal_narrative_rules.md",
+        "skills/legal-process-parser/references/legal_review_rules.md",
+        "skills/legal-process-parser/references/official_research_rules.md",
+        "skills/legal-process-parser/schemas/legal_review.schema.json"
+      ],
+      "artifacts": ["andamento_processual.json", "relatorio_andamento.md", "cronologia.md", "matriz_controversias.md", "matriz_documental.md", "mapa_provas.md", "relatorio_conformidade.md", "legal_narrative.json", "legal_review_validation.json", "ficha_estrategica.json", "fundamentacao_estrategica.md", "analise_juridica.md"]
+    },
+    "petition": {
+      "description": "Checklist e minuta rastreável da peça expressamente solicitada.",
+      "references": [
+        "skills/legal-process-parser/references/pleading_generation_rules.md",
+        "skills/legal-process-parser/references/procedural_analysis_rules.md",
+        "skills/legal-process-parser/references/legal_analysis_rules.md",
+        "skills/legal-process-parser/references/legal_narrative_rules.md",
+        "skills/legal-process-parser/references/legal_review_rules.md",
+        "skills/legal-process-parser/references/initial_petition_rules.md",
+        "skills/legal-process-parser/references/official_research_rules.md",
+        "skills/legal-process-parser/schemas/legal_review.schema.json"
+      ],
+      "artifacts": ["checklist_manifestacao.md", "minuta_peca.md", "legal_review_validation.json", "ficha_estrategica.json", "fundamentacao_estrategica.md", "legal_narrative.json", "analise_juridica.md"]
+    },
+    "deadlines": {
+      "description": "Marcos, intimações e pendências sem cálculo automático inventado.",
+      "references": [
+        "skills/legal-process-parser/references/procedural_progression_rules.md",
+        "skills/legal-process-parser/references/legal_analysis_rules.md"
+      ],
+      "artifacts": ["andamento_processual.json", "relatorio_andamento.md", "pendencias_e_prazos.md"]
+    },
+    "evidence": {
+      "description": "Mapa de provas, fontes, lacunas e impugnações possíveis.",
+      "references": [
+        "skills/legal-process-parser/references/procedural_analysis_rules.md",
+        "skills/legal-process-parser/references/visual_description_rules.md"
+      ],
+      "artifacts": ["andamento_processual.json", "mapa_provas.md", "matriz_documental.md"]
+    },
+    "audit": {
+      "description": "Pacote completo quando o usuário pedir auditoria integral.",
+      "references": [
+        "skills/legal-process-parser/references/extraction_rules.md",
+        "skills/legal-process-parser/references/visual_description_rules.md",
+        "skills/legal-process-parser/references/procedural_analysis_rules.md",
+        "skills/legal-process-parser/references/procedural_progression_rules.md",
+        "skills/legal-process-parser/references/pleading_generation_rules.md",
+        "skills/legal-process-parser/references/legal_analysis_rules.md",
+        "skills/legal-process-parser/references/legal_narrative_rules.md",
+        "skills/legal-process-parser/references/legal_review_rules.md",
+        "skills/legal-process-parser/references/official_research_rules.md",
+        "skills/legal-process-parser/references/context_memory_rules.md",
+        "skills/legal-process-parser/schemas/legal_review.schema.json"
+      ],
+      "artifacts": ["all_requested_artifacts"]
+    }
+  },
+  "platforms": {
+    "manus": "SKILL.md",
+    "gemini_cli": "GEMINI.md",
+    "gemini_gem": "adapters/gemini/GEM_INSTRUCTIONS.md",
+    "grok": "adapters/grok/SYSTEM_INSTRUCTIONS.md",
+    "chatgpt": "adapters/chatgpt/INSTRUCTIONS.md",
+    "claude": "adapters/claude/CLAUDE_INSTRUCTIONS.md"
+  },
+  "never_load_by_default": [
+    "adapters/other_platforms",
+    "tests/",
+    "build/",
+    "CHANGELOG.md",
+    "LICENSE",
+    "*.zip",
+    "*.skill",
+    "*.whl"
+  ]
+}
