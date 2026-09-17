@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/lucianumm/AuditorProcessual/schemas/quality_gate.schema.json",
+  "title": "Gates de qualidade, cobertura e certeza",
+  "type": "object",
+  "required": ["schema_version", "task", "status", "can_describe_corpus", "can_issue_final_legal_conclusion", "gates", "blocking_gates", "rules"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "task": {"type": "string"},
+    "status": {"enum": ["review_required", "passed"]},
+    "can_describe_corpus": {"type": "boolean"},
+    "can_issue_final_legal_conclusion": {"type": "boolean"},
+    "draft_allowed_with_warning": {"type": "boolean"},
+    "blocking_gates": {"type": "array", "items": {"type": "string"}},
+    "gates": {"type": "object"},
+    "rules": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

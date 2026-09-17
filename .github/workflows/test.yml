@@ -1,0 +1,42 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  tests:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: "3.10"
+          - os: ubuntu-latest
+            python: "3.12"
+          - os: windows-latest
+            python: "3.12"
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Run unit tests
+        working-directory: skills/legal-process-parser
+        run: |
+          python -m pip install jsonschema pypdf
+          python -m unittest discover -s tests -v
+      - name: Validate metadata, routing and schemas
+        run: python scripts/verify_repository.py
+      - name: Compile scripts
+        run: python -m compileall -q skills/legal-process-parser/scripts
+      - name: Build platform packages
+        run: python scripts/build_platform_packages.py --output .ci-artifacts
+      - name: Execute isolated platform packages
+        run: python scripts/verify_packages.py .ci-artifacts
+      - name: Verify installed wheel resources
+        run: |
+          python -m pip wheel . --no-deps --wheel-dir .ci-artifacts
+          python scripts/verify_wheel.py .ci-artifacts

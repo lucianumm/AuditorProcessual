@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "case_id": "editorial_no_block",
+  "synthetic": true,
+  "source_files": [{"file": "protocolo.txt"}],
+  "expected": {
+    "facts": [
+      {"id": "G-PROTOCOLO", "text_any": ["protocolo P-17 foi recebido"],
+       "source": {"file": "protocolo.txt", "page": 1}}
+    ],
+    "issues": [
+      {"id": "G-RECEBIMENTO", "text_any": ["recebimento do protocolo P-17"],
+       "analysis_status": "concluded"}
+    ],
+    "execution_status": "completed"
+  }
+}

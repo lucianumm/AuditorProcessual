@@ -1,0 +1,47 @@
+# AuditorProcessual
+
+> Skill multiplataforma para ingestão integral, localização e análise rastreável de processos.
+
+Leia primeiro `AI_ENTRYPOINT.md`. Não varra o repositório inteiro.
+
+## Núcleo
+
+- `skills/legal-process-parser/SKILL.md`: regras jurídicas e fluxo principal.
+- `routing/task-router.json`: mapa de tarefas e referências mínimas.
+- `skills/legal-process-parser/references/request_intake_rules.md`: perguntas adaptativas.
+- `skills/legal-process-parser/references/visual_description_rules.md`: imagens e semântica visual.
+- `skills/legal-process-parser/references/legal_domain_profiles.json`: classificação de área, fontes oficiais e padrão de redação.
+- `skills/legal-process-parser/references/legal_narrative_rules.md`: narrativa afirmativa, pesquisa normativa ampla e método de tese.
+- `skills/legal-process-parser/references/legal_review_rules.md`: contrato de revisão e gate de conclusão.
+- `skills/legal-process-parser/references/initial_petition_rules.md`: voz afirmativa e requisitos da inicial.
+- `skills/legal-process-parser/references/context_memory_rules.md`: atualização cumulativa entre uploads.
+- `skills/legal-process-parser/references/official_research_rules.md`: captura e verificação de fontes oficiais.
+
+## Plataformas
+
+- `SKILL.md`: entrada Manus/GitHub.
+- `GEMINI.md`: entrada Gemini CLI.
+- `adapters/gemini/GEM_INSTRUCTIONS.md`: Gemini Gems.
+- `adapters/grok/SYSTEM_INSTRUCTIONS.md`: Grok.
+- `adapters/chatgpt/INSTRUCTIONS.md`: ChatGPT/GPT.
+- `adapters/claude/CLAUDE_INSTRUCTIONS.md`: Claude.
+
+## Tarefas
+
+Use somente a referência correspondente em `routing/task-router.json`. Para um
+processo completo, percorra todas as páginas e imagens do corpus por blocos, não
+todas as instruções do repositório. Em análise, peça ou auditoria, leia também
+`legal_narrative.json` e `analise_juridica.md`, e escreva com fonte direta por
+página. Não use “conforme documentação”, “documento apresentado” ou “certidão
+analisada” como substitutos de fatos e fontes.
+
+Para análise, auditoria ou peça, leia `case_memory.json`, `memoria_processual.md`
+e `passages.jsonl`; produza `legal_review.json` conforme o schema, capture cada
+fonte oficial e valide com `scripts/legal_review.py`. Sem `status` válido,
+mantenha `review_required` e não emita conclusão final. Novos uploads atualizam
+a memória e tornam revisões antigas `stale`, sem apagar versões.
+
+## Não carregar por padrão
+
+`adapters/` de outra plataforma, `tests/`, `build/`, `CHANGELOG.md`, `LICENSE` e
+artefatos de empacotamento.
