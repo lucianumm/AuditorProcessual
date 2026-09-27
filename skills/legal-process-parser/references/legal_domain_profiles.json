@@ -1,0 +1,197 @@
+{
+  "schema_version": "1.0",
+  "jurisdiction": "Brasil",
+  "default_domain": "processual",
+  "verification_policy": {
+    "status": "provisional",
+    "rule": "A classificação encaminha a pesquisa; não prova a incidência da norma. Conferir vigência, redação, competência, regime temporal, legislação local e jurisprudência antes de usar uma peça.",
+    "preferred_sources": [
+      "https://www.planalto.gov.br/legislacao/",
+      "https://www.cnj.jus.br/",
+      "https://jurisprudencia.stf.jus.br/",
+      "https://processo.stj.jus.br/jurisprudencia/"
+    ]
+  },
+  "domains": [
+    {
+      "key": "trabalhista",
+      "label": "Direito do Trabalho",
+      "patterns": [
+        {"terms": ["empregado", "empregador", "vinculo empregaticio", "relacao de emprego"], "weight": 6},
+        {"terms": ["salario", "remuneracao", "ferias", "decimo terceiro", "fgts", "horas extras", "jornada", "rescisao", "justa causa", "insalubridade", "periculosidade", "acidente de trabalho", "assédio moral", "assédio sexual", "sindicato", "categoria profissional"], "weight": 3},
+        {"terms": ["reclamacao trabalhista", "vara do trabalho", "tribunal regional do trabalho", "trt", "tst", "clt", "ctps"], "weight": 7}
+      ],
+      "legal_sources": [
+        {"name": "Constituição Federal — direitos sociais e trabalho", "reference": "CF/1988, especialmente arts. 7º a 11, conforme o tema", "url": "https://planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm", "purpose": "Direitos fundamentais sociais e organização sindical."},
+        {"name": "Consolidação das Leis do Trabalho", "reference": "Decreto-Lei nº 5.452/1943 (texto compilado)", "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm", "purpose": "Relação de emprego, contrato, jornada, remuneração, término e processo trabalhista quando aplicável."},
+        {"name": "Processo aplicável", "reference": "CLT e legislação processual subsidiária, conforme a matéria", "url": "https://www.planalto.gov.br/legislacao/", "purpose": "Validar rito, competência, ônus da prova e recursos no caso concreto."}
+      ],
+      "writing_profile": {"tone": "objetivo, cronológico e probatório", "order": ["vínculo e fatos", "jornada/remuneração", "rescisão ou lesão", "provas", "fundamentação", "pedidos"], "must_verify": ["datas contratuais", "função", "remuneração", "jornada", "prescrição", "documentos trabalhistas"]}
+    },
+    {
+      "key": "previdenciario",
+      "label": "Direito Previdenciário",
+      "patterns": [
+        {"terms": ["inss", "rgps", "segurado", "beneficio previdenciario", "aposentadoria", "auxilio por incapacidade", "auxilio-doenca", "pensao por morte", "bpc", "loas", "salario maternidade", "tempo de contribuicao", "carencia", "qualidade de segurado", "pericia medica"], "weight": 6},
+        {"terms": ["cnis", "contribuicao previdenciaria", "requerimento administrativo", "indeferimento do beneficio", "junta de recursos"], "weight": 4},
+        {"terms": ["juizado especial federal", "vara federal", "turma recursal", "trf"], "weight": 3}
+      ],
+      "legal_sources": [
+        {"name": "Constituição Federal — seguridade social", "reference": "CF/1988, arts. 194 a 204 e dispositivos específicos", "url": "https://planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm", "purpose": "Sistema de seguridade, previdência e assistência social."},
+        {"name": "Planos de Benefícios da Previdência Social", "reference": "Lei nº 8.213/1991 (texto compilado)", "url": "https://planalto.gov.br/ccivil_03/leis/l8213compilado.htm", "purpose": "Benefícios, segurados, carência, incapacidade, dependentes e revisão."},
+        {"name": "Custeio da Seguridade Social", "reference": "Lei nº 8.212/1991 (texto compilado)", "url": "https://www.planalto.gov.br/ccivil_03/leis/l8212compilado.htm", "purpose": "Filiação, contribuições e custeio quando relevantes."},
+        {"name": "Regulamento da Previdência Social", "reference": "Decreto nº 3.048/1999, texto vigente", "url": "https://www.planalto.gov.br/ccivil_03/decreto/d3048.htm", "purpose": "Regulamentação e procedimentos; conferir alterações."}
+      ],
+      "writing_profile": {"tone": "técnico, cronológico e probatório", "order": ["filiação e histórico contributivo", "requerimento e decisão administrativa", "incapacidade/risco ou requisito", "prova médica e cadastral", "fundamentação", "pedido e efeitos financeiros"], "must_verify": ["DER", "DIB/DCB", "CNIS", "carência", "qualidade de segurado", "laudos", "regime e regra de transição"]}
+    },
+    {
+      "key": "consumidor",
+      "label": "Direito do Consumidor",
+      "patterns": [
+        {"terms": ["consumidor", "fornecedor", "relacao de consumo", "produto defeituoso", "servico defeituoso", "vicio do produto", "vicio do servico", "fato do produto", "cobranca indevida", "negativacao", "serasa", "spc", "plano de saude", "banco", "cartao", "financiamento"], "weight": 6},
+        {"terms": ["cdc", "codigo de defesa do consumidor", "procon", "danos morais consumeristas", "inversao do onus"], "weight": 7}
+      ],
+      "legal_sources": [
+        {"name": "Código de Defesa do Consumidor", "reference": "Lei nº 8.078/1990 (texto compilado)", "url": "https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm", "purpose": "Conceitos, responsabilidade, práticas abusivas, reparação e tutela coletiva."},
+        {"name": "Constituição Federal — defesa do consumidor", "reference": "CF/1988, art. 5º, XXXII, art. 170, V e ADCT", "url": "https://planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm", "purpose": "Fundamento constitucional da proteção consumerista."},
+        {"name": "Processo aplicável", "reference": "CPC/2015 e legislação especial, conforme rito", "url": "https://planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105compilada.htm", "purpose": "Ônus, provas, tutela e recursos."}
+      ],
+      "writing_profile": {"tone": "claro, factual e orientado ao dano/prova", "order": ["contratação", "falha ou prática", "nexo", "dano", "tentativa de solução", "fundamentação", "pedidos"], "must_verify": ["contrato", "protocolos", "faturas", "negativação", "notas fiscais", "extensão do dano"]}
+    },
+    {
+      "key": "civil",
+      "label": "Direito Civil",
+      "patterns": [
+        {"terms": ["obrigacao", "inadimplemento", "responsabilidade civil", "dano material", "dano moral", "contrato civil", "indenizacao", "prescricao", "posse", "propriedade", "locacao", "condominio", "familia", "sucessao"], "weight": 4},
+        {"terms": ["codigo civil", "relacao contratual", "descumprimento contratual", "ato ilicito"], "weight": 6}
+      ],
+      "legal_sources": [
+        {"name": "Código Civil", "reference": "Lei nº 10.406/2002 (texto compilado)", "url": "https://www.planalto.gov.br/ccivil_03/leis/2002/l10406compilada.htm", "purpose": "Pessoas, obrigações, contratos, responsabilidade, direitos reais e família/sucessões conforme o caso."},
+        {"name": "Código de Processo Civil", "reference": "Lei nº 13.105/2015 (texto compilado)", "url": "https://planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105compilada.htm", "purpose": "Rito, tutela, provas, decisões e recursos."}
+      ],
+      "writing_profile": {"tone": "preciso, lógico e apoiado em documentos", "order": ["fatos juridicamente relevantes", "relação jurídica", "inadimplemento/ilícito", "nexo e danos", "provas", "fundamentação", "pedidos"], "must_verify": ["contrato", "obrigações", "datas", "pagamentos", "notificações", "prescrição/decadência"]}
+    },
+    {
+      "key": "bancario",
+      "label": "Direito Bancário",
+      "patterns": [
+        {"terms": ["instituicao financeira", "banco", "bancario", "bancaria", "conta corrente", "cartao de credito", "emprestimo", "financiamento", "consignado", "tarifa bancaria", "juros", "capitalizacao", "fraude bancaria", "pix", "serasa", "cadastro de inadimplentes"], "weight": 5},
+        {"terms": ["contrato bancario", "cobranca bancaria", "revisional", "superendividamento"], "weight": 6}
+      ],
+      "legal_sources": [
+        {"name": "Código de Defesa do Consumidor", "reference": "Lei nº 8.078/1990, quando caracterizada relação de consumo", "url": "https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm", "purpose": "Responsabilidade e proteção do consumidor bancário."},
+        {"name": "Código Civil", "reference": "Lei nº 10.406/2002", "url": "https://www.planalto.gov.br/ccivil_03/leis/2002/l10406compilada.htm", "purpose": "Obrigações, contratos, responsabilidade e boa-fé."},
+        {"name": "Regulação e atos do Banco Central", "reference": "Normas vigentes do CMN/BCB aplicáveis ao produto", "url": "https://www.bcb.gov.br/estabilidadefinanceira/buscanormas", "purpose": "Conferir regras específicas do produto, fraude e atendimento."}
+      ],
+      "writing_profile": {"tone": "probatório, numérico e comparativo", "order": ["produto/contrato", "lançamentos e evolução", "conduta contestada", "prova técnica", "fundamentação", "repetição/danos/tutela", "pedidos"], "must_verify": ["contrato integral", "taxas", "CET", "extratos", "protocolos", "autorização", "linha do tempo financeira"]}
+    },
+    {
+      "key": "familia",
+      "label": "Direito de Família e Sucessões",
+      "patterns": [
+        {"terms": ["divorcio", "guarda", "convivencia", "alimentos", "paternidade", "maternidade", "uniao estavel", "partilha", "inventario", "heranca", "sucessao", "interdicao", "curatela", "violencia domestica"], "weight": 6},
+        {"terms": ["menor", "crianca", "adolescente", "genitor", "genitora", "pacto antenupcial"], "weight": 4}
+      ],
+      "legal_sources": [
+        {"name": "Código Civil", "reference": "Lei nº 10.406/2002, família e sucessões", "url": "https://www.planalto.gov.br/ccivil_03/leis/2002/l10406compilada.htm", "purpose": "Relações familiares, alimentos, regime de bens e sucessão."},
+        {"name": "Estatuto da Criança e do Adolescente", "reference": "Lei nº 8.069/1990 (texto compilado)", "url": "https://www.planalto.gov.br/ccivil_03/leis/l8069compilado.htm", "purpose": "Proteção integral e melhor interesse de crianças/adolescentes."},
+        {"name": "Lei Maria da Penha", "reference": "Lei nº 11.340/2006, se houver violência doméstica", "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm", "purpose": "Medidas protetivas e violência doméstica; somente se pertinente."}
+      ],
+      "writing_profile": {"tone": "sensível, não estigmatizante e centrado na proteção", "order": ["contexto familiar", "fatos e risco", "vulnerabilidades", "provas", "melhor interesse/proteção", "fundamentação", "pedidos"], "must_verify": ["idade", "vínculos", "renda", "risco atual", "medidas existentes", "documentos e estudos técnicos"]}
+    },
+    {
+      "key": "penal",
+      "label": "Direito Penal e Processo Penal",
+      "patterns": [
+        {"terms": ["crime", "inquerito policial", "denuncia criminal", "investigado", "acusado", "reu", "vitima", "flagrante", "prisao", "medida cautelar", "habeas corpus", "delegacia", "ministerio publico criminal"], "weight": 6},
+        {"terms": ["codigo penal", "codigo de processo penal", "tipicidade", "materialidade", "autoria", "dosimetria", "sentenca penal"], "weight": 7}
+      ],
+      "legal_sources": [
+        {"name": "Código Penal", "reference": "Decreto-Lei nº 2.848/1940, texto vigente", "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm", "purpose": "Tipificação e consequências penais; conferir tipo e redação vigente."},
+        {"name": "Código de Processo Penal", "reference": "Decreto-Lei nº 3.689/1941, texto vigente", "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689compilado.htm", "purpose": "Investigação, ação penal, prova, cautelares e recursos."},
+        {"name": "Constituição Federal — garantias penais", "reference": "CF/1988, garantias individuais e devido processo", "url": "https://planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm", "purpose": "Legalidade, contraditório, ampla defesa e presunção de inocência."}
+      ],
+      "writing_profile": {"tone": "estritamente técnico, presuntivo e sem afirmação de culpa", "order": ["imputação", "fatos documentados", "prova de materialidade", "indícios de autoria", "garantias e nulidades", "fundamentação", "pedidos"], "must_verify": ["fase", "tipo penal", "data do fato", "prova", "cadeia de custódia", "prescrição", "medidas cautelares"]}
+    },
+    {
+      "key": "administrativo",
+      "label": "Direito Administrativo",
+      "patterns": [
+        {"terms": ["administracao publica", "servidor publico", "concurso publico", "licitacao", "contrato administrativo", "processo administrativo", "ato administrativo", "improbidade", "poder publico", "municipio", "estado", "uniao", "autarquia"], "weight": 5},
+        {"terms": ["lei 14133", "lei 9784", "mandado de seguranca", "tcu", "controladoria", "agencia reguladora"], "weight": 6}
+      ],
+      "legal_sources": [
+        {"name": "Constituição Federal — Administração Pública", "reference": "CF/1988, art. 37 e dispositivos de competência", "url": "https://planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm", "purpose": "Princípios, competências e controle."},
+        {"name": "Processo Administrativo Federal", "reference": "Lei nº 9.784/1999, se aplicável", "url": "https://www.planalto.gov.br/ccivil_03/leis/l9784.htm", "purpose": "Processo, motivação, defesa e revisão administrativa."},
+        {"name": "Licitações e contratos", "reference": "Lei nº 14.133/2021, se houver contratação pública", "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm", "purpose": "Contratação pública, sanções e controle; verificar regime de transição."}
+      ],
+      "writing_profile": {"tone": "formal, motivado e orientado ao controle de legalidade", "order": ["ato/processo", "competência", "fatos e documentos", "motivação", "vício ou direito", "fundamentação", "providência"], "must_verify": ["ente", "competência", "processo administrativo", "publicação", "motivação", "prazos", "regime legal"]}
+    },
+    {
+      "key": "tributario",
+      "label": "Direito Tributário",
+      "patterns": [
+        {"terms": ["tributo", "imposto", "taxa", "contribuicao", "icms", "iss", "iptu", "ipva", "irpf", "irpj", "execucao fiscal", "divida ativa", "auto de infracao", "fisco", "receita federal"], "weight": 6},
+        {"terms": ["certidao de divida ativa", "cda", "compensacao tributaria", "credito tributario", "prescricao tributaria", "decadencia tributaria"], "weight": 7}
+      ],
+      "legal_sources": [
+        {"name": "Constituição Federal — Sistema Tributário", "reference": "CF/1988, arts. 145 a 162 e limitações ao poder de tributar", "url": "https://planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm", "purpose": "Competência, limitações e repartição."},
+        {"name": "Código Tributário Nacional", "reference": "Lei nº 5.172/1966 (texto compilado)", "url": "https://www.planalto.gov.br/ccivil_03/leis/l5172compilado.htm", "purpose": "Normas gerais, crédito, lançamento, prescrição e decadência."},
+        {"name": "Execução fiscal", "reference": "Lei nº 6.830/1980, se aplicável", "url": "https://www.planalto.gov.br/ccivil_03/leis/l6830.htm", "purpose": "Cobrança judicial da dívida ativa."}
+      ],
+      "writing_profile": {"tone": "numérico, cronológico e demonstrativo", "order": ["fato gerador", "lançamento/cobrança", "valor", "documentos fiscais", "tese", "fundamentação", "pedido"], "must_verify": ["tributo", "ente", "competência", "fato gerador", "lançamento", "CDA", "datas e cálculos"]}
+    },
+    {
+      "key": "empresarial",
+      "label": "Direito Empresarial",
+      "patterns": [
+        {"terms": ["sociedade empresaria", "socio", "acionista", "empresa", "recuperacao judicial", "falencia", "recuperacao extrajudicial", "desconsideracao da personalidade", "dissolucao", "marcas", "propriedade intelectual", "franquia"], "weight": 5},
+        {"terms": ["contrato social", "estatuto social", "junta comercial", "administrador", "assembleia", "credores", "plano de recuperacao"], "weight": 6}
+      ],
+      "legal_sources": [
+        {"name": "Código Civil — Direito de Empresa", "reference": "Lei nº 10.406/2002", "url": "https://www.planalto.gov.br/ccivil_03/leis/2002/l10406compilada.htm", "purpose": "Sociedades, empresa, contratos e responsabilidade."},
+        {"name": "Recuperação e falência", "reference": "Lei nº 11.101/2005 (texto compilado)", "url": "https://planalto.gov.br/ccivil_03/_ato2004-2006/2005/lei/l11101compilado.htm", "purpose": "Recuperação, falência e credores, se aplicável."},
+        {"name": "Sociedades por ações", "reference": "Lei nº 6.404/1976, se aplicável", "url": "https://www.planalto.gov.br/ccivil_03/leis/l6404consol.htm", "purpose": "Companhias e governança."}
+      ],
+      "writing_profile": {"tone": "estruturado, econômico e probatório", "order": ["estrutura societária", "relação/negócio", "evento", "impacto econômico", "documentos", "fundamentação", "pedidos"], "must_verify": ["contrato/estatuto", "poderes", "atos societários", "balanços", "credores", "valores"]}
+    },
+    {
+      "key": "ambiental",
+      "label": "Direito Ambiental",
+      "patterns": [
+        {"terms": ["meio ambiente", "ambiental", "licenca ambiental", "ibama", "desmatamento", "poluicao", "area de preservacao", "reserva legal", "dano ambiental", "multa ambiental", "sustentabilidade"], "weight": 6},
+        {"terms": ["inquerito civil ambiental", "termo de ajustamento", "tac ambiental", "auto de infracao ambiental"], "weight": 7}
+      ],
+      "legal_sources": [
+        {"name": "Constituição Federal — meio ambiente", "reference": "CF/1988, art. 225", "url": "https://planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm", "purpose": "Direito ao meio ambiente e dever de proteção."},
+        {"name": "Política Nacional do Meio Ambiente", "reference": "Lei nº 6.938/1981", "url": "https://www.planalto.gov.br/ccivil_03/leis/l6938.htm", "purpose": "Responsabilidade e instrumentos ambientais."},
+        {"name": "Crimes e infrações ambientais", "reference": "Lei nº 9.605/1998, se houver ilícito penal/administrativo", "url": "https://www.planalto.gov.br/ccivil_03/leis/l9605.htm", "purpose": "Sanções penais e administrativas."}
+      ],
+      "writing_profile": {"tone": "técnico, baseado em evidências e cauteloso quanto à causalidade", "order": ["atividade/área", "impacto", "nexo técnico", "licenças", "danos e recuperação", "fundamentação", "obrigações"], "must_verify": ["localização", "licenças", "laudos", "nexo causal", "área", "data", "órgão competente"]}
+    },
+    {
+      "key": "constitucional",
+      "label": "Direito Constitucional",
+      "patterns": [
+        {"terms": ["direito fundamental", "controle de constitucionalidade", "inconstitucionalidade", "constituicao federal", "liberdade", "igualdade", "devido processo", "mandado de injuncao", "acao direta", "adi", "adpf", "habeas data"], "weight": 6}
+      ],
+      "legal_sources": [
+        {"name": "Constituição Federal", "reference": "Constituição da República Federativa do Brasil de 1988", "url": "https://planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm", "purpose": "Direitos fundamentais, organização do Estado e controle constitucional."},
+        {"name": "Código de Processo Civil", "reference": "Lei nº 13.105/2015, conforme o instrumento processual", "url": "https://planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105compilada.htm", "purpose": "Procedimento, tutela e recursos."}
+      ],
+      "writing_profile": {"tone": "argumentativo, proporcional e baseado em precedentes verificáveis", "order": ["norma/ato questionado", "direito afetado", "fatos", "teste de compatibilidade", "precedentes", "fundamentação", "pedido"], "must_verify": ["norma impugnada", "legitimidade", "cabimento", "precedentes atuais", "efeitos"]}
+    },
+    {
+      "key": "processual",
+      "label": "Direito Processual (área a confirmar)",
+      "patterns": [
+        {"terms": ["processo", "peticao", "contestacao", "intimacao", "sentenca", "acordao", "recurso", "prazo processual", "prova", "tutela de urgencia", "competencia", "preclusao", "coisa julgada"], "weight": 2}
+      ],
+      "legal_sources": [
+        {"name": "Código de Processo Civil", "reference": "Lei nº 13.105/2015 (texto compilado), quando processo civil", "url": "https://planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105compilada.htm", "purpose": "Rito civil, provas, decisões e recursos."},
+        {"name": "Fonte processual específica", "reference": "CLT, CPP, legislação especial ou norma local conforme a jurisdição", "url": "https://www.planalto.gov.br/legislacao/", "purpose": "Não presumir o rito antes de identificar a competência e a natureza do processo."}
+      ],
+      "writing_profile": {"tone": "objetivo, sequencial e centrado em atos/documentos", "order": ["cabimento", "tempestividade", "fatos processuais", "provas", "fundamentação", "pedido", "fontes"], "must_verify": ["jurisdição", "rito", "intimação", "termo inicial", "prazo", "peça e recurso"]}
+    }
+  ]
+}

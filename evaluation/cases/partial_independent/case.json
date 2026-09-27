@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "case_id": "partial_independent",
+  "synthetic": true,
+  "source_files": [
+    {"file": "pagamento.txt"},
+    {"file": "contrato.txt"}
+  ],
+  "expected": {
+    "facts": [
+      {
+        "id": "G-PAGAMENTO",
+        "text_any": ["Ana pagou R$ 500,00", "pagamento de R$ 500,00"],
+        "source": {"file": "pagamento.txt", "page": 1}
+      },
+      {
+        "id": "G-PRAZO-ENTREGA",
+        "text_any": ["entrega do equipamento em 15/03/2025", "entrega em 15/03/2025"],
+        "source": {"file": "contrato.txt", "page": 1}
+      }
+    ],
+    "issues": [
+      {"id": "G-PAGAMENTO-ISSUE", "text_any": ["pagamento"], "analysis_status": "concluded"},
+      {"id": "G-ENTREGA-ISSUE", "text_any": ["entrega do equipamento"], "analysis_status": "undetermined"}
+    ],
+    "requests": [
+      {"id": "G-RESTITUICAO", "text_any": ["restituição de R$ 500,00", "devolução de R$ 500,00"],
+       "issue_ids": ["G-PAGAMENTO-ISSUE"]}
+    ],
+    "execution_status": "partial",
+    "draft_status": "partial"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/lucianumm/AuditorProcessual/schemas/case_memory.schema.json",
+  "title": "Memória cumulativa do processo",
+  "type": "object",
+  "required": ["schema_version", "corpus_revision", "documents", "dependency_graph", "update"],
+  "properties": {
+    "schema_version": {"const": "2.0"},
+    "engine_version": {"type": "string"},
+    "corpus_revision": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "documents": {"type": "array", "items": {"type": "object"}},
+    "dependency_graph": {
+      "type": "object",
+      "required": ["schema_version", "source", "edges"],
+      "properties": {
+        "schema_version": {"const": "1.0"},
+        "review_revision": {"type": ["string", "null"]},
+        "source": {"type": "string"},
+        "edges": {"type": "array", "items": {"type": "object", "required": ["from", "to"],
+          "properties": {"from": {"type": "string"}, "to": {"type": "string"}}, "additionalProperties": false}}
+      },
+      "additionalProperties": false
+    },
+    "update": {
+      "type": "object",
+      "required": ["added_documents", "changed_pages", "removed_pages", "impacted_elements", "requires_legal_reassessment"],
+      "properties": {
+        "added_documents": {"type": "array", "items": {"type": "string", "pattern": "^[a-f0-9]{64}$"}},
+        "changed_pages": {"type": "array", "items": {"type": "string", "pattern": "^[a-f0-9]{64}:[1-9][0-9]*$"}},
+        "removed_pages": {"type": "array", "items": {"type": "string", "pattern": "^[a-f0-9]{64}:[1-9][0-9]*$"}},
+        "impacted_elements": {
+          "type": "object",
+          "required": ["source_page_ids", "unmapped_page_ids", "fact_ids", "norm_ids", "issue_ids", "request_ids", "paragraph_ids"],
+          "properties": {
+            "source_page_ids": {"type": "array", "items": {"type": "string"}},
+            "unmapped_page_ids": {"type": "array", "items": {"type": "string"}},
+            "fact_ids": {"type": "array", "items": {"type": "string"}},
+            "norm_ids": {"type": "array", "items": {"type": "string"}},
+            "issue_ids": {"type": "array", "items": {"type": "string"}},
+            "request_ids": {"type": "array", "items": {"type": "string"}},
+            "paragraph_ids": {"type": "array", "items": {"type": "string"}}
+          },
+          "additionalProperties": false
+        },
+        "requires_legal_reassessment": {"type": "boolean"},
+        "previous_revision": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    },
+    "current_manifest": {"type": "string"},
+    "previous_memory": {"type": ["string", "null"]}
+  },
+  "additionalProperties": true
+}
