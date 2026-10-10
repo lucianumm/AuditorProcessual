@@ -1,0 +1,25 @@
+# AuditorProcessual
+
+> Skill jurídica multiplataforma com leitura integral rastreável, pesquisa oficial e minutas para revisão profissional.
+
+Leia `AI_ENTRYPOINT.md`, o adaptador da plataforma em uso e
+`skills/legal-process-parser/SKILL.md`. Selecione tarefa e gatilhos em
+`routing/task-router.json`. Nunca ler por padrão todo o repo nem adaptadores
+alheios à plataforma.
+
+## Recursos por necessidade
+
+- `references/precision_review_rules.md` no núcleo: protocolo v4 para afirmações, prova, temporalidade, precedentes, medida e teses.
+- `references/legal_specializations.json`: selecionar módulos por área/subárea/regime.
+- `references/procedural_catalog.json`: candidatos e pontos de admissibilidade, não cabimento automático.
+- `scripts/case_packet.py`: lotes integrais limitados por caracteres, sem truncamento.
+- `schemas/legal_review.schema.json`: abrir ao preencher/validar revisão estruturada; v1–v3 legadas.
+
+As referências acima ficam em `skills/legal-process-parser/` e só devem ser
+carregadas conforme tarefa/gatilhos. Processo completo: todas as páginas e
+visuais relevantes, independentemente de orçamento de instruções. Atualizar
+`relatorio_processual.md`, `memoria_processual.md` e `indice_juridico.md`,
+preservando originais e versões. `corpus_revision` e `research_revision`
+controlam alterações distintas. Fonte oficial íntegra não comprova incidência
+jurídica; recibo de exportação não comprova compreensão. Inicial afirmativa,
+sem tom de relatório documental; minuta sempre para revisão profissional.

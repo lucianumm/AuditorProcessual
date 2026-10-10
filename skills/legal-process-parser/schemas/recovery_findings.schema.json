@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/lucianumm/AuditorProcessual/schemas/recovery_findings.schema.json",
+  "title": "Observed extraction gaps and bounded recovery queue",
+  "type": "object",
+  "required": ["schema_version", "source_sha256", "status", "findings", "attempts", "queue", "max_distinct_attempts_per_finding"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "source_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "generated_at": {"type": "string"},
+    "status": {"enum": ["completed", "partial"]},
+    "max_distinct_attempts_per_finding": {"type": "integer", "minimum": 1},
+    "findings": {"type": "array", "items": {
+      "type": "object",
+      "required": ["id", "code", "category", "severity", "status", "scope", "target_ids", "description", "impact", "delivery_effect", "required_action", "attempt_ids", "resolution"],
+      "properties": {
+        "id": {"type": "string"},
+        "code": {"type": "string"},
+        "category": {"enum": ["technical", "coverage", "evidence", "legal", "procedural", "editorial"]},
+        "severity": {"enum": ["blocking", "material", "advisory"]},
+        "status": {"enum": ["open", "in_progress", "resolved", "accepted_limitation"]},
+        "scope": {"enum": ["execution", "document", "page", "fact", "issue", "request", "paragraph"]},
+        "target_ids": {"type": "array", "items": {"type": "string"}},
+        "description": {"type": "string"},
+        "impact": {"type": "string"},
+        "delivery_effect": {"enum": ["none", "qualifies_conclusion", "blocks_statement", "blocks_issue", "blocks_delivery"]},
+        "required_action": {"type": "string"},
+        "attempt_ids": {"type": "array", "items": {"type": "string"}},
+        "resolution": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    }},
+    "attempts": {"type": "array", "items": {"type": "object", "required": ["id", "target_ids", "action", "outcome", "evidence"], "additionalProperties": true}},
+    "queue": {"type": "array", "items": {"type": "object", "required": ["finding_id", "action", "requires_capability", "source_sha256", "pdf_page", "document_id", "status"], "additionalProperties": true}}
+  },
+  "additionalProperties": true
+}

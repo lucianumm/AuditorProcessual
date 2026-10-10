@@ -1,0 +1,32 @@
+{
+  "schema_version":"2.0",
+  "default_task":"ingest",
+  "load_order":["AI_ENTRYPOINT.md","the_current_platform_adapter","skills/legal-process-parser/SKILL.md","routing/task-router.json","selected_references_and_triggered_conditionals","corpus_read_in_complete_bounded_batches"],
+  "policy":"Não ler instruções de outras plataformas. O orçamento limita instruções e lotes, nunca a cobertura dos autos. Gatilhos são constatados pelo agente, não palavras obrigatórias do usuário.",
+  "tasks":{
+    "ingest":{"description":"Preservação, conversão e localização integral.","references":["skills/legal-process-parser/references/extraction_rules.md"],"artifacts":["processo_completo.md","relatorio_processual.md","memoria_processual.md","indice_juridico.md","case_memory.json"]},
+    "analyze":{"description":"Análise das questões e próximos passos solicitados.","references":["skills/legal-process-parser/references/precision_review_rules.md","skills/legal-process-parser/references/procedural_analysis_rules.md"],"automatic_triggers":["official_research"],"artifacts":["analise_juridica.md","fundamentacao_estrategica.md","indice_juridico.md","legal_review_validation.json"]},
+    "petition":{"description":"Escolha fundamentada e minuta da peça solicitada.","references":["skills/legal-process-parser/references/precision_review_rules.md","skills/legal-process-parser/references/pleading_generation_rules.md"],"automatic_triggers":["official_research","measure"],"artifacts":["minuta_peca.md","fundamentacao_estrategica.md","indice_juridico.md","legal_review_validation.json"]},
+    "deadlines":{"description":"Marcos e calendário conferidos, sem prazo inventado.","references":["skills/legal-process-parser/references/procedural_progression_rules.md"],"artifacts":["pendencias_e_prazos.md"]},
+    "evidence":{"description":"Provas, fontes contrárias e lacunas.","references":["skills/legal-process-parser/references/precision_review_rules.md"],"artifacts":["mapa_provas.md","indice_juridico.md"]},
+    "audit":{"description":"Revisão integral quando pedida; não cria petição automaticamente.","references":["skills/legal-process-parser/references/precision_review_rules.md","skills/legal-process-parser/references/procedural_analysis_rules.md","skills/legal-process-parser/references/extraction_rules.md"],"automatic_triggers":["official_research"],"artifacts":["all_requested_artifacts"]}
+  },
+  "conditional_references":[
+    {"trigger":"visual","references":["skills/legal-process-parser/references/visual_description_rules.md","skills/legal-process-parser/references/vision_processing_rules.md"],"when":"Há conteúdo visual, digitalização, OCR duvidoso ou revisão de imagem necessária."},
+    {"trigger":"update","references":["skills/legal-process-parser/references/context_memory_rules.md"],"when":"Novos envios, relações entre versões ou revisão de fonte jurídica."},
+    {"trigger":"official_research","references":["skills/legal-process-parser/references/official_research_rules.md"],"when":"Usar ou conferir fundamento jurídico; obrigatório para analyze, petition e audit."},
+    {"trigger":"measure","references":["skills/legal-process-parser/references/procedural_fit_and_piece_rules.md","skills/legal-process-parser/references/procedural_catalog.json"],"when":"Escolher ou avaliar uma medida; obrigatório na criação de peça."},
+    {"trigger":"integration","references":["skills/legal-process-parser/references/norm_integration_rules.md"],"when":"Analogia, aplicação subsidiária/supletiva, remissão ou regimes concorrentes."},
+    {"trigger":"initial","references":["skills/legal-process-parser/references/initial_petition_rules.md"],"when":"A peça escolhida ou pedida é inicial."},
+    {"trigger":"recovery","references":["skills/legal-process-parser/references/readiness_and_recovery_rules.md"],"when":"Pendência, falha, conflito ou questão potencialmente inconclusiva."},
+    {"trigger":"semantic_conflict","references":["skills/legal-process-parser/references/semantic_crosscheck_rules.md"],"when":"Contradição, inferência decisiva ou suporte de uma afirmação exige revisão aprofundada."},
+    {"trigger":"local_contract","references":["skills/legal-process-parser/schemas/legal_review.schema.json"],"when":"Preencher ou validar a revisão JSON v4; não carregar o schema inteiro só para consulta breve."},
+    {"trigger":"legacy_review","references":["skills/legal-process-parser/references/legal_review_rules.md"],"when":"Migrar ou compreender revisão v1/v2/v3 existente."},
+    {"trigger":"unclear_scope","references":["skills/legal-process-parser/references/request_intake_rules.md"],"when":"Escopo materialmente incerto depois da busca nos autos e no pedido."},
+    {"trigger":"chronology","references":["skills/legal-process-parser/references/procedural_progression_rules.md"],"when":"Andamento, cronologia ou prazo fazem parte da entrega."}
+  ],
+  "specializations":"skills/legal-process-parser/references/legal_specializations.json",
+  "context_budget":{"mandatory_reference_max_chars":16000,"batch_default_max_chars":12000,"meaning":"Contagem de caracteres, não previsão de tokens nem teto da análise. Recursos condicionais só quando pertinentes."},
+  "platforms":{"manus":"SKILL.md","gemini_cli":"GEMINI.md","gemini_gem":"adapters/gemini/GEM_INSTRUCTIONS.md","grok":"adapters/grok/SYSTEM_INSTRUCTIONS.md","chatgpt":"adapters/chatgpt/INSTRUCTIONS.md","claude":"adapters/claude/CLAUDE_INSTRUCTIONS.md"},
+  "never_load_by_default":["adapters/other_platforms","tests/","build/","CHANGELOG.md","LICENSE","*.zip","*.skill","*.whl"]
+}
