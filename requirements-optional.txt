@@ -1,0 +1,8 @@
+# Optional PDF text extraction backend
+pypdf>=5.0
+# PyPDF2 is an alternative to pypdf; install only one of them.
+# PyPDF2>=3.0
+# OCR local (requires Tesseract and Poppler installed outside pip)
+# pdf2image>=1.17
+# pytesseract>=0.3.13
+# Pillow>=10
