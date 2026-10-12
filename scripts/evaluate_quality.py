@@ -1,0 +1,399 @@
+"""Evaluate a case output against independently annotated synthetic expectations.
+
+The evaluator measures observable omissions and traceability. Lexical matches and
+source checks do not establish that a legal proposition is correct or persuasive.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import sys
+import unicodedata
+from decimal import Decimal, InvalidOperation
+from pathlib import Path
+from typing import Any
+
+
+def _read_json(path: Path) -> dict[str, Any]:
+    data = json.loads(path.read_text(encoding="utf-8-sig"))
+    if not isinstance(data, dict):
+        raise ValueError(f"Objeto JSON esperado: {path}")
+    return data
+
+
+def _fold(value: Any) -> str:
+    text = unicodedata.normalize("NFD", str(value or "").casefold())
+    return "".join(char for char in text if unicodedata.category(char) != "Mn")
+
+
+def _fraction(found: int, total: int) -> float | None:
+    return round(found / total, 4) if total else None
+
+
+def _locator(source: dict[str, Any]) -> tuple[str, int] | None:
+    try:
+        return str(source["source_sha256"]), int(source["pdf_page"])
+    except (KeyError, TypeError, ValueError):
+        return None
+
+
+def _candidate_text(item: dict[str, Any], kind: str) -> str:
+    fields = {
+        "fact": ("text",),
+        "issue": ("question", "conclusion", "subsumption"),
+        "request": ("text",),
+    }[kind]
+    return " ".join(str(item.get(field, "")) for field in fields)
+
+
+def _match(gold: dict[str, Any], candidates: list[dict[str, Any]], kind: str) -> dict[str, Any] | None:
+    phrases = gold.get("text_any", [])
+    for candidate in candidates:
+        text = _fold(_candidate_text(candidate, kind))
+        if any(_fold(phrase) in text for phrase in phrases):
+            return candidate
+    return None
+
+
+def _gold_locator(source: dict[str, Any], source_hashes: dict[str, str]) -> tuple[str, int]:
+    name = source["file"]
+    if name not in source_hashes:
+        raise ValueError(f"Fonte não declarada no caso: {name}")
+    page = source["page"]
+    if not isinstance(page, int) or page < 1:
+        raise ValueError(f"Página inválida para {name}: {page}")
+    return source_hashes[name], page
+
+
+def _indexed_pages(memory: dict[str, Any]) -> dict[tuple[str, int], dict[str, Any]]:
+    pages = {}
+    for document in memory.get("documents", []):
+        for page in document.get("pages", []):
+            pages[(document.get("sha256"), page.get("pdf_page"))] = page
+    return pages
+
+
+def _quote_in_page(source: dict[str, Any], page: dict[str, Any] | None) -> bool:
+    if not page or not source.get("quote"):
+        return False
+    visual = page.get("vision", {})
+    content = " ".join((
+        str(page.get("text", "")),
+        str(visual.get("description", "")) if isinstance(visual, dict) else "",
+        str(visual.get("transcription", "")) if isinstance(visual, dict) else "",
+    ))
+    return _fold(source["quote"]) in _fold(content)
+
+
+def _recorded_conflicts(review: dict[str, Any]) -> list[set[tuple[str, int]]]:
+    pairs = []
+    for conflict in review.get("conflicts", []):
+        if not isinstance(conflict, dict):
+            continue
+        sources = conflict.get("sources", [])
+        if not sources and conflict.get("fact_ids"):
+            fact_ids = set(conflict["fact_ids"])
+            sources = [source for fact in review.get("facts", []) if fact.get("id") in fact_ids
+                       for source in fact.get("sources", [])]
+        pair = {_locator(source) for source in sources if isinstance(source, dict)}
+        pair.discard(None)
+        if len(pair) >= 2:
+            pairs.append(pair)
+    for finding in review.get("findings", []):
+        if not isinstance(finding, dict) or "CONTRAD" not in _fold(finding.get("code", "")).upper():
+            continue
+        page_ids = finding.get("target_ids", []) if finding.get("scope") == "page" else []
+        pair = set()
+        for page_id in page_ids:
+            try:
+                sha, page = str(page_id).rsplit(":", 1)
+                pair.add((sha, int(page)))
+            except ValueError:
+                continue
+        if len(pair) >= 2:
+            pairs.append(pair)
+    return pairs
+
+
+def _status_map(validation: dict[str, Any], gate: dict[str, Any]) -> tuple[dict[str, str], dict[str, Any]]:
+    readiness = validation.get("readiness") or gate.get("readiness") or validation
+    if not isinstance(readiness, dict):
+        readiness = {}
+    issues = readiness.get("issue_statuses", [])
+    return {str(item.get("id")): str(item.get("analysis_status")) for item in issues if isinstance(item, dict)}, readiness
+
+
+def _validate_gold(gold: dict[str, Any], case_path: Path) -> dict[str, str]:
+    if gold.get("schema_version") not in {"1.0", "2.0"} or gold.get("synthetic") is not True:
+        raise ValueError("Caso de avaliação deve ser sintético e usar schema_version 1.0 ou 2.0")
+    expected = gold.get("expected")
+    if not isinstance(expected, dict) or not any(expected.get(k) for k in ("facts", "issues", "requests", "contradictions")):
+        raise ValueError("Caso sem rótulos independentes")
+    source_hashes = {}
+    for source in gold.get("source_files", []):
+        name = source.get("file")
+        if not isinstance(name, str) or not name or name in source_hashes:
+            raise ValueError("Fonte sintética ausente ou repetida")
+        path = (case_path.parent / name).resolve()
+        if not path.is_file() or not path.is_relative_to(case_path.parent.resolve()):
+            raise ValueError(f"Fonte sintética indisponível: {name}")
+        source_hashes[name] = hashlib.sha256(path.read_bytes()).hexdigest()
+    if not source_hashes:
+        raise ValueError("Caso sem fonte sintética")
+    labels = set()
+    for kind in ("facts", "issues", "requests", "contradictions"):
+        for item in expected.get(kind, []):
+            if not isinstance(item, dict) or not isinstance(item.get("id"), str) or item["id"] in labels:
+                raise ValueError(f"Rótulo {kind} sem ID único")
+            labels.add(item["id"])
+            if kind != "contradictions" and not item.get("text_any"):
+                raise ValueError(f"Rótulo {item['id']} sem expressão observável")
+            for key in ("source", "source_a", "source_b"):
+                if key in item:
+                    _gold_locator(item[key], source_hashes)
+    return source_hashes
+
+
+def evaluate(case_path: Path, artifact_dir: Path, *, review_path: Path | None = None,
+             elapsed_seconds: float | None = None, context_tokens: int | None = None,
+             human_review_path: Path | None = None) -> dict[str, Any]:
+    gold = _read_json(case_path)
+    source_hashes = _validate_gold(gold, case_path)
+    expected = gold["expected"]
+    review = _read_json(review_path or artifact_dir / "legal_review.json")
+    memory = _read_json(artifact_dir / "case_memory.json")
+    validation_path = artifact_dir / "legal_review_validation.json"
+    validation = _read_json(validation_path) if validation_path.is_file() else {}
+    gate_path = artifact_dir / "quality_gate.json"
+    gate = _read_json(gate_path) if gate_path.is_file() else {}
+    pages = _indexed_pages(memory)
+    details: dict[str, list[dict[str, Any]]] = {key: [] for key in ("facts", "issues", "requests", "contradictions")}
+    violations = []
+    for name, sha in source_hashes.items():
+        if not any(d.get("sha256") == sha for d in memory.get("documents", [])):
+            violations.append(f"Fonte esperada ausente da memória: {name}")
+
+    fact_matches = {}
+    assertions = {item["fact_id"]:item for item in review.get("assertion_reviews", [])}
+    atomic_total = atomic_correct = 0
+    for label in expected.get("facts", []):
+        candidate = _match(label, review.get("facts", []), "fact")
+        found = candidate is not None
+        expected_source = _gold_locator(label["source"], source_hashes) if label.get("source") else None
+        cited = bool(candidate and expected_source and any(_locator(s) == expected_source and _quote_in_page(s, pages.get(expected_source))
+                           and (not label["source"].get("quote") or label["source"]["quote"] in s.get("quote", ""))
+                           for s in candidate.get("sources", []))) if expected_source else found
+        atom_errors = []
+        assertion = assertions.get((candidate or {}).get("id"), {})
+        for field,value in label.get("atoms", {}).items():
+            atomic_total += 1
+            if _fold(assertion.get("atoms", {}).get(field)) == _fold(value):
+                atomic_correct += 1
+            else:
+                atom_errors.append(field)
+        state_ok = not label.get("evidence_status") or assertion.get("evidence_status") == label["evidence_status"]
+        details["facts"].append({"id": label["id"], "found": found, "correct_source": cited,
+                                 "candidate_id": candidate.get("id") if candidate else None,
+                                 "atomic_mismatches":atom_errors,"evidence_status_correct":state_ok})
+        if candidate:
+            fact_matches[label["id"]] = candidate
+        if not found:
+            violations.append(f"Fato esperado omitido: {label['id']}")
+        elif not cited:
+            violations.append(f"Fato sem citação esperada válida: {label['id']}")
+        if atom_errors:
+            violations.append(f"Campos factuais divergentes: {label['id']} ({', '.join(atom_errors)})")
+        if not state_ok:
+            violations.append(f"Estado probatório incorreto: {label['id']}")
+
+    issue_matches = {}
+    status_by_id, readiness = _status_map(validation, gate)
+    false_blocks = 0
+    for label in expected.get("issues", []):
+        candidate = _match(label, review.get("issues", []), "issue")
+        found = candidate is not None
+        candidate_id = candidate.get("id") if candidate else None
+        observed = status_by_id.get(str(candidate_id)) or (candidate or {}).get("analysis_status")
+        wanted = label.get("analysis_status")
+        status_ok = not wanted or observed == wanted
+        details["issues"].append({"id": label["id"], "found": found, "expected_status": wanted,
+                                  "observed_status": observed, "status_correct": status_ok,
+                                  "candidate_id": candidate_id})
+        if candidate:
+            issue_matches[label["id"]] = candidate
+        if not found:
+            violations.append(f"Questão esperada omitida: {label['id']}")
+        elif not status_ok:
+            violations.append(f"Estado da questão incorreto: {label['id']} ({observed}; esperado {wanted})")
+            if wanted == "concluded" and observed in {"qualified", "undetermined"}:
+                false_blocks += 1
+
+    for label in expected.get("requests", []):
+        candidate = _match(label, review.get("requests", []), "request")
+        linked = bool(candidate) and all(issue_matches.get(i, {}).get("id") in candidate.get("issue_ids", [])
+                                         for i in label.get("issue_ids", []))
+        details["requests"].append({"id": label["id"], "found": candidate is not None,
+                                    "issues_linked": linked, "candidate_id": candidate.get("id") if candidate else None})
+        if not candidate:
+            violations.append(f"Pedido esperado omitido: {label['id']}")
+        elif not linked:
+            violations.append(f"Pedido sem vínculo com questão esperada: {label['id']}")
+
+    conflict_pairs = _recorded_conflicts(review)
+    for label in expected.get("contradictions", []):
+        pair = {_gold_locator(label["source_a"], source_hashes), _gold_locator(label["source_b"], source_hashes)}
+        found = any(pair <= recorded for recorded in conflict_pairs)
+        details["contradictions"].append({"id": label["id"], "found": found})
+        if not found:
+            violations.append(f"Contradição esperada não registrada: {label['id']}")
+
+    citation_count = citation_valid = 0
+    for fact in review.get("facts", []):
+        for source in fact.get("sources", []):
+            citation_count += 1
+            locator = _locator(source)
+            if locator and _quote_in_page(source, pages.get(locator)):
+                citation_valid += 1
+            else:
+                violations.append(f"Citação sem trecho na página referida: {fact.get('id', '?')}")
+    expected_status = expected.get("execution_status")
+    observed_status = readiness.get("execution_status")
+    if expected_status and observed_status != expected_status:
+        violations.append(f"Execução {observed_status}; esperada {expected_status}")
+        if expected_status == "completed" and observed_status in {"partial", "failed"}:
+            false_blocks += 1
+    expected_draft = expected.get("draft_status")
+    observed_draft = readiness.get("draft_status")
+    if expected_draft and observed_draft != expected_draft:
+        violations.append(f"Minuta {observed_draft}; esperada {expected_draft}")
+        if expected_draft == "ready_for_review" and observed_draft in {"partial", "blocked"}:
+            false_blocks += 1
+    expected_piece = expected.get("catalog_id")
+    if expected_piece and review.get("piece_assessment", {}).get("catalog_id") != expected_piece:
+        violations.append("Peça específica diferente do candidato esperado no cenário sintético")
+    for field,value in expected.get("strategy", {}).items():
+        if _fold(review.get("strategy", {}).get(field)) != _fold(value):
+            violations.append(f"Área/subárea/regime divergente: {field}")
+    labor_expected = expected.get("labor",{})
+    labor_observed = review.get("labor_review",{})
+    labor_total = labor_correct = 0
+    details["labor"] = []
+    for topic_id in labor_expected.get("topic_ids",[]):
+        labor_total += 1
+        found = topic_id in labor_observed.get("scope",{}).get("topic_ids",[])
+        labor_correct += int(found)
+        details["labor"].append({"topic_id":topic_id,"selected":found})
+        if not found:
+            violations.append("Tema trabalhista esperado omitido: " + topic_id)
+    for label in labor_expected.get("assessments",[]):
+        issue_id = issue_matches.get(label["issue_id"],{}).get("id")
+        candidate = next((item for item in labor_observed.get("topic_assessments",[])
+                          if item.get("topic_id") == label["topic_id"] and item.get("issue_id") == issue_id),{})
+        observed_checks = {item.get("check_id"):item.get("status") for item in candidate.get("checks",[])}
+        comparisons = [("status",candidate.get("status"),label["status"])]
+        comparisons += [(key,observed_checks.get(key),value) for key,value in label.get("checks",{}).items()]
+        for key,observed,wanted in comparisons:
+            labor_total += 1
+            labor_correct += int(observed == wanted)
+            if observed != wanted:
+                violations.append(f"Conferência trabalhista divergente: {label['topic_id']}/{key}")
+    for label in labor_expected.get("health",[]):
+        issue_id = issue_matches.get(label["issue_id"],{}).get("id")
+        candidates = [item for item in labor_observed.get("health_assessments",[]) if issue_id in item.get("issue_ids",[])]
+        labor_total += 1
+        found = any(item.get(label["field"],{}).get("status") == label["status"] for item in candidates)
+        labor_correct += int(found)
+        if not found:
+            violations.append("Nexo/incapacidade trabalhista divergente: " + label["field"])
+    labor_calculation_correct = None
+    if "calculation_total" in labor_expected:
+        calculation_path = artifact_dir / "calculo_trabalhista.json"
+        try:
+            calculation = _read_json(calculation_path)
+            labor_calculation_correct = Decimal(calculation["total"]) == Decimal(labor_expected["calculation_total"])
+        except (OSError,ValueError,KeyError,InvalidOperation):
+            labor_calculation_correct = False
+        if not labor_calculation_correct:
+            violations.append("Total trabalhista divergente ou memória de cálculo ausente")
+    if elapsed_seconds is not None and elapsed_seconds < 0:
+        raise ValueError("Tempo observado deve ser não negativo")
+    if context_tokens is not None and context_tokens < 0:
+        raise ValueError("Tokens observados devem ser não negativos")
+    budget = gold.get("limits", {}).get("max_elapsed_seconds")
+    if budget is not None and elapsed_seconds is not None and elapsed_seconds > budget:
+        violations.append(f"Tempo observado {elapsed_seconds}s supera limite do caso {budget}s")
+    metrics = {
+        "fact_recall": _fraction(sum(x["found"] for x in details["facts"]), len(details["facts"])),
+        "issue_recall": _fraction(sum(x["found"] for x in details["issues"]), len(details["issues"])),
+        "request_recall": _fraction(sum(x["found"] for x in details["requests"]), len(details["requests"])),
+        "contradiction_recall": _fraction(sum(x["found"] for x in details["contradictions"]), len(details["contradictions"])),
+        "citation_precision": _fraction(citation_valid, citation_count),
+        "expected_fact_citation_recall": _fraction(sum(x["correct_source"] for x in details["facts"]),
+                                                   sum("source" in x for x in expected.get("facts", []))),
+        "false_block_count": false_blocks,
+        "elapsed_seconds": elapsed_seconds,
+        "context_tokens": context_tokens,
+        "atomic_field_accuracy": _fraction(atomic_correct, atomic_total),
+        "labor_observable_accuracy": _fraction(labor_correct,labor_total),
+        "labor_calculation_total_correct": labor_calculation_correct,
+    }
+    human = inspect_human_review(human_review_path,review_path or artifact_dir / "legal_review.json") if human_review_path else {"status":"not_recorded"}
+    return {"schema_version": "2.0", "case_id": gold.get("case_id"), "synthetic": True,
+            "passed_observable_checks": not violations, "metrics": metrics, "details": details,
+            "expected_status": expected_status, "observed_status": observed_status,
+            "violations": violations,
+            "human_review":human,
+            "limitations": ["Comparação textual de rótulos sintéticos; não valida mérito jurídico ou equivalência semântica.",
+                            "Tempo e tokens só são medidos quando fornecidos como observações da execução."]}
+
+
+HUMAN_DIMENSIONS = {"factual_fidelity","complete_coverage","legal_temporality","precedent_fit",
+                    "procedural_fit","thesis_quality","requests_consistency","writing_quality"}
+
+
+def inspect_human_review(path: Path, review_path: Path) -> dict:
+    record = _read_json(path)
+    if record.get("schema_version") != "1.0" or not all(record.get(key) for key in ("reviewer","reviewer_role","reviewed_on","comments")):
+        raise ValueError("Registro profissional exige identificação, função, data e comentários")
+    from datetime import date
+    date.fromisoformat(record["reviewed_on"])
+    if record.get("review_sha256") != hashlib.sha256(review_path.read_bytes()).hexdigest():
+        raise ValueError("Revisão humana corresponde a outra versão do arquivo")
+    scores = record.get("dimensions", {})
+    if set(scores) != HUMAN_DIMENSIONS or any(type(value) is not int or not 1 <= value <= 5 for value in scores.values()):
+        raise ValueError("Rubrica exige oito dimensões, com notas inteiras de 1 a 5")
+    if not isinstance(record.get("critical_errors"), list) or any(not isinstance(value,str) for value in record["critical_errors"]):
+        raise ValueError("Registrar erros críticos explicitamente, inclusive lista vazia se nenhum foi identificado")
+    return {"status":"externally_recorded_not_independently_attested","reviewer":record["reviewer"],
+            "dimensions":scores,"critical_errors":record["critical_errors"],
+            "meaning":"Registro fornecido, sem verificação automática de credenciais ou aprovação de protocolo."}
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Avalia resultados da skill contra casos sintéticos anotados independentemente")
+    parser.add_argument("--case", required=True, type=Path, help="JSON com fontes e rótulos sintéticos")
+    parser.add_argument("--artifact-dir", required=True, type=Path, help="Diretório de saída da execução avaliada")
+    parser.add_argument("--review", type=Path, help="Revisão específica, inclusive uma revisão rejeitada")
+    parser.add_argument("--output", type=Path, help="JSON de avaliação a gravar")
+    parser.add_argument("--elapsed-seconds", type=float, help="Tempo observado externamente em segundos")
+    parser.add_argument("--context-tokens", type=int, help="Tokens observados externamente")
+    parser.add_argument("--human-review",type=Path,help="Registro profissional real vinculado ao hash do arquivo de revisão")
+    args = parser.parse_args()
+    try:
+        report = evaluate(args.case, args.artifact_dir, review_path=args.review,
+                          elapsed_seconds=args.elapsed_seconds, context_tokens=args.context_tokens,
+                          human_review_path=args.human_review)
+    except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError) as exc:
+        parser.exit(2, f"Avaliação inválida: {exc}\n")
+    payload = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
+    if args.output:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(payload, encoding="utf-8")
+    else:
+        sys.stdout.write(payload)
+    return 0 if report["passed_observable_checks"] else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

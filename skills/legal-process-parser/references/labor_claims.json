@@ -1,0 +1,220 @@
+{
+  "schema_version": "1.0",
+  "policy": "Selecionar pretensões pertinentes. O catálogo organiza requisitos de pesquisa, sem fixar direito, parâmetro ou resultado.",
+  "claims": [
+    {
+      "id": "employment",
+      "label": "Vínculo e natureza da relação",
+      "topic_id": "contract",
+      "requirements": [
+        "personal_service",
+        "remuneration",
+        "non_eventuality",
+        "subordination",
+        "employer_identity",
+        "contrary_contract"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "overtime",
+      "label": "Horas extras e intervalos",
+      "topic_id": "working_time",
+      "requirements": [
+        "control_regime",
+        "limits_by_period",
+        "marks_or_specific_account",
+        "intervals",
+        "compensation",
+        "payments",
+        "collective_rule"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "equal_pay",
+      "label": "Equiparação salarial",
+      "topic_id": "pay",
+      "requirements": [
+        "comparator",
+        "same_employer_establishment",
+        "effective_work",
+        "equal_work_conditions",
+        "statutory_exclusions",
+        "difference_by_period"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "salary_differences",
+      "label": "Diferenças remuneratórias",
+      "topic_id": "pay",
+      "requirements": [
+        "salary_rule",
+        "parcel_nature",
+        "salary_history",
+        "period",
+        "payments",
+        "reflexes"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "indirect_termination",
+      "label": "Rescisão indireta",
+      "topic_id": "termination",
+      "requirements": [
+        "employer_conduct",
+        "legal_ground",
+        "seriousness_context",
+        "proof",
+        "contract_continuity",
+        "termination_effects"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "just_cause",
+      "label": "Justa causa",
+      "topic_id": "termination",
+      "requirements": [
+        "specific_conduct",
+        "legal_classification",
+        "proof",
+        "proportionality",
+        "timeliness_context",
+        "discipline_history",
+        "consequences"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "termination_pay",
+      "label": "Verbas rescisórias",
+      "topic_id": "termination",
+      "requirements": [
+        "termination_kind",
+        "dates_projection",
+        "salary_history",
+        "notice_vacation_annual_bonus_fgts",
+        "payments",
+        "penalties_own_requirements"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "employment_guarantee",
+      "label": "Garantia de emprego",
+      "topic_id": "stability",
+      "requirements": [
+        "ground_event",
+        "guarantee_period",
+        "conditions",
+        "termination_context",
+        "proof",
+        "appropriate_remedy"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "third_party_liability",
+      "label": "Responsabilidade de terceiros",
+      "topic_id": "liability",
+      "requirements": [
+        "liable_subject",
+        "legal_basis",
+        "link_and_period",
+        "specific_proof",
+        "public_private_distinction",
+        "phase_limits"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "moral_damage",
+      "label": "Assédio, discriminação e dano extrapatrimonial",
+      "topic_id": "discrimination",
+      "requirements": [
+        "conduct_context",
+        "unlawfulness",
+        "damage_or_specific_presumption",
+        "causal_link",
+        "contrary_evidence",
+        "remedy"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "occupational_damage",
+      "label": "Acidente e doença ocupacional",
+      "topic_id": "occupational_health",
+      "requirements": [
+        "tasks_exposure",
+        "nexus_concausation",
+        "incapacity",
+        "technical_evidence",
+        "liability_basis",
+        "legal_consequences"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "hazard_pay",
+      "label": "Insalubridade e periculosidade",
+      "topic_id": "occupational_health",
+      "requirements": [
+        "activity_agent",
+        "normative_classification",
+        "period",
+        "exposure_method",
+        "protection_effectiveness",
+        "technical_proof",
+        "base_rate_cumulation"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "collective_right",
+      "label": "Direito previsto em instrumento coletivo",
+      "topic_id": "collective",
+      "requirements": [
+        "category_territory_subjects",
+        "instrument_version",
+        "literal_clause",
+        "effective_period",
+        "negotiation_limits",
+        "competing_rules"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "appeal",
+      "label": "Impugnação recursal",
+      "topic_id": "procedure",
+      "requirements": [
+        "act_chapters",
+        "autonomous_grounds",
+        "current_cabimento",
+        "deadline_preparation",
+        "specific_admissibility",
+        "facts_review_limits",
+        "requested_effect"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "enforcement",
+      "label": "Liquidação e execução",
+      "topic_id": "enforcement",
+      "requirements": [
+        "title_commands",
+        "subjects_periods",
+        "criteria",
+        "payments",
+        "items_values",
+        "phase_limits"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    }
+  ]
+}
