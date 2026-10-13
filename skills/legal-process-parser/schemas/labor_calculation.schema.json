@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Memória de cálculo trabalhista com parâmetros explícitos",
+  "type": "object",
+  "required": ["schema_version", "corpus_revision", "purpose", "currency", "rounding", "inputs", "items", "legal_parameters_reason"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "corpus_revision": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "purpose": {"enum": ["estimate", "liquidation", "reconciliation"]},
+    "currency": {"const": "BRL"},
+    "rounding": {"enum": ["per_item", "final_only"]},
+    "legal_parameters_reason": {"type": "string", "minLength": 1},
+    "inputs": {"type": "array", "minItems": 1, "maxItems": 20000, "items": {"$ref": "#/$defs/input"}},
+    "items": {"type": "array", "minItems": 1, "maxItems": 20000, "items": {"$ref": "#/$defs/item"}}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "decimal": {"type": "string", "pattern": "^-?[0-9]{1,18}(\\.[0-9]{1,12})?$"},
+    "input": {
+      "type": "object", "required": ["id", "value", "unit", "fact_ids", "norm_ids", "reason"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1}, "value": {"$ref": "#/$defs/decimal"},
+        "unit": {"enum": ["money", "hours", "days", "months", "factor", "percent", "index", "count"]},
+        "fact_ids": {"$ref": "#/$defs/ids"}, "norm_ids": {"$ref": "#/$defs/ids"},
+        "reason": {"type": "string", "minLength": 1}
+      },
+      "anyOf": [{"properties": {"fact_ids": {"minItems": 1}}}, {"properties": {"norm_ids": {"minItems": 1}}}],
+      "additionalProperties": false
+    },
+    "item": {
+      "type": "object",
+      "required": ["id", "relationship_id", "competence", "claim_type", "segment", "kind", "expression", "bindings", "norm_ids", "request_ids", "expected_result", "include_in_total", "reason"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1}, "relationship_id": {"type": "string", "minLength": 1},
+        "competence": {"type": "string", "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$"},
+        "claim_type": {"type": "string", "minLength": 1}, "segment": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["principal", "reflex", "deduction", "update_delta", "charge", "difference", "subtotal"]},
+        "expression": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "bindings": {"type": "object", "minProperties": 1, "propertyNames": {"pattern": "^[A-Za-z_][A-Za-z0-9_]*$"}, "additionalProperties": {"type": "string", "minLength": 1}},
+        "norm_ids": {"$ref": "#/$defs/ids"}, "request_ids": {"$ref": "#/$defs/ids"},
+        "expected_result": {"$ref": "#/$defs/decimal"}, "include_in_total": {"type": "boolean"},
+        "reason": {"type": "string", "minLength": 1},
+        "period_start": {"type": "string", "format": "date"}, "period_end": {"type": "string", "format": "date"},
+        "payment_fact_ids": {"$ref": "#/$defs/ids"},
+        "rounding_mode": {"enum": ["HALF_UP", "HALF_EVEN"]}
+      },
+      "allOf": [
+        {"if": {"properties": {"kind": {"const": "subtotal"}}}, "then": {"properties": {"include_in_total": {"const": false}}}},
+        {"if": {"properties": {"kind": {"const": "deduction"}}}, "then": {"required": ["payment_fact_ids"], "properties": {"payment_fact_ids": {"minItems": 1}}}},
+        {"if": {"required": ["period_start"]}, "then": {"required": ["period_end"]}},
+        {"if": {"required": ["period_end"]}, "then": {"required": ["period_start"]}}
+      ], "additionalProperties": false
+    }
+  }
+}

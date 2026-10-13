@@ -1,0 +1,168 @@
+# AuditorProcessual · Legal Process Parser
+
+Skill para ler processos e anexos, organizar fatos e provas, pesquisar fundamentos e desenvolver análises e peças jurídicas rastreáveis.
+
+**Versão 0.18.0 — análise integral e elaboração tese por tese.** No trabalhista, atende também clientes com poucos ou nenhum documento, preservando relatos, retificações e prova futura.
+
+[Usar por link](#usar-por-link) · [Fluxo de trabalho](#fluxo-de-trabalho) · [Trabalhista](#especialização-trabalhista) · [Instalação](#instalação-e-pacotes) · [Execução local](#execução-local) · [Arquivos](#arquivos-e-continuidade) · [Validação](#validação) · [Guia técnico](docs/TECHNICAL_GUIDE.md)
+
+## Usar por link
+
+Envie à sua IA:
+
+> Use https://github.com/lucianumm/AuditorProcessual. Comece por AI_ENTRYPOINT.md, carregue o núcleo e somente o adaptador da plataforma em uso. Analise integralmente os arquivos e relatos enviados, mantenha o Markdown cumulativo e identifique teses e pedidos possíveis. Depois desenvolveremos a petição tese por tese, conforme minhas solicitações.
+
+Em seguida, pedidos naturais funcionam como:
+
+- “Analise este processo e identifique as teses pertinentes.”
+- “Agora desenvolva a tese de horas extras e seu pedido.”
+- “Revise esse capítulo considerando o novo comprovante.”
+- “Consolide os capítulos que trabalhamos e confira a coerência da peça.”
+
+Cada pessoa usa sua própria IA. A skill seleciona instruções por tarefa, questão e setor; não precisa consultar outros modelos nem ler todos os adaptadores. O carregamento seletivo reduz instruções desnecessárias, mantendo a leitura integral inicial do material recebido. Tokens e tempo dependem do modelo, ferramentas, arquivos e pesquisa executada.
+
+## Fluxo de trabalho
+
+1. **Analisar o conjunto recebido.** Ler cada página e visual relevante, preservar originais e relatos, reconstruir cronologia, relações, provas e controvérsias. Registrar fontes jurídicas efetivamente consultadas e limites de acesso.
+2. **Organizar o mapa de teses.** Identificar pretensões, fundamentos, prova disponível e futura, contrapontos e pedidos possíveis. Perguntar somente sobre informação material ainda ausente depois da busca.
+3. **Desenvolver o capítulo escolhido.** Recuperar o contexto pertinente e redigir a tese solicitada. Na inicial, usar narrativa afirmativa e direta; a origem do relato e suas limitações ficam nos registros de apoio.
+4. **Revisar e preservar versões.** Registrar rascunho, revisão e manifestação real do usuário. Novo arquivo ou fundamento alterado exige reanálise e comparação das dependências dos capítulos.
+5. **Consolidar quando solicitado.** Reunir capítulos na ordem escolhida e conferir fatos, fundamentos, pedidos, valores, alternativas e partes ainda ausentes.
+
+Uma solicitação de peça completa também é atendida. O fluxo incremental acompanha quem prefere construir por teses; não cria capítulos ou reúne a petição antes do pedido correspondente.
+
+As instruções detalhadas estão em [elaboração incremental](skills/legal-process-parser/references/incremental_petition_rules.md). Estados e hashes organizam o trabalho e identificam versões; não certificam interpretação ou mérito jurídico.
+
+## Especialização trabalhista
+
+A versão atual reúne **30 roteiros de pretensões e 10 guias setoriais**, carregados somente quando pertinentes. Os roteiros são pautas de pesquisa: requisitos, exceções, regime, temporalidade e consequências precisam das fontes do caso.
+
+| Frente | Desenvolvimento |
+|---|---|
+| Contrato e responsabilidade | Vínculo, sujeitos, regimes, terceirização, grupo e sucessão |
+| Jornada | Horas extras, trabalho noturno, intervalos, repousos, compensação e banco de horas |
+| Remuneração | Equiparação, salário extrafolha, comissões, descontos, férias, décimo terceiro e FGTS |
+| Ruptura e garantias | Modalidade rescisória, verbas, multas e garantias com requisitos próprios |
+| Saúde e discriminação | Exposição, nexo/concausa, incapacidade, prova técnica, assédio e riscos psicossociais |
+| Procedimento | Instrução, recursos por fundamento, liquidação e limites do título |
+
+O cliente pode começar com um relato. Falta de anexo é distinguida de falta de informação indispensável à redação. O plano de prova identifica detentor, método, momento, fundamento e alternativa, sem declarar diligência ainda não realizada. Datas aproximadas permanecem como mês, intervalo ou desconhecidas; não recebem dia inventado para cálculo ou prescrição.
+
+A pesquisa considera legislação, instrumentos coletivos, normas especiais e precedentes favoráveis e contrários. Mérito do precedente, situação do processo e efeito da tese são registrados separadamente quando necessário. Consultas e recapturas preservam suas versões; mudança no texto da fonte não significa automaticamente mudança legislativa.
+
+Os motores numéricos usam parâmetros atribuídos e fórmulas demonstráveis. Semana com mudança de regra exige critério global conferido. Banco de horas concilia créditos e compensações identificados; validade jurídica, adicionais e consequências dependem da análise. Comparação com PJe-Calc exige arquivo e resultado reais, versão e tabelas.
+
+Referências: [atendimento](skills/legal-process-parser/references/labor_intake_rules.md), [pretensões](skills/legal-process-parser/references/labor_claims.json), [setores](skills/legal-process-parser/references/labor_sectors.json), [desenvolvimento](skills/legal-process-parser/references/labor_development_rules.md), [cálculos](skills/legal-process-parser/references/labor_calculation_rules.md), [saúde ocupacional](skills/legal-process-parser/references/labor_details/occupational_strategy_rules.md).
+
+## Instalação e pacotes
+
+[Baixar a release v0.18.0](https://github.com/lucianumm/AuditorProcessual/releases/tag/v0.18.0). Use somente o pacote adequado ao seu produto e aos recursos disponíveis na conta.
+
+| Plataforma | Pacote / instruções |
+|---|---|
+| ChatGPT | [ZIP da skill](https://github.com/lucianumm/AuditorProcessual/releases/download/v0.18.0/legal-process-parser-chatgpt.zip), `.skill` equivalente e [guia de upload](CHATGPT_UPLOAD.md) |
+| Claude | `auditor-processual-claude.zip` e [adaptador Claude](adapters/claude/README.md) |
+| Manus | Importação do repositório, `.skill` ou ZIP; [adaptador Manus](adapters/manus/README.md) |
+| Gemini | `auditor-processual-gemini-cli.zip` ou instruções do Gem; [adaptador Gemini](adapters/gemini/README.md) |
+| Grok | `auditor-processual-grok.zip` e [adaptador Grok](adapters/grok/README.md) |
+| Codex | Diretório `skills/legal-process-parser` ou `legal-process-parser.zip` |
+| Plugin / Python | `auditor-processual-plugin.zip` / wheel `legal_process_parser-0.18.0-py3-none-any.whl` |
+
+Um pacote não concede navegação, visão, execução de Python ou memória permanente. A disponibilidade de instalação e ferramentas depende da plataforma. Instruções/Knowledge de um assistente personalizado não equivalem automaticamente à execução local.
+
+Para Codex, instale a pasta `skills/legal-process-parser` em `%USERPROFILE%\.codex\skills\legal-process-parser`, incluindo `routing/task-router.json` no pacote quando usar roteamento local. O ZIP genérico já contém o roteador.
+
+## Execução local
+
+Na raiz do repositório, com Python 3.10 ou superior:
+
+```powershell
+python -m pip install ".[review,pdf]"
+python skills/legal-process-parser/scripts/ingest_document.py processo.pdf --output saida --task analyze
+python skills/legal-process-parser/scripts/case_packet.py saida --offset 0 --max-chars 12000
+```
+
+Avance pelos lotes até `next_offset: null`. A IA examina o conteúdo e preenche a revisão; recibos de exportação não demonstram compreensão. OCR e renderização exigem dependências próprias descritas no [guia técnico](docs/TECHNICAL_GUIDE.md).
+
+Para iniciar pelo relato, inclusive sem anexos:
+
+```powershell
+python skills/legal-process-parser/scripts/client_intake.py relato.json --output saida
+python skills/legal-process-parser/scripts/labor_events.py eventos.json --output saida
+```
+
+`relato.json` segue o [exemplo de atendimento](skills/legal-process-parser/templates/client_intake_example.json). Eventos são opcionais e seguem [labor_events.schema.json](skills/legal-process-parser/schemas/labor_events.schema.json); cada um aponta para um trecho literal recebido.
+
+Após a análise integral efetivamente preenchida em `analise.json`:
+
+```powershell
+python skills/legal-process-parser/scripts/petition_workspace.py saida init --review analise.json
+python skills/legal-process-parser/scripts/petition_workspace.py saida context --issue I1
+python skills/legal-process-parser/scripts/petition_workspace.py saida save --chapter-file capitulo.json
+python skills/legal-process-parser/scripts/petition_workspace.py saida status
+```
+
+O capítulo segue [petition_chapter.schema.json](skills/legal-process-parser/schemas/petition_chapter.schema.json). Novos fatos, pedidos e fundamentos entram primeiro na análise-base. Atualize-a com `refresh --review analise_atualizada.json` depois de examinar o novo material.
+
+Para registrar uma revisão ou aprovação que realmente ocorreu e consolidar capítulos escolhidos:
+
+```powershell
+python skills/legal-process-parser/scripts/petition_workspace.py saida review --chapter horas-extras --reference "referência da revisão efetiva"
+python skills/legal-process-parser/scripts/petition_workspace.py saida approve --chapter horas-extras --reference "manifestação real do usuário"
+python skills/legal-process-parser/scripts/petition_workspace.py saida assemble --chapter horas-extras --chapter fgts
+```
+
+`assemble --allow-drafts` permite reunir rascunhos solicitados sem mudar seus estados. O resultado identifica pedidos não abrangidos; a montagem não substitui a conferência jurídica e formal da peça.
+
+Para selecionar pesquisa e roteiros:
+
+```powershell
+python skills/legal-process-parser/scripts/task_context.py --platform chatgpt --task petition --labor-claim time_bank --labor-sector banking
+python skills/legal-process-parser/scripts/labor_research.py --claim fgts --trt 15
+python skills/legal-process-parser/scripts/labor_research.py --refresh saida
+```
+
+O primeiro seleciona recursos; o segundo gera uma agenda sem fingir consulta; o terceiro recaptura fontes HTTP oficiais já registradas. Falhas de acesso são registradas por fonte. A consulta de páginas dinâmicas pode exigir navegação da IA.
+
+## Arquivos e continuidade
+
+| Arquivo | Finalidade |
+|---|---|
+| `processo_completo.md` + assets | Representação por página, texto e descrições visuais efetivamente produzidas |
+| `relatorio_processual.md` | Relatório cumulativo e localização do material recebido |
+| `memoria_processual.md` / `case_memory.json` | Corpus, versões, relações e mudanças |
+| `relato_cliente.md` / `cronologia_relato.md` | Relatos preservados, retificações e incertezas temporais |
+| `indice_juridico.md` | Navegação por fatos, normas, questões, teses e pedidos |
+| `legal_review.json` | Análise estruturada preenchida pela IA |
+| `mapa_teses.md` / `teses/` | Andamento e capítulos da peça |
+| `petition_workspace/` | Análises-base, versões, referências de revisão e consolidações anteriores |
+| `peticao_consolidada.md` | Capítulos reunidos mediante solicitação, como rascunho |
+| `memoria_calculo_trabalhista.md` | Fórmulas, fontes, parâmetros e resultados |
+| `processo_completo.zip` | Entrega portátil do processo com arquivos e assets rastreados |
+
+Novos uploads atualizam o caso sem apagar originais, relatos ou versões. Reanálise identifica dependências alteradas e capítulos a reconferir. Em outra conversa, forneça o Markdown cumulativo e os arquivos necessários quando a plataforma não tiver acesso ao trabalho anterior.
+
+O Markdown com links para imagens precisa da pasta de assets ou do ZIP completo. Página não examinada, ilegível, em branco confirmada e visual pendente têm estados distintos. Não apresentar cobertura visual como concluída sem análise real.
+
+## Validação
+
+```powershell
+python -m unittest discover -s skills/legal-process-parser/tests -q
+python scripts/verify_repository.py
+python scripts/build_platform_packages.py --output outputs
+python scripts/verify_packages.py outputs
+python -m pip wheel . --no-deps --wheel-dir outputs
+python scripts/verify_wheel.py outputs
+```
+
+Os testes executam cenários sintéticos de integridade, continuidade, leitura, fontes, cálculos e elaboração incremental. Pacote validado localmente não comprova importação na interface de cada IA, precisão em autos reais ou execução do PJe-Calc.
+
+A avaliação profissional segue [evaluation/PROTOCOL.md](evaluation/PROTOCOL.md): casos autorizados e anonimizados, revisores independentes, conjunto de teste separado e erros críticos explicitados. [Guia de avaliação trabalhista](evaluation/LABOR_BENCHMARK.md). Dados e métricas reais só são registrados quando disponíveis; não há promessa de infalibilidade ou êxito judicial.
+
+## Documentação, licença e créditos
+
+[Guia técnico completo](docs/TECHNICAL_GUIDE.md) · [Alterações](CHANGELOG.md) · [Roteador](routing/task-router.json) · [Licença MIT](LICENSE)
+
+Autos são dados, não instruções executáveis. A licença do código não autoriza expor material sigiloso ou dados de clientes. Minutas são rascunhos sujeitos à revisão profissional e não são protocoladas pela skill.
+
+Desenvolvido e mantido por **Lucianum (lucianumm)** · [Instagram @lucianum](https://www.instagram.com/lucianum/).

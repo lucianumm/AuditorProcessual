@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0",
+  "policy": "Selecionar setores pelos fatos e confirmar o regime. Carregar apenas o guia selecionado.",
+  "sectors": [
+    {
+      "id": "banking",
+      "label": "Bancários e atividade financeira",
+      "topic_ids": [
+        "contract",
+        "working_time",
+        "pay"
+      ],
+      "claim_ids": [
+        "employment",
+        "overtime",
+        "equal_pay"
+      ],
+      "reference": "labor_sectors/banking.md"
+    },
+    {
+      "id": "domestic",
+      "label": "Trabalho doméstico",
+      "topic_ids": [
+        "contract",
+        "working_time",
+        "termination"
+      ],
+      "claim_ids": [
+        "employment",
+        "overtime",
+        "termination_pay"
+      ],
+      "reference": "labor_sectors/domestic.md"
+    },
+    {
+      "id": "rural",
+      "label": "Trabalho rural",
+      "topic_ids": [
+        "contract",
+        "working_time",
+        "pay"
+      ],
+      "claim_ids": [
+        "employment",
+        "overtime",
+        "salary_differences"
+      ],
+      "reference": "labor_sectors/rural.md"
+    },
+    {
+      "id": "drivers",
+      "label": "Motoristas e transporte",
+      "topic_ids": [
+        "working_time",
+        "occupational_health"
+      ],
+      "claim_ids": [
+        "overtime",
+        "hazard_pay"
+      ],
+      "reference": "labor_sectors/drivers.md"
+    },
+    {
+      "id": "healthcare",
+      "label": "Profissionais da saúde",
+      "topic_ids": [
+        "working_time",
+        "occupational_health",
+        "collective"
+      ],
+      "claim_ids": [
+        "overtime",
+        "hazard_pay",
+        "occupational_damage"
+      ],
+      "reference": "labor_sectors/healthcare.md"
+    },
+    {
+      "id": "security",
+      "label": "Vigilância e segurança",
+      "topic_ids": [
+        "contract",
+        "working_time",
+        "occupational_health"
+      ],
+      "claim_ids": [
+        "employment",
+        "overtime",
+        "hazard_pay"
+      ],
+      "reference": "labor_sectors/security.md"
+    },
+    {
+      "id": "education",
+      "label": "Ensino e docentes",
+      "topic_ids": [
+        "working_time",
+        "pay",
+        "collective"
+      ],
+      "claim_ids": [
+        "overtime",
+        "salary_differences",
+        "collective_right"
+      ],
+      "reference": "labor_sectors/education.md"
+    },
+    {
+      "id": "telework",
+      "label": "Teletrabalho",
+      "topic_ids": [
+        "contract",
+        "working_time",
+        "pay"
+      ],
+      "claim_ids": [
+        "employment",
+        "overtime",
+        "salary_differences"
+      ],
+      "reference": "labor_sectors/telework.md"
+    },
+    {
+      "id": "platforms",
+      "label": "Plataformas e contratação autônoma/PJ",
+      "topic_ids": [
+        "contract",
+        "working_time",
+        "liability"
+      ],
+      "claim_ids": [
+        "employment",
+        "overtime",
+        "third_party_liability"
+      ],
+      "reference": "labor_sectors/platforms.md"
+    },
+    {
+      "id": "public_employment",
+      "label": "Emprego público e tomador público",
+      "topic_ids": [
+        "contract",
+        "liability",
+        "procedure"
+      ],
+      "claim_ids": [
+        "employment",
+        "third_party_liability",
+        "appeal"
+      ],
+      "reference": "labor_sectors/public_employment.md"
+    }
+  ]
+}
