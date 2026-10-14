@@ -1,0 +1,183 @@
+{
+  "schema_version": "1.0",
+  "policy": "Pautas de seleção de parâmetros e fórmulas candidatas, sem taxas legais presumidas. Conferir adequação e valores nas fontes oficiais de cada resposta.",
+  "profiles": [
+    {
+      "id": "overtime",
+      "roles": [
+        "salary_base",
+        "divisor",
+        "quantity",
+        "factor"
+      ],
+      "expression": "base / divisor * quantity * factor",
+      "checks": [
+        "control_regime",
+        "limits_by_period",
+        "compensation",
+        "payments",
+        "reflexes"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    },
+    {
+      "id": "salary_difference",
+      "roles": [
+        "due",
+        "paid"
+      ],
+      "expression": "due - paid",
+      "checks": [
+        "salary_rule",
+        "period",
+        "parcel_nature",
+        "payments"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    },
+    {
+      "id": "night_work",
+      "roles": [
+        "hour_value",
+        "quantity",
+        "factor"
+      ],
+      "expression": "hour_value * quantity * factor",
+      "checks": [
+        "night_window",
+        "reduced_unit",
+        "extension",
+        "category",
+        "cumulation"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    },
+    {
+      "id": "proportional_parcel",
+      "roles": [
+        "base",
+        "eligible",
+        "reference"
+      ],
+      "expression": "base * eligible / reference",
+      "checks": [
+        "eligible_periods",
+        "projection",
+        "leaves",
+        "specific_rule"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    },
+    {
+      "id": "fgts",
+      "roles": [
+        "base",
+        "factor",
+        "paid"
+      ],
+      "expression": "base * factor - paid",
+      "checks": [
+        "regime",
+        "salary_base",
+        "competence",
+        "prescription",
+        "termination"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    },
+    {
+      "id": "reflex",
+      "roles": [
+        "principal",
+        "factor"
+      ],
+      "expression": "principal * factor",
+      "checks": [
+        "parcel_nature",
+        "specific_incidence",
+        "no_duplication",
+        "period"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    },
+    {
+      "id": "pension",
+      "roles": [
+        "base",
+        "incapacity_factor",
+        "quantity"
+      ],
+      "expression": "base * incapacity_factor * quantity",
+      "checks": [
+        "technical_proof",
+        "liability",
+        "duration",
+        "scenario",
+        "specific_criteria"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    },
+    {
+      "id": "deduction",
+      "roles": [
+        "paid"
+      ],
+      "expression": "-paid",
+      "checks": [
+        "same_payment",
+        "rubric_period",
+        "scope_of_release",
+        "allocation"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    }
+  ]
+}

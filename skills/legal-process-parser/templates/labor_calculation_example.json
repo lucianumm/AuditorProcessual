@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "corpus_revision": "0000000000000000000000000000000000000000000000000000000000000000",
+  "purpose": "estimate",
+  "currency": "BRL",
+  "rounding": "per_item",
+  "legal_parameters_reason": "Exemplo inteiramente sintético de aritmética. Taxas, divisor e reflexo não são regras trabalhistas. Substituir corpus, fatos, normas e pedidos pelas fontes do caso.",
+  "inputs": [
+    {"id":"SAL","value":"2200.00","unit":"money","fact_ids":["F-SAL"],"norm_ids":[],"reason":"Salário fictício do exemplo."},
+    {"id":"DIV","value":"220","unit":"hours","fact_ids":[],"norm_ids":["N-FORMULA"],"reason":"Divisor fictício fornecido para o exercício."},
+    {"id":"H","value":"10","unit":"hours","fact_ids":["F-HORAS"],"norm_ids":[],"reason":"Quantidade fictícia."},
+    {"id":"FATOR","value":"1.50","unit":"factor","fact_ids":[],"norm_ids":["N-FORMULA"],"reason":"Multiplicador do exercício; conferir no caso real."},
+    {"id":"REF","value":"0.20","unit":"factor","fact_ids":[],"norm_ids":["N-REFLEXO"],"reason":"Reflexo fictício, sem incidência legal presumida."},
+    {"id":"PAGO","value":"40.00","unit":"money","fact_ids":["F-PAGO"],"norm_ids":[],"reason":"Pagamento fictício da mesma rubrica."}
+  ],
+  "items": [
+    {"id":"HE1","relationship_id":"REL1","competence":"2026-01","claim_type":"horas_exemplo","segment":"integral","kind":"principal","expression":"sal / div * horas * fator","bindings":{"sal":"SAL","div":"DIV","horas":"H","fator":"FATOR"},"norm_ids":["N-FORMULA"],"request_ids":["R-HE"],"expected_result":"150.00","include_in_total":true,"reason":"Exercício de fórmula com unidades."},
+    {"id":"REF1","relationship_id":"REL1","competence":"2026-01","claim_type":"reflexo_exemplo","segment":"integral","kind":"reflex","expression":"base * fator","bindings":{"base":"HE1","fator":"REF"},"norm_ids":["N-REFLEXO"],"request_ids":["R-REF"],"expected_result":"30.00","include_in_total":true,"reason":"Dependência explícita da parcela principal."},
+    {"id":"AB1","relationship_id":"REL1","competence":"2026-01","claim_type":"abatimento_exemplo","segment":"integral","kind":"deduction","expression":"-pago","bindings":{"pago":"PAGO"},"norm_ids":["N-FORMULA"],"request_ids":["R-HE"],"expected_result":"-40.00","include_in_total":true,"payment_fact_ids":["F-PAGO"],"reason":"Abatimento identificado, uma única vez."}
+  ]
+}

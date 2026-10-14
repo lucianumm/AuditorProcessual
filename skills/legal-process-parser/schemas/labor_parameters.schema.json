@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "inputs"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "inputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "input_id",
+          "basis",
+          "role",
+          "source_value",
+          "transform",
+          "fact_id",
+          "fact_field",
+          "norm_id",
+          "source_record_id",
+          "quote",
+          "expression",
+          "bindings",
+          "period_id",
+          "effective_from",
+          "effective_until",
+          "applicability_analysis"
+        ],
+        "properties": {
+          "input_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "basis": {
+            "enum": [
+              "fact",
+              "legal_rule",
+              "derived"
+            ]
+          },
+          "role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_value": {
+            "type": "string",
+            "maxLength": 40
+          },
+          "transform": {
+            "enum": [
+              "identity",
+              "percent_to_fraction",
+              "percent_to_factor",
+              "minutes_to_hours"
+            ]
+          },
+          "fact_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "fact_field": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "norm_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_record_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "quote": {
+            "type": "string"
+          },
+          "expression": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "bindings": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "period_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "effective_from": {
+            "type": "string",
+            "format": "date"
+          },
+          "effective_until": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "applicability_analysis": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

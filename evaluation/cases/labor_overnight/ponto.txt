@@ -1,0 +1,1 @@
+CASO SINTÉTICO. Entrada em 01/01/2026 às 22:00, offset -03:00. Saída em 02/01/2026 às 06:00, offset -03:00. Intervalo de 60 minutos. Duração física líquida: 420 minutos. Este registro não define adicional, hora reduzida, compensação nem incidência de horas extras.
