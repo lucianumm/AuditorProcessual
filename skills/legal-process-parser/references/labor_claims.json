@@ -1,0 +1,655 @@
+{
+  "schema_version": "1.0",
+  "policy": "Selecionar pretensões pertinentes. O catálogo organiza requisitos de pesquisa, sem fixar direito, parâmetro ou resultado.",
+  "claims": [
+    {
+      "id": "employment",
+      "label": "Vínculo e natureza da relação",
+      "topic_id": "contract",
+      "requirements": [
+        "personal_service",
+        "remuneration",
+        "non_eventuality",
+        "subordination",
+        "employer_identity",
+        "contrary_contract"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "overtime",
+      "label": "Horas extras e intervalos",
+      "topic_id": "working_time",
+      "requirements": [
+        "control_regime",
+        "limits_by_period",
+        "marks_or_specific_account",
+        "intervals",
+        "compensation",
+        "payments",
+        "collective_rule"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "equal_pay",
+      "label": "Equiparação salarial",
+      "topic_id": "pay",
+      "requirements": [
+        "comparator",
+        "same_employer_establishment",
+        "effective_work",
+        "equal_work_conditions",
+        "statutory_exclusions",
+        "difference_by_period"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "salary_differences",
+      "label": "Diferenças remuneratórias",
+      "topic_id": "pay",
+      "requirements": [
+        "salary_rule",
+        "parcel_nature",
+        "salary_history",
+        "period",
+        "payments",
+        "reflexes"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "indirect_termination",
+      "label": "Rescisão indireta",
+      "topic_id": "termination",
+      "requirements": [
+        "employer_conduct",
+        "legal_ground",
+        "seriousness_context",
+        "proof",
+        "contract_continuity",
+        "termination_effects"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "just_cause",
+      "label": "Justa causa",
+      "topic_id": "termination",
+      "requirements": [
+        "specific_conduct",
+        "legal_classification",
+        "proof",
+        "proportionality",
+        "timeliness_context",
+        "discipline_history",
+        "consequences"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "termination_pay",
+      "label": "Verbas rescisórias",
+      "topic_id": "termination",
+      "requirements": [
+        "termination_kind",
+        "dates_projection",
+        "salary_history",
+        "notice_vacation_annual_bonus_fgts",
+        "payments",
+        "penalties_own_requirements"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "employment_guarantee",
+      "label": "Garantia de emprego",
+      "topic_id": "stability",
+      "requirements": [
+        "ground_event",
+        "guarantee_period",
+        "conditions",
+        "termination_context",
+        "proof",
+        "appropriate_remedy"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "third_party_liability",
+      "label": "Responsabilidade de terceiros",
+      "topic_id": "liability",
+      "requirements": [
+        "liable_subject",
+        "legal_basis",
+        "link_and_period",
+        "specific_proof",
+        "public_private_distinction",
+        "phase_limits"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "moral_damage",
+      "label": "Assédio, discriminação e dano extrapatrimonial",
+      "topic_id": "discrimination",
+      "requirements": [
+        "conduct_context",
+        "unlawfulness",
+        "damage_or_specific_presumption",
+        "causal_link",
+        "contrary_evidence",
+        "remedy"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "occupational_damage",
+      "label": "Acidente e doença ocupacional",
+      "topic_id": "occupational_health",
+      "requirements": [
+        "tasks_exposure",
+        "nexus_concausation",
+        "incapacity",
+        "technical_evidence",
+        "liability_basis",
+        "legal_consequences"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "hazard_pay",
+      "label": "Insalubridade e periculosidade",
+      "topic_id": "occupational_health",
+      "requirements": [
+        "activity_agent",
+        "normative_classification",
+        "period",
+        "exposure_method",
+        "protection_effectiveness",
+        "technical_proof",
+        "base_rate_cumulation"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "collective_right",
+      "label": "Direito previsto em instrumento coletivo",
+      "topic_id": "collective",
+      "requirements": [
+        "category_territory_subjects",
+        "instrument_version",
+        "literal_clause",
+        "effective_period",
+        "negotiation_limits",
+        "competing_rules"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "appeal",
+      "label": "Impugnação recursal",
+      "topic_id": "procedure",
+      "requirements": [
+        "act_chapters",
+        "autonomous_grounds",
+        "current_cabimento",
+        "deadline_preparation",
+        "specific_admissibility",
+        "facts_review_limits",
+        "requested_effect"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "enforcement",
+      "label": "Liquidação e execução",
+      "topic_id": "enforcement",
+      "requirements": [
+        "title_commands",
+        "subjects_periods",
+        "criteria",
+        "payments",
+        "items_values",
+        "phase_limits"
+      ],
+      "policy": "Pautas de pesquisa. Requisitos, exceções e versão aplicável são definidos pelas fontes oficiais do caso."
+    },
+    {
+      "id": "offbooks_pay",
+      "label": "Salário extrafolha",
+      "topic_id": "pay",
+      "reference": "labor_details/pay_detail_rules.md",
+      "requirements": [
+        "actual_payment",
+        "payer_identity",
+        "period_frequency",
+        "parcel_nature",
+        "contrary_records",
+        "integration_reflexes"
+      ],
+      "policy": "Roteiro seletivo. Conferir requisitos, exceções, regime, versão histórica, fontes contrárias e consequências nas fontes oficiais do caso."
+    },
+    {
+      "id": "commissions",
+      "label": "Comissões e remuneração variável",
+      "topic_id": "pay",
+      "reference": "labor_details/pay_detail_rules.md",
+      "requirements": [
+        "commission_rule",
+        "sales_production",
+        "earning_period",
+        "payments_returns",
+        "parcel_nature",
+        "reflexes"
+      ],
+      "policy": "Roteiro seletivo. Conferir requisitos, exceções, regime, versão histórica, fontes contrárias e consequências nas fontes oficiais do caso."
+    },
+    {
+      "id": "wage_deductions",
+      "label": "Descontos salariais",
+      "topic_id": "pay",
+      "reference": "labor_details/pay_detail_rules.md",
+      "requirements": [
+        "specific_deduction",
+        "authorization_or_legal_basis",
+        "conduct_proof",
+        "amount_period",
+        "statutory_exceptions",
+        "remedy"
+      ],
+      "policy": "Roteiro seletivo. Conferir requisitos, exceções, regime, versão histórica, fontes contrárias e consequências nas fontes oficiais do caso."
+    },
+    {
+      "id": "vacations",
+      "label": "Férias e suas diferenças",
+      "topic_id": "pay",
+      "reference": "labor_details/pay_detail_rules.md",
+      "requirements": [
+        "accrual_period",
+        "grant_period",
+        "actual_leave",
+        "payment_dates",
+        "salary_base",
+        "specific_consequences"
+      ],
+      "policy": "Roteiro seletivo. Conferir requisitos, exceções, regime, versão histórica, fontes contrárias e consequências nas fontes oficiais do caso."
+    },
+    {
+      "id": "annual_bonus",
+      "label": "Décimo terceiro salário",
+      "topic_id": "pay",
+      "reference": "labor_details/pay_detail_rules.md",
+      "requirements": [
+        "worked_months",
+        "eligible_periods",
+        "salary_variable_base",
+        "payments",
+        "termination_effects",
+        "reflex_overlap"
+      ],
+      "policy": "Roteiro seletivo. Conferir requisitos, exceções, regime, versão histórica, fontes contrárias e consequências nas fontes oficiais do caso."
+    },
+    {
+      "id": "fgts",
+      "label": "Depósitos e diferenças de FGTS",
+      "topic_id": "pay",
+      "reference": "labor_details/pay_detail_rules.md",
+      "requirements": [
+        "relationship_period",
+        "salary_base",
+        "statement_competence",
+        "deposits",
+        "prescription_rule",
+        "termination_effects"
+      ],
+      "policy": "Roteiro seletivo. Conferir requisitos, exceções, regime, versão histórica, fontes contrárias e consequências nas fontes oficiais do caso."
+    },
+    {
+      "id": "termination_penalty",
+      "label": "Multas rescisórias",
+      "topic_id": "termination",
+      "reference": "labor_details/termination_detail_rules.md",
+      "requirements": [
+        "specific_penalty",
+        "termination_dates",
+        "payment_delivery_dates",
+        "controversy_scope",
+        "statutory_exclusions",
+        "current_precedent"
+      ],
+      "policy": "Roteiro seletivo. Conferir requisitos, exceções, regime, versão histórica, fontes contrárias e consequências nas fontes oficiais do caso."
+    },
+    {
+      "id": "maternity_guarantee",
+      "label": "Garantia de emprego ligada à gestação",
+      "topic_id": "stability",
+      "reference": "labor_details/guarantee_detail_rules.md",
+      "requirements": [
+        "ground_event_dates",
+        "contract_modality",
+        "termination_projection",
+        "guarantee_period",
+        "current_precedent",
+        "reinstatement_or_indemnity"
+      ],
+      "policy": "Roteiro seletivo. Conferir requisitos, exceções, regime, versão histórica, fontes contrárias e consequências nas fontes oficiais do caso."
+    },
+    {
+      "id": "accident_guarantee",
+      "label": "Garantia de emprego ligada a acidente ou doença",
+      "topic_id": "stability",
+      "reference": "labor_details/guarantee_detail_rules.md",
+      "requirements": [
+        "occupational_event",
+        "leave_benefit_context",
+        "nexus_exception",
+        "guarantee_period",
+        "termination_context",
+        "appropriate_remedy"
+      ],
+      "policy": "Roteiro seletivo. Conferir requisitos, exceções, regime, versão histórica, fontes contrárias e consequências nas fontes oficiais do caso."
+    },
+    {
+      "id": "union_guarantee",
+      "label": "Garantia ligada à representação sindical",
+      "topic_id": "stability",
+      "reference": "labor_details/guarantee_detail_rules.md",
+      "requirements": [
+        "representation_role",
+        "election_registration_dates",
+        "scope_category",
+        "legal_limits",
+        "termination_context",
+        "specific_remedy"
+      ],
+      "policy": "Roteiro seletivo. Conferir requisitos, exceções, regime, versão histórica, fontes contrárias e consequências nas fontes oficiais do caso."
+    },
+    {
+      "id": "night_work",
+      "label": "Trabalho noturno",
+      "topic_id": "working_time",
+      "reference": "labor_details/working_time_detail_rules.md",
+      "requirements": [
+        "regime_category",
+        "actual_intervals",
+        "night_window_by_period",
+        "reduced_unit",
+        "extension_rule",
+        "payments_reflexes"
+      ],
+      "policy": "Roteiro seletivo. Conferir requisitos, exceções, regime, versão histórica, fontes contrárias e consequências nas fontes oficiais do caso."
+    },
+    {
+      "id": "time_bank",
+      "label": "Banco de horas",
+      "topic_id": "working_time",
+      "reference": "labor_details/working_time_detail_rules.md",
+      "requirements": [
+        "instrument_requirements",
+        "validity_period",
+        "credit_debit_access",
+        "daily_limits",
+        "compensation_deadline",
+        "termination_balance"
+      ],
+      "policy": "Roteiro seletivo. Conferir requisitos, exceções, regime, versão histórica, fontes contrárias e consequências nas fontes oficiais do caso."
+    },
+    {
+      "id": "intrajornada",
+      "label": "Intervalo intrajornada",
+      "topic_id": "working_time",
+      "reference": "labor_details/working_time_detail_rules.md",
+      "requirements": [
+        "actual_work_duration",
+        "actual_break",
+        "regime_period",
+        "collective_clause",
+        "legal_nature_consequence",
+        "payments"
+      ],
+      "policy": "Roteiro seletivo. Conferir requisitos, exceções, regime, versão histórica, fontes contrárias e consequências nas fontes oficiais do caso."
+    },
+    {
+      "id": "interjornada",
+      "label": "Intervalo entre jornadas",
+      "topic_id": "working_time",
+      "reference": "labor_details/working_time_detail_rules.md",
+      "requirements": [
+        "end_start_timestamps",
+        "category_regime",
+        "rest_exception",
+        "specific_consequence",
+        "overlapping_claims",
+        "payments"
+      ],
+      "policy": "Roteiro seletivo. Conferir requisitos, exceções, regime, versão histórica, fontes contrárias e consequências nas fontes oficiais do caso."
+    },
+    {
+      "id": "rest_days",
+      "label": "Repousos e trabalho em domingos ou feriados",
+      "topic_id": "working_time",
+      "reference": "labor_details/working_time_detail_rules.md",
+      "requirements": [
+        "territorial_calendar",
+        "actual_work",
+        "compensatory_rest",
+        "scale_regime",
+        "collective_rule",
+        "payments_no_duplication"
+      ],
+      "policy": "Roteiro seletivo. Conferir requisitos, exceções, regime, versão histórica, fontes contrárias e consequências nas fontes oficiais do caso."
+    },
+    {
+      "id": "salary_substitution",
+      "label": "Salário-substituição",
+      "topic_id": "pay",
+      "reference": "labor_details/career_and_variable_pay_rules.md",
+      "requirements": [
+        "substituted_person",
+        "effective_tasks",
+        "duration_context",
+        "salary_difference",
+        "own_exceptions",
+        "payment_period"
+      ],
+      "policy": "Roteiro de pesquisa por cenário; conferir legislação oficial, requisitos próprios, exceções, tempo, prova contrária e pedido concreto."
+    },
+    {
+      "id": "normative_floor",
+      "label": "Piso normativo",
+      "topic_id": "collective",
+      "reference": "labor_details/career_and_variable_pay_rules.md",
+      "requirements": [
+        "effective_category",
+        "territorial_scope",
+        "instrument_period",
+        "literal_floor_clause",
+        "salary_comparison",
+        "proportionality_rule"
+      ],
+      "policy": "Roteiro de pesquisa por cenário; conferir legislação oficial, requisitos próprios, exceções, tempo, prova contrária e pedido concreto."
+    },
+    {
+      "id": "career_plan",
+      "label": "Promoções e plano de carreira",
+      "topic_id": "pay",
+      "reference": "labor_details/career_and_variable_pay_rules.md",
+      "requirements": [
+        "plan_version",
+        "eligibility",
+        "criteria_by_period",
+        "actual_progression",
+        "obstacles_exceptions",
+        "difference_calculation"
+      ],
+      "policy": "Roteiro de pesquisa por cenário; conferir legislação oficial, requisitos próprios, exceções, tempo, prova contrária e pedido concreto."
+    },
+    {
+      "id": "transfer_allowance",
+      "label": "Transferência e consequências remuneratórias",
+      "topic_id": "pay",
+      "reference": "labor_details/career_and_variable_pay_rules.md",
+      "requirements": [
+        "actual_transfer",
+        "residence_context",
+        "temporary_permanent_context",
+        "consent_authorization",
+        "own_legal_requirements",
+        "payment_base"
+      ],
+      "policy": "Roteiro de pesquisa por cenário; conferir legislação oficial, requisitos próprios, exceções, tempo, prova contrária e pedido concreto."
+    },
+    {
+      "id": "gratuities",
+      "label": "Gorjetas e efeitos remuneratórios",
+      "topic_id": "pay",
+      "reference": "labor_details/career_and_variable_pay_rules.md",
+      "requirements": [
+        "collection_distribution",
+        "employer_records",
+        "period_amount",
+        "parcel_nature",
+        "applicable_collective_rule",
+        "specific_reflexes"
+      ],
+      "policy": "Roteiro de pesquisa por cenário; conferir legislação oficial, requisitos próprios, exceções, tempo, prova contrária e pedido concreto."
+    },
+    {
+      "id": "incentive_awards",
+      "label": "Prêmios e incentivos",
+      "topic_id": "pay",
+      "reference": "labor_details/career_and_variable_pay_rules.md",
+      "requirements": [
+        "performance_rule",
+        "actual_payment",
+        "legal_temporality",
+        "salary_or_indemnity_nature",
+        "contrary_evidence",
+        "specific_effects"
+      ],
+      "policy": "Roteiro de pesquisa por cenário; conferir legislação oficial, requisitos próprios, exceções, tempo, prova contrária e pedido concreto."
+    },
+    {
+      "id": "profit_sharing",
+      "label": "Participação nos lucros ou resultados",
+      "topic_id": "pay",
+      "reference": "labor_details/career_and_variable_pay_rules.md",
+      "requirements": [
+        "instrument_requirements",
+        "criteria_targets",
+        "period_eligibility",
+        "termination_context",
+        "payments",
+        "current_precedents"
+      ],
+      "policy": "Roteiro de pesquisa por cenário; conferir legislação oficial, requisitos próprios, exceções, tempo, prova contrária e pedido concreto."
+    },
+    {
+      "id": "functional_differences",
+      "label": "Desvio, acúmulo e diferenças funcionais",
+      "topic_id": "pay",
+      "reference": "labor_details/career_and_variable_pay_rules.md",
+      "requirements": [
+        "actual_tasks",
+        "contractual_role",
+        "legal_collective_basis",
+        "period_change",
+        "own_exceptions",
+        "specific_remedy"
+      ],
+      "policy": "Roteiro de pesquisa por cenário; conferir legislação oficial, requisitos próprios, exceções, tempo, prova contrária e pedido concreto."
+    },
+    {
+      "id": "cipa_guarantee",
+      "label": "Garantia ligada à CIPA",
+      "topic_id": "stability",
+      "reference": "labor_details/guarantee_detail_rules.md",
+      "requirements": [
+        "representation_status",
+        "election_dates",
+        "mandate_period",
+        "establishment_context",
+        "termination_ground",
+        "appropriate_remedy"
+      ],
+      "policy": "Roteiro de pesquisa por cenário; conferir legislação oficial, requisitos próprios, exceções, tempo, prova contrária e pedido concreto."
+    },
+    {
+      "id": "fixed_term",
+      "label": "Prazo determinado e experiência",
+      "topic_id": "contract",
+      "reference": "labor_details/contract_scenarios_rules.md",
+      "requirements": [
+        "actual_modality",
+        "instrument_period",
+        "extensions",
+        "statutory_requirements",
+        "termination_timing",
+        "specific_consequences"
+      ],
+      "policy": "Roteiro de pesquisa por cenário; conferir legislação oficial, requisitos próprios, exceções, tempo, prova contrária e pedido concreto."
+    },
+    {
+      "id": "apprenticeship",
+      "label": "Aprendizagem",
+      "topic_id": "contract",
+      "reference": "labor_details/contract_scenarios_rules.md",
+      "requirements": [
+        "contract_conditions",
+        "training_context",
+        "age_regime",
+        "duties_hours",
+        "termination_exceptions",
+        "applicable_protection"
+      ],
+      "policy": "Roteiro de pesquisa por cenário; conferir legislação oficial, requisitos próprios, exceções, tempo, prova contrária e pedido concreto."
+    },
+    {
+      "id": "temporary_work",
+      "label": "Trabalho temporário",
+      "topic_id": "contract",
+      "reference": "labor_details/contract_scenarios_rules.md",
+      "requirements": [
+        "agency_user_identity",
+        "temporary_need",
+        "contracts_periods",
+        "extensions_limits",
+        "effective_activity",
+        "own_liability"
+      ],
+      "policy": "Roteiro de pesquisa por cenário; conferir legislação oficial, requisitos próprios, exceções, tempo, prova contrária e pedido concreto."
+    },
+    {
+      "id": "domestic_entitlements",
+      "label": "Pretensões no trabalho doméstico",
+      "topic_id": "contract",
+      "reference": "labor_details/contract_scenarios_rules.md",
+      "requirements": [
+        "household_context",
+        "frequency_personal_work",
+        "specific_regime",
+        "hours_payments",
+        "leave_termination",
+        "special_rules"
+      ],
+      "policy": "Roteiro de pesquisa por cenário; conferir legislação oficial, requisitos próprios, exceções, tempo, prova contrária e pedido concreto."
+    },
+    {
+      "id": "extrajudicial_settlement",
+      "label": "Homologação de acordo extrajudicial",
+      "topic_id": "procedure",
+      "reference": "labor_details/procedure_and_settlement_rules.md",
+      "requirements": [
+        "party_representation",
+        "real_consent",
+        "scope_of_release",
+        "available_rights",
+        "payments_execution",
+        "formal_requirements"
+      ],
+      "policy": "Roteiro de pesquisa por cenário; conferir legislação oficial, requisitos próprios, exceções, tempo, prova contrária e pedido concreto."
+    }
+  ]
+}
