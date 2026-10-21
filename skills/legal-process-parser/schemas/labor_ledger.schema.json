@@ -1,0 +1,374 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Conciliação atribuída de jornada e folha, com regras fornecidas",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "rules",
+    "days",
+    "payroll"
+  ],
+  "properties": {
+    "weekly_criteria": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "relationship_id",
+          "week_start",
+          "rule_ids",
+          "limit_basis",
+          "weekly_limit_minutes",
+          "norm_ids",
+          "reason"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relationship_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "week_start": {
+            "type": "string",
+            "format": "date"
+          },
+          "rule_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "limit_basis": {
+            "enum": [
+              "physical",
+              "legal"
+            ]
+          },
+          "weekly_limit_minutes": {
+            "type": "string",
+            "pattern": "^[0-9]+(\\.[0-9]+)?$"
+          },
+          "norm_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "schema_version": {
+      "const": "1.0"
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "relationship_id",
+          "period_start",
+          "period_end",
+          "norm_ids",
+          "daily_limit_minutes",
+          "weekly_limit_minutes",
+          "week_start",
+          "limit_basis",
+          "night_window",
+          "night_reduction",
+          "reason"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relationship_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "period_start": {
+            "type": "string",
+            "format": "date"
+          },
+          "period_end": {
+            "type": "string",
+            "format": "date"
+          },
+          "norm_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "daily_limit_minutes": {
+            "type": "string",
+            "pattern": "^[0-9]+(\\.[0-9]+)?$"
+          },
+          "weekly_limit_minutes": {
+            "type": "string",
+            "pattern": "^[0-9]+(\\.[0-9]+)?$"
+          },
+          "week_start": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 6
+          },
+          "limit_basis": {
+            "enum": [
+              "physical",
+              "legal"
+            ]
+          },
+          "night_window": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "required": [
+                  "start",
+                  "end",
+                  "unit_minutes"
+                ],
+                "properties": {
+                  "start": {
+                    "type": "string",
+                    "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$"
+                  },
+                  "end": {
+                    "type": "string",
+                    "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$"
+                  },
+                  "unit_minutes": {
+                    "type": "string",
+                    "pattern": "^[0-9]+(\\.[0-9]+)?$"
+                  },
+                  "extension": {
+                    "enum": [
+                      "none",
+                      "after_full_window"
+                    ],
+                    "description": "after_full_window: horas após o fim da janela contam como noturnas quando a janela inteira foi trabalhada no mesmo intervalo (critério fornecido)."
+                  }
+                },
+                "additionalProperties": false
+              }
+            ]
+          },
+          "night_reduction": {
+            "type": "boolean"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "workplace_utc_offset": {
+            "type": "string",
+            "pattern": "^[+-](0[0-9]|1[0-4]):[0-5][0-9]$",
+            "description": "Offset do relógio do local de trabalho; janela noturna e data do turno seguem esse relógio."
+          },
+          "intrajornada": {
+            "type": "object",
+            "required": [
+              "threshold_minutes",
+              "min_break_minutes"
+            ],
+            "properties": {
+              "threshold_minutes": {
+                "type": "string",
+                "pattern": "^[0-9]+(\\.[0-9]+)?$"
+              },
+              "min_break_minutes": {
+                "type": "string",
+                "pattern": "^[0-9]+(\\.[0-9]+)?$"
+              }
+            },
+            "additionalProperties": false,
+            "description": "Parâmetros fornecidos e fundamentados; o efeito jurídico do intervalo suprimido depende do período."
+          },
+          "interjornada_min_minutes": {
+            "type": "string",
+            "pattern": "^[0-9]+(\\.[0-9]+)?$",
+            "description": "Descanso mínimo fornecido entre jornadas."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "days": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "relationship_id",
+          "date",
+          "day_status",
+          "origin",
+          "fact_ids",
+          "intervals",
+          "reason"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relationship_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "day_status": {
+            "enum": [
+              "worked",
+              "rest_day_worked",
+              "rest",
+              "leave",
+              "unknown"
+            ]
+          },
+          "origin": {
+            "enum": [
+              "document",
+              "client"
+            ]
+          },
+          "fact_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "intervals": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "start",
+                "end"
+              ],
+              "properties": {
+                "start": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "end": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "payroll": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "relationship_id",
+          "competence",
+          "rubric",
+          "kind",
+          "payment_id",
+          "amount",
+          "origin",
+          "fact_ids",
+          "reason"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relationship_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "competence": {
+            "type": "string",
+            "pattern": "^\\d{4}-(0[1-9]|1[0-2])$"
+          },
+          "rubric": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "salary_parameter",
+              "due",
+              "payment",
+              "payment_confirmation"
+            ]
+          },
+          "payment_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "amount": {
+            "type": "string",
+            "pattern": "^[0-9]+(\\.[0-9]+)?$"
+          },
+          "origin": {
+            "enum": [
+              "document",
+              "client"
+            ]
+          },
+          "fact_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

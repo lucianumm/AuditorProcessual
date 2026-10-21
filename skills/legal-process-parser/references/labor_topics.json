@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "policy": "Selecionar questões pertinentes ao pedido e aos fatos. Checks são pautas de conferência; não presumem direito, regime ou cabimento.",
+  "topics": [
+    {"id":"contract","label":"Contrato, vínculo e regime","specialization_id":"trabalho_relacoes","reference":"labor_core_rules.md","checks":["natureza_relacao","sujeitos_atividade","marcos_contrato","regime_temporal"]},
+    {"id":"liability","label":"Responsabilidade, grupo, sucessão e terceirização","specialization_id":"trabalho_responsabilidade","reference":"labor_core_rules.md","checks":["sujeitos_periodos","fundamento_responsabilidade","prova_nexo_responsavel","limites_rito"]},
+    {"id":"working_time","label":"Jornada, intervalos e compensação","specialization_id":"trabalho_jornada","reference":"labor_evidence_rules.md","checks":["regime_jornada","registros_por_dia","intervalos_compensacao","parcelas_pagas","norma_coletiva"]},
+    {"id":"pay","label":"Remuneração e diferenças","specialization_id":"trabalho_remuneracao","reference":"labor_calculation_rules.md","checks":["evolucao_salarial","natureza_parcelas","requisitos_diferencas","pagamentos_reflexos"]},
+    {"id":"termination","label":"Ruptura e verbas rescisórias","specialization_id":"trabalho_rescisao","reference":"labor_core_rules.md","checks":["modalidade_ruptura","marco_projecao","pagamentos_rescisao","prescricao"]},
+    {"id":"stability","label":"Garantias de emprego","specialization_id":"trabalho_garantias","reference":"labor_core_rules.md","checks":["fato_gerador","periodo_garantia","prova_requisitos","reintegracao_indenizacao"]},
+    {"id":"collective","label":"Norma coletiva e enquadramento sindical","specialization_id":"trabalho_coletivo","reference":"labor_collective_rules.md","checks":["enquadramento_sindical","ambito_instrumento","vigencia_aditivos","clausula_limites"]},
+    {"id":"occupational_health","label":"Saúde, exposição e perícia","specialization_id":"trabalho_saude","reference":"labor_health_rules.md","checks":["atividade_exposicao","nexo_concausa","incapacidade_dano","prova_tecnica","norma_sst_temporal"]},
+    {"id":"discrimination","label":"Assédio, discriminação e reparação","specialization_id":"trabalho_discriminacao","reference":"labor_health_rules.md","checks":["condutas_contexto","provas_contrarias","nexo_consequencias","protecao_reparacao"]},
+    {"id":"procedure","label":"Peça, rito, recurso e instrução","specialization_id":"trabalho_procedimento","reference":"labor_procedure_rules.md","checks":["ato_objetivo","cabimento_rito","pressupostos_prazo","fundamentos_impugnacao"]},
+    {"id":"enforcement","label":"Liquidação e execução","specialization_id":"trabalho_execucao","reference":"labor_procedure_rules.md","checks":["titulo_limites","itens_valores","garantia_materias","pagamentos_atualizacao"]}
+  ]
+}

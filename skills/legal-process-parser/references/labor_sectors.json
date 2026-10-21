@@ -1,0 +1,517 @@
+{
+  "schema_version": "1.0",
+  "policy": "Selecionar setores pelos fatos e confirmar o regime. Carregar apenas o guia selecionado.",
+  "sectors": [
+    {
+      "id": "banking",
+      "label": "Bancários e financiários",
+      "topic_ids": [
+        "contract",
+        "working_time",
+        "pay",
+        "collective",
+        "occupational_health"
+      ],
+      "claim_ids": [
+        "overtime",
+        "trust_position",
+        "employment",
+        "economic_group",
+        "normative_floor",
+        "equal_pay",
+        "salary_differences",
+        "functional_differences",
+        "rest_days",
+        "profit_sharing",
+        "collective_right",
+        "moral_damage",
+        "occupational_damage"
+      ],
+      "reference": "labor_sectors/banking.md"
+    },
+    {
+      "id": "domestic",
+      "label": "Trabalho doméstico",
+      "topic_ids": [
+        "contract",
+        "working_time",
+        "pay",
+        "termination",
+        "stability"
+      ],
+      "claim_ids": [
+        "employment",
+        "domestic_entitlements",
+        "overtime",
+        "intrajornada",
+        "night_work",
+        "shift_12x36",
+        "fgts",
+        "termination_penalty",
+        "wage_deductions",
+        "wage_in_kind",
+        "termination_pay",
+        "unemployment_insurance",
+        "maternity_guarantee",
+        "slave_like_labor"
+      ],
+      "reference": "labor_sectors/domestic.md"
+    },
+    {
+      "id": "rural",
+      "label": "Trabalho rural",
+      "topic_ids": [
+        "contract",
+        "working_time",
+        "pay",
+        "occupational_health",
+        "liability"
+      ],
+      "claim_ids": [
+        "employment",
+        "commute_time",
+        "overtime",
+        "intrajornada",
+        "night_work",
+        "fixed_term",
+        "wage_in_kind",
+        "wage_deductions",
+        "hazard_pay",
+        "occupational_damage",
+        "slave_like_labor",
+        "third_party_liability",
+        "collective_right"
+      ],
+      "reference": "labor_sectors/rural.md"
+    },
+    {
+      "id": "drivers",
+      "label": "Motoristas profissionais",
+      "topic_ids": [
+        "working_time",
+        "pay",
+        "occupational_health",
+        "collective"
+      ],
+      "claim_ids": [
+        "overtime",
+        "time_at_disposal",
+        "interjornada",
+        "rest_days",
+        "intrajornada",
+        "hazard_pay",
+        "commissions",
+        "wage_deductions",
+        "occupational_damage",
+        "moral_damage",
+        "collective_right"
+      ],
+      "reference": "labor_sectors/drivers.md"
+    },
+    {
+      "id": "healthcare",
+      "label": "Profissionais da saúde",
+      "topic_ids": [
+        "contract",
+        "working_time",
+        "pay",
+        "occupational_health",
+        "collective"
+      ],
+      "claim_ids": [
+        "overtime",
+        "shift_12x36",
+        "on_call",
+        "night_work",
+        "intrajornada",
+        "hazard_pay",
+        "normative_floor",
+        "salary_differences",
+        "occupational_damage",
+        "accident_guarantee",
+        "employment",
+        "moral_damage"
+      ],
+      "reference": "labor_sectors/healthcare.md"
+    },
+    {
+      "id": "security",
+      "label": "Vigilância e segurança privada",
+      "topic_ids": [
+        "contract",
+        "working_time",
+        "occupational_health",
+        "liability"
+      ],
+      "claim_ids": [
+        "hazard_pay",
+        "overtime",
+        "shift_12x36",
+        "intrajornada",
+        "night_work",
+        "third_party_liability",
+        "occupational_damage",
+        "moral_damage",
+        "time_at_disposal",
+        "succession",
+        "termination_pay"
+      ],
+      "reference": "labor_sectors/security.md"
+    },
+    {
+      "id": "education",
+      "label": "Ensino e docentes",
+      "topic_ids": [
+        "working_time",
+        "pay",
+        "termination",
+        "collective"
+      ],
+      "claim_ids": [
+        "overtime",
+        "salary_differences",
+        "indirect_termination",
+        "termination_pay",
+        "notice_period",
+        "rest_days",
+        "normative_floor",
+        "collective_right",
+        "employment_guarantee",
+        "telework",
+        "occupational_damage"
+      ],
+      "reference": "labor_sectors/education.md"
+    },
+    {
+      "id": "telework",
+      "label": "Teletrabalho",
+      "topic_ids": [
+        "contract",
+        "working_time",
+        "pay",
+        "occupational_health",
+        "discrimination"
+      ],
+      "claim_ids": [
+        "telework",
+        "overtime",
+        "on_call",
+        "wage_in_kind",
+        "privacy_monitoring",
+        "moral_damage",
+        "occupational_damage",
+        "discriminatory_dismissal"
+      ],
+      "reference": "labor_sectors/telework.md"
+    },
+    {
+      "id": "platforms",
+      "label": "Plataformas digitais e PJ",
+      "topic_ids": [
+        "contract",
+        "liability",
+        "working_time",
+        "occupational_health",
+        "procedure"
+      ],
+      "claim_ids": [
+        "platform_work",
+        "employment",
+        "jurisdiction_carveouts",
+        "overtime",
+        "hazard_pay",
+        "occupational_damage",
+        "moral_damage",
+        "fgts",
+        "termination_pay",
+        "third_party_liability"
+      ],
+      "reference": "labor_sectors/platforms.md"
+    },
+    {
+      "id": "public_employment",
+      "label": "Emprego público e tomador público",
+      "topic_ids": [
+        "contract",
+        "pay",
+        "termination",
+        "liability",
+        "procedure",
+        "enforcement"
+      ],
+      "claim_ids": [
+        "null_public_contract",
+        "fgts",
+        "state_company_dismissal",
+        "career_plan",
+        "salary_differences",
+        "functional_differences",
+        "third_party_liability",
+        "voluntary_dismissal_plan",
+        "jurisdiction_carveouts",
+        "enforcement"
+      ],
+      "reference": "labor_sectors/public_employment.md"
+    },
+    {
+      "id": "commerce",
+      "label": "Comércio e serviços",
+      "topic_ids": [
+        "working_time",
+        "pay",
+        "collective",
+        "occupational_health"
+      ],
+      "claim_ids": [
+        "rest_days",
+        "overtime",
+        "commissions",
+        "wage_deductions",
+        "gratuities",
+        "privacy_monitoring",
+        "moral_damage",
+        "functional_differences",
+        "normative_floor",
+        "salary_differences",
+        "incentive_awards",
+        "collective_right"
+      ],
+      "reference": "labor_sectors/commerce.md"
+    },
+    {
+      "id": "telemarketing",
+      "label": "Teleatendimento e telemarketing",
+      "topic_ids": [
+        "contract",
+        "working_time",
+        "occupational_health",
+        "liability"
+      ],
+      "claim_ids": [
+        "overtime",
+        "intrajornada",
+        "moral_damage",
+        "privacy_monitoring",
+        "occupational_damage",
+        "accident_guarantee",
+        "third_party_liability",
+        "employment",
+        "rest_days",
+        "time_at_disposal",
+        "collective_right"
+      ],
+      "reference": "labor_sectors/telemarketing.md"
+    },
+    {
+      "id": "meatpacking",
+      "label": "Frigoríficos",
+      "topic_ids": [
+        "working_time",
+        "pay",
+        "occupational_health",
+        "collective"
+      ],
+      "claim_ids": [
+        "intrajornada",
+        "overtime",
+        "time_at_disposal",
+        "hazard_pay",
+        "occupational_damage",
+        "accident_guarantee",
+        "aesthetic_material_damage",
+        "moral_damage",
+        "shift_work",
+        "night_work",
+        "collective_right"
+      ],
+      "reference": "labor_sectors/meatpacking.md"
+    },
+    {
+      "id": "construction",
+      "label": "Construção civil",
+      "topic_ids": [
+        "contract",
+        "liability",
+        "working_time",
+        "occupational_health"
+      ],
+      "claim_ids": [
+        "third_party_liability",
+        "occupational_damage",
+        "accident_guarantee",
+        "aesthetic_material_damage",
+        "commute_time",
+        "overtime",
+        "hazard_pay",
+        "employment",
+        "offbooks_pay",
+        "slave_like_labor",
+        "transfer_allowance"
+      ],
+      "reference": "labor_sectors/construction.md"
+    },
+    {
+      "id": "oil_offshore",
+      "label": "Petroleiros e offshore",
+      "topic_ids": [
+        "working_time",
+        "pay",
+        "occupational_health",
+        "collective",
+        "termination"
+      ],
+      "claim_ids": [
+        "overtime",
+        "shift_work",
+        "on_call",
+        "intrajornada",
+        "rest_days",
+        "interjornada",
+        "hazard_pay",
+        "salary_differences",
+        "collective_right",
+        "third_party_liability",
+        "occupational_damage",
+        "state_company_dismissal"
+      ],
+      "reference": "labor_sectors/oil_offshore.md"
+    },
+    {
+      "id": "ports",
+      "label": "Portuários e OGMO",
+      "topic_ids": [
+        "working_time",
+        "pay",
+        "liability",
+        "occupational_health",
+        "procedure"
+      ],
+      "claim_ids": [
+        "hazard_pay",
+        "equal_pay",
+        "interjornada",
+        "overtime",
+        "salary_differences",
+        "third_party_liability",
+        "occupational_damage",
+        "accident_guarantee",
+        "vacations",
+        "annual_bonus",
+        "fgts",
+        "prescription"
+      ],
+      "reference": "labor_sectors/ports.md"
+    },
+    {
+      "id": "aviation",
+      "label": "Aeronautas e aeroviários",
+      "topic_ids": [
+        "working_time",
+        "pay",
+        "occupational_health",
+        "collective"
+      ],
+      "claim_ids": [
+        "overtime",
+        "on_call",
+        "rest_days",
+        "night_work",
+        "salary_differences",
+        "hazard_pay",
+        "occupational_damage",
+        "transfer_allowance",
+        "collective_right"
+      ],
+      "reference": "labor_sectors/aviation.md"
+    },
+    {
+      "id": "journalism",
+      "label": "Jornalistas",
+      "topic_ids": [
+        "contract",
+        "working_time",
+        "pay"
+      ],
+      "claim_ids": [
+        "overtime",
+        "employment",
+        "trust_position",
+        "image_use",
+        "normative_floor",
+        "night_work",
+        "rest_days",
+        "moral_damage",
+        "jurisdiction_carveouts"
+      ],
+      "reference": "labor_sectors/journalism.md"
+    },
+    {
+      "id": "employed_lawyers",
+      "label": "Advogado empregado",
+      "topic_ids": [
+        "contract",
+        "working_time",
+        "pay"
+      ],
+      "claim_ids": [
+        "overtime",
+        "employment",
+        "salary_differences",
+        "normative_floor",
+        "trust_position",
+        "moral_damage",
+        "prescription"
+      ],
+      "reference": "labor_sectors/employed_lawyers.md"
+    },
+    {
+      "id": "athletes",
+      "label": "Atletas profissionais",
+      "topic_ids": [
+        "contract",
+        "pay",
+        "termination",
+        "occupational_health"
+      ],
+      "claim_ids": [
+        "termination_penalty",
+        "indirect_termination",
+        "image_use",
+        "offbooks_pay",
+        "fixed_term",
+        "fgts",
+        "vacations",
+        "annual_bonus",
+        "occupational_damage",
+        "accident_guarantee",
+        "incentive_awards"
+      ],
+      "reference": "labor_sectors/athletes.md"
+    },
+    {
+      "id": "cooperatives",
+      "label": "Cooperativas de trabalho",
+      "topic_ids": [
+        "contract",
+        "liability",
+        "pay",
+        "procedure"
+      ],
+      "claim_ids": [
+        "employment",
+        "third_party_liability",
+        "termination_pay",
+        "fgts",
+        "vacations",
+        "annual_bonus",
+        "normative_floor",
+        "rest_days",
+        "night_work",
+        "hazard_pay",
+        "collective_moral_damage",
+        "jurisdiction_carveouts"
+      ],
+      "reference": "labor_sectors/cooperatives.md"
+    }
+  ]
+}

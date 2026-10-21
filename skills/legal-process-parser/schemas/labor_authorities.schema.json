@@ -1,0 +1,204 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Autoridades trabalhistas candidatas com registro da conferência do catálogo",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "catalogued_on",
+    "policy",
+    "status_meaning",
+    "authorities",
+    "temporal_markers"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "catalogued_on": {
+      "type": "string",
+      "format": "date"
+    },
+    "policy": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status_meaning": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "authorities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "kind",
+          "label",
+          "subject",
+          "official_url",
+          "access_tier",
+          "status",
+          "status_note",
+          "verified"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "kind": {
+            "enum": [
+              "constitution",
+              "constitutional_amendment",
+              "statute",
+              "sumula_tst",
+              "oj_tst",
+              "in_tst",
+              "irr_tst",
+              "sdi1_tst",
+              "resolution_tst",
+              "tema_stf",
+              "adc",
+              "adi",
+              "adpf",
+              "sumula_vinculante"
+            ]
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "provision": {
+            "type": "string"
+          },
+          "law": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string",
+            "minLength": 1
+          },
+          "official_url": {
+            "type": "string",
+            "pattern": "^https://"
+          },
+          "access_tier": {
+            "enum": [
+              "http_capture",
+              "browser_only",
+              "user_upload"
+            ]
+          },
+          "status": {
+            "enum": [
+              "localizado_no_texto_oficial",
+              "revogado",
+              "vigente",
+              "alterada",
+              "cancelada",
+              "tese_firmada",
+              "julgado_com_modulacao",
+              "merito_pendente"
+            ]
+          },
+          "status_note": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "decided_on": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "recent_wording_markers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "verified": {
+            "type": "object",
+            "required": [
+              "method",
+              "on"
+            ],
+            "properties": {
+              "method": {
+                "enum": [
+                  "planalto_http_capture",
+                  "web_search_official_and_secondary"
+                ]
+              },
+              "on": {
+                "type": "string",
+                "format": "date"
+              },
+              "located": {
+                "type": "boolean"
+              },
+              "confidence": {
+                "enum": [
+                  "alta",
+                  "media",
+                  "baixa"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "temporal_markers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "date",
+          "effect",
+          "authority_ids",
+          "confidence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "effect": {
+            "type": "string",
+            "minLength": 1
+          },
+          "authority_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "confidence": {
+            "enum": [
+              "alta",
+              "media",
+              "baixa"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

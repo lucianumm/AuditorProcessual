@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "case_id": "contradiction_paraphrase",
+  "synthetic": true,
+  "source_files": [
+    {"file": "recibo.txt"},
+    {"file": "extrato.txt"}
+  ],
+  "expected": {
+    "facts": [
+      {"id": "G-RECIBO", "text_any": ["parcela de março de 2025 foi quitada"],
+       "source": {"file": "recibo.txt", "page": 1}},
+      {"id": "G-EXTRATO", "text_any": ["parcela de março de 2025 permanece em aberto"],
+       "source": {"file": "extrato.txt", "page": 1}}
+    ],
+    "issues": [
+      {"id": "G-SITUACAO-PARCELA", "text_any": ["situação da parcela de março"],
+       "analysis_status": "qualified"}
+    ],
+    "contradictions": [
+      {"id": "G-DIVERGENCIA-PAGAMENTO", "source_a": {"file": "recibo.txt", "page": 1},
+       "source_b": {"file": "extrato.txt", "page": 1}}
+    ],
+    "execution_status": "partial"
+  }
+}
