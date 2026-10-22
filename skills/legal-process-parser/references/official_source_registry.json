@@ -1,0 +1,362 @@
+{
+  "schema_version": "1.0",
+  "observed_on": "2026-10-21",
+  "policy": "Registro de portais oficiais por tipo de fonte e via de acesso. O comportamento observado orienta a rota; cada consulta registra o resultado real. Portal bloqueado não autoriza citação de memória: usar navegador da IA, arquivo oficial enviado pelo usuário ou delimitar a questão.",
+  "access_tiers": {
+    "http_capture": "Captura local por research_sources.py/response_research.py consult; bytes e texto preservados e reextraídos na conferência.",
+    "browser_only": "O portal recusa clientes automatizados (desafio WAF, 403 ou página de verificação). Consultar pelo navegador da IA (browser_observation, não atestado) ou por arquivo oficial enviado; registrar tentativa frustrada com response_research.py unavailable.",
+    "user_upload": "PDF/HTML oficial salvo e enviado pelo usuário; conferir origem, data e integridade antes de tratar como fonte oficial."
+  },
+  "portals": [
+    {
+      "id": "planalto",
+      "label": "Presidência da República — legislação compilada",
+      "hosts": [
+        "planalto.gov.br",
+        "www.planalto.gov.br"
+      ],
+      "source_kinds": [
+        "constitution",
+        "statute",
+        "decree",
+        "provisional_measure"
+      ],
+      "access_tier": "http_capture",
+      "observed_behavior": "HTTP 200; HTML cp1252 com marcas '(Revogado pela...)', '(Redação dada pela...)', '(Incluído pela...)', '(Vigência)', '(Vide ADI...)'. Rejeita User-Agent que não comece por 'Mozilla/5.0 (compatible; ...)'.",
+      "url_templates": {
+        "cf": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
+        "clt": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "cc": "https://www.planalto.gov.br/ccivil_03/leis/2002/l10406compilada.htm",
+        "cpc": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105compilada.htm",
+        "lei_8213": "https://www.planalto.gov.br/ccivil_03/leis/l8213compilado.htm",
+        "lei_8036": "https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm",
+        "lc_150": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm",
+        "lei_13467": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm",
+        "lei_14905": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14905.htm"
+      },
+      "verification": "Localizar artigo/§ no texto compilado, conferir trecho dentro do dispositivo e ler as marcas de versão (citation_check.py)."
+    },
+    {
+      "id": "tst",
+      "label": "Tribunal Superior do Trabalho — súmulas, OJs, PNs, precedentes qualificados",
+      "hosts": [
+        "tst.jus.br",
+        "www.tst.jus.br",
+        "jurisprudencia.tst.jus.br"
+      ],
+      "source_kinds": [
+        "sumula_tst",
+        "oj_tst",
+        "pn_tst",
+        "irr_tst",
+        "iac_tst",
+        "in_tst"
+      ],
+      "access_tier": "browser_only",
+      "observed_behavior": "HTTP 202 com corpo vazio e cabeçalho x-amzn-waf-action: challenge para clientes automatizados; jurisprudencia.tst.jus.br é aplicação JavaScript.",
+      "url_templates": {
+        "livro_sumulas": "https://www.tst.jus.br/livro-de-sumulas-ojs-e-pns",
+        "precedentes_qualificados": "https://www.tst.jus.br/indice-tematico-precedentes-qualificados-tst",
+        "indice_stf_tst": "https://www.tst.jus.br/indice-tematico-precedentes-trabalhistas-stf-tst",
+        "pesquisa": "https://jurisprudencia.tst.jus.br/"
+      },
+      "verification": "Copiar a linha de situação (redação, resolução, cancelamento, DEJT) junto do texto da súmula/OJ. A Res. 225/2025 cancelou súmulas e OJs superadas pela Lei 13.467/2017: conferir sempre a situação atual."
+    },
+    {
+      "id": "juslaboris",
+      "label": "JusLaboris — biblioteca digital do TST (resoluções, atos, informativos)",
+      "hosts": [
+        "juslaboris.tst.jus.br"
+      ],
+      "source_kinds": [
+        "resolution_tst",
+        "in_tst",
+        "informativo_tst"
+      ],
+      "access_tier": "browser_only",
+      "observed_behavior": "HTTP 200 na primeira consulta de 21/10/2026 e 403 nas seguintes, para qualquer cliente automatizado (bloqueio intermitente); tratar como navegador.",
+      "url_templates": {
+        "res_225_2025": "https://juslaboris.tst.jus.br/handle/20.500.12178/251919"
+      },
+      "verification": "Usar para conferir resolução que edita, altera ou cancela súmula/OJ e instruções normativas."
+    },
+    {
+      "id": "stf",
+      "label": "Supremo Tribunal Federal — repercussão geral, controle concentrado, súmulas vinculantes",
+      "hosts": [
+        "portal.stf.jus.br",
+        "stf.jus.br",
+        "www.stf.jus.br",
+        "jurisprudencia.stf.jus.br",
+        "noticias.stf.jus.br"
+      ],
+      "source_kinds": [
+        "tema_stf",
+        "adi",
+        "adc",
+        "adpf",
+        "sumula_vinculante",
+        "sumula_stf"
+      ],
+      "access_tier": "browser_only",
+      "observed_behavior": "HTTP 403 para clientes automatizados em portal.stf.jus.br; jurisprudencia.stf.jus.br é aplicação JavaScript.",
+      "url_templates": {
+        "tema": "https://portal.stf.jus.br/jurisprudenciaRepercussao/tema.asp?num={number}",
+        "processo": "https://portal.stf.jus.br/processos/listarProcessos.asp?classe={class}&numeroProcesso={number}"
+      },
+      "verification": "Registrar tese, data do julgamento, situação (mérito pendente, tese firmada, embargos, trânsito) e modulação. Tema pendente ou com suspensão nacional muda a estratégia."
+    },
+    {
+      "id": "stj",
+      "label": "Superior Tribunal de Justiça",
+      "hosts": [
+        "processo.stj.jus.br",
+        "scon.stj.jus.br",
+        "stj.jus.br",
+        "www.stj.jus.br"
+      ],
+      "source_kinds": [
+        "tema_stj",
+        "sumula_stj"
+      ],
+      "access_tier": "browser_only",
+      "observed_behavior": "Páginas iniciais respondem 200, mas a pesquisa depende de formulário/JavaScript.",
+      "url_templates": {
+        "pesquisa": "https://processo.stj.jus.br/jurisprudencia/"
+      },
+      "verification": "Usar apenas quando a questão envolver competência comum, consumidor ou civil conexo."
+    },
+    {
+      "id": "trt",
+      "label": "Tribunais Regionais do Trabalho",
+      "hosts_pattern": "trt{1-24}.jus.br",
+      "source_kinds": [
+        "sumula_trt",
+        "tese_prevalecente",
+        "irdr_trt",
+        "calendario_forense"
+      ],
+      "access_tier": "browser_only",
+      "observed_behavior": "Redirecionamentos e portais variam por tribunal; tratar como navegador até observar captura íntegra.",
+      "url_templates": {
+        "portal": "https://www.trt{n}.jus.br/"
+      },
+      "verification": "Conferir súmulas/teses do TRT competente, feriados e suspensões de prazo pelo ato do próprio tribunal."
+    },
+    {
+      "id": "mte",
+      "label": "Ministério do Trabalho e Emprego — NRs, normas e serviços",
+      "hosts": [
+        "gov.br",
+        "www.gov.br"
+      ],
+      "path_prefix": "/trabalho-e-emprego/",
+      "source_kinds": [
+        "nr",
+        "portaria_mte",
+        "administrative_act"
+      ],
+      "access_tier": "http_capture",
+      "observed_behavior": "HTTP 200 nas páginas de NRs vigentes.",
+      "url_templates": {
+        "nrs_vigentes": "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes",
+        "nr_1": "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/nr-1"
+      },
+      "verification": "Conferir a portaria e a redação vigente em cada período de exposição; anexos e itens podem ter vigência própria."
+    },
+    {
+      "id": "instrumentos_coletivos",
+      "label": "Consulta de instrumentos coletivos (Mediador/MTE)",
+      "hosts": [
+        "gov.br",
+        "www.gov.br"
+      ],
+      "source_kinds": [
+        "collective_instrument"
+      ],
+      "access_tier": "http_capture",
+      "observed_behavior": "Página de serviço gov.br responde 200 e orienta a consulta; a busca ocorre no sistema Mediador.",
+      "url_templates": {
+        "servico": "https://www.gov.br/pt-br/servicos/consultar-instrumento-coletivo-de-trabalho"
+      },
+      "verification": "Pesquisar por categoria, CNPJ, território e vigência; resultado vazio não prova inexistência. Conferir assinatura, registro e aditivos.",
+      "path_prefix": "/pt-br/servicos/consultar-instrumento-coletivo"
+    },
+    {
+      "id": "mediador",
+      "label": "Sistema Mediador (MTE) — registro e consulta de convenções e acordos",
+      "hosts": [
+        "mediador.trabalho.gov.br"
+      ],
+      "source_kinds": [
+        "collective_instrument"
+      ],
+      "access_tier": "browser_only",
+      "observed_behavior": "HTTP 403 para clientes automatizados.",
+      "url_templates": {
+        "sistema": "https://mediador.trabalho.gov.br/sistemas/mediador/"
+      },
+      "verification": "Pesquisar por categoria, CNPJ, território e vigência; resultado vazio não prova inexistência. Conferir assinatura, registro e aditivos."
+    },
+    {
+      "id": "dou",
+      "label": "Diário Oficial da União",
+      "hosts": [
+        "in.gov.br",
+        "www.in.gov.br"
+      ],
+      "source_kinds": [
+        "publication",
+        "portaria_mte",
+        "resolution"
+      ],
+      "access_tier": "http_capture",
+      "observed_behavior": "Páginas de serviço respondem 200 com redirecionamento; clientes automatizados podem receber 403 conforme a rota. Registrar o resultado real.",
+      "url_templates": {
+        "servico": "https://www.in.gov.br/servicos/diario-oficial-da-uniao"
+      },
+      "verification": "Usar para data de publicação e vigência de ato normativo."
+    },
+    {
+      "id": "lexml_normas",
+      "label": "LexML / normas.leg.br — identificação e versões de normas",
+      "hosts": [
+        "lexml.gov.br",
+        "www.lexml.gov.br",
+        "normas.leg.br",
+        "www.normas.leg.br"
+      ],
+      "source_kinds": [
+        "statute_versions"
+      ],
+      "access_tier": "browser_only",
+      "observed_behavior": "LexML devolve página 'Verificação de segurança — Senado'; normas.leg.br é aplicação JavaScript.",
+      "url_templates": {
+        "urn": "https://normas.leg.br/?urn={urn}"
+      },
+      "verification": "Útil para localizar versões históricas; o texto aplicado continua conferido na fonte oficial da norma."
+    },
+    {
+      "id": "bcb_sgs",
+      "label": "Banco Central — Sistema Gerenciador de Séries Temporais (SGS)",
+      "hosts": [
+        "api.bcb.gov.br"
+      ],
+      "source_kinds": [
+        "economic_index"
+      ],
+      "access_tier": "http_capture",
+      "observed_behavior": "HTTP 200 application/json.",
+      "url_templates": {
+        "serie": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.{series}/dados?formato=json&dataInicial={start}&dataFinal={end}"
+      },
+      "series": {
+        "4390": "SELIC acumulada no mês (% a.m.)",
+        "11": "SELIC diária (% a.d.)",
+        "433": "IPCA (% a.m.) — conferir disponibilidade da série na API",
+        "10764": "IPCA-E (% a.m.)"
+      },
+      "verification": "Capturar a série com recibo para cada período; registrar código, intervalo e data de acesso. Não embutir tabelas no repositório."
+    },
+    {
+      "id": "cnj",
+      "label": "Conselho Nacional de Justiça",
+      "hosts": [
+        "cnj.jus.br",
+        "www.cnj.jus.br"
+      ],
+      "source_kinds": [
+        "resolution_cnj",
+        "precedent_bank"
+      ],
+      "access_tier": "http_capture",
+      "observed_behavior": "HTTP 200.",
+      "url_templates": {
+        "portal": "https://www.cnj.jus.br/"
+      },
+      "verification": "Resoluções e painéis; precedentes qualificados continuam conferidos no tribunal de origem."
+    },
+    {
+      "id": "csjt",
+      "label": "Conselho Superior da Justiça do Trabalho (PJe-Calc, tabelas)",
+      "hosts": [
+        "csjt.jus.br",
+        "www.csjt.jus.br"
+      ],
+      "source_kinds": [
+        "calculation_tables",
+        "resolution_csjt"
+      ],
+      "access_tier": "browser_only",
+      "observed_behavior": "HTTP 202 com desafio anti-robô.",
+      "url_templates": {
+        "portal": "https://www.csjt.jus.br/"
+      },
+      "verification": "Tabelas e versões do PJe-Calc exigem arquivo/versão identificados."
+    },
+    {
+      "id": "oit",
+      "label": "OIT — NORMLEX",
+      "hosts": [
+        "normlex.ilo.org",
+        "www.ilo.org",
+        "ilo.org"
+      ],
+      "source_kinds": [
+        "international_instrument"
+      ],
+      "access_tier": "browser_only",
+      "observed_behavior": "HTTP 403 para clientes automatizados.",
+      "url_templates": {
+        "normlex": "https://normlex.ilo.org/"
+      },
+      "verification": "Distinguir ratificação, vigência internacional e ato brasileiro de promulgação (decreto no Planalto)."
+    }
+  ],
+  "kind_routes": {
+    "constitution": [
+      "planalto"
+    ],
+    "statute": [
+      "planalto",
+      "lexml_normas",
+      "dou"
+    ],
+    "regulation": [
+      "mte",
+      "dou",
+      "planalto"
+    ],
+    "administrative_act": [
+      "mte",
+      "dou"
+    ],
+    "collective_instrument": [
+      "mediador",
+      "instrumentos_coletivos"
+    ],
+    "precedent": [
+      "tst",
+      "stf",
+      "juslaboris",
+      "trt",
+      "stj"
+    ],
+    "international_instrument": [
+      "oit",
+      "planalto"
+    ],
+    "economic_index": [
+      "bcb_sgs"
+    ],
+    "local_act": [
+      "trt",
+      "dou"
+    ],
+    "other": [
+      "planalto",
+      "tst",
+      "stf"
+    ]
+  }
+}

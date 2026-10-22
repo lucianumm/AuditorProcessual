@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "legal-process-parser"
+version = "0.21.0"
+description = "Pipeline local de ingestão, narrativa jurídica e rastreabilidade de processos."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+authors = [{name = "Lucianum (lucianumm)"}]
+dependencies = ["jsonschema>=4.23"]
+
+[project.optional-dependencies]
+review = ["jsonschema>=4.23"]
+pdf = ["pypdf>=5.0", "pdf2image>=1.17", "Pillow>=10"]
+ocr = ["pypdf>=5.0", "pdf2image>=1.17", "pytesseract>=0.3.13", "Pillow>=10"]
+
+[project.scripts]
+legal-process-parser = "scripts.ingest_document:main"
+legal-process-context = "scripts.task_context:main"
+legal-process-read = "scripts.case_packet:main"
+legal-process-review = "scripts.legal_review:main"
+legal-process-labor = "scripts.labor_analysis:main"
+legal-process-labor-calc = "scripts.labor_calculations:main"
+legal-process-client = "scripts.client_intake:main"
+legal-process-labor-ledger = "scripts.labor_ledger:main"
+legal-process-labor-catalog = "scripts.labor_catalog:main"
+legal-process-thesis = "scripts.petition_workspace:main"
+legal-process-events = "scripts.labor_events:main"
+legal-process-labor-research = "scripts.labor_research:main"
+legal-process-time-bank = "scripts.time_bank:main"
+legal-process-response = "scripts.response_research:main"
+legal-process-parameters = "scripts.labor_parameters:main"
+legal-process-case-state = "scripts.labor_case_state:main"
+legal-process-labor-time = "scripts.labor_time:main"
+legal-process-citations = "scripts.citation_check:main"
+legal-process-indices = "scripts.official_indices:main"
+
+[tool.setuptools]
+package-dir = {"" = "skills/legal-process-parser", "routing" = "routing"}
+packages = ["scripts", "references", "schemas", "templates", "routing"]
+
+[tool.setuptools.package-data]
+references = ["*.json", "*.md", "labor_sectors/*.md", "labor_details/*.md"]
+schemas = ["*.json"]
+templates = ["*.json", "*.md"]
+routing = ["*.json"]

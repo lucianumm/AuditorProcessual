@@ -1,0 +1,410 @@
+{
+  "schema_version": "1.0",
+  "policy": "Pautas de seleção de parâmetros e fórmulas candidatas, sem taxas legais presumidas. Conferir adequação e valores nas fontes oficiais de cada resposta.",
+  "profiles": [
+    {
+      "id": "overtime",
+      "roles": [
+        "salary_base",
+        "divisor",
+        "quantity",
+        "factor"
+      ],
+      "expression": "base / divisor * quantity * factor",
+      "checks": [
+        "control_regime",
+        "limits_by_period",
+        "compensation",
+        "payments",
+        "reflexes"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    },
+    {
+      "id": "salary_difference",
+      "roles": [
+        "due",
+        "paid"
+      ],
+      "expression": "due - paid",
+      "checks": [
+        "salary_rule",
+        "period",
+        "parcel_nature",
+        "payments"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    },
+    {
+      "id": "night_work",
+      "roles": [
+        "hour_value",
+        "quantity",
+        "factor"
+      ],
+      "expression": "hour_value * quantity * factor",
+      "checks": [
+        "night_window",
+        "reduced_unit",
+        "extension",
+        "category",
+        "cumulation"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    },
+    {
+      "id": "proportional_parcel",
+      "roles": [
+        "base",
+        "eligible",
+        "reference"
+      ],
+      "expression": "base * eligible / reference",
+      "checks": [
+        "eligible_periods",
+        "projection",
+        "leaves",
+        "specific_rule"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    },
+    {
+      "id": "fgts",
+      "roles": [
+        "base",
+        "factor",
+        "paid"
+      ],
+      "expression": "base * factor - paid",
+      "checks": [
+        "regime",
+        "salary_base",
+        "competence",
+        "prescription",
+        "termination"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    },
+    {
+      "id": "reflex",
+      "roles": [
+        "principal",
+        "factor"
+      ],
+      "expression": "principal * factor",
+      "checks": [
+        "parcel_nature",
+        "specific_incidence",
+        "no_duplication",
+        "period"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    },
+    {
+      "id": "pension",
+      "roles": [
+        "base",
+        "incapacity_factor",
+        "quantity"
+      ],
+      "expression": "base * incapacity_factor * quantity",
+      "checks": [
+        "technical_proof",
+        "liability",
+        "duration",
+        "scenario",
+        "specific_criteria"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    },
+    {
+      "id": "deduction",
+      "roles": [
+        "paid"
+      ],
+      "expression": "-paid",
+      "checks": [
+        "same_payment",
+        "rubric_period",
+        "scope_of_release",
+        "allocation"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    },
+    {
+      "id": "monetary_update",
+      "roles": [
+        "principal",
+        "index_factor",
+        "interest_rate",
+        "selic_rate",
+        "ipca_rate"
+      ],
+      "expression": "principal * index_factor * (1 + max(0, selic_rate - ipca_rate))",
+      "checks": [
+        "phase_by_date",
+        "filing_date",
+        "index_series_capture",
+        "title_terms",
+        "res_judicata",
+        "payments"
+      ],
+      "note": "Fases por data: pré-judicial, judicial até 29/08/2024 e a partir de 30/08/2024 (IPCA e juros = SELIC − IPCA, piso zero). Cada fase é uma parcela própria; séries capturadas com recibo (official_indices.py). Forma composta ou simples conforme título e fonte oficial.",
+      "authority_ids": [
+        "adc_58",
+        "tst_sdi1_lei_14905",
+        "cc_art389",
+        "cc_art406",
+        "l8177_art39"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    },
+    {
+      "id": "fgts_fine",
+      "roles": [
+        "fgts_balance_for_termination",
+        "factor"
+      ],
+      "expression": "base * factor",
+      "checks": [
+        "termination_kind",
+        "deposits_base",
+        "withdrawals_effect",
+        "agreement_484a"
+      ],
+      "note": "Fator conforme modalidade de extinção conferida (dispensa, culpa recíproca, acordo).",
+      "authority_ids": [
+        "l8036_art18",
+        "clt_art484a",
+        "clt_art484"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    },
+    {
+      "id": "termination_penalty",
+      "roles": [
+        "salary_base",
+        "factor",
+        "incontroverted_amount"
+      ],
+      "expression": "base * factor",
+      "checks": [
+        "payment_date",
+        "document_delivery_date",
+        "controversy_scope",
+        "first_hearing"
+      ],
+      "note": "Multa do art. 477, § 8º, e acréscimo do art. 467 são parcelas distintas, cada uma com base própria.",
+      "authority_ids": [
+        "clt_art477",
+        "clt_art467"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    },
+    {
+      "id": "dsr_reflex",
+      "roles": [
+        "monthly_variable_amount",
+        "business_days",
+        "rest_days"
+      ],
+      "expression": "amount / business_days * rest_days",
+      "checks": [
+        "calendar_by_month",
+        "holidays_by_location",
+        "habitual_variable",
+        "rsr_repercussion_period"
+      ],
+      "note": "Dias úteis e de repouso contados no calendário do local; repercussão do RSR majorado conforme o período (IRR Tema 9).",
+      "authority_ids": [
+        "l605_art1",
+        "oj_sdi1_394",
+        "irr_tst_tema_9"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    },
+    {
+      "id": "suppressed_break",
+      "roles": [
+        "hour_value",
+        "suppressed_hours",
+        "factor"
+      ],
+      "expression": "hour_value * quantity * factor",
+      "checks": [
+        "fact_period_before_after_reform",
+        "break_records",
+        "collective_reduction",
+        "nature"
+      ],
+      "note": "A partir de 11/11/2017: apenas o período suprimido, natureza indenizatória; antes: regime anterior. Separar competências por regime.",
+      "authority_ids": [
+        "clt_art71",
+        "sumula_tst_437",
+        "irr_tst_tema_23"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    },
+    {
+      "id": "doubled_rest_day",
+      "roles": [
+        "day_value",
+        "worked_rest_days",
+        "factor"
+      ],
+      "expression": "day_value * quantity * factor",
+      "checks": [
+        "compensatory_rest",
+        "holiday_calendar",
+        "shift_regime",
+        "weekly_rest_days_by_period"
+      ],
+      "note": "Conferir folga compensatória e regime (12x36); a EC 141/2026 prevê 2 dias de repouso semanal a partir da vigência do inciso XV.",
+      "authority_ids": [
+        "l605_art9",
+        "sumula_tst_146",
+        "ec141_art1"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    },
+    {
+      "id": "hazard_additional",
+      "roles": [
+        "base",
+        "factor",
+        "eligible_months"
+      ],
+      "expression": "base * factor * months",
+      "checks": [
+        "agent_and_grade",
+        "expert_report",
+        "base_by_rule",
+        "non_cumulation",
+        "period"
+      ],
+      "note": "Base e grau conforme perícia, lei e norma coletiva; insalubridade e periculosidade não cumulam.",
+      "authority_ids": [
+        "clt_art192",
+        "clt_art193",
+        "sv_4"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    },
+    {
+      "id": "notice_projection",
+      "roles": [
+        "daily_salary",
+        "notice_days"
+      ],
+      "expression": "daily_salary * notice_days",
+      "checks": [
+        "service_years",
+        "proportional_rule",
+        "projection_effects",
+        "termination_kind"
+      ],
+      "note": "Dias de aviso conforme a regra de proporcionalidade conferida; projeção repercute em 13º, férias e FGTS.",
+      "authority_ids": [
+        "l12506_art1",
+        "clt_art487"
+      ],
+      "source_requirements": [
+        "dados_factuais",
+        "criterios_oficiais_por_periodo",
+        "origem_de_cada_valor",
+        "memoria_executada"
+      ],
+      "reference": "labor_calculation_rules.md"
+    }
+  ]
+}

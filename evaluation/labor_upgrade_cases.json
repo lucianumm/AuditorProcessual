@@ -1,0 +1,359 @@
+{
+  "schema_version": "1.0",
+  "dataset_type": "synthetic",
+  "scope": "Observable code controls, not legal merit or model comprehension.",
+  "fixtures": {
+    "numeric": {
+      "payload": {
+        "schema_version": "1.0",
+        "corpus_revision": "0000000000000000000000000000000000000000000000000000000000000000",
+        "purpose": "estimate",
+        "currency": "BRL",
+        "rounding": "per_item",
+        "legal_parameters_reason": "Exercício sintético sem taxa legal real.",
+        "inputs": [
+          {
+            "id": "SAL",
+            "value": "2200.00",
+            "unit": "money",
+            "fact_ids": [
+              "F1"
+            ],
+            "norm_ids": [],
+            "reason": "Relato sintético."
+          },
+          {
+            "id": "RATE",
+            "value": "1.50",
+            "unit": "factor",
+            "fact_ids": [],
+            "norm_ids": [
+              "N1"
+            ],
+            "reason": "Critério fictício."
+          }
+        ],
+        "items": [
+          {
+            "id": "C1",
+            "relationship_id": "REL1",
+            "competence": "2026-06",
+            "claim_type": "fixture",
+            "segment": "integral",
+            "kind": "principal",
+            "expression": "sal * rate",
+            "bindings": {
+              "sal": "SAL",
+              "rate": "RATE"
+            },
+            "norm_ids": [
+              "N1"
+            ],
+            "request_ids": [
+              "R1"
+            ],
+            "expected_result": "3300.00",
+            "include_in_total": true,
+            "reason": "Conta de teste."
+          }
+        ]
+      },
+      "checks": {
+        "schema_version": "1.0",
+        "inputs": [
+          {
+            "role": "synthetic",
+            "source_value": "2200.00",
+            "transform": "identity",
+            "fact_id": "F1",
+            "fact_field": "amount",
+            "norm_id": null,
+            "source_record_id": null,
+            "quote": "",
+            "expression": null,
+            "bindings": {},
+            "period_id": "PER1",
+            "effective_from": "2026-06-01",
+            "effective_until": "2026-06-30",
+            "applicability_analysis": "Somente fixture.",
+            "input_id": "SAL",
+            "basis": "fact"
+          },
+          {
+            "role": "synthetic",
+            "source_value": "50",
+            "transform": "percent_to_factor",
+            "fact_id": null,
+            "fact_field": null,
+            "norm_id": "N1",
+            "source_record_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "quote": "Critério sintético 50%, sem regra real.",
+            "expression": null,
+            "bindings": {},
+            "period_id": "PER1",
+            "effective_from": "2026-06-01",
+            "effective_until": "2026-06-30",
+            "applicability_analysis": "Somente fixture.",
+            "input_id": "RATE",
+            "basis": "legal_rule"
+          }
+        ]
+      },
+      "review": {
+        "corpus_revision": "0000000000000000000000000000000000000000000000000000000000000000",
+        "facts": [
+          {
+            "id": "F1"
+          }
+        ],
+        "norms": [
+          {
+            "id": "N1"
+          }
+        ],
+        "requests": [
+          {
+            "id": "R1"
+          }
+        ],
+        "assertion_reviews": [
+          {
+            "fact_id": "F1",
+            "atoms": {
+              "amount": "2200.00"
+            }
+          }
+        ],
+        "normative_map": [
+          {
+            "norm_id": "N1",
+            "temporal_status": "applicable",
+            "effective_from": "2020-01-01",
+            "effective_until": null
+          }
+        ],
+        "labor_review": {
+          "contract_periods": [
+            {
+              "id": "PER1",
+              "relationship_id": "REL1"
+            }
+          ]
+        }
+      },
+      "citations": [
+        {
+          "norm_id": "N1",
+          "source_record_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      ],
+      "texts": {
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa": "Critério sintético 50%, sem regra real."
+      }
+    },
+    "weekly": {
+      "schema_version": "1.0",
+      "rules": [
+        {
+          "id": "RULE1",
+          "relationship_id": "REL1",
+          "period_start": "2026-06-01",
+          "period_end": "2026-06-03",
+          "norm_ids": [
+            "N1"
+          ],
+          "daily_limit_minutes": "480",
+          "weekly_limit_minutes": "2400",
+          "week_start": 0,
+          "limit_basis": "physical",
+          "night_window": null,
+          "night_reduction": false,
+          "reason": "PARÂMETROS SINTÉTICOS, NÃO REGRA LEGAL UNIVERSAL."
+        },
+        {
+          "id": "RULE2",
+          "relationship_id": "REL1",
+          "period_start": "2026-06-04",
+          "period_end": "2026-06-30",
+          "norm_ids": [
+            "N1"
+          ],
+          "daily_limit_minutes": "420",
+          "weekly_limit_minutes": "2400",
+          "week_start": 0,
+          "limit_basis": "physical",
+          "night_window": null,
+          "night_reduction": false,
+          "reason": "PARÂMETROS SINTÉTICOS, NÃO REGRA LEGAL UNIVERSAL."
+        }
+      ],
+      "days": [
+        {
+          "id": "D0",
+          "relationship_id": "REL1",
+          "date": "2026-06-01",
+          "day_status": "worked",
+          "origin": "client",
+          "fact_ids": [
+            "F1"
+          ],
+          "intervals": [
+            {
+              "start": "2026-06-01T09:00:00-03:00",
+              "end": "2026-06-01T17:00:00-03:00"
+            }
+          ],
+          "reason": "Marcações narradas."
+        },
+        {
+          "id": "D1",
+          "relationship_id": "REL1",
+          "date": "2026-06-02",
+          "day_status": "worked",
+          "origin": "client",
+          "fact_ids": [
+            "F1"
+          ],
+          "intervals": [
+            {
+              "start": "2026-06-02T09:00:00-03:00",
+              "end": "2026-06-02T17:00:00-03:00"
+            }
+          ],
+          "reason": "Marcações narradas."
+        },
+        {
+          "id": "D2",
+          "relationship_id": "REL1",
+          "date": "2026-06-03",
+          "day_status": "worked",
+          "origin": "client",
+          "fact_ids": [
+            "F1"
+          ],
+          "intervals": [
+            {
+              "start": "2026-06-03T09:00:00-03:00",
+              "end": "2026-06-03T17:00:00-03:00"
+            }
+          ],
+          "reason": "Marcações narradas."
+        },
+        {
+          "id": "D3",
+          "relationship_id": "REL1",
+          "date": "2026-06-04",
+          "day_status": "worked",
+          "origin": "client",
+          "fact_ids": [
+            "F1"
+          ],
+          "intervals": [
+            {
+              "start": "2026-06-04T09:00:00-03:00",
+              "end": "2026-06-04T17:00:00-03:00"
+            }
+          ],
+          "reason": "Marcações narradas."
+        },
+        {
+          "id": "D4",
+          "relationship_id": "REL1",
+          "date": "2026-06-05",
+          "day_status": "worked",
+          "origin": "client",
+          "fact_ids": [
+            "F1"
+          ],
+          "intervals": [
+            {
+              "start": "2026-06-05T09:00:00-03:00",
+              "end": "2026-06-05T17:00:00-03:00"
+            }
+          ],
+          "reason": "Marcações narradas."
+        },
+        {
+          "id": "D5",
+          "relationship_id": "REL1",
+          "date": "2026-06-06",
+          "day_status": "worked",
+          "origin": "client",
+          "fact_ids": [
+            "F1"
+          ],
+          "intervals": [
+            {
+              "start": "2026-06-06T09:00:00-03:00",
+              "end": "2026-06-06T17:00:00-03:00"
+            }
+          ],
+          "reason": "Marcações narradas."
+        },
+        {
+          "id": "D6",
+          "relationship_id": "REL1",
+          "date": "2026-06-07",
+          "day_status": "rest",
+          "origin": "client",
+          "fact_ids": [
+            "F1"
+          ],
+          "intervals": [],
+          "reason": "Marcações narradas."
+        }
+      ],
+      "payroll": [],
+      "weekly_criteria": [
+        {
+          "id": "W1",
+          "relationship_id": "REL1",
+          "week_start": "2026-06-01",
+          "rule_ids": [
+            "RULE1",
+            "RULE2"
+          ],
+          "limit_basis": "physical",
+          "weekly_limit_minutes": "2400",
+          "norm_ids": [
+            "N1"
+          ],
+          "reason": "Critério global sintético confirmado."
+        }
+      ]
+    }
+  },
+  "cases": [
+    {
+      "id": "number-days-vs-percent",
+      "kind": "numeric",
+      "quote": "Critério sintético de 50 dias.",
+      "expected": false,
+      "category": "numeric_divergence",
+      "critical": true
+    },
+    {
+      "id": "number-written-percent",
+      "kind": "numeric",
+      "quote": "Critério sintético de cinquenta por cento.",
+      "expected": true,
+      "category": "unnecessary_block",
+      "critical": false
+    },
+    {
+      "id": "bound-without-conditions",
+      "kind": "numeric",
+      "quote": "Critério sintético de no mínimo 50%.",
+      "expected": false,
+      "category": "numeric_divergence",
+      "critical": true
+    },
+    {
+      "id": "mixed-week-global-limit",
+      "kind": "weekly",
+      "expected": "480",
+      "category": "unnecessary_block",
+      "critical": false
+    }
+  ]
+}
