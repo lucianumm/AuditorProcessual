@@ -23,7 +23,9 @@
     "vision": {"type": "object"},
     "ocr": {"type": "object"},
     "consolidation": {"type": "object"},
-    "status": {"enum": ["COMPLETE", "COMPLETE_WITH_LIMITATION", "PARTIAL", "FAILED"]}
+    "status": {"enum": ["COMPLETE", "COMPLETE_WITH_LIMITATION", "PARTIAL", "FAILED"]},
+    "pje_document_id": {"type": ["string", "null"]},
+    "pje_document_page": {"type": ["integer", "null"]}
   },
   "additionalProperties": true
 }

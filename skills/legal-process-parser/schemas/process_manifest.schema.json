@@ -7,6 +7,16 @@
   "properties": {
     "schema_version": {"type": "string"},
     "process_id": {"type": "string"},
+    "process_id_criterion": {"enum": ["pje_rodape", "mais_frequente", null]},
+    "cited_process_ids": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["numero", "ocorrencias"],
+        "properties": {"numero": {"type": "string"}, "ocorrencias": {"type": "integer", "minimum": 1}},
+        "additionalProperties": false
+      }
+    },
     "processed_at": {"type": "string"},
     "engine_version": {"type": "string"},
     "execution_fingerprint": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
