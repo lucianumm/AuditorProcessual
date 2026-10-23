@@ -48,6 +48,27 @@ PIECE_PATTERNS: list[tuple[str, tuple[str, ...]]] = [
     ("Documento", ("documento",)),
 ]
 
+# PJe stamps every page with a signature footer, even scanned ones: 1st degree
+# "Documento assinado eletronicamente por NOME, em DD/MM/AAAA ... - <id7>",
+# 2nd degree "Assinado eletronicamente por: NOME - data - <id7>" and
+# "ID. <id7> - Pág. N", plus "Fls.: N". The footer is metadata, not page text.
+PJE_SIGNATURE_RE = re.compile(
+    r"(?:[Dd]ocumento assinado eletronicamente por|[Aa]ssinado eletronicamente por:?)\s[\s\S]{0,240}?"
+    r"\d{2}/\d{2}/\d{4}[\s\S]{0,60}?-\s*([0-9a-f]{7})(?![0-9A-Za-z])"
+)
+PJE_PAGE_ID_RE = re.compile(r"\bID\.?\s*([0-9a-f]{7})\s*-\s*P[áa]g\.\s*(\d{1,5})\b")
+PJE_FLS_RE = re.compile(r"(?<![\w.])Fls\.\s*:\s*(\d{1,5})\b")
+PJE_PROCESS_RE = re.compile(r"N[úu]mero do processo:\s*(\d{7}-\d{2}\.\d{4}\.\d\.\d{2}\.\d{4})\b")
+PJE_STAMP_LINE_RE = re.compile(
+    r"^(?:[Dd]ocumento assinado eletronicamente.*|[Aa]ssinado eletronicamente por.*|https?://\S*pje\S*.*"
+    r"|N[úu]mero do (?:documento|processo):.*|[0-9a-f]{7}|\d{1,5})$"
+)
+PJE_RAPPORTEUR_RE = re.compile(r"(?m)^\s*relatora?\s*:")
+PJE_CLAIM_RE = re.compile(r"(?<!\w)(?:reclamação|reclamatória|ação) trabalhista(?!\w)")
+# Below this many characters, what is left of a PJe page besides the footer is
+# a stray header or page number, not the page content.
+PJE_MIN_CONTENT_CHARS = 20
+
 
 @dataclass
 class Page:
@@ -72,6 +93,8 @@ class Page:
     status: str = "PARTIAL"
     source_sha256: str = ""
     page_unit: str = "pdf_page"
+    pje_document_id: str | None = None
+    pje_document_page: int | None = None
 
     def to_dict(self) -> dict[str, Any]:
         data = asdict(self)
@@ -165,7 +188,7 @@ def _ocr_missing_pdf_pages(path: Path, pages: list[str], language: str, dpi: int
     ocr_pages: list[int] = []
     warnings: list[str] = []
     for number, text in enumerate(pages, start=1):
-        if len(normalise_spaces(text)) >= 30:
+        if len(normalise_spaces(strip_pje_footer(text))) >= 30:
             continue
         try:
             images = convert_from_path(str(path), dpi=dpi, first_page=number, last_page=number, fmt="png")
@@ -174,7 +197,8 @@ def _ocr_missing_pdf_pages(path: Path, pages: list[str], language: str, dpi: int
                 continue
             recognised = pytesseract.image_to_string(images[0], lang=language) or ""
             if recognised.strip():
-                pages[number - 1] = recognised
+                # Keep the native layer (PJe footer included) next to the OCR text.
+                pages[number - 1] = text + "\n\n[Camada OCR complementar]\n" + recognised if text.strip() else recognised
                 ocr_pages.append(number)
             else:
                 warnings.append(f"PDF p. {number}: OCR não encontrou texto.")
@@ -232,6 +256,83 @@ def detect_piece(text: str, current: str = "N\u00e3o identificado") -> str:
     return current
 
 
+def pje_footer(text: str) -> dict[str, Any]:
+    """Read the PJe signature footer: document id, page within it and court folio."""
+    signature = PJE_SIGNATURE_RE.search(text)
+    page_ids = PJE_PAGE_ID_RE.findall(text)
+    folios = PJE_FLS_RE.findall(text)
+    document_id = signature.group(1) if signature else (page_ids[-1][0] if page_ids else None)
+    return {
+        "document_id": document_id,
+        "document_page": int(page_ids[-1][1]) if page_ids else None,
+        "court_page": int(folios[-1]) if folios else None,
+    }
+
+
+def strip_pje_footer(text: str) -> str:
+    """Return the page text without the PJe stamp; other text is returned unchanged."""
+    if not (PJE_SIGNATURE_RE.search(text) or PJE_PAGE_ID_RE.search(text)):
+        return text
+    content = PJE_SIGNATURE_RE.sub("\n", text)
+    content = PJE_PAGE_ID_RE.sub("\n", content)
+    content = PJE_FLS_RE.sub("\n", content)
+    lines = [line for line in content.split("\n") if not PJE_STAMP_LINE_RE.match(line.strip())]
+    content = "\n".join(lines).strip()
+    if len(re.sub(r"\s", "", content)) < PJE_MIN_CONTENT_CHARS:
+        return ""
+    return content
+
+
+def identify_process_number(text: str) -> dict[str, Any]:
+    """Pick the case number of these records, not a precedent cited in them.
+
+    The PJe footer ("Número do processo: ...") wins; otherwise the most
+    frequent CNJ number (first occurrence breaks ties). Every other number is
+    reported as cited.
+    """
+    counts: dict[str, int] = {}
+    for number in NUMBER_PROCESS_RE.findall(text):
+        counts[number] = counts.get(number, 0) + 1
+    stamped: dict[str, int] = {}
+    for number in PJE_PROCESS_RE.findall(text):
+        stamped[number] = stamped.get(number, 0) + 1
+    if stamped:
+        chosen, criterion = max(stamped, key=lambda number: (stamped[number], -list(counts).index(number))), "pje_rodape"
+    elif counts:
+        chosen, criterion = max(counts, key=lambda number: (counts[number], -list(counts).index(number))), "mais_frequente"
+    else:
+        return {"numero": None, "criterio": None, "citados": []}
+    cited = [{"numero": number, "ocorrencias": count} for number, count in counts.items() if number != chosen]
+    return {"numero": chosen, "criterio": criterion, "ocorrencias": counts[chosen], "citados": cited}
+
+
+def detect_piece_title(text: str) -> str:
+    """Label one PJe document by the earliest piece name in its opening text.
+
+    Unlike detect_piece, terms match whole words and the earliest one wins, so
+    a sentence that mentions the "petição inicial" in its report is still a
+    sentence; a document without a recognised name stays unidentified.
+    """
+    sample = normalise_spaces(text[:1200]).lower()
+    # A second-degree judgment opens with "RELATOR :" before naming the
+    # appeal it decides; the parties' own filings do not.
+    if PJE_RAPPORTEUR_RE.search(sample):
+        return "Acórdão"
+    best: tuple[int, int, str] | None = None
+    for order, (label, terms) in enumerate(PIECE_PATTERNS):
+        for term in terms:
+            match = re.search(r"(?<!\w)" + re.escape(term) + r"(?!\w)", sample)
+            if match and (best is None or (match.start(), order) < best[:2]):
+                best = (match.start(), order, label)
+    if best:
+        return best[2]
+    # The claim names the action, which every later filing also cites: use it
+    # only when nothing else names the document.
+    if PJE_CLAIM_RE.search(sample):
+        return "Petição Inicial"
+    return "Não identificado"
+
+
 def make_document_id(text: str, page: int) -> str:
     return hashlib.sha256(f"{page}\0{text}".encode("utf-8", errors="replace")).hexdigest()[:12]
 
@@ -255,11 +356,17 @@ def build_pages(
     ocr_page_set = set(ocr_pages or [])
     for number, raw in enumerate(texts, start=1):
         text = raw.replace("\r\n", "\n").replace("\r", "\n")
-        quality, warnings = page_quality(text)
-        piece = detect_piece(text, current_piece)
+        # Measure the page without the PJe stamp: a scanned page whose only
+        # text layer is the signature footer still needs OCR/vision.
+        content = strip_pje_footer(text)
+        footer = pje_footer(text)
+        quality, warnings = page_quality(content)
+        if text.strip() and not content.strip():
+            warnings = [*warnings, "s\u00f3 o rodap\u00e9 de assinatura do PJe tem texto; conte\u00fado da p\u00e1gina requer vis\u00e3o/OCR"]
+        piece = detect_piece(content, current_piece)
         if piece != "N\u00e3o identificado":
             current_piece = piece
-        match = COURT_PAGE_RE.search(text[:2000])
+        match = COURT_PAGE_RE.search(content[:2000])
         dates = DATE_RE.findall(text)
         findings = detect_injection(text)
         if findings:
@@ -267,10 +374,10 @@ def build_pages(
             injections.extend([f"{location} {number}: {pattern}" for pattern in findings])
             warnings = [*warnings, "possível prompt injection tratado como conteúdo documental"]
         page_visuals = (visuals_by_page or {}).get(number, [])
-        semantics = extract_page_semantics(number, text, current_piece, page_visuals, page_unit=page_unit)
+        semantics = extract_page_semantics(number, content, current_piece, page_visuals, page_unit=page_unit)
         processing = build_page_processing_state(
             page_number=number,
-            text=text,
+            text=content,
             page_visuals=page_visuals,
             ocr_pages=ocr_page_set,
             render= (render_by_page or {}).get(number),
@@ -283,7 +390,7 @@ def build_pages(
         )
         visual_outcome = processing["vision"].get("outcome")
         confirmed_nontext = processing["vision"].get("semantic_checked") and visual_outcome in {"blank", "image_only"}
-        if confirmed_nontext and not text.strip() and processing["status"] == "COMPLETE":
+        if confirmed_nontext and not content.strip() and processing["status"] == "COMPLETE":
             quality = "nontext_confirmed"
             warnings = [warning for warning in warnings if warning != "página sem texto extraído; requer visão/OCR"]
         page = Page(
@@ -291,10 +398,10 @@ def build_pages(
             page_unit=page_unit,
             text=text,
             source="ocr" if number in ocr_page_set else (
-                "native_text" if text.strip() else ("vision_review" if confirmed_nontext else "needs_ocr_or_vision")
+                "native_text" if content.strip() else ("vision_review" if confirmed_nontext else "needs_ocr_or_vision")
             ),
             quality=quality,
-            court_page=int(match.group(1)) if match else None,
+            court_page=footer["court_page"] if footer["court_page"] is not None else (int(match.group(1)) if match else None),
             piece=current_piece,
             document_id=make_document_id(text, number),
             dates=dates,
@@ -309,9 +416,33 @@ def build_pages(
             ocr=processing["ocr"],
             consolidation=processing["consolidation"],
             status=processing["status"],
+            pje_document_id=footer["document_id"],
+            pje_document_page=footer["document_page"],
         )
         pages.append(page)
+    assign_pje_pieces(pages)
     return pages, injections
+
+
+def assign_pje_pieces(pages: Sequence[Page]) -> None:
+    """Relabel pages by PJe document: consecutive pages with the same id are one piece.
+
+    Applies only when the records carry the PJe footer. Each document is named
+    from its own first page; a label never carries over into the next document.
+    """
+    if not any(page.pje_document_id for page in pages):
+        return
+    groups: list[list[Page]] = []
+    for page in pages:
+        if groups and groups[-1][0].pje_document_id == page.pje_document_id:
+            groups[-1].append(page)
+        else:
+            groups.append([page])
+    for group in groups:
+        opening = next((content for content in (strip_pje_footer(page.text) for page in group) if content.strip()), "")
+        label = detect_piece_title(opening)
+        for page in group:
+            page.piece = label
 
 
 def page_reference(page: Page) -> str:
@@ -324,8 +455,15 @@ def page_reference(page: Page) -> str:
 
 def identify_pieces(pages: Sequence[Page]) -> list[dict[str, Any]]:
     pieces: list[dict[str, Any]] = []
+    by_pje_document = any(page.pje_document_id for page in pages)
     for page in pages:
-        if pieces and pieces[-1]["piece"] == page.piece:
+        same = pieces and (
+            pieces[-1].get("pje_document_id") == page.pje_document_id if by_pje_document
+            else pieces[-1]["piece"] == page.piece
+        )
+        if same:
+            if page.court_page:
+                pieces[-1]["court_pages"].append(page.court_page)
             pieces[-1]["pdf_page_end"] = page.pdf_page
             pieces[-1]["pdf_page_count"] += 1
             pieces[-1]["document_ids"].append(page.document_id)
@@ -342,6 +480,7 @@ def identify_pieces(pages: Sequence[Page]) -> list[dict[str, Any]]:
                 "court_pages": [page.court_page] if page.court_page else [],
                 "pdf_page_count": 1,
                 "document_ids": [page.document_id],
+                **({"pje_document_id": page.pje_document_id} if by_pje_document else {}),
             }
         )
     for piece in pieces:
@@ -390,7 +529,7 @@ def _classify_process_stage1(pages: Sequence[Page]) -> dict[str, Any]:
     ]:
         if keyword in lower and area not in areas:
             areas.append(area)
-    process_match = NUMBER_PROCESS_RE.search(text)
+    process_number = identify_process_number(text)
     return {
         "sistema_juridico": "Brasil" if any(term in lower for term in ("tribunal", "comarca", "jus.br", "cnj")) else "Não identificado nos autos",
         "pais": "Brasil" if "brasil" in lower or "jus.br" in lower else "Não identificado nos autos",
@@ -398,7 +537,9 @@ def _classify_process_stage1(pages: Sequence[Page]) -> dict[str, Any]:
         "tribunal": "Não identificado nos autos",
         "orgao_julgador": "Não identificado nos autos",
         "competencia": "Não identificado nos autos",
-        "numero_processo": process_match.group(0) if process_match else "Não identificado nos autos",
+        "numero_processo": process_number["numero"] or "Não identificado nos autos",
+        "numero_processo_criterio": process_number["criterio"],
+        "numeros_processo_citados": process_number["citados"],
         "classe_processual": "Não identificado nos autos",
         "procedimento": "Não identificado nos autos",
         "rito": "Não identificado nos autos",

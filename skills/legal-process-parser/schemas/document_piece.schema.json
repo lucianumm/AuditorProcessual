@@ -10,9 +10,11 @@
     "date": {"type": ["string", "null"]},
     "pdf_page_start": {"type": "integer", "minimum": 1},
     "pdf_page_end": {"type": "integer", "minimum": 1},
+    "pdf_page_count": {"type": "integer", "minimum": 1},
     "court_page_start": {"type": ["integer", "null"]},
     "court_page_end": {"type": ["integer", "null"]},
-    "document_ids": {"type": "array", "items": {"type": "string"}}
+    "document_ids": {"type": "array", "items": {"type": "string"}},
+    "pje_document_id": {"type": ["string", "null"], "description": "Id de 7 caracteres do documento no rodapé de assinatura do PJe; presente quando a peça foi separada por ele."}
   },
   "additionalProperties": false
 }

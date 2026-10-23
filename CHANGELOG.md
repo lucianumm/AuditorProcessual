@@ -1,5 +1,11 @@
 # Changelog
 
+## Não publicado
+
+- Ingestão de autos do PJe: o número do processo vem do rodapé ("Número do processo: ...") ou, sem ele, do número CNJ mais frequente; os demais ficam em `manifest.cited_process_ids` (antes valia o primeiro número dos autos, às vezes um precedente citado na inicial).
+- O rodapé de assinatura do PJe (1º grau "Documento assinado eletronicamente por ...", 2º grau "Assinado eletronicamente por: ..." e "ID. ... - Pág. N", link de validação, números do processo e do documento, "Fls.: N") é descontado antes de medir o texto da página e de decidir o OCR: página escaneada com só o rodapé vai para `needs_ocr_or_vision`. O texto preservado da página continua com o rodapé.
+- Com o rodapé do PJe, as peças são separadas pelo id do documento (páginas consecutivas com o mesmo id) e cada uma é nomeada pela primeira peça citada no seu próprio início, sem herdar o rótulo da anterior (cabeçalho com "RELATOR :" é acórdão; "reclamação/reclamatória trabalhista" só nomeia a inicial quando nada mais a nomeia); `court_page` vem de "Fls.: N" e `court_page_end` passa a considerar todas as páginas da peça. Páginas e peças ganham `pje_document_id`; o esquema da peça passa a aceitar `pdf_page_count`, que já era gravado.
+
 ## 0.21.0 — 2026-10-21
 
 - Conferência de citações em fonte oficial (`citation_check.py`): localiza artigo e parágrafo no texto compilado, exige o trecho dentro do dispositivo e fora de redação riscada, lê "(Revogado…)", "(Vetado)", "(Redação dada…)", "(Incluído…)" e "(Vide ADI…)" e compara com as datas dos fatos; súmulas, OJs, Temas e ações de controle exigem identificador e linha de situação. Integrada a `response_research.py` (novos comandos `verify` e `unavailable`) e à revisão v4.
