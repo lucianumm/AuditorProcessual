@@ -63,6 +63,8 @@ PJE_STAMP_LINE_RE = re.compile(
     r"^(?:[Dd]ocumento assinado eletronicamente.*|[Aa]ssinado eletronicamente por.*|https?://\S*pje\S*.*"
     r"|N[úu]mero do (?:documento|processo):.*|[0-9a-f]{7}|\d{1,5})$"
 )
+PJE_RAPPORTEUR_RE = re.compile(r"(?m)^\s*relatora?\s*:")
+PJE_CLAIM_RE = re.compile(r"(?<!\w)(?:reclamação|reclamatória|ação) trabalhista(?!\w)")
 # Below this many characters, what is left of a PJe page besides the footer is
 # a stray header or page number, not the page content.
 PJE_MIN_CONTENT_CHARS = 20
@@ -312,13 +314,23 @@ def detect_piece_title(text: str) -> str:
     sentence; a document without a recognised name stays unidentified.
     """
     sample = normalise_spaces(text[:1200]).lower()
+    # A second-degree judgment opens with "RELATOR :" before naming the
+    # appeal it decides; the parties' own filings do not.
+    if PJE_RAPPORTEUR_RE.search(sample):
+        return "Acórdão"
     best: tuple[int, int, str] | None = None
     for order, (label, terms) in enumerate(PIECE_PATTERNS):
         for term in terms:
             match = re.search(r"(?<!\w)" + re.escape(term) + r"(?!\w)", sample)
             if match and (best is None or (match.start(), order) < best[:2]):
                 best = (match.start(), order, label)
-    return best[2] if best else "Não identificado"
+    if best:
+        return best[2]
+    # The claim names the action, which every later filing also cites: use it
+    # only when nothing else names the document.
+    if PJE_CLAIM_RE.search(sample):
+        return "Petição Inicial"
+    return "Não identificado"
 
 
 def make_document_id(text: str, page: int) -> str:

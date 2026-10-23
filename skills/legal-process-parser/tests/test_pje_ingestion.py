@@ -15,6 +15,7 @@ sys.path.insert(0, str(CORE))
 from scripts.helpers import (
     build_pages,
     classify_process,
+    detect_piece_title,
     identify_pieces,
     identify_process_number,
     pje_footer,
@@ -158,6 +159,18 @@ class Pieces(unittest.TestCase):
         pieces = identify_pieces(build_pages(records)[0])
         self.assertEqual([(p["piece"], p["pje_document_id"]) for p in pieces],
                          [("Manifestação", "e5f6071"), ("Manifestação", "f607182")])
+
+    def test_titles_without_the_piece_name(self):
+        claim = "DOUTO JUÍZO DA VARA SINTÉTICA\nFULANA FICTÍCIA vem propor RECLAMATÓRIA TRABALHISTA em face de EMPRESA FICTÍCIA."
+        defence = ("AO JUÍZO DA VARA SINTÉTICA\nNos autos da reclamação trabalhista movida por FULANA FICTÍCIA, "
+                   "a reclamada apresenta CONTESTAÇÃO à petição inicial.")
+        judgment = ("PODER JUDICIÁRIO\nPROCESSO TRT - ROT-" + CASE + "\nRELATOR : DESEMBARGADOR FICTÍCIO\n"
+                    "RECORRENTE : EMPRESA FICTÍCIA\nEMENTA: RECURSO ORDINÁRIO. Horas extras. Recurso conhecido e desprovido.")
+        appeal = "EXCELENTÍSSIMO DESEMBARGADOR RELATOR\nA reclamada interpõe RECURSO ORDINÁRIO contra a sentença."
+        self.assertEqual(detect_piece_title(claim), "Petição Inicial")
+        self.assertEqual(detect_piece_title(defence), "Contestação")
+        self.assertEqual(detect_piece_title(judgment), "Acórdão")
+        self.assertEqual(detect_piece_title(appeal), "Recurso")
 
     def test_without_pje_footer_keeps_keyword_segmentation(self):
         pieces = identify_pieces(build_pages(["CONTESTAÇÃO\nA reclamada contesta.", "Continua a defesa."])[0])
