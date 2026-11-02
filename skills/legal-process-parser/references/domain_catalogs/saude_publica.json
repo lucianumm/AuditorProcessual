@@ -1,0 +1,11 @@
+{
+ "schema_version": "1.0",
+ "domain": "saude_publica",
+ "label": "Direito à Saúde (SUS)",
+ "guide": "domain_guides/saude_publica.md",
+ "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
+ "polo_labels": {"claimant_theses": "Teses do paciente", "defense_theses": "Teses do ente público"},
+ "claims": [
+  {"id": "sus_treatment", "label": "Acesso a tratamento e medicamento pelo SUS", "requirements": ["prescricao", "incorporacao", "alternativas", "ente_responsavel"], "claimant_theses": [{"id": "sus_treatment.c1", "label": "Direito à saúde e assistência terapêutica integral", "authority_ids": ["cf_art196", "l8080_art2", "l8080_art19m"]}, {"id": "sus_treatment.c2", "label": "Requisitos para fornecimento de medicamento — conferir Temas 6 e 1234 do STF", "authority_ids": ["tema_stf_6", "tema_stf_1234"]}], "defense_theses": [{"id": "sus_treatment.d1", "label": "Incorporação regulada pela Conitec e alternativas terapêuticas", "authority_ids": ["l8080_art19q"]}, {"id": "sus_treatment.d2", "label": "Organização e diretrizes do SUS", "authority_ids": ["cf_art198", "l8080_art7"]}], "temporal_marker_ids": [], "typical_requests": ["Fornecimento do tratamento", "Tutela de urgência"], "evidence": ["Laudo e prescrição fundamentados", "Negativa administrativa e alternativas tentadas"], "piece_ids": ["tutela_urgencia_antecedente", "inicial_procedimento_comum", "inicial_juizado", "mandado_seguranca"], "related_claims": ["cons_health_plan"], "limitation": "conferir"}
+ ]
+}

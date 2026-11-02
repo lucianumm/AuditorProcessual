@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "jurisdiction": "Brasil",
   "default_domain": "processual",
   "verification_policy": {
@@ -17,11 +17,11 @@
       "key": "trabalhista",
       "label": "Direito do Trabalho",
       "patterns": [
-        {"terms": ["empregado", "empregador", "vinculo empregaticio", "relacao de emprego"], "weight": 6},
+        {"terms": ["empregado", "empregada", "empregador", "vinculo empregaticio", "relacao de emprego", "vinculo de emprego"], "weight": 6},
         {"terms": ["empregado bancario", "empregada bancaria", "trabalhador bancario", "trabalhadora bancaria"], "weight": 8},
-        {"terms": ["salario", "remuneracao", "ferias", "decimo terceiro", "fgts", "horas extras", "jornada", "rescisao", "justa causa", "insalubridade", "periculosidade", "acidente de trabalho", "assédio moral", "assédio sexual", "sindicato", "categoria profissional"], "weight": 3},
-        {"terms": ["reclamacao trabalhista", "vara do trabalho", "tribunal regional do trabalho", "trt", "tst", "clt", "ctps"], "weight": 7},
-        {"terms": ["reclamante", "reclamada", "trct", "aviso previo", "verbas rescisorias", "estabilidade provisoria", "terceirizacao", "pejotizacao", "banco de horas", "intervalo intrajornada", "seguro-desemprego"], "weight": 5}
+        {"terms": ["salario", "remuneracao", "ferias", "decimo terceiro", "fgts", "horas extras", "jornada", "rescisao", "justa causa", "insalubridade", "periculosidade", "acidente de trabalho", "assedio moral", "assedio sexual", "sindicato", "categoria profissional", "adicional noturno", "holerite", "contracheque", "cartao de ponto"], "weight": 3},
+        {"terms": ["reclamacao trabalhista", "vara do trabalho", "justica do trabalho", "tribunal regional do trabalho", "trt", "tst", "clt", "ctps", "consolidacao das leis do trabalho"], "weight": 7},
+        {"terms": ["reclamante", "reclamada", "reclamado", "trct", "aviso previo", "verbas rescisorias", "estabilidade provisoria", "terceirizacao", "pejotizacao", "banco de horas", "intervalo intrajornada", "seguro-desemprego", "convencao coletiva", "acordo coletivo"], "weight": 5}
       ],
       "legal_sources": [
         {"name": "Constituição Federal — direitos sociais e trabalho", "reference": "CF/1988, especialmente arts. 7º a 11, conforme o tema", "url": "https://planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm", "purpose": "Direitos fundamentais sociais e organização sindical."},
@@ -38,9 +38,9 @@
       "key": "previdenciario",
       "label": "Direito Previdenciário",
       "patterns": [
-        {"terms": ["inss", "rgps", "segurado", "beneficio previdenciario", "aposentadoria", "auxilio por incapacidade", "auxilio-doenca", "pensao por morte", "bpc", "loas", "salario maternidade", "tempo de contribuicao", "carencia", "qualidade de segurado", "pericia medica"], "weight": 6},
-        {"terms": ["cnis", "contribuicao previdenciaria", "requerimento administrativo", "indeferimento do beneficio", "junta de recursos"], "weight": 4},
-        {"terms": ["juizado especial federal", "vara federal", "turma recursal", "trf"], "weight": 3}
+        {"terms": ["inss", "rgps", "segurado", "segurada", "beneficio previdenciario", "aposentadoria", "auxilio por incapacidade", "auxilio-doenca", "auxilio doenca", "aposentadoria por invalidez", "pensao por morte", "bpc", "loas", "salario-maternidade", "salario maternidade", "tempo de contribuicao", "carencia", "qualidade de segurado", "pericia medica", "aposentadoria especial"], "weight": 6},
+        {"terms": ["cnis", "requerimento administrativo", "indeferimento do beneficio", "junta de recursos", "crps", "der", "dib", "ppp", "ltcat"], "weight": 4},
+        {"terms": ["juizado especial federal", "vara federal", "turma recursal", "trf", "contribuicao previdenciaria"], "weight": 3}
       ],
       "legal_sources": [
         {"name": "Constituição Federal — seguridade social", "reference": "CF/1988, arts. 194 a 204 e dispositivos específicos", "url": "https://planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm", "purpose": "Sistema de seguridade, previdência e assistência social."},
@@ -54,8 +54,9 @@
       "key": "consumidor",
       "label": "Direito do Consumidor",
       "patterns": [
-        {"terms": ["consumidor", "fornecedor", "relacao de consumo", "produto defeituoso", "servico defeituoso", "vicio do produto", "vicio do servico", "fato do produto", "cobranca indevida", "negativacao", "serasa", "spc", "plano de saude", "banco", "cartao", "financiamento"], "weight": 6},
-        {"terms": ["cdc", "codigo de defesa do consumidor", "procon", "danos morais consumeristas", "inversao do onus"], "weight": 7}
+        {"terms": ["consumidor", "consumidora", "fornecedor", "relacao de consumo", "produto defeituoso", "servico defeituoso", "vicio do produto", "vicio do servico", "fato do produto", "fato do servico", "cobranca indevida", "negativacao", "serasa", "spc", "plano de saude", "superendividamento"], "weight": 6},
+        {"terms": ["cdc", "codigo de defesa do consumidor", "procon", "danos morais consumeristas", "inversao do onus", "juizado especial civel"], "weight": 7},
+        {"terms": ["banco", "cartao", "financiamento"], "weight": 2}
       ],
       "legal_sources": [
         {"name": "Código de Defesa do Consumidor", "reference": "Lei nº 8.078/1990 (texto compilado)", "url": "https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm", "purpose": "Conceitos, responsabilidade, práticas abusivas, reparação e tutela coletiva."},
@@ -68,8 +69,9 @@
       "key": "civil",
       "label": "Direito Civil",
       "patterns": [
-        {"terms": ["obrigacao", "inadimplemento", "responsabilidade civil", "dano material", "dano moral", "contrato civil", "indenizacao", "prescricao", "posse", "propriedade", "locacao", "condominio", "familia", "sucessao"], "weight": 4},
-        {"terms": ["codigo civil", "relacao contratual", "descumprimento contratual", "ato ilicito"], "weight": 6}
+        {"terms": ["obrigacao", "inadimplemento", "responsabilidade civil", "dano material", "contrato civil", "indenizacao", "posse", "propriedade", "locacao", "condominio", "usucapiao", "despejo", "compra e venda"], "weight": 4},
+        {"terms": ["codigo civil", "relacao contratual", "descumprimento contratual", "ato ilicito", "acao de cobranca", "acao monitoria"], "weight": 6},
+        {"terms": ["dano moral", "prescricao", "familia", "sucessao"], "weight": 2}
       ],
       "legal_sources": [
         {"name": "Código Civil", "reference": "Lei nº 10.406/2002 (texto compilado)", "url": "https://www.planalto.gov.br/ccivil_03/leis/2002/l10406compilada.htm", "purpose": "Pessoas, obrigações, contratos, responsabilidade, direitos reais e família/sucessões conforme o caso."},
@@ -81,8 +83,9 @@
       "key": "bancario",
       "label": "Direito Bancário",
       "patterns": [
-        {"terms": ["instituicao financeira", "banco", "bancario", "bancaria", "conta corrente", "cartao de credito", "emprestimo", "financiamento", "consignado", "tarifa bancaria", "juros", "capitalizacao", "fraude bancaria", "pix", "serasa", "cadastro de inadimplentes"], "weight": 5},
-        {"terms": ["contrato bancario", "cobranca bancaria", "revisional", "superendividamento"], "weight": 6}
+        {"terms": ["instituicao financeira", "bancario", "bancaria", "conta corrente", "cartao de credito", "emprestimo", "consignado", "tarifa bancaria", "capitalizacao", "fraude bancaria", "pix", "cadastro de inadimplentes", "cet", "cedula de credito"], "weight": 5},
+        {"terms": ["contrato bancario", "cobranca bancaria", "revisional", "superendividamento", "golpe do pix", "mecanismo especial de devolucao"], "weight": 6},
+        {"terms": ["banco", "financiamento", "juros", "serasa"], "weight": 2}
       ],
       "legal_sources": [
         {"name": "Código de Defesa do Consumidor", "reference": "Lei nº 8.078/1990, quando caracterizada relação de consumo", "url": "https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm", "purpose": "Responsabilidade e proteção do consumidor bancário."},
@@ -95,8 +98,10 @@
       "key": "familia",
       "label": "Direito de Família e Sucessões",
       "patterns": [
-        {"terms": ["divorcio", "guarda", "convivencia", "alimentos", "paternidade", "maternidade", "uniao estavel", "partilha", "inventario", "heranca", "sucessao", "interdicao", "curatela", "violencia domestica"], "weight": 6},
-        {"terms": ["menor", "crianca", "adolescente", "genitor", "genitora", "pacto antenupcial"], "weight": 4}
+        {"terms": ["divorcio", "guarda", "convivencia", "alimentos", "paternidade", "uniao estavel", "partilha", "inventario", "arrolamento", "heranca", "interdicao", "curatela", "violencia domestica", "alienacao parental", "regime de bens", "pensao alimenticia", "investigacao de paternidade"], "weight": 6},
+        {"terms": ["vara de familia", "vara da familia", "vara de familia e sucessoes", "maria da penha", "eca", "estatuto da crianca"], "weight": 7},
+        {"terms": ["menor", "crianca", "adolescente", "genitor", "genitora", "pacto antenupcial", "alimentando", "alimentante"], "weight": 4},
+        {"terms": ["maternidade", "sucessao"], "weight": 2}
       ],
       "legal_sources": [
         {"name": "Código Civil", "reference": "Lei nº 10.406/2002, família e sucessões", "url": "https://www.planalto.gov.br/ccivil_03/leis/2002/l10406compilada.htm", "purpose": "Relações familiares, alimentos, regime de bens e sucessão."},
@@ -109,8 +114,9 @@
       "key": "penal",
       "label": "Direito Penal e Processo Penal",
       "patterns": [
-        {"terms": ["crime", "inquerito policial", "denuncia criminal", "investigado", "acusado", "reu", "vitima", "flagrante", "prisao", "medida cautelar", "habeas corpus", "delegacia", "ministerio publico criminal"], "weight": 6},
-        {"terms": ["codigo penal", "codigo de processo penal", "tipicidade", "materialidade", "autoria", "dosimetria", "sentenca penal"], "weight": 7}
+        {"terms": ["crime", "inquerito policial", "denuncia criminal", "denunciado", "denunciada", "investigado", "acusado", "acusada", "flagrante", "habeas corpus", "delegacia", "ministerio publico criminal", "queixa-crime", "acordo de nao persecucao penal", "anpp", "prisao preventiva", "prisao em flagrante"], "weight": 6},
+        {"terms": ["codigo penal", "codigo de processo penal", "tipicidade", "dosimetria", "sentenca penal", "vara criminal", "juizado especial criminal", "execucao penal", "lei de execucao penal", "tribunal do juri"], "weight": 7},
+        {"terms": ["reu", "vitima", "prisao", "medida cautelar", "autoria", "materialidade"], "weight": 2}
       ],
       "legal_sources": [
         {"name": "Código Penal", "reference": "Decreto-Lei nº 2.848/1940, texto vigente", "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm", "purpose": "Tipificação e consequências penais; conferir tipo e redação vigente."},
@@ -123,8 +129,9 @@
       "key": "administrativo",
       "label": "Direito Administrativo",
       "patterns": [
-        {"terms": ["administracao publica", "servidor publico", "concurso publico", "licitacao", "contrato administrativo", "processo administrativo", "ato administrativo", "improbidade", "poder publico", "municipio", "estado", "uniao", "autarquia"], "weight": 5},
-        {"terms": ["lei 14133", "lei 9784", "mandado de seguranca", "tcu", "controladoria", "agencia reguladora"], "weight": 6}
+        {"terms": ["administracao publica", "servidor publico", "servidora publica", "concurso publico", "licitacao", "contrato administrativo", "processo administrativo", "ato administrativo", "improbidade", "poder publico", "autarquia", "fazenda publica", "prefeitura municipal", "uniao federal", "governo do estado", "ente publico", "processo administrativo disciplinar", "pad"], "weight": 5},
+        {"terms": ["lei 14133", "lei 14.133", "lei 9784", "lei 9.784", "lei 8429", "lei 8.429", "mandado de seguranca", "tcu", "tribunal de contas", "controladoria", "agencia reguladora", "vara da fazenda publica", "juizado especial da fazenda publica"], "weight": 6},
+        {"terms": ["municipio", "estado", "uniao"], "weight": 1}
       ],
       "legal_sources": [
         {"name": "Constituição Federal — Administração Pública", "reference": "CF/1988, art. 37 e dispositivos de competência", "url": "https://planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm", "purpose": "Princípios, competências e controle."},
@@ -137,8 +144,9 @@
       "key": "tributario",
       "label": "Direito Tributário",
       "patterns": [
-        {"terms": ["tributo", "imposto", "taxa", "contribuicao", "icms", "iss", "iptu", "ipva", "irpf", "irpj", "execucao fiscal", "divida ativa", "auto de infracao", "fisco", "receita federal"], "weight": 6},
-        {"terms": ["certidao de divida ativa", "cda", "compensacao tributaria", "credito tributario", "prescricao tributaria", "decadencia tributaria"], "weight": 7}
+        {"terms": ["tributo", "imposto", "icms", "iss", "iptu", "ipva", "itbi", "itcmd", "irpf", "irpj", "pis", "cofins", "csll", "ibs", "cbs", "execucao fiscal", "divida ativa", "auto de infracao", "fisco", "receita federal", "lancamento tributario"], "weight": 6},
+        {"terms": ["certidao de divida ativa", "cda", "compensacao tributaria", "credito tributario", "prescricao tributaria", "decadencia tributaria", "carf", "vara de execucoes fiscais", "codigo tributario nacional", "ctn", "repeticao de indebito"], "weight": 7},
+        {"terms": ["taxa", "contribuicao"], "weight": 2}
       ],
       "legal_sources": [
         {"name": "Constituição Federal — Sistema Tributário", "reference": "CF/1988, arts. 145 a 162 e limitações ao poder de tributar", "url": "https://planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm", "purpose": "Competência, limitações e repartição."},
@@ -151,8 +159,9 @@
       "key": "empresarial",
       "label": "Direito Empresarial",
       "patterns": [
-        {"terms": ["sociedade empresaria", "socio", "acionista", "empresa", "recuperacao judicial", "falencia", "recuperacao extrajudicial", "desconsideracao da personalidade", "dissolucao", "marcas", "propriedade intelectual", "franquia"], "weight": 5},
-        {"terms": ["contrato social", "estatuto social", "junta comercial", "administrador", "assembleia", "credores", "plano de recuperacao"], "weight": 6}
+        {"terms": ["sociedade empresaria", "acionista", "recuperacao judicial", "falencia", "recuperacao extrajudicial", "desconsideracao da personalidade", "dissolucao parcial", "apuracao de haveres", "marcas", "propriedade intelectual", "franquia", "patente"], "weight": 5},
+        {"terms": ["contrato social", "estatuto social", "junta comercial", "assembleia geral", "credores", "plano de recuperacao", "administrador judicial", "vara empresarial"], "weight": 6},
+        {"terms": ["empresa", "socio", "administrador", "assembleia"], "weight": 2}
       ],
       "legal_sources": [
         {"name": "Código Civil — Direito de Empresa", "reference": "Lei nº 10.406/2002", "url": "https://www.planalto.gov.br/ccivil_03/leis/2002/l10406compilada.htm", "purpose": "Sociedades, empresa, contratos e responsabilidade."},
@@ -165,8 +174,9 @@
       "key": "ambiental",
       "label": "Direito Ambiental",
       "patterns": [
-        {"terms": ["meio ambiente", "ambiental", "licenca ambiental", "ibama", "desmatamento", "poluicao", "area de preservacao", "reserva legal", "dano ambiental", "multa ambiental", "sustentabilidade"], "weight": 6},
-        {"terms": ["inquerito civil ambiental", "termo de ajustamento", "tac ambiental", "auto de infracao ambiental"], "weight": 7}
+        {"terms": ["meio ambiente", "ambiental", "licenca ambiental", "licenciamento ambiental", "ibama", "icmbio", "desmatamento", "poluicao", "area de preservacao permanente", "app", "reserva legal", "dano ambiental", "multa ambiental", "codigo florestal", "car"], "weight": 6},
+        {"terms": ["inquerito civil ambiental", "termo de ajustamento", "tac ambiental", "auto de infracao ambiental", "crime ambiental"], "weight": 7},
+        {"terms": ["sustentabilidade"], "weight": 2}
       ],
       "legal_sources": [
         {"name": "Constituição Federal — meio ambiente", "reference": "CF/1988, art. 225", "url": "https://planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm", "purpose": "Direito ao meio ambiente e dever de proteção."},
@@ -179,13 +189,122 @@
       "key": "constitucional",
       "label": "Direito Constitucional",
       "patterns": [
-        {"terms": ["direito fundamental", "controle de constitucionalidade", "inconstitucionalidade", "constituicao federal", "liberdade", "igualdade", "devido processo", "mandado de injuncao", "acao direta", "adi", "adpf", "habeas data"], "weight": 6}
+        {"terms": ["direito fundamental", "controle de constitucionalidade", "inconstitucionalidade", "mandado de injuncao", "acao direta", "adi", "adc", "adpf", "ado", "habeas data", "reclamacao constitucional", "repercussao geral"], "weight": 6},
+        {"terms": ["constituicao federal", "liberdade", "igualdade", "devido processo"], "weight": 2}
       ],
       "legal_sources": [
         {"name": "Constituição Federal", "reference": "Constituição da República Federativa do Brasil de 1988", "url": "https://planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm", "purpose": "Direitos fundamentais, organização do Estado e controle constitucional."},
         {"name": "Código de Processo Civil", "reference": "Lei nº 13.105/2015, conforme o instrumento processual", "url": "https://planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105compilada.htm", "purpose": "Procedimento, tutela e recursos."}
       ],
       "writing_profile": {"tone": "argumentativo, proporcional e baseado em precedentes verificáveis", "order": ["norma/ato questionado", "direito afetado", "fatos", "teste de compatibilidade", "precedentes", "fundamentação", "pedido"], "must_verify": ["norma impugnada", "legitimidade", "cabimento", "precedentes atuais", "efeitos"]}
+    },
+    {
+      "key": "eleitoral",
+      "label": "Direito Eleitoral",
+      "patterns": [
+        {"terms": ["justica eleitoral", "zona eleitoral", "tribunal regional eleitoral", "tre", "tse", "registro de candidatura", "inelegibilidade", "aije", "propaganda eleitoral", "prestacao de contas de campanha", "captacao ilicita de sufragio", "diplomacao"], "weight": 7},
+        {"terms": ["candidato", "candidata", "coligacao", "partido politico", "eleicao", "eleitor", "eleitoral"], "weight": 3}
+      ],
+      "legal_sources": [
+        {"name": "Código Eleitoral", "reference": "Lei nº 4.737, de 15 de julho de 1965", "url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1965-07-15;4737", "purpose": "Recursos, prazos e organização da Justiça Eleitoral."},
+        {"name": "Lei das Inelegibilidades", "reference": "Lei Complementar nº 64, de 18 de maio de 1990", "url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei.complementar:1990-05-18;64", "purpose": "Inelegibilidades, impugnação de registro e AIJE."},
+        {"name": "Lei das Eleições", "reference": "Lei nº 9.504, de 30 de setembro de 1997", "url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1997-09-30;9504", "purpose": "Registro, propaganda, condutas vedadas e prestação de contas."},
+        {"name": "TSE — legislação e jurisprudência", "reference": "Resoluções do pleito e súmulas do TSE", "url": "https://www.tse.jus.br/legislacao", "purpose": "Conferir a resolução do pleito; o portal recusou acesso automatizado (HTTP 403) em 02/11/2026."}
+      ],
+      "writing_profile": {"tone": "técnico, cronológico e atento a prazos exíguos", "order": ["pleito e cargo", "fatos e datas", "conduta e prova", "gravidade", "fundamentação", "pedidos"], "must_verify": ["calendário eleitoral", "prazo especial", "legitimidade", "resolução do TSE do pleito", "prova"]}
+    },
+    {
+      "key": "militar",
+      "label": "Direito Penal e Processual Militar",
+      "patterns": [
+        {"terms": ["justica militar", "auditoria militar", "superior tribunal militar", "stm", "codigo penal militar", "codigo de processo penal militar", "cpm", "cppm", "crime militar", "conselho de justica"], "weight": 7},
+        {"terms": ["policial militar", "bombeiro militar", "militar da ativa", "quartel", "organizacao militar"], "weight": 4}
+      ],
+      "legal_sources": [
+        {"name": "Código Penal Militar", "reference": "Decreto-Lei nº 1.001, de 21 de outubro de 1969", "url": "https://normas.leg.br/?urn=urn:lex:br:federal:decreto.lei:1969-10-21;1001", "purpose": "Crimes militares e penas."},
+        {"name": "Código de Processo Penal Militar", "reference": "Decreto-Lei nº 1.002, de 21 de outubro de 1969", "url": "https://normas.leg.br/?urn=urn:lex:br:federal:decreto.lei:1969-10-21;1002", "purpose": "Rito, recursos e revisão."},
+        {"name": "Constituição Federal", "reference": "CF/1988, arts. 124 e 125", "url": "https://normas.leg.br/?urn=urn:lex:br:federal:constituicao:1988-10-05;1988", "purpose": "Competência da Justiça Militar (arts. 124 e 125)."}
+      ],
+      "writing_profile": {"tone": "estritamente técnico, presuntivo e sem afirmação de culpa", "order": ["imputação", "condição do agente", "fatos", "competência", "garantias", "fundamentação", "pedidos"], "must_verify": ["art. 9º do CPM", "competência federal ou estadual", "data do fato", "rito do CPPM"]}
+    },
+    {
+      "key": "previdencia_complementar",
+      "label": "Previdência complementar",
+      "patterns": [
+        {"terms": ["previdencia complementar", "previdencia privada", "entidade fechada de previdencia", "entidade aberta de previdencia", "fundo de pensao", "plano de beneficios", "resgate", "portabilidade", "beneficio proporcional diferido", "autopatrocinio", "previc"], "weight": 7},
+        {"terms": ["patrocinadora", "participante", "assistido", "regulamento do plano", "reserva de poupanca"], "weight": 3}
+      ],
+      "legal_sources": [
+        {"name": "Lei Complementar 109/2001", "reference": "Lei Complementar nº 109, de 29 de maio de 2001", "url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei.complementar:2001-05-29;109", "purpose": "Regime de previdência complementar."},
+        {"name": "Lei Complementar 108/2001", "reference": "Lei Complementar nº 108, de 29 de maio de 2001", "url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei.complementar:2001-05-29;108", "purpose": "Patrocínio de entes públicos."}
+      ],
+      "writing_profile": {"tone": "técnico, documental e atuarial", "order": ["plano e regulamento", "adesão e contribuições", "evento", "cálculo", "fundamentação", "pedidos"], "must_verify": ["regulamento vigente na elegibilidade", "natureza da entidade", "competência", "prescrição"]}
+    },
+    {
+      "key": "saude_publica",
+      "label": "Direito à Saúde (SUS)",
+      "patterns": [
+        {"terms": ["sistema unico de saude", "sus", "conitec", "rename", "secretaria de saude", "fornecimento de medicamento", "medicamento de alto custo", "leito de uti", "regulacao de vagas", "tratamento fora do domicilio"], "weight": 7},
+        {"terms": ["ente publico", "municipio", "estado", "uniao", "laudo medico", "prescricao medica"], "weight": 1}
+      ],
+      "legal_sources": [
+        {"name": "Constituição Federal", "reference": "CF/1988, arts. 196 a 200", "url": "https://normas.leg.br/?urn=urn:lex:br:federal:constituicao:1988-10-05;1988", "purpose": "Direito à saúde e SUS (arts. 196 a 200)."},
+        {"name": "Lei Orgânica da Saúde", "reference": "Lei nº 8.080, de 19 de setembro de 1990", "url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1990-09-19;8080", "purpose": "Organização do SUS, assistência terapêutica e incorporação de tecnologias."}
+      ],
+      "writing_profile": {"tone": "objetivo, técnico e centrado na prova médica", "order": ["quadro clínico", "prescrição e alternativas", "pedido administrativo", "negativa", "fundamentação", "pedidos e urgência"], "must_verify": ["incorporação ao SUS", "registro sanitário", "ente responsável", "precedentes atuais"]}
+    },
+    {
+      "key": "protecao_dados",
+      "label": "Proteção de Dados e Direito Digital",
+      "patterns": [
+        {"terms": ["lgpd", "lei geral de protecao de dados", "dados pessoais", "dado pessoal sensivel", "titular dos dados", "controlador", "operador de dados", "encarregado", "anpd", "vazamento de dados", "incidente de seguranca", "marco civil da internet", "provedor de aplicacao"], "weight": 7},
+        {"terms": ["privacidade", "consentimento", "cookies", "perfil falso", "remocao de conteudo"], "weight": 3}
+      ],
+      "legal_sources": [
+        {"name": "LGPD", "reference": "Lei nº 13.709, de 14 de agosto de 2018", "url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2018-08-14;13709", "purpose": "Princípios, bases legais, direitos do titular, responsabilidade e sanções."},
+        {"name": "Marco Civil da Internet", "reference": "Lei nº 12.965, de 23 de abril de 2014", "url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2014-04-23;12965", "purpose": "Direitos dos usuários e responsabilidade de provedores."}
+      ],
+      "writing_profile": {"tone": "técnico, factual e orientado a prova digital", "order": ["agentes de tratamento", "dados e finalidade", "incidente ou conduta", "dano", "fundamentação", "pedidos"], "must_verify": ["base legal", "papel de controlador/operador", "prova digital preservada", "regulação da ANPD"]}
+    },
+    {
+      "key": "imobiliario",
+      "label": "Direito Imobiliário e Registral",
+      "patterns": [
+        {"terms": ["registro de imoveis", "matricula do imovel", "adjudicacao compulsoria", "promessa de compra e venda", "compromisso de compra e venda", "alienacao fiduciaria", "consolidacao da propriedade", "incorporacao imobiliaria", "usucapiao extrajudicial", "cartorio de registro", "itbi"], "weight": 7},
+        {"terms": ["imovel", "construtora", "incorporadora", "escritura", "averbacao"], "weight": 3}
+      ],
+      "legal_sources": [
+        {"name": "Lei de Registros Públicos", "reference": "Lei nº 6.015, de 31 de dezembro de 1973", "url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1973-12-31;6015", "purpose": "Matrícula, registro, usucapião e adjudicação extrajudiciais."},
+        {"name": "Lei 9.514/1997", "reference": "Lei nº 9.514, de 20 de novembro de 1997", "url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1997-11-20;9514", "purpose": "Alienação fiduciária de imóvel."},
+        {"name": "Lei do Inquilinato", "reference": "Lei nº 8.245, de 18 de outubro de 1991", "url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1991-10-18;8245", "purpose": "Locação de imóveis urbanos."}
+      ],
+      "writing_profile": {"tone": "documental, registral e cronológico", "order": ["imóvel e matrícula", "negócio jurídico", "pagamentos", "conduta contestada", "fundamentação", "pedidos"], "must_verify": ["matrícula atualizada", "cadeia dominial", "contrato integral", "prazos registrais"]}
+    },
+    {
+      "key": "agrario",
+      "label": "Direito Agrário",
+      "patterns": [
+        {"terms": ["estatuto da terra", "arrendamento rural", "parceria agricola", "parceria rural", "imovel rural", "reforma agraria", "incra", "usucapiao rural", "modulo rural", "ccir"], "weight": 7},
+        {"terms": ["fazenda", "safra", "produtor rural", "gleba"], "weight": 2}
+      ],
+      "legal_sources": [
+        {"name": "Estatuto da Terra", "reference": "Lei nº 4.504, de 30 de novembro de 1964", "url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1964-11-30;4504", "purpose": "Contratos agrários, arrendamento e parceria."},
+        {"name": "Constituição Federal", "reference": "CF/1988, arts. 184 a 191", "url": "https://normas.leg.br/?urn=urn:lex:br:federal:constituicao:1988-10-05;1988", "purpose": "Política agrícola, fundiária e reforma agrária; usucapião rural (art. 191)."}
+      ],
+      "writing_profile": {"tone": "técnico, documental e territorial", "order": ["imóvel rural", "contrato ou posse", "atividade", "conduta", "fundamentação", "pedidos"], "must_verify": ["matrícula e CCIR", "área e módulo", "contrato agrário", "prazos legais"]}
+    },
+    {
+      "key": "migratorio",
+      "label": "Direito Migratório",
+      "patterns": [
+        {"terms": ["lei de migracao", "migrante", "imigrante", "refugiado", "refugio", "conare", "autorizacao de residencia", "visto", "deportacao", "expulsao", "naturalizacao", "apatrida"], "weight": 7},
+        {"terms": ["estrangeiro", "policia federal", "passaporte"], "weight": 2}
+      ],
+      "legal_sources": [
+        {"name": "Lei de Migração", "reference": "Lei nº 13.445, de 24 de maio de 2017", "url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2017-05-24;13445", "purpose": "Direitos do migrante, vistos e autorização de residência."},
+        {"name": "Lei 9.474/1997", "reference": "Lei nº 9.474, de 22 de julho de 1997", "url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1997-07-22;9474", "purpose": "Refúgio e CONARE."}
+      ],
+      "writing_profile": {"tone": "objetivo, protetivo e documental", "order": ["condição migratória", "fatos e documentos", "pedido administrativo", "decisão", "fundamentação", "pedidos"], "must_verify": ["hipótese legal", "regulamento vigente", "prazos administrativos", "tratados aplicáveis"]}
     },
     {
       "key": "processual",
@@ -199,5 +318,37 @@
       ],
       "writing_profile": {"tone": "objetivo, sequencial e centrado em atos/documentos", "order": ["cabimento", "tempestividade", "fatos processuais", "provas", "fundamentação", "pedido", "fontes"], "must_verify": ["jurisdição", "rito", "intimação", "termo inicial", "prazo", "peça e recurso"]}
     }
-  ]
+  ],
+  "matching": {
+    "word_boundaries": true,
+    "note": "Termos são comparados sem acentos e com limite de palavra; qualificação e endereço são removidos antes da contagem. A classificação encaminha a pesquisa; não prova a área."
+  },
+  "noise_patterns": [
+    "estado civil\\s*[:\\-]?\\s*\\w*",
+    "(?:residente|domiciliad[oa]s?|com sede|sediad[oa]s?|estabelecid[oa]s?|situad[oa]s?|localizad[oa]s?|com endereco|endereco)\\b[^.;\\n]{0,160}",
+    "inscrit[oa]s? no (?:cpf|cnpj|rg)[^.;\\n]{0,60}",
+    "\\bcep\\s*[:\\-]?\\s*\\d{5}-?\\d{3}"
+  ],
+  "justice_segments": {
+    "5": {
+      "domain": "trabalhista",
+      "weight": 24,
+      "label": "Justiça do Trabalho"
+    },
+    "6": {
+      "domain": "eleitoral",
+      "weight": 24,
+      "label": "Justiça Eleitoral"
+    },
+    "7": {
+      "domain": "militar",
+      "weight": 24,
+      "label": "Justiça Militar da União"
+    },
+    "9": {
+      "domain": "militar",
+      "weight": 24,
+      "label": "Justiça Militar Estadual"
+    }
+  }
 }

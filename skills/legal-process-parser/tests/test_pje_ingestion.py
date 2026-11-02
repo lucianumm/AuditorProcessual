@@ -103,6 +103,15 @@ class ProcessNumber(unittest.TestCase):
         self.assertEqual(classification["numero_processo"], CASE)
         self.assertEqual(classification["numeros_processo_citados"], [{"numero": PRECEDENT, "ocorrencias": 1}])
 
+    def test_court_follows_chosen_number_not_first_cited(self):
+        # Valid check digits (ISO 7064 mod 97); the precedent comes first and from another region.
+        case, precedent = "0000001-48.2026.5.18.0001", "0000001-39.2019.5.02.0001"
+        text = f"Precedente {precedent}.\n" + "\n".join(f"Autos {case}." for _ in range(3))
+        pages, _ = build_pages([text])
+        classification = classify_process(pages)
+        self.assertEqual(classification["numero_processo"], case)
+        self.assertEqual(classification["tribunal"], "Tribunal Regional do Trabalho da 18ª Região")
+
     def test_without_any_number(self):
         self.assertEqual(identify_process_number("sem número")["numero"], None)
 

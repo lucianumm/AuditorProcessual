@@ -76,6 +76,20 @@ def verify() -> None:
     sys.path.insert(0, str(skill_path.parent))
     from scripts.labor_catalog import index_markdown
     assert (labor_path.parent / "labor_claims_index.md").read_text(encoding="utf-8") == index_markdown(), "labor_claims_index.md desatualizado"
+    from scripts.domain_catalog import catalogs as domain_catalogs, index_files as domain_index_files, integrity_errors as domain_errors
+    domain_schema = Draft202012Validator(json.loads((schema_dir / "domain_catalog.schema.json").read_text(encoding="utf-8")), format_checker=FormatChecker())
+    for key, catalog in domain_catalogs().items():
+        errors = [e.message for e in domain_schema.iter_errors(catalog)]
+        assert not errors, f"domain_catalogs/{key}.json: {errors[:3]}"
+    authority_schema = Draft202012Validator(json.loads((schema_dir / "domain_authorities.schema.json").read_text(encoding="utf-8")), format_checker=FormatChecker())
+    errors = [e.message for e in authority_schema.iter_errors(json.loads((labor_path.parent / "domain_authorities.json").read_text(encoding="utf-8")))]
+    assert not errors, f"domain_authorities.json: {errors[:3]}"
+    assert not domain_errors(), f"catálogos de ramo: {domain_errors()[:5]}"
+    for path, text in domain_index_files().items():
+        assert path.read_text(encoding="utf-8") == text, f"{path.name} desatualizado"
+    profile_keys = {d["key"] for d in json.loads((labor_path.parent / "legal_domain_profiles.json").read_text(encoding="utf-8"))["domains"]}
+    module_domains = {m["domain"] for m in modules}
+    assert profile_keys - {"processual"} <= module_domains, f"perfil sem módulo: {sorted(profile_keys - {'processual'} - module_domains)}"
     registry = json.loads((labor_path.parent / "official_source_registry.json").read_text(encoding="utf-8"))
     portal_ids = {p["id"] for p in registry["portals"]}
     assert all(set(route) <= portal_ids for route in registry["kind_routes"].values()), "unknown portal in kind_routes"

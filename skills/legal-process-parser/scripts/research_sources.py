@@ -25,7 +25,7 @@ MAX_PDF_PAGES = 1000
 HTML_TYPES = {"text/html", "application/xhtml+xml"}
 TEXT_TYPES = HTML_TYPES | {"text/plain", "application/json", "application/xml", "text/xml"}
 SUPPORTED_TYPES = TEXT_TYPES | {"application/pdf"}
-USER_AGENT = "Mozilla/5.0 (compatible; AuditorProcessual/0.21; +https://github.com/lucianumm/AuditorProcessual)"
+USER_AGENT = "Mozilla/5.0 (compatible; AuditorProcessual/0.22; +https://github.com/lucianumm/AuditorProcessual)"
 # Anti-bot pages of official portals (WAF/captcha) are not legal sources.
 BLOCK_SIGNATURES = ("verificação de segurança", "verificacao de seguranca", "captcha", "access denied",
                     "acesso negado", "just a moment", "attention required", "request unsuccessful",
