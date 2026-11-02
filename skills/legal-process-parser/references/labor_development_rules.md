@@ -9,7 +9,7 @@ abrir só as entradas escolhidas de labor_claims.json e as autoridades citadas e
 labor_authorities.json. Teses e autoridades são candidatas: requisitos, redação
 do período e situação são conferidos na fonte oficial da resposta.
 
-O catálogo v2 traz 90 pretensões com teses dos dois polos. Na inicial, examinar
+O catálogo v2 traz 92 pretensões com teses dos dois polos. Na inicial, examinar
 também as defesas previsíveis; na contestação, as teses do trabalhador e as
 defesas cabíveis por pedido; na réplica e no recurso, enfrentar cada defesa
 efetivamente apresentada. Pretensões transversais (prescrição, atualização,

@@ -1,0 +1,12 @@
+{
+ "schema_version": "1.0",
+ "domain": "migratorio",
+ "label": "Direito Migratório",
+ "guide": "domain_guides/migratorio.md",
+ "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
+ "polo_labels": {"claimant_theses": "Teses do autor ou requerente", "defense_theses": "Teses do réu ou requerido"},
+ "claims": [
+  {"id": "mig_residence", "label": "Autorização de residência e regularização", "requirements": ["hipotese", "documentos", "registro"], "claimant_theses": [{"id": "mig_residence.c1", "label": "Hipóteses de autorização de residência", "authority_ids": ["l13445_art30"]}, {"id": "mig_residence.c2", "label": "Princípios da política migratória e igualdade de direitos", "authority_ids": ["l13445_art3", "l13445_art4"]}], "defense_theses": [{"id": "mig_residence.d1", "label": "Hipótese legal não preenchida", "authority_ids": ["l13445_art30"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["requerimento_administrativo", "recurso_administrativo", "mandado_seguranca"], "related_claims": [], "limitation": "conferir"},
+  {"id": "mig_refugee", "label": "Reconhecimento da condição de refugiado", "requirements": ["perseguicao", "fundado_temor", "grave_violacao"], "claimant_theses": [{"id": "mig_refugee.c1", "label": "Requisitos para reconhecimento de refugiado", "authority_ids": ["l9474_art1"]}], "defense_theses": [{"id": "mig_refugee.d1", "label": "Ausência de fundado temor ou cláusula de exclusão", "authority_ids": ["l9474_art1"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["requerimento_administrativo", "recurso_administrativo", "mandado_seguranca"], "related_claims": [], "limitation": "conferir"}
+ ]
+}

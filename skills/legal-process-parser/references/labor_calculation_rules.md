@@ -114,3 +114,14 @@ id/value/unit/external_locator; rounding identifica a política da referência.
 Conferir bases, reflexos, abatimentos e arredondamento, não só total. Trata-se
 de transcrição atribuída do resultado externo, sem fingir importação de .pjc
 ou execução real do PJe-Calc. Sem arquivos reais, declarar a comparação pendente.
+
+## Divisor por período de jornada
+
+O divisor do salário-hora decorre do limite semanal efetivamente aplicável ao
+empregado no período, não de um número fixo. A Súmula 431 do TST (divisor 200
+para 40 horas; pendente de conferência no catálogo) e a prática de 220 para 44
+horas são pontos de pesquisa. Com a EC 141/2026, decompor a conta pelos marcos
+de redução (42 e 40 horas) e registrar a derivação usada para cada fase, com a
+fonte oficial e eventual regra coletiva ou especial (bancários, telefonia,
+subsolo, radialistas e outras jornadas reduzidas). Não aplicar o divisor de um
+período a outro sem demonstração.

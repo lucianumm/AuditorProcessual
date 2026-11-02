@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "observed_on": "2026-10-21",
+  "observed_on": "2026-11-02",
   "policy": "Registro de portais oficiais por tipo de fonte e via de acesso. O comportamento observado orienta a rota; cada consulta registra o resultado real. Portal bloqueado não autoriza citação de memória: usar navegador da IA, arquivo oficial enviado pelo usuário ou delimitar a questão.",
   "access_tiers": {
     "http_capture": "Captura local por research_sources.py/response_research.py consult; bytes e texto preservados e reextraídos na conferência.",
@@ -22,7 +22,7 @@
         "provisional_measure"
       ],
       "access_tier": "http_capture",
-      "observed_behavior": "HTTP 200; HTML cp1252 com marcas '(Revogado pela...)', '(Redação dada pela...)', '(Incluído pela...)', '(Vigência)', '(Vide ADI...)'. Rejeita User-Agent que não comece por 'Mozilla/5.0 (compatible; ...)'.",
+      "observed_behavior": "HTTP 200; HTML cp1252 com marcas '(Revogado pela...)', '(Redação dada pela...)', '(Incluído pela...)', '(Vigência)', '(Vide ADI...)'. Rejeita User-Agent que não comece por 'Mozilla/5.0 (compatible; ...)'. Em 2026-11-02, respondeu 'Acesso Negado!' (HTTP 200 com página de bloqueio) a este ambiente de execução; usar normas.leg.br como rota oficial alternativa.",
       "url_templates": {
         "cf": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
         "clt": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
@@ -111,7 +111,6 @@
       "label": "Superior Tribunal de Justiça",
       "hosts": [
         "processo.stj.jus.br",
-        "scon.stj.jus.br",
         "stj.jus.br",
         "www.stj.jus.br"
       ],
@@ -222,15 +221,13 @@
       "label": "LexML / normas.leg.br — identificação e versões de normas",
       "hosts": [
         "lexml.gov.br",
-        "www.lexml.gov.br",
-        "normas.leg.br",
-        "www.normas.leg.br"
+        "www.lexml.gov.br"
       ],
       "source_kinds": [
         "statute_versions"
       ],
       "access_tier": "browser_only",
-      "observed_behavior": "LexML devolve página 'Verificação de segurança — Senado'; normas.leg.br é aplicação JavaScript.",
+      "observed_behavior": "LexML devolve página 'Verificação de segurança — Senado'; normas.leg.br é aplicação JavaScript. Em 2026-11-02, /urn/ respondeu HTTP 200 com metadados (título e data da norma).",
       "url_templates": {
         "urn": "https://normas.leg.br/?urn={urn}"
       },
@@ -311,14 +308,330 @@
         "normlex": "https://normlex.ilo.org/"
       },
       "verification": "Distinguir ratificação, vigência internacional e ato brasileiro de promulgação (decreto no Planalto)."
+    },
+    {
+      "id": "normas_leg_br",
+      "label": "normas.leg.br (Senado e Câmara) — metadados e compilação da Câmara",
+      "hosts": [
+        "normas.leg.br",
+        "www.normas.leg.br"
+      ],
+      "source_kinds": [
+        "constitution",
+        "statute",
+        "decree",
+        "constitutional_amendment",
+        "complementary_law",
+        "statute_versions"
+      ],
+      "access_tier": "http_capture",
+      "observed_behavior": "Em 2026-11-02: API pública respondeu HTTP 200 (JSON) com data, publicação no DOU, ementa, legislationLegalForce e revogações (@reverse.legislationRepeals); texto compilado da Câmara em /api/public/binario/{id}/texto (HTML), com marcas '(Revogado pela...)', '(... com redação dada pela...)' e '(... acrescido pela...)'. A compilação pode não refletir alteração recente; ler legal_force.",
+      "url_templates": {
+        "detail": "https://normas.leg.br/api/public/normas?urn={urn}&tipo_documento=maior-detalhe",
+        "page": "https://normas.leg.br/?urn={urn}"
+      },
+      "verification": "legislation_lookup.py: resolve tipo/número/ano, captura o texto com recibo, localiza o artigo e lê marcas de versão e a vigência informada pelo portal."
+    },
+    {
+      "id": "senado_dados_abertos",
+      "label": "Senado Federal — dados abertos de legislação",
+      "hosts": [
+        "legis.senado.leg.br"
+      ],
+      "source_kinds": [
+        "statute_index"
+      ],
+      "access_tier": "http_capture",
+      "observed_behavior": "Em 2026-11-02: /dadosabertos/legislacao/lista respondeu HTTP 200 (JSON/XML) com identificador, data de assinatura e ementa.",
+      "url_templates": {
+        "lista": "https://legis.senado.leg.br/dadosabertos/legislacao/lista?tipo={tipo}&numero={numero}&ano={ano}"
+      },
+      "verification": "Resolver a data de assinatura e a URN LexML antes da captura do texto."
+    },
+    {
+      "id": "stj_scon",
+      "label": "STJ — SCON (súmulas e pesquisa)",
+      "hosts": [
+        "scon.stj.jus.br"
+      ],
+      "source_kinds": [
+        "sumula_stj",
+        "tema_stj"
+      ],
+      "access_tier": "http_capture",
+      "observed_behavior": "Em 2026-11-02: /SCON/sumstj/doc.jsp respondeu HTTP 200 com enunciado, órgão, julgamento, DJ e marcas 'SÚMULA ALTERADA', 'SÚMULA REVISADA' ou cancelamento; /SCON/sumanot/ respondeu 403.",
+      "url_templates": {
+        "sumula": "https://scon.stj.jus.br/SCON/sumstj/doc.jsp?livre=@num=%27{n}%27",
+        "pesquisa": "https://scon.stj.jus.br/SCON/pesquisar.jsp?b=SUMU&livre=%40NUM%3D{n}"
+      },
+      "verification": "Ler a redação vigente e a anterior quando a súmula foi alterada ou revisada; comparar com a data dos fatos."
+    },
+    {
+      "id": "tse",
+      "label": "Tribunal Superior Eleitoral",
+      "hosts": [
+        "tse.jus.br",
+        "www.tse.jus.br"
+      ],
+      "source_kinds": [
+        "resolution_tse",
+        "sumula_tse"
+      ],
+      "access_tier": "browser_only",
+      "observed_behavior": "Em 2026-11-02: HTTP 403 para cliente automatizado.",
+      "url_templates": {
+        "legislacao": "https://www.tse.jus.br/legislacao"
+      },
+      "verification": "Resolução do pleito e jurisprudência pelo navegador ou arquivo oficial."
+    },
+    {
+      "id": "stm",
+      "label": "Superior Tribunal Militar",
+      "hosts": [
+        "stm.jus.br",
+        "www.stm.jus.br"
+      ],
+      "source_kinds": [
+        "precedent_stm"
+      ],
+      "access_tier": "browser_only",
+      "observed_behavior": "Em 2026-11-02: página 'Request Rejected' (WAF).",
+      "url_templates": {
+        "portal": "https://www.stm.jus.br/"
+      },
+      "verification": "Navegador ou arquivo oficial."
+    },
+    {
+      "id": "carf",
+      "label": "Conselho Administrativo de Recursos Fiscais",
+      "hosts": [
+        "carf.economia.gov.br"
+      ],
+      "source_kinds": [
+        "precedent_carf",
+        "sumula_carf"
+      ],
+      "access_tier": "browser_only",
+      "observed_behavior": "Em 2026-11-02: conexão encerrada pelo servidor para cliente automatizado.",
+      "url_templates": {
+        "portal": "https://carf.economia.gov.br/"
+      },
+      "verification": "Navegador ou arquivo oficial."
+    },
+    {
+      "id": "receita_normas",
+      "label": "Receita Federal — normas (SIJUT)",
+      "hosts": [
+        "normas.receita.fazenda.gov.br"
+      ],
+      "source_kinds": [
+        "tax_normative"
+      ],
+      "access_tier": "http_capture",
+      "observed_behavior": "Em 2026-11-02: HTTP 200 na página de consulta.",
+      "url_templates": {
+        "consulta": "https://normas.receita.fazenda.gov.br/sijut2consulta/consulta.action"
+      },
+      "verification": "Conferir o ato e sua situação (vigente, alterado, revogado)."
+    },
+    {
+      "id": "inss",
+      "label": "INSS (gov.br)",
+      "hosts": [
+        "gov.br",
+        "www.gov.br"
+      ],
+      "path_prefix": "/inss/",
+      "source_kinds": [
+        "social_security_act"
+      ],
+      "access_tier": "http_capture",
+      "observed_behavior": "Em 2026-11-02: HTTP 200.",
+      "url_templates": {
+        "portal": "https://www.gov.br/inss/pt-br"
+      },
+      "verification": "Instruções normativas e portarias com data e redação vigente."
+    },
+    {
+      "id": "previdencia",
+      "label": "Ministério da Previdência Social (gov.br)",
+      "hosts": [
+        "gov.br",
+        "www.gov.br"
+      ],
+      "path_prefix": "/previdencia/",
+      "source_kinds": [
+        "social_security_act"
+      ],
+      "access_tier": "http_capture",
+      "observed_behavior": "Em 2026-11-02: HTTP 200.",
+      "url_templates": {
+        "portal": "https://www.gov.br/previdencia/pt-br"
+      },
+      "verification": "Atos e portarias, inclusive do CRPS."
+    },
+    {
+      "id": "ans",
+      "label": "Agência Nacional de Saúde Suplementar (gov.br)",
+      "hosts": [
+        "gov.br",
+        "www.gov.br"
+      ],
+      "path_prefix": "/ans/",
+      "source_kinds": [
+        "health_regulation"
+      ],
+      "access_tier": "http_capture",
+      "observed_behavior": "Em 2026-11-02: HTTP 200.",
+      "url_templates": {
+        "portal": "https://www.gov.br/ans/pt-br"
+      },
+      "verification": "Rol, resoluções normativas e prazos na redação do período."
+    },
+    {
+      "id": "anvisa",
+      "label": "Anvisa (gov.br)",
+      "hosts": [
+        "gov.br",
+        "www.gov.br"
+      ],
+      "path_prefix": "/anvisa/",
+      "source_kinds": [
+        "health_regulation"
+      ],
+      "access_tier": "http_capture",
+      "observed_behavior": "Em 2026-11-02: HTTP 200.",
+      "url_templates": {
+        "portal": "https://www.gov.br/anvisa/pt-br"
+      },
+      "verification": "Registro sanitário e atos normativos."
+    },
+    {
+      "id": "anpd",
+      "label": "Autoridade Nacional de Proteção de Dados (gov.br)",
+      "hosts": [
+        "gov.br",
+        "www.gov.br"
+      ],
+      "path_prefix": "/anpd/",
+      "source_kinds": [
+        "data_protection_regulation"
+      ],
+      "access_tier": "http_capture",
+      "observed_behavior": "Em 2026-11-02: HTTP 200.",
+      "url_templates": {
+        "portal": "https://www.gov.br/anpd/pt-br"
+      },
+      "verification": "Regulamentos e orientações com data."
+    },
+    {
+      "id": "cade",
+      "label": "CADE (gov.br)",
+      "hosts": [
+        "gov.br",
+        "www.gov.br"
+      ],
+      "path_prefix": "/cade/",
+      "source_kinds": [
+        "competition"
+      ],
+      "access_tier": "http_capture",
+      "observed_behavior": "Em 2026-11-02: HTTP 200.",
+      "url_templates": {
+        "portal": "https://www.gov.br/cade/pt-br"
+      },
+      "verification": "Atos e jurisprudência administrativa."
+    },
+    {
+      "id": "mma",
+      "label": "Ministério do Meio Ambiente (gov.br)",
+      "hosts": [
+        "gov.br",
+        "www.gov.br"
+      ],
+      "path_prefix": "/mma/",
+      "source_kinds": [
+        "environmental_regulation"
+      ],
+      "access_tier": "http_capture",
+      "observed_behavior": "Em 2026-11-02: HTTP 200.",
+      "url_templates": {
+        "portal": "https://www.gov.br/mma/pt-br"
+      },
+      "verification": "Resoluções do CONAMA e atos com data."
+    },
+    {
+      "id": "tcu",
+      "label": "Tribunal de Contas da União",
+      "hosts": [
+        "portal.tcu.gov.br"
+      ],
+      "source_kinds": [
+        "audit_court"
+      ],
+      "access_tier": "http_capture",
+      "observed_behavior": "Em 2026-11-02: HTTP 200 na página inicial; pesquisas não testadas.",
+      "url_templates": {
+        "portal": "https://portal.tcu.gov.br/"
+      },
+      "verification": "Acórdãos e súmulas do TCU pelo número e data."
+    },
+    {
+      "id": "cnj_atos",
+      "label": "CNJ — atos normativos",
+      "hosts": [
+        "atos.cnj.jus.br"
+      ],
+      "source_kinds": [
+        "resolution_cnj"
+      ],
+      "access_tier": "http_capture",
+      "observed_behavior": "Em 2026-11-02: HTTP 200 na listagem de atos.",
+      "url_templates": {
+        "lista": "https://atos.cnj.jus.br/atos"
+      },
+      "verification": "Resolução, alterações e situação (vigente, revogada)."
+    },
+    {
+      "id": "tribunais_estaduais",
+      "label": "Tribunais de Justiça dos Estados e do DF",
+      "host_regex": "^(www\\.)?tj[a-z]{2}\\.jus\\.br$",
+      "source_kinds": [
+        "state_court",
+        "calendario_forense"
+      ],
+      "access_tier": "browser_only",
+      "observed_behavior": "Em 2026-11-02: tjsp.jus.br respondeu HTTP 200 na página inicial; consultas de jurisprudência e processos não testadas. Tratar como navegador até observar captura íntegra.",
+      "url_templates": {
+        "portal": "https://www.tj{uf}.jus.br/"
+      },
+      "verification": "Súmulas, IRDR e calendário forense do tribunal competente."
+    },
+    {
+      "id": "trf",
+      "label": "Tribunais Regionais Federais",
+      "host_regex": "^(www\\.|portal\\.)?trf[1-6]\\.jus\\.br$",
+      "source_kinds": [
+        "federal_court",
+        "calendario_forense"
+      ],
+      "access_tier": "browser_only",
+      "observed_behavior": "Em 2026-11-02: portal.trf1.jus.br respondeu HTTP 403.",
+      "url_templates": {
+        "portal": "https://www.trf{n}.jus.br/"
+      },
+      "verification": "Súmulas, IRDR e calendário forense do tribunal competente."
     }
   ],
   "kind_routes": {
     "constitution": [
-      "planalto"
+      "planalto",
+      "normas_leg_br"
     ],
     "statute": [
       "planalto",
+      "normas_leg_br",
+      "senado_dados_abertos",
       "lexml_normas",
       "dou"
     ],
@@ -340,7 +653,8 @@
       "stf",
       "juslaboris",
       "trt",
-      "stj"
+      "stj",
+      "stj_scon"
     ],
     "international_instrument": [
       "oit",
@@ -357,6 +671,49 @@
       "planalto",
       "tst",
       "stf"
+    ],
+    "sumula_stj": [
+      "stj_scon",
+      "stj"
+    ],
+    "electoral_act": [
+      "tse"
+    ],
+    "tax_normative": [
+      "receita_normas",
+      "carf"
+    ],
+    "social_security_act": [
+      "inss",
+      "previdencia",
+      "dou"
+    ],
+    "health_regulation": [
+      "ans",
+      "anvisa"
+    ],
+    "data_protection_regulation": [
+      "anpd"
+    ],
+    "competition": [
+      "cade"
+    ],
+    "environmental_regulation": [
+      "mma",
+      "dou"
+    ],
+    "audit_court": [
+      "tcu"
+    ],
+    "cnj_act": [
+      "cnj_atos",
+      "cnj"
+    ],
+    "state_court": [
+      "tribunais_estaduais"
+    ],
+    "federal_court": [
+      "trf"
     ]
   }
 }

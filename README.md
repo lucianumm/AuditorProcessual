@@ -23,9 +23,9 @@ Reclamações, ideias, falhas encontradas ou sugestões: [contato@lumenaxis.dev.
 
 Skill para ler processos e anexos, organizar fatos e provas, pesquisar fundamentos e desenvolver análises e peças jurídicas rastreáveis.
 
-**Versão 0.21.0 — fundamentos conferidos em tempo real na fonte oficial e catálogo trabalhista ampliado, com teses do trabalhador e da defesa.** Cada citação é localizada no texto oficial consultado na própria resposta, com redação do período e situação atual do precedente. No trabalhista, atende também clientes com poucos ou nenhum documento, preservando relatos, retificações e prova futura.
+**Versão 0.22.0 — trabalhista mais profundo, 19 outros ramos com catálogo próprio e legislação conferida por via oficial alternativa quando o Planalto recusa o acesso.** Cada citação é localizada no texto oficial consultado na própria resposta, com redação do período, vigência informada pelo portal e situação atual do precedente. No trabalhista, atende também clientes com poucos ou nenhum documento, preservando relatos, retificações e prova futura.
 
-[Usar por link](#usar-por-link) · [Fluxo de trabalho](#fluxo-de-trabalho) · [Fundamentos em tempo real](#fundamentos-conferidos-em-tempo-real) · [Trabalhista](#especialização-trabalhista) · [Instalação](#instalação-e-pacotes) · [Execução local](#execução-local) · [Arquivos](#arquivos-e-continuidade) · [Validação](#validação) · [Guia técnico](docs/TECHNICAL_GUIDE.md)
+[Usar por link](#usar-por-link) · [Fluxo de trabalho](#fluxo-de-trabalho) · [Fundamentos em tempo real](#fundamentos-conferidos-em-tempo-real) · [Trabalhista](#especialização-trabalhista) · [Demais ramos](#demais-ramos-do-direito) · [Instalação](#instalação-e-pacotes) · [Execução local](#execução-local) · [Arquivos](#arquivos-e-continuidade) · [Validação](#validação) · [Guia técnico](docs/TECHNICAL_GUIDE.md)
 
 ## Usar por link
 
@@ -67,15 +67,15 @@ Toda citação usada na resposta (artigo, súmula, OJ, Tema, ADI/ADC/ADPF, NR ou
 | Precedente | Identificador ausente da página consultada; linha de situação sem situação | Súmula/OJ cancelada, Tema suspenso ou pendente, tese com modulação |
 | Origem | Página de bloqueio, corpo vazio, status diferente de 200, URL diferente da norma, trecho com menos de três palavras | Observação feita pelo navegador da IA (registrada, mas não atestada) |
 
-Cada portal tem sua via de acesso registrada em [official_source_registry.json](skills/legal-process-parser/references/official_source_registry.json). Planalto, gov.br/MTE e BCB/SGS aceitam captura local com recibo. TST (inclusive o JusLaboris, com bloqueio intermitente), STF, LexML, Mediador, CSJT e OIT recusam clientes automatizados: a IA usa o próprio navegador ou um arquivo oficial enviado pelo usuário, e o bloqueio é registrado em vez de virar consulta. `fontes.md` informa, por citação, se ela foi "conferida por captura HTTP", "observada pela IA (não atestada)" ou "não conferida — portal bloqueou acesso automatizado".
+Cada portal tem sua via de acesso registrada em [official_source_registry.json](skills/legal-process-parser/references/official_source_registry.json). Planalto, normas.leg.br, dados abertos do Senado, SCON do STJ, gov.br (MTE, INSS, ANS, ANPD e outros) e BCB/SGS aceitam captura local com recibo. Quando o Planalto recusa o acesso (em 02/11/2026 respondeu "Acesso Negado!"), `legislation_lookup.py` usa a compilação da Câmara no normas.leg.br e lê a vigência informada pelo portal, porque o texto compilado pode estar defasado: a Lei 7.102/1983 aparece como revogada pela Lei 14.967/2024 nos metadados, sem a marca no texto. TST (inclusive o JusLaboris, com bloqueio intermitente), STF, TSE, STM, CARF, TRFs, Mediador, CSJT e OIT recusam clientes automatizados: a IA usa o próprio navegador ou um arquivo oficial enviado pelo usuário, e o bloqueio é registrado em vez de virar consulta. `fontes.md` informa, por citação, se ela foi "conferida por captura HTTP", "observada pela IA (não atestada)" ou "não conferida — portal bloqueou acesso automatizado".
 
-A conferência existe porque o direito muda. Durante a montagem do catálogo desta versão, a verificação no Planalto encontrou a **EC 141/2026** (DOU de 16/10/2026), que reescreveu o art. 7º, XIII e XV, da Constituição: limite semanal de 42 horas e dois dias de repouso a partir de dois meses da publicação, e de 40 horas um ano depois. Uma citação de memória com as "44 horas semanais" é recusada; citar a redação atual para fatos anteriores gera alerta intertemporal. A mesma rotina confirmou o cancelamento das Súmulas 90, 228, 366, 437, 444 e 450 e da OJ 355 do TST pela Res. 225/2025.
+A conferência existe porque o direito muda. Durante a montagem do catálogo da v0.21.0, a verificação no Planalto encontrou a **EC 141/2026** (DOU de 16/10/2026), que reescreveu o art. 7º, XIII e XV, da Constituição: limite semanal de 42 horas e dois dias de repouso a partir de dois meses da publicação, e de 40 horas um ano depois. Uma citação de memória com as "44 horas semanais" é recusada; citar a redação atual para fatos anteriores gera alerta intertemporal. A mesma rotina confirmou o cancelamento das Súmulas 90, 228, 366, 437, 444 e 450 e da OJ 355 do TST pela Res. 225/2025. Na v0.22.0, a reconferência pela via do Congresso confirmou a EC 141/2026 (dados abertos do Senado e compilação da Câmara), registrou a Lei 8.666/1993 e a Lei 7.102/1983 como sem vigência e encontrou a Súmula 545 do STJ com redação revisada em 10/09/2025.
 
 Regras: [conferência de citações](skills/legal-process-parser/references/citation_verification_rules.md) · [pesquisa oficial](skills/legal-process-parser/references/official_research_rules.md).
 
 ## Especialização trabalhista
 
-A versão atual reúne **90 pretensões com 155 teses do trabalhador e 140 teses de defesa, 223 autoridades candidatas, 13 marcos temporais, 21 guias setoriais e 16 pautas de cálculo**, carregados somente quando pertinentes. Cada tese aponta para autoridades conferidas no catálogo em 21/10/2026: dispositivos localizados no texto oficial do Planalto e precedentes com situação e grau de confiança. Na resposta, toda autoridade continua candidata até a conferência própria descrita acima.
+A versão atual reúne **92 pretensões com 217 teses do trabalhador e 174 teses de defesa, 415 autoridades candidatas, 28 marcos temporais, 35 guias setoriais e 16 pautas de cálculo**, carregados somente quando pertinentes. Cada autoridade registra como e quando foi conferida: as 162 legais do catálogo anterior foram reconferidas em 02/11/2026 no normas.leg.br sem divergência, 94 dispositivos novos foram lidos no texto oficial, 38 NRs vêm da lista oficial do MTE e as Súmulas Vinculantes 22, 23, 40 e 53 foram lidas no STF. Precedentes que o portal do tribunal não entregou ficam como `pendente_conferencia_oficial`: são pontos de pesquisa, não fundamento conferido. Na resposta, toda autoridade continua candidata até a conferência própria descrita acima.
 
 | Frente | Desenvolvimento |
 |---|---|
@@ -84,9 +84,10 @@ A versão atual reúne **90 pretensões com 155 teses do trabalhador e 140 teses
 | Jornada | Horas extras com a transição da EC 141/2026, cargo de confiança, sobreaviso, tempo à disposição, *in itinere* até 10/11/2017, 12x36, compensação, banco de horas, turnos, teletrabalho, noturno, intervalos e repousos |
 | Remuneração | Equiparação e igualdade salarial (Lei 14.611/2023), substituição, piso, carreira, extrafolha, comissões, gorjetas, prêmios, PLR, utilidades, vale-transporte, alimentação |
 | Ruptura e garantias | Modalidades (inclusive acordo e culpa recíproca), aviso proporcional, multas, seguro-desemprego, dispensa discriminatória e coletiva, PDV, quitação anual, plano de saúde, estatais (Tema 1022) e garantias |
-| Saúde e dignidade | Acidente e doença (Tema 932), dano material, estético e existencial, assédio moral e sexual, monitoramento e dados pessoais, cota de PCD, trabalho análogo ao de escravo |
+| Saúde e dignidade | Acidente e doença (Tema 932, SV 22), NRs da lista oficial, dano material, estético e existencial, assédio moral e sexual (Lei 14.457/2022), monitoramento e dados pessoais, cota de PCD, trabalho análogo ao de escravo (CP, arts. 149 e 149-A) |
+| Setores | 35 guias, inclusive ferroviários, marítimos, subsolo, telefonia, artistas e radialistas, condomínios, motociclistas, agentes comunitários de saúde, bombeiros civis, expatriados (Lei 7.064/1982, com as alterações de 2024), entidades religiosas (Lei 14.647/2023), salão-parceiro, avulsos e organismos internacionais |
 | Coletivo | Cláusulas e vigência, Tema 1046, contribuições (Tema 935), greve, multa normativa, dano moral coletivo |
-| Procedimento e execução | Prescrição, gratuidade e honorários (ADI 5766), má-fé, recursos, liquidação, atualização por fases (ADC 58 e Lei 14.905/2024), contribuições e IR |
+| Procedimento e execução | Sumaríssimo, revelia e preposto, prazos e recesso, prescrição, gratuidade e honorários (ADI 5766), má-fé, recursos e IRR, liquidação, protesto e CNDT, atualização por fases (ADC 58 e Lei 14.905/2024), contribuições e IR (SV 53, Lei 7.713/1988, art. 12-A) |
 
 Os dois polos são atendidos: a análise do trabalhador examina as defesas previsíveis, e a contestação parte das teses de defesa por pedido, enfrentando as do trabalhador. O índice [labor_claims_index.md](skills/legal-process-parser/references/labor_claims_index.md) orienta a escolha sem carregar o catálogo inteiro; com código, `labor_catalog.py --claim ID --markdown` gera o mapa de teses candidatas, com links oficiais e marcos temporais.
 
@@ -98,19 +99,36 @@ Os motores numéricos usam parâmetros atribuídos e fórmulas demonstráveis. P
 
 Referências: [atendimento](skills/legal-process-parser/references/labor_intake_rules.md), [índice de pretensões](skills/legal-process-parser/references/labor_claims_index.md), [pretensões](skills/legal-process-parser/references/labor_claims.json), [autoridades](skills/legal-process-parser/references/labor_authorities.json), [setores](skills/legal-process-parser/references/labor_sectors.json), [desenvolvimento](skills/legal-process-parser/references/labor_development_rules.md), [cálculos](skills/legal-process-parser/references/labor_calculation_rules.md), [processo e defesa](skills/legal-process-parser/references/labor_procedure_rules.md), [saúde ocupacional](skills/legal-process-parser/references/labor_details/occupational_strategy_rules.md).
 
+## Demais ramos do direito
+
+Fora do trabalhista, cada ramo tem guia próprio e catálogo de pretensões com teses dos dois polos, autoridades candidatas, marcos temporais, peças candidatas e prova típica: **19 ramos, 104 pretensões, 166 teses do polo ativo e 118 do passivo, 319 autoridades e 19 marcos temporais**. São 258 dispositivos conferidos no normas.leg.br, 40 súmulas do STJ capturadas no SCON com recibo (a 545 com a redação revisada em 10/09/2025) e 12 súmulas vinculantes lidas no STF; temas e ações sem conferência ficam pendentes.
+
+| Ramo | Exemplos de pretensões |
+|---|---|
+| Previdenciário e previdência complementar | Incapacidade, aposentadoria e transições da EC 103/2019, tempo especial, BPC, pensão, revisão e decadência; planos e institutos da LC 109/2001 |
+| Consumidor e bancário | Fato e vício, cobrança indevida, cadastros, cláusulas abusivas, planos de saúde, superendividamento; fraudes (Súmula 479), consignado e revisão |
+| Civil, imobiliário e agrário | Responsabilidade civil, inadimplemento (Lei 14.905/2024), monitória e execução, possessórias, locação; adjudicação, promessa, alienação fiduciária, usucapião; arrendamento e parceria rural |
+| Família e sucessões | Alimentos, execução e revisão, divórcio, guarda e alienação parental, união estável (Tema 809), inventário, medidas protetivas |
+| Penal e militar | Lei penal no tempo, prescrição, prova e nulidades, prisão e liberdade, dosimetria, ANPP, drogas, execução, crime tributário (SV 24); competência e recursos do CPPM |
+| Administrativo, constitucional e eleitoral | Revisão de atos (LINDB), PAD, improbidade (Lei 14.230/2021), concursos, nepotismo, licitações, TCU, ação popular, MS; controle concentrado, MI, habeas data, reclamação; registro, AIJE, captação de sufrágio, condutas vedadas, contas e recursos |
+| Tributário | Decadência e prescrição, defesa na execução fiscal, redirecionamento, repetição, processo administrativo, limitações, reforma (EC 132/2023 e LC 214/2025), transação, denúncia espontânea |
+| Empresarial, ambiental, saúde, dados e migração | Recuperação, créditos, falência, desconsideração, haveres, marcas; responsabilidade e multas ambientais, Código Florestal; SUS; LGPD e Marco Civil; residência e refúgio |
+
+`task_context.py --domain familia` ou `--domain-claim fam_alimony` carrega só o guia e o índice do ramo. O catálogo de peças passou a 95 entradas: família é domínio próprio, o processo penal tem suas peças (e não recebe "contestação"), e cada peça nova indica a base legal conferida. O classificador lê o número único CNJ (segmento da Justiça e tribunal, com dígito verificador) e não confunde mais "adicional" com ADI nem "reunião" com réu.
+
 ## Instalação e pacotes
 
-[Baixar a release v0.21.0](https://github.com/lucianumm/AuditorProcessual/releases/tag/v0.21.0). Use somente o pacote adequado ao seu produto e aos recursos disponíveis na conta.
+[Baixar a release v0.22.0](https://github.com/lucianumm/AuditorProcessual/releases/tag/v0.22.0). Use somente o pacote adequado ao seu produto e aos recursos disponíveis na conta.
 
 | Plataforma | Pacote / instruções |
 |---|---|
-| ChatGPT | [ZIP da skill](https://github.com/lucianumm/AuditorProcessual/releases/download/v0.21.0/legal-process-parser-chatgpt.zip), `.skill` equivalente e [guia de upload](CHATGPT_UPLOAD.md) |
+| ChatGPT | [ZIP da skill](https://github.com/lucianumm/AuditorProcessual/releases/download/v0.22.0/legal-process-parser-chatgpt.zip), `.skill` equivalente e [guia de upload](CHATGPT_UPLOAD.md) |
 | Claude | `auditor-processual-claude.zip` e [adaptador Claude](adapters/claude/README.md) |
 | Manus | Importação do repositório, `.skill` ou ZIP; [adaptador Manus](adapters/manus/README.md) |
 | Gemini | `auditor-processual-gemini-cli.zip` ou instruções do Gem; [adaptador Gemini](adapters/gemini/README.md) |
 | Grok | `auditor-processual-grok.zip` e [adaptador Grok](adapters/grok/README.md) |
 | Codex | Diretório `skills/legal-process-parser` ou `legal-process-parser.zip` |
-| Python | wheel `legal_process_parser-0.21.0-py3-none-any.whl` |
+| Python | wheel `legal_process_parser-0.22.0-py3-none-any.whl` |
 
 Um pacote não concede navegação, visão, execução de Python ou memória permanente. A disponibilidade de instalação e ferramentas depende da plataforma. Instruções/Knowledge de um assistente personalizado não equivalem automaticamente à execução local.
 
@@ -172,6 +190,14 @@ python skills/legal-process-parser/scripts/labor_research.py --claim fgts --trt 
 python skills/legal-process-parser/scripts/labor_research.py --refresh saida
 ```
 
+Para localizar uma norma pela via oficial do Congresso e consultar os catálogos dos demais ramos:
+
+```powershell
+python skills/legal-process-parser/scripts/legislation_lookup.py saida --act LEI:14647:2023 --article 1
+python skills/legal-process-parser/scripts/domain_catalog.py --claim fam_alimony --markdown --polo ambos
+python skills/legal-process-parser/scripts/domain_catalog.py --check
+```
+
 Para conferir fundamentos, montar o mapa de teses e capturar índices oficiais:
 
 ```powershell
@@ -221,7 +247,7 @@ python -m pip wheel . --no-deps --wheel-dir outputs
 python scripts/verify_wheel.py outputs
 ```
 
-A v0.21.0 acrescenta testes offline com trechos reais da CLT e da CF capturados do Planalto (revogação do art. 384, redação do art. 71, § 4º, e a EC 141/2026), respostas de bloqueio simuladas (desafio WAF, 403, corpo vazio), adulteração de texto com hashes recalculados, catálogo com integridade cruzada (teses, autoridades, marcos, pautas e setores) e regressões das correções de cálculo e tempo. A comparação com a 0.20.0 nas quatro regressões congeladas não mostrou piora. A avaliação profissional e a referência real do PJe-Calc dependem de materiais próprios; testes sintéticos não as substituem.
+A v0.22.0 acrescenta testes offline das marcas da compilação da Câmara, de artigos com separador de milhar, da rota normas.leg.br (com metadados de vigência simulados), do classificador com número CNJ e limite de palavra, dos 19 catálogos de ramo (schema, vínculos e índices gerados), das peças por domínio e do roteamento por ramo, além de sete casos sintéticos de avaliação fora do trabalhista: 371 testes. A avaliação profissional e a referência real do PJe-Calc dependem de materiais próprios; testes sintéticos não as substituem.
 
 Os testes executam cenários sintéticos de integridade, continuidade, leitura, fontes, cálculos e elaboração incremental. O novo controle rejeita consulta antiga, vínculo com texto diferente, fonte adulterada, escopo/citação incompatíveis e parâmetro sem origem suficiente. Captura HTTP preserva bytes; observação do navegador permanece declaração sem atestado independente. Pacote validado localmente não comprova importação na interface de cada IA, precisão em autos reais ou execução do PJe-Calc.
 

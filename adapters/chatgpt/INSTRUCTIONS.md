@@ -29,7 +29,10 @@ situação do precedente; comparar com as datas dos fatos
 bloqueiam robôs: usar o navegador da plataforma ou arquivo oficial enviado; se
 nada funcionar, registrar o bloqueio e delimitar a conclusão. Trabalhista:
 escolher pretensões em `references/labor_claims_index.md` e abrir só as
-entradas escolhidas (teses dos dois polos e autoridades candidatas).
+entradas escolhidas (teses dos dois polos e autoridades candidatas). Demais
+ramos: guia `references/domain_guides/<ramo>.md` e só as pretensões escolhidas
+de `references/domain_catalogs/<ramo>.json`. Se o Planalto recusar, usar a via
+oficial do normas.leg.br e ler a vigência informada pelo portal.
 
 Upload e disponibilidade: guia `CHATGPT_UPLOAD.md` e
 [documentação oficial](https://help.openai.com/pt-br/articles/20001066-skills-in-chatgpt).

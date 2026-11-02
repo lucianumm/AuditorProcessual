@@ -88,6 +88,11 @@ de aplicar os perfis de `references/legal_domain_profiles.json`; a
 classificação heurística apenas encaminha a pesquisa. Selecione somente os módulos
 pertinentes em `references/legal_specializations.json`, sem confundir BPC, RGPS,
 RPPS ou vínculo estatutário/celetista. Examine áreas concorrentes quando pertinentes.
+Fora do trabalhista, leia o guia do ramo (`references/domain_guides/<ramo>.md`) e
+o índice `references/domain_catalogs/<ramo>_index.md`; abra só as pretensões
+escolhidas (com código: `domain_catalog.py --claim ID --markdown --polo ativo|passivo|ambos`).
+São 19 ramos com teses dos dois polos, autoridades candidatas e marcos temporais;
+o número único CNJ (segmento da Justiça e tribunal) ajuda a confirmar a área.
 
 Para cada questão, relacione fatos e provas, requisitos e exceções, normas
 vigentes à época relevante, precedentes favoráveis e contrários, subsunção,
@@ -110,7 +115,9 @@ da resposta conforme `references/citation_verification_rules.md`: o dispositivo
 existe, o trecho pertence a ele e não à redação riscada, e as marcas "(Revogado…)",
 "(Redação dada…)", "(Incluído…)" e "(Vide ADI…)" são comparadas com as datas dos
 fatos. `references/official_source_registry.json` indica a via de cada portal: o
-Planalto aceita captura local; TST, STF, LexML e Mediador exigem navegador da IA
+Planalto aceita captura local e, quando recusar, `legislation_lookup.py` captura a
+compilação da Câmara em normas.leg.br, lendo também a vigência informada pelo
+portal; súmulas do STJ vêm do SCON; TST, STF, TSE e Mediador exigem navegador da IA
 ou arquivo oficial enviado. Com código: `response_research.py verify` e
 `citation_check.py check`. Nunca completar número, redação ou situação de memória.
 
@@ -134,7 +141,7 @@ Em questões trabalhistas, leia references/labor_core_rules.md e selecione os
 temas pertinentes em references/labor_topics.json. Reconstituir relações e
 períodos, conferir normas coletivas, provas, ônus e requisitos por questão.
 Escolha pretensões em references/labor_claims_index.md e abra só as entradas
-escolhidas de labor_claims.json: 90 pretensões com teses do trabalhador e da
+escolhidas de labor_claims.json: 92 pretensões com teses do trabalhador e da
 defesa, autoridades candidatas (labor_authorities.json) e marcos temporais
 (Lei 13.467/2017, Res. 225/2025 do TST, Lei 14.905/2024, EC 141/2026). Com código,
 `labor_catalog.py --claim ID --brief|--markdown --polo reclamante|reclamada|ambos`.

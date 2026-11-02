@@ -1,0 +1,12 @@
+{
+ "schema_version": "1.0",
+ "domain": "militar",
+ "label": "Direito Penal e Processual Militar",
+ "guide": "domain_guides/militar.md",
+ "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
+ "polo_labels": {"claimant_theses": "Teses da defesa", "defense_theses": "Teses da acusação"},
+ "claims": [
+  {"id": "mil_competence", "label": "Crime militar e competência", "requirements": ["agente", "local", "funcao", "tipo"], "claimant_theses": [{"id": "mil_competence.c1", "label": "Fora das hipóteses do art. 9º do CPM a competência é da Justiça comum", "authority_ids": ["cpm_art9", "cf_art124", "cf_art125"]}], "defense_theses": [{"id": "mil_competence.d1", "label": "Enquadramento nas hipóteses do art. 9º do CPM", "authority_ids": ["cpm_art9"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["habeas_corpus", "resposta_acusacao"], "related_claims": [], "limitation": "conferir"},
+  {"id": "mil_appeals", "label": "Recursos no processo penal militar", "requirements": ["decisao", "cabimento", "prazo"], "claimant_theses": [{"id": "mil_appeals.c1", "label": "Recurso em sentido estrito, apelação e revisão no CPPM", "authority_ids": ["cppm_art516", "cppm_art526", "cppm_art550"]}], "defense_theses": [{"id": "mil_appeals.d1", "label": "Hipótese não prevista no CPPM", "authority_ids": ["cppm_art516"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["apelacao_criminal", "rese", "revisao_criminal"], "related_claims": [], "limitation": "conferir"}
+ ]
+}
