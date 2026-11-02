@@ -70,3 +70,24 @@ decisão, atualizar procedural_updates e reexaminar capítulos dependentes.
 Recursos enfrentam cada fundamento autônomo com passagem e parágrafo de resposta.
 Na execução, confrontar sentença e todas as decisões integradoras, delimitações
 e pagamentos; a tese da fase cognitiva não amplia automaticamente o título.
+
+## Rito, audiência, comunicações e execução (dispositivos conferidos em 02/11/2026)
+
+Rito: o sumaríssimo alcança dissídios até 40 salários mínimos no ajuizamento e
+exclui a Administração direta, autárquica e fundacional (CLT, art. 852-A); exige
+pedido certo com valor, veda citação por edital (art. 852-B), concentra a
+instrução em audiência única (art. 852-C) e dispensa relatório na sentença (art.
+852-I). A alçada da Lei 5.584/1970 (art. 2º) depende do valor fixado; conferir
+recorribilidade. Audiência: presença das partes e preposto, que não precisa ser
+empregado (art. 843, § 3º); ausência do reclamante gera arquivamento e, do
+reclamado, revelia e confissão, com as exceções e custas do art. 844 (conferir a
+ADI 5766 quanto à gratuidade). Prazos em dias úteis (art. 775) e suspensos de 20
+de dezembro a 20 de janeiro (art. 775-A); comunicações eletrônicas seguem a Lei
+11.419/2006 (arts. 4º e 5º) e os atos do CNJ e do tribunal, que devem ser
+conferidos na resposta. Tutela coletiva: ação civil pública e legitimados (Lei
+7.347/1985, arts. 1º e 5º). Execução: títulos do art. 876; protesto, cadastros e
+BNDT só após 45 dias da citação sem garantia (art. 883-A); CNDT (art. 642-A);
+agravo de petição com delimitação de matérias e valores (art. 897, § 1º).
+Recursos repetitivos de revista (art. 896-C): identificar a tese firmada, a
+data e a modulação no índice oficial do TST. Homologação de acordo extrajudicial
+é competência da Vara (art. 652, f) e segue os arts. 855-B a 855-E.

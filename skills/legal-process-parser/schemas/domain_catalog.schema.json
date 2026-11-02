@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Catálogo de pretensões por ramo do direito (fora do trabalhista)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "domain",
+    "label",
+    "guide",
+    "policy",
+    "polo_labels",
+    "claims"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "domain": {
+      "type": "string",
+      "pattern": "^[a-z_]+$"
+    },
+    "label": {
+      "type": "string",
+      "minLength": 1
+    },
+    "guide": {
+      "type": "string",
+      "pattern": "^domain_guides/[a-z_]+\\.md$"
+    },
+    "policy": {
+      "type": "string",
+      "minLength": 1
+    },
+    "polo_labels": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claimant_theses",
+        "defense_theses"
+      ],
+      "properties": {
+        "claimant_theses": {
+          "type": "string",
+          "minLength": 1
+        },
+        "defense_theses": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "label",
+          "requirements",
+          "claimant_theses",
+          "defense_theses",
+          "temporal_marker_ids",
+          "typical_requests",
+          "evidence",
+          "piece_ids",
+          "related_claims",
+          "limitation"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "requirements": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9_]+$"
+            }
+          },
+          "claimant_theses": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "label",
+                "authority_ids"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9_]+\\.[cd][0-9]+$"
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "authority_ids": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9_]+$"
+                  }
+                }
+              }
+            }
+          },
+          "defense_theses": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "label",
+                "authority_ids"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9_]+\\.[cd][0-9]+$"
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "authority_ids": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9_]+$"
+                  }
+                }
+              }
+            }
+          },
+          "temporal_marker_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "typical_requests": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "piece_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "related_claims": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "limitation": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

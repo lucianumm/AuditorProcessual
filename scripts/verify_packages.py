@@ -78,7 +78,9 @@ def verify(directory):
             for resource in ("references/local_response_workflow.md", "references/labor_parameter_profiles.json", "schemas/response_research.schema.json", "schemas/labor_parameters.schema.json",
                              "scripts/numeric_criteria.py", "scripts/labor_case_state.py", "scripts/prose_review.py", "scripts/research_locator.py",
                              "scripts/citation_check.py", "scripts/source_registry.py", "references/labor_authorities.json",
-                             "references/official_source_registry.json", "references/citation_verification_rules.md", "references/labor_claims_index.md"):
+                             "references/official_source_registry.json", "references/citation_verification_rules.md", "references/labor_claims_index.md",
+                             "references/domain_authorities.json", "references/domain_catalogs/penal.json", "references/domain_catalogs/penal_index.md",
+                             "references/domain_guides/penal.md", "references/domain_claims_index.md", "scripts/domain_catalog.py", "scripts/legislation_lookup.py"):
                 assert (core / resource).is_file(), (package.name, resource)
             review = root / "invalid.json"
             review.write_text("{}")

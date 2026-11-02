@@ -1198,10 +1198,90 @@ def _domain_source_text(pages: Sequence[Page]) -> str:
     return "\n".join(chunks)
 
 
+# Aceita a forma abreviada sem zeros à esquerda usada pelo TST ("RR-713-03.2010.5.04.0029").
+CNJ_NUMBER_RE = re.compile(r"(?<!\d)(\d{1,7})-(\d{2})\.(\d{4})\.(\d)\.(\d{2})\.(\d{4})(?!\d)")
+# Segmento "J" do número único (Res. CNJ 65/2008).
+CNJ_SEGMENTS = {"1": "Supremo Tribunal Federal", "2": "Conselho Nacional de Justiça", "3": "Superior Tribunal de Justiça",
+                "4": "Justiça Federal", "5": "Justiça do Trabalho", "6": "Justiça Eleitoral",
+                "7": "Justiça Militar da União", "8": "Justiça dos Estados e do Distrito Federal", "9": "Justiça Militar Estadual"}
+# Código "TR" da Justiça Estadual, Eleitoral e Militar Estadual: unidades da Federação em ordem alfabética.
+CNJ_UF = {"01": "AC", "02": "AL", "03": "AP", "04": "AM", "05": "BA", "06": "CE", "07": "DF", "08": "ES", "09": "GO",
+          "10": "MA", "11": "MT", "12": "MS", "13": "MG", "14": "PA", "15": "PB", "16": "PR", "17": "PE", "18": "PI",
+          "19": "RJ", "20": "RN", "21": "RS", "22": "RO", "23": "RR", "24": "SC", "25": "SE", "26": "SP", "27": "TO"}
+
+
+def cnj_check_digits(sequence: str, year: str, segment: str, court: str, origin: str) -> str:
+    """Dígitos verificadores pelo módulo 97 (ISO 7064), como no Anexo VIII da Res. CNJ 65/2008."""
+    remainder = int(sequence) % 97
+    remainder = int(f"{remainder}{year}{segment}{court}") % 97
+    remainder = int(f"{remainder}{origin}00") % 97
+    return f"{98 - remainder:02d}"
+
+
+def _cnj_court(segment: str, court: str) -> str:
+    if segment in {"1", "2", "3"}:
+        return CNJ_SEGMENTS[segment]
+    if court == "00":
+        return {"4": "Conselho da Justiça Federal", "5": "Tribunal Superior do Trabalho", "6": "Tribunal Superior Eleitoral",
+                "7": "Superior Tribunal Militar"}.get(segment, "Tribunal não identificado")
+    if segment == "4":
+        return f"Tribunal Regional Federal da {int(court)}ª Região"
+    if segment == "5":
+        return f"Tribunal Regional do Trabalho da {int(court)}ª Região"
+    if segment == "6" and court in CNJ_UF:
+        return f"Tribunal Regional Eleitoral ({CNJ_UF[court]})"
+    if segment == "8" and court in CNJ_UF:
+        return f"Tribunal de Justiça ({CNJ_UF[court]})"
+    if segment == "9" and court in CNJ_UF:
+        return f"Tribunal de Justiça Militar ({CNJ_UF[court]})"
+    if segment == "7":
+        return f"Justiça Militar da União — {int(court)}ª Circunscrição"
+    return "Tribunal não identificado"
+
+
+def parse_cnj_numbers(text: str) -> list[dict[str, Any]]:
+    """Números únicos CNJ no texto, com segmento, tribunal e conferência do dígito verificador."""
+    found: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for match in CNJ_NUMBER_RE.finditer(text or ""):
+        sequence, digits, year, segment, court, origin = match.groups()
+        sequence = sequence.zfill(7)
+        number = f"{sequence}-{digits}.{year}.{segment}.{court}.{origin}"
+        if number in seen:
+            continue
+        seen.add(number)
+        found.append({
+            "number": number, "segment": segment, "justice": CNJ_SEGMENTS.get(segment, "Segmento desconhecido"),
+            "court_code": court, "court": _cnj_court(segment, court), "origin": origin, "year": year,
+            "check_digits_valid": cnj_check_digits(sequence, year, segment, court, origin) == digits,
+        })
+    return found
+
+
+@lru_cache(maxsize=4096)
+def _term_pattern(term: str) -> re.Pattern[str]:
+    """Termo dobrado com limite de palavra: 'adi' não casa com 'adicional', nem 'reu' com 'reunião'."""
+    body = r"\s+".join(re.escape(part) for part in _fold_legal_text(term).split())
+    return re.compile(r"(?<![a-z0-9])" + body + r"(?![a-z0-9])")
+
+
+def _strip_noise(folded: str, profiles: dict[str, Any]) -> str:
+    """Remove qualificação e endereço (estado civil, município de residência) antes da contagem."""
+    for pattern in profiles.get("noise_patterns", []):
+        try:
+            folded = re.sub(pattern, " ", folded)
+        except re.error:
+            continue
+    return folded
+
+
 def classify_legal_domain(pages: Sequence[Page]) -> dict[str, Any]:
     profiles = load_legal_domain_profiles()
     source_text = _domain_source_text(pages)
-    folded = _fold_legal_text(source_text)
+    folded = _strip_noise(_fold_legal_text(source_text), profiles)
+    page_folded = [(page, _strip_noise(_fold_legal_text(page.text), profiles)) for page in pages]
+    cnj_numbers = parse_cnj_numbers(source_text)
+    segment_rules = profiles.get("justice_segments", {})
     scores: list[dict[str, Any]] = []
     for profile in profiles.get("domains", []):
         key = profile.get("key")
@@ -1212,14 +1292,13 @@ def classify_legal_domain(pages: Sequence[Page]) -> dict[str, Any]:
         for pattern in profile.get("patterns", []):
             weight = int(pattern.get("weight", 1))
             for term in pattern.get("terms", []):
-                normalized_term = _fold_legal_text(str(term))
-                occurrences = folded.count(normalized_term) if normalized_term else 0
+                regex = _term_pattern(str(term))
+                occurrences = len(regex.findall(folded)) if str(term).strip() else 0
                 if not occurrences:
                     continue
                 score += weight * min(occurrences, 3)
-                for page in pages:
-                    page_folded = _fold_legal_text(page.text)
-                    if normalized_term not in page_folded:
+                for page, folded_page in page_folded:
+                    if not regex.search(folded_page):
                         continue
                     snippet = normalise_spaces(page.text).replace("|", "\\|")[:260]
                     evidence.append({
@@ -1229,6 +1308,19 @@ def classify_legal_domain(pages: Sequence[Page]) -> dict[str, Any]:
                         "source": {"pdf_page": page.pdf_page, "document_id": page.document_id, "snippet": snippet},
                     })
                     break
+        # O segmento do número único é sinal forte, mas não substitui a leitura do objeto do pedido.
+        for item in cnj_numbers:
+            rule = segment_rules.get(item["segment"])
+            if rule and rule.get("domain") == key:
+                weight = int(rule.get("weight", 0)) if item["check_digits_valid"] else int(rule.get("weight", 0)) // 2
+                score += weight
+                holder = next((page for page in pages
+                               if any(found["number"] == item["number"] for found in parse_cnj_numbers(page.text))), None)
+                source = {"pdf_page": holder.pdf_page if holder else None, "document_id": holder.document_id if holder else "",
+                          "snippet": item["justice"] + " — " + item["court"] + ("" if item["check_digits_valid"] else " (dígito verificador divergente)"),
+                          "cnj": item}
+                evidence.insert(0, {"term": "número CNJ " + item["number"], "weight": weight, "occurrences": 1, "source": source})
+                break
         scores.append({
             "key": key,
             "label": profile.get("label", key),
@@ -1277,6 +1369,7 @@ def classify_legal_domain(pages: Sequence[Page]) -> dict[str, Any]:
         "profile": profile,
         "source_policy": profiles.get("verification_policy", {}),
         "pages_considered": len(pages),
+        "cnj_numbers": cnj_numbers,
     }
 
 
@@ -1293,6 +1386,13 @@ def classify_process(pages: Sequence[Page]) -> dict[str, Any]:
     classification["classification_ambiguous"] = domain["ambiguous"]
     classification["domain_candidates"] = domain["candidates"]
     classification["writing_profile"] = domain["profile"].get("writing_profile", {}) if isinstance(domain.get("profile"), dict) else {}
+    numbers = domain.get("cnj_numbers", [])
+    if numbers:
+        first = next((item for item in numbers if item["check_digits_valid"]), numbers[0])
+        classification["numeros_cnj"] = numbers
+        if first["check_digits_valid"]:
+            classification["justica"] = first["justice"]
+            classification["tribunal"] = first["court"]
     return classification
 
 

@@ -1,0 +1,12 @@
+{
+ "schema_version": "1.0",
+ "domain": "agrario",
+ "label": "Direito Agrário",
+ "guide": "domain_guides/agrario.md",
+ "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
+ "polo_labels": {"claimant_theses": "Teses do autor ou requerente", "defense_theses": "Teses do réu ou requerido"},
+ "claims": [
+  {"id": "agr_lease_partnership", "label": "Arrendamento e parceria rural", "requirements": ["contrato", "prazo", "preco_ou_partilha", "preferencia"], "claimant_theses": [{"id": "agr_lease_partnership.c1", "label": "Princípios do arrendamento e da parceria", "authority_ids": ["l4504_art92", "l4504_art95", "l4504_art96"]}], "defense_theses": [{"id": "agr_lease_partnership.d1", "label": "Cláusulas contratuais compatíveis com os princípios legais", "authority_ids": ["l4504_art92"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["inicial_procedimento_comum", "acao_despejo"], "related_claims": [], "limitation": "conferir"},
+  {"id": "agr_rural_usucapiao", "label": "Usucapião especial rural", "requirements": ["area", "posse", "trabalho", "moradia"], "claimant_theses": [{"id": "agr_rural_usucapiao.c1", "label": "Requisitos constitucionais da usucapião rural", "authority_ids": ["cf_art191"]}], "defense_theses": [{"id": "agr_rural_usucapiao.d1", "label": "Área superior ao limite ou outro imóvel", "authority_ids": ["cf_art191"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["usucapiao"], "related_claims": [], "limitation": "conferir"}
+ ]
+}

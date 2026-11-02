@@ -50,6 +50,8 @@ subsidiária/supletiva e analogia. Inicial afirmativa na voz da parte, com fonte
 sem fórmulas de relatório de documentos. Não inventar artigos, fatos ou prazo.
 
 Confirmar área/subárea/regime nos autos e selecionar só os módulos pertinentes.
+Fora do trabalhista, ler o guia do ramo (`references/domain_guides/`) e o índice
+do ramo em `references/domain_catalogs/`; abrir só as pretensões escolhidas.
 `corpus_revision` identifica documentos/relações; `research_revision` identifica
 fontes consultadas, que podem mudar sem novo upload. Reavaliar os vínculos
 atingidos e comparar as versões, sem confundir alteração da página com lei nova.
@@ -57,9 +59,10 @@ atingidos e comparar as versões, sem confundir alteração da página com lei n
 Toda citação jurídica segue citation_verification_rules.md no núcleo: dispositivo
 localizado na fonte oficial da resposta, trecho dentro dele e fora de redação
 riscada, marcas de revogação/alteração comparadas às datas dos fatos e situação
-atual de súmula, OJ ou Tema. Portais que recusam robôs (TST, STF, LexML,
-Mediador) exigem navegador da IA ou arquivo oficial; registrar bloqueio, nunca
-completar de memória.
+atual de súmula, OJ ou Tema. Se o Planalto recusar, usar normas.leg.br
+(`legislation_lookup.py`) e ler a vigência informada pelo portal. Portais que
+recusam robôs (TST, STF, TSE, Mediador) exigem navegador da IA ou arquivo
+oficial; registrar bloqueio, nunca completar de memória.
 
 Em trabalho, carregar labor_core_rules.md e selecionar labor_topics.json no
 núcleo; os guias de prova, coletivo, cálculo, procedimento e saúde são

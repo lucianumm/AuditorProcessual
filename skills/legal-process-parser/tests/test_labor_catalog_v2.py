@@ -85,7 +85,11 @@ class Registry(unittest.TestCase):
         self.assertEqual(access_tier("https://www.planalto.gov.br/ccivil_03/x.htm"), "http_capture")
         self.assertEqual(access_tier("https://www.tst.jus.br/sumulas"), "browser_only")
         self.assertEqual(portal_for("https://www.trt15.jus.br/")["id"], "trt")
-        self.assertIsNone(portal_for("https://www.gov.br/inss/pt-br"))
+        # INSS entrou no registro em 02/11/2026; caminhos gov.br não registrados continuam sem portal.
+        self.assertEqual(portal_for("https://www.gov.br/inss/pt-br")["id"], "inss")
+        self.assertIsNone(portal_for("https://www.gov.br/esporte/pt-br"))
+        self.assertEqual(access_tier("https://normas.leg.br/?urn=urn:lex:br:federal:lei:2023-08-04;14647"), "http_capture")
+        self.assertEqual(access_tier("https://www.tjsp.jus.br/"), "browser_only")
         self.assertEqual(routes("precedent")[0]["id"], "tst")
         self.assertEqual(select_source_route(local_http=True, url="https://portal.stf.jus.br/")["method"], "source_unavailable")
         self.assertEqual(select_source_route(local_http=True, url="https://www.planalto.gov.br/")["method"], "official_http_capture")

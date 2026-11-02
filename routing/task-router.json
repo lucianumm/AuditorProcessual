@@ -321,6 +321,34 @@
         "skills/legal-process-parser/references/legal_analysis_rules.md"
       ],
       "when": "Montar mapa de teses, teses alternativas/subsidiárias e argumento adverso por controvérsia."
+    },
+    {
+      "trigger": "domain_catalog",
+      "references": [
+        "skills/legal-process-parser/references/specialist_regimes.md"
+      ],
+      "when": "Questão fora do trabalhista confirmada; o roteador acrescenta o guia e o índice do ramo (domain_catalogs/<ramo>_index.md); abrir só as pretensões escolhidas (domain_catalog.py --claim ID)."
+    },
+    {
+      "trigger": "domain_catalog_contract",
+      "references": [
+        "skills/legal-process-parser/schemas/domain_catalog.schema.json"
+      ],
+      "when": "Editar ou validar catálogos de ramo."
+    },
+    {
+      "trigger": "legislation_lookup",
+      "references": [
+        "skills/legal-process-parser/references/official_research_rules.md"
+      ],
+      "when": "Planalto indisponível ou norma a localizar por tipo, número e ano; usar legislation_lookup.py (normas.leg.br) e registrar a vigência informada pelo portal."
+    },
+    {
+      "trigger": "domain_index",
+      "references": [
+        "skills/legal-process-parser/references/domain_claims_index.md"
+      ],
+      "when": "Ramo ainda não confirmado; escolher o ramo e as pretensões pelo índice geral."
     }
   ],
   "specializations": "skills/legal-process-parser/references/legal_specializations.json",
@@ -349,5 +377,7 @@
     "*.zip",
     "*.skill",
     "*.whl"
-  ]
+  ],
+  "domain_catalogs": "skills/legal-process-parser/references/domain_catalogs",
+  "domain_authorities": "skills/legal-process-parser/references/domain_authorities.json"
 }

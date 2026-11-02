@@ -11,7 +11,7 @@ alheios à plataforma.
 
 - `references/precision_review_rules.md` no núcleo: protocolo v4 para afirmações, prova, temporalidade, precedentes, medida e teses.
 - `references/citation_verification_rules.md`: conferência de cada citação na fonte oficial da resposta (dispositivo, trecho, marcas de redação e situação de precedentes); portais que bloqueiam robôs exigem navegador ou arquivo oficial.
-- `references/labor_claims_index.md`: índice das 90 pretensões trabalhistas; abrir só as entradas escolhidas de `labor_claims.json` (teses dos dois polos e autoridades candidatas de `labor_authorities.json`).
+- `references/labor_claims_index.md`: índice das 92 pretensões trabalhistas; abrir só as entradas escolhidas de `labor_claims.json` (teses dos dois polos e autoridades candidatas de `labor_authorities.json`).
 - `references/response_research_rules.md`: consulta oficial nova por resposta jurídica, causas/fundamentos, precedentes e parâmetros numéricos conferidos. Capítulos e consolidação têm pesquisa própria; sem recurso, delimitar só a conclusão dependente.
 - `references/legal_specializations.json`: selecionar módulos por área/subárea/regime.
 - `references/procedural_catalog.json`: candidatos e pontos de admissibilidade, não cabimento automático.
@@ -35,3 +35,5 @@ por questão nos Markdown cumulativos.
 Atendimento sem anexos: labor_intake_rules.md; client_intake.py preserva relatos.
 Desenvolvimento: labor_development_rules.md; selecionar pretensões/setores e carregar só os guias pertinentes.
 Elaboração incremental: incremental_petition_rules.md; análise integral, mapa de teses, capítulo selecionado e consolidação explícita. petition_workspace.py preserva versões e registra somente manifestações reais de revisão/aprovação.
+- `references/domain_guides/` e `references/domain_catalogs/`: guias e catálogos de 19 ramos fora do trabalhista (índice por ramo em `<ramo>_index.md`; geral em `references/domain_claims_index.md`).
+- `scripts/legislation_lookup.py`: norma federal por tipo, número e ano via normas.leg.br, com vigência informada pelo portal e recibo da captura.

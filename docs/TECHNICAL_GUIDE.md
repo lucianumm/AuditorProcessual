@@ -1,5 +1,23 @@
 # Guia técnico de extração, revisão e compatibilidade
 
+Na v0.22.0, a legislação passa a ter rota oficial alternativa quando o Planalto
+recusa o acesso automatizado: `legislation_lookup.py` resolve tipo, número e ano
+nos dados abertos do Senado, lê no normas.leg.br a publicação no DOU, a ementa, a
+vigência informada (`legal_force`) e as revogações (`revoked_by`) e captura com
+recibo a compilação da Câmara. `citation_check.py` reconhece as marcas desse texto
+("(Revogado pela Lei nº …, de 13/7/2017…)", "(… com redação dada pela…)", "(…
+acrescido pela…)") e trata "Art. 1.694" como um único artigo (antes, artigos com
+separador de milhar eram confundidos com o art. 1). O classificador de área usa
+limite de palavra ("adi" não casa com "adicional", "reu" com "reunião"), remove
+qualificação e endereço da contagem e lê o número único CNJ, com conferência do
+dígito verificador, para indicar Justiça e tribunal. Fora do trabalhista,
+`domain_catalog.py` e `references/domain_catalogs/` reúnem 19 ramos com teses dos
+dois polos, autoridades candidatas e marcos temporais; `task_context.py --domain`
+ou `--domain-claim` carrega só o guia e o índice do ramo. O catálogo de peças
+ganhou família como domínio próprio, peças penais, militares, tributárias,
+previdenciárias, administrativas, constitucionais, eleitorais, empresariais e
+cíveis, e a contestação deixou de ser candidata no processo penal.
+
 Na v0.21.0, toda citação passa por conferência estrutural na fonte consultada
 (`citation_check.py`, integrado a `response_research.py` e `legal_review.py`):
 o dispositivo precisa existir no texto oficial, o trecho precisa estar nele e
@@ -46,7 +64,7 @@ Skill e pipeline local para transformar autos judiciais ou administrativos em um
 
 ## O que está pronto
 
-Versão **0.21.0**: conferência estrutural de citações em fonte oficial (dispositivo,
+Versão **0.22.0**: rota oficial alternativa de legislação (normas.leg.br), catálogos de 19 ramos, classificador com número CNJ e catálogo trabalhista aprofundado. Na 0.21.0: conferência estrutural de citações em fonte oficial (dispositivo,
 trecho, marcas de redação, situação de precedente), registro de portais por via de
 acesso, catálogo trabalhista v2 com teses dos dois polos e autoridades candidatas,
 além do atendimento com poucos documentos, desenvolvimento por pretensão,

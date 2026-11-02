@@ -1,0 +1,12 @@
+{
+ "schema_version": "1.0",
+ "domain": "previdencia_complementar",
+ "label": "Previdência complementar",
+ "guide": "domain_guides/previdencia_complementar.md",
+ "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
+ "polo_labels": {"claimant_theses": "Teses do autor ou requerente", "defense_theses": "Teses do réu ou requerido"},
+ "claims": [
+  {"id": "pc_benefit", "label": "Benefício e complementação na previdência complementar", "requirements": ["plano_regulamento", "entidade_aberta_ou_fechada", "elegibilidade", "calculo", "prescricao"], "claimant_theses": [{"id": "pc_benefit.c1", "label": "Benefício conforme o regulamento vigente na elegibilidade e institutos legais", "authority_ids": ["lc109_art14"]}, {"id": "pc_benefit.c2", "label": "CDC aplicável apenas às entidades abertas", "authority_ids": ["stj_sumula_563"]}], "defense_theses": [{"id": "pc_benefit.d1", "label": "Contribuições e benefícios não integram o contrato de trabalho", "authority_ids": ["lc109_art68"]}, {"id": "pc_benefit.d2", "label": "Prescrição quinquenal das prestações não reclamadas", "authority_ids": ["lc109_art75"]}], "temporal_marker_ids": [], "typical_requests": ["Revisão ou pagamento do benefício", "Resgate ou portabilidade"], "evidence": ["Regulamento do plano por período", "Extratos de contribuição e cálculos atuariais"], "piece_ids": ["inicial_procedimento_comum", "requerimento_administrativo"], "related_claims": ["pc_jurisdiction"], "limitation": "Prescrição quinquenal das prestações (LC 109/2001, art. 75)."},
+  {"id": "pc_jurisdiction", "label": "Competência e patrocínio público", "requirements": ["patrocinador", "natureza_pedido", "relacao_trabalho"], "claimant_theses": [{"id": "pc_jurisdiction.c1", "label": "Demanda contra a entidade de previdência na Justiça Comum — conferir Tema 190 do STF", "authority_ids": ["tema_stf_190"]}], "defense_theses": [{"id": "pc_jurisdiction.d1", "label": "Patrocínio por ente público e regras próprias", "authority_ids": ["lc108_art1"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": ["Estatuto da entidade e convênio de adesão"], "piece_ids": ["inicial_procedimento_comum"], "related_claims": ["pc_benefit"], "limitation": "conferir"}
+ ]
+}

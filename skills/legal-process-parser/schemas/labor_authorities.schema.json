@@ -66,7 +66,12 @@
               "adc",
               "adi",
               "adpf",
-              "sumula_vinculante"
+              "sumula_vinculante",
+              "regulation",
+              "ilo_convention",
+              "tema_tst",
+              "sumula_stj",
+              "tema_stj"
             ]
           },
           "label": {
@@ -103,7 +108,9 @@
               "cancelada",
               "tese_firmada",
               "julgado_com_modulacao",
-              "merito_pendente"
+              "merito_pendente",
+              "pendente_conferencia_oficial",
+              "sem_vigencia"
             ]
           },
           "status_note": {
@@ -135,7 +142,12 @@
               "method": {
                 "enum": [
                   "planalto_http_capture",
-                  "web_search_official_and_secondary"
+                  "web_search_official_and_secondary",
+                  "normas_leg_br_http_capture",
+                  "official_browser_observation",
+                  "curated_pending_official_check",
+                  "mte_http_capture",
+                  "stj_http_capture"
                 ]
               },
               "on": {
@@ -151,7 +163,67 @@
                   "media",
                   "baixa"
                 ]
+              },
+              "source_url": {
+                "type": "string",
+                "pattern": "^https://"
+              },
+              "capture_text_hash": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "legal_force": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "text_version": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "note": {
+                "type": "string"
+              },
+              "reconfirmed": {
+                "type": "object",
+                "required": [
+                  "method",
+                  "on"
+                ],
+                "properties": {
+                  "method": {
+                    "enum": [
+                      "normas_leg_br_http_capture",
+                      "planalto_http_capture"
+                    ]
+                  },
+                  "on": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "located": {
+                    "type": "boolean"
+                  },
+                  "source_url": {
+                    "type": "string",
+                    "pattern": "^https://"
+                  },
+                  "capture_text_hash": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
               }
+            }
+          },
+          "alternate_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^https://"
             }
           }
         }

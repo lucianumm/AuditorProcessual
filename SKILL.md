@@ -57,10 +57,16 @@ navegador da IA ou arquivo oficial; registrar o bloqueio.
 Para questões trabalhistas, o núcleo usa labor_core_rules.md e labor_topics.json,
 com guias condicionais de prova, coletivo, cálculo, procedimento e saúde.
 Pretensões: labor_claims_index.md e só as entradas escolhidas de labor_claims.json
-(90 pretensões, teses do trabalhador e da defesa, autoridades candidatas e marcos
-temporais, inclusive a EC 141/2026).
+(92 pretensões, teses do trabalhador e da defesa, autoridades candidatas e marcos
+temporais, inclusive a EC 141/2026), 35 guias setoriais e NRs da lista oficial do MTE.
 A revisão v4 inclui labor_review com relações, períodos, fontes e questões.
 Cálculos são demonstrados com parâmetros explícitos; lacunas ficam por questão.
+
+Demais ramos: guia em `references/domain_guides/<ramo>.md`, índice em
+`references/domain_catalogs/<ramo>_index.md` e só as pretensões escolhidas do
+catálogo do ramo (19 ramos, teses dos dois polos e marcos temporais). Quando o
+Planalto recusar o acesso, `legislation_lookup.py` usa a via oficial do Congresso
+(normas.leg.br) e informa a vigência registrada pelo portal.
 
 Atendimento com poucos ou nenhum documento usa labor_intake_rules.md: relato
 atribuído pode permitir a inicial com prova futura planejada. Preservar versões,
