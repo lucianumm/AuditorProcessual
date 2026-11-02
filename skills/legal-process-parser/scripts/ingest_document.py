@@ -523,6 +523,8 @@ def run_ingest(
         "engine_version": ENGINE_VERSION,
         "execution_fingerprint": config,
         "process_id": process_id,
+        "process_id_criterion": classification.get("numero_processo_criterio"),
+        "cited_process_ids": classification.get("numeros_processo_citados", []),
         "processed_at": now_utc(),
         "mode": mode,
         "task": task,

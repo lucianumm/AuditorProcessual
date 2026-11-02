@@ -10,8 +10,10 @@ from pathlib import Path
 
 try:
     from .case_memory import checkpoint, identity
+    from .helpers import strip_pje_footer
 except ImportError:
     from case_memory import checkpoint, identity
+    from helpers import strip_pje_footer
 
 
 def dependency_versions() -> dict:
@@ -87,7 +89,7 @@ def extract(path: Path, cache: Path, use_ocr: bool, language: str, dpi: int) -> 
         except Exception as exc:
             text = ""
             warnings.append(f"PDF p. {number}: extração falhou ({type(exc).__name__}); nova tentativa necessária.")
-        if use_ocr and len(text.strip()) < 30:
+        if use_ocr and len(strip_pje_footer(text).strip()) < 30:
             def recognise() -> str:
                 from pdf2image import convert_from_path
                 import pytesseract

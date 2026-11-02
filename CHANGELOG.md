@@ -1,5 +1,11 @@
 # Changelog
 
+## Não publicado
+
+- Ingestão de autos do PJe: o número do processo vem do rodapé ("Número do processo: ...") ou, sem ele, do número CNJ mais frequente; os demais ficam em `manifest.cited_process_ids` (antes valia o primeiro número dos autos, às vezes um precedente citado na inicial).
+- O rodapé de assinatura do PJe (1º grau "Documento assinado eletronicamente por ...", 2º grau "Assinado eletronicamente por: ..." e "ID. ... - Pág. N", link de validação, números do processo e do documento, "Fls.: N") é descontado antes de medir o texto da página e de decidir o OCR: página escaneada com só o rodapé vai para `needs_ocr_or_vision`. O texto preservado da página continua com o rodapé.
+- Com o rodapé do PJe, as peças são separadas pelo id do documento (páginas consecutivas com o mesmo id) e cada uma é nomeada pela primeira peça citada no seu próprio início, sem herdar o rótulo da anterior (cabeçalho com "RELATOR :" é acórdão; "reclamação/reclamatória trabalhista" só nomeia a inicial quando nada mais a nomeia); `court_page` vem de "Fls.: N" e `court_page_end` passa a considerar todas as páginas da peça. Páginas e peças ganham `pje_document_id`; o esquema da peça passa a aceitar `pdf_page_count`, que já era gravado.
+
 ## 0.22.0 — 2026-11-02
 
 - Legislação por via oficial alternativa: em 02/11/2026 o Planalto respondeu "Acesso Negado!" ao ambiente de execução. `legislation_lookup.py` resolve tipo, número e ano nos dados abertos do Senado, lê no normas.leg.br a data, a publicação no DOU, a ementa, a vigência informada (`legal_force`) e as revogações (`revoked_by`) e captura com recibo a compilação da Câmara. A leitura dos metadados é necessária: a Lei 7.102/1983 aparece como sem vigência (revogada pelo art. 70 da Lei 14.967/2024), embora o texto compilado não traga a marca.
