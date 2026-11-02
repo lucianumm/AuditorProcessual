@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 from functools import lru_cache
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -29,6 +30,8 @@ def portal_for(url: str) -> dict | None:
         hosts = portal.get("hosts", [])
         if portal.get("hosts_pattern", "").startswith("trt") and host.startswith(("trt", "www.trt")) and host.endswith(".jus.br"):
             matched = True
+        elif portal.get("host_regex"):
+            matched = bool(re.match(portal["host_regex"], host))
         else:
             matched = host in hosts
         if matched and portal.get("path_prefix") and not path.startswith(portal["path_prefix"]):

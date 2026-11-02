@@ -13,15 +13,20 @@ oficiais que possam alterar competência, requisitos, prazos, prova ou pedido.
 
 Use páginas oficiais HTTPS (`.gov.br`, `.jus.br`, `.leg.br`, `.mp.br` e os hosts
 da OIT) para a captura automática local. `official_source_registry.json` indica,
-por tipo de fonte, o portal e a via de acesso: o Planalto aceita captura local;
-TST, STF, LexML, Mediador e OIT recusam clientes automatizados e exigem navegador
-da IA ou arquivo oficial enviado. Resposta de bloqueio, corpo vazio ou status
+por tipo de fonte, o portal e a via observada (captura local, ou navegador da IA
+e arquivo oficial quando o portal recusa automação, como TST, STF e TSE). Resposta de bloqueio, corpo vazio ou status
 diferente de 200 não é fonte. Antes de usar a captura, confira o dispositivo
 com `citation_verification_rules.md`. Registre o texto consultado e sua origem com:
 
 ```text
 python scripts/research_sources.py saida --url https://www.planalto.gov.br/...
 ```
+
+Se o Planalto recusar, `legislation_lookup.py saida --act LEI:14647:2023
+--article 1` resolve a norma (Senado), captura com recibo a compilação da Câmara
+em normas.leg.br e informa vigência (`legal_force`) e revogações (`revoked_by`).
+A compilação pode estar defasada ou ser só a publicação original: ler esses
+campos. Súmulas do STJ: SCON, que informa alteração, revisão ou cancelamento.
 
 A IA interpreta a fonte capturada e preenche no `legal_review.json` sua vigência,
 competência, hierarquia, regime temporal e aderência aos fatos. A URL oficial e

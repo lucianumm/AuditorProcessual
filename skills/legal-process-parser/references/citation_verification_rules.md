@@ -12,7 +12,12 @@ no caso continua sendo análise autoral.
 - **Legislação (Planalto):** captura local (`response_research.py consult`).
   O texto compilado traz "(Revogado pela…)", "(Redação dada pela…)",
   "(Incluído pela…)", "(Vide ADI…)" e "(Vigência)".
-- **TST (inclusive JusLaboris), STF, STJ, TRTs, LexML, Mediador, OIT:** recusam clientes automatizados
+- **normas.leg.br (Câmara):** rota quando o Planalto recusar; marcas "(Revogado
+  pela Lei nº …, de 13/7/2017…)", "(… com redação dada pela…)", "(… acrescido
+  pela…)", reconhecidas por `citation_check.py`. Ler `legal_force`/`revoked_by`.
+  "Art. 1.694" é o artigo 1694. Súmulas do STJ (SCON): usar a redação vigente na
+  data relevante quando a página indicar alteração ou revisão.
+- **TST (inclusive JusLaboris), STF, demais páginas do STJ, TRTs, Mediador, OIT:** recusam clientes automatizados
   (desafio anti-robô, 403). Consultar pelo navegador da IA e registrar com
   `browser`; ou usar arquivo oficial enviado pelo usuário. Se nem isso for
   possível, registrar a tentativa com `response_research.py unavailable` e

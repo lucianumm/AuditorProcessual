@@ -1,0 +1,14 @@
+{
+ "schema_version": "1.0",
+ "domain": "constitucional",
+ "label": "Direito Constitucional",
+ "guide": "domain_guides/constitucional.md",
+ "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
+ "polo_labels": {"claimant_theses": "Teses do autor ou requerente", "defense_theses": "Teses do réu ou requerido"},
+ "claims": [
+  {"id": "const_concentrated", "label": "Controle concentrado de constitucionalidade", "requirements": ["legitimidade", "objeto", "parametro", "subsidiariedade"], "claimant_theses": [{"id": "const_concentrated.c1", "label": "Legitimados e objeto da ADI e da ADPF", "authority_ids": ["cf_art103", "l9868_art2", "l9882_art2"]}], "defense_theses": [{"id": "const_concentrated.d1", "label": "Indeferimento por ausência de requisitos e subsidiariedade da ADPF", "authority_ids": ["l9882_art4"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["acao_controle_concentrado"], "related_claims": [], "limitation": "conferir"},
+  {"id": "const_injunction", "label": "Mandado de injunção", "requirements": ["omissao", "direito_inviabilizado", "legitimidade"], "claimant_theses": [{"id": "const_injunction.c1", "label": "Falta de norma regulamentadora que inviabiliza direito", "authority_ids": ["l13300_art2", "l13300_art12"]}], "defense_theses": [{"id": "const_injunction.d1", "label": "Norma existente ou direito não dependente de regulamentação", "authority_ids": ["l13300_art2"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["mandado_injuncao"], "related_claims": [], "limitation": "conferir"},
+  {"id": "const_habeas_data", "label": "Habeas data", "requirements": ["dados_proprios", "recusa_previa"], "claimant_theses": [{"id": "const_habeas_data.c1", "label": "Conhecimento e retificação de informações pessoais", "authority_ids": ["l9507_art7"]}], "defense_theses": [{"id": "const_habeas_data.d1", "label": "Ausência de recusa administrativa prévia", "authority_ids": ["l9507_art7"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["habeas_data"], "related_claims": ["dp_subject_rights"], "limitation": "conferir"},
+  {"id": "const_complaint", "label": "Reclamação constitucional", "requirements": ["paradigma", "ato_reclamado", "aderencia"], "claimant_theses": [{"id": "const_complaint.c1", "label": "Preservação da autoridade de decisão e de súmula vinculante", "authority_ids": ["cpc_art988", "cf_art102"]}], "defense_theses": [{"id": "const_complaint.d1", "label": "Ausência de aderência estrita ou instâncias não esgotadas", "authority_ids": ["cpc_art988"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["reclamacao_constitucional"], "related_claims": [], "limitation": "conferir"}
+ ]
+}

@@ -24,7 +24,9 @@ def verify(wheel):
                          "scripts/petition_workspace.py","scripts/labor_events.py","scripts/labor_research.py","scripts/time_bank.py",
                          "schemas/petition_chapter.schema.json","schemas/labor_events.schema.json","schemas/time_bank.schema.json",
                          "references/incremental_petition_rules.md","references/labor_details/pay_detail_rules.md",
-                         "references/labor_details/working_time_detail_rules.md"):
+                         "references/labor_details/working_time_detail_rules.md", "references/domain_authorities.json",
+                         "references/domain_catalogs/familia.json", "references/domain_catalogs/familia_index.md", "references/domain_guides/familia.md",
+                         "references/labor_sectors/railway.md", "schemas/domain_catalog.schema.json", "scripts/legislation_lookup.py"):
             assert (target / resource).is_file(), resource
         for resource in ("scripts/response_research.py", "scripts/labor_parameters.py",
                          "scripts/numeric_criteria.py", "scripts/labor_case_state.py", "scripts/prose_review.py", "scripts/research_locator.py",
@@ -60,6 +62,11 @@ def verify(wheel):
             assert (target / resource).is_file(), resource
         citation_code = "from scripts.citation_check import check_citation, parse_citations; from scripts.labor_catalog import claim_brief; from scripts.source_registry import access_tier; text='Art. 384 - (Revogado pela Lei nº 13.467, de 2017)\\nArt. 385 - Regra sintética de teste.'; assert [f['code'] for f in check_citation(text,'CLT, art. 384')['findings']]==['provision_revoked']; assert parse_citations('Súmula 437 do TST')[0]['number']=='437'; brief=claim_brief(['overtime']); assert brief['claims'][0]['defense_theses'][0]['authorities']; assert access_tier('https://www.tst.jus.br/sumulas')=='browser_only'; print('Installed citation checker, source registry and claim catalog v2 OK')"
         result = subprocess.run([sys.executable,"-c",citation_code],cwd=root,env=environment,capture_output=True,text=True,encoding="utf-8")
+        assert result.returncode == 0, result.stderr
+        print(result.stdout.strip())
+
+        domain_code = "from scripts.domain_catalog import integrity_errors, claim_brief; from scripts.task_context import resolve_context; from scripts.legislation_lookup import parse_act; assert integrity_errors()==[]; assert claim_brief(['fam_alimony'])['claims'][0]['claimant_theses']['theses']; c=resolve_context('generic','analyze',domain='familia'); assert any(x['path'].endswith('domain_guides/familia.md') for x in c['references']); assert parse_act('LC:150:2015')[0]=='LCP'; print('Installed domain catalogs, domain routing and legislation lookup OK')"
+        result = subprocess.run([sys.executable,"-c",domain_code],cwd=root,env=environment,capture_output=True,text=True,encoding="utf-8")
         assert result.returncode == 0, result.stderr
         print(result.stdout.strip())
 

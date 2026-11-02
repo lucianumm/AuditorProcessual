@@ -18,19 +18,31 @@ ORD = r"(?:[ \t]?(?:º|°|ª|o)(?![A-Za-zÀ-ÿ]))?"
 SUFFIX = r"(?:-([A-Z]{1,2})(?=[\s.\-–—:;,)]|$))?"
 # Planalto headings vary: "Art. 66 -", " Art . 1º", "Art.\xa018.", "Art. .\n195 -", "Art.\n872 -".
 ORD_HEAD = r"(?:[ \t\xa0]?(?:º|°|ª|o)(?![A-Za-zÀ-ÿ]))?"
-ARTICLE_HEAD = re.compile(r"(?m)^[ \t\r\xa0]*(?:\[[^\]\n]*\][ \t\r\xa0]*)*Art[ \t\xa0]*\.[\s.]*(\d{1,4})" + ORD_HEAD + SUFFIX)
-ARTICLE_INLINE = re.compile(r"(?<![\w])Art[ \xa0]*\.[ \xa0.]*(\d{1,4})" + ORD_HEAD + SUFFIX)
+# Números com separador de milhar ("Art. 1.694" no Código Civil e no CPC) são um único artigo.
+ART_NUMBER = r"(\d{1,3}(?:\.\d{3})+|\d{1,4})"
+ARTICLE_HEAD = re.compile(r"(?m)^[ \t\r\xa0]*(?:\[[^\]\n]*\][ \t\r\xa0]*)*Art[ \t\xa0]*\.[\s.]*" + ART_NUMBER + ORD_HEAD + SUFFIX)
+ARTICLE_INLINE = re.compile(r"(?<![\w])Art[ \xa0]*\.[ \xa0.]*" + ART_NUMBER + ORD_HEAD + SUFFIX)
 PARAGRAPH = re.compile(r"(?<![\w])§[ ]?(\d{1,3})" + ORD + SUFFIX + r"|Parágrafo único", re.IGNORECASE)
 PARAGRAPH_HEAD = re.compile(r"(?m)^[ \t\r\xa0]*(?:\[[^\]\n]*\][ \t\xa0]*)*(?:§[ \t\xa0]?(\d{1,3})" + ORD.replace("[ \\t]", "[ \\t\\xa0]") + SUFFIX + r"|Parágrafo único)", re.IGNORECASE)
 STRUCK = re.compile(r"\[REDAÇÃO ANTERIOR/RISCADA\](.*?)\[FIM DA REDAÇÃO ANTERIOR/RISCADA\]", re.S)
-LAW = r"(?:Lei(?: Complementar)?|Decreto-Lei|Decreto|Medida Provisória|Emenda Constitucional)\s*(?:n[º°o.]*\s*)?([\d.]+(?:-\d+)?)(?:\s*,\s*de\s*([\d.]+\s*)?(?:de\s*\w+\s*de\s*)?(\d{4}))?"
+# Group 1: act number; group 2: year. Dates appear as "de 13 de julho de 2017" (Planalto)
+# or "de 13/7/2017" (compilação da Câmara em normas.leg.br).
+LAW = (r"(?:Lei(?: Complementar)?|Decreto-Lei|Decreto|Medida Provisória|Emenda Constitucional)\s*(?:n[º°o.]*\s*)?"
+       r"([\d.]+(?:-\d+)?)(?:\s*,\s*de\s*(?:\d{1,2}[º°]?/\d{1,2}/|[\d.]+[º°]?\s*de\s*\w+\s*de\s*|[\d.]+\s*)?(\d{4}))?")
+# Compilação da Câmara: "(“Caput” do artigo com redação dada pela...)", "(Parágrafo acrescido pela...)",
+# "(Inciso revogado pela...)". Prefixo limitado ao mesmo parêntese.
+UNIT_PREFIX = r"(?:[“\"]?[Cc]aput[”\"]?|[A-ZÁÉÍÓÚ][\wÀ-ÿ]*)(?:[^()]{0,60}?)\s"
 MARKERS = (
     ("revoked", re.compile(r"\((?:Revogad[oa]s?|Revogado\(a\)) pel[oa] " + LAW, re.I)),
+    ("revoked", re.compile(r"\(" + UNIT_PREFIX + r"revogad[oa]s? pel[oa] " + LAW)),
     ("revoked", re.compile(r"\((?:Revogad[oa]s?)\)", re.I)),
     ("vetoed", re.compile(r"\((?:VETADO|Vetado)\)")),
     ("amended", re.compile(r"\(Redação dada pel[oa] " + LAW, re.I)),
+    ("amended", re.compile(r"\(" + UNIT_PREFIX + r"com reda[çc][ãa]o dada pel[oa] " + LAW)),
     ("included", re.compile(r"\(Inclu[íi]d[oa]s? pel[oa] " + LAW, re.I)),
+    ("included", re.compile(r"\(" + UNIT_PREFIX + r"acrescid[oa]s? pel[oa] " + LAW)),
     ("renumbered", re.compile(r"\(Renumerad[oa] pel[oa] " + LAW, re.I)),
+    ("renumbered", re.compile(r"\(" + UNIT_PREFIX + r"(?:renumerad[oa]|transformad[oa] em [^()]{1,30}?) pel[oa] " + LAW)),
     ("constitutional_challenge", re.compile(r"\(Vide (ADI|ADC|ADPF|ADO)\s*(?:n[º°o.]*\s*)?([\d.]+)", re.I)),
     ("effective_note", re.compile(r"\(Vig[êe]ncia\)", re.I)),
 )
@@ -44,7 +56,7 @@ PRECEDENT_STATUS = re.compile(r"cancelad|revogad|suspens|sobrestad|tese (?:firma
                               r"superad|modula|publicad|DEJT|DJe|Res\.|Resolu[çc][ãa]o|aprovad|editad|convertid|julgad", re.I)
 
 CITATION_PATTERNS = (
-    ("article", re.compile(r"(?<![\w])art(?:igo)?s?\.?[ ]?(\d{1,4})" + ORD.replace("[ \\t]?", "[ ]?") + r"(?:-([A-Z]{1,2}))?", re.I)),
+    ("article", re.compile(r"(?<![\w])art(?:igo)?s?\.?[ ]?(\d{1,3}(?:\.\d{3})+|\d{1,4})" + ORD.replace("[ \\t]?", "[ ]?") + r"(?:-([A-Z]{1,2}))?", re.I)),
     ("sumula", re.compile(r"(?<![\w])S[úu]mula(?:s)?(?: Vinculante)?(?: n[º°o.]*)?[ ]?(\d{1,4})", re.I)),
     ("sumula", re.compile(r"(?<![\w])SUM-(\d{1,4})")),
     ("oj", re.compile(r"(?<![\w])(?:OJ|Orienta[çc][ãa]o Jurisprudencial)(?:[ -](?:SDI|SBDI|SDC)-?\d?[ -]?)?(?: n[º°o.]*)?[ ]?(\d{1,4})", re.I)),
@@ -90,7 +102,8 @@ def parse_citations(text: str) -> list[dict]:
                     year = year if len(year) == 4 else ("19" + year if int(year) > 40 else "20" + year)
                     number += "/" + year
             else:
-                number = match.group(1) + ("-" + match.group(2).upper() if match.lastindex and match.lastindex >= 2 and match.group(2) else "")
+                base = match.group(1).replace(".", "") if kind == "article" else match.group(1)
+                number = base + ("-" + match.group(2).upper() if match.lastindex and match.lastindex >= 2 and match.group(2) else "")
             item = {"kind": kind, "number": number, "label": match.group(0), "start": match.start()}
             if kind == "article":
                 tail = clean[match.end():match.end() + 60]
@@ -127,7 +140,7 @@ def version_markers(segment: str) -> list[dict]:
                 row["action"] = match.group(1).upper() + " " + match.group(2).replace(".", "")
             elif match.lastindex:
                 row["act_number"] = (match.group(1) or "").replace(".", "")
-                row["year"] = match.group(match.lastindex) if match.lastindex >= 3 else None
+                row["year"] = match.group(2) if match.lastindex >= 2 else None
                 key = row["act_number"] + "/" + (row["year"] or "")
                 if key in KNOWN_EFFECTIVE_DATES:
                     row["catalogued_effective_date"] = KNOWN_EFFECTIVE_DATES[key]
@@ -143,7 +156,7 @@ def segment_articles(text: str) -> list[dict]:
     segments = []
     for index, match in enumerate(heads):
         end = heads[index + 1].start() if index + 1 < len(heads) else len(text)
-        number = match.group(1) + ("-" + match.group(2) if match.group(2) else "")
+        number = match.group(1).replace(".", "") + ("-" + match.group(2) if match.group(2) else "")
         segments.append({"number": number, "start": match.start(), "end": end,
                          "struck": any(a <= match.start(1) < b for a, b in spans)})
     return segments

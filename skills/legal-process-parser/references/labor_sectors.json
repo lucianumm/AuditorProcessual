@@ -512,6 +512,216 @@
         "jurisdiction_carveouts"
       ],
       "reference": "labor_sectors/cooperatives.md"
+    },
+    {
+      "id": "railway",
+      "label": "Ferroviários",
+      "topic_ids": [
+        "working_time",
+        "pay"
+      ],
+      "claim_ids": [
+        "overtime",
+        "on_call",
+        "interjornada",
+        "time_at_disposal"
+      ],
+      "reference": "labor_sectors/railway.md"
+    },
+    {
+      "id": "maritime",
+      "label": "Marítimos, aquaviários e tripulantes",
+      "topic_ids": [
+        "working_time",
+        "contract"
+      ],
+      "claim_ids": [
+        "overtime",
+        "expatriate_transfer",
+        "employment"
+      ],
+      "reference": "labor_sectors/maritime.md"
+    },
+    {
+      "id": "mining",
+      "label": "Mineração em subsolo",
+      "topic_ids": [
+        "working_time",
+        "occupational_health"
+      ],
+      "claim_ids": [
+        "overtime",
+        "time_at_disposal",
+        "intrajornada",
+        "hazard_pay",
+        "occupational_damage"
+      ],
+      "reference": "labor_sectors/mining.md"
+    },
+    {
+      "id": "telephony",
+      "label": "Telefonia, telegrafia e radiotelefonia",
+      "topic_ids": [
+        "working_time"
+      ],
+      "claim_ids": [
+        "overtime",
+        "intrajornada",
+        "shift_work"
+      ],
+      "reference": "labor_sectors/telephony.md"
+    },
+    {
+      "id": "entertainment",
+      "label": "Artistas, técnicos em espetáculos, músicos e radialistas",
+      "topic_ids": [
+        "contract",
+        "working_time",
+        "pay"
+      ],
+      "claim_ids": [
+        "overtime",
+        "employment",
+        "image_use",
+        "fixed_term"
+      ],
+      "reference": "labor_sectors/entertainment.md"
+    },
+    {
+      "id": "condominiums",
+      "label": "Empregados de condomínio",
+      "topic_ids": [
+        "working_time",
+        "pay",
+        "liability"
+      ],
+      "claim_ids": [
+        "overtime",
+        "shift_12x36",
+        "intrajornada",
+        "functional_differences",
+        "normative_floor",
+        "wage_in_kind",
+        "third_party_liability"
+      ],
+      "reference": "labor_sectors/condominiums.md"
+    },
+    {
+      "id": "motorcycle",
+      "label": "Motociclistas, mototaxistas e motoboys",
+      "topic_ids": [
+        "occupational_health",
+        "contract"
+      ],
+      "claim_ids": [
+        "hazard_pay",
+        "occupational_damage",
+        "employment",
+        "platform_work",
+        "wage_deductions"
+      ],
+      "reference": "labor_sectors/motorcycle.md"
+    },
+    {
+      "id": "community_health_agents",
+      "label": "Agentes comunitários de saúde e de endemias",
+      "topic_ids": [
+        "contract",
+        "pay",
+        "procedure"
+      ],
+      "claim_ids": [
+        "salary_differences",
+        "normative_floor",
+        "null_public_contract",
+        "hazard_pay",
+        "jurisdiction_carveouts"
+      ],
+      "reference": "labor_sectors/community_health_agents.md"
+    },
+    {
+      "id": "civil_firefighters",
+      "label": "Bombeiros civis",
+      "topic_ids": [
+        "working_time",
+        "occupational_health",
+        "liability"
+      ],
+      "claim_ids": [
+        "hazard_pay",
+        "overtime",
+        "shift_12x36",
+        "third_party_liability"
+      ],
+      "reference": "labor_sectors/civil_firefighters.md"
+    },
+    {
+      "id": "expatriates",
+      "label": "Trabalho no exterior e expatriados",
+      "topic_ids": [
+        "contract",
+        "pay"
+      ],
+      "claim_ids": [
+        "expatriate_transfer",
+        "transfer_allowance",
+        "salary_differences"
+      ],
+      "reference": "labor_sectors/expatriates.md"
+    },
+    {
+      "id": "religious",
+      "label": "Entidades religiosas e ensino vocacional",
+      "topic_ids": [
+        "contract"
+      ],
+      "claim_ids": [
+        "employment"
+      ],
+      "reference": "labor_sectors/religious.md"
+    },
+    {
+      "id": "beauty_salons",
+      "label": "Salões de beleza e profissional-parceiro",
+      "topic_ids": [
+        "contract"
+      ],
+      "claim_ids": [
+        "employment"
+      ],
+      "reference": "labor_sectors/beauty_salons.md"
+    },
+    {
+      "id": "casual_workers",
+      "label": "Avulsos na movimentação de mercadorias",
+      "topic_ids": [
+        "pay",
+        "liability",
+        "occupational_health"
+      ],
+      "claim_ids": [
+        "salary_differences",
+        "vacations",
+        "annual_bonus",
+        "fgts",
+        "third_party_liability",
+        "occupational_damage"
+      ],
+      "reference": "labor_sectors/casual_workers.md"
+    },
+    {
+      "id": "international_organizations",
+      "label": "Estados estrangeiros e organismos internacionais",
+      "topic_ids": [
+        "procedure",
+        "enforcement"
+      ],
+      "claim_ids": [
+        "jurisdiction_carveouts",
+        "termination_pay",
+        "enforcement"
+      ],
+      "reference": "labor_sectors/international_organizations.md"
     }
   ]
 }

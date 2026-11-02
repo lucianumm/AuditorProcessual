@@ -18,7 +18,8 @@ def routing_root() -> Path:
 def resolve_context(platform: str, task: str, *, triggers: list[str] | None = None,
                     specialization_ids: list[str] | None = None, domain: str = "",
                     labor_topics: list[str] | None = None, labor_claims: list[str] | None = None,
-                    labor_sectors: list[str] | None = None, labor_intake: bool = False) -> dict:
+                    labor_sectors: list[str] | None = None, labor_intake: bool = False,
+                    domain_claims: list[str] | None = None) -> dict:
     root = routing_root()
     router = json.loads((root / "routing/task-router.json").read_text(encoding="utf-8"))
     # A wheel installs core resources directly, unlike the repository layout.
@@ -48,6 +49,20 @@ def resolve_context(platform: str, task: str, *, triggers: list[str] | None = No
         raise ValueError("Especialização desconhecida; confirmar área/subárea/regime antes de selecionar")
     requested_topics |= {item["id"] for item in topic_specs if item["specialization_id"] in selected_ids}
     try:
+        from .domain_catalog import catalogs as domain_catalogs, select_claims as select_domain_claims
+        from .procedural_catalog import canonical
+    except ImportError:
+        from domain_catalog import catalogs as domain_catalogs, select_claims as select_domain_claims
+        from procedural_catalog import canonical
+    # Ramos fora do trabalhista: guia do ramo e índice de pretensões, sem abrir todos os catálogos.
+    known_domains = domain_catalogs()
+    domain_key = canonical(domain) if domain else ""
+    chosen_domain_claims = select_domain_claims(domain_claims or [])
+    domain_keys = {claim["domain"] for claim in chosen_domain_claims}
+    if domain_key in known_domains:
+        domain_keys.add(domain_key)
+    domain_keys |= {item["domain"] for item in selected if item["domain"] in known_domains}
+    try:
         from .labor_analysis import folded
     except ImportError:
         from labor_analysis import folded
@@ -63,6 +78,8 @@ def resolve_context(platform: str, task: str, *, triggers: list[str] | None = No
     if labor_intake:
         # Intake starts with the client's account, usually under the default ingest task.
         active.update({"labor", "labor_intake", "labor_development"})
+    if domain_keys and task != "ingest":
+        active.add("domain_catalog")
     if labor and task != "ingest":
         active.add("labor")
         if claims or sectors or labor_intake:
@@ -83,6 +100,9 @@ def resolve_context(platform: str, task: str, *, triggers: list[str] | None = No
             paths += item["references"]
     for item in selected:
         paths.append((Path(router["specializations"]).parent / item["reference"]).as_posix())
+    for key in sorted(domain_keys):
+        paths.append((Path(router["specializations"]).parent / known_domains[key]["guide"]).as_posix())
+        paths.append((Path(router["specializations"]).parent / "domain_catalogs" / f"{key}_index.md").as_posix())
     for sector in sectors:
         paths.append((Path(router["specializations"]).parent / sector["reference"]).as_posix())
     for claim in claims:
@@ -100,7 +120,8 @@ def resolve_context(platform: str, task: str, *, triggers: list[str] | None = No
         adapter = "AI_ENTRYPOINT.md"
     if adapter and not (root / adapter).is_file():
         adapter = None
-    return {"platform":platform,"task":task,"domain":"trabalhista" if labor else domain,
+    return {"platform":platform,"task":task,"domain":"trabalhista" if labor else (domain_key or domain),
+            "domain_catalogs":sorted(domain_keys),"domain_claims":[claim["id"] for claim in chosen_domain_claims],
             "labor_topic_ids":sorted(requested_topics),"adapter":adapter,"triggers":sorted(active),
             "labor_claims":claims,"labor_sectors":sectors,
             "references":references,"specializations":selected,
@@ -120,11 +141,13 @@ def main() -> int:
     parser.add_argument("--labor-claim", action="append", default=[])
     parser.add_argument("--labor-sector", action="append", default=[])
     parser.add_argument("--labor-intake", action="store_true")
+    parser.add_argument("--domain-claim", action="append", default=[])
     args = parser.parse_args()
     try:
         print(json.dumps(resolve_context(args.platform,args.task,triggers=args.trigger,specialization_ids=args.specialization,
                                         domain=args.domain,labor_topics=args.labor_topic,labor_claims=args.labor_claim,
-                                        labor_sectors=args.labor_sector,labor_intake=args.labor_intake),ensure_ascii=False,indent=2))
+                                        labor_sectors=args.labor_sector,labor_intake=args.labor_intake,
+                                        domain_claims=args.domain_claim),ensure_ascii=False,indent=2))
         return 0
     except (OSError, ValueError) as error:
         print(json.dumps({"error":str(error)},ensure_ascii=False))

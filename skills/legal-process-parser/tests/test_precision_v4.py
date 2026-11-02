@@ -195,7 +195,10 @@ class PrecisionV4(unittest.TestCase):
         self.assertIn("gemini",context["adapter"])
         self.assertFalse(any("chatgpt" in item["path"] for item in context["references"]))
         self.assertEqual(context["capabilities"]["vision"],"not_tested")
-        self.assertLess(context["reference_characters"],22000)
+        # Inclui o guia e o índice do ramo previdenciário (v0.22.0), sem carregar outros ramos.
+        self.assertLess(context["reference_characters"],26000)
+        self.assertTrue(any(item["path"].endswith("domain_guides/previdenciario.md") for item in context["references"]))
+        self.assertFalse(any(item["path"].endswith("domain_guides/penal.md") for item in context["references"]))
         with self.assertRaises(ValueError):
             resolve_context("generic","analyze",triggers=["invented"])
 

@@ -10,7 +10,8 @@ CORE = Path(__file__).resolve().parents[1]
 POLOS = {"reclamante": ("claimant_theses",), "reclamada": ("defense_theses",), "ambos": ("claimant_theses", "defense_theses")}
 STATUS_LABELS = {"localizado_no_texto_oficial": "texto oficial localizado", "revogado": "revogado", "vigente": "sem cancelamento conhecido",
                  "alterada": "alterada", "cancelada": "cancelada", "tese_firmada": "tese firmada",
-                 "julgado_com_modulacao": "julgado com modulação", "merito_pendente": "mérito pendente"}
+                 "julgado_com_modulacao": "julgado com modulação", "merito_pendente": "mérito pendente",
+                 "pendente_conferencia_oficial": "pendente de conferência no portal oficial", "sem_vigencia": "sem vigência no portal oficial"}
 
 def catalog(name: str, field: str) -> dict:
     return {item["id"]: item for item in json.loads((CORE / "references" / name).read_text(encoding="utf-8"))[field]}

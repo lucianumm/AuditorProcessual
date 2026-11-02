@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "legal-process-parser"
-version = "0.21.0"
+version = "0.22.0"
 description = "Pipeline local de ingestão, narrativa jurídica e rastreabilidade de processos."
 readme = "README.md"
 license = "MIT"
@@ -38,13 +38,15 @@ legal-process-case-state = "scripts.labor_case_state:main"
 legal-process-labor-time = "scripts.labor_time:main"
 legal-process-citations = "scripts.citation_check:main"
 legal-process-indices = "scripts.official_indices:main"
+legal-process-legislation = "scripts.legislation_lookup:main"
+legal-process-domain-catalog = "scripts.domain_catalog:main"
 
 [tool.setuptools]
 package-dir = {"" = "skills/legal-process-parser", "routing" = "routing"}
 packages = ["scripts", "references", "schemas", "templates", "routing"]
 
 [tool.setuptools.package-data]
-references = ["*.json", "*.md", "labor_sectors/*.md", "labor_details/*.md"]
+references = ["*.json", "*.md", "labor_sectors/*.md", "labor_details/*.md", "domain_catalogs/*.json", "domain_catalogs/*.md", "domain_guides/*.md"]
 schemas = ["*.json"]
 templates = ["*.json", "*.md"]
 routing = ["*.json"]

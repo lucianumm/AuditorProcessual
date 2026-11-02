@@ -1,4 +1,9 @@
-# Pesquisa oficial por resposta — v0.21.0
+# Pesquisa oficial por resposta — v0.22.0
+
+Na v0.22.0, se o Planalto recusar a captura, `legislation_lookup.py saida --act
+TIPO:NUMERO:ANO --article N` usa o normas.leg.br (compilação da Câmara) com recibo
+e informa a vigência registrada pelo portal; súmulas do STJ são capturadas no SCON.
+A sessão da resposta continua exigindo consulta nova e vínculo ao conteúdo.
 
 Na v0.21.0, cada citação é conferida na fonte consultada: o dispositivo precisa
 existir, o trecho precisa estar dentro dele e fora de redação riscada, e as marcas
