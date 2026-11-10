@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "required": ["schema_version", "as_of", "movements"],
+  "properties": {
+    "schema_version": {"const": "1.0"}, "as_of": {"type": "string", "format": "date"},
+    "movements": {
+      "type": "array", "items": {
+        "type": "object", "required": ["id", "relationship_id", "kind", "date", "minutes", "expires_on", "fact_ids", "norm_ids", "allocations"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1}, "relationship_id": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["credit", "debit"]}, "date": {"type": "string", "format": "date"},
+          "minutes": {"type": "string", "pattern": "^[0-9]+(\\.[0-9]+)?$"},
+          "expires_on": {"anyOf": [{"type": "string", "format": "date"}, {"type": "null"}]},
+          "fact_ids": {"$ref": "#/$defs/ids"}, "norm_ids": {"$ref": "#/$defs/ids"},
+          "allocations": {
+            "type": "array", "items": {
+              "type": "object", "required": ["credit_id", "minutes"],
+              "properties": {"credit_id": {"type": "string", "minLength": 1}, "minutes": {"type": "string", "pattern": "^[0-9]+(\\.[0-9]+)?$"}},
+              "additionalProperties": false
+            }
+          }
+        }, "additionalProperties": false
+      }
+    }
+  },
+  "$defs": {"ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}},
+  "additionalProperties": false
+}

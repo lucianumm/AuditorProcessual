@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0",
+  "events": [
+    {"id": "EVENT-SYNTHETIC", "client_record_id": "RELATO-SINTETICO-1",
+     "quote": "Pessoa sintética informa que trabalhou para Empresa sintética, sem apresentar documentos.",
+     "kind": "hiring", "description": "Registro sintético: prestação relatada sem data informada.",
+     "happened": {"precision": "unknown", "value": null, "end": null}}
+  ]
+}

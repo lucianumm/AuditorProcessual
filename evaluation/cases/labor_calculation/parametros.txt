@@ -1,0 +1,1 @@
+CASO SINTÉTICO DE ARITMÉTICA, SEM TAXA LEGAL. Base monetária 2200.00, divisor informado 220 horas, quantidade 10 horas e multiplicador informado 1.50: parcela principal 150.00. Reflexo fictício informado de 0.20 sobre a principal: 30.00. Pagamento identificado 40.00, abatido uma vez. Total aritmético 140.00.

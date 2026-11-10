@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/lucianumm/AuditorProcessual/schemas/legal_narrative.schema.json",
+  "title": "Narrativa jurídica fundamentada",
+  "type": "object",
+  "required": ["schema_version", "task", "style", "status", "area", "paragraphs", "reasoning", "unresolved"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "task": {"type": "string"},
+    "style": {"const": "affirmative_legal_narrative"},
+    "status": {"enum": ["draft", "review_required", "ready_for_professional_review"]},
+    "stage": {"enum": ["source_inventory_for_legal_synthesis", "authored_legal_review"]},
+    "area": {"type": ["string", "null"]},
+    "classification_confidence": {"type": "string"},
+    "coverage": {"type": "object"},
+    "pieces": {"type": "array"},
+    "matrix_status": {"type": "string"},
+    "paragraphs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["paragraph_id", "nature", "text", "source"],
+        "properties": {
+          "paragraph_id": {"type": "string"},
+          "page_pdf": {"type": "integer", "minimum": 1},
+          "nature": {"enum": ["fato_documentado", "alegacao", "prova_registrada", "decisao", "inferencia", "lacuna"]},
+          "text": {"type": "string"},
+          "source_excerpt": {"type": "string"},
+          "source": {"type": "object"},
+          "visual_sources": {"type": "array"},
+          "limitations": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": true
+      }
+    },
+    "issues": {"type": "array", "items": {"type": "string"}},
+    "reasoning": {
+      "type": "object",
+      "required": ["sequence", "normative_sources", "subsumption_rule"],
+      "properties": {
+        "sequence": {"type": "array", "items": {"type": "string"}},
+        "normative_sources": {"type": "array"},
+        "subsumption_rule": {"type": "string"},
+        "counterarguments_rule": {"type": "string"},
+        "request_rule": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "unresolved": {"type": "array", "items": {"type": "string"}},
+    "prohibited_phrase_check": {
+      "type": "object",
+      "properties": {
+        "passed": {"type": "boolean"},
+        "final_authorial_text_checked": {"type": "boolean"},
+        "findings": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

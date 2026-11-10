@@ -1,0 +1,358 @@
+{
+  "schema_version": "1.0",
+  "scope": "40 cenários de consistência observável e 10 fluxos integrais sintéticos. Não é avaliação jurídica profissional nem teste de modelo em autos reais.",
+  "scenarios": [
+    {
+      "id": "account_without_uploads",
+      "mode": "intake",
+      "variant": "empty_docs",
+      "expected": "accepted",
+      "description": "Relato recebido inicia memória sem criar páginas."
+    },
+    {
+      "id": "account_reused_id",
+      "mode": "intake",
+      "variant": "reused_id",
+      "expected": "rejected",
+      "description": "Retificação não pode sobrescrever relato pelo mesmo ID."
+    },
+    {
+      "id": "account_missing_predecessor",
+      "mode": "intake",
+      "variant": "missing_predecessor",
+      "expected": "rejected",
+      "description": "Retificação precisa de relato anterior real."
+    },
+    {
+      "id": "account_correction_preserved",
+      "mode": "intake",
+      "variant": "correction",
+      "expected": "accepted",
+      "description": "Novo relato preserva anterior e reabre dependências."
+    },
+    {
+      "id": "account_as_documentary_proof",
+      "mode": "workflow",
+      "variant": "verified_account",
+      "expected": "rejected",
+      "description": "Relato não confirma requisito documental."
+    },
+    {
+      "id": "draft_from_specific_account",
+      "mode": "workflow",
+      "variant": "base",
+      "expected": "accepted",
+      "description": "Minuta pode ser formulada com prova futura registrada."
+    },
+    {
+      "id": "missing_material_field",
+      "mode": "workflow",
+      "variant": "missing_material",
+      "expected": "rejected",
+      "description": "Suficiência não pode ocultar dado material ausente."
+    },
+    {
+      "id": "unanswered_material_question",
+      "mode": "workflow",
+      "variant": "question",
+      "expected": "rejected",
+      "description": "Pergunta material aberta afeta somente a pretensão correspondente."
+    },
+    {
+      "id": "missing_claim_requirement",
+      "mode": "workflow",
+      "variant": "omitted_requirement",
+      "expected": "rejected",
+      "description": "Uma pauta da pretensão foi omitida."
+    },
+    {
+      "id": "wrong_proof_issue",
+      "mode": "workflow",
+      "variant": "foreign_proof",
+      "expected": "rejected",
+      "description": "Plano de prova de outra questão não sustenta esta pretensão."
+    },
+    {
+      "id": "unreceived_proof",
+      "mode": "workflow",
+      "variant": "proof_received",
+      "expected": "rejected",
+      "description": "Relato não vira documento recebido."
+    },
+    {
+      "id": "exhibition_without_basis",
+      "mode": "workflow",
+      "variant": "exhibition",
+      "expected": "rejected",
+      "description": "Exibição exige fundamento processual do caso."
+    },
+    {
+      "id": "invented_client_record",
+      "mode": "workflow",
+      "variant": "unknown_client",
+      "expected": "rejected",
+      "description": "Relato referenciado precisa estar recebido."
+    },
+    {
+      "id": "false_document_availability",
+      "mode": "workflow",
+      "variant": "document_status",
+      "expected": "rejected",
+      "description": "Sem uploads não declarar disponibilidade documental."
+    },
+    {
+      "id": "salary_reconciliation_false_agreement",
+      "mode": "workflow",
+      "variant": "amount_agreement",
+      "expected": "rejected",
+      "description": "Valores distintos não representam concordância."
+    },
+    {
+      "id": "wrong_person_reconciliation",
+      "mode": "workflow",
+      "variant": "actor_agreement",
+      "expected": "rejected",
+      "description": "Provas de sujeitos diferentes não podem ser conciliadas como iguais."
+    },
+    {
+      "id": "historic_rule_outside_period",
+      "mode": "workflow",
+      "variant": "temporal",
+      "expected": "rejected",
+      "description": "Regra com vigência posterior não cobre o período."
+    },
+    {
+      "id": "affected_theme_as_merit_holding",
+      "mode": "workflow",
+      "variant": "authority_pending",
+      "expected": "rejected",
+      "description": "Afetação não equivale a tese de mérito firmada."
+    },
+    {
+      "id": "cancelled_authority_without_record",
+      "mode": "workflow",
+      "variant": "authority_cancelled",
+      "expected": "rejected",
+      "description": "Uso histórico exige fonte da alteração."
+    },
+    {
+      "id": "unreceived_expert_answer",
+      "mode": "workflow",
+      "variant": "expert_answer",
+      "expected": "rejected",
+      "description": "Quesito respondido precisa de fato recebido."
+    },
+    {
+      "id": "unknown_sector",
+      "mode": "workflow",
+      "variant": "unknown_sector",
+      "expected": "rejected",
+      "description": "Setor selecionado precisa de roteiro conhecido."
+    },
+    {
+      "id": "incompatible_scenarios",
+      "mode": "workflow",
+      "variant": "exclusive_options",
+      "expected": "rejected",
+      "description": "Teses incompatíveis não podem compor o mesmo cenário selecionado."
+    },
+    {
+      "id": "appeal_unlinked_answer",
+      "mode": "workflow",
+      "variant": "appeal_response",
+      "expected": "rejected",
+      "description": "Fundamento autônomo não pode ser marcado impugnado sem resposta."
+    },
+    {
+      "id": "appeal_fictitious_decision",
+      "mode": "workflow",
+      "variant": "appeal_quote",
+      "expected": "rejected",
+      "description": "Capítulo recursal deve citar a decisão real."
+    },
+    {
+      "id": "leap_year_window",
+      "mode": "window",
+      "variant": "leap",
+      "expected": "2025-02-28",
+      "description": "Política fornecida para data que não existe no ano de destino."
+    },
+    {
+      "id": "strict_leap_window",
+      "mode": "window",
+      "variant": "strict",
+      "expected": "rejected",
+      "description": "Modo estrito exige esclarecer regra para dia inexistente."
+    },
+    {
+      "id": "wrong_expected_window",
+      "mode": "window",
+      "variant": "wrong",
+      "expected": "rejected",
+      "description": "Marco esperado deve corresponder aos parâmetros."
+    },
+    {
+      "id": "overnight_shift",
+      "mode": "ledger",
+      "variant": "overnight",
+      "expected": "480",
+      "description": "Virada de dia mantém duração física sem somar descanso."
+    },
+    {
+      "id": "overlapping_marks",
+      "mode": "ledger",
+      "variant": "overlap",
+      "expected": "rejected",
+      "description": "Intervalos da mesma pessoa sobrepostos não se somam."
+    },
+    {
+      "id": "unknown_day",
+      "mode": "ledger",
+      "variant": "unknown",
+      "expected": "partial",
+      "description": "Dia ausente é desconhecido, não folga confirmada."
+    },
+    {
+      "id": "competing_work_rules",
+      "mode": "ledger",
+      "variant": "competing",
+      "expected": "rejected",
+      "description": "Regras concorrentes exigem seleção motivada."
+    },
+    {
+      "id": "partial_week",
+      "mode": "ledger",
+      "variant": "partial_week",
+      "expected": "partial",
+      "description": "Dias não fornecidos permanecem fora da cobertura."
+    },
+    {
+      "id": "daily_weekly_single_count",
+      "mode": "ledger",
+      "variant": "daily_weekly",
+      "expected": "300",
+      "description": "Excesso diário já contado não entra novamente no semanal."
+    },
+    {
+      "id": "additional_weekly_excess",
+      "mode": "ledger",
+      "variant": "weekly",
+      "expected": "300",
+      "description": "Excesso semanal adicional é apurado sobre dias disponíveis."
+    },
+    {
+      "id": "supplied_night_unit",
+      "mode": "ledger",
+      "variant": "night",
+      "expected": "240",
+      "description": "Unidade noturna sintética fornecida, não percentual legal presumido."
+    },
+    {
+      "id": "reused_payment",
+      "mode": "ledger",
+      "variant": "double_payment",
+      "expected": "rejected",
+      "description": "Um pagamento não pode ser abatido em duas parcelas."
+    },
+    {
+      "id": "payment_bank_confirmation",
+      "mode": "ledger",
+      "variant": "confirmation",
+      "expected": "100",
+      "description": "Confirmação do mesmo pagamento não é segundo abatimento."
+    },
+    {
+      "id": "salary_conflict",
+      "mode": "ledger",
+      "variant": "salary_conflict",
+      "expected": true,
+      "description": "Valores salariais divergentes permanecem identificados."
+    },
+    {
+      "id": "missing_payment_record",
+      "mode": "ledger",
+      "variant": "missing_payment",
+      "expected": null,
+      "description": "Ausência de pagamento comparável não prova inadimplência."
+    },
+    {
+      "id": "sector_specific_loading",
+      "mode": "routing",
+      "variant": "banking",
+      "expected": "banking",
+      "description": "Carregar apenas o guia setorial selecionado."
+    }
+  ],
+  "integral_cases": [
+    {
+      "id": "integral_01",
+      "sector": "banking",
+      "claim": "overtime",
+      "documents": 0,
+      "text": "CASO INTEIRAMENTE SINTÉTICO, SEM VALIDADE JURÍDICA. Pessoa sintética relata trabalho no banco fictício EMP1, de segunda a sexta, das 8h às 19h, com uma hora de intervalo. Não recebeu os controles de ponto."
+    },
+    {
+      "id": "integral_02",
+      "sector": "domestic",
+      "claim": "employment",
+      "documents": 1,
+      "text": "CASO INTEIRAMENTE SINTÉTICO, SEM VALIDADE JURÍDICA. Pessoa sintética relata atividades domésticas para EMP1 e apresenta uma mensagem sobre tarefas e horários. A relação e os pagamentos ainda precisam de prova."
+    },
+    {
+      "id": "integral_03",
+      "sector": "rural",
+      "claim": "overtime",
+      "documents": 1,
+      "text": "CASO INTEIRAMENTE SINTÉTICO, SEM VALIDADE JURÍDICA. Pessoa sintética relata trabalho rural para EMP1, jornadas extensas e uma escala parcial; faltam registros de outros meses."
+    },
+    {
+      "id": "integral_04",
+      "sector": "drivers",
+      "claim": "overtime",
+      "documents": 1,
+      "text": "CASO INTEIRAMENTE SINTÉTICO, SEM VALIDADE JURÍDICA. Pessoa sintética relata viagens para EMP1 e apresenta registro parcial de uma viagem; direção, descanso e paradas serão examinados separadamente."
+    },
+    {
+      "id": "integral_05",
+      "sector": "healthcare",
+      "claim": "occupational_damage",
+      "documents": 0,
+      "text": "CASO INTEIRAMENTE SINTÉTICO, SEM VALIDADE JURÍDICA. Pessoa sintética relata tarefas de saúde para EMP1 e sintomas durante o trabalho; diagnóstico, exposição, nexo e incapacidade aguardam prova técnica."
+    },
+    {
+      "id": "integral_06",
+      "sector": "security",
+      "claim": "hazard_pay",
+      "documents": 1,
+      "text": "CASO INTEIRAMENTE SINTÉTICO, SEM VALIDADE JURÍDICA. Pessoa sintética relata trabalho de segurança para EMP1 e exposição alegada; a fotografia sintética descrita em texto não substitui avaliação técnica."
+    },
+    {
+      "id": "integral_07",
+      "sector": "education",
+      "claim": "salary_differences",
+      "documents": 1,
+      "text": "CASO INTEIRAMENTE SINTÉTICO, SEM VALIDADE JURÍDICA. Pessoa sintética relata aulas e atividades extraclasse para EMP1 e apresenta um comprovante parcial de remuneração."
+    },
+    {
+      "id": "integral_08",
+      "sector": "telework",
+      "claim": "overtime",
+      "documents": 1,
+      "text": "CASO INTEIRAMENTE SINTÉTICO, SEM VALIDADE JURÍDICA. Pessoa sintética relata trabalho remoto para EMP1 e mensagens sobre tarefas; os acessos isolados não representam toda a jornada."
+    },
+    {
+      "id": "integral_09",
+      "sector": "platforms",
+      "claim": "employment",
+      "documents": 0,
+      "text": "CASO INTEIRAMENTE SINTÉTICO, SEM VALIDADE JURÍDICA. Pessoa sintética relata prestação de serviços a EMP1 por plataforma, tarefas, bloqueios e remuneração; a natureza da relação é controvertida."
+    },
+    {
+      "id": "integral_10",
+      "sector": "public_employment",
+      "claim": "third_party_liability",
+      "documents": 1,
+      "text": "CASO INTEIRAMENTE SINTÉTICO, SEM VALIDADE JURÍDICA. Pessoa sintética relata trabalho para EMP1 com tomador público; forma de contratação, fiscalização e competência exigem análise específica."
+    }
+  ]
+}

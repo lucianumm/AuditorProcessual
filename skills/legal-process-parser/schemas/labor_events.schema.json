@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "required": ["schema_version", "events"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "events": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "required": ["id", "client_record_id", "quote", "kind", "description", "happened"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$"},
+          "client_record_id": {"type": "string", "minLength": 1},
+          "quote": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["hiring", "role_change", "pay_change", "working_time", "leave", "conflict", "termination", "other"]},
+          "description": {"type": "string", "minLength": 1},
+          "supersedes": {"type": "string", "minLength": 1},
+          "happened": {
+            "type": "object", "required": ["precision", "value", "end"],
+            "properties": {
+              "precision": {"enum": ["exact", "month", "range", "unknown"]},
+              "value": {"type": ["string", "null"]}, "end": {"type": ["string", "null"]}
+            }, "additionalProperties": false
+          }
+        }, "additionalProperties": false
+      }
+    }
+  }, "additionalProperties": false
+}

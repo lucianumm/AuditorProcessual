@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "rules": [
+    {
+      "id": "RULE-SYNTHETIC",
+      "relationship_id": "REL-SYNTHETIC",
+      "period_start": "2026-06-01",
+      "period_end": "2026-06-30",
+      "norm_ids": [
+        "NORM-SYNTHETIC"
+      ],
+      "daily_limit_minutes": "480",
+      "weekly_limit_minutes": "2400",
+      "week_start": 0,
+      "limit_basis": "physical",
+      "night_window": null,
+      "night_reduction": false,
+      "reason": "Parâmetros inteiramente sintéticos, não representam regra legal."
+    }
+  ],
+  "days": [
+    {
+      "id": "DAY-SYNTHETIC",
+      "relationship_id": "REL-SYNTHETIC",
+      "date": "2026-06-01",
+      "day_status": "worked",
+      "origin": "client",
+      "fact_ids": [
+        "FACT-SYNTHETIC"
+      ],
+      "intervals": [
+        {
+          "start": "2026-06-01T09:00:00-03:00",
+          "end": "2026-06-01T17:00:00-03:00"
+        }
+      ],
+      "reason": "Marcações de exemplo, sem relato real ou documento."
+    }
+  ],
+  "payroll": [
+    {
+      "id": "DUE-SYNTHETIC",
+      "relationship_id": "REL-SYNTHETIC",
+      "competence": "2026-06",
+      "rubric": "exemplo",
+      "kind": "due",
+      "payment_id": null,
+      "amount": "100",
+      "origin": "client",
+      "fact_ids": [
+        "FACT-SYNTHETIC"
+      ],
+      "reason": "Valor de teste."
+    },
+    {
+      "id": "PAY-SYNTHETIC",
+      "relationship_id": "REL-SYNTHETIC",
+      "competence": "2026-06",
+      "rubric": "exemplo",
+      "kind": "payment",
+      "payment_id": "PAYMENT-SYNTHETIC",
+      "amount": "40",
+      "origin": "client",
+      "fact_ids": [
+        "FACT-SYNTHETIC"
+      ],
+      "reason": "Valor de teste."
+    },
+    {
+      "id": "CONFIRM-SYNTHETIC",
+      "relationship_id": "REL-SYNTHETIC",
+      "competence": "2026-06",
+      "rubric": "exemplo",
+      "kind": "payment_confirmation",
+      "payment_id": "PAYMENT-SYNTHETIC",
+      "amount": "40",
+      "origin": "client",
+      "fact_ids": [
+        "FACT-SYNTHETIC"
+      ],
+      "reason": "Confirmação de teste do mesmo pagamento; não contar novamente."
+    }
+  ]
+}
