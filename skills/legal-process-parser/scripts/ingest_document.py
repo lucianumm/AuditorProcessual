@@ -477,6 +477,9 @@ def run_ingest(
     if any(warning.startswith("VISUAL_REVIEW_REQUIRED:") for warning in extraction_warnings):
         coverage.update(full_conversion_complete=False, conversion_result="CONVERSAO PARCIAL",
                         office_visual_review_pending=True)
+    if any(warning.startswith("AUDIO_TRANSCRIPTION_REQUIRED:") for warning in extraction_warnings):
+        coverage.update(full_conversion_complete=False, conversion_result="CONVERSAO PARCIAL",
+                        media_review_pending=True)
     recovery = build_recovery_report(pages, digest, extraction_warnings, render_warnings)
     procedural_summary = build_procedural_summary(pages, classification, pieces, coverage)
     legal_basis_plan = build_legal_basis_plan(pages, classification, task)
@@ -518,11 +521,32 @@ def run_ingest(
     limitations = [*extraction_warnings, *render_warnings]
     if coverage.get("semantic_vision_unavailable"):
         limitations.append("Visão semântica não concluída em uma ou mais páginas; conversão integral não foi declarada.")
+    backend_by_format = {
+        "docx": "ooxml-safe-text",
+        "xlsx": "ooxml-safe-text",
+        "odt": "odf-safe-text",
+        "ods": "odf-safe-text",
+        "rtf": "rtf-safe-text",
+        "eml": "eml-safe-parser",
+        "zip": "zip-safe-bundle",
+        "p7s": "p7s-cms-inspector",
+        "image": "media-manifest",
+        "audio_video": "media-manifest",
+    }
+    extraction_backend = (
+        ("pypdf/PyPDF2 + OCR" if ocr_pages else "pypdf/PyPDF2")
+        if source.suffix.lower() == ".pdf"
+        else backend_by_format.get(source_format, "plain-text")
+    )
+    court_systems_detected = sorted({page.court_system for page in pages if page.court_system})
     manifest: dict[str, Any] = {
         "schema_version": "1.2",
         "engine_version": ENGINE_VERSION,
         "execution_fingerprint": config,
         "process_id": process_id,
+        "process_id_criterion": classification.get("numero_processo_criterio"),
+        "cited_process_ids": classification.get("numeros_processo_citados", []),
+        "court_systems_detected": court_systems_detected,
         "processed_at": now_utc(),
         "mode": mode,
         "task": task,
@@ -546,7 +570,7 @@ def run_ingest(
             "sha256": digest,
             "pages": len(texts),
             "preserved_path": preserved_original.relative_to(output).as_posix(),
-            "extraction_backend": ("pypdf/PyPDF2 + OCR" if ocr_pages else "pypdf/PyPDF2") if source.suffix.lower() == ".pdf" else ("ooxml-safe-text" if source_format in {"docx", "xlsx"} else "plain-text"),
+            "extraction_backend": extraction_backend,
             "page_unit": "pdf_page" if source_format == "pdf" else "logical_segment",
         },
         "confidentiality": confidentiality,

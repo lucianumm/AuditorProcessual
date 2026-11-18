@@ -62,8 +62,18 @@ def verify(directory):
                 [str(core / "scripts/citation_check.py"), "parse", "--text", "art. 71, § 4º, da CLT e Súmula 437 do TST"],
                 [str(core / "scripts/labor_catalog.py"), "--claim", "overtime", "--brief", "--polo", "reclamada"],
                 [str(core / "scripts/labor_catalog.py"), "--claim", "commute_time", "--markdown"],
-                [str(core / "scripts/official_indices.py"), "--help"],
+                [str(core / "scripts/official_indices.py"), "--list-series"],
                 [str(core / "scripts/capabilities.py")],
+                [str(core / "scripts/claim_search.py"), "golpe do pix"],
+                [str(core / "scripts/deadline_calculator.py"), "--help"],
+                [str(core / "scripts/civil_monetary_engine.py"), "--help"],
+                [str(core / "scripts/social_security_calc.py"), "--help"],
+                [str(core / "scripts/penal_dosimetry.py"), "--help"],
+                [str(core / "scripts/limitation_checker.py"), "--help"],
+                [str(core / "scripts/datajud_lookup.py"), "--help"],
+                [str(core / "scripts/privacy_redactor.py"), "--help"],
+                [str(core / "scripts/docx_exporter.py"), "--help"],
+                [str(core / "scripts/mcp_server.py"), "--self-test"],
             ]
             for command in commands:
                 result = subprocess.run([sys.executable, *command], cwd=root, env=environment, capture_output=True, text=True, encoding="utf-8")
@@ -80,7 +90,11 @@ def verify(directory):
                              "scripts/citation_check.py", "scripts/source_registry.py", "references/labor_authorities.json",
                              "references/official_source_registry.json", "references/citation_verification_rules.md", "references/labor_claims_index.md",
                              "references/domain_authorities.json", "references/domain_catalogs/penal.json", "references/domain_catalogs/penal_index.md",
-                             "references/domain_guides/penal.md", "references/domain_claims_index.md", "scripts/domain_catalog.py", "scripts/legislation_lookup.py"):
+                             "references/domain_guides/penal.md", "references/domain_claims_index.md", "scripts/domain_catalog.py", "scripts/legislation_lookup.py",
+                             "scripts/court_systems.py", "scripts/cnj_classifier.py", "scripts/privacy_redactor.py", "scripts/docx_exporter.py", "scripts/mcp_server.py",
+                             "scripts/deadline_calculator.py", "scripts/civil_monetary_engine.py", "scripts/social_security_calc.py", "scripts/penal_dosimetry.py",
+                             "scripts/limitation_checker.py", "scripts/datajud_lookup.py", "references/domain_catalogs/securitario.json", "references/domain_guides/securitario.md",
+                             "references/defense_contestacao_rules.md", "references/appellate_practice_rules.md", "references/judicial_decision_and_opinion_rules.md"):
                 assert (core / resource).is_file(), (package.name, resource)
             review = root / "invalid.json"
             review.write_text("{}")
@@ -105,7 +119,7 @@ def verify(directory):
                             "package_structure":"passed","isolated_local_execution":"passed",
                             "live_platform_upload":"not_run","real_process_expert_review":"not_run"})
             print(f"OK isolated: {package.name}")
-    assert count == 8, f"Expected 8 archives, got {count}"
+    assert count == 9, f"Expected 9 archives, got {count}"
     report = {"schema_version":"1.0","checked_at":datetime.now(timezone.utc).isoformat(),"packages":results,
               "scope":"Local synthetic execution only; no provider calls, login, live upload or legal merit certification."}
     (directory / "platform_validation.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")

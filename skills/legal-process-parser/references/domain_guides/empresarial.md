@@ -1,29 +1,21 @@
-# Direito Empresarial
+# Direito Empresarial e Societário
 
-Catálogo: `domain_catalogs/empresarial.json`.
+Catálogo: `domain_catalogs/empresarial.json` (para Recuperação Judicial e Falência aprofundadas, ver também `insolvencia.json`; para PI/Marcas, `propriedade_intelectual_digital.json`).
 
-## Recuperação e falência
-- Lei 11.101/2005: efeitos e suspensões (art. 6º), verificação, impugnação e habilitação de créditos (arts. 7º, 8º e 10), objetivo e requisitos da recuperação (arts. 47, 48, 51 e 52), objeção e assembleia (arts. 55 e 56), falência (arts. 94 e 99).
-- Lei 14.112/2020 (DOU 24/12/2020, vigência 30 dias depois): reforma da Lei 11.101/2005; conferir a redação aplicável a cada pedido.
+## 1. Regime e competência
+- Rege sociedades limitadas e anônimas (CC, arts. 966–1.195; Lei 6.404/1976), títulos de crédito, contratos empresariais interempresariais paritários (CC, art. 421-A) e estabelecimento empresarial na Justiça Estadual (Varas Empresariais especializadas onde instaladas), ressalvada convenção arbitral (Lei 9.307/1996; Lei 6.404/1976, art. 109, § 3º).
 
-## Sociedades
-Desconsideração da personalidade (CC, art. 50; incidente do CPC, art. 133), retirada e apuração de haveres (CC, arts. 1.028, 1.029 e 1.077; CPC, art. 599).
+## 2. Teses do sócio retirante, minoritário ou credor empresarial
+- **Dissolução parcial, exclusão e haveres:** postule retirada imotivada em sociedade por prazo indeterminado mediante notificação com 60 dias (CC, art. 1.029), dissolução parcial por quebra da *affectio societatis* ou exclusão de sócio por falta grave (arts. 1.030 e 1.085) e **apuração de haveres por balanço especial de determinação** na omissão do contrato social, avaliando ativos tangíveis e intangíveis a preço de saída na data da resolução (CPC, arts. 604–606), com juros de mora após o prazo contratual/legal de pagamento (CC, art. 1.031, § 2º).
+- **Responsabilidade de administradores, títulos e trespasse:** responsabilize administradores por violação da lei/estatuto ou conflito de interesses (Lei 6.404/1976, arts. 153–159; CC, art. 1.016), execute notas promissórias, cheques, cédulas de crédito e duplicatas escriturais (Lei 5.474/1968; Lei 13.775/2018) com autonomia e abstração perante endossatário de boa-fé, e responsabilize solidariamente alienante e adquirente no trespasse irregular ou por passivos contabilizados em até 1 ano (CC, art. 1.146).
 
-## Propriedade industrial
-Marca: propriedade pelo registro (Lei 9.279/1996, art. 129).
+## 3. Teses da sociedade, controlador ou demandado
+- **Pactuação contratual dos haveres e *business judgment rule*:** imponha a **força vinculante do critério contratual de apuração e parcelamento de haveres** livremente pactuado (CPC, art. 606, *caput*, *a contrario sensu* — jurisprudência STJ), proteja decisões negociais informadas e desinteressadas dos administradores sob a *business judgment rule* (Lei 6.404/1976, art. 159, § 6º) e suscite prescrição trienal de anulação de assembleia ou pretensão contra administradores/sócios (Lei 6.404/1976, arts. 286–287; CC, art. 206, § 3º, VII).
+- **Títulos causais, endosso-mandato e IDPJ:** oponha exceções pessoais à duplicata sem aceite e sem comprovante de entrega da mercadoria/serviço, ilegitimidade passiva do banco no mero endosso-mandato salvo excesso de poderes (**Súmula 476 STJ**) e exigência estrita de desvio de finalidade ou confusão patrimonial na desconsideração (CC, art. 50).
 
-## Cuidados
-Juízo universal e créditos trabalhistas (`habilitacao_impugnacao_credito`), classes de credores, datas de corte e documentos contábeis.
+## 4. Magistratura e gabinete (CPC, art. 489, § 1º)
+- Fixar expressamente na decisão da primeira fase da dissolução parcial a **data da resolução da sociedade**, o critério de apuração de haveres e a nomeação de perito especializado em avaliação de empresas (CPC, arts. 604–607), determinando o depósito da parcela incontroversa (art. 604, § 1º).
 
-## Roteiro das pretensões acrescentadas
-
-Dispositivos localizados no texto oficial em 10/11/2026; súmulas e temas com situação lida no portal do tribunal. A página de tema do STF não traz a tese: ler a tese antes de citar.
-
-- Conflito societário (`emp_partner_dispute`): exclusão judicial por falta grave (CC, art. 1.030) e extrajudicial com previsão contratual e defesa (art. 1.085); responsabilidade do retirante por dois anos (art. 1.032).
-- Haveres (`emp_haveres`): critério do contrato ou balanço de determinação (CPC, art. 606; CC, art. 1.031).
-- Administradores e controlador (`emp_admin_liability`): Lei 6.404/1976, arts. 117, 153, 155, 158 e 159.
-- Trespasse (`emp_business_transfer`): débitos contabilizados (CC, art. 1.146) e não concorrência por cinco anos (art. 1.147).
-- Marca e concorrência desleal (`emp_unfair_competition`): Lei 9.279/1996, arts. 130, 189, 195, 209 e 210; prescrição em cinco anos (art. 225).
-- Recuperação (`emp_recovery_creditor`): créditos excluídos e bens essenciais (Lei 11.101/2005, arts. 6º e 49); coobrigados (Súmula 581 do STJ); bens fora do plano (Súmula 480).
-- Falência (`emp_bankruptcy_claims`): classificação (art. 83), extraconcursais (art. 84) e atos ineficazes (art. 129).
-- Títulos (`emp_credit_instruments`): cheque (Lei 7.357/1985, arts. 33, 59 e 61; Súmulas 299, 370, 503 e 531); nota promissória (Súmulas 258 e 504); duplicata sem aceite (Lei 5.474/1968, art. 15).
+## 5. Marcos intertemporais e motores
+- **18/03/2016 (CPC/2015, arts. 599–609 — procedimento de dissolução parcial)** · **20/09/2019 (Lei 13.874/2019 — sociedade limitada unipessoal art. 1.052, § 1º, e art. 50 CC)** · **26/08/2021 e 21/09/2022 (Leis 14.195/2021 e 14.451/2022 — quóruns reduzidos na limitada, arts. 1.061 e 1.076 CC)**.
+- Motores: `civil_monetary_engine.py`, `limitation_checker.py`, `deadline_calculator.py`, `domain_catalog.py` e `citation_check.py`.

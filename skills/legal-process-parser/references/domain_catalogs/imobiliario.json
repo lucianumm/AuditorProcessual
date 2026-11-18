@@ -4,25 +4,1412 @@
  "label": "Direito Imobiliário e Registral",
  "guide": "domain_guides/imobiliario.md",
  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
- "polo_labels": {"claimant_theses": "Teses do autor ou requerente", "defense_theses": "Teses do réu ou requerido"},
+ "polo_labels": {
+  "claimant_theses": "Teses do autor ou requerente",
+  "defense_theses": "Teses do réu ou requerido"
+ },
  "claims": [
-  {"id": "imob_adjudication", "label": "Adjudicação compulsória", "requirements": ["promessa", "quitacao", "recusa"], "claimant_theses": [{"id": "imob_adjudication.c1", "label": "Direito não depende do registro do compromisso", "authority_ids": ["stj_sumula_239"]}, {"id": "imob_adjudication.c2", "label": "Via extrajudicial no registro de imóveis", "authority_ids": ["l6015_art216b"]}], "defense_theses": [{"id": "imob_adjudication.d1", "label": "Preço não quitado ou cláusula de arrependimento válida", "authority_ids": []}], "temporal_marker_ids": ["lei_14382_serp"], "typical_requests": [], "evidence": [], "piece_ids": ["inicial_procedimento_comum", "requerimento_administrativo"], "related_claims": [], "limitation": "conferir"},
-  {"id": "imob_purchase_termination", "label": "Resolução de promessa de compra e venda", "requirements": ["culpa", "retencao", "restituicao"], "claimant_theses": [{"id": "imob_purchase_termination.c1", "label": "Restituição imediata das parcelas na resolução (CDC)", "authority_ids": ["stj_sumula_543"]}], "defense_theses": [{"id": "imob_purchase_termination.d1", "label": "Retenção conforme a culpa e o contrato", "authority_ids": ["stj_sumula_543"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["inicial_procedimento_comum"], "related_claims": [], "limitation": "conferir"},
-  {"id": "imob_builder_mortgage", "label": "Hipoteca da construtora e adquirente", "requirements": ["hipoteca", "promessa", "boa_fe"], "claimant_theses": [{"id": "imob_builder_mortgage.c1", "label": "Hipoteca entre construtora e agente financeiro não atinge o adquirente", "authority_ids": ["stj_sumula_308"]}], "defense_theses": [{"id": "imob_builder_mortgage.d1", "label": "Adquirente ciente e anterioridade do registro", "authority_ids": []}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["inicial_procedimento_comum"], "related_claims": [], "limitation": "conferir"},
-  {"id": "imob_third_party_embargos", "label": "Embargos de terceiro do promissário comprador", "requirements": ["posse", "compromisso", "constricao"], "claimant_theses": [{"id": "imob_third_party_embargos.c1", "label": "Posse fundada em compromisso não registrado admite embargos de terceiro", "authority_ids": ["stj_sumula_84"]}], "defense_theses": [{"id": "imob_third_party_embargos.d1", "label": "Fraude à execução ou ausência de posse", "authority_ids": []}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["embargos_terceiro"], "related_claims": [], "limitation": "conferir"},
-  {"id": "imob_fiduciary", "label": "Alienação fiduciária: consolidação e leilão", "requirements": ["mora", "intimacao", "prazos", "leilao"], "claimant_theses": [{"id": "imob_fiduciary.c1", "label": "Consolidação e leilões nos prazos e formas legais", "authority_ids": ["l9514_art26", "l9514_art27"]}], "defense_theses": [{"id": "imob_fiduciary.d1", "label": "Mora constituída e procedimento regular", "authority_ids": ["l9514_art26"]}], "temporal_marker_ids": ["lei_14711_garantias"], "typical_requests": [], "evidence": [], "piece_ids": ["tutela_urgencia_antecedente", "inicial_procedimento_comum"], "related_claims": [], "limitation": "conferir"},
-  {"id": "imob_usucapiao", "label": "Usucapião judicial e extrajudicial", "requirements": ["modalidade", "prazo", "posse", "confrontantes"], "claimant_theses": [{"id": "imob_usucapiao.c1", "label": "Usucapião extraordinária e via extrajudicial", "authority_ids": ["cc_art1238", "l6015_art216a"]}], "defense_theses": [{"id": "imob_usucapiao.d1", "label": "Posse precária ou sem animus domini", "authority_ids": ["cc_art1238"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["usucapiao"], "related_claims": ["civ_possession"], "limitation": "conferir"},
-  {"id": "imob_registry", "label": "Atos de registro", "requirements": ["titulo", "qualificacao", "exigencia"], "claimant_theses": [{"id": "imob_registry.c1", "label": "Atos de registro e averbação previstos em lei", "authority_ids": ["l6015_art167"]}], "defense_theses": [{"id": "imob_registry.d1", "label": "Exigência registral fundamentada", "authority_ids": ["l6015_art167"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["requerimento_administrativo"], "related_claims": [], "limitation": "conferir"},
-  {"id": "imob_delay_delivery", "label": "Atraso na entrega de imóvel na planta", "requirements": ["prazo_contratual", "tolerancia", "habite_se", "entrega_das_chaves"], "claimant_theses": [{"id": "imob_delay_delivery.c1", "label": "Atraso além da tolerância autoriza resolução com devolução integral ou indenização mensal", "authority_ids": ["l4591_art43a"]}, {"id": "imob_delay_delivery.c2", "label": "Lucros cessantes presumidos e inversão da cláusula penal — conferir os Temas 970 e 971 do STJ", "authority_ids": ["cc_art402", "cc_art475"]}, {"id": "imob_delay_delivery.c3", "label": "Restituição imediata das parcelas por culpa do vendedor", "authority_ids": ["stj_sumula_543"]}], "defense_theses": [{"id": "imob_delay_delivery.d1", "label": "Tolerância de cento e oitenta dias expressamente pactuada", "authority_ids": ["l4591_art43a"]}, {"id": "imob_delay_delivery.d2", "label": "Caso fortuito externo comprovado", "authority_ids": ["cc_art393"]}], "temporal_marker_ids": ["lei_13786_distrato"], "typical_requests": ["Resolução com devolução integral", "Multa ou lucros cessantes", "Congelamento do saldo devedor"], "evidence": ["Contrato e quadro-resumo", "Habite-se e termo de entrega", "Comprovantes de pagamento e de aluguel"], "piece_ids": ["inicial_procedimento_comum", "inicial_juizado", "tutela_urgencia_antecedente"], "related_claims": ["imob_purchase_termination"], "limitation": "Dez anos para o inadimplemento contratual — conferir a orientação do STJ"},
-  {"id": "imob_distrato", "label": "Distrato por iniciativa do comprador e retenções", "requirements": ["data_do_contrato", "patrimonio_de_afetacao", "percentual_retido", "comissao_de_corretagem"], "claimant_theses": [{"id": "imob_distrato.c1", "label": "Retenção limitada e devolução conforme a lei e a data do contrato", "authority_ids": ["l4591_art67a", "stj_sumula_543", "cdc_art53"]}, {"id": "imob_distrato.c2", "label": "Contrato sem quadro-resumo pode ser rescindido por justa causa após prazo de saneamento", "authority_ids": ["l4591_art35a"]}], "defense_theses": [{"id": "imob_distrato.d1", "label": "Pena convencional de até vinte e cinco por cento ou cinquenta por cento com patrimônio de afetação", "authority_ids": ["l4591_art67a"]}, {"id": "imob_distrato.d2", "label": "Comissão de corretagem informada previamente — conferir o Tema 938 do STJ", "authority_ids": ["l4591_art67a"]}, {"id": "imob_distrato.d3", "label": "Loteamento: retenções próprias", "authority_ids": ["l6766_art32a"]}], "temporal_marker_ids": ["lei_13786_distrato"], "typical_requests": ["Devolução das parcelas", "Redução do percentual retido"], "evidence": ["Contrato com data", "Extrato de pagamentos", "Registro do patrimônio de afetação"], "piece_ids": ["inicial_procedimento_comum", "inicial_juizado"], "related_claims": ["imob_purchase_termination", "imob_delay_delivery"], "limitation": "Conferir"},
-  {"id": "imob_construction_defects", "label": "Vícios construtivos", "requirements": ["defeito", "data_da_entrega", "natureza_do_vicio", "notificacao"], "claimant_theses": [{"id": "imob_construction_defects.c1", "label": "Garantia de cinco anos por solidez e segurança", "authority_ids": ["cc_art618"]}, {"id": "imob_construction_defects.c2", "label": "Reparação e abatimento no regime do consumidor", "authority_ids": ["cdc_art18", "cdc_art20", "cdc_art12"]}], "defense_theses": [{"id": "imob_construction_defects.d1", "label": "Decadência do direito de reclamar vício aparente", "authority_ids": ["cdc_art26"]}, {"id": "imob_construction_defects.d2", "label": "Mau uso ou falta de manutenção", "authority_ids": ["cdc_art12"]}], "temporal_marker_ids": [], "typical_requests": ["Reparo", "Indenização", "Abatimento do preço"], "evidence": ["Laudo de engenharia", "Manual do proprietário", "Notificações"], "piece_ids": ["inicial_procedimento_comum", "impugnacao_laudo"], "related_claims": ["cons_vice", "imob_delay_delivery"], "limitation": "Indenização por vício construtivo: conferir o prazo decenal fixado pelo STJ"},
-  {"id": "imob_lease_guarantees", "label": "Locação: garantias, fiador e benfeitorias", "requirements": ["contrato", "garantia", "prorrogacao", "exoneracao"], "claimant_theses": [{"id": "imob_lease_guarantees.c1", "label": "Garantias se estendem até a devolução das chaves, salvo disposição contrária", "authority_ids": ["l8245_art39"]}, {"id": "imob_lease_guarantees.c2", "label": "Indenização e retenção por benfeitorias necessárias", "authority_ids": ["l8245_art35", "cc_art1219"]}], "defense_theses": [{"id": "imob_lease_guarantees.d1", "label": "Renúncia à indenização por benfeitorias é válida", "authority_ids": ["stj_sumula_335"]}, {"id": "imob_lease_guarantees.d2", "label": "Penhora do bem de família do fiador", "authority_ids": ["stj_sumula_549", "l8009_art3"]}, {"id": "imob_lease_guarantees.d3", "label": "Exoneração do fiador depende de notificação", "authority_ids": ["l8245_art40"]}], "temporal_marker_ids": [], "typical_requests": ["Exoneração da fiança", "Cobrança contra o fiador", "Retenção"], "evidence": ["Contrato e aditivos", "Notificações", "Notas das benfeitorias"], "piece_ids": ["acao_cobranca_aluguel", "acao_despejo", "embargos_execucao_civil", "inicial_procedimento_comum"], "related_claims": ["civ_lease"], "limitation": "Aluguéis: três anos (CC, art. 206, § 3º, I)"},
-  {"id": "imob_lease_renewal", "label": "Renovatória e revisional de aluguel", "requirements": ["contrato_escrito", "prazo_minimo", "exploracao_do_ramo", "valor_de_mercado"], "claimant_theses": [{"id": "imob_lease_renewal.c1", "label": "Direito à renovação com cinco anos de contratos e três de mesmo ramo", "authority_ids": ["l8245_art51"]}, {"id": "imob_lease_renewal.c2", "label": "Revisão do aluguel ao preço de mercado após três anos de vigência, pelo rito da revisional", "authority_ids": ["l8245_art19", "l8245_art68"]}], "defense_theses": [{"id": "imob_lease_renewal.d1", "label": "Exceções: obras, uso próprio e melhor proposta", "authority_ids": ["l8245_art52", "l8245_art72"]}, {"id": "imob_lease_renewal.d2", "label": "Decadência por ajuizamento fora do interregno legal", "authority_ids": ["l8245_art51"]}], "temporal_marker_ids": [], "typical_requests": ["Renovação por igual prazo", "Fixação de aluguel provisório"], "evidence": ["Contratos sucessivos", "Laudo de avaliação", "Prova do ramo e do adimplemento"], "piece_ids": ["acao_renovatoria_locacao", "acao_revisional_aluguel", "contestacao", "impugnacao_laudo"], "related_claims": ["civ_lease"], "limitation": "Renovatória: de um ano a seis meses antes do fim do contrato (Lei 8.245/1991, art. 51, § 5º)"},
-  {"id": "imob_residential_recovery", "label": "Retomada de imóvel residencial", "requirements": ["prazo_do_contrato", "motivo", "notificacao"], "claimant_theses": [{"id": "imob_residential_recovery.c1", "label": "Denúncia vazia após trinta meses", "authority_ids": ["l8245_art46"]}, {"id": "imob_residential_recovery.c2", "label": "Retomada motivada nos contratos inferiores a trinta meses", "authority_ids": ["l8245_art47"]}], "defense_theses": [{"id": "imob_residential_recovery.d1", "label": "Devolução antecipada com multa proporcional", "authority_ids": ["l8245_art4"]}, {"id": "imob_residential_recovery.d2", "label": "Insinceridade do pedido de uso próprio", "authority_ids": ["l8245_art47"]}], "temporal_marker_ids": [], "typical_requests": ["Despejo", "Multa proporcional"], "evidence": ["Contrato", "Notificação premonitória"], "piece_ids": ["acao_despejo", "contestacao"], "related_claims": ["civ_lease"], "limitation": "Conferir"},
-  {"id": "imob_condo_debt", "label": "Débito condominial e natureza propter rem", "requirements": ["unidade", "periodo", "titular_registral", "posse"], "claimant_theses": [{"id": "imob_condo_debt.c1", "label": "Adquirente responde pelos débitos, inclusive anteriores", "authority_ids": ["cc_art1345"]}, {"id": "imob_condo_debt.c2", "label": "Crédito condominial prefere ao hipotecário", "authority_ids": ["stj_sumula_478"]}], "defense_theses": [{"id": "imob_condo_debt.d1", "label": "Promitente comprador imitido na posse e ciência do condomínio — conferir repetitivo do STJ", "authority_ids": ["cc_art1345"]}, {"id": "imob_condo_debt.d2", "label": "Vaga de garagem com matrícula própria é penhorável", "authority_ids": ["stj_sumula_449"]}], "temporal_marker_ids": [], "typical_requests": ["Cobrança", "Penhora da unidade"], "evidence": ["Matrícula", "Atas e planilha", "Prova da imissão na posse"], "piece_ids": ["execucao_titulo_extrajudicial", "embargos_execucao_civil", "inicial_procedimento_comum"], "related_claims": ["civ_neighborhood_condo"], "limitation": "Cinco anos — conferir"},
-  {"id": "imob_fiduciary_defense", "label": "Alienação fiduciária de imóvel: purgação, leilão e taxa de ocupação", "requirements": ["intimacao_pessoal", "prazo_de_purgacao", "datas_dos_leiloes", "preco"], "claimant_theses": [{"id": "imob_fiduciary_defense.c1", "label": "Nulidade da consolidação sem intimação regular", "authority_ids": ["l9514_art26"]}, {"id": "imob_fiduciary_defense.c2", "label": "Purgação e direito de preferência até o leilão conforme a lei vigente", "authority_ids": ["l9514_art26a", "l9514_art27"]}], "defense_theses": [{"id": "imob_fiduciary_defense.d1", "label": "Execução extrajudicial é constitucional", "authority_ids": ["tema_stf_982"]}, {"id": "imob_fiduciary_defense.d2", "label": "Reintegração liminar e taxa de ocupação após a consolidação", "authority_ids": ["l9514_art30", "l9514_art37a"]}], "temporal_marker_ids": ["lei_14711_garantias"], "typical_requests": ["Anulação da consolidação e dos leilões", "Prestação de contas do saldo"], "evidence": ["Matrícula com averbações", "Intimações e editais", "Laudo de avaliação"], "piece_ids": ["inicial_procedimento_comum", "tutela_urgencia_antecedente", "contestacao"], "related_claims": ["imob_fiduciary"], "limitation": "Conferir"},
-  {"id": "imob_land_subdivision", "label": "Loteamento: regularidade e rescisão", "requirements": ["registro_do_loteamento", "mora", "notificacao", "obras"], "claimant_theses": [{"id": "imob_land_subdivision.c1", "label": "Venda de lote não registrado é vedada e autoriza suspender pagamentos", "authority_ids": ["l6766_art37", "l6766_art18"]}, {"id": "imob_land_subdivision.c2", "label": "Rescisão por inadimplemento só após constituição em mora", "authority_ids": ["l6766_art32"]}], "defense_theses": [{"id": "imob_land_subdivision.d1", "label": "Restituição com retenções legais", "authority_ids": ["l6766_art32a"]}], "temporal_marker_ids": ["lei_13786_distrato"], "typical_requests": ["Regularização", "Rescisão com devolução", "Outorga de escritura"], "evidence": ["Contrato e matrícula", "Certidão do registro do loteamento"], "piece_ids": ["inicial_procedimento_comum"], "related_claims": ["imob_adjudication", "imob_distrato"], "limitation": "Conferir"},
-  {"id": "imob_urban_usucapiao", "label": "Usucapião urbana, familiar e Reurb", "requirements": ["tempo_de_posse", "area", "moradia", "outra_propriedade"], "claimant_theses": [{"id": "imob_urban_usucapiao.c1", "label": "Usucapião especial urbana de até duzentos e cinquenta metros quadrados", "authority_ids": ["cc_art1240", "l10257_art9"]}, {"id": "imob_urban_usucapiao.c2", "label": "Usucapião familiar por abandono do lar", "authority_ids": ["cc_art1240a"]}, {"id": "imob_urban_usucapiao.c3", "label": "Usucapião ordinária com justo título e boa-fé", "authority_ids": ["cc_art1242"]}, {"id": "imob_urban_usucapiao.c4", "label": "Regularização fundiária urbana", "authority_ids": ["l13465_art9", "l13465_art13"]}], "defense_theses": [{"id": "imob_urban_usucapiao.d1", "label": "Posse precária ou por mera tolerância", "authority_ids": ["cc_art1196"]}, {"id": "imob_urban_usucapiao.d2", "label": "Bem público não se adquire por usucapião", "authority_ids": ["cf_art191"]}], "temporal_marker_ids": [], "typical_requests": ["Declaração de domínio", "Registro"], "evidence": ["Planta e memorial", "Contas e comprovantes de posse", "Certidões negativas de propriedade"], "piece_ids": ["usucapiao", "requerimento_administrativo"], "related_claims": ["imob_usucapiao"], "limitation": "Conferir"},
-  {"id": "imob_registry_rectification", "label": "Retificação, dúvida e nulidade de registro", "requirements": ["titulo", "exigencia", "erro_no_assento"], "claimant_theses": [{"id": "imob_registry_rectification.c1", "label": "Suscitação de dúvida contra exigência do registrador", "authority_ids": ["l6015_art198"]}, {"id": "imob_registry_rectification.c2", "label": "Retificação administrativa do registro", "authority_ids": ["l6015_art213"]}, {"id": "imob_registry_rectification.c3", "label": "Cancelamento de registro que não exprime a verdade", "authority_ids": ["cc_art1247", "l6015_art214"]}], "defense_theses": [{"id": "imob_registry_rectification.d1", "label": "Presunção de veracidade e princípio da continuidade", "authority_ids": ["cc_art1245", "l6015_art214"]}], "temporal_marker_ids": ["lei_14382_serp"], "typical_requests": ["Registro do título", "Retificação de área", "Cancelamento"], "evidence": ["Título e nota devolutiva", "Planta e anuência dos confrontantes"], "piece_ids": ["suscitacao_duvida_registral", "requerimento_administrativo", "inicial_procedimento_comum"], "related_claims": ["imob_registry"], "limitation": "Conferir"}
+  {
+   "id": "imob_adjudication",
+   "label": "Adjudicação compulsória",
+   "requirements": [
+    "promessa",
+    "quitacao",
+    "recusa"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_adjudication.c1",
+     "label": "Direito não depende do registro do compromisso",
+     "authority_ids": [
+      "stj_sumula_239"
+     ]
+    },
+    {
+     "id": "imob_adjudication.c2",
+     "label": "Via extrajudicial no registro de imóveis",
+     "authority_ids": [
+      "l6015_art216b"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_adjudication.d1",
+     "label": "Preço não quitado ou cláusula de arrependimento válida",
+     "authority_ids": []
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14382_serp"
+   ],
+   "typical_requests": [
+    "Suprimento judicial da declaração de vontade para adjudicação definitiva do imóvel ao promissário comprador quitado (CC, art. 1.418)",
+    "Processamento extrajudicial da adjudicação compulsória perante o Registro de Imóveis com ata notarial (Lei 6.015/1973, art. 216-B)",
+    "Dispensa de prévio registro do compromisso de compra e venda para o exercício do direito à adjudicação (Súmula 239 do STJ)"
+   ],
+   "evidence": [
+    "Instrumento público ou particular de promessa de compra e venda ou cessões sucessivas",
+    "Recibos, termo de quitação integral ou extratos bancários comprovando o pagamento total do preço",
+    "Certidão atualizada da matrícula, ata notarial e notificação extrajudicial constituindo em mora para outorga em 15 dias (art. 216-B)"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "requerimento_administrativo"
+   ],
+   "related_claims": [],
+   "limitation": "O direito potestativo à adjudicação compulsória de imóvel integralmente quitado na posse do adquirente não se extingue por prescrição nem decadência enquanto não consumada usucapião contrária por terceiro (jurisprudência pacífica do STJ)."
+  },
+  {
+   "id": "imob_purchase_termination",
+   "label": "Resolução de promessa de compra e venda",
+   "requirements": [
+    "culpa",
+    "retencao",
+    "restituicao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_purchase_termination.c1",
+     "label": "Restituição imediata das parcelas na resolução (CDC)",
+     "authority_ids": [
+      "stj_sumula_543"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_purchase_termination.d1",
+     "label": "Retenção conforme a culpa e o contrato",
+     "authority_ids": [
+      "stj_sumula_543"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13786_distrato",
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Resolução do compromisso de compra e venda com restituição em parcela única (Súmula 543 do STJ) — integral se culpa do vendedor ou com retenção legal/razoável se desistência do comprador",
+    "Reintegração na posse em favor do vendedor nos casos de inadimplemento do comprador mediante prévia constituição em mora e acertamento da restituição",
+    "Arbitramento de taxa de fruição apenas quando houve efetiva imissão do comprador na posse de imóvel pronto com habite-se (incabível em lote vago sem edificação ou atraso da obra)"
+   ],
+   "evidence": [
+    "Contrato de promessa de compra e venda, aditivos e quadro-resumo",
+    "Extrato financeiro analítico de todas as parcelas pagas pelo promissário comprador",
+    "Notificação prévia de constituição em mora (DL 745/1969; Lei 6.766/1979, art. 32) e termo de entrega de chaves, se houve posse"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [],
+   "limitation": "Prescrição decenal para a ação de resolução de promessa de compra e venda cumulada com restituição das parcelas pagas ou reintegração (CC, art. 205; jurisprudência da Segunda Seção do STJ)."
+  },
+  {
+   "id": "imob_builder_mortgage",
+   "label": "Hipoteca da construtora e adquirente",
+   "requirements": [
+    "hipoteca",
+    "promessa",
+    "boa_fe"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_builder_mortgage.c1",
+     "label": "Hipoteca entre construtora e agente financeiro não atinge o adquirente",
+     "authority_ids": [
+      "stj_sumula_308"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_builder_mortgage.d1",
+     "label": "Adquirente ciente e anterioridade do registro",
+     "authority_ids": []
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Declaração de ineficácia perante o adquirente da hipoteca firmada entre a construtora e o agente financeiro (Súmula 308 do STJ)",
+    "Determinação de baixa e cancelamento do gravame hipotecário na matrícula individualizada da unidade autônoma",
+    "Suspensão liminar de leilão judicial ou extrajudicial promovido pelo banco financiador da obra sobre a unidade vendida ao consumidor"
+   ],
+   "evidence": [
+    "Instrumento de promessa de compra e venda ou escritura aquisitiva da unidade residencial/comercial",
+    "Comprovantes de pagamento do preço à construtora/incorporadora",
+    "Certidão de inteiro teor da matrícula contendo o registro da hipoteca do financiamento à produção"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [],
+   "limitation": "Enquanto o adquirente de boa-fé estiver na posse da unidade, o pedido de cancelamento do gravame ineficaz (Súmula 308 do STJ — inaplicável porém a crédito do SFH/alienação fiduciária fora de incorporação conforme distinções do STJ) não prescreve como defesa dominial; embargos de terceiro até 5 dias após adjudicação/arrematação, antes da assinatura da respectiva carta (CPC, art. 675)."
+  },
+  {
+   "id": "imob_third_party_embargos",
+   "label": "Embargos de terceiro do promissário comprador",
+   "requirements": [
+    "posse",
+    "compromisso",
+    "constricao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_third_party_embargos.c1",
+     "label": "Posse fundada em compromisso não registrado admite embargos de terceiro",
+     "authority_ids": [
+      "stj_sumula_84"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_third_party_embargos.d1",
+     "label": "Fraude à execução ou ausência de posse",
+     "authority_ids": []
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Suspensão liminar das medidas constritivas e de alienação judicial sobre o imóvel possuído pelo terceiro embargante (CPC, art. 678)",
+    "Desconstituição definitiva da penhora/arresto em proteção à posse fundada em compromisso de compra e venda ainda que desprovido de registro (Súmula 84 do STJ)",
+    "Aplicação do princípio da causalidade nos honorários caso o embargante tenha dado causa à constrição por não atualizar o registro (Súmula 303 do STJ)"
+   ],
+   "evidence": [
+    "Compromisso de compra e venda com prova de anterioridade (reconhecimento de firma, IRPF, transferências bancárias contemporâneas) à penhora ou fraude à execução (Súmula 375 do STJ)",
+    "Contas de consumo (energia, água, condomínio, IPTU) comprovando posse efetiva e boa-fé do embargante",
+    "Auto ou termo de penhora lavrado nos autos da execução principal"
+   ],
+   "piece_ids": [
+    "embargos_terceiro"
+   ],
+   "related_claims": [],
+   "limitation": "No processo de conhecimento, a qualquer tempo antes do trânsito em julgado; no cumprimento de sentença ou execução, em até 5 dias depois da adjudicação, da alienação por iniciativa particular ou da arrematação, mas sempre antes da assinatura da respectiva carta (CPC, art. 675), ou em 15 dias úteis da intimação pessoal do terceiro (art. 675, parágrafo único)."
+  },
+  {
+   "id": "imob_fiduciary",
+   "label": "Alienação fiduciária: consolidação e leilão",
+   "requirements": [
+    "mora",
+    "intimacao",
+    "prazos",
+    "leilao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_fiduciary.c1",
+     "label": "Consolidação e leilões nos prazos e formas legais",
+     "authority_ids": [
+      "l9514_art26",
+      "l9514_art27"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_fiduciary.d1",
+     "label": "Mora constituída e procedimento regular",
+     "authority_ids": [
+      "l9514_art26"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14711_garantias"
+   ],
+   "typical_requests": [
+    "Tutela de urgência para sustar leilões extrajudiciais ou imissão na posse quando ausente intimação pessoal válida para purgação da mora (Lei 9.514/1997, art. 26)",
+    "Reconhecimento do direito do fiduciante de purgar a mora ou exercer a preferência de aquisição até a data do segundo leilão pelo valor da dívida e encargos (Lei 9.514/1997, art. 27, § 2º-B)",
+    "Pelo credor fiduciário: concessão liminar de reintegração na posse para desocupação em 60 dias após consolidada a propriedade (art. 30)"
+   ],
+   "evidence": [
+    "Contrato de alienação fiduciária de bem imóvel e certidão atualizada da matrícula com averbação de consolidação",
+    "Certidões das diligências de intimação pessoal pelo Registro de Imóveis (ou edital apenas após esgotamento comprovado — art. 26, § 4º)",
+    "Comprovantes de notificação prévia das datas, horários e locais do 1º e 2º leilões públicos ao devedor fiduciante (art. 27, § 2º-A)"
+   ],
+   "piece_ids": [
+    "tutela_urgencia_antecedente",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [],
+   "limitation": "Prazo de 15 dias da intimação pessoal para purgação da mora no Registro de Imóveis (Lei 9.514/1997, art. 26, § 1º) e preferência até a data do 2º leilão (art. 27, § 2º-B); arrematado o bem a terceiro de boa-fé, eventual falha posterior resolve-se em perdas e danos (art. 30, parágrafo único; prescrição trienal/decenal conforme a pretensão)."
+  },
+  {
+   "id": "imob_usucapiao",
+   "label": "Usucapião judicial e extrajudicial",
+   "requirements": [
+    "modalidade",
+    "prazo",
+    "posse",
+    "confrontantes"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_usucapiao.c1",
+     "label": "Usucapião extraordinária e via extrajudicial",
+     "authority_ids": [
+      "cc_art1238",
+      "l6015_art216a"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_usucapiao.d1",
+     "label": "Posse precária ou sem animus domini",
+     "authority_ids": [
+      "cc_art1238"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14382_serp"
+   ],
+   "typical_requests": [
+    "Processamento extrajudicial no Registro de Imóveis com ata notarial, planta/memorial e interpretação do silêncio dos notificados como concordância (Lei 6.015/1973, art. 216-A, § 2º)",
+    "Declaração judicial de aquisição originária da propriedade com abertura de matrícula livre de ônus pessoais anteriores"
+   ],
+   "evidence": [
+    "Ata notarial atestando o tempo e a qualidade da posse do requerente e de seus antecessores (accessio possessionis — CC, art. 1.243)",
+    "Planta e memorial descritivo assinados por profissional legalmente habilitado com ART/RRT e anuência de titulares/confrontantes",
+    "Justo título (na ordinária), carnes de IPTU, faturas de serviços públicos, benfeitorias e certidões negativas dos distribuidores cíveis"
+   ],
+   "piece_ids": [
+    "usucapiao"
+   ],
+   "related_claims": [
+    "civ_possession"
+   ],
+   "limitation": "Prazos aquisitivos materiais conforme a modalidade: 15 anos na extraordinária (reduzido a 10 anos com moradia habitual ou obras produtivas — CC, art. 1.238), 10 anos na ordinária (5 anos nas hipóteses do parágrafo único do art. 1.242), 5 anos nas especiais constitucional urbana e rural (CF, arts. 183 e 191) e 2 anos na familiar (CC, art. 1.240-A)."
+  },
+  {
+   "id": "imob_registry",
+   "label": "Atos de registro",
+   "requirements": [
+    "titulo",
+    "qualificacao",
+    "exigencia"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_registry.c1",
+     "label": "Atos de registro e averbação previstos em lei",
+     "authority_ids": [
+      "l6015_art167"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_registry.d1",
+     "label": "Exigência registral fundamentada",
+     "authority_ids": [
+      "l6015_art167"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14382_serp"
+   ],
+   "typical_requests": [
+    "Afastamento de exigência extralegal formulada em nota devolutiva mediante procedimento de dúvida registral (Lei 6.015/1973, art. 198)",
+    "Observância da concentração dos atos na matrícula imobiliária para proteção do terceiro adquirente de boa-fé (Lei 13.097/2015, art. 54)",
+    "Prioridade do título conforme o número de ordem da prenotação no Protocolo (Lei 6.015/1973, art. 186)"
+   ],
+   "evidence": [
+    "Título original (escritura pública, carta de sentença, formal de partilha ou instrumento particular com força de escritura) submetido a qualificação",
+    "Nota devolutiva fundamentada por escrito expedida pelo Oficial de Registro de Imóveis",
+    "Certidão de inteiro teor e de ônus reais com ações pessoais e reais reipersecutórias"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "suscitacao_duvida_registral"
+   ],
+   "related_claims": [],
+   "limitation": "Validade da prenotação registral por 20 dias úteis na redação dada pela Lei 14.382/2022 (Lei 6.015/1973, art. 205), prorrogada automaticamente até o desfecho quando suscitada dúvida tempestiva (art. 203)."
+  },
+  {
+   "id": "imob_delay_delivery",
+   "label": "Atraso na entrega de imóvel na planta",
+   "requirements": [
+    "prazo_contratual",
+    "tolerancia",
+    "habite_se",
+    "entrega_das_chaves"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_delay_delivery.c1",
+     "label": "Atraso além da tolerância autoriza resolução com devolução integral ou indenização mensal",
+     "authority_ids": [
+      "l4591_art43a"
+     ]
+    },
+    {
+     "id": "imob_delay_delivery.c2",
+     "label": "Lucros cessantes presumidos e inversão da cláusula penal — conferir os Temas 970 e 971 do STJ",
+     "authority_ids": [
+      "cc_art402",
+      "cc_art475"
+     ]
+    },
+    {
+     "id": "imob_delay_delivery.c3",
+     "label": "Restituição imediata das parcelas por culpa do vendedor",
+     "authority_ids": [
+      "stj_sumula_543"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_delay_delivery.d1",
+     "label": "Tolerância de cento e oitenta dias expressamente pactuada",
+     "authority_ids": [
+      "l4591_art43a"
+     ]
+    },
+    {
+     "id": "imob_delay_delivery.d2",
+     "label": "Caso fortuito externo comprovado",
+     "authority_ids": [
+      "cc_art393"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13786_distrato",
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Resolução com devolução integral",
+    "Multa ou lucros cessantes",
+    "Congelamento do saldo devedor"
+   ],
+   "evidence": [
+    "Contrato e quadro-resumo",
+    "Habite-se e termo de entrega",
+    "Comprovantes de pagamento e de aluguel"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [
+    "imob_purchase_termination"
+   ],
+   "limitation": "Prescrição decenal para as pretensões de resolução contratual, devolução integral das parcelas, lucros cessantes ou multa moratória decorrentes de atraso na entrega de imóvel na planta (CC, art. 205; jurisprudência consolidada do STJ)."
+  },
+  {
+   "id": "imob_distrato",
+   "label": "Distrato por iniciativa do comprador e retenções",
+   "requirements": [
+    "data_do_contrato",
+    "patrimonio_de_afetacao",
+    "percentual_retido",
+    "comissao_de_corretagem"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_distrato.c1",
+     "label": "Retenção limitada e devolução conforme a lei e a data do contrato",
+     "authority_ids": [
+      "l4591_art67a",
+      "stj_sumula_543",
+      "cdc_art53"
+     ]
+    },
+    {
+     "id": "imob_distrato.c2",
+     "label": "Contrato sem quadro-resumo pode ser rescindido por justa causa após prazo de saneamento",
+     "authority_ids": [
+      "l4591_art35a"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_distrato.d1",
+     "label": "Pena convencional de até vinte e cinco por cento ou cinquenta por cento com patrimônio de afetação",
+     "authority_ids": [
+      "l4591_art67a"
+     ]
+    },
+    {
+     "id": "imob_distrato.d2",
+     "label": "Comissão de corretagem informada previamente — conferir o Tema 938 do STJ",
+     "authority_ids": [
+      "l4591_art67a"
+     ]
+    },
+    {
+     "id": "imob_distrato.d3",
+     "label": "Loteamento: retenções próprias",
+     "authority_ids": [
+      "l6766_art32a"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13786_distrato",
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Devolução das parcelas",
+    "Redução do percentual retido",
+    "Restituição em parcela única imediatamente nos contratos anteriores à Lei 13.786/2018 (Súmula 543 do STJ) ou nos prazos legais do art. 67-A da Lei 4.591/1964 para contratos posteriores"
+   ],
+   "evidence": [
+    "Contrato com data",
+    "Extrato de pagamentos",
+    "Registro do patrimônio de afetação"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado"
+   ],
+   "related_claims": [
+    "imob_purchase_termination",
+    "imob_delay_delivery"
+   ],
+   "limitation": "Prescrição decenal para a pretensão de resilição/distrato e restituição das quantias pagas pelo promissário comprador (CC, art. 205); distinguir contratos firmados até 27/12/2018 (retenção jurisprudencial de até 25% das parcelas pagas) e a partir de 28/12/2018 (Lei 13.786/2018 — até 25% ou até 50% se houver patrimônio de afetação)."
+  },
+  {
+   "id": "imob_construction_defects",
+   "label": "Vícios construtivos",
+   "requirements": [
+    "defeito",
+    "data_da_entrega",
+    "natureza_do_vicio",
+    "notificacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_construction_defects.c1",
+     "label": "Garantia de cinco anos por solidez e segurança",
+     "authority_ids": [
+      "cc_art618"
+     ]
+    },
+    {
+     "id": "imob_construction_defects.c2",
+     "label": "Reparação e abatimento no regime do consumidor",
+     "authority_ids": [
+      "cdc_art18",
+      "cdc_art20",
+      "cdc_art12"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_construction_defects.d1",
+     "label": "Decadência do direito de reclamar vício aparente",
+     "authority_ids": [
+      "cdc_art26"
+     ]
+    },
+    {
+     "id": "imob_construction_defects.d2",
+     "label": "Mau uso ou falta de manutenção",
+     "authority_ids": [
+      "cdc_art12"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Reparo",
+    "Indenização",
+    "Abatimento do preço"
+   ],
+   "evidence": [
+    "Laudo de engenharia",
+    "Manual do proprietário",
+    "Notificações"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "impugnacao_laudo"
+   ],
+   "related_claims": [
+    "cons_vice",
+    "imob_delay_delivery"
+   ],
+   "limitation": "Prazo irredutível de garantia legal de 5 anos para solidez e segurança da obra, com decadência de 180 dias do aparecimento para ação redibitória (CC, art. 618, parágrafo único), porém a pretensão indenizatória por vícios construtivos sujeita-se ao prazo prescricional de 10 anos (CC, art. 205; Súmula 194 do STJ)."
+  },
+  {
+   "id": "imob_lease_guarantees",
+   "label": "Locação: garantias, fiador e benfeitorias",
+   "requirements": [
+    "contrato",
+    "garantia",
+    "prorrogacao",
+    "exoneracao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_lease_guarantees.c1",
+     "label": "Garantias se estendem até a devolução das chaves, salvo disposição contrária",
+     "authority_ids": [
+      "l8245_art39"
+     ]
+    },
+    {
+     "id": "imob_lease_guarantees.c2",
+     "label": "Indenização e retenção por benfeitorias necessárias",
+     "authority_ids": [
+      "l8245_art35",
+      "cc_art1219"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_lease_guarantees.d1",
+     "label": "Renúncia à indenização por benfeitorias é válida",
+     "authority_ids": [
+      "stj_sumula_335"
+     ]
+    },
+    {
+     "id": "imob_lease_guarantees.d2",
+     "label": "Penhora do bem de família do fiador",
+     "authority_ids": [
+      "stj_sumula_549",
+      "l8009_art3"
+     ]
+    },
+    {
+     "id": "imob_lease_guarantees.d3",
+     "label": "Exoneração do fiador depende de notificação",
+     "authority_ids": [
+      "l8245_art40"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Exoneração da fiança",
+    "Cobrança contra o fiador",
+    "Retenção"
+   ],
+   "evidence": [
+    "Contrato e aditivos",
+    "Notificações",
+    "Notas das benfeitorias"
+   ],
+   "piece_ids": [
+    "acao_cobranca_aluguel",
+    "acao_despejo",
+    "embargos_execucao_civil",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "civ_lease"
+   ],
+   "limitation": "Prescrição trienal para cobrança de aluguéis e encargos acessórios de prédios urbanos contra o locatário e o fiador (CC, art. 206, § 3º, I); notificação de exoneração do fiador no contrato prorrogado por prazo indeterminado mantém sua responsabilidade por mais 120 dias (Lei 8.245/1991, art. 40, X)."
+  },
+  {
+   "id": "imob_lease_renewal",
+   "label": "Renovatória e revisional de aluguel",
+   "requirements": [
+    "contrato_escrito",
+    "prazo_minimo",
+    "exploracao_do_ramo",
+    "valor_de_mercado"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_lease_renewal.c1",
+     "label": "Direito à renovação com cinco anos de contratos e três de mesmo ramo",
+     "authority_ids": [
+      "l8245_art51"
+     ]
+    },
+    {
+     "id": "imob_lease_renewal.c2",
+     "label": "Revisão do aluguel ao preço de mercado após três anos de vigência, pelo rito da revisional",
+     "authority_ids": [
+      "l8245_art19",
+      "l8245_art68"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_lease_renewal.d1",
+     "label": "Exceções: obras, uso próprio e melhor proposta",
+     "authority_ids": [
+      "l8245_art52",
+      "l8245_art72"
+     ]
+    },
+    {
+     "id": "imob_lease_renewal.d2",
+     "label": "Decadência por ajuizamento fora do interregno legal",
+     "authority_ids": [
+      "l8245_art51"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Renovação por igual prazo",
+    "Fixação de aluguel provisório",
+    "Fixação do novo aluguel a valor real de mercado mediante perícia avaliatória pelo método comparativo direto de dados"
+   ],
+   "evidence": [
+    "Contratos sucessivos",
+    "Laudo de avaliação",
+    "Prova do ramo e do adimplemento"
+   ],
+   "piece_ids": [
+    "acao_renovatoria_locacao",
+    "acao_revisional_aluguel",
+    "contestacao",
+    "impugnacao_laudo"
+   ],
+   "related_claims": [
+    "civ_lease"
+   ],
+   "limitation": "Ação renovatória deve ser proposta no prazo decadencial improrrogável de 1 ano no máximo até 6 meses no mínimo anteriores à data da finalização do prazo do contrato em vigor (Lei 8.245/1991, art. 51, § 5º); ação revisional cabível após 3 anos de vigência do contrato ou do último acordo de valor (art. 19)."
+  },
+  {
+   "id": "imob_residential_recovery",
+   "label": "Retomada de imóvel residencial",
+   "requirements": [
+    "prazo_do_contrato",
+    "motivo",
+    "notificacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_residential_recovery.c1",
+     "label": "Denúncia vazia após trinta meses",
+     "authority_ids": [
+      "l8245_art46"
+     ]
+    },
+    {
+     "id": "imob_residential_recovery.c2",
+     "label": "Retomada motivada nos contratos inferiores a trinta meses",
+     "authority_ids": [
+      "l8245_art47"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_residential_recovery.d1",
+     "label": "Devolução antecipada com multa proporcional",
+     "authority_ids": [
+      "l8245_art4"
+     ]
+    },
+    {
+     "id": "imob_residential_recovery.d2",
+     "label": "Insinceridade do pedido de uso próprio",
+     "authority_ids": [
+      "l8245_art47"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Despejo",
+    "Multa proporcional",
+    "Concessão de liminar de desocupação em 15 dias mediante caução de 3 aluguéis nas hipóteses taxativas do § 1º do art. 59 da Lei 8.245/1991"
+   ],
+   "evidence": [
+    "Contrato",
+    "Notificação premonitória",
+    "Comprovante de prestação de caução idônea quando requerida liminar de despejo"
+   ],
+   "piece_ids": [
+    "acao_despejo",
+    "contestacao"
+   ],
+   "related_claims": [
+    "civ_lease"
+   ],
+   "limitation": "Na denúncia vazia de locação residencial com prazo de 30 meses ou mais prorrogada indeterminadamente, concessão de prazo de 30 dias para desocupação voluntária na notificação premonitória (Lei 8.245/1991, art. 46, § 2º); na locação inferior a 30 meses, denúncia imotivada somente após 5 anos de vigência ininterrupta (art. 47, V)."
+  },
+  {
+   "id": "imob_condo_debt",
+   "label": "Débito condominial e natureza propter rem",
+   "requirements": [
+    "unidade",
+    "periodo",
+    "titular_registral",
+    "posse"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_condo_debt.c1",
+     "label": "Adquirente responde pelos débitos, inclusive anteriores",
+     "authority_ids": [
+      "cc_art1345"
+     ]
+    },
+    {
+     "id": "imob_condo_debt.c2",
+     "label": "Crédito condominial prefere ao hipotecário",
+     "authority_ids": [
+      "stj_sumula_478"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_condo_debt.d1",
+     "label": "Promitente comprador imitido na posse e ciência do condomínio — conferir repetitivo do STJ",
+     "authority_ids": [
+      "cc_art1345"
+     ]
+    },
+    {
+     "id": "imob_condo_debt.d2",
+     "label": "Vaga de garagem com matrícula própria é penhorável",
+     "authority_ids": [
+      "stj_sumula_449"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Cobrança",
+    "Penhora da unidade",
+    "Inclusão das cotas condominiais vincendas no curso da execução até o efetivo cumprimento (CPC, art. 323 e art. 784, X)"
+   ],
+   "evidence": [
+    "Matrícula",
+    "Atas e planilha",
+    "Prova da imissão na posse"
+   ],
+   "piece_ids": [
+    "execucao_titulo_extrajudicial",
+    "embargos_execucao_civil",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "civ_neighborhood_condo"
+   ],
+   "limitation": "Prescrição quinquenal para a cobrança de taxas condominiais ordinárias ou extraordinárias líquidas previstas na convenção ou aprovadas em assembleia, contada do vencimento de cada parcela (CC, art. 206, § 5º, I; Tema Repetitivo 949 do STJ)."
+  },
+  {
+   "id": "imob_fiduciary_defense",
+   "label": "Alienação fiduciária de imóvel: purgação, leilão e taxa de ocupação",
+   "requirements": [
+    "intimacao_pessoal",
+    "prazo_de_purgacao",
+    "datas_dos_leiloes",
+    "preco"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_fiduciary_defense.c1",
+     "label": "Nulidade da consolidação sem intimação regular",
+     "authority_ids": [
+      "l9514_art26"
+     ]
+    },
+    {
+     "id": "imob_fiduciary_defense.c2",
+     "label": "Purgação e direito de preferência até o leilão conforme a lei vigente",
+     "authority_ids": [
+      "l9514_art26a",
+      "l9514_art27"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_fiduciary_defense.d1",
+     "label": "Execução extrajudicial é constitucional",
+     "authority_ids": [
+      "tema_stf_982"
+     ]
+    },
+    {
+     "id": "imob_fiduciary_defense.d2",
+     "label": "Reintegração liminar e taxa de ocupação após a consolidação",
+     "authority_ids": [
+      "l9514_art30",
+      "l9514_art37a"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14711_garantias"
+   ],
+   "typical_requests": [
+    "Anulação da consolidação e dos leilões",
+    "Prestação de contas do saldo",
+    "Abatimento ou inexigibilidade de taxa de ocupação de 1% ao mês quando declarada nula a consolidação da propriedade por ausência de intimação pessoal"
+   ],
+   "evidence": [
+    "Matrícula com averbações",
+    "Intimações e editais",
+    "Laudo de avaliação"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente",
+    "contestacao"
+   ],
+   "related_claims": [
+    "imob_fiduciary"
+   ],
+   "limitation": "Purgação da mora em 15 dias da intimação pessoal (Lei 9.514/1997, art. 26) e preferência até o 2º leilão (art. 27, § 2º-B); ação anulatória de leilão/prestação de contas em 10 anos (CC, art. 205), ressalvada a proteção ao arrematante terceiro de boa-fé pós-Lei 13.465/2017 (art. 30, parágrafo único — perdas e danos)."
+  },
+  {
+   "id": "imob_land_subdivision",
+   "label": "Loteamento: regularidade e rescisão",
+   "requirements": [
+    "registro_do_loteamento",
+    "mora",
+    "notificacao",
+    "obras"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_land_subdivision.c1",
+     "label": "Venda de lote não registrado é vedada e autoriza suspender pagamentos",
+     "authority_ids": [
+      "l6766_art37",
+      "l6766_art18"
+     ]
+    },
+    {
+     "id": "imob_land_subdivision.c2",
+     "label": "Rescisão por inadimplemento só após constituição em mora",
+     "authority_ids": [
+      "l6766_art32"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_land_subdivision.d1",
+     "label": "Restituição com retenções legais",
+     "authority_ids": [
+      "l6766_art32a"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13786_distrato"
+   ],
+   "typical_requests": [
+    "Regularização",
+    "Rescisão com devolução",
+    "Outorga de escritura"
+   ],
+   "evidence": [
+    "Contrato e matrícula",
+    "Certidão do registro do loteamento",
+    "Vistoria municipal sobre implantação da infraestrutura básica de pavimentação, drenagem, iluminação, água e esgoto"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "imob_adjudication",
+    "imob_distrato"
+   ],
+   "limitation": "Purgação da mora pelo comprador de lote em 30 dias da intimação registral (Lei 6.766/1979, art. 32); prescrição decenal para a ação de resolução contratual e restituição das quantias pagas (CC, art. 205), observados os limites de retenção e dedução de fruição da Lei 13.786/2018 (art. 32-A da Lei 6.766/1979) nos contratos posteriores."
+  },
+  {
+   "id": "imob_urban_usucapiao",
+   "label": "Usucapião urbana, familiar e Reurb",
+   "requirements": [
+    "tempo_de_posse",
+    "area",
+    "moradia",
+    "outra_propriedade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_urban_usucapiao.c1",
+     "label": "Usucapião especial urbana de até duzentos e cinquenta metros quadrados",
+     "authority_ids": [
+      "cc_art1240",
+      "l10257_art9"
+     ]
+    },
+    {
+     "id": "imob_urban_usucapiao.c2",
+     "label": "Usucapião familiar por abandono do lar",
+     "authority_ids": [
+      "cc_art1240a"
+     ]
+    },
+    {
+     "id": "imob_urban_usucapiao.c3",
+     "label": "Usucapião ordinária com justo título e boa-fé",
+     "authority_ids": [
+      "cc_art1242"
+     ]
+    },
+    {
+     "id": "imob_urban_usucapiao.c4",
+     "label": "Regularização fundiária urbana",
+     "authority_ids": [
+      "l13465_art9",
+      "l13465_art13"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_urban_usucapiao.d1",
+     "label": "Posse precária ou por mera tolerância",
+     "authority_ids": [
+      "cc_art1196"
+     ]
+    },
+    {
+     "id": "imob_urban_usucapiao.d2",
+     "label": "Bem público não se adquire por usucapião",
+     "authority_ids": [
+      "cf_art191"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14382_serp"
+   ],
+   "typical_requests": [
+    "Declaração de domínio",
+    "Registro",
+    "Expedição de Certidão de Regularização Fundiária (CRF) administrativa pelo Município nos núcleos urbanos informais consolidados (Reurb-S ou Reurb-E — Lei 13.465/2017)"
+   ],
+   "evidence": [
+    "Planta e memorial",
+    "Contas e comprovantes de posse",
+    "Certidões negativas de propriedade"
+   ],
+   "piece_ids": [
+    "usucapiao",
+    "requerimento_administrativo"
+   ],
+   "related_claims": [
+    "imob_usucapiao"
+   ],
+   "limitation": "Prazo aquisitivo de 5 anos para usucapião especial urbana individual ou coletiva em área de até 250 m² (CF, art. 183; Lei 10.257/2001, arts. 9º e 10) e de 2 anos para usucapião familiar por abandono do lar pelo ex-cônjuge/companheiro (CC, art. 1.240-A)."
+  },
+  {
+   "id": "imob_registry_rectification",
+   "label": "Retificação, dúvida e nulidade de registro",
+   "requirements": [
+    "titulo",
+    "exigencia",
+    "erro_no_assento"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_registry_rectification.c1",
+     "label": "Suscitação de dúvida contra exigência do registrador",
+     "authority_ids": [
+      "l6015_art198"
+     ]
+    },
+    {
+     "id": "imob_registry_rectification.c2",
+     "label": "Retificação administrativa do registro",
+     "authority_ids": [
+      "l6015_art213"
+     ]
+    },
+    {
+     "id": "imob_registry_rectification.c3",
+     "label": "Cancelamento de registro que não exprime a verdade",
+     "authority_ids": [
+      "cc_art1247",
+      "l6015_art214"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_registry_rectification.d1",
+     "label": "Presunção de veracidade e princípio da continuidade",
+     "authority_ids": [
+      "cc_art1245",
+      "l6015_art214"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14382_serp"
+   ],
+   "typical_requests": [
+    "Registro do título",
+    "Retificação de área",
+    "Cancelamento"
+   ],
+   "evidence": [
+    "Título e nota devolutiva",
+    "Planta e anuência dos confrontantes",
+    "Certidões vintenárias e cadeia filiatória anterior comprovando o erro material ou de transposição registral"
+   ],
+   "piece_ids": [
+    "suscitacao_duvida_registral",
+    "requerimento_administrativo",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "imob_registry"
+   ],
+   "limitation": "O cancelamento ou retificação de registro nulo de pleno direito (Lei 6.015/1973, arts. 213 e 214) pode ser pleiteado a qualquer tempo enquanto não consumada a prescrição aquisitiva (usucapião tabular ou comum) em favor de terceiro (art. 214, § 5º; CC, art. 1.245, § 2º)."
+  },
+  {
+   "id": "imob_short_term_rental_condo",
+   "label": "Locação de curtíssima duração via plataformas digitais (Airbnb) em condomínio edilício residencial",
+   "requirements": [
+    "destinacao_estritamente_residencial_convencao",
+    "alta_rotatividade_hospedagem_atipica",
+    "quorum_convencao",
+    "seguranca_sossego"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_short_term_rental_condo.c1",
+     "label": "Existindo na convenção de condomínio previsão de destinação exclusivamente residencial das unidades, é lícito ao condomínio vedar a exploração de hospedagem remunerada de altíssima rotatividade via plataformas digitais (contrato atípico aproximado de meios de hospedagem, distinto da locação por temporada tradicional — jurisprudência da Terceira e Quarta Turmas do STJ)",
+     "authority_ids": [
+      "cc_art1333",
+      "cc_art1336",
+      "l8245_art46"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_short_term_rental_condo.d1",
+     "label": "Se a convenção condominial expressamente autoriza ou não restringe a modalidade e inexiste deliberação pelo quórum qualificado de 2/3 para alteração convencional (CC, art. 1.351), simples portaria do síndico ou ata de maioria simples não pode suprimir o exercício regular da locação por temporada prevista na Lei 8.245/1991, desde que observados cadastro prévio e normas de sossego",
+     "authority_ids": [
+      "cc_art1228",
+      "cc_art1333",
+      "cf_art5"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Obrigação de não fazer para que o condômino se abstenha de ofertar e ceder a unidade para hospedagem fracionada de alta rotatividade em plataformas digitais sob pena de multa por diária",
+    "Pelo proprietário: anulação de multa condominial ou proibição imposta por simples ato do síndico sem respaldo na convenção registrada por 2/3 dos condôminos"
+   ],
+   "evidence": [
+    "Convenção de condomínio registrada no Cartório de Registro de Imóveis e atas de assembleia sobre a matéria",
+    "Capturas dos anúncios ativos nas plataformas (Airbnb/Booking) demonstrando tarifas diárias, avaliações e frequência de hóspedes",
+    "Livro da portaria demonstrando fluxo intenso de pessoas estranhas e eventuais ocorrências de perturbação"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente",
+    "contestacao",
+    "apelacao_civel"
+   ],
+   "related_claims": [
+    "civ_neighborhood_condo",
+    "imob_condo_debt"
+   ],
+   "limitation": "Obrigação inibitória condominial exigível enquanto perdurar o uso desconforme à convenção; anulação de assembleia/multa prescreve/decai conforme prazos de 3 anos (deliberação — CC, art. 48) ou 5/10 anos conforme o pedido patrimonial."
+  },
+  {
+   "id": "imob_built_to_suit_shopping",
+   "label": "Locação built to suit e contratos de shopping center: autonomia, renúncia à revisional e cláusula penal (Lei 8.245/1991, arts. 54 e 54-A)",
+   "requirements": [
+    "aquisicao_ou_construcao_substancial_sob_medida",
+    "remuneracao_investimento_alugueis",
+    "renuncia_revisional",
+    "clausula_penal_ate_soma_vincendas"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_built_to_suit_shopping.c1",
+     "label": "Nos contratos de construção ajustada (built to suit), prevalecem as condições livremente pactuadas entre partes empresariais, sendo válida a renúncia expressa ao direito de revisão do valor dos aluguéis e exigível a multa por denúncia antecipada até a soma dos valores dos aluguéis a receber até o termo final (Lei 8.245/1991, art. 54-A, §§ 1º e 2º)",
+     "authority_ids": [
+      "l8245_art54a",
+      "cc_art421a"
+     ]
+    },
+    {
+     "id": "imob_built_to_suit_shopping.c2",
+     "label": "Em locação de shopping center, são legítimas as cláusulas livremente pactuadas de aluguel percentual sobre faturamento, 13º aluguel e fundo de promoção, vedadas apenas despesas sem orçamento prévio/comprovação (Lei 8.245/1991, art. 54)",
+     "authority_ids": [
+      "l8245_art52",
+      "cc_art421a"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_built_to_suit_shopping.d1",
+     "label": "Descaracterização de built to suit simulado quando inexistiu aquisição ou construção substancial específica pelo locador por encomenda do locatário, aplicando-se então a redução equitativa proporcional da multa rescisória (Lei 8.245/1991, art. 4º; CC, art. 413)",
+     "authority_ids": [
+      "l8245_art4",
+      "cc_art413",
+      "l8245_art54a"
+     ]
+    },
+    {
+     "id": "imob_built_to_suit_shopping.d2",
+     "label": "Em caso de rescisão antecipada no built to suit seguida de imediata recolocação do imóvel a novo inquilino solvente, cabe examinar vedação de enriquecimento ilícito cumulativo conforme o caso concreto (CC, arts. 413 e 884)",
+     "authority_ids": [
+      "cc_art413",
+      "cc_art884"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13874_liberdade_economica",
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Execução ou cobrança dos aluguéis e da multa compensatória pactuada nos termos do art. 54-A, § 2º, da Lei 8.245/1991",
+    "Pelo locatário: requalificação jurídica de contrato comum travestido de built to suit para redução proporcional da multa (art. 4º) e prestação de contas de encargos de shopping center"
+   ],
+   "evidence": [
+    "Instrumento contratual built to suit ou escritura normatizando normas gerais do shopping center, projetos arquitetônicos sob medida e comprovantes do CAPEX investido pelo empreendedor",
+    "Planilhas de faturamento auditado, orçamentos de condomínio/fundo de promoção e notificações de rescisão",
+    "Perícia de engenharia e econômico-financeira demonstrando a amortização do investimento específico"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "execucao_titulo_extrajudicial",
+    "acao_despejo",
+    "acao_exigir_contas",
+    "contestacao"
+   ],
+   "related_claims": [
+    "imob_lease_renewal",
+    "imob_lease_guarantees"
+   ],
+   "limitation": "Prescrição trienal para cobrança de aluguéis e acessórios da locação (CC, art. 206, § 3º, I) e decenal para prestação de contas de fundo de promoção/encargos de shopping (CC, art. 205; Lei 8.245/1991, art. 54, § 2º — exigibilidade de comprovação a cada 60 dias)."
+  },
+  {
+   "id": "imob_brokerage_commission",
+   "label": "Comissão de corretagem imobiliária, resultado útil e abusividade da taxa SATI (CC, art. 725, e Tema 938 STJ)",
+   "requirements": [
+    "aproximacao_util_consenso",
+    "destaque_previo_preco_total_planta",
+    "abusividade_sati",
+    "arrependimento_posterior_partes"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_brokerage_commission.c1",
+     "label": "Pelo corretor: é devida a remuneração de corretagem sempre que a aproximação útil entre comprador e vendedor resultar no consenso/assinatura de negócio vinculante, ainda que o contrato venha posteriormente a não se efetivar por arrependimento imotivado de qualquer das partes (CC, art. 725)",
+     "authority_ids": [
+      "cc_art725"
+     ]
+    },
+    {
+     "id": "imob_brokerage_commission.c2",
+     "label": "Pelo consumidor na planta: é abusiva a cobrança de taxa de assessoria técnico-imobiliária (SATI) e ineficaz a transferência da comissão de corretagem quando não informada previa e destacadamente dentro do preço global antes da assinatura (Tema Repetitivo 938 do STJ; Lei 4.591/1964, art. 35-A)",
+     "authority_ids": [
+      "tema_stj_938",
+      "l4591_art35a",
+      "cdc_art6"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_brokerage_commission.d1",
+     "label": "Validade do pagamento da comissão de corretagem pelo adquirente quando previamente destacado seu valor sem acréscimo oculto sobre o preço total prometido, bem como incidência da prescrição trienal para repetição (Tema Repetitivo 938 do STJ)",
+     "authority_ids": [
+      "tema_stj_938",
+      "cc_art206"
+     ]
+    },
+    {
+     "id": "imob_brokerage_commission.d2",
+     "label": "Não é devida comissão quando a desistência ocorre na fase de meras tratativas preliminares antes de acordo vinculante sobre os elementos essenciais ou por vício oculto na documentação dominial imputável exclusivamente à outra parte/falha de diligência do corretor (CC, art. 723)",
+     "authority_ids": [
+      "cc_art725",
+      "cc_art422"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13786_distrato",
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Cobrança pelo corretor da comissão contratada diante da conclusão do negócio útil ou arrependimento posterior injustificado",
+    "Pelo consumidor: restituição da taxa SATI ou de comissão de corretagem cobrada sem prévio destaque informativo, ou reparação quando o distrato decorreu de atraso/culpa exclusiva da incorporadora"
+   ],
+   "evidence": [
+    "Contrato de intermediação/autorização de venda, fichas de visita assinadas, trocas de mensagens e instrumento de compra e venda firmado",
+    "Quadro-resumo da incorporação imobiliária demonstrando o destaque ou a omissão prévia da comissão de corretagem (art. 35-A)",
+    "Recibos, notas fiscais ou cheques emitidos diretamente a corretores autônomos ou imobiliária"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "execucao_titulo_extrajudicial",
+    "contestacao"
+   ],
+   "related_claims": [
+    "imob_distrato",
+    "imob_delay_delivery"
+   ],
+   "limitation": "Prescrição trienal para o consumidor pleitear a restituição de valores pagos a título de comissão de corretagem ou taxa SATI (Tema Repetitivo 938 do STJ; CC, art. 206, § 3º, IV), e prescrição quinquenal para o corretor cobrar comissão líquida estipulada em instrumento (CC, art. 206, § 5º, I)."
+  },
+  {
+   "id": "imob_incorporation_patrimonio_afetacao",
+   "label": "Incorporação imobiliária: patrimônio de afetação, comissão de representantes e insolvência da incorporadora (Lei 4.591/1964, arts. 31-A a 31-F e 43)",
+   "requirements": [
+    "averbacao_patrimonio_afetacao",
+    "incomunicabilidade_massa_falida",
+    "destituicao_incorporadora_paralisacao",
+    "comissao_representantes_adquirentes"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_incorporation_patrimonio_afetacao.c1",
+     "label": "O terreno, as acessões e os demais bens e direitos vinculados à incorporação sob regime de patrimônio de afetação mantêm-se apartados do patrimônio geral do incorporador e não integram a massa concursal/falimentar, cabendo à assembleia de adquirentes deliberar pela continuidade da obra ou liquidação do patrimônio afetado (Lei 4.591/1964, arts. 31-A e 31-F)",
+     "authority_ids": [
+      "l4591_art31a",
+      "l4591_art43",
+      "l11101_art49"
+     ]
+    },
+    {
+     "id": "imob_incorporation_patrimonio_afetacao.c2",
+     "label": "Direito dos adquirentes de destituir a incorporadora que paralisar as obras sem justa causa por mais de 30 dias ou retardar excessivamente seu andamento após notificação judicial (Lei 4.591/1964, art. 43, VI)",
+     "authority_ids": [
+      "l4591_art43",
+      "l4591_art32"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_incorporation_patrimonio_afetacao.d1",
+     "label": "A blindagem do patrimônio de afetação não impede a cobrança das dívidas e encargos tributários, trabalhistas e financeiros diretamente contraídos para a execução da própria obra afetada (Lei 4.591/1964, art. 31-A, § 1º)",
+     "authority_ids": [
+      "l4591_art31a"
+     ]
+    },
+    {
+     "id": "imob_incorporation_patrimonio_afetacao.d2",
+     "label": "Quando os adquirentes assumem coletivamente a obra mediante destituição da incorporadora insolvente, eventual resolução individual segue regras próprias perante a antiga incorporadora sem onerar os demais condôminos que custeiam o término da edificação (jurisprudência do STJ)",
+     "authority_ids": [
+      "l4591_art31a",
+      "l4591_art43"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13786_distrato",
+    "lei_14711_garantias"
+   ],
+   "typical_requests": [
+    "Reconhecimento da extraconcursalidade e incomunicabilidade dos bens e contas bancárias do patrimônio de afetação perante o juízo falimentar/executivo",
+    "Notificação judicial e destituição da incorporadora inadimplente com imissão da Comissão de Representantes na administração da obra",
+    "Prestação de contas específica da movimentação financeira segregada do empreendimento afetado"
+   ],
+   "evidence": [
+    "Matrícula mãe do empreendimento com o registro do memorial de incorporação (art. 32) e averbação do termo de afetação (art. 31-B)",
+    "Atas da Assembleia Geral dos Adquirentes e da Comissão de Representantes e relatórios trimestrais de acompanhamento físico-financeiro",
+    "Laudo de engenharia constatando paralisação superior a 30 dias e extratos da conta bancária exclusiva do empreendimento"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente",
+    "embargos_terceiro",
+    "acao_exigir_contas",
+    "contestacao"
+   ],
+   "related_claims": [
+    "imob_delay_delivery",
+    "imob_distrato",
+    "imob_builder_mortgage"
+   ],
+   "limitation": "Notificação prévia de 30 dias após paralisação injustificada de mais de 30 dias para destituição da incorporadora (Lei 4.591/1964, art. 43, VI); deliberação dos adquirentes nos 60 dias seguintes à falência (art. 31-F, § 1º) e prescrição decenal para prestação de contas (CC, art. 205)."
+  },
+  {
+   "id": "imob_bem_de_familia_fiador",
+   "label": "Bem de família legal: penhorabilidade na fiança locatícia residencial e comercial e imóvel locado (Súmulas 486/549 STJ e Temas 295/1127 STF)",
+   "requirements": [
+    "unico_imovel_residencial",
+    "reversao_aluguel_subsistencia",
+    "excecao_fianca_locaticia",
+    "fraude_ou_hipoteca"
+   ],
+   "claimant_theses": [
+    {
+     "id": "imob_bem_de_familia_fiador.c1",
+     "label": "É impenhorável o único imóvel residencial do devedor ou entidade familiar (inclusive de pessoa solteira, separada ou viúva — Súmula 364 do STJ), bem como o único imóvel residencial que esteja locado a terceiros quando a renda obtida for revertida para a subsistência ou moradia da família (Lei 8.009/1990, art. 1º; Súmula 486 do STJ)",
+     "authority_ids": [
+      "l8009_art1",
+      "stj_sumula_364",
+      "stj_sumula_486"
+     ]
+    },
+    {
+     "id": "imob_bem_de_familia_fiador.c2",
+     "label": "Ineficácia da fiança prestada sem outorga conjugal (salvo separação absoluta — Súmula 332 do STJ) ou prorrogação com aditivo oneroso sem anuência do fiador (Súmula 214 do STJ), afastando a exceção de penhorabilidade",
+     "authority_ids": [
+      "cc_art1647",
+      "l8009_art3"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "imob_bem_de_familia_fiador.d1",
+     "label": "É constitucional e válida a penhora de bem de família pertencente a fiador de contrato de locação, tanto residencial quanto comercial, por expressa exceção legal livremente assumida (Lei 8.009/1990, art. 3º, VII; Súmula 549 do STJ; Temas 295 e 1127 do STF)",
+     "authority_ids": [
+      "l8009_art3",
+      "stj_sumula_549",
+      "tema_stf_1127"
+     ]
+    },
+    {
+     "id": "imob_bem_de_familia_fiador.d2",
+     "label": "Exceções legais de penhorabilidade em razão de cobrança de impostos prediais/taxas e contribuições condominiais do próprio imóvel ou execução de hipoteca oferecida em benefício da entidade familiar (Lei 8.009/1990, art. 3º, IV e V)",
+     "authority_ids": [
+      "l8009_art3"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Desconstituição de penhora recaída sobre o único imóvel residencial utilizado como moradia ou cuja renda locatícia custeia a subsistência familiar",
+    "Pelo locador exequente: manutenção da penhora sobre o imóvel do fiador nos termos do art. 3º, VII, da Lei 8.009/1990 e do Tema 1127 do STF"
+   ],
+   "evidence": [
+    "Certidões negativas ou positivas dos cartórios de registro de imóveis da comarca comprovando tratar-se de único imóvel residencial",
+    "Contas de consumo, declaração de IRPF ou contrato de locação acompanhado de recibos de aluguel pago em outro endereço / despesas de subsistência (Súmula 486 do STJ)",
+    "Contrato de locação afiançado, aditivos e certidão de casamento do fiador para verificação de outorga uxória"
+   ],
+   "piece_ids": [
+    "impugnacao_cumprimento",
+    "embargos_execucao_civil",
+    "embargos_terceiro",
+    "excecao_pre_executividade",
+    "agravo_instrumento"
+   ],
+   "related_claims": [
+    "imob_lease_guarantees",
+    "imob_condo_debt",
+    "civ_enforcement_defense"
+   ],
+   "limitation": "A impenhorabilidade do bem de família legal constitui matéria de ordem pública cognoscível a qualquer tempo enquanto não exaurida a alienação judicial com expedição/assinatura da carta de arrematação ou adjudicação (Lei 8.009/1990; jurisprudência do STJ)."
+  }
  ]
 }

@@ -1,0 +1,937 @@
+{
+  "schema_version": "1.0",
+  "domain": "regulatorio_concorrencial",
+  "label": "Direito Regulatório, Infraestrutura e Concorrencial",
+  "guide": "domain_guides/regulatorio_concorrencial.md",
+  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
+  "polo_labels": {
+    "claimant_theses": "Teses do regulado, concessionária ou lesado",
+    "defense_theses": "Teses da agência, poder concedente ou representado"
+  },
+  "claims": [
+    {
+      "id": "reg_cartel_unilateral_conduct_cade",
+      "label": "Cartel e condutas anticompetitivas unilaterais perante o CADE",
+      "requirements": [
+        "acordo_colusivo_ou_posicao_dominante",
+        "objeto_ilicito_ou_efeitos_liquidos_negativos",
+        "mercado_relevante_produto_geografico",
+        "dosimetria_ramo_atividade_empresarial"
+      ],
+      "claimant_theses": [
+        {
+          "id": "reg_cartel_unilateral_conduct_cade.c1",
+          "label": "Nulidade de auto ou condenação administrativa no CADE por ausência de prova direta/indiciária convergente de colusão paralela consciente, ou por licitude de conduta unilateral amparada em eficiências econômicas pró-competitivas sem fechamento de mercado",
+          "authority_ids": [
+            "l12529_art36",
+            "l9784_art50"
+          ]
+        },
+        {
+          "id": "reg_cartel_unilateral_conduct_cade.c2",
+          "label": "Limitação estrita da base de cálculo da multa antitruste (0,1% a 20%) ao faturamento bruto no ramo de atividade empresarial específico afetado pela conduta no exercício anterior à instauração do processo, e extinção/redução punitiva pelo cumprimento de Acordo de Leniência ou TCC",
+          "authority_ids": [
+            "l12529_art37",
+            "l12529_art85",
+            "l12529_art86"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "reg_cartel_unilateral_conduct_cade.d1",
+          "label": "Tipificação de infração à ordem econômica independentemente de culpa ou da obtenção efetiva dos resultados pretendidos, sendo o cartel clássico ilícito pelo próprio objeto",
+          "authority_ids": [
+            "l12529_art36"
+          ]
+        },
+        {
+          "id": "reg_cartel_unilateral_conduct_cade.d2",
+          "label": "Higidez do processo sancionador conduzido pela Superintendência-Geral e pelo Tribunal do CADE com amplo contraditório, aproveitamento válido de provas compartilhadas judicialmente e proporcionalidade das sanções estruturais e pecuniárias",
+          "authority_ids": [
+            "l12529_art37",
+            "l12529_art38"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Representação fundamentada à Superintendência-Geral do CADE ou pedido de medida preventiva para cessação imediata de prática abusiva de posição dominante (Lei 12.529/2011, art. 84)",
+        "Celebração de Acordo de Leniência (art. 86) ou Termo de Compromisso de Cessação — TCC (art. 85)",
+        "Ação anulatória judicial com caução/seguro garantia para suspender exigibilidade de multa desproporcional ou viciada do Tribunal do CADE"
+      ],
+      "evidence": [
+        "Cópia integral do Processo Administrativo no CADE, notas técnicas da Superintendência-Geral e acórdão do Tribunal Administrativo",
+        "Parecer econômico delimitando mercado relevante (teste do monopolista hipotético), participação de mercado (<20% vs. ≥20% — art. 36, § 2º) e racionalidade econômica independente",
+        "Demonstração contábil auditada do faturamento bruto segregado no ramo específico de atividade empresarial"
+      ],
+      "piece_ids": [
+        "representacao_cade",
+        "recurso_administrativo",
+        "inicial_procedimento_comum",
+        "mandado_seguranca",
+        "contestacao"
+      ],
+      "related_claims": [
+        "reg_antitrust_damages_pass_on",
+        "adm_anticorruption"
+      ],
+      "limitation": "Prescrição da pretensão punitiva do CADE em 5 anos contados da prática do ilícito ou, nas infrações permanentes/continuadas, do dia em que tiver cessado, aplicando-se o prazo da lei penal quando o fato também constituir crime de cartel (Lei 12.529/2011, art. 46, caput e § 4º; Lei 8.137/1990, art. 4º), e prescrição intercorrente em 3 anos (art. 46, § 3º)"
+    },
+    {
+      "id": "reg_merger_control_gun_jumping",
+      "label": "Controle preventivo de atos de concentração e gun jumping (CADE)",
+      "requirements": [
+        "criterios_duplos_faturamento_grupos",
+        "operacao_concentracao_art_90",
+        "suspensao_consumacao_ate_aprovacao",
+        "remedios_acc_estruturais_comportamentais"
+      ],
+      "claimant_theses": [
+        {
+          "id": "reg_merger_control_gun_jumping.c1",
+          "label": "Aprovação sem restrições (rito sumário ou ordinário) da operação que não elimine parte substancial da concorrência nem crie/reforce posição dominante geradora de efeitos líquidos negativos, ou celebração de Acordo em Controle de Concentrações (ACC) proporcional",
+          "authority_ids": [
+            "l12529_art88",
+            "l12529_art90"
+          ]
+        },
+        {
+          "id": "reg_merger_control_gun_jumping.c2",
+          "label": "Inexistência de notificação obrigatória ou de gun jumping em meros atos preparatórios de due diligence com protocolos de clean team e preservação plena da independência competitiva entre as partes até o fechamento",
+          "authority_ids": [
+            "l12529_art88",
+            "l12529_art90"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "reg_merger_control_gun_jumping.d1",
+          "label": "Nulidade dos atos consumados prematuramente antes da decisão final de aprovação e decurso do prazo de trânsito no CADE (gun jumping), com imposição de multa pecuniária de R$ 60 mil a R$ 60 milhões e abertura de processo administrativo (art. 88, § 3º)",
+          "authority_ids": [
+            "l12529_art88"
+          ]
+        },
+        {
+          "id": "reg_merger_control_gun_jumping.d2",
+          "label": "Faculdade legal do CADE de requisitar a submissão de qualquer ato de concentração fora dos critérios objetivos de faturamento em até 1 ano da respectiva data de consumação (art. 88, § 7º)",
+          "authority_ids": [
+            "l12529_art88"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Notificação prévia de ato de concentração pelo rito sumário ou ordinário com pedido de aprovação sem restrições",
+        "Negociação de Acordo em Controle de Concentrações (ACC) prevendo desinvestimentos ou remédios comportamentais",
+        "Revisão administrativa/judicial da penalidade de gun jumping por desproporcionalidade ou ausência de transferência precoce de controle/influência relevante"
+      ],
+      "evidence": [
+        "Contrato de compra e venda de participação societária/ativos (SPA), acordos de acionistas e cláusulas suspensivas de fechamento",
+        "Balanços consolidados dos grupos econômicos envolvidos no Brasil no ano anterior à operação",
+        "Estudos econômicos de sobreposição horizontal, integração vertical e rivalidade efetiva/potencial"
+      ],
+      "piece_ids": [
+        "notificacao_ato_concentracao_cade",
+        "manifestacao_especifica",
+        "inicial_procedimento_comum",
+        "contestacao"
+      ],
+      "related_claims": [
+        "reg_cartel_unilateral_conduct_cade",
+        "emp_business_transfer"
+      ],
+      "limitation": "Prazo máximo de 240 dias da notificação para decisão final do CADE, prorrogável uma vez por até 60 dias a pedido das partes ou por até 90 dias por decisão fundamentada do Tribunal (Lei 12.529/2011, art. 88, §§ 2º e 9º); requisição de operação abaixo dos pisos em até 1 ano da consumação (art. 88, § 7º)"
+    },
+    {
+      "id": "reg_antitrust_damages_pass_on",
+      "label": "Ações reparatórias de dano concorrencial, double damages e pass-on defense (Lei 14.470/2022)",
+      "requirements": [
+        "conduta_anticompetitiva_cartel_ou_exclusao",
+        "sobrepreco_ou_lucros_cessantes",
+        "ressarcimento_em_dobro_e_excecao_leniencia",
+        "prova_repasse_sobrepreco_pelo_reu"
+      ],
+      "claimant_theses": [
+        {
+          "id": "reg_antitrust_damages_pass_on.c1",
+          "label": "Direito dos prejudicados ao ressarcimento em dobro pelos prejuízos sofridos em razão das infrações à ordem econômica (Lei 12.529/2011, art. 47, § 1º, incluído pela Lei 14.470/2022), apta a decisão condenatória do Plenário do CADE a fundamentar tutela da evidência (art. 47-C)",
+          "authority_ids": [
+            "l12529_art47",
+            "l12529_art47c",
+            "l14470_art2"
+          ]
+        },
+        {
+          "id": "reg_antitrust_damages_pass_on.c2",
+          "label": "Não se presume o repasse de sobrepreço nos elos da cadeia produtiva, incumbindo exclusivamente aos réus que o alegarem o ônus de comprová-lo cabalmente (pass-on defense — art. 47-A)",
+          "authority_ids": [
+            "l12529_art47a"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "reg_antitrust_damages_pass_on.d1",
+          "label": "Signatários de Acordo de Leniência ou de TCC cujo escopo tenha sido cumprido respondem apenas de forma simples (sem dobra) e subsidiária/individual pelos danos causados diretamente, excluída a responsabilidade solidária pelos prejuízos causados pelos demais coautores do cartel (art. 47, §§ 2º e 3º)",
+          "authority_ids": [
+            "l12529_art47"
+          ]
+        },
+        {
+          "id": "reg_antitrust_damages_pass_on.d2",
+          "label": "Irretroatividade material da penalidade civil do ressarcimento em dobro às condutas anticompetitivas integralmente praticadas antes da vigência da Lei 14.470/2022, e abatimento proporcional do sobrepreço comprovadamente transferido aos adquirentes indiretos",
+          "authority_ids": [
+            "cf_art5",
+            "l12529_art47a",
+            "cc_art944"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14470_dano_concorrencial",
+        "lei_14905_juros_civis"
+      ],
+      "typical_requests": [
+        "Condenação solidária dos integrantes do cartel ao ressarcimento em dobro do sobrepreço pago e efeito volume, corrigido desde cada aquisição e acrescido de juros desde o evento ilícito (Súmula 54 STJ)",
+        "Concessão de tutela da evidência com base na decisão condenatória do Plenário do CADE (art. 47-C) e exibição de documentos econômicos não acobertados pelo sigilo estrito da leniência",
+        "Reconhecimento da limitação à responsabilidade simples e individual do corréu signatário de Leniência ou TCC cumprido"
+      ],
+      "evidence": [
+        "Notas fiscais, contratos de fornecimento e licitações comprovando as aquisições realizadas durante o período de atuação do cartel ( e períodos pré/pós-cartel)",
+        "Acórdão condenatório do Tribunal do CADE, histórico da conduta e notas técnicas públicas",
+        "Laudo econométrico de estimação de sobrepreço (diferenças em diferenças / regressão múltipla) e de eventual elasticidade/repasse a jusante"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "acao_civil_publica",
+        "impugnacao_laudo",
+        "contestacao"
+      ],
+      "related_claims": [
+        "reg_cartel_unilateral_conduct_cade",
+        "civ_tort",
+        "cons_collective"
+      ],
+      "limitation": "Prescreve em 5 anos a pretensão à reparação pelos danos causados pelas infrações à ordem econômica, iniciando-se sua fluência da ciência inequívoca do ilícito (publicação do julgamento final do CADE) e ficando suspenso o curso prescricional durante toda a tramitação do inquérito ou processo administrativo no CADE (Lei 12.529/2011, art. 46-A, incluído pela Lei 14.470/2022)"
+    },
+    {
+      "id": "reg_electric_sector_aneel_gd",
+      "label": "Regulação do setor elétrico (ANEEL): corte, TOI e micro/minigeração distribuída (Lei 14.300/2022)",
+      "requirements": [
+        "continuidade_servico_essencial",
+        "contraditorio_pericial_no_toi",
+        "vedacao_corte_debito_preterito",
+        "direito_transicao_geracao_distribuida"
+      ],
+      "claimant_theses": [
+        {
+          "id": "reg_electric_sector_aneel_gd.c1",
+          "label": "Ilegalidade da suspensão do fornecimento de energia elétrica por débitos pretéritos antigos (> 90 dias) ou apurados unilateralmente em Termo de Ocorrência e Inspeção (TOI) sem observância do contraditório e perícia oficial imparcial (Tema 699 do STJ)",
+          "authority_ids": [
+            "l8987_art6",
+            "cdc_art22",
+            "tema_stj_699"
+          ]
+        },
+        {
+          "id": "reg_electric_sector_aneel_gd.c2",
+          "label": "Direito adquirido ao regime de compensação tarifária de transição até 31/12/2045 para unidades de micro e minigeração distribuída cujo protocolo de solicitação de acesso ocorreu em até 12 meses da publicação da Lei 14.300/2022 (ou quando o atraso decorreu de culpa exclusiva da distribuidora)",
+          "authority_ids": [
+            "l14300_art26",
+            "l14300_art27"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "reg_electric_sector_aneel_gd.d1",
+          "label": "Legitimidade do corte administrativo do serviço após notificação prévia regular em razão de inadimplemento de faturas atuais (vencidas nos últimos 90 dias), ressalvadas unidades hospitalares/serviços públicos essenciais à vida",
+          "authority_ids": [
+            "l8987_art6",
+            "tema_stj_699"
+          ]
+        },
+        {
+          "id": "reg_electric_sector_aneel_gd.d2",
+          "label": "Validade da cobrança de recuperação de consumo quando comprovada a fraude no medidor por perícia judicial ou vistoria acompanhada pelo consumidor/órgão metrológico, e legalidade de parecer de inversão de fluxo de potência tecnicamente fundamentado pela distribuidora nos limites regulatórios da ANEEL",
+          "authority_ids": [
+            "l9427_art3",
+            "l14300_art1"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14300_geracao_distribuida"
+      ],
+      "typical_requests": [
+        "Tutela de urgência para restabelecimento ou manutenção do fornecimento de energia elétrica sob multa horária/diária e declaração de inexigibilidade de débito oriundo de TOI unilateral",
+        "Determinação à concessionária distribuidora para emitir/aprovar orçamento de conexão de micro/minigeração distribuída enquadrado nas regras de transição da Lei 14.300/2022",
+        "Restituição de valores cobrados indevidamente a título de demanda contratada acima da efetivamente utilizada (Súmula 391 STJ quanto ao ICMS) ou erro tarifário"
+      ],
+      "evidence": [
+        "Histórico de faturas de consumo dos últimos 36 meses, Termo de Ocorrência e Inspeção (TOI) e fotografias/laudo do medidor",
+        "Protocolo datado de solicitação de orçamento de conexão (antigo parecer de acesso), projeto elétrico com ART e resposta técnica da distribuidora sobre inversão de fluxo",
+        "Notificação prévia de suspensão do fornecimento enviada pela concessionária"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "tutela_urgencia_antecedente",
+        "mandado_seguranca",
+        "recurso_administrativo",
+        "contestacao"
+      ],
+      "related_claims": [
+        "cons_essential_service",
+        "adm_public_service",
+        "reg_concession_rebalance_caducity"
+      ],
+      "limitation": "Prescrição decenal para repetição de indébito de tarifas de serviço público de energia elétrica cobradas indevidamente (CC, art. 205; Súmula 412 do STJ por simetria tarifária) e quinquenal para reparação de danos por falha na prestação do serviço (CDC, art. 27; Decreto 20.910/1932 / CC, art. 206, § 3º, V)"
+    },
+    {
+      "id": "reg_telecom_anatel_infrastructure",
+      "label": "Regulação de telecomunicações (ANATEL) e compartilhamento de infraestrutura",
+      "requirements": [
+        "direito_compartilhamento_postes_torres_dutos",
+        "remuneracao_justa_razoavel_nao_discriminatoria",
+        "inconstitucionalidade_taxa_municipal_faixa_dominio",
+        "controle_sancoes_pado_anatel"
+      ],
+      "claimant_theses": [
+        {
+          "id": "reg_telecom_anatel_infrastructure.c1",
+          "label": "Direito das prestadoras de serviços de telecomunicações à utilização compartilhada de postes, dutos, condutos e servidões pertencentes ou controlados por concessionárias de energia/rodovias de forma não discriminatória e a preços e condições justos e razoáveis",
+          "authority_ids": [
+            "l9472_art73",
+            "l13116_art12"
+          ]
+        },
+        {
+          "id": "reg_telecom_anatel_infrastructure.c2",
+          "label": "Inconstitucionalidade da cobrança por Estados ou Municípios de retribuição pecuniária pelo uso de bens públicos de uso comum (solo, subsolo, espaço aéreo e faixas de domínio de vias públicas) para instalação de infraestrutura de serviços públicos de telecomunicações/energia (Lei 13.116/2015, art. 12; Tema 261 STF)",
+          "authority_ids": [
+            "l13116_art12",
+            "tema_stf_261",
+            "cf_art22"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "reg_telecom_anatel_infrastructure.d1",
+          "label": "Poder-dever de remoção ordenada de cabos clandestinos ou irregulares instalados à revelia de contrato de compartilhamento ou em desconformidade com normas técnicas de segurança operacional dos postes",
+          "authority_ids": [
+            "l9472_art73"
+          ]
+        },
+        {
+          "id": "reg_telecom_anatel_infrastructure.d2",
+          "label": "Regularidade e proporcionalidade das multas aplicadas pela ANATEL em Procedimento para Apuração de Descumprimento de Obrigações (PADO) respeitados os critérios de dosimetria do art. 173 da Lei 9.472/1997 e a deferência regulatória",
+          "authority_ids": [
+            "l9472_art173",
+            "l9784_art50"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Fixação provisória/definitiva do preço de referência regulatório ANEEL/ANATEL para uso de pontos de fixação em postes e proibição de corte arbitrário de cabos regulares",
+        "Declaração de inexigibilidade de taxa/preço público municipal ou estadual pelo uso de faixa de domínio para passagem de fibra óptica",
+        "Anulação ou revisão de multa aplicada em PADO pela ANATEL por prescrição ou desproporcionalidade manifesta"
+      ],
+      "evidence": [
+        "Contrato de compartilhamento de infraestrutura, projetos técnicos aprovados de ocupação de postes e notificações de reordenamento",
+        "Resoluções Conjuntas ANEEL/ANATEL fixando preço de referência e cópia integral do processo de resolução de conflitos nas agências",
+        "Lei/decreto local instituidor de cobrança por uso de via pública ou íntegra do PADO sancionador"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "tutela_urgencia_antecedente",
+        "mandado_seguranca",
+        "requerimento_administrativo",
+        "contestacao"
+      ],
+      "related_claims": [
+        "reg_agency_sanction_air",
+        "trib_limits_power",
+        "adm_public_service"
+      ],
+      "limitation": "Prescrição quinquenal da ação punitiva da ANATEL e intercorrente trienal no PADO paralisado (Lei 9.873/1999, art. 1º e § 1º); prescrição quinquenal contra a Fazenda/autarquia (Decreto 20.910/1932, art. 1º)"
+    },
+    {
+      "id": "reg_transport_antt_antaq_freight",
+      "label": "Regulação de transportes terrestres e aquaviários (ANTT/ANTAQ) e pisos mínimos de frete",
+      "requirements": [
+        "regime_autorizacao_ou_delegacao",
+        "tabela_pisos_minimos_frete_rodoviario",
+        "regularidade_fiscalizacao_transporte",
+        "proporcionalidade_sancoes_administrativas"
+      ],
+      "claimant_theses": [
+        {
+          "id": "reg_transport_antt_antaq_freight.c1",
+          "label": "Constitucionalidade e cogência da Política Nacional de Pisos Mínimos do Transporte Rodoviário de Cargas (Lei 13.703/2018 — ADI 5956 do STF), assegurando ao transportador indenização equivalente ao dobro da diferença entre o valor pago e o piso devido",
+          "authority_ids": [
+            "l13703_art5",
+            "adi_5956"
+          ]
+        },
+        {
+          "id": "reg_transport_antt_antaq_freight.c2",
+          "label": "Distinção constitucional e legal entre transporte rodoviário coletivo regular sujeito a permissão/autorização regulada e fretamento eventual/turístico em plataformas tecnológicas dentro dos limites da livre iniciativa e segurança viária (Lei 10.233/2001)",
+          "authority_ids": [
+            "l10233_art13",
+            "cf_art170",
+            "cf_art21"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "reg_transport_antt_antaq_freight.d1",
+          "label": "Inaplicabilidade de coeficientes desatualizados ou de enquadramento incorreto de tipo de carga/eixos na cobrança privada da diferença de piso de frete, ou prescrição da pretensão indenizatória",
+          "authority_ids": [
+            "l13703_art5",
+            "cc_art206"
+          ]
+        },
+        {
+          "id": "reg_transport_antt_antaq_freight.d2",
+          "label": "Legitimidade do exercício do poder de polícia da ANTT e da ANTAQ na apreensão cautelar temporária de veículos/embarcações clandestinos para cessar transporte irregular que ponha em risco a segurança dos usuários (distinção frente à retenção meramente coercitiva por multa)",
+          "authority_ids": [
+            "l10233_art78a"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Condenação do contratante do frete ao pagamento da indenização em dobro da diferença abaixo da tabela oficial da ANTT (Lei 13.703/2018, art. 5º, § 4º)",
+        "Liberação de veículo sem exigência condicionada de pagamento prévio de multas vencidas (Tema 1079 STJ / Súmula 510 STJ por simetria) quando sanada a irregularidade de segurança",
+        "Anulação de auto de infração da ANTT ou ANTAQ por vício de tipicidade ou prescrição intercorrente"
+      ],
+      "evidence": [
+        "Conhecimentos de Transporte Eletrônico (CT-e), Manifesto Eletrônico (MDF-e), CIOT e comprovantes de pagamento de frete",
+        "Resolução da ANTT vigente à época de cada viagem com cálculo por distância em quilômetros, número de eixos e natureza da carga",
+        "Auto de infração e processo administrativo sancionador da ANTT/ANTAQ"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "mandado_seguranca",
+        "recurso_administrativo",
+        "contestacao"
+      ],
+      "related_claims": [
+        "aduan_container_demurrage",
+        "reg_ports_terminals_tariffs",
+        "reg_agency_sanction_air"
+      ],
+      "limitation": "Indenização pelo pagamento de frete inferior ao piso mínimo submete-se à prescrição trienal de reparação civil/enriquecimento ou ânua/quinquenal conforme natureza do título contratual — conferir orientação atualizada do STJ sobre o art. 5º, § 4º, da Lei 13.703/2018; prescrição punitiva da agência em 5 anos e intercorrente em 3 anos (Lei 9.873/1999)"
+    },
+    {
+      "id": "reg_oil_gas_biofuels_anp",
+      "label": "Regulação de petróleo, gás natural e biocombustíveis (ANP e RenovaBio)",
+      "requirements": [
+        "acesso_infraestrutura_essencial_gas",
+        "metas_descarbonizacao_cbios",
+        "conformidade_qualidade_combustiveis",
+        "participacoes_governamentais_royalties"
+      ],
+      "claimant_theses": [
+        {
+          "id": "reg_oil_gas_biofuels_anp.c1",
+          "label": "Direito ao acesso negociado, isonômico e não discriminatório de terceiros interessados aos gasodutos de transporte, gasodutos de escoamento, unidades de processamento e terminais de GNL sob a Nova Lei do Gás (Lei 14.134/2021)",
+          "authority_ids": [
+            "l14134_art28",
+            "l9478_art8"
+          ]
+        },
+        {
+          "id": "reg_oil_gas_biofuels_anp.c2",
+          "label": "Garantia do contraditório com direito à análise de contraprova de amostra-testemunha lacrada nas autuações da ANP por desconformidade físico-química de combustíveis (Lei 9.847/1999)",
+          "authority_ids": [
+            "l9847_art3",
+            "l9784_art2"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "reg_oil_gas_biofuels_anp.d1",
+          "label": "Constitucionalidade e exigibilidade das metas anuais compulsórias de redução de emissões de gases causadores do efeito estufa mediante aquisição e aposentadoria de Créditos de Descarbonização (CBIOs) pelas distribuidoras de combustíveis sob o RenovaBio (Lei 13.576/2017)",
+          "authority_ids": [
+            "l13576_art7",
+            "l13576_art9",
+            "cf_art225"
+          ]
+        },
+        {
+          "id": "reg_oil_gas_biofuels_anp.d2",
+          "label": "Validade da interdição cautelar imediata de bicos/tanques de revendedor varejista flagrado com adulteração comprovada por metanol/solventes ou bomba fraudada volumétrica em proteção à coletividade consumidora",
+          "authority_ids": [
+            "l9847_art5",
+            "l9847_art10"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Resolução regulatória/judicial garantindo acesso de carregador terceiro a infraestrutura essencial de gás natural mediante remuneração transparente",
+        "Anulação de auto de infração e desinterdição de posto/distribuidora por quebra da cadeia de custódia ou inviabilização da perícia na amostra de contraprova",
+        "Revisão de cálculo de royalties e participações especiais da Lei 9.478/1997 ou questionamento de sanção do RenovaBio"
+      ],
+      "evidence": [
+        "Termo de fiscalização e coleta de amostras da ANP, invólucros numerados de prova/contraprova e laudos laboratoriais de ensaio",
+        "Solicitação formal de acesso à capacidade disponível em gasoduto/terminal e justificativa técnica do operador",
+        "Extratos da escrituração de CBIOs em plataforma registradora e despacho individualizador de metas da ANP/CNPE"
+      ],
+      "piece_ids": [
+        "mandado_seguranca",
+        "inicial_procedimento_comum",
+        "recurso_administrativo",
+        "requerimento_instauracao_arbitragem",
+        "contestacao"
+      ],
+      "related_claims": [
+        "amb_admin_fine",
+        "reg_agency_sanction_air",
+        "arb_public_administration"
+      ],
+      "limitation": "Prescrição quinquenal da ação punitiva da ANP e intercorrente trienal (Lei 9.873/1999, art. 1º); cobrança de créditos não tributários de royalties de petróleo submete-se aos prazos decenal de decadência e quinquenal de prescrição do art. 47 da Lei 9.636/1998"
+    },
+    {
+      "id": "reg_sanitation_universalization",
+      "label": "Saneamento básico, regionalização e metas de universalização (Lei 14.026/2020)",
+      "requirements": [
+        "metas_99_agua_90_esgoto_ate_2033",
+        "comprovacao_capacidade_economico_financeira",
+        "vedacao_novos_contratos_programa",
+        "normas_referencia_ana"
+      ],
+      "claimant_theses": [
+        {
+          "id": "reg_sanitation_universalization.c1",
+          "label": "Validade constitucional do Novo Marco Legal do Saneamento Básico (ADI 6492 do STF): obrigatoriedade de licitação concorrencial vedados novos contratos de programa, estruturação regionalizada e inserção das metas de universalização (99% água potável e 90% coleta/tratamento de esgoto até 31/12/2033)",
+          "authority_ids": [
+            "l11445_art10b",
+            "l11445_art11b",
+            "adi_6492"
+          ]
+        },
+        {
+          "id": "reg_sanitation_universalization.c2",
+          "label": "Direito do usuário à cobrança tarifária vinculada à efetiva prestação de ao menos uma das etapas do serviço público de esgotamento sanitário (coleta, transporte, tratamento ou disposição final — Tema 565 do STJ), vedada cobrança sem rede disponível",
+          "authority_ids": [
+            "l11445_art29",
+            "l11445_art45",
+            "tema_stj_565"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "reg_sanitation_universalization.d1",
+          "label": "Legitimidade da cobrança de tarifa de esgoto ainda que ausente tratamento final quando comprovada a efetiva prestação das etapas de coleta, transporte e escoamento dos dejetos (Tema 565 do STJ), bem como da tarifa mínima básica por disponibilidade da hidrometria (Súmula 356 STJ)",
+          "authority_ids": [
+            "tema_stj_565",
+            "stj_sumula_356"
+          ]
+        },
+        {
+          "id": "reg_sanitation_universalization.d2",
+          "label": "Preservação dos contratos vigentes que comprovaram tempestivamente capacidade econômico-financeira própria ou por captação nos termos regulamentares do art. 10-B da Lei 11.445/2007",
+          "authority_ids": [
+            "l11445_art10b"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14026_marco_saneamento"
+      ],
+      "typical_requests": [
+        "Impugnação a edital de concessão de saneamento que viole normas de referência da ANA ou deixe de prever metas cogentes do art. 11-B da Lei 11.445/2007",
+        "Repetição de indébito tarifário (Súmula 412 STJ) quando inexista qualquer etapa de coleta de esgoto ou ocorra enquadramento incorreto de economias condominiais (Tema 414 STJ)",
+        "Reconhecimento de regularidade ou extinção de contrato por descumprimento das metas progressivas de não intermitência e redução de perdas"
+      ],
+      "evidence": [
+        "Contrato de concessão, edital, estudo de viabilidade técnica e econômico-financeira (EVTE) e comprovação regulatória de capacidade financeira",
+        "Faturas de água/esgoto e laudo técnico constatando existência ou inexistência de ligação à rede coletora pública",
+        "Normas de Referência editadas pela Agência Nacional de Águas e Saneamento Básico (ANA)"
+      ],
+      "piece_ids": [
+        "impugnacao_edital_licitacao",
+        "inicial_procedimento_comum",
+        "mandado_seguranca",
+        "acao_civil_publica",
+        "contestacao"
+      ],
+      "related_claims": [
+        "reg_concession_rebalance_caducity",
+        "cons_essential_service",
+        "amb_waste_pollution"
+      ],
+      "limitation": "Repetição de indébito de tarifas de água e esgoto sujeita-se ao prazo prescricional decenal do Código Civil (CC, art. 205; Súmula 412 do STJ); impugnação a edital de licitação até 3 dias úteis antes da abertura (Lei 14.133/2021, art. 164)"
+    },
+    {
+      "id": "reg_concession_rebalance_caducity",
+      "label": "Reequilíbrio econômico-financeiro e caducidade em concessões e PPPs",
+      "requirements": [
+        "matriz_contratual_alocacao_riscos",
+        "evento_alea_extraordinaria_ou_fato_principe",
+        "calculo_fluxo_caixa_marginal_ou_tir",
+        "devido_processo_caducidade_bens_reversiveis"
+      ],
+      "claimant_theses": [
+        {
+          "id": "reg_concession_rebalance_caducity.c1",
+          "label": "Direito intangível da concessionária à recomposição do equilíbrio econômico-financeiro sempre que materializado risco alocado ao poder concedente, alteração unilateral ou fato do príncipe/álea extraordinária comprovadamente impactante sobre os encargos ou receitas",
+          "authority_ids": [
+            "cf_art37",
+            "l8987_art9",
+            "l8987_art10",
+            "l11079_art5"
+          ]
+        },
+        {
+          "id": "reg_concession_rebalance_caducity.c2",
+          "label": "Nulidade de decretação de caducidade sem prévio processo administrativo com ampla defesa, comunicação detalhada das falhas e concessão de prazo razoável para correção das transgressões (Lei 8.987/1995, art. 38, § 3º), assegurada indenização das parcelas de investimentos vinculados a bens reversíveis ainda não amortizados",
+          "authority_ids": [
+            "l8987_art38",
+            "l8987_art36"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "reg_concession_rebalance_caducity.d1",
+          "label": "Improcedência do pleito de reequilíbrio quando a frustração de receita ou aumento de custo inserir-se na álea ordinária empresarial ou em risco expressamente alocado à concessionária na matriz contratual (v.g., variação normal de tráfego/demanda ou custo de financiamento)",
+          "authority_ids": [
+            "l8987_art2",
+            "l11079_art5",
+            "l14133_art103"
+          ]
+        },
+        {
+          "id": "reg_concession_rebalance_caducity.d2",
+          "label": "Compensação obrigatória das multas contratuais definitivas e dos danos causados pela concessionária no cálculo da indenização por bens reversíveis não amortizados na caducidade (Lei 8.987/1995, art. 38, § 5º)",
+          "authority_ids": [
+            "l8987_art38"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_13655_lindb",
+        "lei_14133_licitacoes"
+      ],
+      "typical_requests": [
+        "Reconhecimento do desequilíbrio econômico-financeiro e recomposição por revisão tarifária extraordinária, extensão de prazo contratual, redução de outorga ou pagamento direto pelo fluxo de caixa marginal",
+        "Tutela cautelar suspendendo aplicação de penalidades ou processo de caducidade fundado em inadimplemento recíproco do poder concedente (exceção do contrato administrativo nos limites legais)",
+        "Apuração pericial ou arbitral da indenização líquida devida pelos investimentos em bens reversíveis não depreciados/amortizados"
+      ],
+      "evidence": [
+        "Contrato de concessão comum ou PPP (patrocinada/administrativa), anexos tarifários e matriz expressa de repartição objetiva de riscos",
+        "Processos administrativos de revisão ordinária/extraordinária junto à agência reguladora e pareceres técnicos/econômicos",
+        "Demonstrações contábeis regulatórias, plano de negócios original (quando aplicável) e modelagem de Fluxo de Caixa Marginal"
+      ],
+      "piece_ids": [
+        "requerimento_administrativo",
+        "requerimento_instauracao_arbitragem",
+        "inicial_procedimento_comum",
+        "tutela_urgencia_antecedente",
+        "contestacao"
+      ],
+      "related_claims": [
+        "adm_contract_balance",
+        "arb_public_administration",
+        "reg_relicitation_amicable_termination"
+      ],
+      "limitation": "Prescrição quinquenal contra o poder concedente/agência contada da ciência inequívoca do indeferimento administrativo definitivo do pedido de reequilíbrio ou da extinção contratual (Decreto 20.910/1932, art. 1º e art. 4º — suspensão durante a análise administrativa)"
+    },
+    {
+      "id": "reg_agency_sanction_air",
+      "label": "Processo sancionador regulatório, deferência técnica e Análise de Impacto Regulatório (AIR)",
+      "requirements": [
+        "obrigatoriedade_air_e_consulta_publica",
+        "competencia_normativa_legal_agencia",
+        "prescricao_quinquenal_e_intercorrente_trienal",
+        "proporcionalidade_e_consequencialismo_lindb"
+      ],
+      "claimant_theses": [
+        {
+          "id": "reg_agency_sanction_air.c1",
+          "label": "Invalidade de resolução ou ato normativo de interesse geral de agência reguladora editado sem prévia Análise de Impacto Regulatório (AIR) e consulta pública quando ausente hipótese legal expressa e motivada de dispensa (Lei 13.848/2019, arts. 6º e 9º; Lei 13.874/2019, art. 5º)",
+          "authority_ids": [
+            "l13848_art6",
+            "l13848_art9",
+            "l13874_art5"
+          ]
+        },
+        {
+          "id": "reg_agency_sanction_air.c2",
+          "label": "Extinção da pretensão punitiva regulatória pela prescrição quinquenal ou pela prescrição intercorrente no procedimento administrativo paralisado por mais de 3 anos pendente de julgamento ou despacho sem impulso útil (Lei 9.873/1999, art. 1º, § 1º)",
+          "authority_ids": [
+            "l9873_art1"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "reg_agency_sanction_air.d1",
+          "label": "Deferência judicial às escolhas técnicas e regulatórias da agência especializadas dentro da moldura legal (discricionariedade técnica), vedado ao Judiciário substituir critérios regulatórios legítimos por juízo próprio sem prova de ilegalidade ou teratologia",
+          "authority_ids": [
+            "l13848_art3",
+            "lindb_art20",
+            "lindb_art22"
+          ]
+        },
+        {
+          "id": "reg_agency_sanction_air.d2",
+          "label": "Interrupção válida da prescrição intercorrente por qualquer ato inequívoco da autoridade que importe efetiva instrução ou apuração do fato (Tema 328 da TNU / jurisprudência pacífica do STJ sobre o art. 2º da Lei 9.873/1999)",
+          "authority_ids": [
+            "l9873_art1",
+            "l9873_art2"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_13655_lindb",
+        "lei_13874_liberdade_economica"
+      ],
+      "typical_requests": [
+        "Declaração de nulidade de ato normativo infralegal que extrapole o poder regulamentar ou desrespeite rito cogente de AIR e participação social",
+        "Anulação de multa regulatória por prescrição quinquenal/intercorrente trienal, ausência de tipicidade legal ou violação ao art. 20 da LINDB",
+        "Celebração de Termo de Ajustamento de Conduta (TAC) regulatório substitutivo de sanção pecuniária quando previsto na norma setorial"
+      ],
+      "evidence": [
+        "Relatório de Análise de Impacto Regulatório (AIR), ata de reunião deliberativa da Diretoria Colegiada e registros de consulta/audiência pública",
+        "Cópia integral cronológica do processo administrativo sancionador com todas as datas de movimentação no SEI!",
+        "Nota técnica demonstrando desproporcionalidade da dosimetria ou inexistência de despacho instrutório útil por mais de 3 anos"
+      ],
+      "piece_ids": [
+        "recurso_administrativo",
+        "mandado_seguranca",
+        "acao_anulatoria_debito_fiscal",
+        "inicial_procedimento_comum",
+        "contestacao"
+      ],
+      "related_claims": [
+        "adm_act_review",
+        "adm_admin_appeal",
+        "reg_concession_rebalance_caducity"
+      ],
+      "limitation": "5 anos para o exercício da ação punitiva federal contados da prática do ato ou de sua cessação, e 3 anos de prescrição intercorrente no processo paralisado (Lei 9.873/1999, art. 1º, caput e § 1º); 5 anos para cobrança do crédito definitivamente constituído após término do processo administrativo (art. 1º-A)"
+    },
+    {
+      "id": "reg_ports_terminals_tariffs",
+      "label": "Regulação portuária: arrendamentos, TUPs e preços portuários (SSE/THC2)",
+      "requirements": [
+        "porto_organizado_vs_terminal_uso_privado",
+        "matriz_arrendamento_ou_autorizacao",
+        "remuneracao_servicos_segregacao_entrega_sse",
+        "controle_concorrencial_regulatorio_antaq"
+      ],
+      "claimant_theses": [
+        {
+          "id": "reg_ports_terminals_tariffs.c1",
+          "label": "Liberdade negocial e regime de direito privado na exploração de Terminal de Uso Privado (TUP) mediante autorização fora da área do porto organizado, vedadas restrições desproporcionais à movimentação de cargas próprias ou de terceiros após a Lei 12.815/2013",
+          "authority_ids": [
+            "l12815_art8",
+            "cf_art21"
+          ]
+        },
+        {
+          "id": "reg_ports_terminals_tariffs.c2",
+          "label": "Contestação à cobrança abusiva ou em duplicidade de Serviço de Segregação e Entrega de contêineres (SSE/THC2) contra recintos alfandegados retroportuários independentes quando configurar fechamento vertical anticompetitivo ou ausência de serviço adicional efetivo — controvérsia regulatória e concorrencial ANTAQ/CADE/TCU/STJ",
+          "authority_ids": [
+            "l12815_art3",
+            "l12529_art36"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "reg_ports_terminals_tariffs.d1",
+          "label": "Legitimidade regulatória da cobrança de SSE pelos operadores portuários molhados quando amparada em resolução vigente da ANTAQ para remunerar custos operacionais específicos de segregação, empilhamento e entrega física a recintos secos fora do cais",
+          "authority_ids": [
+            "l12815_art27",
+            "l10233_art27"
+          ]
+        },
+        {
+          "id": "reg_ports_terminals_tariffs.d2",
+          "label": "Observância estrita das regras editalícias, tarifas-teto e obrigações de investimento nos contratos de arrendamento de instalação portuária dentro do porto organizado",
+          "authority_ids": [
+            "l12815_art4",
+            "l12815_art5"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Declaração de inexigibilidade ou limitação a teto regulatório de cobranças portuárias abusivas (SSE/THC2 ou armazenagem extra causada por greve)",
+        "Arbitragem ou revisão administrativa de reequilíbrio e prorrogação antecipada de contrato de arrendamento portuário (Decreto 8.464/2015 / Lei 12.815/2013)",
+        "Tutela de urgência assegurando livre trânsito e agendamento isonômico de janelas de retirada de cargas por terminal retroportuário"
+      ],
+      "evidence": [
+        "Tabelas públicas de preços do terminal portuário, faturas de THC/capatazia no BL e notas fiscais de SSE emitidas contra o recinto retroportuário",
+        "Resoluções e acórdãos da ANTAQ, decisões do CADE e acórdãos do TCU sobre a modelagem portuária aplicável",
+        "Contrato de arrendamento portuário ou contrato de adesão de TUP firmado com o poder concedente"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "tutela_urgencia_antecedente",
+        "representacao_cade",
+        "requerimento_instauracao_arbitragem",
+        "contestacao"
+      ],
+      "related_claims": [
+        "aduan_container_demurrage",
+        "aduan_unlawful_cargo_bl_retention",
+        "reg_cartel_unilateral_conduct_cade"
+      ],
+      "limitation": "Prescrição quinquenal para cobrança de preços portuários contratuais líquidos (CC, art. 206, § 5º, I) ou para ações contra a ANTAQ/União (Decreto 20.910/1932), e decenal na repetição de indébito de tarifas públicas (CC, art. 205)"
+    },
+    {
+      "id": "reg_mining_cfem_anm",
+      "label": "Regulação minerária, prioridade de pesquisa/lavra e CFEM (ANM)",
+      "requirements": [
+        "prioridade_direito_pesquisa_e_concessao_lavra",
+        "compensacao_financeira_cfem_receita_bruta",
+        "seguranca_barragens_mineracao",
+        "servidao_mineral_e_superficiario"
+      ],
+      "claimant_theses": [
+        {
+          "id": "reg_mining_cfem_anm.c1",
+          "label": "Direito de prioridade cronológica ao alvará de pesquisa em área livre (Código de Mineração — DL 227/1967, art. 11) e à instituição judicial de servidão mineral mediante prévia indenização da renda e dos danos ao proprietário superficiário (arts. 27 e 59)",
+          "authority_ids": [
+            "dl227_art11",
+            "dl227_art27",
+            "cf_art176"
+          ]
+        },
+        {
+          "id": "reg_mining_cfem_anm.c2",
+          "label": "Exclusão da base de cálculo da CFEM (receita bruta de venda ou valor de referência de consumo) dos tributos incidentes sobre a comercialização e vedação de exigência fora das hipóteses estritas da Lei 7.990/1989 com as alterações da Lei 13.540/2017",
+          "authority_ids": [
+            "l7990_art6",
+            "l13540_art2"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "reg_mining_cfem_anm.d1",
+          "label": "Natureza jurídica de receita patrimonial originária da União (e não tributária) da CFEM, submetendo-se aos prazos decadencial decenal e prescricional quinquenal do art. 47 da Lei 9.636/1998 — jurisprudência consolidada do STF e do STJ",
+          "authority_ids": [
+            "cf_art20",
+            "l9636_art47"
+          ]
+        },
+        {
+          "id": "reg_mining_cfem_anm.d2",
+          "label": "Poder-dever da Agência Nacional de Mineração (Lei 13.575/2017) de interditar barragens a montante ou sem Declaração de Condição de Estabilidade (DCE) vigente e declarar caducidade por abandono de jazida ou lavra ambiciosa (Lei 12.334/2010)",
+          "authority_ids": [
+            "l13575_art2",
+            "l12334_art7",
+            "dl227_art65"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Anulação de indeferimento ilegal de requerimento de pesquisa/relatório final na ANM ou constituição de servidão mineral com imissão provisória",
+        "Ação anulatória ou repetição de valores recolhidos a maior a título de CFEM por inclusão indevida de despesas/tributos na base ou decadência",
+        "Cobrança pelo proprietário superficiário da participação nos resultados da lavra (metade do valor pago a título de CFEM — DL 227/1967, art. 11, § 1º)"
+      ],
+      "evidence": [
+        "Processo minerário eletrônico (SCM/ANM), alvará de pesquisa, portaria de lavra e poligonal georreferenciada no SIGMINE",
+        "Notas fiscais de venda de bem mineral, apurações contábeis de consumo na transformação industrial e guias de recolhimento da CFEM",
+        "Relatórios de inspeção de segurança de barragens e Declarações de Condição de Estabilidade (DCE)"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "acao_anulatoria_debito_fiscal",
+        "mandado_seguranca",
+        "recurso_administrativo",
+        "contestacao"
+      ],
+      "related_claims": [
+        "amb_licensing",
+        "amb_civil_liability",
+        "reg_agency_sanction_air"
+      ],
+      "limitation": "Decadência em 10 anos e prescrição executiva em 5 anos para créditos patrimoniais de CFEM (Lei 9.636/1998, art. 47 — Tema 638 STJ / STF); prescrição quinquenal para pretensões contra a ANM (Decreto 20.910/1932, art. 1º)"
+    },
+    {
+      "id": "reg_relicitation_amicable_termination",
+      "label": "Relicitação e prorrogação antecipada em concessões de infraestrutura (Lei 13.448/2017)",
+      "requirements": [
+        "setor_rodoviario_ferroviario_aeroportuario",
+        "qualificacao_ppi_viabilidade_vantajosidade",
+        "termo_aditivo_renuncia_irretratavel",
+        "indenizacao_certificada_bens_reversiveis"
+      ],
+      "claimant_theses": [
+        {
+          "id": "reg_relicitation_amicable_termination.c1",
+          "label": "Viabilidade jurídica da extinção amigável do contrato de parceria por relicitação quando demonstrada incapacidade de adimplemento contratual ou econômico-financeiro, assegurada continuidade operacional mínima até a assunção pelo futuro vencedor e pagamento/compensação da indenização certificada por bens reversíveis não amortizados",
+          "authority_ids": [
+            "l13448_art13",
+            "l13448_art15",
+            "l13448_art17"
+          ]
+        },
+        {
+          "id": "reg_relicitation_amicable_termination.c2",
+          "label": "Legalidade da prorrogação antecipada condicionada à realização imediata de novos investimentos não previstos originalmente e à demonstração técnica de vantajosidade frente a nova licitação, com submissão a consulta pública e ao TCU",
+          "authority_ids": [
+            "l13448_art6",
+            "l13448_art8"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "reg_relicitation_amicable_termination.d1",
+          "label": "Discricionariedade técnica e política do Poder Concedente quanto à conveniência de qualificar o empreendimento para relicitação ou prorrogação antecipada (inexistência de direito subjetivo automático da concessionária inadimplente)",
+          "authority_ids": [
+            "l13448_art14",
+            "lindb_art20"
+          ]
+        },
+        {
+          "id": "reg_relicitation_amicable_termination.d2",
+          "label": "Abatimento obrigatório das multas, outorgas vencidas e excedentes tarifários arrecadados a maior durante o aditivo de relicitação no encontro final de contas da indenização pelos bens reversíveis (art. 15, § 1º)",
+          "authority_ids": [
+            "l13448_art15"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_13655_lindb"
+      ],
+      "typical_requests": [
+        "Submissão de requerimento administrativo de qualificação para relicitação ou repactuação consensuada perante a agência, Ministério setorial e TCU (SecexConsenso)",
+        "Instauração de arbitragem para apuração definitiva do saldo indenizatório líquido dos investimentos em bens reversíveis não amortizados (Lei 13.448/2017, art. 15, § 3º)"
+      ],
+      "evidence": [
+        "Requerimento técnico demonstrando inviabilidade econômico-financeira superveniente, renúncia à discussão de inadimplementos e compromisso de manutenção de serviços essenciais",
+        "Laudo de empresa especializada independente certificando o valor contábil/histórico atualizado dos ativos reversíveis e descontos regulatórios",
+        "Termo aditivo de relicitação, estudos de vantajosidade e acórdão do Tribunal de Contas da União"
+      ],
+      "piece_ids": [
+        "requerimento_administrativo",
+        "requerimento_instauracao_arbitragem",
+        "manifestacao_especifica",
+        "inicial_procedimento_comum"
+      ],
+      "related_claims": [
+        "reg_concession_rebalance_caducity",
+        "arb_public_administration",
+        "adm_tcu"
+      ],
+      "limitation": "Prazo máximo de 24 meses para conclusão do processo de relicitação contado da qualificação no PPI, prorrogável justificadamente (Lei 13.448/2017, art. 20); prescrição quinquenal para discussão do ajuste final de contas (Decreto 20.910/1932)"
+    }
+  ]
+}

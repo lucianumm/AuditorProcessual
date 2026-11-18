@@ -4,21 +4,1168 @@
  "label": "Direito Empresarial",
  "guide": "domain_guides/empresarial.md",
  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
- "polo_labels": {"claimant_theses": "Teses do autor ou requerente", "defense_theses": "Teses do réu ou requerido"},
+ "polo_labels": {
+  "claimant_theses": "Teses do autor ou requerente",
+  "defense_theses": "Teses do réu ou requerido"
+ },
  "claims": [
-  {"id": "emp_recovery", "label": "Recuperação judicial", "requirements": ["requisitos", "documentos", "stay", "plano", "assembleia"], "claimant_theses": [{"id": "emp_recovery.c1", "label": "Requisitos e documentos para o processamento", "authority_ids": ["l11101_art48", "l11101_art51", "l11101_art52"]}, {"id": "emp_recovery.c2", "label": "Finalidade de preservação da empresa", "authority_ids": ["l11101_art47"]}], "defense_theses": [{"id": "emp_recovery.d1", "label": "Objeção ao plano e assembleia de credores", "authority_ids": ["l11101_art55", "l11101_art56"]}], "temporal_marker_ids": ["lei_14112_recuperacao"], "typical_requests": [], "evidence": [], "piece_ids": ["pedido_recuperacao_judicial", "objecao_plano_recuperacao"], "related_claims": [], "limitation": "conferir"},
-  {"id": "emp_credit_claims", "label": "Habilitação e impugnação de créditos", "requirements": ["credito", "classe", "prazo"], "claimant_theses": [{"id": "emp_credit_claims.c1", "label": "Verificação, habilitação e impugnação", "authority_ids": ["l11101_art7", "l11101_art8", "l11101_art10"]}], "defense_theses": [{"id": "emp_credit_claims.d1", "label": "Intempestividade e classe diversa", "authority_ids": ["l11101_art10"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["habilitacao_impugnacao_credito"], "related_claims": [], "limitation": "conferir"},
-  {"id": "emp_bankruptcy", "label": "Falência", "requirements": ["hipotese", "titulo", "protesto", "deposito_elisivo"], "claimant_theses": [{"id": "emp_bankruptcy.c1", "label": "Hipóteses de decretação", "authority_ids": ["l11101_art94", "l11101_art99"]}], "defense_theses": [{"id": "emp_bankruptcy.d1", "label": "Relevante razão de direito ou depósito elisivo", "authority_ids": ["l11101_art94"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["pedido_falencia"], "related_claims": [], "limitation": "conferir"},
-  {"id": "emp_veil_piercing", "label": "Desconsideração da personalidade jurídica", "requirements": ["abuso", "desvio_finalidade", "confusao_patrimonial", "incidente"], "claimant_theses": [{"id": "emp_veil_piercing.c1", "label": "Abuso da personalidade por desvio de finalidade ou confusão patrimonial", "authority_ids": ["cc_art50", "cpc_art133"]}], "defense_theses": [{"id": "emp_veil_piercing.d1", "label": "Mera insolvência não autoriza a desconsideração", "authority_ids": ["cc_art50"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["manifestacao_especifica"], "related_claims": [], "limitation": "conferir"},
-  {"id": "emp_partner_exit", "label": "Retirada, exclusão e apuração de haveres", "requirements": ["causa", "data_corte", "criterio_haveres"], "claimant_theses": [{"id": "emp_partner_exit.c1", "label": "Dissolução parcial e apuração de haveres", "authority_ids": ["cpc_art599", "cc_art1029", "cc_art1077"]}], "defense_theses": [{"id": "emp_partner_exit.d1", "label": "Liquidação da quota pelo contrato social", "authority_ids": ["cc_art1028"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["acao_dissolucao_parcial"], "related_claims": [], "limitation": "conferir"},
-  {"id": "emp_trademark", "label": "Marcas", "requirements": ["registro", "uso_indevido", "confusao"], "claimant_theses": [{"id": "emp_trademark.c1", "label": "Propriedade da marca pelo registro e uso exclusivo", "authority_ids": ["l9279_art129"]}], "defense_theses": [{"id": "emp_trademark.d1", "label": "Ausência de confusão ou registro posterior", "authority_ids": ["l9279_art129"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["inicial_procedimento_comum", "tutela_urgencia_antecedente"], "related_claims": [], "limitation": "conferir"},
-  {"id": "emp_partner_dispute", "label": "Conflito societário na limitada", "requirements": ["contrato_social", "quorum", "falta_grave", "convocacao"], "claimant_theses": [{"id": "emp_partner_dispute.c1", "label": "Exclusão judicial por falta grave e extrajudicial por justa causa prevista no contrato", "authority_ids": ["cc_art1030", "cc_art1085"]}, {"id": "emp_partner_dispute.c2", "label": "Anulação de deliberação tomada com conflito de interesses ou sem quórum", "authority_ids": ["cc_art1010", "cc_art1071", "cc_art1076"]}], "defense_theses": [{"id": "emp_partner_dispute.d1", "label": "Ausência de falta grave ou de defesa prévia na exclusão extrajudicial", "authority_ids": ["cc_art1085"]}, {"id": "emp_partner_dispute.d2", "label": "Sócio retirante responde por dois anos", "authority_ids": ["cc_art1032"]}], "temporal_marker_ids": [], "typical_requests": ["Exclusão de sócio", "Anulação de assembleia", "Apuração de haveres"], "evidence": ["Contrato social e alterações", "Atas e convocações", "Provas da falta"], "piece_ids": ["acao_dissolucao_parcial", "inicial_procedimento_comum", "tutela_urgencia_antecedente"], "related_claims": ["emp_partner_exit"], "limitation": "Anulação de deliberação: três anos (CC, art. 48) — conferir"},
-  {"id": "emp_haveres", "label": "Apuração de haveres", "requirements": ["data_base", "criterio_contratual", "balanco", "intangiveis"], "claimant_theses": [{"id": "emp_haveres.c1", "label": "Na omissão do contrato, balanço de determinação com avaliação de bens tangíveis e intangíveis", "authority_ids": ["cpc_art606", "cc_art1031"]}], "defense_theses": [{"id": "emp_haveres.d1", "label": "Critério previsto no contrato social prevalece", "authority_ids": ["cc_art1031", "cpc_art606"]}, {"id": "emp_haveres.d2", "label": "Concordância com a dissolução afasta honorários", "authority_ids": ["cpc_art603"]}], "temporal_marker_ids": [], "typical_requests": ["Fixação da data de resolução", "Pagamento parcelado ou à vista conforme o contrato"], "evidence": ["Balanços e balancetes", "Laudo pericial contábil", "Contrato social"], "piece_ids": ["acao_dissolucao_parcial", "impugnacao_laudo"], "related_claims": ["emp_partner_exit", "emp_partner_dispute"], "limitation": "Conferir"},
-  {"id": "emp_admin_liability", "label": "Responsabilidade de administradores e controlador", "requirements": ["ato_de_gestao", "dever_violado", "dano", "deliberacao_assemblear"], "claimant_theses": [{"id": "emp_admin_liability.c1", "label": "Administrador responde por culpa ou dolo e por violação da lei ou do estatuto", "authority_ids": ["l6404_art158", "l6404_art153", "l6404_art155", "cc_art1016"]}, {"id": "emp_admin_liability.c2", "label": "Controlador responde por abuso de poder", "authority_ids": ["l6404_art117", "l6404_art116"]}], "defense_theses": [{"id": "emp_admin_liability.d1", "label": "Decisão negocial informada e de boa-fé", "authority_ids": ["l6404_art158", "l6404_art159"]}, {"id": "emp_admin_liability.d2", "label": "Ação social depende de deliberação da assembleia", "authority_ids": ["l6404_art159"]}], "temporal_marker_ids": [], "typical_requests": ["Indenização à sociedade", "Destituição"], "evidence": ["Atas e demonstrações", "Pareceres e documentos da operação"], "piece_ids": ["inicial_procedimento_comum"], "related_claims": ["emp_partner_dispute"], "limitation": "Três anos (Lei 6.404/1976, art. 287) — conferir"},
-  {"id": "emp_business_transfer", "label": "Trespasse e não concorrência", "requirements": ["contrato_de_trespasse", "publicacao", "debitos_contabilizados", "restabelecimento"], "claimant_theses": [{"id": "emp_business_transfer.c1", "label": "Adquirente responde pelos débitos regularmente contabilizados", "authority_ids": ["cc_art1146"]}, {"id": "emp_business_transfer.c2", "label": "Alienante não pode concorrer por cinco anos, salvo autorização", "authority_ids": ["cc_art1147"]}], "defense_theses": [{"id": "emp_business_transfer.d1", "label": "Débito não contabilizado e ausência de sucessão", "authority_ids": ["cc_art1146"]}, {"id": "emp_business_transfer.d2", "label": "Cláusula expressa que autoriza a concorrência", "authority_ids": ["cc_art1147"]}], "temporal_marker_ids": [], "typical_requests": ["Abstenção de concorrência", "Indenização", "Regresso"], "evidence": ["Contrato e balanços", "Prova do restabelecimento e do desvio de clientela"], "piece_ids": ["inicial_procedimento_comum", "tutela_urgencia_antecedente"], "related_claims": ["emp_trademark"], "limitation": "Conferir"},
-  {"id": "emp_unfair_competition", "label": "Concorrência desleal e violação de marca: indenização", "requirements": ["sinal_ou_segredo", "ato_de_confusao", "prejuizo", "criterio_de_calculo"], "claimant_theses": [{"id": "emp_unfair_competition.c1", "label": "Uso de marca ou sinal que cause confusão e desvio de clientela", "authority_ids": ["l9279_art195", "l9279_art189", "l9279_art130"]}, {"id": "emp_unfair_competition.c2", "label": "Lucros cessantes pelo critério mais favorável ao prejudicado", "authority_ids": ["l9279_art209", "l9279_art210"]}], "defense_theses": [{"id": "emp_unfair_competition.d1", "label": "Sinal não registrável ou de uso comum", "authority_ids": ["l9279_art124"]}, {"id": "emp_unfair_competition.d2", "label": "Prescrição quinquenal", "authority_ids": ["l9279_art225"]}], "temporal_marker_ids": [], "typical_requests": ["Abstenção de uso", "Indenização", "Busca e apreensão"], "evidence": ["Certificado de registro", "Amostras e capturas", "Pesquisa de confusão"], "piece_ids": ["inicial_procedimento_comum", "tutela_urgencia_antecedente"], "related_claims": ["emp_trademark"], "limitation": "Cinco anos (Lei 9.279/1996, art. 225)"},
-  {"id": "emp_recovery_creditor", "label": "Recuperação judicial: créditos excluídos, garantias e plano", "requirements": ["natureza_do_credito", "data_do_fato_gerador", "garantia", "essencialidade_do_bem"], "claimant_theses": [{"id": "emp_recovery_creditor.c1", "label": "Credor fiduciário e arrendador não se sujeitam, vedada a retirada de bens essenciais no período de suspensão", "authority_ids": ["l11101_art49", "l11101_art6"]}, {"id": "emp_recovery_creditor.c2", "label": "Recuperação não impede a cobrança contra coobrigados", "authority_ids": ["stj_sumula_581", "l11101_art49"]}, {"id": "emp_recovery_creditor.c3", "label": "Controle judicial de legalidade do plano", "authority_ids": ["l11101_art58", "l11101_art53"]}], "defense_theses": [{"id": "emp_recovery_creditor.d1", "label": "Novação dos créditos sujeitos com a homologação", "authority_ids": ["l11101_art59"]}, {"id": "emp_recovery_creditor.d2", "label": "Juízo da recuperação decide sobre bens não abrangidos pelo plano", "authority_ids": ["stj_sumula_480"]}], "temporal_marker_ids": ["lei_14112_recuperacao"], "typical_requests": ["Reconhecimento da extraconcursalidade", "Anulação de cláusula do plano", "Convolação em falência"], "evidence": ["Contrato e registro da garantia", "Plano e ata da assembleia", "Laudo de essencialidade"], "piece_ids": ["habilitacao_impugnacao_credito", "objecao_plano_recuperacao", "agravo_instrumento"], "related_claims": ["emp_recovery", "emp_credit_claims"], "limitation": "Conferir"},
-  {"id": "emp_bankruptcy_claims", "label": "Falência: classificação, ineficácia e extraconcursais", "requirements": ["natureza_do_credito", "termo_legal", "ato_impugnado"], "claimant_theses": [{"id": "emp_bankruptcy_claims.c1", "label": "Ordem de classificação e créditos extraconcursais", "authority_ids": ["l11101_art83", "l11101_art84"]}, {"id": "emp_bankruptcy_claims.c2", "label": "Ineficácia de atos praticados no termo legal", "authority_ids": ["l11101_art129"]}], "defense_theses": [{"id": "emp_bankruptcy_claims.d1", "label": "Ato regular e contraprestação efetiva", "authority_ids": ["l11101_art129"]}], "temporal_marker_ids": ["lei_14112_recuperacao"], "typical_requests": ["Reclassificação", "Declaração de ineficácia", "Restituição"], "evidence": ["Quadro de credores", "Documentos do crédito", "Datas dos atos"], "piece_ids": ["habilitacao_impugnacao_credito", "inicial_procedimento_comum"], "related_claims": ["emp_bankruptcy", "emp_credit_claims"], "limitation": "Conferir"},
-  {"id": "emp_credit_instruments", "label": "Títulos de crédito: cheque, duplicata e nota promissória", "requirements": ["titulo", "causa", "aceite_ou_protesto", "prazo"], "claimant_theses": [{"id": "emp_credit_instruments.c1", "label": "Monitória de cheque prescrito sem necessidade de declinar a causa", "authority_ids": ["stj_sumula_299", "stj_sumula_531"]}, {"id": "emp_credit_instruments.c2", "label": "Duplicata sem aceite executável com protesto e comprovante de entrega", "authority_ids": ["l5474_art15"]}, {"id": "emp_credit_instruments.c3", "label": "Apresentação antecipada de cheque pré-datado gera dano moral", "authority_ids": ["stj_sumula_370"]}], "defense_theses": [{"id": "emp_credit_instruments.d1", "label": "Prescrição da execução e da monitória", "authority_ids": ["l7357_art59", "stj_sumula_503", "stj_sumula_504"]}, {"id": "emp_credit_instruments.d2", "label": "Nota promissória vinculada a contrato de abertura de crédito não tem autonomia", "authority_ids": ["stj_sumula_258"]}, {"id": "emp_credit_instruments.d3", "label": "Ausência de causa na duplicata", "authority_ids": ["l5474_art15"]}], "temporal_marker_ids": [], "typical_requests": ["Cobrança", "Declaração de inexigibilidade", "Sustação de protesto"], "evidence": ["Título original", "Instrumento de protesto", "Comprovante de entrega ou prestação"], "piece_ids": ["acao_monitoria", "embargos_monitorios", "execucao_titulo_extrajudicial", "embargos_execucao_civil", "tutela_urgencia_antecedente"], "related_claims": ["civ_collection"], "limitation": "Cheque: seis meses da apresentação para executar (Lei 7.357/1985, art. 59); monitória em cinco anos"}
+  {
+   "id": "emp_recovery",
+   "label": "Recuperação judicial",
+   "requirements": [
+    "requisitos",
+    "documentos",
+    "stay",
+    "plano",
+    "assembleia"
+   ],
+   "claimant_theses": [
+    {
+     "id": "emp_recovery.c1",
+     "label": "Requisitos e documentos para o processamento",
+     "authority_ids": [
+      "l11101_art48",
+      "l11101_art51",
+      "l11101_art52"
+     ]
+    },
+    {
+     "id": "emp_recovery.c2",
+     "label": "Finalidade de preservação da empresa",
+     "authority_ids": [
+      "l11101_art47"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "emp_recovery.d1",
+     "label": "Objeção ao plano e assembleia de credores",
+     "authority_ids": [
+      "l11101_art55",
+      "l11101_art56"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14112_recuperacao"
+   ],
+   "typical_requests": [
+    "Deferimento do processamento da recuperação judicial com suspensão das execuções sujeitas pelo stay period de 180 dias (Lei 11.101/2005, arts. 6º e 52)",
+    "Manutenção na posse de bens de capital essenciais à atividade empresarial durante o período de blindagem (art. 49, § 3º)",
+    "Homologação do plano aprovado pela Assembleia-Geral de Credores ou concessão por cram down (art. 58, § 1º)"
+   ],
+   "evidence": [
+    "Demonstrações contábeis dos três últimos exercícios, fluxo de caixa projetado e relação nominal completa de credores (Lei 11.101/2005, art. 51)",
+    "Certidão de regularidade na Junta Comercial comprovando exercício regular há mais de 2 anos (art. 48)",
+    "Laudo econômico-financeiro e de avaliação dos bens e ativos da devedora (art. 53, III)"
+   ],
+   "piece_ids": [
+    "pedido_recuperacao_judicial",
+    "objecao_plano_recuperacao"
+   ],
+   "related_claims": [],
+   "limitation": "Apresentação do plano de recuperação judicial no prazo improrrogável de 60 dias da publicação do deferimento do processamento, sob pena de convolação em falência (Lei 11.101/2005, art. 53); objeções dos credores em 30 dias (art. 55) — prazos materiais/especiais da LREF contados em dias corridos (art. 189, § 1º, I)."
+  },
+  {
+   "id": "emp_credit_claims",
+   "label": "Habilitação e impugnação de créditos",
+   "requirements": [
+    "credito",
+    "classe",
+    "prazo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "emp_credit_claims.c1",
+     "label": "Verificação, habilitação e impugnação",
+     "authority_ids": [
+      "l11101_art7",
+      "l11101_art8",
+      "l11101_art10"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "emp_credit_claims.d1",
+     "label": "Intempestividade e classe diversa",
+     "authority_ids": [
+      "l11101_art10"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14112_recuperacao"
+   ],
+   "typical_requests": [
+    "Inclusão, retificação de valor ou reenquadramento de classe do crédito no Quadro-Geral de Credores (QGC)",
+    "Exclusão de crédito simulado, prescrito ou já liquidado mediante impugnação fundamentada",
+    "Reserva cautelar de valor controverso pelo juízo universal (Lei 11.101/2005, art. 6º, § 3º)"
+   ],
+   "evidence": [
+    "Contratos, notas fiscais, comprovantes de entrega/prestação ou certidão de crédito judicial líquido com data do fato gerador",
+    "Memória analítica atualizada até a data do pedido de recuperação judicial ou da decretação da falência (Lei 11.101/2005, art. 9º, II)",
+    "Livros contábeis da recuperanda/falida e parecer de verificação do Administrador Judicial"
+   ],
+   "piece_ids": [
+    "habilitacao_impugnacao_credito"
+   ],
+   "related_claims": [],
+   "limitation": "Divergência/habilitação administrativa ao Administrador Judicial em 15 dias corridos do edital do art. 52, § 1º, e impugnação judicial em 10 dias corridos do edital da 2ª lista (Lei 11.101/2005, arts. 7º, § 1º, 8º e 189, § 1º, I); habilitação retardatária até o encerramento (art. 10)."
+  },
+  {
+   "id": "emp_bankruptcy",
+   "label": "Falência",
+   "requirements": [
+    "hipotese",
+    "titulo",
+    "protesto",
+    "deposito_elisivo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "emp_bankruptcy.c1",
+     "label": "Hipóteses de decretação",
+     "authority_ids": [
+      "l11101_art94",
+      "l11101_art99"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "emp_bankruptcy.d1",
+     "label": "Relevante razão de direito ou depósito elisivo",
+     "authority_ids": [
+      "l11101_art94"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14112_recuperacao"
+   ],
+   "typical_requests": [
+    "Decretação da falência do empresário devedor com fixação do termo legal e arrecadação dos bens (Lei 11.101/2005, arts. 94 e 99)",
+    "Pelo requerido: elisão da falência mediante depósito integral do principal, correção, juros e honorários no prazo de defesa (art. 98, parágrafo único; Súmula 29 do STJ) ou improcedência por vício formal do protesto/inexigibilidade"
+   ],
+   "evidence": [
+    "Títulos executivos vencidos que ultrapassem 40 salários mínimos na data do pedido de falência (Lei 11.101/2005, art. 94, I)",
+    "Instrumento de protesto especial ou comum com identificação da pessoa que recebeu a intimação no endereço da sede (Súmula 361 do STJ)",
+    "Certidão de execução frustrada (art. 94, II) ou prova documental de atos de falência (art. 94, III)"
+   ],
+   "piece_ids": [
+    "pedido_falencia"
+   ],
+   "related_claims": [],
+   "limitation": "Contestação e eventual depósito elisivo no prazo de 10 dias corridos da citação (Lei 11.101/2005, art. 98 e art. 189, § 1º, I); títulos devem estar com pretensão executiva vigente e não prescrita (art. 96, II)."
+  },
+  {
+   "id": "emp_veil_piercing",
+   "label": "Desconsideração da personalidade jurídica",
+   "requirements": [
+    "abuso",
+    "desvio_finalidade",
+    "confusao_patrimonial",
+    "incidente"
+   ],
+   "claimant_theses": [
+    {
+     "id": "emp_veil_piercing.c1",
+     "label": "Abuso da personalidade por desvio de finalidade ou confusão patrimonial",
+     "authority_ids": [
+      "cc_art50",
+      "cpc_art133"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "emp_veil_piercing.d1",
+     "label": "Mera insolvência não autoriza a desconsideração",
+     "authority_ids": [
+      "cc_art50"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13874_liberdade_economica"
+   ],
+   "typical_requests": [
+    "Instauração do Incidente de Desconsideração da Personalidade Jurídica com suspensão e citação dos sócios/administradores (CPC, arts. 133 a 135)",
+    "Extensão da responsabilidade patrimonial direta ou inversa por desvio de finalidade ou confusão patrimonial comprovados (CC, art. 50)",
+    "Pela defesa: rejeição liminar ou improcedência do IDPJ diante de mero inadimplemento ou encerramento sem dolo/confusão (CC, art. 50, § 4º; Lei 13.874/2019)"
+   ],
+   "evidence": [
+    "Extratos bancários, transferências cruzadas, confusão de caixas/ativos ou esvaziamento patrimonial doloso após constituição do passivo",
+    "Quadro societário histórico na Junta Comercial demonstrando quem se beneficiou direta ou indiretamente do abuso (CC, art. 50)",
+    "Diligências frustradas de localização de bens livres da pessoa jurídica devedora"
+   ],
+   "piece_ids": [
+    "manifestacao_especifica",
+    "incidente_desconsideracao"
+   ],
+   "related_claims": [],
+   "limitation": "O pedido de desconsideração da personalidade jurídica (CPC, art. 134) não se submete a prazo decadencial autônomo próprio, podendo ser requerido enquanto não prescrita a obrigação principal ou a execução do crédito exequendo (jurisprudência do STJ)."
+  },
+  {
+   "id": "emp_partner_exit",
+   "label": "Retirada, exclusão e apuração de haveres",
+   "requirements": [
+    "causa",
+    "data_corte",
+    "criterio_haveres"
+   ],
+   "claimant_theses": [
+    {
+     "id": "emp_partner_exit.c1",
+     "label": "Dissolução parcial e apuração de haveres",
+     "authority_ids": [
+      "cpc_art599",
+      "cc_art1029",
+      "cc_art1077"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "emp_partner_exit.d1",
+     "label": "Liquidação da quota pelo contrato social",
+     "authority_ids": [
+      "cc_art1028"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Decretação da dissolução parcial do vínculo societário quanto ao sócio retirante, falecido ou excluído",
+    "Nomeação de perito contábil especialista para levantamento do balanço especial de determinação na data da resolução (CPC, arts. 604 e 606)",
+    "Condenação ao pagamento dos haveres apurados e depósito imediato da parcela incontroversa (CPC, art. 604, § 1º)"
+   ],
+   "evidence": [
+    "Contrato social consolidado e todas as alterações arquivadas na Junta Comercial",
+    "Notificação prévia de retirada imotivada com antecedência mínima de 60 dias (CC, art. 1.029), certidão de óbito ou ata de exclusão",
+    "Escrituração contábil, balancetes, livros fiscais e relação de ativos tangíveis e intangíveis na data de corte"
+   ],
+   "piece_ids": [
+    "acao_dissolucao_parcial"
+   ],
+   "related_claims": [],
+   "limitation": "Na retirada imotivada, a resolução opera-se 60 dias após a notificação dos demais sócios (CC, art. 1.029); a pretensão de apuração e cobrança de haveres pelo ex-sócio ou espólio sujeita-se ao prazo prescricional decenal contado da data da resolução da sociedade em relação a ele (CC, art. 205; jurisprudência do STJ)."
+  },
+  {
+   "id": "emp_trademark",
+   "label": "Marcas",
+   "requirements": [
+    "registro",
+    "uso_indevido",
+    "confusao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "emp_trademark.c1",
+     "label": "Propriedade da marca pelo registro e uso exclusivo",
+     "authority_ids": [
+      "l9279_art129"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "emp_trademark.d1",
+     "label": "Ausência de confusão ou registro posterior",
+     "authority_ids": [
+      "l9279_art129"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Tutela de urgência para imediata abstenção do uso da marca colidente em produtos, fachada, domínio de internet e links patrocinados sob pena de multa diária (Lei 9.279/1996, art. 209, § 1º)",
+    "Condenação definitiva à cessação do uso indevido e reparação por danos materiais (art. 210) e danos morais in re ipsa à pessoa jurídica titular",
+    "Nulidade de registro marcário obtido de má-fé ou em colidência com marca anteriormente registrada no mesmo segmento (art. 124, XIX)"
+   ],
+   "evidence": [
+    "Certificado de registro de marca em vigor expedido pelo INPI na classe NCL correspondente",
+    "Atas notariais, notas fiscais de compra teste e fotografias comparativas demonstrando reprodução ou imitação confundível",
+    "Processo administrativo no INPI e comprovantes do volume de vendas para apuração dos lucros cessantes (LPI, art. 210)"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [],
+   "limitation": "Prescrição quinquenal para a ação de reparação de danos causados à propriedade industrial (Lei 9.279/1996, art. 225) e prescrição quinquenal contada da concessão do registro no INPI para a ação de nulidade de marca, salvo registro obtido de má-fé, que é imprescritível (art. 174 e Convenção da União de Paris, art. 6º bis, 3)."
+  },
+  {
+   "id": "emp_partner_dispute",
+   "label": "Conflito societário na limitada",
+   "requirements": [
+    "contrato_social",
+    "quorum",
+    "falta_grave",
+    "convocacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "emp_partner_dispute.c1",
+     "label": "Exclusão judicial por falta grave e extrajudicial por justa causa prevista no contrato",
+     "authority_ids": [
+      "cc_art1030",
+      "cc_art1085"
+     ]
+    },
+    {
+     "id": "emp_partner_dispute.c2",
+     "label": "Anulação de deliberação tomada com conflito de interesses ou sem quórum",
+     "authority_ids": [
+      "cc_art1010",
+      "cc_art1071",
+      "cc_art1076"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "emp_partner_dispute.d1",
+     "label": "Ausência de falta grave ou de defesa prévia na exclusão extrajudicial",
+     "authority_ids": [
+      "cc_art1085"
+     ]
+    },
+    {
+     "id": "emp_partner_dispute.d2",
+     "label": "Sócio retirante responde por dois anos",
+     "authority_ids": [
+      "cc_art1032"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Exclusão de sócio",
+    "Anulação de assembleia",
+    "Apuração de haveres"
+   ],
+   "evidence": [
+    "Contrato social e alterações",
+    "Atas e convocações",
+    "Provas da falta"
+   ],
+   "piece_ids": [
+    "acao_dissolucao_parcial",
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [
+    "emp_partner_exit"
+   ],
+   "limitation": "Decadência trienal para anular deliberações societárias tomadas em assembleia ou reunião viciada por erro, dolo, simulação ou violação à lei/estatuto (CC, art. 48, parágrafo único, e art. 1.078, § 4º; Lei 6.404/1976, art. 286 — 2 anos nas S/As)."
+  },
+  {
+   "id": "emp_haveres",
+   "label": "Apuração de haveres",
+   "requirements": [
+    "data_base",
+    "criterio_contratual",
+    "balanco",
+    "intangiveis"
+   ],
+   "claimant_theses": [
+    {
+     "id": "emp_haveres.c1",
+     "label": "Na omissão do contrato, balanço de determinação com avaliação de bens tangíveis e intangíveis",
+     "authority_ids": [
+      "cpc_art606",
+      "cc_art1031"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "emp_haveres.d1",
+     "label": "Critério previsto no contrato social prevalece",
+     "authority_ids": [
+      "cc_art1031",
+      "cpc_art606"
+     ]
+    },
+    {
+     "id": "emp_haveres.d2",
+     "label": "Concordância com a dissolução afasta honorários",
+     "authority_ids": [
+      "cpc_art603"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Fixação da data de resolução",
+    "Pagamento parcelado ou à vista conforme o contrato",
+    "Aplicação do critério legal do balanço de determinação a valor patrimonial real de saída na omissão do contrato social (CPC, art. 606)"
+   ],
+   "evidence": [
+    "Balanços e balancetes",
+    "Laudo pericial contábil",
+    "Contrato social"
+   ],
+   "piece_ids": [
+    "acao_dissolucao_parcial",
+    "impugnacao_laudo"
+   ],
+   "related_claims": [
+    "emp_partner_exit",
+    "emp_partner_dispute"
+   ],
+   "limitation": "Prescrição decenal para a pretensão de apuração de haveres contada da efetiva resolução parcial da sociedade (CC, art. 205), fluindo juros moratórios apenas após o vencimento do prazo contratual ou legal de pagamento (CC, art. 1.031, § 2º; CPC, art. 609 — jurisprudência STJ)."
+  },
+  {
+   "id": "emp_admin_liability",
+   "label": "Responsabilidade de administradores e controlador",
+   "requirements": [
+    "ato_de_gestao",
+    "dever_violado",
+    "dano",
+    "deliberacao_assemblear"
+   ],
+   "claimant_theses": [
+    {
+     "id": "emp_admin_liability.c1",
+     "label": "Administrador responde por culpa ou dolo e por violação da lei ou do estatuto",
+     "authority_ids": [
+      "l6404_art158",
+      "l6404_art153",
+      "l6404_art155",
+      "cc_art1016"
+     ]
+    },
+    {
+     "id": "emp_admin_liability.c2",
+     "label": "Controlador responde por abuso de poder",
+     "authority_ids": [
+      "l6404_art117",
+      "l6404_art116"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "emp_admin_liability.d1",
+     "label": "Decisão negocial informada e de boa-fé",
+     "authority_ids": [
+      "l6404_art158",
+      "l6404_art159"
+     ]
+    },
+    {
+     "id": "emp_admin_liability.d2",
+     "label": "Ação social depende de deliberação da assembleia",
+     "authority_ids": [
+      "l6404_art159"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Indenização à sociedade",
+    "Destituição",
+    "Afastamento cautelar do administrador faltoso e prestação de contas dos atos de gestão impugnados"
+   ],
+   "evidence": [
+    "Atas e demonstrações",
+    "Pareceres e documentos da operação",
+    "Relatórios de auditoria forense e pareceres do conselho fiscal apontando conflito de interesses ou desvio de recursos"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "emp_partner_dispute"
+   ],
+   "limitation": "Prescrição trienal na ação de responsabilidade civil contra fundadores, acionistas ou administradores de S/A contada da publicação da ata que aprovar o balanço do exercício (Lei 6.404/1976, art. 287, II, 'b') ou da anulação da aprovação eivada de erro/dolo/simulação (art. 286)."
+  },
+  {
+   "id": "emp_business_transfer",
+   "label": "Trespasse e não concorrência",
+   "requirements": [
+    "contrato_de_trespasse",
+    "publicacao",
+    "debitos_contabilizados",
+    "restabelecimento"
+   ],
+   "claimant_theses": [
+    {
+     "id": "emp_business_transfer.c1",
+     "label": "Adquirente responde pelos débitos regularmente contabilizados",
+     "authority_ids": [
+      "cc_art1146"
+     ]
+    },
+    {
+     "id": "emp_business_transfer.c2",
+     "label": "Alienante não pode concorrer por cinco anos, salvo autorização",
+     "authority_ids": [
+      "cc_art1147"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "emp_business_transfer.d1",
+     "label": "Débito não contabilizado e ausência de sucessão",
+     "authority_ids": [
+      "cc_art1146"
+     ]
+    },
+    {
+     "id": "emp_business_transfer.d2",
+     "label": "Cláusula expressa que autoriza a concorrência",
+     "authority_ids": [
+      "cc_art1147"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Abstenção de concorrência",
+    "Indenização",
+    "Regresso"
+   ],
+   "evidence": [
+    "Contrato e balanços",
+    "Prova do restabelecimento e do desvio de clientela",
+    "Certidão de arquivamento do contrato de trespasse na Junta Comercial e publicação na imprensa oficial (CC, art. 1.144)"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [
+    "emp_trademark"
+   ],
+   "limitation": "Cláusula legal implícita de não restabelecimento do alienante pelo prazo de 5 anos subsequentes à transferência na ausência de autorização expressa (CC, art. 1.147); responsabilidade solidária do alienante pelos débitos vencidos pelo prazo de 1 ano da publicação (CC, art. 1.146)."
+  },
+  {
+   "id": "emp_unfair_competition",
+   "label": "Concorrência desleal e violação de marca: indenização",
+   "requirements": [
+    "sinal_ou_segredo",
+    "ato_de_confusao",
+    "prejuizo",
+    "criterio_de_calculo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "emp_unfair_competition.c1",
+     "label": "Uso de marca ou sinal que cause confusão e desvio de clientela",
+     "authority_ids": [
+      "l9279_art195",
+      "l9279_art189",
+      "l9279_art130"
+     ]
+    },
+    {
+     "id": "emp_unfair_competition.c2",
+     "label": "Lucros cessantes pelo critério mais favorável ao prejudicado",
+     "authority_ids": [
+      "l9279_art209",
+      "l9279_art210"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "emp_unfair_competition.d1",
+     "label": "Sinal não registrável ou de uso comum",
+     "authority_ids": [
+      "l9279_art124"
+     ]
+    },
+    {
+     "id": "emp_unfair_competition.d2",
+     "label": "Prescrição quinquenal",
+     "authority_ids": [
+      "l9279_art225"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Abstenção de uso",
+    "Indenização",
+    "Busca e apreensão"
+   ],
+   "evidence": [
+    "Certificado de registro",
+    "Amostras e capturas",
+    "Pesquisa de confusão"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [
+    "emp_trademark"
+   ],
+   "limitation": "Prescrição quinquenal para reparação civil por concorrência desleal, violação de trade dress ou desvio fraudulento de clientela (Lei 9.279/1996, art. 225), renovando-se a cada ato ilícito nos delitos permanentes/continuados."
+  },
+  {
+   "id": "emp_recovery_creditor",
+   "label": "Recuperação judicial: créditos excluídos, garantias e plano",
+   "requirements": [
+    "natureza_do_credito",
+    "data_do_fato_gerador",
+    "garantia",
+    "essencialidade_do_bem"
+   ],
+   "claimant_theses": [
+    {
+     "id": "emp_recovery_creditor.c1",
+     "label": "Credor fiduciário e arrendador não se sujeitam, vedada a retirada de bens essenciais no período de suspensão",
+     "authority_ids": [
+      "l11101_art49",
+      "l11101_art6"
+     ]
+    },
+    {
+     "id": "emp_recovery_creditor.c2",
+     "label": "Recuperação não impede a cobrança contra coobrigados",
+     "authority_ids": [
+      "stj_sumula_581",
+      "l11101_art49"
+     ]
+    },
+    {
+     "id": "emp_recovery_creditor.c3",
+     "label": "Controle judicial de legalidade do plano",
+     "authority_ids": [
+      "l11101_art58",
+      "l11101_art53"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "emp_recovery_creditor.d1",
+     "label": "Novação dos créditos sujeitos com a homologação",
+     "authority_ids": [
+      "l11101_art59"
+     ]
+    },
+    {
+     "id": "emp_recovery_creditor.d2",
+     "label": "Juízo da recuperação decide sobre bens não abrangidos pelo plano",
+     "authority_ids": [
+      "stj_sumula_480"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14112_recuperacao",
+    "lei_14711_garantias"
+   ],
+   "typical_requests": [
+    "Reconhecimento da extraconcursalidade",
+    "Anulação de cláusula do plano",
+    "Convolação em falência"
+   ],
+   "evidence": [
+    "Contrato e registro da garantia",
+    "Plano e ata da assembleia",
+    "Laudo de essencialidade"
+   ],
+   "piece_ids": [
+    "habilitacao_impugnacao_credito",
+    "objecao_plano_recuperacao",
+    "agravo_instrumento"
+   ],
+   "related_claims": [
+    "emp_recovery",
+    "emp_credit_claims"
+   ],
+   "limitation": "Objeção ao plano em 30 dias corridos do edital do art. 53, parágrafo único (Lei 11.101/2005, art. 55) e agravo de instrumento contra a concessão da recuperação em 15 dias úteis (art. 59, § 2º, e art. 189, § 1º, II)."
+  },
+  {
+   "id": "emp_bankruptcy_claims",
+   "label": "Falência: classificação, ineficácia e extraconcursais",
+   "requirements": [
+    "natureza_do_credito",
+    "termo_legal",
+    "ato_impugnado"
+   ],
+   "claimant_theses": [
+    {
+     "id": "emp_bankruptcy_claims.c1",
+     "label": "Ordem de classificação e créditos extraconcursais",
+     "authority_ids": [
+      "l11101_art83",
+      "l11101_art84"
+     ]
+    },
+    {
+     "id": "emp_bankruptcy_claims.c2",
+     "label": "Ineficácia de atos praticados no termo legal",
+     "authority_ids": [
+      "l11101_art129"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "emp_bankruptcy_claims.d1",
+     "label": "Ato regular e contraprestação efetiva",
+     "authority_ids": [
+      "l11101_art129"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14112_recuperacao"
+   ],
+   "typical_requests": [
+    "Reclassificação",
+    "Declaração de ineficácia",
+    "Restituição"
+   ],
+   "evidence": [
+    "Quadro de credores",
+    "Documentos do crédito",
+    "Datas dos atos"
+   ],
+   "piece_ids": [
+    "habilitacao_impugnacao_credito",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "emp_bankruptcy",
+    "emp_credit_claims"
+   ],
+   "limitation": "Ação revocatória falimentar (Lei 11.101/2005, arts. 129 e 130) deve ser proposta no prazo decadencial de 3 anos contados da decretação da falência (art. 132); pedido de restituição até o encerramento da realização do ativo (arts. 85 a 93)."
+  },
+  {
+   "id": "emp_credit_instruments",
+   "label": "Títulos de crédito: cheque, duplicata e nota promissória",
+   "requirements": [
+    "titulo",
+    "causa",
+    "aceite_ou_protesto",
+    "prazo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "emp_credit_instruments.c1",
+     "label": "Monitória de cheque prescrito sem necessidade de declinar a causa",
+     "authority_ids": [
+      "stj_sumula_299",
+      "stj_sumula_531"
+     ]
+    },
+    {
+     "id": "emp_credit_instruments.c2",
+     "label": "Duplicata sem aceite executável com protesto e comprovante de entrega",
+     "authority_ids": [
+      "l5474_art15"
+     ]
+    },
+    {
+     "id": "emp_credit_instruments.c3",
+     "label": "Apresentação antecipada de cheque pré-datado gera dano moral",
+     "authority_ids": [
+      "stj_sumula_370"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "emp_credit_instruments.d1",
+     "label": "Prescrição da execução e da monitória",
+     "authority_ids": [
+      "l7357_art59",
+      "stj_sumula_503",
+      "stj_sumula_504"
+     ]
+    },
+    {
+     "id": "emp_credit_instruments.d2",
+     "label": "Nota promissória vinculada a contrato de abertura de crédito não tem autonomia",
+     "authority_ids": [
+      "stj_sumula_258"
+     ]
+    },
+    {
+     "id": "emp_credit_instruments.d3",
+     "label": "Ausência de causa na duplicata",
+     "authority_ids": [
+      "l5474_art15"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14620_titulo_eletronico",
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Cobrança",
+    "Declaração de inexigibilidade",
+    "Sustação de protesto"
+   ],
+   "evidence": [
+    "Título original",
+    "Instrumento de protesto",
+    "Comprovante de entrega ou prestação"
+   ],
+   "piece_ids": [
+    "acao_monitoria",
+    "embargos_monitorios",
+    "execucao_titulo_extrajudicial",
+    "embargos_execucao_civil",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [
+    "civ_collection"
+   ],
+   "limitation": "Execução cambial: cheque em 6 meses da expiração do prazo de apresentação (Lei 7.357/1985, art. 59; Súmula 600 STJ) mais 2 anos para ação de locupletamento (art. 61); duplicata e nota promissória contra o devedor principal em 3 anos do vencimento (Lei 5.474/1968, art. 18, I; LUG, art. 70); ação monitória em 5 anos do vencimento (CC, art. 206, § 5º, I; Súmulas 503 e 504 do STJ)."
+  },
+  {
+   "id": "emp_tax_transaction_recovery",
+   "label": "Regularidade fiscal e transação tributária na concessão da recuperação judicial pós-Lei 14.112/2020",
+   "requirements": [
+    "aprovacao_plano_agc",
+    "apresentacao_cnd_ou_cpend",
+    "transacao_tributaria_l13988",
+    "vedacao_constricao_bens_essenciais"
+   ],
+   "claimant_theses": [
+    {
+     "id": "emp_tax_transaction_recovery.c1",
+     "label": "Após as Leis 13.988/2020 e 14.112/2020, que instituíram meios efetivos de parcelamento e transação fiscal para empresas em crise, a Terceira e a Quarta Turmas do STJ passaram a exigir a comprovação da regularidade fiscal (CND/CPEND) como condição para concessão da recuperação judicial (Lei 11.101/2005, art. 57; CTN, art. 191-A), sob pena de suspensão do processo (e não convolação imediata em falência)",
+     "authority_ids": [
+      "l11101_art57",
+      "ctn_art191a",
+      "l13988_art1"
+     ]
+    },
+    {
+     "id": "emp_tax_transaction_recovery.c2",
+     "label": "Pela recuperanda: direito a condições isonômicas de transação tributária baseadas na efetiva capacidade de pagamento, bem como competência do juízo da recuperação para substituir atos constritivos fiscais sobre bens essenciais (Lei 11.101/2005, art. 6º, § 7º-B)",
+     "authority_ids": [
+      "l11101_art6",
+      "l11101_art47",
+      "l13988_art11"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "emp_tax_transaction_recovery.d1",
+     "label": "Dispensa excepcional da CND estadual ou municipal quando o respectivo ente federativo ainda não houver editado lei específica de parcelamento/transação compatível com a recuperação judicial",
+     "authority_ids": [
+      "l11101_art47",
+      "l11101_art57",
+      "ctn_art155a"
+     ]
+    },
+    {
+     "id": "emp_tax_transaction_recovery.d2",
+     "label": "As execuções fiscais não se suspendem pelo deferimento da recuperação judicial (Lei 11.101/2005, art. 6º, § 7º-B), ressalvada apenas a cooperação jurisdicional quanto a ativos operacionais indispensáveis",
+     "authority_ids": [
+      "l11101_art6",
+      "ctn_art187"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14112_recuperacao"
+   ],
+   "typical_requests": [
+    "Concessão de prazo razoável para conclusão das tratativas de transação tributária individual perante a PGFN/Procuradoria Estadual",
+    "Cooperação jurisdicional do juízo da recuperação para substituição de penhora fiscal recaída sobre capital de giro ou planta industrial essencial",
+    "Suspensão da concessão da recuperação judicial caso a devedora recuse injustificadamente regularizar seu passivo fiscal"
+   ],
+   "evidence": [
+    "Protocolo e proposta de transação tributária individual ou por adesão no portal REGULARIZE/PGFN",
+    "Certidões Positivas com Efeitos de Negativa (CPEND) federais, estaduais e municipais ou comprovação de lacuna legislativa local",
+    "Laudo de capacidade de pagamento (CAPAG) e demonstração de essencialidade dos bens constritos"
+   ],
+   "piece_ids": [
+    "pedido_recuperacao_judicial",
+    "manifestacao_especifica",
+    "agravo_instrumento"
+   ],
+   "related_claims": [
+    "emp_recovery",
+    "trib_settlement"
+   ],
+   "limitation": "Apresentação das certidões fiscais logo após a juntada da ata de aprovação do plano em AGC (Lei 11.101/2005, arts. 57 e 58); agravo de instrumento contra decisão concessiva ou suspensiva em 15 dias úteis (art. 59, § 2º, e art. 189, § 1º, II)."
+  },
+  {
+   "id": "emp_creditor_alternative_plan",
+   "label": "Plano alternativo de recuperação judicial pelos credores e cram down (Lei 11.101/2005, arts. 6º, § 4º-A, 56 e 58)",
+   "requirements": [
+    "rejeicao_plano_devedor_ou_fim_stay",
+    "apoio_minimo_credores",
+    "ausencia_sacrificio_maior_que_falencia",
+    "liberacao_garantias_pessoais_socios"
+   ],
+   "claimant_theses": [
+    {
+     "id": "emp_creditor_alternative_plan.c1",
+     "label": "Escoado o stay period sem deliberação ou rejeitado o plano da devedora sem preenchimento de cram down, os credores podem aprovar a apresentação de plano alternativo em 30 dias, vedada imposição de obrigações novas aos sócios sem anuência e liberadas as garantias pessoais dos que não aderirem se imposto sacrifício maior que na falência (Lei 11.101/2005, art. 56, §§ 4º a 7º)",
+     "authority_ids": [
+      "l11101_art6",
+      "l11101_art56",
+      "l11101_art58"
+     ]
+    },
+    {
+     "id": "emp_creditor_alternative_plan.c2",
+     "label": "Concessão judicial por cram down quando alcançados cumulativamente os três quóruns alternativos do § 1º do art. 58 e ausente tratamento diferenciado abusivo",
+     "authority_ids": [
+      "l11101_art58",
+      "l11101_art47"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "emp_creditor_alternative_plan.d1",
+     "label": "Nulidade de plano alternativo de credores que imponha aos sócios da devedora perda patrimonial superior à que teriam na liquidação falimentar ou crie obrigações não previstas em lei/contratos (art. 56, § 6º, III e VI)",
+     "authority_ids": [
+      "l11101_art56"
+     ]
+    },
+    {
+     "id": "emp_creditor_alternative_plan.d2",
+     "label": "Controle judicial da legalidade estrita das cláusulas de deságio confiscatório, carência excessiva ou supressão de garantias reais/fidejussórias perante credores dissidentes (art. 50, § 1º, e Súmula 581 do STJ)",
+     "authority_ids": [
+      "l11101_art50",
+      "stj_sumula_581"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14112_recuperacao"
+   ],
+   "typical_requests": [
+    "Submissão à votação da AGC de concessão de prazo de 30 dias para apresentação de plano alternativo pelos credores",
+    "Homologação judicial do plano pelo quórum alternativo de cram down (art. 58, § 1º) diante de voto abusivo de credor isolado",
+    "Ressalva expressa de preservação das garantias reais e coobrigações cambiais em favor dos credores que não anuíram expressamente"
+   ],
+   "evidence": [
+    "Ata e mídia integral da Assembleia-Geral de Credores com mapa detalhado de cômputo por classe, cabeça e valor",
+    "Termos de apoio escrito de credores representando mais de 25% dos créditos totais ou 35% dos presentes à AGC (art. 56, § 5º)",
+    "Laudo econômico comparativo entre o cenário de recuperação proposto e o cenário de liquidação falimentar (liquidation test)"
+   ],
+   "piece_ids": [
+    "objecao_plano_recuperacao",
+    "manifestacao_especifica",
+    "agravo_instrumento"
+   ],
+   "related_claims": [
+    "emp_recovery",
+    "emp_recovery_creditor"
+   ],
+   "limitation": "Apresentação do plano alternativo pelos credores no prazo peremptório de 30 dias corridos contados da deliberação assemblear que o autorizar ou do decurso do stay period (Lei 11.101/2005, art. 6º, § 4º-A, e art. 56, § 4º)."
+  },
+  {
+   "id": "emp_franchise_disclosure_circular",
+   "label": "Franquia empresarial: Circular de Oferta de Franquia (COF), anulabilidade e cláusula de não concorrência (Lei 13.966/2019)",
+   "requirements": [
+    "entrega_cof_dez_dias_antes",
+    "veracidade_informacoes_financeiras_rede",
+    "ausencia_vinculo_empregaticio",
+    "restituicao_taxas_royalties"
+   ],
+   "claimant_theses": [
+    {
+     "id": "emp_franchise_disclosure_circular.c1",
+     "label": "A não entrega da Circular de Oferta de Franquia com antecedência mínima de 10 dias antes da assinatura de contrato/pré-contrato ou do pagamento de qualquer taxa, bem como a veiculação de informações falsas na COF, acarreta anulabilidade/nulidade e restituição integral das quantias pagas a título de filiação ou royalties (Lei 13.966/2019, art. 2º, §§ 1º e 2º)",
+     "authority_ids": [
+      "l13966_art2",
+      "cc_art422"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "emp_franchise_disclosure_circular.d1",
+     "label": "Comprovado o protocolo datado da COF no prazo legal, inexiste promessa de rentabilidade garantida em contrato empresarial de risco, e eventual invocação tardia de vício formal após anos de operação normal viola a boa-fé objetiva (venire contra factum proprium / suppressio)",
+     "authority_ids": [
+      "l13966_art2",
+      "cc_art421a",
+      "cc_art422"
+     ]
+    },
+    {
+     "id": "emp_franchise_disclosure_circular.d2",
+     "label": "Exigibilidade dos royalties vencidos, da taxa de publicidade e da cláusula de não concorrência pós-contratual delimitada no tempo, espaço e objeto",
+     "authority_ids": [
+      "l13966_art2",
+      "cc_art413"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13874_liberdade_economica",
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Anulação ou declaração de nulidade do contrato de franquia com devolução atualizada da taxa inicial de franquia e dos royalties pagos, mais perdas e danos",
+    "Pela franqueadora: rescisão por culpa do franqueado, cobrança de royalties em aberto, multa contratual e tutela inibitória de descaracterização da unidade/uso de marca"
+   ],
+   "evidence": [
+    "Recibo datado de entrega da Circular de Oferta de Franquia (COF) e comprovante da data do primeiro pagamento ou assinatura de pré-contrato",
+    "Exemplar integral da COF confrontado com a real lista de franqueados desligados nos últimos 24 meses e pendências judiciais",
+    "Demonstrativos financeiros da operação franqueada, manuais de know-how e notificações de suporte"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente",
+    "contestacao",
+    "execucao_titulo_extrajudicial"
+   ],
+   "related_claims": [
+    "emp_trademark",
+    "emp_business_transfer"
+   ],
+   "limitation": "Decadência bienal para pleitear anulabilidade por vício na entrega da COF na ausência de prazo especial (CC, art. 179 — conferir distinção jurisprudencial do STJ com o prazo quadrienal do art. 178 em caso de dolo/erro substancial) e prescrição quinquenal para cobrança de royalties líquidos em contrato (CC, art. 206, § 5º, I)."
+  },
+  {
+   "id": "emp_commercial_agency_indemnity",
+   "label": "Representação comercial autônoma: rescisão imotivada, indenização de 1/12 e cláusula del credere (Lei 4.886/1965)",
+   "requirements": [
+    "ausencia_justo_motivo_art_35",
+    "calculo_1_12_todas_comissoes",
+    "vedacao_del_credere",
+    "aviso_previo_um_terco"
+   ],
+   "claimant_theses": [
+    {
+     "id": "emp_commercial_agency_indemnity.c1",
+     "label": "Na rescisão sem justo motivo pela representada (ou rescisão indireta por redução de esfera de atividade/quebra de exclusividade/atraso de comissões), é devida indenização nunca inferior a 1/12 do total da retribuição auferida durante todo o tempo em que exerceu a representação, corrigida monetariamente, além de aviso prévio e nulidade de descontos del credere (Lei 4.886/1965, arts. 27, 'j', 34 e 43)",
+     "authority_ids": [
+      "l4886_art27",
+      "cc_art422"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "emp_commercial_agency_indemnity.d1",
+     "label": "Inexistência de contrato de representação comercial (mera compra e venda mercantil para revenda/distribuição por conta própria) ou configuração de justo motivo legal do art. 35 da Lei 4.886/1965 (desídia, infração de exclusividade, atos lesivos ao crédito comercial)",
+     "authority_ids": [
+      "l4886_art27",
+      "cc_art421"
+     ]
+    },
+    {
+     "id": "emp_commercial_agency_indemnity.d2",
+     "label": "Validade de quitação ampla outorgada em distrato final após o encerramento da relação empresarial paritária, salvo vício de consentimento, e vedação de pagamentos antecipados da indenização de 1/12 na constância do vínculo",
+     "authority_ids": [
+      "cc_art421a",
+      "l4886_art27"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Condenação ao pagamento da indenização legal de 1/12 sobre todas as comissões pagas durante o período integral da representação comercial",
+    "Pagamento do aviso prévio indenizado (1/3 das comissões dos últimos três meses) e diferenças de comissões retidas ou estornadas por cláusula del credere",
+    "Exibição dos livros e relatórios de faturamento na zona de exclusividade do representante"
+   ],
+   "evidence": [
+    "Contrato escrito de representação comercial ou notas fiscais sequenciais de comissão (CNAE de representação) e registro no CORE",
+    "Todas as notas fiscais de comissões emitidas desde o início da relação contratual e extratos bancários",
+    "Notificação de rescisão contratual, e-mails comerciais sobre metas/zona de atuação e relatórios de pedidos faturados"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "acao_exigir_contas",
+    "contestacao",
+    "impugnacao_laudo"
+   ],
+   "related_claims": [
+    "civ_contract"
+   ],
+   "limitation": "Prescrição quinquenal para o representante comercial pleitear a retribuição/comissões e os direitos decorrentes da Lei 4.886/1965 (art. 44, parágrafo único), não alcançando a base histórica integral utilizada apenas como parâmetro aritmético da indenização de 1/12 nascida na rescisão (jurisprudência do STJ)."
+  },
+  {
+   "id": "emp_patent_industrial_design",
+   "label": "Patentes de invenção, desenho industrial, infração técnica e prazo de vigência pós-ADI 5529 STF",
+   "requirements": [
+    "carta_patente_ou_registro_di",
+    "novidade_atividade_inventiva",
+    "reproducao_literal_ou_equivalencia",
+    "vigencia_adi5529"
+   ],
+   "claimant_theses": [
+    {
+     "id": "emp_patent_industrial_design.c1",
+     "label": "Direito exclusivo do titular de impedir terceiros de produzir, usar, colocar à venda ou importar produto objeto de patente ou processo patenteado, por infração literal das reivindicações ou pela doutrina dos equivalentes (Lei 9.279/1996, arts. 42 e 186), cabendo tutela inibitória e perdas e danos (arts. 209 e 210)",
+     "authority_ids": [
+      "l9279_art8",
+      "l9279_art42",
+      "l9279_art209",
+      "l9279_art210"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "emp_patent_industrial_design.d1",
+     "label": "Domínio público pelo exaurimento do prazo de 20 anos (invenção) ou 15 anos (modelo de utilidade) contados do depósito, declarada inconstitucional a extensão automática do parágrafo único do art. 40 da LPI com modulação para fármacos e saúde pelo STF (ADI 5.529)",
+     "authority_ids": [
+      "adi_5529",
+      "l9279_art8"
+     ]
+    },
+    {
+     "id": "emp_patent_industrial_design.d2",
+     "label": "Ausência de novidade ou atividade inventiva (matéria arguível incidentalmente como matéria de defesa na Justiça Estadual — Súmula/jurisprudência STJ, ou em ação própria de nulidade na Justiça Federal com participação do INPI) e exceção Bolar para testes regulatórios (LPI, art. 43, VII)",
+     "authority_ids": [
+      "l9279_art8",
+      "l9279_art42"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Tutela inibitória para abstenção de fabricação e comercialização do produto contrafeito após perícia técnica nas reivindicações da carta-patente",
+    "Ação de nulidade de patente na Justiça Federal (com o INPI) por ausência de novidade, atividade inventiva ou suficiência descritiva",
+    "Indenização de perdas e danos apurada pelo critério mais favorável ao titular lesado (LPI, art. 210)"
+   ],
+   "evidence": [
+    "Carta-patente ou certificado de registro de desenho industrial com quadro reivindicatório oficial e status de anuidades no INPI",
+    "Amostras físicas dos produtos confrontados e laudo pericial de engenharia/química/farmácia analisando cada elemento das reivindicações independentes",
+    "Documentos do estado da técnica anterior à data de prioridade/depósito (anterioridades patentárias e científicas)"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente",
+    "contestacao",
+    "impugnacao_laudo"
+   ],
+   "related_claims": [
+    "emp_trademark",
+    "emp_unfair_competition"
+   ],
+   "limitation": "Ação de nulidade de patente pode ser proposta a qualquer tempo durante a vigência da patente (Lei 9.279/1996, art. 56); pretensão de reparação de danos por violação patentária prescreve em 5 anos (Lei 9.279/1996, art. 225)."
+  }
  ]
 }

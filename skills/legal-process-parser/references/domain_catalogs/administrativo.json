@@ -4,30 +4,1755 @@
  "label": "Direito Administrativo",
  "guide": "domain_guides/administrativo.md",
  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
- "polo_labels": {"claimant_theses": "Teses do autor ou requerente", "defense_theses": "Teses do réu ou requerido"},
+ "polo_labels": {
+  "claimant_theses": "Teses do autor ou requerente",
+  "defense_theses": "Teses do réu ou requerido"
+ },
  "claims": [
-  {"id": "adm_act_review", "label": "Anulação e revisão de atos administrativos", "requirements": ["ato", "competencia", "motivacao", "vicio", "decadencia"], "claimant_theses": [{"id": "adm_act_review.c1", "label": "Motivação obrigatória e princípios do processo administrativo", "authority_ids": ["l9784_art2", "l9784_art50"]}, {"id": "adm_act_review.c2", "label": "Consequências práticas e orientações da época na revisão", "authority_ids": ["lindb_art20", "lindb_art24"]}], "defense_theses": [{"id": "adm_act_review.d1", "label": "Autotutela e decadência quinquenal para anular atos favoráveis", "authority_ids": ["l9784_art53", "l9784_art54"]}], "temporal_marker_ids": ["lei_13655_lindb"], "typical_requests": ["Anulação do ato e efeitos"], "evidence": ["Processo administrativo integral e publicações"], "piece_ids": ["mandado_seguranca", "inicial_procedimento_comum", "recurso_administrativo"], "related_claims": [], "limitation": "Mandado de segurança: 120 dias da ciência (Lei 12.016/2009, art. 23)."},
-  {"id": "adm_disciplinary", "label": "Processo administrativo disciplinar", "requirements": ["portaria", "indiciacao", "defesa", "prescricao", "proporcionalidade"], "claimant_theses": [{"id": "adm_disciplinary.c1", "label": "Prescrição da ação disciplinar", "authority_ids": ["l8112_art142"]}, {"id": "adm_disciplinary.c2", "label": "Indiciação com fatos e provas especificados", "authority_ids": ["l8112_art161"]}, {"id": "adm_disciplinary.c3", "label": "Contraditório e ampla defesa (CF, art. 5º)", "authority_ids": ["cf_art5"]}], "defense_theses": [{"id": "adm_disciplinary.d1", "label": "Falta de defesa técnica por advogado não ofende a Constituição", "authority_ids": ["sv_5"]}, {"id": "adm_disciplinary.d2", "label": "Dever de apuração e penalidades legais", "authority_ids": ["l8112_art143", "l8112_art127"]}], "temporal_marker_ids": [], "typical_requests": ["Nulidade do PAD ou revisão da pena"], "evidence": ["Autos do PAD, portarias e relatório final"], "piece_ids": ["defesa_processo_disciplinar", "mandado_seguranca", "inicial_procedimento_comum"], "related_claims": [], "limitation": "conferir"},
-  {"id": "adm_improbity", "label": "Improbidade administrativa", "requirements": ["dolo_especifico", "tipo", "dano_quando_exigido", "prescricao", "sancao"], "claimant_theses": [{"id": "adm_improbity.c1", "label": "Ato doloso que causa lesão ao erário ou atenta contra os princípios", "authority_ids": ["l8429_art10", "l8429_art11"]}, {"id": "adm_improbity.c2", "label": "Sanções independem de dano, salvo ressarcimento; legitimidade e procedimento", "authority_ids": ["l8429_art21", "l8429_art17"]}], "defense_theses": [{"id": "adm_improbity.d1", "label": "Dolo específico, tipicidade estrita e lei aplicável no tempo — conferir o Tema 1199 do STF", "authority_ids": ["l8429_art1", "l8429_art10", "l8429_art11", "tema_stf_1199"]}, {"id": "adm_improbity.d2", "label": "Prescrição de oito anos", "authority_ids": ["l8429_art23"]}], "temporal_marker_ids": ["lei_14230_improbidade"], "typical_requests": ["Improcedência ou dosimetria das sanções"], "evidence": ["Processo administrativo, contratos e pareceres"], "piece_ids": ["acao_civil_publica", "contestacao_improbidade"], "related_claims": [], "limitation": "conferir"},
-  {"id": "adm_public_exam", "label": "Concurso público e provimento", "requirements": ["edital", "etapa", "criterio", "nomeacao"], "claimant_theses": [{"id": "adm_public_exam.c1", "label": "Exame psicotécnico só com previsão em lei", "authority_ids": ["sv_44"]}, {"id": "adm_public_exam.c2", "label": "Provimento em cargo de outra carreira sem concurso é inconstitucional", "authority_ids": ["sv_43"]}, {"id": "adm_public_exam.c3", "label": "Princípios da Administração e acesso por concurso (CF, art. 37)", "authority_ids": ["cf_art37"]}], "defense_theses": [{"id": "adm_public_exam.d1", "label": "Mérito administrativo e vinculação ao edital", "authority_ids": ["cf_art37"]}], "temporal_marker_ids": [], "typical_requests": ["Nomeação, reclassificação ou anulação de etapa"], "evidence": ["Edital, resultados e recursos"], "piece_ids": ["mandado_seguranca", "inicial_procedimento_comum"], "related_claims": [], "limitation": "conferir"},
-  {"id": "adm_nepotism", "label": "Nepotismo", "requirements": ["parentesco", "cargo", "autoridade_nomeante"], "claimant_theses": [{"id": "adm_nepotism.c1", "label": "Nomeação de parentes até o terceiro grau viola a Constituição", "authority_ids": ["sv_13"]}], "defense_theses": [{"id": "adm_nepotism.d1", "label": "Cargo político ou ausência de vínculo de designação", "authority_ids": ["sv_13"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["acao_popular", "acao_civil_publica", "mandado_seguranca"], "related_claims": [], "limitation": "conferir"},
-  {"id": "adm_procurement", "label": "Licitações, contratos e sanções", "requirements": ["regime_legal", "procedimento", "infracao", "sancao", "recurso"], "claimant_theses": [{"id": "adm_procurement.c1", "label": "Princípios e recurso contra atos da licitação", "authority_ids": ["l14133_art5", "l14133_art165"]}], "defense_theses": [{"id": "adm_procurement.d1", "label": "Infrações e sanções administrativas", "authority_ids": ["l14133_art155", "l14133_art156"]}], "temporal_marker_ids": ["lei_14133_licitacoes"], "typical_requests": ["Anulação de ato, contratação ou sanção"], "evidence": ["Edital, atas, propostas e contrato"], "piece_ids": ["recurso_administrativo", "mandado_seguranca"], "related_claims": [], "limitation": "conferir"},
-  {"id": "adm_tcu", "label": "Processos nos tribunais de contas", "requirements": ["ato", "efeito_sobre_interessado", "defesa"], "claimant_theses": [{"id": "adm_tcu.c1", "label": "Contraditório e ampla defesa quando a decisão afetar o interessado", "authority_ids": ["sv_3"]}], "defense_theses": [{"id": "adm_tcu.d1", "label": "Registro inicial de aposentadoria e exceções do enunciado", "authority_ids": ["sv_3"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["mandado_seguranca"], "related_claims": [], "limitation": "conferir"},
-  {"id": "adm_admin_appeal", "label": "Recurso administrativo e depósito prévio", "requirements": ["decisao", "prazo", "exigencia_previa"], "claimant_theses": [{"id": "adm_admin_appeal.c1", "label": "Depósito ou arrolamento prévio para recorrer é inconstitucional", "authority_ids": ["sv_21"]}, {"id": "adm_admin_appeal.c2", "label": "Prazo e cabimento do recurso", "authority_ids": ["l9784_art56", "l9784_art59"]}], "defense_theses": [{"id": "adm_admin_appeal.d1", "label": "Intempestividade ou matéria preclusa", "authority_ids": ["l9784_art59"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["recurso_administrativo"], "related_claims": [], "limitation": "conferir"},
-  {"id": "adm_popular_action", "label": "Ação popular", "requirements": ["cidadao", "ato_lesivo", "patrimonio_publico"], "claimant_theses": [{"id": "adm_popular_action.c1", "label": "Anulação de ato lesivo ao patrimônio público", "authority_ids": ["l4717_art1", "l4717_art5"]}], "defense_theses": [{"id": "adm_popular_action.d1", "label": "Ausência de lesividade ou ilegalidade", "authority_ids": ["l4717_art1"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["acao_popular"], "related_claims": [], "limitation": "conferir"},
-  {"id": "adm_writ", "label": "Mandado de segurança", "requirements": ["direito_liquido_certo", "autoridade", "prazo", "prova_preconstituida"], "claimant_theses": [{"id": "adm_writ.c1", "label": "Direito líquido e certo violado por autoridade", "authority_ids": ["l12016_art1"]}], "defense_theses": [{"id": "adm_writ.d1", "label": "Decadência de 120 dias e necessidade de dilação probatória", "authority_ids": ["l12016_art23"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["mandado_seguranca"], "related_claims": [], "limitation": "conferir"},
-  {"id": "adm_military_reform", "label": "Militar: reforma por incapacidade e reintegração", "requirements": ["incapacidade_definitiva", "nexo_com_o_servico", "tempo_de_servico", "inspecao_de_saude"], "claimant_theses": [{"id": "adm_military_reform.c1", "label": "Reforma por incapacidade definitiva com proventos conforme a causa", "authority_ids": ["l6880_art106", "l6880_art108", "l6880_art110"]}, {"id": "adm_military_reform.c2", "label": "Reintegração como adido para tratamento quando a doença eclode no serviço", "authority_ids": ["l6880_art50"]}], "defense_theses": [{"id": "adm_military_reform.d1", "label": "Militar temporário: requisitos próprios após a alteração legal — conferir a redação vigente", "authority_ids": ["l6880_art108"]}, {"id": "adm_military_reform.d2", "label": "Ausência de nexo com o serviço e capacidade para a vida civil", "authority_ids": ["l6880_art108", "l6880_art110"]}], "temporal_marker_ids": [], "typical_requests": ["Reforma", "Reintegração para tratamento", "Diferenças de proventos"], "evidence": ["Atas de inspeção de saúde", "Sindicância ou atestado de origem", "Laudos e prontuários"], "piece_ids": ["inicial_procedimento_comum", "mandado_seguranca", "requerimento_administrativo", "tutela_urgencia_antecedente"], "related_claims": ["adm_server_rights"], "limitation": "Prescrição quinquenal contra a Fazenda — conferir (Decreto 20.910/1932)"},
-  {"id": "adm_state_liability", "label": "Responsabilidade civil do Estado", "requirements": ["conduta_estatal", "dano", "nexo", "excludentes"], "claimant_theses": [{"id": "adm_state_liability.c1", "label": "Responsabilidade objetiva por ato de agente público", "authority_ids": ["cf_art37", "cc_art927"]}, {"id": "adm_state_liability.c2", "label": "Morte de detento e condições degradantes de custódia", "authority_ids": ["tema_stf_592", "tema_stf_365"]}], "defense_theses": [{"id": "adm_state_liability.d1", "label": "Culpa exclusiva da vítima, fato de terceiro ou força maior", "authority_ids": ["cf_art37"]}, {"id": "adm_state_liability.d2", "label": "Omissão genérica exige prova de culpa do serviço", "authority_ids": ["cf_art37"]}, {"id": "adm_state_liability.d3", "label": "Prescrição quinquenal", "authority_ids": ["d20910_art1"]}], "temporal_marker_ids": [], "typical_requests": ["Dano material e moral", "Pensão"], "evidence": ["Prova do fato e do nexo", "Laudos", "Registros do órgão"], "piece_ids": ["inicial_procedimento_comum", "inicial_juizado", "apelacao_civel"], "related_claims": ["adm_act_review"], "limitation": "Cinco anos (Decreto 20.910/1932, art. 1º)"},
-  {"id": "adm_server_rights", "label": "Direitos do servidor: remoção, estágio probatório e vantagens", "requirements": ["vinculo", "ato_impugnado", "requisitos_legais", "prazo"], "claimant_theses": [{"id": "adm_server_rights.c1", "label": "Remoção para acompanhar cônjuge ou por saúde independe do interesse da administração", "authority_ids": ["l8112_art36"]}, {"id": "adm_server_rights.c2", "label": "Avaliação do estágio probatório com contraditório", "authority_ids": ["l8112_art20", "cf_art41"]}, {"id": "adm_server_rights.c3", "label": "Relação de trato sucessivo: prescrevem apenas as parcelas anteriores ao quinquênio", "authority_ids": ["stj_sumula_85", "d20910_art1"]}], "defense_theses": [{"id": "adm_server_rights.d1", "label": "Ato único de efeitos concretos: prescrição do fundo de direito", "authority_ids": ["d20910_art1", "l8112_art110"]}, {"id": "adm_server_rights.d2", "label": "Vedação de aumento por isonomia pelo Judiciário", "authority_ids": ["sv_37"]}], "temporal_marker_ids": [], "typical_requests": ["Anulação do ato", "Pagamento de diferenças", "Remoção"], "evidence": ["Ficha funcional", "Processo administrativo", "Laudos e certidões"], "piece_ids": ["mandado_seguranca", "inicial_procedimento_comum", "requerimento_administrativo", "recurso_administrativo"], "related_claims": ["adm_disciplinary"], "limitation": "Cinco anos — conferir"},
-  {"id": "adm_disciplinary_defense", "label": "PAD: prescrição, prova e proporcionalidade", "requirements": ["ciencia_da_autoridade", "instauracao", "portaria", "provas", "penalidade"], "claimant_theses": [{"id": "adm_disciplinary_defense.c1", "label": "Prescrição da pretensão punitiva contada do conhecimento do fato", "authority_ids": ["l8112_art142", "stj_sumula_635"]}, {"id": "adm_disciplinary_defense.c2", "label": "Penalidade deve considerar natureza, gravidade e antecedentes", "authority_ids": ["l8112_art128"]}, {"id": "adm_disciplinary_defense.c3", "label": "Julgamento contrário às provas dos autos", "authority_ids": ["l8112_art168", "l8112_art156"]}], "defense_theses": [{"id": "adm_disciplinary_defense.d1", "label": "Excesso de prazo só anula com prejuízo demonstrado", "authority_ids": ["stj_sumula_592", "l8112_art152"]}, {"id": "adm_disciplinary_defense.d2", "label": "Prova emprestada e denúncia anônima são admitidas com contraditório", "authority_ids": ["stj_sumula_591", "stj_sumula_611"]}, {"id": "adm_disciplinary_defense.d3", "label": "Demissão é vinculada quando configurada a hipótese legal", "authority_ids": ["stj_sumula_650", "l8112_art132"]}, {"id": "adm_disciplinary_defense.d4", "label": "Defesa técnica por advogado não é obrigatória", "authority_ids": ["sv_5"]}], "temporal_marker_ids": [], "typical_requests": ["Anulação da penalidade", "Reintegração com efeitos financeiros", "Revisão do processo"], "evidence": ["Autos integrais do PAD", "Portaria e publicações", "Provas da defesa indeferidas"], "piece_ids": ["defesa_processo_disciplinar", "recurso_administrativo", "mandado_seguranca", "inicial_procedimento_comum"], "related_claims": ["adm_disciplinary"], "limitation": "Mandado de segurança em 120 dias; revisão a qualquer tempo com fato novo (Lei 8.112/1990, art. 174)"},
-  {"id": "adm_improbity_defense", "label": "Improbidade: dolo, prescrição e acordo", "requirements": ["tipo_imputado", "dolo_especifico", "dano_efetivo", "marco_prescricional"], "claimant_theses": [{"id": "adm_improbity_defense.c1", "label": "Exigência de dolo específico e de dano efetivo nas hipóteses do art. 10", "authority_ids": ["l8429_art1", "l8429_art10"]}, {"id": "adm_improbity_defense.c2", "label": "Prescrição de oito anos e prescrição intercorrente", "authority_ids": ["l8429_art23"]}, {"id": "adm_improbity_defense.c3", "label": "Acordo de não persecução civil", "authority_ids": ["l8429_art17b"]}], "defense_theses": [{"id": "adm_improbity_defense.d1", "label": "Retroatividade limitada da lei nova conforme o Tema 1199", "authority_ids": ["tema_stf_1199"]}, {"id": "adm_improbity_defense.d2", "label": "Ressarcimento por ato doloso de improbidade é imprescritível", "authority_ids": ["tema_stf_897"]}, {"id": "adm_improbity_defense.d3", "label": "Indisponibilidade de bens para garantir o ressarcimento", "authority_ids": ["l8429_art16"]}], "temporal_marker_ids": ["lei_14230_improbidade"], "typical_requests": ["Rejeição da inicial", "Improcedência", "Homologação de acordo"], "evidence": ["Inicial e documentos", "Prova da ausência de dolo e de dano", "Datas dos fatos e do ajuizamento"], "piece_ids": ["contestacao_improbidade", "acordo_nao_persecucao_civil", "agravo_instrumento", "apelacao_civel"], "related_claims": ["adm_improbity"], "limitation": "Oito anos do fato (Lei 8.429/1992, art. 23) — conferir a aplicação intertemporal"},
-  {"id": "adm_bidding_challenge", "label": "Licitação: impugnação, desclassificação e contratação direta", "requirements": ["edital", "fase", "ato_impugnado", "prazo"], "claimant_theses": [{"id": "adm_bidding_challenge.c1", "label": "Impugnação ao edital por restrição indevida à competitividade", "authority_ids": ["l14133_art164", "l14133_art5"]}, {"id": "adm_bidding_challenge.c2", "label": "Desclassificação ou inabilitação sem diligência para sanar falha formal", "authority_ids": ["l14133_art59", "l14133_art165"]}, {"id": "adm_bidding_challenge.c3", "label": "Anulação por ilegalidade com contraditório", "authority_ids": ["l14133_art71"]}], "defense_theses": [{"id": "adm_bidding_challenge.d1", "label": "Vinculação ao edital e julgamento objetivo", "authority_ids": ["l14133_art5"]}, {"id": "adm_bidding_challenge.d2", "label": "Contratação direta nas hipóteses legais com processo instruído", "authority_ids": ["l14133_art74", "l14133_art75"]}], "temporal_marker_ids": ["lei_14133_licitacoes"], "typical_requests": ["Suspensão do certame", "Reclassificação", "Anulação do ato"], "evidence": ["Edital e anexos", "Atas e pareceres", "Proposta e documentos de habilitação"], "piece_ids": ["impugnacao_edital_licitacao", "mandado_seguranca", "recurso_administrativo", "tutela_urgencia_antecedente"], "related_claims": ["adm_procurement"], "limitation": "Impugnação até três dias úteis antes da abertura; recurso em três dias úteis — conferir"},
-  {"id": "adm_contract_balance", "label": "Contrato administrativo: reequilíbrio, extinção e sanções", "requirements": ["contrato", "fato_gerador", "matriz_de_riscos", "processo"], "claimant_theses": [{"id": "adm_contract_balance.c1", "label": "Reequilíbrio por fato imprevisível ou fato do príncipe", "authority_ids": ["l14133_art124"]}, {"id": "adm_contract_balance.c2", "label": "Sanção exige processo de responsabilização com defesa", "authority_ids": ["l14133_art158", "l14133_art156"]}, {"id": "adm_contract_balance.c3", "label": "Nulidade do contrato só após avaliação do interesse público", "authority_ids": ["l14133_art147"]}], "defense_theses": [{"id": "adm_contract_balance.d1", "label": "Risco atribuído ao contratado na matriz", "authority_ids": ["l14133_art124"]}, {"id": "adm_contract_balance.d2", "label": "Prerrogativas de alteração e extinção unilateral", "authority_ids": ["l14133_art104", "l14133_art137"]}], "temporal_marker_ids": ["lei_14133_licitacoes"], "typical_requests": ["Reequilíbrio", "Anulação de sanção", "Reabilitação"], "evidence": ["Contrato e aditivos", "Planilhas de custo", "Processo sancionador"], "piece_ids": ["requerimento_administrativo", "recurso_administrativo", "mandado_seguranca", "inicial_procedimento_comum"], "related_claims": ["adm_procurement"], "limitation": "Cinco anos — conferir"},
-  {"id": "adm_anticorruption", "label": "Lei Anticorrupção e acordo de leniência", "requirements": ["ato_lesivo", "interesse_ou_beneficio", "programa_de_integridade"], "claimant_theses": [{"id": "adm_anticorruption.c1", "label": "Dosimetria considera programa de integridade e cooperação", "authority_ids": ["l12846_art6"]}, {"id": "adm_anticorruption.c2", "label": "Acordo de leniência com redução de sanções", "authority_ids": ["l12846_art16"]}], "defense_theses": [{"id": "adm_anticorruption.d1", "label": "Responsabilidade objetiva da pessoa jurídica pelos atos lesivos", "authority_ids": ["l12846_art1", "l12846_art5"]}], "temporal_marker_ids": [], "typical_requests": ["Redução da multa", "Celebração de acordo"], "evidence": ["Processo de responsabilização", "Evidências do programa de integridade"], "piece_ids": ["recurso_administrativo", "requerimento_administrativo", "inicial_procedimento_comum"], "related_claims": ["adm_procurement", "adm_improbity"], "limitation": "Cinco anos — conferir (Lei 12.846/2013, art. 25)"},
-  {"id": "adm_expropriation", "label": "Desapropriação e indenização", "requirements": ["decreto", "oferta", "imissao", "avaliacao"], "claimant_theses": [{"id": "adm_expropriation.c1", "label": "Justa indenização apurada em perícia, com juros e correção", "authority_ids": ["dl3365_art27", "cf_art5"]}, {"id": "adm_expropriation.c2", "label": "Imissão provisória depende de depósito", "authority_ids": ["dl3365_art15"]}], "defense_theses": [{"id": "adm_expropriation.d1", "label": "Contestação limitada a vício do processo e ao preço", "authority_ids": ["dl3365_art20"]}], "temporal_marker_ids": [], "typical_requests": ["Complementação do depósito", "Indenização do fundo de comércio na via própria", "Juros compensatórios e moratórios conforme a decisão vigente"], "evidence": ["Decreto e laudo administrativo", "Laudo de avaliação", "Matrícula e benfeitorias"], "piece_ids": ["contestacao", "impugnacao_laudo", "apelacao_civel"], "related_claims": ["adm_act_review"], "limitation": "Desapropriação indireta: conferir o prazo fixado pelo STJ"},
-  {"id": "adm_public_service", "label": "Concessões e serviço público adequado", "requirements": ["contrato_de_concessao", "falha_do_servico", "tarifa"], "claimant_theses": [{"id": "adm_public_service.c1", "label": "Serviço adequado: regularidade, continuidade e modicidade", "authority_ids": ["l8987_art6", "cdc_art22"]}, {"id": "adm_public_service.c2", "label": "Revisão da tarifa para manter o equilíbrio", "authority_ids": ["l8987_art9"]}], "defense_theses": [{"id": "adm_public_service.d1", "label": "Interrupção por razões técnicas ou inadimplemento com aviso", "authority_ids": ["l8987_art6"]}, {"id": "adm_public_service.d2", "label": "Caducidade por inexecução após processo", "authority_ids": ["l8987_art38"]}], "temporal_marker_ids": [], "typical_requests": ["Obrigação de regularizar o serviço", "Indenização", "Revisão tarifária"], "evidence": ["Contrato e relatórios da agência", "Registros de interrupção"], "piece_ids": ["inicial_procedimento_comum", "acao_civil_publica", "mandado_seguranca"], "related_claims": ["cons_essential_service"], "limitation": "Conferir"},
-  {"id": "adm_information_access", "label": "Acesso à informação", "requirements": ["pedido", "orgao", "negativa", "classificacao"], "claimant_theses": [{"id": "adm_information_access.c1", "label": "Acesso é a regra; negativa deve ser motivada e recorrível", "authority_ids": ["l12527_art10", "l12527_art11", "l12527_art15"]}], "defense_theses": [{"id": "adm_information_access.d1", "label": "Informação pessoal ou sigilosa classificada", "authority_ids": ["l12527_art31"]}], "temporal_marker_ids": [], "typical_requests": ["Fornecimento da informação", "Desclassificação"], "evidence": ["Protocolo do pedido", "Resposta e recursos"], "piece_ids": ["requerimento_administrativo", "recurso_administrativo", "mandado_seguranca", "habeas_data"], "related_claims": ["const_habeas_data"], "limitation": "Recurso em dez dias da ciência (Lei 12.527/2011, art. 15)"},
-  {"id": "adm_accounts_defense", "label": "Defesa em tomada de contas e prescrição", "requirements": ["citacao", "conduta", "dano", "marco_inicial"], "claimant_theses": [{"id": "adm_accounts_defense.c1", "label": "Pretensão de ressarcimento fundada em decisão de tribunal de contas é prescritível", "authority_ids": ["tema_stf_899"]}, {"id": "adm_accounts_defense.c2", "label": "Contraditório quando a decisão puder anular ato que beneficie o interessado", "authority_ids": ["sv_3"]}], "defense_theses": [{"id": "adm_accounts_defense.d1", "label": "Julgamento pela irregularidade com débito e multa", "authority_ids": ["l8443_art16", "l8443_art57"]}], "temporal_marker_ids": [], "typical_requests": ["Reconhecimento da prescrição", "Regularidade das contas", "Recurso de reconsideração"], "evidence": ["Citação e relatório de auditoria", "Documentos da execução do objeto", "Cronologia dos atos"], "piece_ids": ["recurso_administrativo", "mandado_seguranca", "inicial_procedimento_comum"], "related_claims": ["adm_tcu"], "limitation": "Recurso de reconsideração em quinze dias (Lei 8.443/1992, art. 33) — conferir"},
-  {"id": "adm_silence_delay", "label": "Silêncio administrativo e demora em decidir", "requirements": ["requerimento", "instrucao_concluida", "prazo_decorrido"], "claimant_theses": [{"id": "adm_silence_delay.c1", "label": "Dever de decidir em trinta dias após a instrução", "authority_ids": ["l9784_art48", "l9784_art49"]}, {"id": "adm_silence_delay.c2", "label": "Duração razoável do processo", "authority_ids": ["cf_art5"]}], "defense_theses": [{"id": "adm_silence_delay.d1", "label": "Instrução pendente por providência do interessado", "authority_ids": ["l9784_art49"]}], "temporal_marker_ids": [], "typical_requests": ["Ordem para decidir em prazo certo"], "evidence": ["Protocolo e andamentos"], "piece_ids": ["mandado_seguranca", "requerimento_administrativo"], "related_claims": ["adm_act_review"], "limitation": "Mandado de segurança contra omissão continuada — conferir"}
+  {
+   "id": "adm_act_review",
+   "label": "Anulação e revisão de atos administrativos",
+   "requirements": [
+    "ato",
+    "competencia",
+    "motivacao",
+    "vicio",
+    "decadencia"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_act_review.c1",
+     "label": "Motivação obrigatória e princípios do processo administrativo",
+     "authority_ids": [
+      "l9784_art2",
+      "l9784_art50"
+     ]
+    },
+    {
+     "id": "adm_act_review.c2",
+     "label": "Consequências práticas e orientações da época na revisão",
+     "authority_ids": [
+      "lindb_art20",
+      "lindb_art24"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_act_review.d1",
+     "label": "Autotutela e decadência quinquenal para anular atos favoráveis",
+     "authority_ids": [
+      "l9784_art53",
+      "l9784_art54"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13655_lindb",
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Anulação do ato e efeitos",
+    "Declaração de nulidade do ato administrativo ilegal ou eivado de desvio de finalidade com restabelecimento da situação anterior",
+    "Modulação ou indicação expressa das condições de regularização proporcional nos termos dos arts. 20 e 21 da LINDB"
+   ],
+   "evidence": [
+    "Processo administrativo integral e publicações",
+    "Pareceres jurídicos, notas técnicas e motivação explícita (teoria dos motivos determinantes — Lei 9.784/1999, art. 50)",
+    "Comprovantes de boa-fé e do decurso temporal para aferição da decadência autotutelar"
+   ],
+   "piece_ids": [
+    "mandado_seguranca",
+    "inicial_procedimento_comum",
+    "recurso_administrativo"
+   ],
+   "related_claims": [],
+   "limitation": "Decadência quinquenal para a Administração anular atos favoráveis aos destinatários de boa-fé (Lei 9.784/1999, art. 54; Súmula 633 do STJ na ausência de lei local); para o administrado, mandado de segurança em 120 dias da ciência (Lei 12.016/2009, art. 23) e ação anulatória/ordinária em 5 anos (Decreto 20.910/1932, art. 1º)."
+  },
+  {
+   "id": "adm_disciplinary",
+   "label": "Processo administrativo disciplinar",
+   "requirements": [
+    "portaria",
+    "indiciacao",
+    "defesa",
+    "prescricao",
+    "proporcionalidade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_disciplinary.c1",
+     "label": "Prescrição da ação disciplinar",
+     "authority_ids": [
+      "l8112_art142"
+     ]
+    },
+    {
+     "id": "adm_disciplinary.c2",
+     "label": "Indiciação com fatos e provas especificados",
+     "authority_ids": [
+      "l8112_art161"
+     ]
+    },
+    {
+     "id": "adm_disciplinary.c3",
+     "label": "Contraditório e ampla defesa (CF, art. 5º)",
+     "authority_ids": [
+      "cf_art5"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_disciplinary.d1",
+     "label": "Falta de defesa técnica por advogado não ofende a Constituição",
+     "authority_ids": [
+      "sv_5"
+     ]
+    },
+    {
+     "id": "adm_disciplinary.d2",
+     "label": "Dever de apuração e penalidades legais",
+     "authority_ids": [
+      "l8112_art143",
+      "l8112_art127"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13655_lindb",
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Nulidade do PAD ou revisão da pena",
+    "Substituição de pena expulsiva de demissão por penalidade menos gravosa quando desproporcional à natureza e gravidade da infração e aos bons antecedentes (Lei 8.112/1990, art. 128; jurisprudência do STJ sobre controle vinculado de proporcionalidade)",
+    "Reintegração ao cargo público com ressarcimento de todas as vantagens desde o desligamento ilegal (art. 28)"
+   ],
+   "evidence": [
+    "Autos do PAD, portarias e relatório final",
+    "Mídias dos depoimentos testemunhais e interrogatório, demonstrando eventual inversão da ordem legal ou ausência de defesa técnica se prejuízo (SV 5)",
+    "Assentamentos funcionais comprovando primariedade disciplinar e ausência de dano ao erário ou corrupção"
+   ],
+   "piece_ids": [
+    "defesa_processo_disciplinar",
+    "mandado_seguranca",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [],
+   "limitation": "Prescrição disciplinar no regime federal em 5 anos (demissão/cassação), 2 anos (suspensão) ou 180 dias (advertência) contados da ciência do fato pela autoridade instauradora, interrompida pela instauração de sindicância punitiva ou PAD e voltando a correr por inteiro após 140 dias (Lei 8.112/1990, art. 142; Súmula 635 do STJ; ou prazos da lei penal se crime — § 2º); ação judicial em 5 anos da publicação da punição (Decreto 20.910/1932) ou MS em 120 dias."
+  },
+  {
+   "id": "adm_improbity",
+   "label": "Improbidade administrativa",
+   "requirements": [
+    "dolo_especifico",
+    "tipo",
+    "dano_quando_exigido",
+    "prescricao",
+    "sancao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_improbity.c1",
+     "label": "Ato doloso que causa lesão ao erário ou atenta contra os princípios",
+     "authority_ids": [
+      "l8429_art10",
+      "l8429_art11"
+     ]
+    },
+    {
+     "id": "adm_improbity.c2",
+     "label": "Sanções independem de dano, salvo ressarcimento; legitimidade e procedimento",
+     "authority_ids": [
+      "l8429_art21",
+      "l8429_art17"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_improbity.d1",
+     "label": "Dolo específico, tipicidade estrita e lei aplicável no tempo — conferir o Tema 1199 do STF",
+     "authority_ids": [
+      "l8429_art1",
+      "l8429_art10",
+      "l8429_art11",
+      "tema_stf_1199"
+     ]
+    },
+    {
+     "id": "adm_improbity.d2",
+     "label": "Prescrição de oito anos",
+     "authority_ids": [
+      "l8429_art23"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14230_improbidade",
+    "lei_13655_lindb"
+   ],
+   "typical_requests": [
+    "Improcedência ou dosimetria das sanções",
+    "Rejeição da ação por ausência de descrição individualizada de dolo específico (fim ilícito especial) ou por atipicidade superveniente pós-Lei 14.230/2021 (Tema 1199 do STF)",
+    "Absolvição quanto ao art. 10 na ausência de efetiva e comprovada perda patrimonial ao erário ou quanto ao art. 11 fora do rol taxativo legal"
+   ],
+   "evidence": [
+    "Processo administrativo, contratos e pareceres",
+    "Demonstração de divergência interpretativa plausível na jurisprudência/órgãos de controle (Lei 8.429/1992, art. 1º, § 8º) e efetiva prestação dos serviços contratados",
+    "Autos do inquérito civil e laudo contábil aferindo inexistência de enriquecimento ilícito ou superfaturamento"
+   ],
+   "piece_ids": [
+    "acao_civil_publica",
+    "contestacao_improbidade"
+   ],
+   "related_claims": [],
+   "limitation": "Pós-Lei 14.230/2021, prescrição única de 8 anos contados da ocorrência do fato ou, nas infrações permanentes, do dia em que cessou a permanência, com prescrição intercorrente de 4 anos entre os marcos interruptivos (Lei 8.429/1992, art. 23, §§ 4º e 5º), irretroativa porém aos processos em curso antes de 26/10/2021 conforme o Tema 1199 do STF; ressarcimento ao erário imprescritível apenas para ato doloso de improbidade (Tema 897 do STF)."
+  },
+  {
+   "id": "adm_public_exam",
+   "label": "Concurso público e provimento",
+   "requirements": [
+    "edital",
+    "etapa",
+    "criterio",
+    "nomeacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_public_exam.c1",
+     "label": "Exame psicotécnico só com previsão em lei",
+     "authority_ids": [
+      "sv_44"
+     ]
+    },
+    {
+     "id": "adm_public_exam.c2",
+     "label": "Provimento em cargo de outra carreira sem concurso é inconstitucional",
+     "authority_ids": [
+      "sv_43"
+     ]
+    },
+    {
+     "id": "adm_public_exam.c3",
+     "label": "Princípios da Administração e acesso por concurso (CF, art. 37)",
+     "authority_ids": [
+      "cf_art37"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_public_exam.d1",
+     "label": "Mérito administrativo e vinculação ao edital",
+     "authority_ids": [
+      "cf_art37"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Nomeação, reclassificação ou anulação de etapa",
+    "Direito subjetivo à nomeação de aprovado dentro do número de vagas do edital ou preterição arbitrária e imotivada de aprovado em cadastro de reserva durante a validade do certame (Tema 784 do STF)",
+    "Anulação exclusiva de questão objetiva com erro grosseiro de cobrança de conteúdo fora do edital (Tema 485 do STF) ou de eliminação desproporcional em exame médico/psicotécnico sem critérios objetivos previstos em lei (SV 44)"
+   ],
+   "evidence": [
+    "Edital, resultados e recursos",
+    "Comprovantes de contratações precárias/terceirizadas para exercer as mesmas atribuições havendo cargos vagos e candidatos aprovados no prazo de validade",
+    "Laudos médicos e perícia judicial contraditória na fase de avaliação de saúde ou biopsicossocial PCD"
+   ],
+   "piece_ids": [
+    "mandado_seguranca",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [],
+   "limitation": "Mandado de segurança em 120 dias do ato eliminatório ou do término do prazo de validade do concurso sem nomeação do aprovado dentro das vagas (Lei 12.016/2009, art. 23); ação ordinária em 5 anos (Decreto 20.910/1932, art. 1º; ou prazo menor se lei específica local para certames, conferir)."
+  },
+  {
+   "id": "adm_nepotism",
+   "label": "Nepotismo",
+   "requirements": [
+    "parentesco",
+    "cargo",
+    "autoridade_nomeante"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_nepotism.c1",
+     "label": "Nomeação de parentes até o terceiro grau viola a Constituição",
+     "authority_ids": [
+      "sv_13"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_nepotism.d1",
+     "label": "Cargo político ou ausência de vínculo de designação",
+     "authority_ids": [
+      "sv_13"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14230_improbidade"
+   ],
+   "typical_requests": [
+    "Declaração de nulidade do ato de nomeação ou designação de cônjuge, companheiro ou parente até o terceiro grau para cargo em comissão, função de confiança ou ajuste cruzado (Súmula Vinculante 13)",
+    "Exoneração imediata do servidor irregularmente investido sob pena de multa e apuração de responsabilidade nos casos de nepotismo doloso (Lei 8.429/1992, art. 11, XI)",
+    "Pela defesa: reconhecimento da distinção consolidada pelo STF quanto aos cargos de natureza estritamente política (Secretários de Estado ou Município), desde que presente qualificação técnica e ausente fraude/troca de favores"
+   ],
+   "evidence": [
+    "Certidões do Registro Civil comprovando o vínculo conjugal ou parentesco consanguíneo ou por afinidade até o 3º grau",
+    "Portarias de nomeação, organograma hierárquico do órgão público e atos de reciprocidade em nepotismo cruzado",
+    "Currículo, formação acadêmica e experiência profissional quando discutida nomeação para cargo de agente político"
+   ],
+   "piece_ids": [
+    "acao_popular",
+    "acao_civil_publica",
+    "mandado_seguranca"
+   ],
+   "related_claims": [],
+   "limitation": "Reclamação constitucional ao STF contra ato administrativo que contrarie a Súmula Vinculante 13 exige prévio esgotamento da via administrativa (Lei 11.417/2006, art. 7º, § 1º); ação popular prescreve em 5 anos (Lei 4.717/1965, art. 21) e ação de improbidade em 8 anos na vigência da Lei 14.230/2021."
+  },
+  {
+   "id": "adm_procurement",
+   "label": "Licitações, contratos e sanções",
+   "requirements": [
+    "regime_legal",
+    "procedimento",
+    "infracao",
+    "sancao",
+    "recurso"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_procurement.c1",
+     "label": "Princípios e recurso contra atos da licitação",
+     "authority_ids": [
+      "l14133_art5",
+      "l14133_art165"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_procurement.d1",
+     "label": "Infrações e sanções administrativas",
+     "authority_ids": [
+      "l14133_art155",
+      "l14133_art156"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14133_licitacoes",
+    "lei_13655_lindb"
+   ],
+   "typical_requests": [
+    "Anulação de ato, contratação ou sanção",
+    "Observância do princípio do formalismo moderado e realização de diligência saneadora sobre documentos preexistentes na habilitação (Lei 14.133/2021, art. 64)",
+    "Revisão ou anulação de penalidade de impedimento de licitar ou declaração de inidoneidade desproporcional (arts. 155 e 156)"
+   ],
+   "evidence": [
+    "Edital, atas, propostas e contrato",
+    "Processo administrativo licitatório ou sancionador integral, parecer da assessoria jurídica e matriz de riscos contratual",
+    "Documentos comprobatórios da exequibilidade da proposta ou da preexistência da condição habilitatória"
+   ],
+   "piece_ids": [
+    "recurso_administrativo",
+    "mandado_seguranca"
+   ],
+   "related_claims": [],
+   "limitation": "Prescrição da pretensão punitiva sancionatória em licitações e contratos em 5 anos contados da ciência da infração pela Administração, com prescrição intercorrente em 3 anos de paralisação (Lei 14.133/2021, art. 158, § 4º); mandado de segurança em 120 dias e ação ordinária em 5 anos (Decreto 20.910/1932, art. 1º)."
+  },
+  {
+   "id": "adm_tcu",
+   "label": "Processos nos tribunais de contas",
+   "requirements": [
+    "ato",
+    "efeito_sobre_interessado",
+    "defesa"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_tcu.c1",
+     "label": "Contraditório e ampla defesa quando a decisão afetar o interessado",
+     "authority_ids": [
+      "sv_3"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_tcu.d1",
+     "label": "Registro inicial de aposentadoria e exceções do enunciado",
+     "authority_ids": [
+      "sv_3"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13655_lindb"
+   ],
+   "typical_requests": [
+    "Concessão de segurança para assegurar contraditório e ampla defesa quando o ato do Tribunal de Contas anular ou revogar ato administrativo que repercuta sobre terceiro (salvo apreciação inicial da legalidade de concessão de aposentadoria/reforma/pensão dentro de 5 anos — Súmula Vinculante 3 e Tema 445 do STF)",
+    "Reconhecimento da prescrição das pretensões punitiva e de ressarcimento ao erário no TCU (Tema 899 do STF e Resolução TCU 344/2022)",
+    "Suspensão de acórdão de desconsideração da personalidade jurídica ou inidoneidade por ausência de dolo/erro grosseiro (LINDB, art. 28)"
+   ],
+   "evidence": [
+    "Inteiro teor do acórdão, relatório técnico e voto proferidos pelo Tribunal de Contas e data de chegada do ato concessório à Corte de Contas (Tema 445 STF)",
+    "Cronologia integral dos eventos auditados e das movimentações internas para cálculo da prescrição quinquenal e intercorrente trienal",
+    "Prestação de contas, notas fiscais, termos de recebimento de obra/convênio e pareceres técnicos à época"
+   ],
+   "piece_ids": [
+    "mandado_seguranca"
+   ],
+   "related_claims": [],
+   "limitation": "Registro tácito da aposentadoria/pensão/reforma se o Tribunal de Contas não julgar sua legalidade em 5 anos contados da chegada do processo à Corte de Contas (Tema 445 do STF); prescrição punitiva e ressarcitória no TCU em 5 anos e intercorrente em 3 anos sob o regime da Lei 9.873/1999 (STF MS 32.201 / Tema 899); mandado de segurança ao STF contra ato do TCU em 120 dias (CF, art. 102, I, 'd')."
+  },
+  {
+   "id": "adm_admin_appeal",
+   "label": "Recurso administrativo e depósito prévio",
+   "requirements": [
+    "decisao",
+    "prazo",
+    "exigencia_previa"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_admin_appeal.c1",
+     "label": "Depósito ou arrolamento prévio para recorrer é inconstitucional",
+     "authority_ids": [
+      "sv_21"
+     ]
+    },
+    {
+     "id": "adm_admin_appeal.c2",
+     "label": "Prazo e cabimento do recurso",
+     "authority_ids": [
+      "l9784_art56",
+      "l9784_art59"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_admin_appeal.d1",
+     "label": "Intempestividade ou matéria preclusa",
+     "authority_ids": [
+      "l9784_art59"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Recebimento e regular processamento do recurso administrativo independentemente de depósito prévio ou arrolamento de dinheiro ou bens (Súmula Vinculante 21 e Súmula 373 do STJ)",
+    "Concessão excepcional de efeito suspensivo ao recurso administrativo diante de justo receio de prejuízo de difícil ou incerta reparação (Lei 9.784/1999, art. 61, parágrafo único)",
+    "Anulação de inscrição prematura em dívida ativa ou CADIN antes do julgamento definitivo do recurso tempestivo"
+   ],
+   "evidence": [
+    "Decisão administrativa recorrida, comprovante de intimação válida e recibo de protocolo tempestivo do recurso",
+    "Exigência ilegal escrita ou sistêmica condicionando o protocolo recursal ao pagamento/depósito de multa ou caução",
+    "Demonstração do dano imediato decorrente da execução provisória administrativa"
+   ],
+   "piece_ids": [
+    "recurso_administrativo"
+   ],
+   "related_claims": [],
+   "limitation": "Prazo geral subsidiário de 10 dias para interposição de recurso administrativo na esfera federal contado da ciência ou divulgação oficial da decisão (Lei 9.784/1999, art. 59), salvo prazo especial diverso em lei setorial; mandado de segurança em 120 dias ou reclamação ao STF após exaurimento por violação à SV 21."
+  },
+  {
+   "id": "adm_popular_action",
+   "label": "Ação popular",
+   "requirements": [
+    "cidadao",
+    "ato_lesivo",
+    "patrimonio_publico"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_popular_action.c1",
+     "label": "Anulação de ato lesivo ao patrimônio público",
+     "authority_ids": [
+      "l4717_art1",
+      "l4717_art5"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_popular_action.d1",
+     "label": "Ausência de lesividade ou ilegalidade",
+     "authority_ids": [
+      "l4717_art1"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13655_lindb"
+   ],
+   "typical_requests": [
+    "Decretação da nulidade ou anulação do ato ou contrato lesivo ao patrimônio público, à moralidade administrativa, ao meio ambiente ou ao patrimônio histórico e cultural (CF, art. 5º, LXXIII; Lei 4.717/1965, art. 1º)",
+    "Condenação dos responsáveis e beneficiários diretos à restituição integral dos valores desviados/superfaturados",
+    "Isenção constitucional do autor popular quanto a custas judiciais e ao ônus da sucumbência, salvo comprovada má-fé"
+   ],
+   "evidence": [
+    "Título de eleitor ou certidão de quitação eleitoral comprovando a condição de cidadão no polo ativo (Lei 4.717/1965, art. 1º, § 3º)",
+    "Cópia integral do contrato administrativo, procedimento de dispensa/inexigibilidade, empenhos e pagamentos impugnados",
+    "Relatórios de auditoria, cotações de mercado ou perícia demonstrando ilegalidade e lesividade (ou lesividade presumida do art. 4º)"
+   ],
+   "piece_ids": [
+    "acao_popular"
+   ],
+   "related_claims": [],
+   "limitation": "A ação popular prescreve em 5 anos (Lei 4.717/1965, art. 21), ressalvada a imprescritibilidade quando o objeto for reparação de dano ambiental difuso (Tema 999 do STF)."
+  },
+  {
+   "id": "adm_writ",
+   "label": "Mandado de segurança",
+   "requirements": [
+    "direito_liquido_certo",
+    "autoridade",
+    "prazo",
+    "prova_preconstituida"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_writ.c1",
+     "label": "Direito líquido e certo violado por autoridade",
+     "authority_ids": [
+      "l12016_art1"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_writ.d1",
+     "label": "Decadência de 120 dias e necessidade de dilação probatória",
+     "authority_ids": [
+      "l12016_art23"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Deferimento de medida liminar para suspender o ato coator diante de fundamento relevante e risco de ineficácia da medida (Lei 12.016/2009, art. 7º, III — afastadas pelo STF na ADI 4296 as vedações genéricas do § 2º do art. 7º)",
+    "Concessão definitiva da segurança para anular o ato ilegal/abusivo ou suprir omissão de autoridade pública ou agente de pessoa jurídica no exercício de atribuições públicas",
+    "Efeitos patrimoniais devidos desde a data da impetração (Lei 12.016/2009, art. 14, § 4º; Súmulas 269 e 271 do STF)"
+   ],
+   "evidence": [
+    "Prova documental pré-constituída integral anexa à petição inicial (vedada dilação probatória) ou requisição judicial de documento recusado por repartição pública (Lei 12.016/2009, art. 6º, § 1º)",
+    "Ato administrativo impugnado com identificação precisa da autoridade coatora que o praticou ou ordenou (art. 6º, § 3º)",
+    "Comprovante inequívoco da data da ciência do ato pelo interessado para demonstração da tempestividade"
+   ],
+   "piece_ids": [
+    "mandado_seguranca"
+   ],
+   "related_claims": [],
+   "limitation": "O direito de requerer mandado de segurança extinguir-se-á decorridos 120 dias corridos, contados da ciência, pelo interessado, do ato impugnado (prazo decadencial material — Lei 12.016/2009, art. 23; Súmula 632 do STF), renovando-se mês a mês nas prestações de trato sucessivo omitidas."
+  },
+  {
+   "id": "adm_military_reform",
+   "label": "Militar: reforma por incapacidade e reintegração",
+   "requirements": [
+    "incapacidade_definitiva",
+    "nexo_com_o_servico",
+    "tempo_de_servico",
+    "inspecao_de_saude"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_military_reform.c1",
+     "label": "Reforma por incapacidade definitiva com proventos conforme a causa",
+     "authority_ids": [
+      "l6880_art106",
+      "l6880_art108",
+      "l6880_art110"
+     ]
+    },
+    {
+     "id": "adm_military_reform.c2",
+     "label": "Reintegração como adido para tratamento quando a doença eclode no serviço",
+     "authority_ids": [
+      "l6880_art50"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_military_reform.d1",
+     "label": "Militar temporário: requisitos próprios após a alteração legal — conferir a redação vigente",
+     "authority_ids": [
+      "l6880_art108"
+     ]
+    },
+    {
+     "id": "adm_military_reform.d2",
+     "label": "Ausência de nexo com o serviço e capacidade para a vida civil",
+     "authority_ids": [
+      "l6880_art108",
+      "l6880_art110"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13954_protecao_militar",
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Reforma",
+    "Reintegração para tratamento",
+    "Diferenças de proventos"
+   ],
+   "evidence": [
+    "Atas de inspeção de saúde",
+    "Sindicância ou atestado de origem",
+    "Laudos e prontuários"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "mandado_seguranca",
+    "requerimento_administrativo",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [
+    "adm_server_rights"
+   ],
+   "limitation": "Prescrição quinquenal contra a Fazenda Pública contada do ato de licenciamento ou indeferimento administrativo (Decreto 20.910/1932, art. 1º), ou apenas das parcelas anteriores ao quinquênio nas relações de trato sucessivo sem negativa do fundo de direito (Súmula 85 do STJ)."
+  },
+  {
+   "id": "adm_state_liability",
+   "label": "Responsabilidade civil do Estado",
+   "requirements": [
+    "conduta_estatal",
+    "dano",
+    "nexo",
+    "excludentes"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_state_liability.c1",
+     "label": "Responsabilidade objetiva por ato de agente público",
+     "authority_ids": [
+      "cf_art37",
+      "cc_art927"
+     ]
+    },
+    {
+     "id": "adm_state_liability.c2",
+     "label": "Morte de detento e condições degradantes de custódia",
+     "authority_ids": [
+      "tema_stf_592",
+      "tema_stf_365"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_state_liability.d1",
+     "label": "Culpa exclusiva da vítima, fato de terceiro ou força maior",
+     "authority_ids": [
+      "cf_art37"
+     ]
+    },
+    {
+     "id": "adm_state_liability.d2",
+     "label": "Omissão genérica exige prova de culpa do serviço",
+     "authority_ids": [
+      "cf_art37"
+     ]
+    },
+    {
+     "id": "adm_state_liability.d3",
+     "label": "Prescrição quinquenal",
+     "authority_ids": [
+      "d20910_art1"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Dano material e moral",
+    "Pensão",
+    "Reconhecimento de ilegitimidade passiva do agente público pessoa física na ação indenizatória proposta pela vítima (Tema 940 do STF)"
+   ],
+   "evidence": [
+    "Prova do fato e do nexo",
+    "Laudos",
+    "Registros do órgão"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "apelacao_civel"
+   ],
+   "related_claims": [
+    "adm_act_review"
+   ],
+   "limitation": "Prescrição quinquenal para as ações de indenização por responsabilidade civil contra a Fazenda Pública federal, estadual ou municipal e pessoas jurídicas de direito privado prestadoras de serviço público (Decreto 20.910/1932, art. 1º; Lei 9.494/1997, art. 1º-C; Tema Repetitivo 553 do STJ), ressalvada a imprescritibilidade por tortura/perseguição política na ditadura militar (Súmula 647 do STJ)."
+  },
+  {
+   "id": "adm_server_rights",
+   "label": "Direitos do servidor: remoção, estágio probatório e vantagens",
+   "requirements": [
+    "vinculo",
+    "ato_impugnado",
+    "requisitos_legais",
+    "prazo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_server_rights.c1",
+     "label": "Remoção para acompanhar cônjuge ou por saúde independe do interesse da administração",
+     "authority_ids": [
+      "l8112_art36"
+     ]
+    },
+    {
+     "id": "adm_server_rights.c2",
+     "label": "Avaliação do estágio probatório com contraditório",
+     "authority_ids": [
+      "l8112_art20",
+      "cf_art41"
+     ]
+    },
+    {
+     "id": "adm_server_rights.c3",
+     "label": "Relação de trato sucessivo: prescrevem apenas as parcelas anteriores ao quinquênio",
+     "authority_ids": [
+      "stj_sumula_85",
+      "d20910_art1"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_server_rights.d1",
+     "label": "Ato único de efeitos concretos: prescrição do fundo de direito",
+     "authority_ids": [
+      "d20910_art1",
+      "l8112_art110"
+     ]
+    },
+    {
+     "id": "adm_server_rights.d2",
+     "label": "Vedação de aumento por isonomia pelo Judiciário",
+     "authority_ids": [
+      "sv_37"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Anulação do ato",
+    "Pagamento de diferenças",
+    "Remoção"
+   ],
+   "evidence": [
+    "Ficha funcional",
+    "Processo administrativo",
+    "Laudos e certidões"
+   ],
+   "piece_ids": [
+    "mandado_seguranca",
+    "inicial_procedimento_comum",
+    "requerimento_administrativo",
+    "recurso_administrativo"
+   ],
+   "related_claims": [
+    "adm_disciplinary"
+   ],
+   "limitation": "Prescrição quinquenal das parcelas vencidas antes da propositura da ação nas obrigações de trato sucessivo não negadas expressamente pela Administração (Súmula 85 do STJ; Decreto 20.910/1932, art. 1º); havendo ato único ou negativa expressa do próprio fundo de direito, prescreve a ação em 5 anos."
+  },
+  {
+   "id": "adm_disciplinary_defense",
+   "label": "PAD: prescrição, prova e proporcionalidade",
+   "requirements": [
+    "ciencia_da_autoridade",
+    "instauracao",
+    "portaria",
+    "provas",
+    "penalidade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_disciplinary_defense.c1",
+     "label": "Prescrição da pretensão punitiva contada do conhecimento do fato",
+     "authority_ids": [
+      "l8112_art142",
+      "stj_sumula_635"
+     ]
+    },
+    {
+     "id": "adm_disciplinary_defense.c2",
+     "label": "Penalidade deve considerar natureza, gravidade e antecedentes",
+     "authority_ids": [
+      "l8112_art128"
+     ]
+    },
+    {
+     "id": "adm_disciplinary_defense.c3",
+     "label": "Julgamento contrário às provas dos autos",
+     "authority_ids": [
+      "l8112_art168",
+      "l8112_art156"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_disciplinary_defense.d1",
+     "label": "Excesso de prazo só anula com prejuízo demonstrado",
+     "authority_ids": [
+      "stj_sumula_592",
+      "l8112_art152"
+     ]
+    },
+    {
+     "id": "adm_disciplinary_defense.d2",
+     "label": "Prova emprestada e denúncia anônima são admitidas com contraditório",
+     "authority_ids": [
+      "stj_sumula_591",
+      "stj_sumula_611"
+     ]
+    },
+    {
+     "id": "adm_disciplinary_defense.d3",
+     "label": "Demissão é vinculada quando configurada a hipótese legal",
+     "authority_ids": [
+      "stj_sumula_650",
+      "l8112_art132"
+     ]
+    },
+    {
+     "id": "adm_disciplinary_defense.d4",
+     "label": "Defesa técnica por advogado não é obrigatória",
+     "authority_ids": [
+      "sv_5"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13655_lindb"
+   ],
+   "typical_requests": [
+    "Anulação da penalidade",
+    "Reintegração com efeitos financeiros",
+    "Revisão do processo"
+   ],
+   "evidence": [
+    "Autos integrais do PAD",
+    "Portaria e publicações",
+    "Provas da defesa indeferidas"
+   ],
+   "piece_ids": [
+    "defesa_processo_disciplinar",
+    "recurso_administrativo",
+    "mandado_seguranca",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "adm_disciplinary"
+   ],
+   "limitation": "Mandado de segurança em 120 dias da publicação da portaria punitiva (Lei 12.016/2009, art. 23); ação ordinária de reintegração em 5 anos da publicação (Decreto 20.910/1932, art. 1º) e revisão administrativa a qualquer tempo quando aduzidos fatos novos ou circunstâncias suscetíveis de justificar a inocência ou a inadequação da penalidade (Lei 8.112/1990, art. 174)."
+  },
+  {
+   "id": "adm_improbity_defense",
+   "label": "Improbidade: dolo, prescrição e acordo",
+   "requirements": [
+    "tipo_imputado",
+    "dolo_especifico",
+    "dano_efetivo",
+    "marco_prescricional"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_improbity_defense.c1",
+     "label": "Exigência de dolo específico e de dano efetivo nas hipóteses do art. 10",
+     "authority_ids": [
+      "l8429_art1",
+      "l8429_art10"
+     ]
+    },
+    {
+     "id": "adm_improbity_defense.c2",
+     "label": "Prescrição de oito anos e prescrição intercorrente",
+     "authority_ids": [
+      "l8429_art23"
+     ]
+    },
+    {
+     "id": "adm_improbity_defense.c3",
+     "label": "Acordo de não persecução civil",
+     "authority_ids": [
+      "l8429_art17b"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_improbity_defense.d1",
+     "label": "Retroatividade limitada da lei nova conforme o Tema 1199",
+     "authority_ids": [
+      "tema_stf_1199"
+     ]
+    },
+    {
+     "id": "adm_improbity_defense.d2",
+     "label": "Ressarcimento por ato doloso de improbidade é imprescritível",
+     "authority_ids": [
+      "tema_stf_897"
+     ]
+    },
+    {
+     "id": "adm_improbity_defense.d3",
+     "label": "Indisponibilidade de bens para garantir o ressarcimento",
+     "authority_ids": [
+      "l8429_art16"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14230_improbidade"
+   ],
+   "typical_requests": [
+    "Rejeição da inicial",
+    "Improcedência",
+    "Homologação de acordo"
+   ],
+   "evidence": [
+    "Inicial e documentos",
+    "Prova da ausência de dolo e de dano",
+    "Datas dos fatos e do ajuizamento"
+   ],
+   "piece_ids": [
+    "contestacao_improbidade",
+    "acordo_nao_persecucao_civil",
+    "agravo_instrumento",
+    "apelacao_civel"
+   ],
+   "related_claims": [
+    "adm_improbity"
+   ],
+   "limitation": "Contestação em 30 dias úteis (Lei 8.429/1992, art. 17, § 7º); prescrição em 8 anos do fato e intercorrente em 4 anos para processos posteriores a 26/10/2021 (art. 23, §§ 4º e 5º), aplicando-se os prazos da redação anterior aos fatos/processos pretéritos conforme modulação do Tema 1199 do STF."
+  },
+  {
+   "id": "adm_bidding_challenge",
+   "label": "Licitação: impugnação, desclassificação e contratação direta",
+   "requirements": [
+    "edital",
+    "fase",
+    "ato_impugnado",
+    "prazo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_bidding_challenge.c1",
+     "label": "Impugnação ao edital por restrição indevida à competitividade",
+     "authority_ids": [
+      "l14133_art164",
+      "l14133_art5"
+     ]
+    },
+    {
+     "id": "adm_bidding_challenge.c2",
+     "label": "Desclassificação ou inabilitação sem diligência para sanar falha formal",
+     "authority_ids": [
+      "l14133_art59",
+      "l14133_art165"
+     ]
+    },
+    {
+     "id": "adm_bidding_challenge.c3",
+     "label": "Anulação por ilegalidade com contraditório",
+     "authority_ids": [
+      "l14133_art71"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_bidding_challenge.d1",
+     "label": "Vinculação ao edital e julgamento objetivo",
+     "authority_ids": [
+      "l14133_art5"
+     ]
+    },
+    {
+     "id": "adm_bidding_challenge.d2",
+     "label": "Contratação direta nas hipóteses legais com processo instruído",
+     "authority_ids": [
+      "l14133_art74",
+      "l14133_art75"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14133_licitacoes"
+   ],
+   "typical_requests": [
+    "Suspensão do certame",
+    "Reclassificação",
+    "Anulação do ato",
+    "Parcelamento obrigatório do objeto em itens ou lotes quando técnica e economicamente viável para ampliar a competitividade (Lei 14.133/2021, art. 40, V, 'b'; Súmula 247 do TCU)"
+   ],
+   "evidence": [
+    "Edital e anexos",
+    "Atas e pareceres",
+    "Proposta e documentos de habilitação"
+   ],
+   "piece_ids": [
+    "impugnacao_edital_licitacao",
+    "mandado_seguranca",
+    "recurso_administrativo",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [
+    "adm_procurement"
+   ],
+   "limitation": "Impugnação ao edital e pedido de esclarecimento em até 3 dias úteis antes da data de abertura do certame, com resposta em até 3 dias úteis limitada ao último dia útil anterior (Lei 14.133/2021, art. 164); intenção recursal imediata e razões de recurso administrativo em 3 dias úteis (art. 165, I); mandado de segurança em 120 dias."
+  },
+  {
+   "id": "adm_contract_balance",
+   "label": "Contrato administrativo: reequilíbrio, extinção e sanções",
+   "requirements": [
+    "contrato",
+    "fato_gerador",
+    "matriz_de_riscos",
+    "processo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_contract_balance.c1",
+     "label": "Reequilíbrio por fato imprevisível ou fato do príncipe",
+     "authority_ids": [
+      "l14133_art124"
+     ]
+    },
+    {
+     "id": "adm_contract_balance.c2",
+     "label": "Sanção exige processo de responsabilização com defesa",
+     "authority_ids": [
+      "l14133_art158",
+      "l14133_art156"
+     ]
+    },
+    {
+     "id": "adm_contract_balance.c3",
+     "label": "Nulidade do contrato só após avaliação do interesse público",
+     "authority_ids": [
+      "l14133_art147"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_contract_balance.d1",
+     "label": "Risco atribuído ao contratado na matriz",
+     "authority_ids": [
+      "l14133_art124"
+     ]
+    },
+    {
+     "id": "adm_contract_balance.d2",
+     "label": "Prerrogativas de alteração e extinção unilateral",
+     "authority_ids": [
+      "l14133_art104",
+      "l14133_art137"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14133_licitacoes",
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Reequilíbrio",
+    "Anulação de sanção",
+    "Reabilitação"
+   ],
+   "evidence": [
+    "Contrato e aditivos",
+    "Planilhas de custo",
+    "Processo sancionador"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "recurso_administrativo",
+    "mandado_seguranca",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "adm_procurement"
+   ],
+   "limitation": "O pedido de restabelecimento do equilíbrio econômico-financeiro deve ser formulado durante a vigência do contrato e antes de eventual prorrogação que opere preclusão lógica (Lei 14.133/2021, art. 131, parágrafo único); prescrição quinquenal para cobrança judicial contra a Fazenda Pública contada da negativa ou medição inadimplida (Decreto 20.910/1932, art. 1º)."
+  },
+  {
+   "id": "adm_anticorruption",
+   "label": "Lei Anticorrupção e acordo de leniência",
+   "requirements": [
+    "ato_lesivo",
+    "interesse_ou_beneficio",
+    "programa_de_integridade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_anticorruption.c1",
+     "label": "Dosimetria considera programa de integridade e cooperação",
+     "authority_ids": [
+      "l12846_art6"
+     ]
+    },
+    {
+     "id": "adm_anticorruption.c2",
+     "label": "Acordo de leniência com redução de sanções",
+     "authority_ids": [
+      "l12846_art16"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_anticorruption.d1",
+     "label": "Responsabilidade objetiva da pessoa jurídica pelos atos lesivos",
+     "authority_ids": [
+      "l12846_art1",
+      "l12846_art5"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13655_lindb"
+   ],
+   "typical_requests": [
+    "Redução da multa",
+    "Celebração de acordo",
+    "Reconhecimento de efetividade do programa de integridade (compliance) para redução substancial da alíquota da multa administrativa (Lei 12.846/2013, art. 7º, VIII; Decreto 11.129/2022)"
+   ],
+   "evidence": [
+    "Processo de responsabilização",
+    "Evidências do programa de integridade",
+    "Auditorias independentes do canal de denúncias, due diligence de terceiros, treinamentos e investigação interna imediata"
+   ],
+   "piece_ids": [
+    "recurso_administrativo",
+    "requerimento_administrativo",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "adm_procurement",
+    "adm_improbity"
+   ],
+   "limitation": "Prescrevem em 5 anos as infrações previstas na Lei Anticorrupção, contados da data da ciência da infração ou, no caso de infração permanente ou continuada, do dia em que tiver cessado, interrompendo-se pela instauração de processo administrativo ou judicial (Lei 12.846/2013, art. 25)."
+  },
+  {
+   "id": "adm_expropriation",
+   "label": "Desapropriação e indenização",
+   "requirements": [
+    "decreto",
+    "oferta",
+    "imissao",
+    "avaliacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_expropriation.c1",
+     "label": "Justa indenização apurada em perícia, com juros e correção",
+     "authority_ids": [
+      "dl3365_art27",
+      "cf_art5"
+     ]
+    },
+    {
+     "id": "adm_expropriation.c2",
+     "label": "Imissão provisória depende de depósito",
+     "authority_ids": [
+      "dl3365_art15"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_expropriation.d1",
+     "label": "Contestação limitada a vício do processo e ao preço",
+     "authority_ids": [
+      "dl3365_art20"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Complementação do depósito",
+    "Indenização do fundo de comércio na via própria",
+    "Juros compensatórios e moratórios conforme a decisão vigente"
+   ],
+   "evidence": [
+    "Decreto e laudo administrativo",
+    "Laudo de avaliação",
+    "Matrícula e benfeitorias"
+   ],
+   "piece_ids": [
+    "contestacao",
+    "impugnacao_laudo",
+    "apelacao_civel"
+   ],
+   "related_claims": [
+    "adm_act_review"
+   ],
+   "limitation": "Caducidade do decreto declaratório de utilidade pública em 5 anos (DL 3.365/1941, art. 10) e de interesse social em 2 anos (Lei 4.132/1962, art. 3º); na desapropriação indireta (apossamento administrativo sem devido processo), prescrição decenal quando houver obras/serviços de caráter produtivo realizados pelo Poder Público no local (Tema Repetitivo 1019 do STJ; CC, art. 1.238, parágrafo único)."
+  },
+  {
+   "id": "adm_public_service",
+   "label": "Concessões e serviço público adequado",
+   "requirements": [
+    "contrato_de_concessao",
+    "falha_do_servico",
+    "tarifa"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_public_service.c1",
+     "label": "Serviço adequado: regularidade, continuidade e modicidade",
+     "authority_ids": [
+      "l8987_art6",
+      "cdc_art22"
+     ]
+    },
+    {
+     "id": "adm_public_service.c2",
+     "label": "Revisão da tarifa para manter o equilíbrio",
+     "authority_ids": [
+      "l8987_art9"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_public_service.d1",
+     "label": "Interrupção por razões técnicas ou inadimplemento com aviso",
+     "authority_ids": [
+      "l8987_art6"
+     ]
+    },
+    {
+     "id": "adm_public_service.d2",
+     "label": "Caducidade por inexecução após processo",
+     "authority_ids": [
+      "l8987_art38"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13655_lindb"
+   ],
+   "typical_requests": [
+    "Obrigação de regularizar o serviço",
+    "Indenização",
+    "Revisão tarifária"
+   ],
+   "evidence": [
+    "Contrato e relatórios da agência",
+    "Registros de interrupção",
+    "Autos de fiscalização, indicadores de qualidade (DEC/FEC na energia, continuidade no saneamento) e pareceres técnicos da agência reguladora"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "acao_civil_publica",
+    "mandado_seguranca"
+   ],
+   "related_claims": [
+    "cons_essential_service"
+   ],
+   "limitation": "Para o usuário consumidor individual, reparação por falha na prestação do serviço público concedido prescreve em 5 anos (CDC, art. 27; Lei 9.494/1997, art. 1º-C) e repetição de tarifa indevida em 10 anos (Súmula 412 do STJ); entre concessionária e poder concedente, 5 anos (Decreto 20.910/1932, art. 1º)."
+  },
+  {
+   "id": "adm_information_access",
+   "label": "Acesso à informação",
+   "requirements": [
+    "pedido",
+    "orgao",
+    "negativa",
+    "classificacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_information_access.c1",
+     "label": "Acesso é a regra; negativa deve ser motivada e recorrível",
+     "authority_ids": [
+      "l12527_art10",
+      "l12527_art11",
+      "l12527_art15"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_information_access.d1",
+     "label": "Informação pessoal ou sigilosa classificada",
+     "authority_ids": [
+      "l12527_art31"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lgpd_vigencia"
+   ],
+   "typical_requests": [
+    "Fornecimento da informação",
+    "Desclassificação",
+    "Afastamento de sigilo centenário abusivo ou classificação genérica desmotivada sobre atos de gestão pública (Lei 12.527/2011, arts. 3º e 24)"
+   ],
+   "evidence": [
+    "Protocolo do pedido",
+    "Resposta e recursos",
+    "Decisão da Controladoria-Geral da União (CGU) ou Comissão Mista de Reavaliação de Informações (CMRI) no sistema Fala.BR"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "recurso_administrativo",
+    "mandado_seguranca",
+    "habeas_data"
+   ],
+   "related_claims": [
+    "const_habeas_data"
+   ],
+   "limitation": "Prazo de resposta imediata ou em até 20 dias prorrogáveis por mais 10 dias (Lei 12.527/2011, art. 11, §§ 1º e 2º), cabendo recurso hierárquico no prazo de 10 dias da ciência (art. 15) e mandado de segurança em 120 dias da recusa administrativa."
+  },
+  {
+   "id": "adm_accounts_defense",
+   "label": "Defesa em tomada de contas e prescrição",
+   "requirements": [
+    "citacao",
+    "conduta",
+    "dano",
+    "marco_inicial"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_accounts_defense.c1",
+     "label": "Pretensão de ressarcimento fundada em decisão de tribunal de contas é prescritível",
+     "authority_ids": [
+      "tema_stf_899"
+     ]
+    },
+    {
+     "id": "adm_accounts_defense.c2",
+     "label": "Contraditório quando a decisão puder anular ato que beneficie o interessado",
+     "authority_ids": [
+      "sv_3"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_accounts_defense.d1",
+     "label": "Julgamento pela irregularidade com débito e multa",
+     "authority_ids": [
+      "l8443_art16",
+      "l8443_art57"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13655_lindb"
+   ],
+   "typical_requests": [
+    "Reconhecimento da prescrição",
+    "Regularidade das contas",
+    "Recurso de reconsideração"
+   ],
+   "evidence": [
+    "Citação e relatório de auditoria",
+    "Documentos da execução do objeto",
+    "Cronologia dos atos"
+   ],
+   "piece_ids": [
+    "recurso_administrativo",
+    "mandado_seguranca",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "adm_tcu"
+   ],
+   "limitation": "Recurso de reconsideração em 15 dias na Lei Orgânica do TCU (Lei 8.443/1992, art. 33); prescrição punitiva e ressarcitória no Tribunal de Contas em 5 anos e intercorrente em 3 anos (Resolução TCU 344/2022; Tema 899 do STF) e prescrição quinquenal da execução do acórdão condenatório do Tribunal de Contas (Tema 899 do STF; Lei 6.830/1980)."
+  },
+  {
+   "id": "adm_silence_delay",
+   "label": "Silêncio administrativo e demora em decidir",
+   "requirements": [
+    "requerimento",
+    "instrucao_concluida",
+    "prazo_decorrido"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_silence_delay.c1",
+     "label": "Dever de decidir em trinta dias após a instrução",
+     "authority_ids": [
+      "l9784_art48",
+      "l9784_art49"
+     ]
+    },
+    {
+     "id": "adm_silence_delay.c2",
+     "label": "Duração razoável do processo",
+     "authority_ids": [
+      "cf_art5"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_silence_delay.d1",
+     "label": "Instrução pendente por providência do interessado",
+     "authority_ids": [
+      "l9784_art49"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Ordem para decidir em prazo certo",
+    "Determinação judicial para que a autoridade administrativa profira decisão motivada em 30 dias (Lei 9.784/1999, arts. 48 e 49), sem substituir o mérito discricionário quando houver",
+    "Indenização quando a demora excessiva e ilícita na análise de licença/benefício gerar prejuízo patrimonial comprovado"
+   ],
+   "evidence": [
+    "Protocolo e andamentos",
+    "Cópia integral do processo eletrônico (SEI!/protocolo) comprovando a conclusão da instrução e a ausência de pendência imputável ao requerente",
+    "Reclamação na Ouvidoria ou pedido administrativo de urgência prioritária (idoso/doença grave — Lei 9.784/1999, art. 69-A)"
+   ],
+   "piece_ids": [
+    "mandado_seguranca",
+    "requerimento_administrativo"
+   ],
+   "related_claims": [
+    "adm_act_review"
+   ],
+   "limitation": "Concluída a instrução do processo administrativo federal, a Administração tem o prazo de até 30 dias para decidir, prorrogável motivadamente por igual período (Lei 9.784/1999, art. 49); por configurar ato omissivo continuado, o prazo decadencial de 120 dias do mandado de segurança renova-se enquanto persistir a inércia ilegal."
+  },
+  {
+   "id": "adm_fazenda_monetary_ec113",
+   "label": "Atualização monetária e juros nas condenações da Fazenda Pública: Tema 810 STF, Tema 905 STJ e EC 113/2021 (SELIC única)",
+   "requirements": [
+    "natureza_relacao_nao_tributaria_previdenciaria_tributaria",
+    "corte_temporal_09_12_2021_ec113",
+    "incidencia_exclusiva_selic",
+    "vedacao_cumulacao_juros_correcao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_fazenda_monetary_ec113.c1",
+     "label": "Para o período anterior a 09/12/2021 nas condenações não tributárias e previdenciárias contra a Fazenda Pública, afasta-se a TR (inconstitucional no Tema 810 do STF), aplicando-se IPCA-E (ou INPC nos benefícios previdenciários — Tema Repetitivo 905 do STJ) acrescido dos juros moratórios da poupança, passando a incidir exclusivamente a SELIC apenas a partir da vigência da EC 113/2021",
+     "authority_ids": [
+      "tema_stf_810",
+      "tema_stj_905",
+      "ec113_art3",
+      "l9494_art1f"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_fazenda_monetary_ec113.d1",
+     "label": "A partir de 09/12/2021 (EC 113/2021, art. 3º), em todas as discussões e condenações que envolvam a Fazenda Pública, independentemente de sua natureza, incide uma única vez para atualização monetária, remuneração do capital e compensação da mora o índice da taxa SELIC acumulado mensalmente, sendo vedada qualquer cumulação com IPCA-E, INPC ou juros da poupança no mesmo período",
+     "authority_ids": [
+      "ec113_art3",
+      "l9494_art1f"
+     ]
+    },
+    {
+     "id": "adm_fazenda_monetary_ec113.d2",
+     "label": "Observância do período constitucional de graça no pagamento tempestivo do precatório (Súmula Vinculante 17), durante o qual não incidem juros de mora",
+     "authority_ids": [
+      "cf_art100",
+      "ec113_art3"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Homologação de cálculo de cumprimento de sentença contra a Fazenda Pública estruturado em duas fases temporais exatas (pré e pós-09/12/2021)",
+    "Acolhimento de impugnação fazendária (CPC, art. 535, IV) por excesso de execução decorrente de cumulação indevida de SELIC com juros moratórios após a EC 113/2021"
+   ],
+   "evidence": [
+    "Título executivo judicial e certidão da data exata da citação válida e do trânsito em julgado",
+    "Planilha analítica gerada com séries oficiais do IBGE (IPCA-E/INPC) até novembro/2021 e da SELIC (BCB/SGS 4390) a partir de dezembro/2021",
+    "Manual de Cálculos da Justiça Federal (CJF) vigente"
+   ],
+   "piece_ids": [
+    "cumprimento_sentenca",
+    "impugnacao_cumprimento",
+    "agravo_instrumento",
+    "recurso_especial"
+   ],
+   "related_claims": [
+    "const_public_budget_precatorios",
+    "adm_server_rights",
+    "prev_incapacity"
+   ],
+   "limitation": "Impugnação da Fazenda Pública ao cumprimento de sentença no prazo de 30 dias úteis contados da intimação (CPC, art. 535); prescrição da pretensão executiva contra a Fazenda em 5 anos do trânsito em julgado (Súmula 150 do STF)."
+  },
+  {
+   "id": "adm_temporary_hiring_fgts",
+   "label": "Contratação temporária irregular pela Administração Pública: desvirtuamento e direito ao FGTS (CF, art. 37, IX, e Tema 916 STF)",
+   "requirements": [
+    "competencia_justica_comum",
+    "ausencia_excepcional_interesse_publico_sucessivas_renovacoes",
+    "nulidade_contratual",
+    "direito_saldo_salario_e_fgts"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_temporary_hiring_fgts.c1",
+     "label": "Sucessivas prorrogações por longos anos para desempenho de funções ordinárias e permanentes desvirtuam o caráter temporário e excepcional do art. 37, IX, da CF (Tema 612 do STF), gerando nulidade contratual que assegura ao trabalhador na Justiça Comum o pagamento do saldo de salários e dos depósitos equivalentes ao FGTS de todo o período (Tema 916 do STF; Lei 8.036/1990, art. 19-A)",
+     "authority_ids": [
+      "cf_art37",
+      "tema_stf_916"
+     ]
+    },
+    {
+     "id": "adm_temporary_hiring_fgts.c2",
+     "label": "Direito constitucional dos contratados temporários válidos a décimo terceiro salário e férias remuneradas acrescidas do terço constitucional quando habitual e continuado o vínculo (Tema 551 do STF)",
+     "authority_ids": [
+      "cf_art37",
+      "cf_art6"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_temporary_hiring_fgts.d1",
+     "label": "Competência absoluta da Justiça Comum (Estadual ou Federal) para processar causas entre o Poder Público e servidores admitidos em regime jurídico-administrativo temporário (ADI 3.395 do STF), e validade da contratação quando estritamente adstrita à hipótese emergencial/transitória prevista em lei local (sem direito a FGTS nos contratos temporários regulares)",
+     "authority_ids": [
+      "cf_art37",
+      "tema_stf_916"
+     ]
+    },
+    {
+     "id": "adm_temporary_hiring_fgts.d2",
+     "label": "A nulidade da contratação temporária desvirtuada confere apenas saldo salarial e depósitos de FGTS (Tema 916 do STF), não gerando vínculo efetivo sem concurso nem direito a aviso prévio ou multa de 40% do FGTS",
+     "authority_ids": [
+      "tema_stf_916",
+      "cf_art37"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Declaração incidental de nulidade das sucessivas renovações do contrato temporário por desvirtuamento do art. 37, IX, da Constituição",
+    "Condenação do ente público ao pagamento de indenização equivalente aos depósitos mensais de 8% de FGTS das competências não prescritas, além de 13º e férias + 1/3 eventualmente inadimplidos"
+   ],
+   "evidence": [
+    "Contratos administrativos temporários originais e todos os termos aditivos de prorrogação sucessiva",
+    "Fichas financeiras completas do período trabalhado, extrato analítico da conta vinculada do FGTS (zerado) e lei municipal/estadual de regência",
+    "Quadro demonstrativo da necessidade permanente da função (ex.: magistério regular, enfermagem contínua)"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "contestacao",
+    "reclamacao_constitucional"
+   ],
+   "related_claims": [
+    "adm_server_rights",
+    "adm_public_exam"
+   ],
+   "limitation": "Prescrição quinquenal contra a Fazenda Pública contada em relação às parcelas vencidas nos 5 anos anteriores ao ajuizamento ou do encerramento do vínculo administrativo (Decreto 20.910/1932, art. 1º; Tema 553/jurisprudência STJ)."
+  },
+  {
+   "id": "adm_public_health_education_duty",
+   "label": "Responsabilidade civil do Estado por omissão específica: custódia prisional (Tema 592 STF), rede escolar e vias públicas",
+   "requirements": [
+    "dever_especifico_guarda_protecao",
+    "omissao_estatal_causa_direta",
+    "custodia_detento_aluno_paciente",
+    "excludente_impossibilidade_agir"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_public_health_education_duty.c1",
+     "label": "Em caso de inobservância do seu dever específico de proteção previsto no art. 5º, XLIX, da Constituição, o Estado é objetivamente responsável pela morte ou lesão de detento (inclusive suicídio evitável ou homicídio por outros presos), bem como pela integridade física de alunos no interior de escolas públicas (CF, art. 37, § 6º; Tema 592 do STF)",
+     "authority_ids": [
+      "cf_art37",
+      "cf_art5",
+      "tema_stf_592"
+     ]
+    },
+    {
+     "id": "adm_public_health_education_duty.c2",
+     "label": "Responsabilidade civil por acidente causado por defeito grave de sinalização/conservação viária ou queda de árvore com comprometimento fitossanitário negligenciado na poda urbana",
+     "authority_ids": [
+      "cf_art37",
+      "cc_art927"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_public_health_education_duty.d1",
+     "label": "Nos termos do Tema 592 do STF, o Estado pode ser dispensado de indenizar se conseguir provar que a morte do detento não podia ser evitada (rompimento do nexo causal por evento absolutamente imprevisível e irresistível em que não havia possibilidade fática de atuação estatal eficiente), e nas omissões genéricas (segurança pública em rua aberta — ex.: bala perdida ou assalto por foragido sem nexo direto e imediato, Tema 362 do STF) exige-se comprovação de falha específica do serviço",
+     "authority_ids": [
+      "tema_stf_592",
+      "cf_art37",
+      "cc_art393"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Condenação do Estado ou Município ao pagamento de danos morais, despesas funerárias/médicas e pensão mensal civil aos dependentes da vítima sob custódia estatal",
+    "Redução proporcional na hipótese de concorrência efetiva de culpa da vítima em acidente viário (CC, art. 945)"
+   ],
+   "evidence": [
+    "Certidão de óbito, laudo necroscópico do IML, sindicância prisional/escolar e inquérito policial",
+    "Prontuários de saúde mental da unidade prisional (para demonstrar se havia alertas prévios de risco) ou protocolos anteriores de vistoria de árvore/via pública",
+    "Certidões de parentesco e prova de dependência econômica para cálculo da pensão civil"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "contestacao",
+    "apelacao_civel"
+   ],
+   "related_claims": [
+    "adm_state_liability",
+    "sus_medical_error_public_hospital"
+   ],
+   "limitation": "Prescrição quinquenal contra a Fazenda Pública contada do evento lesivo ou óbito (Decreto 20.910/1932, art. 1º), não correndo contra filhos absolutamente incapazes (CC, art. 198, I)."
+  },
+  {
+   "id": "adm_environmental_urban_embargo",
+   "label": "Poder de polícia urbanístico e edilício: interdição, embargo de obra, demolição administrativa e devido processo",
+   "requirements": [
+    "competencia_municipal_uso_solo",
+    "distincao_embargo_cautelar_vs_demolicao_definitiva",
+    "contraditorio_previo_demolicao",
+    "risco_iminente_desabamento"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_environmental_urban_embargo.c1",
+     "label": "Embora o embargo cautelar de obra clandestina e a interdição por risco iminente gozem de autoexecutoriedade imediata, a demolição definitiva de edificação consolidada de moradia (medida irreversível) exige prévio processo administrativo com contraditório e ampla defesa ou autorização judicial, salvo risco iminente e comprovado de ruína/desabamento (CF, arts. 5º, LIV e LV, e 6º; jurisprudência do STJ)",
+     "authority_ids": [
+      "cf_art5",
+      "cf_art6",
+      "l9784_art2"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_environmental_urban_embargo.d1",
+     "label": "Pleno poder-dever municipal de ordenamento territorial (CF, art. 30, VIII), inexistência de direito adquirido à manutenção de construção clandestina erigida em área pública, non aedificandi ou APP, e autoexecutoriedade legítima de interdição/desfazimento diante de laudo da Defesa Civil atestando risco grave à vida",
+     "authority_ids": [
+      "cf_art30",
+      "l10257_art9",
+      "l9784_art2"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13655_lindb"
+   ],
+   "typical_requests": [
+    "Tutela de urgência para suspender ordem de demolição sumária de imóvel residencial sem devido processo legal ou enquanto pendente pedido viável de regularização edilícia/Reurb",
+    "Anulação de multa de postura municipal desproporcional ou aplicada sem prévia notificação",
+    "Pelo Município em ação demolitória: condenação do infrator a demolir construção irregular insuscetível de regularização às suas expensas sob pena de multa"
+   ],
+   "evidence": [
+    "Auto de embargo, notificação de infração edilícia, alvará de construção/habite-se ou protocolo de regularização na Prefeitura",
+    "Laudo estrutural de engenharia / vistoria da Defesa Civil aferindo estabilidade e viabilidade de adequação às normas urbanísticas",
+    "Planta de zoneamento municipal e matrícula/cadastro imobiliário"
+   ],
+   "piece_ids": [
+    "tutela_urgencia_antecedente",
+    "mandado_seguranca",
+    "inicial_procedimento_comum",
+    "recurso_administrativo",
+    "contestacao"
+   ],
+   "related_claims": [
+    "adm_act_review",
+    "imob_urban_usucapiao"
+   ],
+   "limitation": "A pretensão municipal de exigir demolição de construção clandestina sobre bem público ou área non aedificandi não convalesce; multas de polícia administrativa prescrevem em 5 anos (Decreto 20.910/1932; Súmula 467 do STJ) e mandado de segurança decai em 120 dias."
+  },
+  {
+   "id": "adm_public_servant_quintus_salary",
+   "label": "Remuneração de servidores públicos: teto constitucional, irredutibilidade nominal, vedação de equiparação (SV 37) e quintos (Tema 395 STF)",
+   "requirements": [
+    "reserva_legal_remuneracao",
+    "vedacao_aumento_judicial_isonomia_sv37",
+    "teto_individualizado_acumulacao_licita_tema377",
+    "absorcao_quintos_reajustes_futuros"
+   ],
+   "claimant_theses": [
+    {
+     "id": "adm_public_servant_quintus_salary.c1",
+     "label": "Nas hipóteses constitucionais de acumulação lícita de cargos, empregos ou proventos/pensão, o teto remuneratório do art. 37, XI, da CF deve ser aferido isoladamente em relação a cada vínculo, e não pelo somatório global (Temas 377 e 384 do STF), assegurada ainda a irredutibilidade nominal de vencimentos e a proteção das decisões transitadas em julgado quanto a quintos nos termos modulados pelo Tema 395 do STF",
+     "authority_ids": [
+      "cf_art37",
+      "cf_art40",
+      "cf_art5"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "adm_public_servant_quintus_salary.d1",
+     "label": "Não cabe ao Poder Judiciário, que não tem função legislativa, aumentar vencimentos de servidores públicos sob o fundamento de isonomia (Súmula Vinculante 37), inexistindo direito adquirido a regime jurídico ou fórmula de cálculo de gratificações desde que preservado o valor global nominal da remuneração",
+     "authority_ids": [
+      "sv_37",
+      "cf_art37"
+     ]
+    },
+    {
+     "id": "adm_public_servant_quintus_salary.d2",
+     "label": "Inconstitucionalidade da incorporação de quintos pelo exercício de funções comissionadas entre 08/04/1998 e 04/09/2001 (Tema 395 do STF), impondo-se absorção integral por quaisquer reajustes futuros para quem recebeu administrativamente ou por decisão não transitada em julgado",
+     "authority_ids": [
+      "cf_art37",
+      "sv_37"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Cessação de abate-teto aplicado sobre a soma de cargos ou pensão licitamente acumulados e restituição dos cortes dos últimos 5 anos",
+    "Manutenção de parcela amparada por coisa julgada individual/coletiva nos termos da modulação do Tema 395 do STF ou pagamento de VPNI para evitar decesso nominal",
+    "Pela Fazenda: improcedência de pedido de equiparação/extensão remuneratória por óbice vinculante da SV 37"
+   ],
+   "evidence": [
+    "Fichas financeiras e contracheques dos dois vínculos licitamente acumulados demonstrando a incidência unificada ou isolada do abate-teto",
+    "Certidão de trânsito em julgado da ação que amparou o pagamento de quintos ou processo administrativo de concessão",
+    "Tabelas de evolução salarial antes e após reestruturação legal da carreira"
+   ],
+   "piece_ids": [
+    "mandado_seguranca",
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "contestacao",
+    "reclamacao_constitucional"
+   ],
+   "related_claims": [
+    "adm_server_rights",
+    "const_binding_precedent"
+   ],
+   "limitation": "Relação de trato sucessivo sujeita à prescrição quinquenal das parcelas anteriores aos 5 anos do ajuizamento (Súmula 85 do STJ; Decreto 20.910/1932, art. 1º); mandado de segurança contra ato concreto redutor em 120 dias."
+  }
  ]
 }

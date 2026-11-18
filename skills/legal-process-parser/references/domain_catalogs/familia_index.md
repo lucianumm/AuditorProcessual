@@ -24,3 +24,9 @@ Guia: `domain_guides/familia.md` · catálogo: `domain_catalogs/familia.json`
 | `fam_will_legitime` | Testamento, legítima e colação | 2/2 |
 | `fam_estate_debts` | Dívidas do espólio e bem de família | 2/1 |
 | `fam_protective_breach` | Medidas protetivas: descumprimento e efeitos cíveis | 2/2 |
+| `fam_extrajudicial_inventory_cnj571` | Inventário, partilha e divórcio consensuais extrajudiciais com incapazes ou testamento (Res. CNJ 571/2024) | 2/1 |
+| `fam_domestic_violence_custody_bar` | Óbice legal à guarda compartilhada por risco de violência doméstica ou familiar (Lei 14.713/2023 e Res. CNJ 492/2023) | 2/1 |
+| `fam_alimony_income_tax_exemption` | Não incidência de Imposto de Renda sobre pensão alimentícia familiar e repetição de indébito (ADI 5422 STF) | 2/2 |
+| `fam_grandparent_alimony_subsidiary` | Alimentos avoengos: subsidiariedade, complementaridade e chamamento dos coobrigados (CC, arts. 1.696/1.698, e Súmula 596 STJ) | 1/2 |
+| `fam_multiparentality_socioaffective` | Multiparentalidade e filiação socioafetiva concomitante à biológica (Tema 622 STF) | 2/1 |
+| `fam_international_child_abduction` | Subtração internacional de crianças, residência habitual e exceção de grave risco por violência doméstica (Decreto 3.413/2000) | 1/2 |

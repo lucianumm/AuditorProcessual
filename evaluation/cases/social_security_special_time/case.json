@@ -1,0 +1,44 @@
+{
+  "schema_version": "2.0",
+  "synthetic": true,
+  "case_id": "social_security_special_time",
+  "source_files": [
+    {
+      "file": "ppp_sintetico.txt"
+    }
+  ],
+  "expected": {
+    "facts": [
+      {
+        "id": "G-F1",
+        "text_any": [
+          "ruído habitual e permanente de 89,4 dB(A)"
+        ],
+        "source": {
+          "file": "ppp_sintetico.txt",
+          "page": 1,
+          "quote": "ruído habitual e permanente de 89,4 dB(A)"
+        },
+        "atoms": {
+          "date": "2015-02-01"
+        }
+      }
+    ],
+    "issues": [
+      {
+        "id": "G-I1",
+        "text_any": [
+          "vedação de conversão após EC 103/2019",
+          "eficácia de EPI no ruído"
+        ],
+        "analysis_status": "qualified"
+      }
+    ],
+    "requests": [],
+    "contradictions": [],
+    "catalog_id": "inicial_procedimento_comum",
+    "strategy": {
+      "domain": "previdenciario"
+    }
+  }
+}

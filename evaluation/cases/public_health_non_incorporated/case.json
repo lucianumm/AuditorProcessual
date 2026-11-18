@@ -1,0 +1,44 @@
+{
+  "schema_version": "2.0",
+  "synthetic": true,
+  "case_id": "public_health_non_incorporated",
+  "source_files": [
+    {
+      "file": "laudo_sus.txt"
+    }
+  ],
+  "expected": {
+    "facts": [
+      {
+        "id": "G-F1",
+        "text_any": [
+          "250 salários mínimos anuais"
+        ],
+        "source": {
+          "file": "laudo_sus.txt",
+          "page": 1,
+          "quote": "250 salários mínimos anuais"
+        },
+        "atoms": {
+          "date": "2025-02-08"
+        }
+      }
+    ],
+    "issues": [
+      {
+        "id": "G-I1",
+        "text_any": [
+          "competência da Justiça Federal",
+          "requisitos cumulativos de evidência científica"
+        ],
+        "analysis_status": "qualified"
+      }
+    ],
+    "requests": [],
+    "contradictions": [],
+    "catalog_id": "inicial_procedimento_comum",
+    "strategy": {
+      "domain": "saude_publica"
+    }
+  }
+}

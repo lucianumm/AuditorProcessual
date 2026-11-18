@@ -5,6 +5,7 @@ atual e `skills/legal-process-parser/SKILL.md`. Não leia o repositório inteiro
 
 | Plataforma | Adaptador |
 |---|---|
+| Antigravity / MCP | `adapters/antigravity/INSTRUCTIONS.md` (`.mcp.json`) |
 | ChatGPT/GPT | `adapters/chatgpt/INSTRUCTIONS.md` |
 | Claude | `adapters/claude/CLAUDE_INSTRUCTIONS.md` |
 | Gemini CLI | `GEMINI.md` |

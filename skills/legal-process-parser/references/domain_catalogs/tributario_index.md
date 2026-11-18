@@ -28,3 +28,9 @@ Guia: `domain_guides/tributario.md` · catálogo: `domain_catalogs/tributario.js
 | `trib_simples` | Simples Nacional: exclusão e vedações | 1/1 |
 | `trib_iss_icms` | ISS e ICMS: fato gerador, local e base de cálculo | 3/2 |
 | `trib_precedent_change` | Coisa julgada tributária e mudança de precedente | 1/1 |
+| `trib_ibs_cbs_selective_transition` | Reforma Tributária do consumo (EC 132/2023 e LC 214/2025): não cumulatividade plena, split payment e Imposto Seletivo | 2/2 |
+| `trib_carf_tie_breaker_14689` | Voto de qualidade no CARF pós-Lei 14.689/2023: exclusão de multas, representação penal e redução de juros | 2/1 |
+| `trib_itbi_market_value_tema1113` | ITBI: valor declarado na compra e venda (Tema 1113 STJ) e imunidade na integralização de capital (Tema 796 STF) | 2/2 |
+| `trib_pis_cofins_icms_iss_credits` | PIS e COFINS: exclusão do ICMS destacado (Tema 69 STF), discussão do ISS (Tema 118 STF) e conceito de insumos (Tema 779 STJ) | 2/2 |
+| `trib_irpj_csll_icms_subventions` | Subvenções governamentais e benefícios fiscais de ICMS no IRPJ/CSLL e PIS/COFINS (Tema 1182 STJ e Lei 14.789/2023) | 2/2 |
+| `trib_small_value_execution_cnj547` | Extinção de execução fiscal de baixo valor, protesto prévio e conciliação (Tema 1184 STF e Res. CNJ 547/2024) | 1/2 |

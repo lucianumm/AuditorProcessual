@@ -1,0 +1,926 @@
+{
+  "schema_version": "1.0",
+  "domain": "crianca_adolescente_educacional",
+  "label": "Direito da Criança, do Adolescente e Educacional",
+  "guide": "domain_guides/crianca_adolescente_educacional.md",
+  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
+  "polo_labels": {
+    "claimant_theses": "Teses do protetor, estudante ou defesa socioeducativa",
+    "defense_theses": "Teses do requerido, instituição de ensino ou ente público"
+  },
+  "claims": [
+    {
+      "id": "eca_statutory_custody_substitute_family",
+      "label": "Guarda estatutária, tutela e colocação em família substituta (ECA)",
+      "requirements": [
+        "situacao_risco_ou_falta_pais",
+        "prioridade_familia_natural_e_extensa",
+        "oitiva_crianca_consentimento_adolescente",
+        "estudo_psicossocial_interprofissional"
+      ],
+      "claimant_theses": [
+        {
+          "id": "eca_statutory_custody_substitute_family.c1",
+          "label": "Prioridade da manutenção ou reintegração na família natural ou extensa com afinidade e afetividade comprovadas, deferindo-se guarda estatutária para regularizar posse de fato em procedimentos de tutela/adoção ou situações peculiares (ECA, arts. 19, 25 e 33)",
+          "authority_ids": [
+            "eca_art19",
+            "eca_art25",
+            "eca_art28",
+            "eca_art33"
+          ]
+        },
+        {
+          "id": "eca_statutory_custody_substitute_family.c2",
+          "label": "Obrigatoriedade da oitiva prévia por equipe interprofissional respeitado o estágio de desenvolvimento e de consentimento expresso colhido em audiência quando se tratar de adolescente maior de 12 anos (ECA, art. 28, §§ 1º e 2º)",
+          "authority_ids": [
+            "eca_art28",
+            "cf_art227"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "eca_statutory_custody_substitute_family.d1",
+          "label": "Incompetência da Vara da Infância e da Juventude quando inexistir situação de ameaça ou violação de direitos do art. 98 do ECA, competindo à Vara de Família dirimir disputa ordinária de guarda entre genitores ou parentes",
+          "authority_ids": [
+            "eca_art98",
+            "eca_art148",
+            "cc_art1583"
+          ]
+        },
+        {
+          "id": "eca_statutory_custody_substitute_family.d2",
+          "label": "Indeferimento de guarda estatutária pleiteada exclusivamente para fins previdenciários ou desvinculada de efetiva assistência material, moral e educacional (ECA, art. 33, §§ 2º e 3º, ressalvada a proteção previdenciária do menor sob guarda judicial reconhecida pelo STF nas ADIs 4878 e 5083)",
+          "authority_ids": [
+            "eca_art33",
+            "adi_4878"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Concessão de guarda provisória liminar (ECA, art. 33, § 1º) e definitiva ou deferimento de tutela com prévia suspensão/destituição do poder familiar (art. 36, parágrafo único)",
+        "Fixação de regime de convivência supervisionada ou assistida resguardando a integridade física e psíquica da criança",
+        "Declinação de competência entre Juízo de Família e Juízo da Infância conforme presença ou ausência de risco do art. 98 do ECA"
+      ],
+      "evidence": [
+        "Certidão de nascimento da criança/adolescente e documentos pessoais e certidões negativas dos requerentes",
+        "Relatórios do Conselho Tutelar, CREAS/CRAS e estudo técnico psicossocial elaborado pela equipe interprofissional do juízo (ECA, art. 151)",
+        "Termo de oitiva da criança e de consentimento do adolescente maior de 12 anos"
+      ],
+      "piece_ids": [
+        "acao_guarda_convivencia",
+        "inicial_procedimento_comum",
+        "contestacao",
+        "apelacao_civel",
+        "agravo_instrumento"
+      ],
+      "related_claims": [
+        "fam_custody",
+        "eca_termination_suspension_parental_power",
+        "eca_institutional_foster_care_review"
+      ],
+      "limitation": "Procedimentos protetivos tramitam enquanto perdurar a menoridade/situação de proteção; recursos no sistema do ECA seguem o prazo unificado de 10 dias corridos (salvo embargos de declaração em 5 dias), com preferência absoluta e isenção de preparo (ECA, arts. 152, § 2º, e 198, I e II)"
+    },
+    {
+      "id": "eca_termination_suspension_parental_power",
+      "label": "Destituição e suspensão do poder familiar",
+      "requirements": [
+        "hipotese_grave_abandono_violencia_negligencia",
+        "esgotamento_apoio_familiar_pobreza_nao_basta",
+        "citacao_pessoal_contraditorio_pleno",
+        "pericia_interprofissional_obrigatoria"
+      ],
+      "claimant_theses": [
+        {
+          "id": "eca_termination_suspension_parental_power.c1",
+          "label": "Decretação da perda ou suspensão do poder familiar diante de castigo imoderado, abandono comprovado, abuso sexual, violência doméstica grave ou descumprimento reiterado e injustificado dos deveres inerentes à parentalidade (CC, art. 1.638; ECA, arts. 22 e 24)",
+          "authority_ids": [
+            "cc_art1638",
+            "eca_art22",
+            "eca_art24",
+            "eca_art155"
+          ]
+        },
+        {
+          "id": "eca_termination_suspension_parental_power.c2",
+          "label": "Afastamento cautelar do agressor da moradia comum ou suspensão liminar do poder familiar diante de motivo grave a bem da segurança da criança, ouvida a equipe técnica",
+          "authority_ids": [
+            "eca_art130",
+            "eca_art157"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "eca_termination_suspension_parental_power.d1",
+          "label": "A falta ou a carência de recursos materiais não constitui motivo suficiente para a perda ou a suspensão do poder familiar, devendo a família ser obrigatoriamente incluída em serviços e programas oficiais de auxílio, proteção e promoção (ECA, art. 23)",
+          "authority_ids": [
+            "eca_art23"
+          ]
+        },
+        {
+          "id": "eca_termination_suspension_parental_power.d2",
+          "label": "Nulidade absoluta do processo sem esgotamento comprovado de todos os meios para citação pessoal dos genitores (inclusive requisitando endereços a órgãos públicos e concessionárias) antes de edital, ou sem nomeação de curador especial/Defensoria e estudo biopsicossocial (ECA, arts. 158–162)",
+          "authority_ids": [
+            "eca_art158",
+            "eca_art161",
+            "cpc_art72"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Suspensão liminar do poder familiar com colocação provisória em família extensa ou acolhimento protetivo (ECA, art. 157)",
+        "Procedência da destituição do poder familiar com averbação à margem do registro de nascimento e encaminhamento para adoção no SNA",
+        "Improcedência da destituição com retorno gradual assistido à família de origem incluída na rede socioassistencial (ECA, art. 23)"
+      ],
+      "evidence": [
+        "Relatórios circunstanciados do Conselho Tutelar, rede de saúde, escola e serviço de acolhimento",
+        "Laudo pericial biopsicossocial da equipe interprofissional avaliando vínculos e possibilidades reais de reestruturação familiar",
+        "Certidões de tentativas exaustivas de citação pessoal e depoimento especial colhido sob protocolo protetivo (Lei 13.431/2017)"
+      ],
+      "piece_ids": [
+        "acao_destituicao_poder_familiar",
+        "contestacao",
+        "apelacao_civel",
+        "recurso_especial"
+      ],
+      "related_claims": [
+        "eca_statutory_custody_substitute_family",
+        "eca_adoption_national_international_sna",
+        "fam_domestic_violence"
+      ],
+      "limitation": "Resposta escrita no prazo de 10 dias corridos da citação (ECA, art. 158 e art. 152, § 2º); prazo legal máximo de 120 dias para conclusão do procedimento (ECA, art. 163); apelação em 10 dias corridos recebida apenas no efeito devolutivo quando destituir/suspender poder familiar por risco (art. 198, II, e art. 199-B)"
+    },
+    {
+      "id": "eca_adoption_national_international_sna",
+      "label": "Adoção nacional e internacional e exceções ao Sistema Nacional de Adoção (SNA)",
+      "requirements": [
+        "habilitacao_previa_cadastro_sna",
+        "diferenca_etaria_dezesseis_anos",
+        "estagio_convivencia_acompanhado",
+        "excecoes_taxativas_art_50_par_13"
+      ],
+      "claimant_theses": [
+        {
+          "id": "eca_adoption_national_international_sna.c1",
+          "label": "Concessão da adoção plena, irrevogável e atributiva da condição de filho quando demonstradas reais vantagens para o adotando e motivos legítimos, observada a ordem cronológica de pretendentes habilitados no SNA e o estágio de convivência (ECA, arts. 39, 41, 43, 46 e 50)",
+          "authority_ids": [
+            "eca_art39",
+            "eca_art42",
+            "eca_art46",
+            "eca_art50"
+          ]
+        },
+        {
+          "id": "eca_adoption_national_international_sna.c2",
+          "label": "Deferimento de adoção direta fora do cadastro exclusivamente nas hipóteses legais do art. 50, § 13 (unilateral, parente com afinidade/afetividade ou tutor/guardião legal de maior de 3 anos) ou, em caráter excepcionalíssimo, diante de vínculo socioafetivo consolidado no tempo em que a retirada causaria dano psíquico grave à criança — jurisprudência STJ",
+          "authority_ids": [
+            "eca_art50",
+            "cf_art227"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "eca_adoption_national_international_sna.d1",
+          "label": "Vedação à burla deliberada do cadastro nacional de adoção ('adoção à brasileira' ou entrega irregular sem vínculo consolidado) e obrigatoriedade de encaminhamento da gestante que manifeste interesse em entregar o filho à Justiça da Infância sem constrangimento (entrega voluntária — art. 19-A)",
+          "authority_ids": [
+            "eca_art19a",
+            "eca_art50"
+          ]
+        },
+        {
+          "id": "eca_adoption_national_international_sna.d2",
+          "label": "Subsidiariedade dupla da adoção internacional, admitida somente após esgotadas todas as tentativas de colocação em família substituta brasileira no SNA e com intervenção das Autoridades Centrais (ECA, arts. 51 a 52-D)",
+          "authority_ids": [
+            "eca_art51"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Habilitação de pretendentes no Sistema Nacional de Adoção e Acolhimento (SNA — ECA, arts. 197-A a 197-F)",
+        "Sentença constitutiva de adoção nacional ou internacional com cancelamento do registro original, lavratura de novo assento de nascimento e alteração de prenome/sobrenome (ECA, art. 47)",
+        "Reconhecimento de adoção unilateral ou póstuma quando inequívoca a manifestação de vontade do adotante falecido no curso do procedimento (ECA, art. 42, § 6º)"
+      ],
+      "evidence": [
+        "Certificado de habilitação no SNA e comprovante de participação em programa de preparação psicossocial e jurídica",
+        "Consentimento dos pais biológicos colhido em audiência após o nascimento (art. 166) ou sentença de destituição do poder familiar / certidão de óbito",
+        "Relatório favorável do estágio de convivência (máximo de 90 dias prorrogável na nacional; mínimo de 30 e máximo de 45 dias na internacional — art. 46)"
+      ],
+      "piece_ids": [
+        "pedido_adocao",
+        "contestacao",
+        "apelacao_civel",
+        "recurso_especial"
+      ],
+      "related_claims": [
+        "fam_adoption",
+        "eca_termination_suspension_parental_power"
+      ],
+      "limitation": "Prazo máximo de 120 dias para conclusão da ação de adoção, prorrogável uma única vez por igual período mediante decisão fundamentada (ECA, art. 47, § 10); a adoção é irrevogável após o trânsito em julgado (art. 39, § 1º); apelação em 10 dias corridos (art. 198, II)"
+    },
+    {
+      "id": "eca_institutional_foster_care_review",
+      "label": "Acolhimento institucional ou familiar e reavaliação trimestral obrigatória",
+      "requirements": [
+        "excepcionalidade_e_provisoriedade",
+        "ordem_judicial_afastamento",
+        "reavaliacao_trimestral_fundamentada",
+        "limite_temporal_dezoito_meses"
+      ],
+      "claimant_theses": [
+        {
+          "id": "eca_institutional_foster_care_review.c1",
+          "label": "Excepcionalidade do acolhimento institucional ou familiar (com preferência legal pelo acolhimento familiar — art. 34, § 1º), dependendo o afastamento do convívio familiar de decisão judicial fundamentada e Plano Individual de Atendimento (PIA)",
+          "authority_ids": [
+            "eca_art19",
+            "eca_art34",
+            "eca_art101"
+          ]
+        },
+        {
+          "id": "eca_institutional_foster_care_review.c2",
+          "label": "Obrigatoriedade de reavaliação da situação de toda criança ou adolescente acolhido, no máximo, a cada 3 meses por decisão fundamentada em relatório interprofissional, não podendo a permanência ultrapassar 18 meses salvo comprovada necessidade que atenda ao seu superior interesse",
+          "authority_ids": [
+            "eca_art19"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "eca_institutional_foster_care_review.d1",
+          "label": "Manutenção temporária do acolhimento protetivo quando o relatório técnico trimestral demonstrar persistência de risco grave à incolumidade física/psicológica no ambiente doméstico e frustração das medidas de apoio familiar",
+          "authority_ids": [
+            "eca_art98",
+            "eca_art101"
+          ]
+        },
+        {
+          "id": "eca_institutional_foster_care_review.d2",
+          "label": "Comunicação em 24 horas ao Juízo da Infância nos casos de acolhimento emergencial excepcional realizado pelo Conselho Tutelar (art. 93)",
+          "authority_ids": [
+            "eca_art93",
+            "eca_art101"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Desacolhimento imediato com reintegração à família natural/extensa mediante acompanhamento da rede protetiva",
+        "Realização de audiência concentrada e reavaliação trimestral obrigatória sob o art. 19, § 1º, do ECA",
+        "Transferência de acolhimento institucional para programa de família acolhedora (art. 34, § 1º), preservado o não desmembramento de grupos de irmãos (art. 28, § 4º)"
+      ],
+      "evidence": [
+        "Guia Nacional de Acolhimento/Desacolhimento expedida no SNA e Plano Individual de Atendimento (PIA — art. 101, §§ 4º a 6º)",
+        "Relatórios trimestrais atualizados da equipe técnica do serviço de acolhimento e do setor interprofissional judicial",
+        "Atas de audiências concentradas e comprovantes de encaminhamento da família natural/extensa à rede socioassistencial (CAPS, CRAS, CREAS)"
+      ],
+      "piece_ids": [
+        "manifestacao_especifica",
+        "habeas_corpus",
+        "agravo_instrumento",
+        "acao_civil_publica"
+      ],
+      "related_claims": [
+        "eca_statutory_custody_substitute_family",
+        "eca_termination_suspension_parental_power"
+      ],
+      "limitation": "Comunicação de acolhimento emergencial em 24 horas (ECA, art. 93); elaboração do PIA em até 15 dias do ingresso; reavaliação judicial obrigatória a cada 3 meses no máximo e teto legal de 18 meses de permanência (ECA, art. 19, §§ 1º e 2º)"
+    },
+    {
+      "id": "eca_infractional_act_sinase_measures",
+      "label": "Apuração de ato infracional e execução de medidas socioeducativas (ECA e SINASE)",
+      "requirements": [
+        "tipicidade_conduta_analoga_crime_contravencao",
+        "defesa_tecnica_e_oitiva_adolescente",
+        "taxatividade_internacao_art_122",
+        "principio_nao_tratamento_mais_gravoso_que_adulto"
+      ],
+      "claimant_theses": [
+        {
+          "id": "eca_infractional_act_sinase_measures.c1",
+          "label": "No procedimento para aplicação de medida socioeducativa, é nula a desistência de outras provas em face da confissão do adolescente, exigindo-se oitiva e defesa técnica mesmo na homologação de remissão cumulada com medida (Súmula 342 do STJ)",
+          "authority_ids": [
+            "stj_sumula_342",
+            "eca_art110",
+            "eca_art111"
+          ]
+        },
+        {
+          "id": "eca_infractional_act_sinase_measures.c2",
+          "label": "O ato infracional análogo ao tráfico de drogas, por si só, não conduz obrigatoriamente à imposição de medida socioeducativa de internação do adolescente (Súmula 492 do STJ), restrita às hipóteses taxativas do art. 122 do ECA, vedado tratamento mais gravoso ao adolescente que o conferido ao imputável adulto e limitada a lotação de unidades a 100% da capacidade (HC Coletivo 143.988 STF)",
+          "authority_ids": [
+            "eca_art122",
+            "stj_sumula_492",
+            "l12594_art35"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "eca_infractional_act_sinase_measures.d1",
+          "label": "Cabimento legítimo da internação provisória (máximo de 45 dias improrrogáveis — art. 108) e da internação-sanção ou definitiva quando praticado ato infracional mediante grave ameaça ou violência a pessoa, ou por reiteração comprovada no cometimento de outras infrações graves (ECA, art. 122, I e II)",
+          "authority_ids": [
+            "eca_art108",
+            "eca_art122"
+          ]
+        },
+        {
+          "id": "eca_infractional_act_sinase_measures.d2",
+          "label": "Adequação pedagógica das medidas em meio aberto (liberdade assistida e prestação de serviços à comunidade) e semiliberdade conforme o Plano Individual de Atendimento (PIA) do SINASE",
+          "authority_ids": [
+            "eca_art112",
+            "l12594_art52"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Relaxamento/revogação de internação provisória por excesso do prazo peremptório de 45 dias (ECA, art. 108) ou ausência de violência/grave ameaça",
+        "Substituição da internação por liberdade assistida ou semiliberdade (Súmula 492 STJ) ou extinção da medida pela prescrição socioeducativa (Súmula 338 STJ)",
+        "Transferência ou progressão de medida em unidade socioeducativa superlotada"
+      ],
+      "evidence": [
+        "Representação socioeducativa, auto de apreensão, boletim de ocorrência, laudo de constatação/definitivo e termo de audiência de apresentação e continuação",
+        "Plano Individual de Atendimento (PIA — Lei 12.594/2012) e relatórios avaliativos semestrais da equipe técnica da unidade",
+        "Folha de antecedentes infracionais para aferição objetiva de primariedade ou reiteração em infrações graves"
+      ],
+      "piece_ids": [
+        "defesa_ato_infracional",
+        "habeas_corpus",
+        "apelacao_civel",
+        "recurso_especial"
+      ],
+      "related_claims": [
+        "pen_drugs",
+        "pen_cautionary_alternatives"
+      ],
+      "limitation": "Internação provisória limitada ao prazo máximo improrrogável de 45 dias corridos (ECA, art. 108); internação definitiva reavaliada no máximo a cada 6 meses, não podendo exceder 3 anos nem ultrapassar os 21 anos de idade para liberação compulsória (ECA, art. 121, §§ 2º, 3º e 5º); aplica-se a prescrição penal às medidas socioeducativas (Súmula 338 do STJ, com redução pela metade do art. 115 do CP)"
+    },
+    {
+      "id": "eca_daycare_preschool_vacancy",
+      "label": "Vaga em creche e pré-escola próxima à residência (Tema 548 STF)",
+      "requirements": [
+        "crianca_zero_a_cinco_anos",
+        "residencia_no_municipio_demandado",
+        "recusa_ou_fila_espera_rede_publica",
+        "eficacia_direta_autoaplicavel_tema_548"
+      ],
+      "claimant_theses": [
+        {
+          "id": "eca_daycare_preschool_vacancy.c1",
+          "label": "A educação infantil (creche de 0 a 3 anos e pré-escola de 4 a 5 anos) representa prerrogativa constitucional indisponível, assegurada mediante eficácia direta e autoaplicável em unidade próxima à residência ou ao trabalho dos pais (Tema 548 do STF)",
+          "authority_ids": [
+            "cf_art208",
+            "cf_art227",
+            "eca_art54",
+            "l9394_art4",
+            "tema_stf_548"
+          ]
+        },
+        {
+          "id": "eca_daycare_preschool_vacancy.c2",
+          "label": "Inoponibilidade genérica da cláusula da reserva do possível ou do princípio da separação dos poderes pelo Município para eximir-se da obrigação constitucional prioritária de matrícula infantil, cabendo bloqueio/custeio subsidiário em caso de descumprimento",
+          "authority_ids": [
+            "cf_art227",
+            "tema_stf_548",
+            "cpc_art536"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "eca_daycare_preschool_vacancy.d1",
+          "label": "Cumprimento da obrigação estatal mediante oferta de vaga em unidade da rede própria ou conveniada em distância razoável ou com fornecimento gratuito de transporte escolar adequado, evitando custeio desproporcional em escola particular de alto padrão",
+          "authority_ids": [
+            "eca_art54",
+            "l9394_art4",
+            "lindb_art20"
+          ]
+        },
+        {
+          "id": "eca_daycare_preschool_vacancy.d2",
+          "label": "Observância de critérios objetivos transparentes de vulnerabilidade socioeconômica para organização administrativa da expansão de vagas sem prejuízo do atendimento individual judicializado",
+          "authority_ids": [
+            "cf_art208"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Tutela de urgência determinando matrícula imediata em creche ou pré-escola municipal próxima à residência (até 2 km) ou fornecimento de transporte gratuito, sob pena de bloqueio/custeio de mensalidade em instituição privada conveniada/próxima",
+        "Ação civil pública estrutural para ampliação planejada da oferta de vagas na rede municipal de educação infantil"
+      ],
+      "evidence": [
+        "Certidão de nascimento da criança e comprovante atualizado de residência/trabalho dos responsáveis no Município",
+        "Protocolo de inscrição no cadastro municipal de educação infantil comprobatório de negativa ou permanência em fila de espera",
+        "Três orçamentos de escolas privadas próximas caso postulado custeio subsidiário em caso de descumprimento"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "mandado_seguranca",
+        "tutela_urgencia_antecedente",
+        "acao_civil_publica",
+        "contestacao"
+      ],
+      "related_claims": [
+        "sus_treatment",
+        "eca_inclusive_education_support_professional"
+      ],
+      "limitation": "Direito fundamental indisponível exercitável continuamente enquanto a criança estiver na faixa etária de 0 a 5 anos (CF, art. 208, IV); mandado de segurança em até 120 dias do ato concreto de negativa (Lei 12.016/2009, art. 23), sem prejuízo da ação ordinária/ECA a qualquer tempo"
+    },
+    {
+      "id": "eca_inclusive_education_support_professional",
+      "label": "Educação inclusiva, profissional de apoio escolar e vedação de taxa extra para TEA/PCD",
+      "requirements": [
+        "diagnostico_tea_ou_deficiencia",
+        "necessidade_comprovada_apoio_ou_adaptacao",
+        "dever_inclusao_rede_publica_e_privada",
+        "vedacao_cobranca_adicional_adi_5357"
+      ],
+      "claimant_theses": [
+        {
+          "id": "eca_inclusive_education_support_professional.c1",
+          "label": "Obrigatoriedade constitucional e legal das instituições públicas e privadas de ensino de prover sistema educacional inclusivo, adaptações curriculares razoáveis (PEI) e profissional de apoio escolar/acompanhante especializado quando comprovada a necessidade",
+          "authority_ids": [
+            "l13146_art27",
+            "l13146_art28",
+            "l12764_art3"
+          ]
+        },
+        {
+          "id": "eca_inclusive_education_support_professional.c2",
+          "label": "Ilicitude absoluta da recusa de matrícula ou da cobrança de valores adicionais de qualquer natureza nas mensalidades, anuidades e matrículas de estudantes com deficiência ou TEA em escolas particulares (Lei 13.146/2015, art. 28, § 1º; ADI 5357 do STF)",
+          "authority_ids": [
+            "l13146_art28",
+            "adi_5357",
+            "cdc_art39"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "eca_inclusive_education_support_professional.d1",
+          "label": "Delimitação técnica das atribuições do profissional de apoio escolar (alimentação, higiene, locomoção e mediação comunicacional/pedagógica no ambiente escolar — Lei 13.146/2015, art. 3º, XIII), excluídos tratamentos clínicos médicos, fonoaudiológicos ou psicoterápicos ABA individuais de competência do SUS/plano de saúde",
+          "authority_ids": [
+            "l13146_art3",
+            "l13146_art28"
+          ]
+        },
+        {
+          "id": "eca_inclusive_education_support_professional.d2",
+          "label": "Avaliação pedagógica individualizada demonstrando autonomia funcional do aluno ou suficiência do atendimento educacional especializado (AEE) e mediação compartilhada sem necessidade de acompanhante exclusivo em tempo integral",
+          "authority_ids": [
+            "l13146_art28",
+            "l9394_art58"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Tutela de urgência assegurando matrícula/renovação sem cobrança adicional e disponibilização imediata de profissional de apoio escolar capacitado e Plano Educacional Individualizado (PEI)",
+        "Restituição em dobro de taxas extras cobradas ilegalmente pela escola privada e indenização por danos morais decorrentes de recusa discriminatória de matrícula ou exclusão escolar"
+      ],
+      "evidence": [
+        "Laudo médico neurológico/psiquiátrico circunstanciado (CID) e relatórios multidisciplinares especificando as barreiras funcionais e a necessidade concreta de apoio no cotidiano escolar",
+        "Contrato de prestação de serviços educacionais, comunicados/e-mails da escola exigindo taxa extra ou recusando vaga e relatórios pedagógicos",
+        "Plano Educacional Individualizado (PEI) ou solicitação formal de adaptação curricular e comprovantes de pagamento de taxas extras"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "tutela_urgencia_antecedente",
+        "mandado_seguranca",
+        "acao_civil_publica",
+        "contestacao"
+      ],
+      "related_claims": [
+        "sus_disability_home_care",
+        "cons_health_coverage_roll",
+        "eca_bullying_cyberbullying_school_protection"
+      ],
+      "limitation": "Pretensão inibitória/cominatória de inclusão escolar exercitável a qualquer tempo durante a vida escolar; prescrição quinquenal para reparação por fato do serviço educacional (CDC, art. 27) ou contra ente público (Decreto 20.910/1932) e decenal/trienal para repetição de taxas indevidas"
+    },
+    {
+      "id": "eca_travel_artistic_sports_authorization",
+      "label": "Autorização judicial de viagem e participação artística, digital ou desportiva",
+      "requirements": [
+        "viagem_nacional_ou_internacional_sem_consenso",
+        "inexistencia_mudanca_definitiva_domicilio_sem_guarda",
+        "protecao_trabalho_artistico_influencer_desportivo",
+        "preservacao_frequencia_escolar_e_desenvolvimento"
+      ],
+      "claimant_theses": [
+        {
+          "id": "eca_travel_artistic_sports_authorization.c1",
+          "label": "Suprimento judicial de consentimento para viagem internacional de férias/estudos de duração certa com retorno garantido quando injustificada a recusa ou paradeiro ignorado de um dos genitores, sem configurar transferência ilícita de residência habitual sob a Convenção da Haia (ECA, arts. 83 a 85; Resolução CNJ 131/2011)",
+          "authority_ids": [
+            "eca_art83",
+            "eca_art84",
+            "eca_art85"
+          ]
+        },
+        {
+          "id": "eca_travel_artistic_sports_authorization.c2",
+          "label": "Necessidade de alvará judicial individualizado da Justiça da Infância e da Juventude para participação de criança ou adolescente em espetáculos públicos, produções audiovisuais, publicidade digital remunerada e alojamento/formação desportiva, garantidos frequência escolar, horário protegido e reserva financeira (CF, art. 7º, XXXIII; Convenção 138 OIT; ECA, art. 149)",
+          "authority_ids": [
+            "eca_art149",
+            "cf_art227"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "eca_travel_artistic_sports_authorization.d1",
+          "label": "Indeferimento de mero pedido de autorização de viagem internacional quando encobrir mudança definitiva de domicílio para o exterior sem ação própria de modificação de guarda/domicílio com amplo contraditório e estudo psicossocial",
+          "authority_ids": [
+            "eca_art84",
+            "cc_art1634",
+            "cc_art1583"
+          ]
+        },
+        {
+          "id": "eca_travel_artistic_sports_authorization.d2",
+          "label": "Proibição ou imposição de condicionantes protetivas diante de jornada exaustiva, prejuízo ao rendimento escolar ou adultização/exposição indevida da imagem da criança na internet",
+          "authority_ids": [
+            "eca_art17",
+            "eca_art149",
+            "lgpd_art14"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Expedição de alvará judicial suprindo autorização paterna/materna para emissão/renovação de passaporte e viagem nacional ou internacional com datas de ida e volta definidas",
+        "Concessão de alvará individualizado do art. 149 do ECA para atuação artística/audiovisual com depósito de percentual da remuneração em conta poupança vinculada"
+      ],
+      "evidence": [
+        "Passagens aéreas de ida e volta (ou roteiro detalhado), reservas de hospedagem, seguro-viagem, calendário de férias escolares e vínculos de retorno ao Brasil",
+        "Notificação/mensagens demonstrando a recusa imotivada ou tentativa frustrada de localização do outro genitor",
+        "Contrato artístico/publicitário, cronograma de gravações compatível com o turno escolar, matrícula/boletim escolar e autorização dos representantes legais"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "tutela_urgencia_antecedente",
+        "contestacao",
+        "apelacao_civel"
+      ],
+      "related_claims": [
+        "fam_custody",
+        "dp_children_sensitive"
+      ],
+      "limitation": "Viagem nacional sem autorização judicial vedada para menores de 16 anos desacompanhados dos pais/parentes até 3º grau (ECA, art. 83, redação da Lei 13.812/2019); autorização de viagem internacional válida pelo prazo fixado no alvará ou até 2 anos no padrão CNJ; apelação em 10 dias corridos (ECA, art. 198, II)"
+    },
+    {
+      "id": "eca_fies_contracting_medical_abatement",
+      "label": "FIES: contratação, aditamento, teto semestral e abatimento de 1% para médicos e professores",
+      "requirements": [
+        "contrato_financiamento_estudantil_lei_10260",
+        "ilegalidade_restricao_infralegal_sem_amparo_lei",
+        "atuacao_medico_esf_sus_ou_professor_rede_publica",
+        "abatimento_um_por_cento_e_carencia_estendida"
+      ],
+      "claimant_theses": [
+        {
+          "id": "eca_fies_contracting_medical_abatement.c1",
+          "label": "Direito de médicos integrantes de equipes de Saúde da Família oficialmente cadastradas (ou residentes em especialidades prioritárias / atuação COVID-19 nos marcos legais) e de professores em efetivo exercício na rede pública de educação básica ao abatimento mensal de 1% do saldo devedor consolidado do FIES e à suspensão da cobrança durante o exercício (Lei 10.260/2001, art. 6º-B)",
+          "authority_ids": [
+            "l10260_art6b"
+          ]
+        },
+        {
+          "id": "eca_fies_contracting_medical_abatement.c2",
+          "label": "Revisão judicial de falhas operacionais do SisFIES/FNDE que impeçam aditamento semestral tempestivo ou de restrições infralegais de portarias que extrapolem os limites da Lei 10.260/2001 conforme o regime contratual e a jurisprudência do STJ",
+          "authority_ids": [
+            "l10260_art1",
+            "l10260_art4"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "eca_fies_contracting_medical_abatement.d1",
+          "label": "Validade dos critérios seletivos de nota mínima no ENEM, renda familiar per capita máxima e teto global de financiamento definidos pelo Comitê Gestor do FIES dentro da delegação legal expressa da Lei 10.260/2001 (pós-Lei 13.530/2017 — Novo FIES) — conferir distinção jurisprudencial no STJ/STF",
+          "authority_ids": [
+            "l10260_art1",
+            "l10260_art3"
+          ]
+        },
+        {
+          "id": "eca_fies_contracting_medical_abatement.d2",
+          "label": "Necessidade de comprovação anual da jornada mínima exigida (40 horas semanais na ESF ou 20 horas semanais no magistério público) no sistema FIESMed/SisFIES para fruição do abatimento de 1%",
+          "authority_ids": [
+            "l10260_art6b"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Condenação do FNDE e do agente financeiro a conceder o abatimento mensal de 1% do saldo devedor consolidado e suspender a exigibilidade das prestações do FIES, com exclusão de apontamentos em cadastros restritivos e restituição de parcelas cobradas durante o período comprovado",
+        "Regularização de aditamento de renovação semestral obstado por erro sistêmico do SisFIES"
+      ],
+      "evidence": [
+        "Contrato de Abertura de Crédito para Financiamento Estudantil (FIES) e extratos de evolução do saldo devedor",
+        "Declarações oficiais do gestor municipal de saúde e histórico no CNES comprovando no mínimo 1 ano ininterrupto em equipe da Estratégia Saúde da Família em área prioritária (ou certidão de efetivo exercício docente público)",
+        "Capturas datadas de erro operacional no sistema FIESMed/SisFIES e requerimentos administrativos protocolados"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "tutela_urgencia_antecedente",
+        "mandado_seguranca",
+        "requerimento_administrativo",
+        "contestacao"
+      ],
+      "related_claims": [
+        "eca_prouni_quotas_heteroidentification",
+        "banc_contract_review"
+      ],
+      "limitation": "Prescrição quinquenal contra o FNDE/União para pleitear abatimentos retroativos de 1% e repetição de parcelas pagas (Decreto 20.910/1932, art. 1º); prescrição quinquenal/decenal para cobrança do financiamento estudantil inadimplido conforme a natureza contratual do fundo garantidor — conferir no STJ"
+    },
+    {
+      "id": "eca_prouni_quotas_heteroidentification",
+      "label": "PROUNI, Lei de Cotas (Lei 14.723/2023) e bancas de heteroidentificação no ensino superior",
+      "requirements": [
+        "concorrencia_inicial_ampla_antes_cotas",
+        "renda_familiar_escola_publica_pcd",
+        "comissao_heteroidentificacao_fenotipica",
+        "contraditorio_motivacao_e_recurso"
+      ],
+      "claimant_theses": [
+        {
+          "id": "eca_prouni_quotas_heteroidentification.c1",
+          "label": "No regime atualizado da Lei de Cotas (Lei 12.711/2012 com a redação da Lei 14.723/2023), os estudantes optantes concorrem inicialmente às vagas de ampla concorrência e, somente se não alcançada nota para ingresso por essa via, têm sua nota utilizada para as vagas reservadas a escolas públicas, baixa renda (≤ 1 salário mínimo per capita), pretos, pardos, indígenas, quilombolas e pessoas com deficiência",
+          "authority_ids": [
+            "l12711_art1",
+            "l12711_art3",
+            "l14723_art1"
+          ]
+        },
+        {
+          "id": "eca_prouni_quotas_heteroidentification.c2",
+          "label": "Nulidade de eliminação por comissão de heteroidentificação desprovida de motivação individualizada, de aferição estritamente fenotípica presencial/telepresencial adequada ou de recurso administrativo julgado por banca recursal distinta com amplo contraditório",
+          "authority_ids": [
+            "l9784_art50",
+            "adc_41",
+            "adpf_186"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "eca_prouni_quotas_heteroidentification.d1",
+          "label": "Constitucionalidade das políticas de ações afirmativas (ADPF 186 do STF e Lei 11.096/2005 — PROUNI) e da utilização subsidiária de comissões de heteroidentificação baseadas no fenótipo socialmente percebido (e não em ascendência genotípica remota) para coibir fraudes à autodeclaração (ADC 41 do STF)",
+          "authority_ids": [
+            "adpf_186",
+            "adc_41",
+            "l11096_art1"
+          ]
+        },
+        {
+          "id": "eca_prouni_quotas_heteroidentification.d2",
+          "label": "Insindicabilidade judicial do mérito administrativo da comissão de heteroidentificação quando respeitados o edital, a dignidade humana, a gravação audiovisual e a dupla análise motivada sem erro grosseiro ou teratologia",
+          "authority_ids": [
+            "adc_41",
+            "l9784_art50"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14723_cotas"
+      ],
+      "typical_requests": [
+        "Mandado de segurança ou ação anulatória com pedido liminar de reserva de vaga e matrícula provisória diante de vício formal, falta de motivação ou teratologia manifesta no parecer da banca de heteroidentificação ou no cálculo de renda/deficiência",
+        "Concessão ou manutenção de bolsa integral/parcial do PROUNI comprovado o atendimento substancial aos critérios socioeconômicos da Lei 11.096/2005"
+      ],
+      "evidence": [
+        "Edital do processo seletivo (SiSU, vestibular ou PROUNI), boletim de desempenho e regras da comissão de heteroidentificação",
+        "Gravação em vídeo da sessão de aferição, parecer originário e decisão do recurso administrativo",
+        "Comprovantes de escolaridade integral em escola pública, laudos médicos (vaga PCD) ou documentos de renda familiar bruta per capita"
+      ],
+      "piece_ids": [
+        "mandado_seguranca",
+        "inicial_procedimento_comum",
+        "tutela_urgencia_antecedente",
+        "recurso_administrativo",
+        "contestacao"
+      ],
+      "related_claims": [
+        "adm_public_exam",
+        "eca_fies_contracting_medical_abatement"
+      ],
+      "limitation": "Prazo decadencial de 120 dias da ciência do resultado definitivo para mandado de segurança (Lei 12.016/2009, art. 23) e prescrição quinquenal para ação anulatória ordinária contra universidade federal/União (Decreto 20.910/1932, art. 1º)"
+    },
+    {
+      "id": "eca_foreign_diploma_revalida",
+      "label": "Revalidação ordinária e simplificada de diploma médico/estrangeiro (Revalida e LDB)",
+      "requirements": [
+        "diploma_graduacao_instituicao_estrangeira_regular",
+        "tramitacao_simplificada_arcu_sul_lista_mec",
+        "exame_nacional_revalida_lei_13959",
+        "vedacao_recusa_protocolo_tema_1028_stj"
+      ],
+      "claimant_theses": [
+        {
+          "id": "eca_foreign_diploma_revalida.c1",
+          "label": "Ilegalidade da negativa sumária de recebimento e abertura de processo administrativo de revalidação de diploma estrangeiro (inclusive na modalidade de tramitação simplificada para cursos acreditados no ARCU-SUL ou com precedentes positivos na Plataforma Carolina Bori) por limitação arbitrária de vagas de protocolo pela universidade pública",
+          "authority_ids": [
+            "l9394_art48",
+            "l13959_art2"
+          ]
+        },
+        {
+          "id": "eca_foreign_diploma_revalida.c2",
+          "label": "Direito líquido e certo à expedição/apostilamento do diploma revalidado após aprovação nas duas etapas (teórica e de habilidades clínicas) do Exame Nacional de Revalidação de Diplomas Médicos — Revalida (Lei 13.959/2019)",
+          "authority_ids": [
+            "l13959_art1",
+            "l13959_art2"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "eca_foreign_diploma_revalida.d1",
+          "label": "Autonomia didático-científica e administrativa das universidades públicas (CF, art. 207; LDB, art. 48, § 2º) para exigir análise curricular substancial ou provas complementares quando não preenchidos os critérios objetivos estritos de acreditação para tramitação simplificada (Tema 1028 do STJ)",
+          "authority_ids": [
+            "cf_art207",
+            "l9394_art48",
+            "tema_stj_1028"
+          ]
+        },
+        {
+          "id": "eca_foreign_diploma_revalida.d2",
+          "label": "Inadmissibilidade de revalidação automática judicial de diploma médico estrangeiro sem aprovação acadêmica ou no exame Revalida, ressalvados programas específicos instituídos por lei federal nos estritos limites temporais",
+          "authority_ids": [
+            "l13959_art2",
+            "cf_art5"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Ordem determinando à universidade pública revalidadora que receba o requerimento, analise a documentação no prazo regulamentar (até 60/90 dias na simplificada ou 180 dias na ordinária conforme Res. CNE/CES 1/2022) e fundamente eventual exigência complementar",
+        "Inscrição na segunda etapa do Revalida para formandos em fase final de internato ou homologação de resultado final aprovado"
+      ],
+      "evidence": [
+        "Diploma estrangeiro original apostilado (Convenção da Haia), histórico escolar completo, projeto pedagógico/ementas e traduções exigidas",
+        "Comprovante de acreditação vigente do curso estrangeiro no Sistema ARCU-SUL ou relação oficial da Plataforma Carolina Bori/MEC",
+        "Comprovante de bloqueio ou recusa de abertura de protocolo pela instituição pública de ensino superior"
+      ],
+      "piece_ids": [
+        "mandado_seguranca",
+        "inicial_procedimento_comum",
+        "recurso_administrativo",
+        "contestacao"
+      ],
+      "related_claims": [
+        "adm_silence_delay",
+        "adm_public_exam"
+      ],
+      "limitation": "Prazos regulamentares de conclusão de até 90 dias (tramitação simplificada) e 180 dias (tramitação ordinária) nas normas do CNE/MEC; 120 dias do ato coator para mandado de segurança (Lei 12.016/2009, art. 23)"
+    },
+    {
+      "id": "eca_bullying_cyberbullying_school_protection",
+      "label": "Bullying, cyberbullying e dever de proteção integral no ambiente escolar e digital (Lei 14.811/2024)",
+      "requirements": [
+        "intimidacao_sistematica_fisica_psicologica_virtual",
+        "dever_guarda_vigilancia_prevencao_escola",
+        "omissao_especifica_ou_defeito_servico",
+        "dano_psiquico_moral_material"
+      ],
+      "claimant_theses": [
+        {
+          "id": "eca_bullying_cyberbullying_school_protection.c1",
+          "label": "Responsabilidade civil objetiva da instituição privada de ensino pelo defeito do serviço de segurança e vigilância pedagógica (CDC, art. 14) e do ente público escolar por omissão específica na guarda de alunos sob sua custódia (CF, art. 37, § 6º) diante de atos reiterados de bullying ou cyberbullying sem adoção tempestiva de medidas preventivas e interventivas eficazes",
+          "authority_ids": [
+            "cdc_art14",
+            "cf_art37",
+            "l13185_art4",
+            "eca_art70a",
+            "cp_art146a"
+          ]
+        },
+        {
+          "id": "eca_bullying_cyberbullying_school_protection.c2",
+          "label": "Dever legal das escolas e estabelecimentos educacionais de manter protocolos permanentes de combate à intimidação sistemática, capacitação docente, exigência de certidões de antecedentes dos colaboradores (ECA, art. 59-A, incluído pela Lei 14.811/2024) e comunicação imediata aos pais e órgãos de proteção",
+          "authority_ids": [
+            "l13185_art5",
+            "eca_art59a",
+            "l14811_art1"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "eca_bullying_cyberbullying_school_protection.d1",
+          "label": "Adoção diligente, imediata e documentada de todas as providências pedagógicas, mediação restaurativa, acolhimento psicológico e medidas disciplinares regimentais proporcionais assim que cientificada a escola, ou ocorrência de conflito pontual isolado fora da esfera de vigilância escolar sem nexo causal com a instituição",
+          "authority_ids": [
+            "l13185_art2",
+            "cdc_art14"
+          ]
+        },
+        {
+          "id": "eca_bullying_cyberbullying_school_protection.d2",
+          "label": "Responsabilidade solidária ou regressiva dos pais/responsáveis pelos atos ilícitos cometidos pelos filhos menores sob sua autoridade e companhia (CC, arts. 932, I, e 933)",
+          "authority_ids": [
+            "cc_art932",
+            "cc_art933"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14811_bullying"
+      ],
+      "typical_requests": [
+        "Condenação da instituição de ensino (e solidariamente dos responsáveis pelos agressores quando demandados) ao custeio de tratamento psicológico/psiquiátrico, restituição de despesas de transferência escolar emergencial e indenização por danos morais",
+        "Tutela inibitória determinando implementação de plano protetivo individualizado, mudança de turma e remoção de páginas/grupos de cyberbullying (com indicação das URLs)"
+      ],
+      "evidence": [
+        "Notificações, e-mails, atas de reuniões escolares e mensagens comprovando os alertas prévios feitos pela família à coordenação/direção e a persistência das agressões",
+        "Ata notarial de mensagens de grupos digitais/redes sociais (cyberbullying), boletim de ocorrência e laudos psicológicos/psiquiátricos atestando o abalo sofrido pela vítima",
+        "Regimento escolar e registros das ações pedagógicas adotadas pela instituição"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "tutela_urgencia_antecedente",
+        "ata_notarial",
+        "contestacao"
+      ],
+      "related_claims": [
+        "civ_third_party_liability",
+        "pid_platform_liability_content_removal",
+        "eca_inclusive_education_support_professional"
+      ],
+      "limitation": "Não corre prescrição contra os absolutamente incapazes menores de 16 anos (CC, art. 198, I); após os 16 anos, aplica-se o prazo quinquenal consumerista (CDC, art. 27) contra escola privada, quinquenal contra escola pública (Decreto 20.910/1932) e trienal contra particulares corresponsáveis (CC, art. 206, § 3º, V)"
+    },
+    {
+      "id": "eca_higher_education_documents_retention",
+      "label": "Ensino superior e básico privado: vedação de retenção de documentos e renovação de matrícula (Lei 9.870/1999)",
+      "requirements": [
+        "inadimplemento_mensalidades_escolares",
+        "vedacao_sancao_pedagogica_e_retencao_documentos",
+        "direito_nao_renovar_ao_final_periodo_letivo",
+        "proporcionalidade_cobranca_creditos_disciplinas"
+      ],
+      "claimant_theses": [
+        {
+          "id": "eca_higher_education_documents_retention.c1",
+          "label": "São proibidas a suspensão de provas escolares, a retenção de documentos escolares (histórico, guia de transferência, certificado de conclusão ou diploma) ou a aplicação de quaisquer outras penalidades pedagógicas por motivo de inadimplemento durante o semestre ou ano letivo contratado (Lei 9.870/1999, art. 6º)",
+          "authority_ids": [
+            "l9870_art6",
+            "cdc_art42"
+          ]
+        },
+        {
+          "id": "eca_higher_education_documents_retention.c2",
+          "label": "Direito ao cálculo proporcional da mensalidade quando o estudante cursar grade reduzida de disciplinas remanescentes sob regime de créditos, salvo justificativa contratual transparente de custos fixos mínimos — jurisprudência consumerista",
+          "authority_ids": [
+            "cdc_art39",
+            "cdc_art51",
+            "l9870_art1"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "eca_higher_education_documents_retention.d1",
+          "label": "Legitimidade do indeferimento da renovação de matrícula para o período letivo subsequente (semestral ou anual) do aluno comprovadamente inadimplente há mais de 90 dias, bem como do desligamento apenas ao final do ano/semestre letivo e da cobrança judicial ordinária da dívida (Lei 9.870/1999, arts. 5º e 6º, § 1º)",
+          "authority_ids": [
+            "l9870_art5",
+            "l9870_art6"
+          ]
+        },
+        {
+          "id": "eca_higher_education_documents_retention.d2",
+          "label": "Legalidade dos reajustes anuais da anuidade/semestralidade lastreados em planilha de variação de custos de pessoal e custeio (Lei 9.870/1999, art. 1º)",
+          "authority_ids": [
+            "l9870_art1"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Mandado de segurança ou tutela de urgência determinando a imediata expedição de histórico escolar, documentos de transferência, colação de grau e entrega de diploma retidos por inadimplência, cumulada com danos morais se comprovado prejuízo profissional/acadêmico",
+        "Ação de cobrança ou monitória movida pela instituição de ensino para recebimento das mensalidades vencidas acrescidas de multa limitada a 2% (CDC, art. 52, § 1º) e juros legais"
+      ],
+      "evidence": [
+        "Contrato de prestação de serviços educacionais, histórico acadêmico integralizado e protocolo da recusa de emissão de documentos ou impedimento de avaliação",
+        "Extrato discriminado de mensalidades em aberto e planilha de composição de reajuste anual",
+        "Notificação prévia de inadimplemento superior a 90 dias ou requerimento administrativo à secretaria acadêmica/MEC"
+      ],
+      "piece_ids": [
+        "mandado_seguranca",
+        "inicial_procedimento_comum",
+        "tutela_urgencia_antecedente",
+        "acao_monitoria",
+        "contestacao"
+      ],
+      "related_claims": [
+        "cons_abusive",
+        "cons_undue_charge"
+      ],
+      "limitation": "120 dias do ato de retenção documental ou impedimento de colação de grau para mandado de segurança (Lei 12.016/2009, art. 23); prescrição quinquenal para cobrança de mensalidades escolares vencidas em contrato líquido (CC, art. 206, § 5º, I — jurisprudência STJ)"
+    }
+  ]
+}

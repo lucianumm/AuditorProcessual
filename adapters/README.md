@@ -12,6 +12,7 @@ provedores no contexto de uma tarefa.
 | Grok | `grok/SYSTEM_INSTRUCTIONS.md` | instruções e arquivos anexados |
 | ChatGPT/GPT | `chatgpt/INSTRUCTIONS.md` | Skill `.skill` ou link do repositório |
 | Claude | `claude/CLAUDE_INSTRUCTIONS.md` | pacote com `SKILL.md` na raiz |
+| Antigravity / MCP | `antigravity/INSTRUCTIONS.md` + `.mcp.json` | pacote `.zip` ou servidor MCP local (`mcp_server.py`) |
 
 Todos os adaptadores ordenam: entrada → núcleo → tarefa → corpus do cliente.
 Nas tarefas jurídicas, todos usam `legal_narrative.json`/`analise_juridica.md`

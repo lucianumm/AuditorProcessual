@@ -1,0 +1,45 @@
+{
+  "schema_version": "2.0",
+  "synthetic": true,
+  "case_id": "environmental_infraction",
+  "source_files": [
+    {
+      "file": "auto_ibama.txt"
+    }
+  ],
+  "expected": {
+    "facts": [
+      {
+        "id": "G-F1",
+        "text_any": [
+          "sem demonstração de conduta própria"
+        ],
+        "source": {
+          "file": "auto_ibama.txt",
+          "page": 1,
+          "quote": "sem demonstração de conduta própria"
+        },
+        "atoms": {
+          "amount": "50000.00",
+          "date": "2023-08-18"
+        }
+      }
+    ],
+    "issues": [
+      {
+        "id": "G-I1",
+        "text_any": [
+          "responsabilidade administrativa subjetiva",
+          "dano propter rem"
+        ],
+        "analysis_status": "qualified"
+      }
+    ],
+    "requests": [],
+    "contradictions": [],
+    "catalog_id": "defesa_auto_infracao_ambiental",
+    "strategy": {
+      "domain": "ambiental"
+    }
+  }
+}

@@ -24,3 +24,9 @@ Guia: `domain_guides/consumidor.md` · catálogo: `domain_catalogs/consumidor.js
 | `cons_health_coverage_roll` | Planos de saúde: rol da ANS, terapias e urgência | 3/2 |
 | `cons_burden_venue` | Inversão do ônus da prova, foro e desconsideração | 3/2 |
 | `cons_collective_enforcement` | Liquidação e execução individual de sentença coletiva | 2/2 |
+| `cons_tea_multidisciplinary_therapy` | Transtorno do Espectro Autista (TEA): terapias multidisciplinares ilimitadas e reembolso (Leis 12.764/2012 e 14.454/2022) | 2/2 |
+| `cons_montreal_convention_air_cargo` | Transporte aéreo internacional vs. doméstico: Convenção de Montreal (Tema 210 STF), bagagem e danos morais | 2/2 |
+| `cons_marketplace_intermediation` | Comércio eletrônico e responsabilidade solidária de plataformas de marketplace e meios de pagamento | 1/2 |
+| `cons_vehicle_recall_lemon` | Vício oculto grave em veículo automotor, recall e critério da vida útil do bem (CDC, arts. 10, 18 e 26, § 3º) | 2/2 |
+| `cons_condo_hotel_timeshare` | Multipropriedade imobiliária (time-sharing) e cotas de resort: venda emocional, arrependimento e retenção | 2/1 |
+| `cons_telecom_loyalty_bundling` | Telecomunicações: venda casada (SVA), multa de fidelização abusiva e cobrança pós-cancelamento | 2/2 |

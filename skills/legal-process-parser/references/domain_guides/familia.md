@@ -1,32 +1,21 @@
-# Direito de Família e Sucessões
+# Direito de Família e das Sucessões
 
 Catálogo: `domain_catalogs/familia.json`.
 
-## Enquadramento
-- Alimentos pelo binômio necessidade-possibilidade (CC, art. 1.694), revisão e exoneração (art. 1.699), rito especial e provisórios (Lei 5.478/1968, arts. 1º e 4º).
-- Execução: prisão civil pelas três prestações anteriores ao ajuizamento e as vincendas (Súmula 309 do STJ, redação de 2006; CPC, art. 528) e título extrajudicial (art. 911).
-- Súmulas do STJ conferidas: 358 (maioridade exige decisão com contraditório), 594 (legitimidade do MP), 596 (avós em caráter complementar), 621 (efeitos da revisão retroagem à citação).
-- Guarda e convivência (CC, arts. 1.583, 1.584 e 1.589), prioridade absoluta (ECA, art. 4º) e alienação parental (Lei 12.318/2010, arts. 2º e 6º).
-- União estável (art. 1.723); sucessão do companheiro: conferir o Tema 809 do STF e o art. 1.790 do CC.
-- Sucessões: ordem de vocação (art. 1.829), herdeiros necessários (art. 1.845), inventário e arrolamento (CPC, arts. 610 e 659).
-- Violência doméstica: configuração e formas (Lei 11.340/2006, arts. 5º e 7º) e medidas protetivas (art. 22).
+## 1. Regime e competência
+- Competência das Varas de Família e Sucessões na Justiça Estadual, com segredo de justiça obrigatório (CPC, art. 189, II) e intervenção do Ministério Público sempre que houver interesse de incapaz (art. 178, II). Nas ações de guarda, alimentos e convivência, prevalece o foro do domicílio do guardião do incapaz (CPC, art. 53, I, "a") ou da mulher em situação de violência doméstica (art. 53, I, "d").
 
-## Marcos conferidos
-- EC 66/2010 (DOU 14/07/2010): divórcio direto (CF, art. 226, § 6º).
-- Lei 14.340/2022 (DOU 19/05/2022): alterações na Lei de Alienação Parental.
-- Lei 14.713/2023 (DOU 31/10/2023): risco de violência doméstica e guarda compartilhada.
+## 2. Teses do alimentando, cônjuge/companheiro ou herdeiro
+- **Alimentos e execução:** demonstre o binômio necessidade-possibilidade e proporcionalidade (CC, art. 1.694, § 1º), indícios da paternidade nos alimentos gravídicos (Lei 11.804/2008, conversão automática com o nascimento — STJ), responsabilidade subsidiária e complementar dos avós (**Súmula 596 STJ**), isenção de Imposto de Renda sobre pensão alimentícia (**ADI 5422 STF**) e execute sob rito de prisão civil as 3 últimas prestações mais as vincendas (CPC, art. 528, § 7º; **Súmula 309 STJ**) ou expropriação com protesto e desconto em folha (arts. 528, § 1º, e 529).
+- **Divórcio, união estável, guarda e sucessões:** postule decretação liminar/parcial do divórcio como direito potestativo incondicionado (EC 66/2010; CPC, art. 356), reconhecimento de união estável com equiparação sucessória ao casamento (**Tema 809 STF**), **afastamento da guarda compartilhada diante de probabilidade de risco de violência doméstica ou familiar** (**Lei 14.713/2023** — CC, art. 1.584, § 2º), partilha de quotas, aplicações e VGBL aberto de caráter de investimento, colação de adiantamento de legítima (CC, art. 2.002) e **inventário/partilha/divórcio extrajudicial em cartório mesmo com herdeiros incapazes ou testamento** (**Res. CNJ 571/2024**).
 
-## Cuidados
-Sigilo, linguagem não estigmatizante, interesse de crianças e incapazes, intervenção do Ministério Público e competência do juízo de família ou de violência doméstica.
+## 3. Teses do alimentante, requerido ou espólio
+- **Exoneração, revisão e justificativa:** comprove alteração superveniente da capacidade financeira (CC, art. 1.699), maioridade civil sem estudo superior/técnico ou com autossustento mediante contraditório (**Súmula 358 STJ**), impossibilidade absoluta involuntária e temporária que elide a prisão civil (art. 528, § 2º) e irrepetibilidade dos alimentos, vedada compensação unilateral salvo pagamento direto excepcional de despesas *in natura* essenciais para evitar enriquecimento ilícito (STJ).
+- **Regime de bens e sucessões:** oponha incomunicabilidade de bens sub-rogados anteriores ao casamento/união na comunhão parcial (CC, art. 1.659, I e II), separação obrigatória aos maiores de 70 anos salvo pacto antenupcial que a afaste (**Tema 1236 STF**; Súmula 377 STF exige esforço comum), distinção entre namoro qualificado e união estável (ausência de *affectio maritalis* atual) e prescrição bienal das prestações alimentares vencidas (CC, art. 206, § 2º, suspensa contra absolutamente incapazes — art. 198, I).
 
-## Roteiro das pretensões acrescentadas
+## 4. Magistratura e gabinete (CPC, art. 489, § 1º)
+- Aplicar o Protocolo para Julgamento com Perspectiva de Gênero (Res. CNJ 492/2023), realizar audiência de mediação ressalvada violência doméstica (CPC, art. 695; Lei 11.340/2006) e colheita de escuta especializada de crianças/adolescentes quando pertinente.
 
-Dispositivos localizados no texto oficial em 10/11/2026; súmulas e temas com situação lida no portal do tribunal. A página de tema do STF não traz a tese: ler a tese antes de citar.
-
-- Paternidade (`fam_paternity`): recusa ao exame gera presunção relativa (Súmula 301 do STJ; Lei 8.560/1992, art. 2º-A); alimentos desde a citação (Súmula 277); multiparentalidade (Tema 622 do STF).
-- Gravídicos e avoengos (`fam_prenatal_grandparents`): indícios de paternidade bastam (Lei 11.804/2008, art. 6º); avós respondem de forma complementar e subsidiária (Súmula 596).
-- Regime de bens (`fam_property_regime`): datar cada aquisição e a origem dos recursos (CC, arts. 1.658 a 1.660); separação obrigatória e pacto conforme o Tema 1236 do STF.
-- Adoção e destituição (`fam_adoption`): excepcionalidade e cadastro (ECA, arts. 39, 42, 45 e 50).
-- Curatela (`fam_curatorship`): medida extraordinária e restrita a atos patrimoniais e negociais (Lei 13.146/2015, arts. 84 e 85); tomada de decisão apoiada (CC, art. 1.783-A).
-- Sucessão (`fam_will_legitime`, `fam_estate_debts`): legítima e colação (arts. 1.846 e 2.002); herdeiros respondem nas forças da herança (art. 1.997); bem de família (Súmulas 364 e 549).
-- Medidas protetivas (`fam_protective_breach`): independem de inquérito (Lei 11.340/2006, art. 19); o descumprimento é crime (art. 24-A).
+## 5. Marcos intertemporais e motores
+- **10/05/2017 (Tema 809 STF — inconstitucionalidade do art. 1.790 CC)** · **08/06/2022 (ADI 5422 STF — IR sobre alimentos)** · **31/10/2023 (Lei 14.713/2023 — guarda e violência doméstica)** · **01/02/2024 (Tema 1236 STF — regime aos 70+)** · **26/08/2024 (Res. CNJ 571/2024 — inventário extrajudicial com incapazes)**.
+- Motores: `civil_monetary_engine.py`, `limitation_checker.py`, `deadline_calculator.py`, `privacy_redactor.py` (segredo de justiça) e `domain_catalog.py`.

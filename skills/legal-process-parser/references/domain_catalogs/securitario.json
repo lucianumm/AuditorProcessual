@@ -1,0 +1,993 @@
+{
+  "schema_version": "1.0",
+  "domain": "securitario",
+  "label": "Direito Securitário",
+  "guide": "domain_guides/securitario.md",
+  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
+  "polo_labels": {
+    "claimant_theses": "Teses do segurado, beneficiário ou sub-rogado",
+    "defense_theses": "Teses da seguradora, resseguradora ou causador"
+  },
+  "claims": [
+    {
+      "id": "sec_claim_regulation_denial",
+      "label": "Negativa de cobertura, prazo de regulação de sinistro e vedação de inovação na recusa (Lei 15.040/2024 e CC)",
+      "requirements": [
+        "apolice_vigente_interesse_legitimo",
+        "ocorrencia_aviso_sinistro",
+        "prazo_trinta_dias_regulacao",
+        "motivacao_vinculante_recusa"
+      ],
+      "claimant_theses": [
+        {
+          "id": "sec_claim_regulation_denial.c1",
+          "label": "Decadência do direito da seguradora de recusar a cobertura quando não manifestada expressa e motivadamente no prazo máximo de 30 dias contados da entrega dos documentos necessários na vigência da Lei 15.040/2024",
+          "authority_ids": [
+            "l15040_art86",
+            "l15040_art87"
+          ]
+        },
+        {
+          "id": "sec_claim_regulation_denial.c2",
+          "label": "Vedação estrita de inovação ulterior nos fundamentos da carta de negativa e interpretação das cláusulas ambíguas ou contraditórias em favor do segurado/beneficiário",
+          "authority_ids": [
+            "l15040_art57",
+            "l15040_art87",
+            "cc_art422",
+            "cdc_art47"
+          ]
+        },
+        {
+          "id": "sec_claim_regulation_denial.c3",
+          "label": "Ineficácia de cláusula limitativa ou excludente redigida sem destaque ostensivo ou sem envio prévio das condições gerais ao segurado antes da contratação",
+          "authority_ids": [
+            "cdc_art46",
+            "cdc_art54",
+            "cc_art757"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "sec_claim_regulation_denial.d1",
+          "label": "Delimitação legítima de risco expressamente excluído na apólice e nas condições gerais previamente disponibilizadas, não podendo a cobertura superar o interesse segurado nem o Limite Máximo de Indenização",
+          "authority_ids": [
+            "cc_art757",
+            "cc_art781",
+            "l15040_art8"
+          ]
+        },
+        {
+          "id": "sec_claim_regulation_denial.d2",
+          "label": "Suspensão legítima do prazo de regulação por solicitação oportuna e justificada de documentos complementares indispensáveis em caso de dúvida fundada (no limite de uma vez nos seguros gerais sob a Lei 15.040/2024)",
+          "authority_ids": [
+            "l15040_art86"
+          ]
+        },
+        {
+          "id": "sec_claim_regulation_denial.d3",
+          "label": "Aplicação irretroativa dos efeitos decadenciais da Lei 15.040/2024 aos contratos celebrados e sinistros regulados sob a égide exclusiva do Código Civil de 2002",
+          "authority_ids": [
+            "l15040_art134",
+            "cc_art772"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_15040_marco_seguros",
+        "lei_14905_juros_civis"
+      ],
+      "typical_requests": [
+        "Condenação ao pagamento integral da indenização securitária contratada, corrigida monetariamente desde a celebração da apólice (Súmula 632 STJ) e acrescida de juros e multa moratória",
+        "Exibição judicial integral do procedimento e dos relatórios técnicos de regulação e liquidação do sinistro",
+        "Indenização por lucros cessantes ou danos morais decorrentes de mora abusiva e injustificada na regulação/liquidação"
+      ],
+      "evidence": [
+        "Apólice, certificado individual, proposta assinada e Condições Gerais/Especiais vigentes na data da emissão",
+        "Protocolo datado do aviso de sinistro e comprovantes de entrega da documentação exigida pela seguradora",
+        "Carta formal de negativa de cobertura com os motivos declarados na regulação",
+        "Relatórios de vistoria, boletins de ocorrência e orçamentos/notas fiscais do prejuízo"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "inicial_juizado",
+        "contestacao",
+        "producao_antecipada_provas"
+      ],
+      "related_claims": [
+        "civ_insurance",
+        "sec_prescription_intertemporal"
+      ],
+      "limitation": "Prazo prescricional de 1 ano para a pretensão do segurado contra a seguradora, suspenso entre o aviso de sinistro e a ciência inequívoca da recusa expressa (CC, art. 206, § 1º, II; Súmula 229 do STJ; Lei 15.040/2024, art. 126, I), e de 3 anos para a pretensão do beneficiário ou terceiro prejudicado na Lei 15.040/2024 (art. 126, III)"
+    },
+    {
+      "id": "sec_intentional_risk_aggravation_intoxication",
+      "label": "Agravamento intencional de risco e embriaguez (seguro de vida vs. seguro de dano)",
+      "requirements": [
+        "especie_seguro_vida_ou_dano",
+        "conduta_dolosa_ou_culpa_grave_segurado",
+        "aumento_relevante_probabilidade_sinistro",
+        "nexo_causal_determinante"
+      ],
+      "claimant_theses": [
+        {
+          "id": "sec_intentional_risk_aggravation_intoxication.c1",
+          "label": "A embriaguez do segurado, mesmo na direção de veículo automotor, não exime a seguradora do pagamento da indenização prevista em contrato de seguro de vida ou acidentes pessoais (Súmula 620 do STJ)",
+          "authority_ids": [
+            "stj_sumula_620",
+            "cc_art798"
+          ]
+        },
+        {
+          "id": "sec_intentional_risk_aggravation_intoxication.c2",
+          "label": "No seguro de automóvel/dano, a mera constatação de alcoolemia ou infração administrativa de trânsito não afasta a cobertura se a seguradora não provar que a embriaguez foi causa determinante do sinistro ou que o segurado concorreu para a conduta do terceiro condutor",
+          "authority_ids": [
+            "cc_art768",
+            "l15040_art14"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "sec_intentional_risk_aggravation_intoxication.d1",
+          "label": "Perda do direito à garantia no seguro de dano/automóvel quando comprovado que o próprio segurado (ou condutor habilitado com sua ciência/culpa in vigilando) conduziu embriagado de modo determinante para a colisão, agravando intencionalmente o risco",
+          "authority_ids": [
+            "cc_art768",
+            "l15040_art13",
+            "l15040_art14"
+          ]
+        },
+        {
+          "id": "sec_intentional_risk_aggravation_intoxication.d2",
+          "label": "Descumprimento doloso do dever de comunicar imediatamente incidente capaz de agravar de modo relevante o risco coberto",
+          "authority_ids": [
+            "cc_art769",
+            "l15040_art15"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_15040_marco_seguros"
+      ],
+      "typical_requests": [
+        "Pagamento integral do capital segurado aos beneficiários no seguro de vida/acidentes pessoais (Súmula 620 STJ)",
+        "Cobertura securitária do casco e danos a terceiros quando demonstrada ausência de nexo causal entre a infração e o acidente (v.g., colisão traseira sofrida parado no semáforo)",
+        "Improcedência do pedido indenizatório em seguro de automóvel por agravamento intencional comprovado da causa do acidente"
+      ],
+      "evidence": [
+        "Apólice especificando tratar-se de seguro de pessoas (vida) ou seguro de dano (automóvel/patrimonial)",
+        "Boletim de ocorrência policial, laudo pericial de local de acidente de trânsito, exame de alcoolemia/etilômetro ou laudo necroscópico",
+        "Depoimentos presenciais e imagens de câmeras de monitoramento sobre a dinâmica mecânica da colisão"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "contestacao",
+        "apelacao_civel"
+      ],
+      "related_claims": [
+        "civ_insurance",
+        "sec_life_preexisting_disease_suicide",
+        "sec_auto_total_loss_third_party"
+      ],
+      "limitation": "1 ano para o segurado contado da ciência da recusa (CC, art. 206, § 1º, II; Súmula 229 STJ; Lei 15.040/2024, art. 126, I); para o beneficiário no seguro de vida sob o CC/2002 aplica-se o prazo decenal (CC, art. 205 — jurisprudência STJ), passando a 3 anos nos contratos regidos pela Lei 15.040/2024 (art. 126, III)"
+    },
+    {
+      "id": "sec_life_preexisting_disease_suicide",
+      "label": "Seguro de vida: doença preexistente sem exame prévio e suicídio",
+      "requirements": [
+        "contratacao_seguro_vida",
+        "exigencia_exame_previo_ou_prova_ma_fe",
+        "marco_temporal_bienal_suicidio",
+        "reserva_tecnica_matematica"
+      ],
+      "claimant_theses": [
+        {
+          "id": "sec_life_preexisting_disease_suicide.c1",
+          "label": "Ilicitude da recusa de cobertura securitária sob a alegação de doença preexistente se a seguradora não exigiu exames clínicos prévios à contratação nem comprovou cabalmente a má-fé do segurado na declaração de saúde (Súmula 609 do STJ)",
+          "authority_ids": [
+            "stj_sumula_609",
+            "cc_art766",
+            "l15040_art44"
+          ]
+        },
+        {
+          "id": "sec_life_preexisting_disease_suicide.c2",
+          "label": "Devida a cobertura integral em caso de suicídio ocorrido após os dois primeiros anos de vigência inicial do contrato ou de sua recondução, sendo nula cláusula contratual que exclua o suicídio após o biênio",
+          "authority_ids": [
+            "cc_art798",
+            "stj_sumula_610",
+            "l15040_art118"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "sec_life_preexisting_disease_suicide.d1",
+          "label": "Perda da garantia por omissão intencional de moléstia grave já diagnosticada e em tratamento ativo no ato do preenchimento da declaração pessoal de saúde, demonstrando má-fé inequívoca do proponente",
+          "authority_ids": [
+            "cc_art766",
+            "stj_sumula_609",
+            "l15040_art44"
+          ]
+        },
+        {
+          "id": "sec_life_preexisting_disease_suicide.d2",
+          "label": "Exclusão objetiva da cobertura por suicídio cometido nos dois primeiros anos de vigência do seguro de vida ou do aumento de capital, independentemente de premeditação, limitando-se a obrigação à devolução da reserva técnica formada (Súmula 610 do STJ)",
+          "authority_ids": [
+            "cc_art798",
+            "stj_sumula_610",
+            "l15040_art118"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_15040_marco_seguros"
+      ],
+      "typical_requests": [
+        "Condenação da seguradora ao pagamento integral do capital segurado corrigido desde a contratação (Súmula 632 STJ) aos beneficiários indicados ou legais (CC, art. 792)",
+        "Restituição do montante da reserva técnica matemática formada na hipótese de suicídio ocorrido dentro da carência legal de dois anos",
+        "Improcedência da ação por comprovação documental de omissão dolosa de diagnóstico grave preexistente"
+      ],
+      "evidence": [
+        "Apólice/certificado, cartão-proposta e Declaração Pessoal de Saúde (DPS) assinada pelo segurado",
+        "Certidão de óbito, prontuários médicos hospitalares, receituários e exames anteriores e posteriores à contratação",
+        "Comprovante da data de início de vigência e de eventuais suspensões/reconduções da apólice"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "contestacao",
+        "apelacao_civel"
+      ],
+      "related_claims": [
+        "civ_insurance",
+        "sec_claim_regulation_denial",
+        "sec_group_life_nonrenewal_cancellation"
+      ],
+      "limitation": "Pretensão do beneficiário terceiro contra a seguradora no seguro de vida: 10 anos sob o CC/2002 (art. 205 — STJ) e 3 anos sob a Lei 15.040/2024 (art. 126, III); pretensão do próprio segurado por invalidez permanente (IPA/IFPD): 1 ano da ciência inequívoca da incapacidade e da recusa administrativa (Súmulas 101, 229 e 278 do STJ)"
+    },
+    {
+      "id": "sec_auto_total_loss_third_party",
+      "label": "Seguro de automóvel: perda total, tabela FIPE, mora no prêmio e terceiro prejudicado",
+      "requirements": [
+        "sinistro_parcial_ou_perda_total",
+        "interpelacao_previa_mora_premio",
+        "quitacao_alienacao_fiduciaria_salvado",
+        "legitimidade_terceiro_prejudicado"
+      ],
+      "claimant_theses": [
+        {
+          "id": "sec_auto_total_loss_third_party.c1",
+          "label": "Devida a indenização securitária quando ausente notificação/comunicação prévia do segurado acerca do atraso no pagamento de parcela do prêmio para fins de suspensão ou resolução contratual (Súmula 616 do STJ)",
+          "authority_ids": [
+            "stj_sumula_616",
+            "cc_art763",
+            "l15040_art20"
+          ]
+        },
+        {
+          "id": "sec_auto_total_loss_third_party.c2",
+          "label": "Na perda total (avaria igual ou superior a 75% do valor contratado), o pagamento integral pelo referencial FIPE vigente na data da liquidação condiciona-se à entrega da documentação livre de ônus, cabendo à seguradora quitar diretamente o saldo fiduciário e pagar o remanescente ao segurado",
+          "authority_ids": [
+            "cc_art778",
+            "cdc_art14"
+          ]
+        },
+        {
+          "id": "sec_auto_total_loss_third_party.c3",
+          "label": "Denunciada a seguradora à lide pelo réu segurado em ação movida pelo terceiro vítima de acidente, pode ela ser condenada direta e solidariamente com o segurado nos limites da apólice (Súmula 537 do STJ)",
+          "authority_ids": [
+            "stj_sumula_537",
+            "cc_art787",
+            "cpc_art128"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "sec_auto_total_loss_third_party.d1",
+          "label": "Inadmissibilidade de ajuizamento de ação pelo terceiro prejudicado direta e exclusivamente em face da seguradora no seguro de responsabilidade civil facultativo sem figurar o segurado no polo passivo (Súmula 529 do STJ; ressalvada inovação do art. 101 da Lei 15.040/2024 para contratos novos — conferir vigência)",
+          "authority_ids": [
+            "stj_sumula_529",
+            "l15040_art101"
+          ]
+        },
+        {
+          "id": "sec_auto_total_loss_third_party.d2",
+          "label": "Suspensão legítima da cobertura quando comprovada a prévia constituição em mora do segurado inadimplente antes da data do sinistro",
+          "authority_ids": [
+            "cc_art763",
+            "stj_sumula_616",
+            "l15040_art20"
+          ]
+        },
+        {
+          "id": "sec_auto_total_loss_third_party.d3",
+          "label": "Dedução obrigatória de franquia contratual nos reparos parciais e sub-rogação dos salvados em favor da seguradora na indenização integral",
+          "authority_ids": [
+            "cc_art778",
+            "cc_art786"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_15040_marco_seguros"
+      ],
+      "typical_requests": [
+        "Indenização integral do veículo segurado pela Tabela FIPE da data do efetivo pagamento com quitação direta de eventual gravame fiduciário e baixa/transferência do salvado",
+        "Reparo integral em oficina credenciada/livre escolha e lucros cessantes/despesas de locomoção pela demora injustificada no conserto",
+        "Condenação solidária da seguradora denunciada à lide até o limite das coberturas RCF-V (danos materiais, corporais e morais a terceiros)"
+      ],
+      "evidence": [
+        "Apólice de seguro auto com coberturas de casco (fator de ajuste FIPE) e RCF-V, boletos de prêmio e eventual comprovante de notificação prévia de mora",
+        "Orçamentos analíticos de funilaria/mecânica demonstrando se o custo de reparo atinge ou não 75% do valor do veículo",
+        "Certificado de Registro e Licenciamento do Veículo (CRLV-e), extrato do financiamento fiduciário e boletim de ocorrência"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "inicial_juizado",
+        "contestacao",
+        "apelacao_civel"
+      ],
+      "related_claims": [
+        "civ_insurance",
+        "civ_tort",
+        "banc_fiduciary_vehicle"
+      ],
+      "limitation": "1 ano para o segurado contra a seguradora contado da ciência da recusa (CC, art. 206, § 1º, II; Súmula 229 STJ); 3 anos para a pretensão de reparação civil da vítima terceira contra o causador/segurado (CC, art. 206, § 3º, V; Lei 15.040/2024, art. 126, III)"
+    },
+    {
+      "id": "sec_housing_insurance_sfh",
+      "label": "Seguro habitacional (SFH / SFI) e vícios construtivos progressivos",
+      "requirements": [
+        "natureza_apolice_publica_fcvs_ou_mercado",
+        "competencia_estadual_ou_federal",
+        "danos_fisicos_imovel_dfi_ou_mip",
+        "carater_progressivo_dano"
+      ],
+      "claimant_theses": [
+        {
+          "id": "sec_housing_insurance_sfh.c1",
+          "label": "Cobertura da garantia de Danos Físicos ao Imóvel (DFI) para vícios construtivos graves e progressivos que comprometam a habitabilidade e apresentem risco de desmoronamento/ruína no seguro adjeto ao financiamento habitacional — jurisprudência da Segunda Seção do STJ em apólices do SFH",
+          "authority_ids": [
+            "dl73_art20",
+            "cc_art757",
+            "cdc_art51"
+          ]
+        },
+        {
+          "id": "sec_housing_insurance_sfh.c2",
+          "label": "Competência da Justiça Estadual para processar ações relativas ao seguro habitacional, salvo quando houver apólice pública (Ramo 66) celebrada entre 02/12/1988 e 29/12/2009 com comprovação de comprometimento do FCVS e ingresso da Caixa",
+          "authority_ids": [
+            "l12409_art1a",
+            "stj_sumula_327"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "sec_housing_insurance_sfh.d1",
+          "label": "Exclusão legítima de vícios construtivos meramente estéticos ou intrínsecos sem ameaça de ruína nas apólices privadas de mercado do SFI posteriores à extinção da apólice única obrigatória, quando redigida cláusula clara e destacada — conferir distinção firmada pelo STJ",
+          "authority_ids": [
+            "cc_art757",
+            "cc_art784"
+          ]
+        },
+        {
+          "id": "sec_housing_insurance_sfh.d2",
+          "label": "Ilegitimidade da seguradora atual para responder por sinistros integralmente consumados e conhecidos em vigência de seguradora distinta sem continuidade progressiva",
+          "authority_ids": [
+            "cc_art757"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Condenação ao pagamento de indenização securitária correspondente ao custo integral de recuperação estrutural do imóvel mais multa decendial contratual quando prevista",
+        "Quitação proporcional do saldo devedor pela cobertura de Morte e Invalidez Permanente (MIP)",
+        "Reconhecimento da competência da Justiça Estadual ou remessa à Justiça Federal conforme a natureza privada ou pública (FCVS) da apólice"
+      ],
+      "evidence": [
+        "Contrato de financiamento habitacional (SFH ou SFI), histórico de apólices e identificação do Ramo (66 público vs. 68 mercado)",
+        "Laudo pericial de engenharia civil atestando a origem, gravidade estrutural, risco de ruína e natureza contínua/progressiva das patologias",
+        "Ofício da Caixa Econômica Federal/SUSEP sobre eventual vinculação ao Fundo de Compensação de Variações Salariais (FCVS)"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "contestacao",
+        "impugnacao_laudo",
+        "agravo_instrumento"
+      ],
+      "related_claims": [
+        "imob_construction_defects",
+        "sec_prescription_intertemporal"
+      ],
+      "limitation": "Prazo prescricional ânuo (CC, art. 206, § 1º, II; Súmula 101 STJ), cujo termo inicial nos vícios construtivos de natureza progressiva renova-se continuamente ou inicia-se apenas da ciência inequívoca da extensão estrutural do dano e da recusa da seguradora"
+    },
+    {
+      "id": "sec_rural_agricultural_climate",
+      "label": "Seguro rural e agrícola, eventos climáticos adversos e ZARC",
+      "requirements": [
+        "apolice_agricola_ou_proagro",
+        "observancia_janela_plantio_zarc",
+        "evento_climatico_coberto",
+        "vistoria_tempestiva_lavoura"
+      ],
+      "claimant_theses": [
+        {
+          "id": "sec_rural_agricultural_climate.c1",
+          "label": "Direito à indenização securitária pela quebra de produtividade decorrente de seca, estiagem, geada, granizo ou chuva excessiva quando respeitado o Zoneamento Agrícola de Risco Climático (ZARC) e comunicado tempestivamente o evento antes da colheita",
+          "authority_ids": [
+            "l10823_art1",
+            "cc_art757",
+            "l15040_art86"
+          ]
+        },
+        {
+          "id": "sec_rural_agricultural_climate.c2",
+          "label": "Nulidade de cláusulas restritivas de pluviometria isolada ou metodologia unilateral de amostragem que desnaturem a finalidade de proteção da safra contra o risco climático efetivamente ocorrido",
+          "authority_ids": [
+            "cdc_art51",
+            "cc_art421",
+            "cc_art422"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "sec_rural_agricultural_climate.d1",
+          "label": "Perda ou redução da cobertura por plantio realizado fora da janela oficial do ZARC, emprego de semente não certificada ou colheita integral da área antes de viabilizar a vistoria técnica da seguradora sem justificativa emergencial",
+          "authority_ids": [
+            "cc_art766",
+            "cc_art768",
+            "l15040_art14"
+          ]
+        },
+        {
+          "id": "sec_rural_agricultural_climate.d2",
+          "label": "Dedução da receita obtida com a produção efetivamente colhida em confronto com a produtividade garantida na apólice (sacas/hectare) e aplicação da franquia/POS contratada",
+          "authority_ids": [
+            "cc_art781"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_15040_marco_seguros"
+      ],
+      "typical_requests": [
+        "Pagamento da diferença entre a produtividade garantida na apólice e a produção colhida, acrescida de correção e juros",
+        "Produção antecipada de prova pericial agronômica urgente em lavoura pronta para colheita diante de demora na vistoria pela seguradora",
+        "Anulação de indeferimento administrativo de cobertura agrícola ou de Proagro"
+      ],
+      "evidence": [
+        "Apólice de seguro agrícola com coordenadas geodésicas (polígono da área segurada), cultura, cultivar e produtividade garantida",
+        "Notas fiscais de sementes/insumos, relatório de plantio em conformidade com a portaria ZARC/MAPA e aviso imediato do sinistro",
+        "Laudo técnico agronômico, imagens de satélite (NDVI) e boletins meteorológicos oficiais (INMET) da microrregião"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "producao_antecipada_provas",
+        "impugnacao_laudo",
+        "contestacao"
+      ],
+      "related_claims": [
+        "agr_rural_credit",
+        "sec_claim_regulation_denial"
+      ],
+      "limitation": "Prescrição em 1 ano contado da ciência inequívoca da recusa ou do pagamento a menor da indenização securitária (CC, art. 206, § 1º, II; Súmula 229 do STJ; Lei 15.040/2024, art. 126, I)"
+    },
+    {
+      "id": "sec_liability_do_eo",
+      "label": "Seguro de responsabilidade civil geral, D&O (administradores) e E&O (profissional)",
+      "requirements": [
+        "base_apolice_ocorrencia_ou_claims_made",
+        "fato_gerador_ato_gestao_ou_erro_profissional",
+        "adiantamento_custos_defesa",
+        "inexistencia_dolo_transitado_ou_confessado"
+      ],
+      "claimant_theses": [
+        {
+          "id": "sec_liability_do_eo.c1",
+          "label": "Obrigação da seguradora D&O/E&O de adiantar tempestivamente os custos de defesa judicial, arbitral ou administrativa do segurado desde a reclamação, não bastando mera imputação acusatória unilateral de dolo ou corrupção para negar antecipadamente a cobertura",
+          "authority_ids": [
+            "cc_art787",
+            "l15040_art98",
+            "l15040_art105"
+          ]
+        },
+        {
+          "id": "sec_liability_do_eo.c2",
+          "label": "Cobertura na apólice à base de reclamação (claims-made) para atos danosos ocorridos dentro do período de retroatividade e reclamados na vigência ou durante os prazos complementar/suplementar obrigatórios",
+          "authority_ids": [
+            "l15040_art103"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "sec_liability_do_eo.d1",
+          "label": "Exclusão da cobertura e dever de ressarcimento integral dos custos de defesa adiantados quando sobrevier decisão transitada em julgado ou confissão inequívoca reconhecendo ato doloso, fraude, insider trading ou vantagem pessoal ilícita do administrador",
+          "authority_ids": [
+            "cc_art762",
+            "l15040_art10",
+            "l15040_art105"
+          ]
+        },
+        {
+          "id": "sec_liability_do_eo.d2",
+          "label": "Perda de direitos pela omissão dolosa de fatos ou investigações já conhecidas pela companhia/diretores no questionário de subscrição (known circumstances) ou transação celebrada pelo segurado sem anuência prévia da seguradora sem recusa injustificada",
+          "authority_ids": [
+            "cc_art766",
+            "cc_art787",
+            "l15040_art100"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_15040_marco_seguros"
+      ],
+      "typical_requests": [
+        "Tutela de urgência determinando o custeio/adiantamento imediato de honorários advocatícios e despesas periciais de defesa em processo sancionador, arbitral ou judicial",
+        "Reembolso ou pagamento direto da condenação ou acordo homologado até o limite agregado da apólice",
+        "Ressarcimento à seguradora dos valores adiantados após trânsito em julgado reconhecendo conduta dolosa do administrador"
+      ],
+      "evidence": [
+        "Apólice D&O ou E&O, condições especiais (Side A, B e C), data de retroatividade e proposta/questionário de risco assinado",
+        "Citação, intimação administrativa (CVM, CADE, BACEN, TCU, conselho profissional) ou notificação da reclamação de terceiro",
+        "Contratos de honorários advocatícios, notas fiscais de defesa e decisões proferidas no processo originário"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "tutela_urgencia_antecedente",
+        "requerimento_instauracao_arbitragem",
+        "contestacao"
+      ],
+      "related_claims": [
+        "emp_admin_liability",
+        "sec_claim_regulation_denial",
+        "arb_specific_performance_kompetenz"
+      ],
+      "limitation": "No seguro de responsabilidade civil, o prazo de 1 ano do segurado flui da citação para responder à ação/reclamação de terceiro ou da recusa da seguradora após aviso (CC, art. 206, § 1º, II, 'a'; Lei 15.040/2024, art. 126, I e II)"
+    },
+    {
+      "id": "sec_surety_bond_judicial_contractual",
+      "label": "Seguro garantia judicial e contratual (performance bond)",
+      "requirements": [
+        "apolice_idonea_susep",
+        "acrescimo_trinta_por_cento_execucao",
+        "caracterizacao_sinistro_expectativa_reclamacao",
+        "clausula_retomada_step_in"
+      ],
+      "claimant_theses": [
+        {
+          "id": "sec_surety_bond_judicial_contractual.c1",
+          "label": "Equiparação legal do seguro garantia judicial e da fiança bancária a dinheiro para fins de substituição de penhora na execução cível, desde que o valor segurado seja acrescido de 30% do débito atualizado, vedada recusa imotivada pelo credor",
+          "authority_ids": [
+            "cpc_art835",
+            "cpc_art848",
+            "l6830_art9"
+          ]
+        },
+        {
+          "id": "sec_surety_bond_judicial_contractual.c2",
+          "label": "No seguro garantia contratual de obras e concessões (performance bond), configurado o inadimplemento do tomador em regular processo administrativo ou contratual, deve a seguradora pagar a indenização ou assumir a execução (step-in)",
+          "authority_ids": [
+            "l14133_art97",
+            "l14133_art102",
+            "cc_art757"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "sec_surety_bond_judicial_contractual.d1",
+          "label": "Inexigibilidade do pagamento da apólice judicial antes do trânsito em julgado ou da decisão definitiva que configure o gatilho expresso da garantia, salvo determinação judicial específica nos limites das condições SUSEP",
+          "authority_ids": [
+            "cpc_art520",
+            "cc_art757"
+          ]
+        },
+        {
+          "id": "sec_surety_bond_judicial_contractual.d2",
+          "label": "Exoneração ou limitação da responsabilidade da seguradora no seguro garantia contratual quando o credor segurado promover novação ou alteração substancial das obrigações do contrato principal sem anuência da garantidora, agravando o risco",
+          "authority_ids": [
+            "cc_art768",
+            "l15040_art14"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14133_licitacoes",
+        "lei_15040_marco_seguros"
+      ],
+      "typical_requests": [
+        "Deferimento da substituição de bloqueio em dinheiro (SISBAJUD) por apólice de seguro garantia judicial acrescida de 30% do débito exequendo",
+        "Intimação da seguradora para depósito imediato da quantia garantida no prazo judicial após configuração do sinistro executivo",
+        "Condenação da seguradora ao pagamento da cobertura de performance bond ou execução da cláusula de retomada da obra pública"
+      ],
+      "evidence": [
+        "Apólice eletrônica de seguro garantia com certidão de regularidade SUSEP, cláusula de renovação automática/vigência compatível e acréscimo de 30%",
+        "Contrato principal de empreitada/fornecimento, notificações de expectativa e reclamação de sinistro e decisão de rescisão por inadimplemento",
+        "Contrato de contragarantia (CCG) firmado entre seguradora e tomador para eventual execução regressiva"
+      ],
+      "piece_ids": [
+        "manifestacao_especifica",
+        "impugnacao_cumprimento",
+        "embargos_execucao_fiscal",
+        "agravo_instrumento",
+        "execucao_titulo_extrajudicial"
+      ],
+      "related_claims": [
+        "pciv_provisional_final_enforcement",
+        "trib_enforcement_defense",
+        "adm_contract_balance"
+      ],
+      "limitation": "Reclamação de sinistro de seguro garantia contratual dentro da vigência da apólice e prescrição ânua para o segurado contado da ciência da recusa definitiva da seguradora (CC, art. 206, § 1º, II; Súmula 229 STJ; Lei 15.040/2024, art. 126)"
+    },
+    {
+      "id": "sec_insurer_subrogation_regress",
+      "label": "Sub-rogação regressiva da seguradora contra o causador do dano",
+      "requirements": [
+        "pagamento_efetivo_indenizacao",
+        "responsabilidade_terceiro_causador",
+        "limite_valor_desembolsado",
+        "transmissao_regime_contratual_prazo"
+      ],
+      "claimant_theses": [
+        {
+          "id": "sec_insurer_subrogation_regress.c1",
+          "label": "Paga a indenização securitária, sub-roga-se legalmente a seguradora, nos limites do valor respectivo, nos direitos e ações que competirem ao segurado contra o autor do dano (CC, art. 786; Súmula 188 do STF)",
+          "authority_ids": [
+            "cc_art786",
+            "l15040_art93"
+          ]
+        },
+        {
+          "id": "sec_insurer_subrogation_regress.c2",
+          "label": "Transmissão à seguradora sub-rogada das garantias, privilégios e do regime de responsabilidade objetiva de que dispunha o segurado originário (v.g., contra concessionária de serviço público ou transportador)",
+          "authority_ids": [
+            "cc_art349",
+            "cc_art786",
+            "cdc_art14"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "sec_insurer_subrogation_regress.d1",
+          "label": "Submissão da seguradora sub-rogada ao mesmo prazo prescricional restante, às excludentes de nexo causal (fortuito externo, culpa exclusiva do segurado) e à cláusula compromissória arbitral previamente cientificada que vinculavam o segurado originário",
+          "authority_ids": [
+            "cc_art786",
+            "l15040_art93",
+            "l9307_art4"
+          ]
+        },
+        {
+          "id": "sec_insurer_subrogation_regress.d2",
+          "label": "Vedação legal de ação regressiva contra cônjuge, descendentes, ascendentes, consanguíneos, afins ou dependentes do segurado, salvo dolo comprovado (CC, art. 786, § 1º)",
+          "authority_ids": [
+            "cc_art786",
+            "l15040_art93"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_15040_marco_seguros",
+        "lei_14905_juros_civis"
+      ],
+      "typical_requests": [
+        "Condenação do terceiro causador do dano ao ressarcimento integral da quantia desembolsada pela seguradora, corrigida desde a data do efetivo desembolso (Súmula 43 STJ)",
+        "Reconhecimento de culpa concorrente para rateio proporcional do ressarcimento regressivo (CC, art. 945)",
+        "Extinção sem mérito por convenção de arbitragem oponível à sub-rogada ou com mérito por prescrição"
+      ],
+      "evidence": [
+        "Apólice de seguro, relatório de vistoria e comprovante bancário/recibo de quitação do pagamento da indenização ao segurado",
+        "Prova técnica da culpa ou do nexo causal da atividade do terceiro causador (laudo de engenharia elétrica/incêndio, boletim de trânsito, protesto marítimo)",
+        "Notas fiscais dos reparos e demonstrativo de eventual receita obtida com venda de salvados para abatimento"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "contestacao",
+        "requerimento_instauracao_arbitragem",
+        "apelacao_civel"
+      ],
+      "related_claims": [
+        "civ_tort",
+        "aduan_cargo_damage_bl_subrogation",
+        "arb_specific_performance_kompetenz"
+      ],
+      "limitation": "Prescreve no mesmo prazo que teria o segurado contra o causador do dano (3 anos na reparação civil comum — CC, art. 206, § 3º, V; 5 anos na relação de consumo por fato do serviço — CDC, art. 27, ou contra a Fazenda/concessionária — Decreto 20.910/1932; 1 ano no transporte marítimo de cargas — DL 116/1967, art. 8º), contado do pagamento ou do evento conforme a natureza da pretensão — conferir jurisprudência do STJ"
+    },
+    {
+      "id": "sec_prescription_intertemporal",
+      "label": "Prescrição securitária e transição intertemporal (CC vs. Lei 15.040/2024)",
+      "requirements": [
+        "qualidade_autor_segurado_beneficiario_terceiro",
+        "data_ciencia_inequivoca_sinistro_incapacidade",
+        "suspensao_durante_regulacao",
+        "data_celebracao_apolice_transicao"
+      ],
+      "claimant_theses": [
+        {
+          "id": "sec_prescription_intertemporal.c1",
+          "label": "O pedido de pagamento de indenização à seguradora suspende o prazo de prescrição ânua até que o segurado tenha ciência inequívoca da decisão administrativa final (inclusive em pedido de reconsideração aceito para reanálise)",
+          "authority_ids": [
+            "cc_art206",
+            "stj_sumula_229",
+            "l15040_art126"
+          ]
+        },
+        {
+          "id": "sec_prescription_intertemporal.c2",
+          "label": "Termo inicial da prescrição em seguro de acidentes pessoais ou invalidez permanente flui apenas da ciência inequívoca da consolidação da incapacidade laboral pelo segurado, mediante laudo pericial ou concessão de aposentadoria por invalidez, não bastando a simples data do acidente (Súmula 278 STJ)",
+          "authority_ids": [
+            "stj_sumula_278",
+            "stj_sumula_101"
+          ]
+        },
+        {
+          "id": "sec_prescription_intertemporal.c3",
+          "label": "No regime da Lei 15.040/2024, o prazo de 1 ano para o segurado conta-se expressamente da ciência da recepção da recusa expressa e motivada da seguradora, e o prazo para beneficiários ou terceiros prejudicados é de 3 anos",
+          "authority_ids": [
+            "l15040_art126"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "sec_prescription_intertemporal.d1",
+          "label": "Consumação da prescrição ânua quando ultrapassada a soma de 1 ano entre a ciência inequívoca da lesão e o aviso administrativo somado ao período posterior à ciência da carta definitiva de negativa (CC, art. 206, § 1º, II)",
+          "authority_ids": [
+            "cc_art206",
+            "stj_sumula_101",
+            "stj_sumula_229"
+          ]
+        },
+        {
+          "id": "sec_prescription_intertemporal.d2",
+          "label": "Ação de restituição de prêmios pagos em cobrança indevida ou seguro cancelado unilateralmente não se confunde com indenização de sinistro, observando o prazo próprio da relação subjacente — conferir distinção no STJ",
+          "authority_ids": [
+            "cc_art206",
+            "cdc_art27"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_15040_marco_seguros"
+      ],
+      "typical_requests": [
+        "Afastamento da prejudicial de prescrição pelo reconhecimento da suspensão administrativa (Súmula 229 STJ) ou da actio nata subjetiva (Súmula 278 STJ)",
+        "Pronúncia da prescrição com extinção do processo com resolução de mérito (CPC, art. 487, II)"
+      ],
+      "evidence": [
+        "Laudo médico definitivo ou carta de concessão previdenciária fixando a data da ciência inequívoca da invalidez permanente",
+        "Comprovante datado do protocolo do aviso de sinistro e aviso de recebimento/e-mail da resposta negativa final da seguradora",
+        "Apólice datada para definição do regime legal aplicável (CC/2002 vs. Lei 15.040/2024)"
+      ],
+      "piece_ids": [
+        "contestacao",
+        "replica",
+        "apelacao_civel",
+        "recurso_especial"
+      ],
+      "related_claims": [
+        "sec_claim_regulation_denial",
+        "sec_life_preexisting_disease_suicide"
+      ],
+      "limitation": "Sob o CC/2002: 1 ano para segurado vs. seguradora (art. 206, § 1º, II; Súmulas 101, 229 e 278 STJ) e 10 anos para beneficiário terceiro no seguro de vida (art. 205). Sob a Lei 15.040/2024 (vigência em 11/12/2025): 1 ano para pretensão da seguradora pelo prêmio ou do segurado contado da ciência da recusa expressa (art. 126, I e II) e 3 anos para beneficiários e terceiros prejudicados (art. 126, III)"
+    },
+    {
+      "id": "sec_coinsurance_reinsurance",
+      "label": "Cosseguro, liderança e contrato de resseguro",
+      "requirements": [
+        "distribuicao_cotas_cosseguro",
+        "atuacao_cosseguradora_lider",
+        "autonomia_contrato_resseguro",
+        "hipotese_excepcional_pagamento_direto"
+      ],
+      "claimant_theses": [
+        {
+          "id": "sec_coinsurance_reinsurance.c1",
+          "label": "Legitimidade da cosseguradora líder para representar judicial e extrajudicialmente todas as coobrigadas do pool na regulação e nas ações do contrato, respondendo cada cosseguradora na proporção da respectiva cota assumida",
+          "authority_ids": [
+            "cc_art761",
+            "l15040_art34",
+            "l15040_art35"
+          ]
+        },
+        {
+          "id": "sec_coinsurance_reinsurance.c2",
+          "label": "Admissibilidade de denunciação da lide ou intervenção do ressegurador e pagamento direto ao segurado na hipótese legal de insolvência/liquidação da seguradora cedente ou cláusula cut-through expressa",
+          "authority_ids": [
+            "lc126_art14",
+            "l15040_art60",
+            "l15040_art63"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "sec_coinsurance_reinsurance.d1",
+          "label": "Inexistência de solidariedade passiva entre as cosseguradoras, salvo previsão contratual expressa, limitando-se a condenação de cada integrante ao percentual de participação descrito na apólice",
+          "authority_ids": [
+            "cc_art265",
+            "l15040_art34"
+          ]
+        },
+        {
+          "id": "sec_coinsurance_reinsurance.d2",
+          "label": "Ilegitimidade passiva ad causam do ressegurador para responder diretamente perante o segurado fora das exceções de insolvência da cedente ou estipulação de pagamento direto, dada a independência jurídica entre seguro e resseguro",
+          "authority_ids": [
+            "lc126_art14",
+            "l15040_art60"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_15040_marco_seguros"
+      ],
+      "typical_requests": [
+        "Citação da cosseguradora líder com condenação proporcional de cada cosseguradora conforme o quadro de participação da apólice",
+        "Pagamento direto pelo ressegurador ao segurado em razão de liquidação extrajudicial/falência da seguradora cedente (LC 126/2007, art. 14, parágrafo único)",
+        "Exclusão de solidariedade entre cosseguradoras ou reconhecimento de ilegitimidade passiva direta do ressegurador"
+      ],
+      "evidence": [
+        "Apólice de grandes riscos com cláusula de liderança e tabela discriminada de percentuais de cosseguro",
+        "Slip/contrato de resseguro facultativo ou automático e eventuais cláusulas de cooperação/controle de sinistro (claims control clause)",
+        "Ato da SUSEP decretando liquidação extrajudicial da seguradora cedente quando invocado pagamento direto"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "contestacao",
+        "requerimento_instauracao_arbitragem",
+        "agravo_instrumento"
+      ],
+      "related_claims": [
+        "sec_claim_regulation_denial",
+        "arb_specific_performance_kompetenz"
+      ],
+      "limitation": "1 ano entre segurado e cosseguradoras (CC, art. 206, § 1º, II; Lei 15.040/2024, art. 126, I) e 1 ano nas pretensões entre cosseguradoras ou entre cedente e resseguradora sob a Lei 15.040/2024 (art. 126, I, 'c')"
+    },
+    {
+      "id": "sec_credit_life_tying",
+      "label": "Seguro prestamista, venda casada bancária e restituição do prêmio (Tema 972 STJ)",
+      "requirements": [
+        "vinculacao_operacao_credito",
+        "compulsoriedade_ou_ausencia_escolha_seguradora",
+        "sinistro_morte_invalidez_desemprego",
+        "repeticao_premio_ou_quitacao_saldo"
+      ],
+      "claimant_theses": [
+        {
+          "id": "sec_credit_life_tying.c1",
+          "label": "Abusividade da cláusula que impõe a contratação de seguro prestamista ou que, mesmo havendo opção de contratar, não assegura ao consumidor a efetiva liberdade de escolher a seguradora e a corretora (Tema 972 do STJ)",
+          "authority_ids": [
+            "cdc_art39",
+            "tema_stj_972"
+          ]
+        },
+        {
+          "id": "sec_credit_life_tying.c2",
+          "label": "Ocorrendo sinistro coberto na vigência de seguro prestamista ativo (morte, invalidez ou perda involuntária de emprego), tem o segurado/espólio legitimidade concorrente com a instituição estipulante para exigir a quitação do financiamento e o pagamento do eventual saldo remanescente",
+          "authority_ids": [
+            "cc_art757",
+            "cc_art801",
+            "cdc_art51"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "sec_credit_life_tying.d1",
+          "label": "Validade da contratação facultativa documentada em instrumento apartado e destacado, no qual foi franqueada ao mutuário a escolha entre diferentes seguradoras ou apólice avulsa",
+          "authority_ids": [
+            "tema_stj_972",
+            "cc_art421"
+          ]
+        },
+        {
+          "id": "sec_credit_life_tying.d2",
+          "label": "Limitação da cobertura do seguro prestamista ao saldo devedor ou ao teto contratual expresso na proposta aderida na data do evento",
+          "authority_ids": [
+            "cc_art781",
+            "cc_art801"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14905_juros_civis"
+      ],
+      "typical_requests": [
+        "Declaração de nulidade da cobrança casada do seguro prestamista com restituição integral do prêmio pago (em dobro quando contrariada a boa-fé objetiva — EAREsp 676.608/STJ)",
+        "Condenação da seguradora à quitação do saldo devedor do contrato de financiamento em razão de óbito ou invalidez do mutuário, entregando-se eventual excedente aos beneficiários"
+      ],
+      "evidence": [
+        "Cédula de Crédito Bancário (CCB) ou contrato de financiamento e proposta/bilhete avulso ou embutido do seguro prestamista",
+        "Demonstrativo de evolução da dívida e Custo Efetivo Total (CET) evidenciando financiamento do prêmio",
+        "Certidão de óbito, carta de aposentadoria por invalidez ou TRCT na hipótese de acionamento da cobertura"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "inicial_juizado",
+        "contestacao",
+        "apelacao_civel"
+      ],
+      "related_claims": [
+        "banc_interest_fees",
+        "cons_abusive",
+        "sec_life_preexisting_disease_suicide"
+      ],
+      "limitation": "Repetição de indébito por venda casada em contrato bancário submete-se ao prazo prescricional decenal (CC, art. 205 — jurisprudência STJ) ou quinquenal consumerista conforme enquadramento; acionamento de sinistro do seguro prestamista pelo segurado observa 1 ano da ciência da recusa (CC, art. 206, § 1º, II)"
+    },
+    {
+      "id": "sec_group_life_nonrenewal_cancellation",
+      "label": "Seguro de vida em grupo: não renovação, reajuste etário e dever de informação do estipulante",
+      "requirements": [
+        "apolice_coletiva_reparticao_simples",
+        "notificacao_previa_nao_renovacao",
+        "dever_informacao_estipulante_tema_1112",
+        "inexistencia_abusividade_cativa"
+      ],
+      "claimant_theses": [
+        {
+          "id": "sec_group_life_nonrenewal_cancellation.c1",
+          "label": "Abusividade da resilição unilateral imotivada ou de majoração abrupta inviabilizadora de seguro de vida mantido ininterruptamente por décadas sob renovações sucessivas que geraram legítima expectativa de vitaliciedade ao segurado idoso, impondo-se migração suave ou manutenção equilibrada",
+          "authority_ids": [
+            "cc_art422",
+            "cdc_art51",
+            "l15040_art114"
+          ]
+        },
+        {
+          "id": "sec_group_life_nonrenewal_cancellation.c2",
+          "label": "Responsabilidade exclusiva do estipulante quando deixar de repassar prêmios descontados ou descumprir o dever de informar previamente o segurado sobre cláusulas restritivas ou extinção da apólice coletiva (Tema 1112 do STJ)",
+          "authority_ids": [
+            "cc_art801",
+            "tema_stj_1112",
+            "l15040_art31"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "sec_group_life_nonrenewal_cancellation.d1",
+          "label": "Inexistência de abusividade na cláusula expressa de não renovação automática de seguro de vida em grupo temporário por ambas as partes mediante notificação prévia, sem direito à restituição dos prêmios pagos sob o regime financeiro de repartição simples — jurisprudência pacífica da Segunda Seção do STJ",
+          "authority_ids": [
+            "cc_art760",
+            "cc_art801"
+          ]
+        },
+        {
+          "id": "sec_group_life_nonrenewal_cancellation.d2",
+          "label": "Ausência de dever prévio da seguradora de prestar informações diretas sobre cláusulas limitativas ao aderente na fase pré-contratual de seguro coletivo, incumbindo tal ônus ao estipulante mandatário do grupo (Tema 1112 do STJ)",
+          "authority_ids": [
+            "cc_art801",
+            "tema_stj_1112"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_15040_marco_seguros"
+      ],
+      "typical_requests": [
+        "Restabelecimento de apólice coletiva/individual de longa duração cancelada abusivamente ou oferta de plano individual equivalente sem nova carência",
+        "Condenação do estipulante por falha no dever de informação ou ausência de repasse de prêmios descontados em folha",
+        "Improcedência do pedido de devolução dos prêmios pagos durante o período em que houve efetiva cobertura do risco no regime de repartição simples"
+      ],
+      "evidence": [
+        "Apólice mestra coletiva, certificados individuais históricos comprovando o tempo total de vínculo e contracheques de desconto do prêmio",
+        "Notificação prévia de não renovação enviada com a antecedência contratual/regulamentar (mínimo de 60 dias)",
+        "Comunicações trocadas entre seguradora, corretora, estipulante e segurado aderente"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "contestacao",
+        "apelacao_civel"
+      ],
+      "related_claims": [
+        "sec_life_preexisting_disease_suicide",
+        "cons_health_adjustment"
+      ],
+      "limitation": "1 ano para o segurado contra a seguradora (CC, art. 206, § 1º, II) e 3 ou 10 anos na pretensão indenizatória por falha de mandato/informação contra o estipulante conforme a natureza contratual ou extracontratual da relação (CC, arts. 205 e 206, § 3º, V)"
+    }
+  ]
+}

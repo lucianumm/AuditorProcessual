@@ -4,25 +4,1587 @@
  "label": "Direito Civil",
  "guide": "domain_guides/civil.md",
  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
- "polo_labels": {"claimant_theses": "Teses do autor ou requerente", "defense_theses": "Teses do réu ou requerido"},
+ "polo_labels": {
+  "claimant_theses": "Teses do autor ou requerente",
+  "defense_theses": "Teses do réu ou requerido"
+ },
  "claims": [
-  {"id": "civ_tort", "label": "Responsabilidade civil extracontratual", "requirements": ["conduta", "dano", "nexo", "culpa_ou_risco", "quantificacao"], "claimant_theses": [{"id": "civ_tort.c1", "label": "Ato ilícito e dever de indenizar", "authority_ids": ["cc_art186", "cc_art927"]}, {"id": "civ_tort.c2", "label": "Abuso de direito como ato ilícito", "authority_ids": ["cc_art187"]}, {"id": "civ_tort.c3", "label": "Juros desde o evento danoso e cumulação de danos", "authority_ids": ["stj_sumula_54", "stj_sumula_37", "stj_sumula_387"]}, {"id": "civ_tort.c4", "label": "Pessoa jurídica pode sofrer dano moral", "authority_ids": ["stj_sumula_227"]}], "defense_theses": [{"id": "civ_tort.d1", "label": "Extensão do dano e redução equitativa", "authority_ids": ["cc_art944"]}, {"id": "civ_tort.d2", "label": "Prescrição trienal da reparação civil", "authority_ids": ["cc_art206"]}], "temporal_marker_ids": ["lei_14905_juros_civis"], "typical_requests": ["Danos materiais, morais e estéticos"], "evidence": ["Boletins, laudos, fotos e testemunhas", "Comprovantes de despesas e renda"], "piece_ids": ["inicial_procedimento_comum", "inicial_juizado"], "related_claims": [], "limitation": "Reparação civil: três anos (CC, art. 206, § 3º, V); conferir regra especial."},
-  {"id": "civ_contract", "label": "Inadimplemento contratual", "requirements": ["contrato", "obrigacao", "mora", "perdas_danos", "resolucao"], "claimant_theses": [{"id": "civ_contract.c1", "label": "Inadimplemento gera perdas e danos, correção e juros", "authority_ids": ["cc_art389"]}, {"id": "civ_contract.c2", "label": "Resolução por inadimplemento com indenização", "authority_ids": ["cc_art475"]}, {"id": "civ_contract.c3", "label": "Boa-fé objetiva na execução do contrato", "authority_ids": ["cc_art422"]}], "defense_theses": [{"id": "civ_contract.d1", "label": "Prescrição da pretensão", "authority_ids": ["cc_art189", "cc_art205", "cc_art206"]}], "temporal_marker_ids": ["lei_14905_juros_civis"], "typical_requests": ["Cumprimento, resolução ou perdas e danos"], "evidence": ["Contrato, aditivos e notificações", "Comprovantes de pagamento"], "piece_ids": ["inicial_procedimento_comum", "acao_monitoria", "execucao_titulo_extrajudicial"], "related_claims": [], "limitation": "conferir"},
-  {"id": "civ_collection", "label": "Cobrança, monitória e execução de título", "requirements": ["titulo_ou_prova_escrita", "liquidez", "exigibilidade", "memoria_calculo"], "claimant_theses": [{"id": "civ_collection.c1", "label": "Prova escrita sem eficácia de título autoriza monitória", "authority_ids": ["cpc_art700"]}, {"id": "civ_collection.c2", "label": "Título executivo extrajudicial", "authority_ids": ["cpc_art784"]}], "defense_theses": [{"id": "civ_collection.d1", "label": "Embargos monitórios ou à execução com excesso demonstrado", "authority_ids": ["cpc_art702", "cpc_art914"]}], "temporal_marker_ids": [], "typical_requests": ["Pagamento com atualização"], "evidence": ["Título, contrato e memória de cálculo"], "piece_ids": ["acao_monitoria", "execucao_titulo_extrajudicial", "embargos_monitorios", "embargos_execucao_civil"], "related_claims": [], "limitation": "conferir"},
-  {"id": "civ_possession", "label": "Proteção possessória", "requirements": ["posse", "esbulho_turbacao_ameaca", "data", "liminar"], "claimant_theses": [{"id": "civ_possession.c1", "label": "Reintegração ou manutenção com liminar em força nova", "authority_ids": ["cpc_art554", "cc_art1210"]}], "defense_theses": [{"id": "civ_possession.d1", "label": "Posse não demonstrada ou posse de força velha", "authority_ids": ["cc_art1196"]}], "temporal_marker_ids": [], "typical_requests": ["Liminar e proteção possessória"], "evidence": ["Prova da posse e da data do esbulho"], "piece_ids": ["acao_possessoria"], "related_claims": ["imob_usucapiao"], "limitation": "conferir"},
-  {"id": "civ_lease", "label": "Locação: despejo e cobrança", "requirements": ["contrato", "hipotese_legal", "debito", "garantias"], "claimant_theses": [{"id": "civ_lease.c1", "label": "Desfazimento da locação nas hipóteses legais", "authority_ids": ["l8245_art9"]}, {"id": "civ_lease.c2", "label": "Despejo por falta de pagamento, com possibilidade de purgação", "authority_ids": ["l8245_art62", "l8245_art59"]}], "defense_theses": [{"id": "civ_lease.d1", "label": "Purgação da mora no prazo legal", "authority_ids": ["l8245_art62"]}], "temporal_marker_ids": [], "typical_requests": ["Despejo e cobrança"], "evidence": ["Contrato, notificações e demonstrativo do débito"], "piece_ids": ["acao_despejo", "acao_cobranca_aluguel"], "related_claims": [], "limitation": "conferir"},
-  {"id": "civ_urgent_relief", "label": "Tutela de urgência", "requirements": ["probabilidade", "perigo", "reversibilidade"], "claimant_theses": [{"id": "civ_urgent_relief.c1", "label": "Probabilidade do direito e perigo de dano", "authority_ids": ["cpc_art300", "cpc_art303", "cpc_art305"]}], "defense_theses": [{"id": "civ_urgent_relief.d1", "label": "Irreversibilidade ou ausência de perigo concreto", "authority_ids": ["cpc_art300"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["tutela_urgencia_antecedente"], "related_claims": [], "limitation": "conferir"},
-  {"id": "civ_defects_invalidity", "label": "Invalidade do negócio jurídico", "requirements": ["negocio", "vicio_alegado", "data_da_celebracao", "prejuizo"], "claimant_theses": [{"id": "civ_defects_invalidity.c1", "label": "Anulação por erro, dolo, coação ou lesão", "authority_ids": ["cc_art138", "cc_art145", "cc_art151", "cc_art157", "cc_art171"]}, {"id": "civ_defects_invalidity.c2", "label": "Nulidade por simulação ou objeto ilícito, sem prazo de convalidação", "authority_ids": ["cc_art166", "cc_art167"]}], "defense_theses": [{"id": "civ_defects_invalidity.d1", "label": "Decadência de quatro anos para anular", "authority_ids": ["cc_art178"]}, {"id": "civ_defects_invalidity.d2", "label": "Validade formal e ausência de prova do vício", "authority_ids": ["cc_art104", "cpc_art373"]}], "temporal_marker_ids": [], "typical_requests": ["Anulação ou declaração de nulidade", "Retorno ao estado anterior", "Perdas e danos"], "evidence": ["Instrumento do negócio", "Mensagens e testemunhas sobre a formação da vontade", "Avaliação do preço à época"], "piece_ids": ["inicial_procedimento_comum", "tutela_urgencia_antecedente"], "related_claims": ["civ_contract"], "limitation": "Quatro anos para anular (CC, art. 178); nulidade não convalesce — conferir"},
-  {"id": "civ_contract_revision", "label": "Revisão e resolução por fato superveniente", "requirements": ["contrato_de_execucao_continuada", "fato_extraordinario", "desproporcao", "mora_anterior"], "claimant_theses": [{"id": "civ_contract_revision.c1", "label": "Revisão da prestação por desproporção manifesta e imprevisível", "authority_ids": ["cc_art317", "cc_art480"]}, {"id": "civ_contract_revision.c2", "label": "Resolução por onerosidade excessiva", "authority_ids": ["cc_art478"]}], "defense_theses": [{"id": "civ_contract_revision.d1", "label": "Risco alocado no contrato e presunção de paridade entre empresas", "authority_ids": ["cc_art421a", "cc_art421"]}, {"id": "civ_contract_revision.d2", "label": "Devedor em mora antes do evento", "authority_ids": ["cc_art395"]}], "temporal_marker_ids": ["lei_13874_liberdade_economica"], "typical_requests": ["Reequilíbrio do preço", "Resolução com efeitos desde a citação"], "evidence": ["Contrato e matriz de riscos", "Índices e evidências do evento", "Planilhas de custo"], "piece_ids": ["inicial_procedimento_comum", "tutela_urgencia_antecedente"], "related_claims": ["civ_contract"], "limitation": "Conferir"},
-  {"id": "civ_penalty_damages", "label": "Cláusula penal, juros e perdas e danos", "requirements": ["inadimplemento", "clausula_penal", "dano_emergente", "lucros_cessantes", "termo_dos_juros"], "claimant_theses": [{"id": "civ_penalty_damages.c1", "label": "Perdas e danos abrangem o que se perdeu e o que razoavelmente se deixou de lucrar", "authority_ids": ["cc_art402", "cc_art389"]}, {"id": "civ_penalty_damages.c2", "label": "Cláusula penal como piso com indenização suplementar se pactuada", "authority_ids": ["cc_art416"]}, {"id": "civ_penalty_damages.c3", "label": "Juros de mora desde a citação ou do evento, conforme a natureza da obrigação", "authority_ids": ["cc_art405", "cc_art397", "stj_sumula_54"]}], "defense_theses": [{"id": "civ_penalty_damages.d1", "label": "Redução equitativa da multa manifestamente excessiva ou em cumprimento parcial", "authority_ids": ["cc_art413"]}, {"id": "civ_penalty_damages.d2", "label": "Dano limitado aos efeitos diretos e imediatos", "authority_ids": ["cc_art403"]}, {"id": "civ_penalty_damages.d3", "label": "Taxa legal de juros conforme o período", "authority_ids": ["cc_art406"]}], "temporal_marker_ids": ["lei_14905_juros_civis"], "typical_requests": ["Multa contratual", "Indenização suplementar", "Juros e correção com termo inicial definido"], "evidence": ["Contrato", "Notas e documentos do prejuízo", "Demonstração do lucro esperado"], "piece_ids": ["inicial_procedimento_comum", "cumprimento_sentenca", "impugnacao_cumprimento"], "related_claims": ["civ_contract"], "limitation": "Conferir"},
-  {"id": "civ_third_party_liability", "label": "Responsabilidade por fato de terceiro, coisa ou animal", "requirements": ["vinculo_com_o_causador", "fato", "dano", "nexo"], "claimant_theses": [{"id": "civ_third_party_liability.c1", "label": "Responsabilidade objetiva do empregador, pais e donos de hotéis pelos atos de seus dependentes", "authority_ids": ["cc_art932", "cc_art933"]}, {"id": "civ_third_party_liability.c2", "label": "Dono do animal e habitante do prédio respondem pelo dano", "authority_ids": ["cc_art936", "cc_art938"]}, {"id": "civ_third_party_liability.c3", "label": "Solidariedade entre os coautores", "authority_ids": ["cc_art942"]}], "defense_theses": [{"id": "civ_third_party_liability.d1", "label": "Culpa exclusiva da vítima ou força maior", "authority_ids": ["cc_art936", "cc_art393"]}, {"id": "civ_third_party_liability.d2", "label": "Culpa concorrente reduz a indenização", "authority_ids": ["cc_art945"]}], "temporal_marker_ids": [], "typical_requests": ["Dano material e moral", "Pensão"], "evidence": ["Prova do vínculo e do fato", "Laudos e orçamentos", "Boletim de ocorrência"], "piece_ids": ["inicial_procedimento_comum", "inicial_juizado"], "related_claims": ["civ_tort"], "limitation": "Três anos (CC, art. 206, § 3º, V) — conferir"},
-  {"id": "civ_death_injury", "label": "Morte, lesão e pensão civil", "requirements": ["evento", "vitima_e_dependentes", "renda", "incapacidade"], "claimant_theses": [{"id": "civ_death_injury.c1", "label": "Despesas, luto e alimentos a quem o morto os devia", "authority_ids": ["cc_art948"]}, {"id": "civ_death_injury.c2", "label": "Tratamento, lucros cessantes e pensão por redução da capacidade", "authority_ids": ["cc_art949", "cc_art950"]}, {"id": "civ_death_injury.c3", "label": "Cumulação de dano moral e estético e transmissão do direito aos herdeiros", "authority_ids": ["stj_sumula_387", "stj_sumula_642"]}], "defense_theses": [{"id": "civ_death_injury.d1", "label": "Dedução do seguro obrigatório e culpa concorrente", "authority_ids": ["stj_sumula_246", "cc_art945"]}, {"id": "civ_death_injury.d2", "label": "Sentença penal absolutória por inexistência do fato ou negativa de autoria", "authority_ids": ["cc_art935"]}], "temporal_marker_ids": [], "typical_requests": ["Pensão mensal ou parcela única", "Dano moral reflexo", "Constituição de capital"], "evidence": ["Certidão de óbito ou laudos", "Prova de renda e dependência", "Despesas"], "piece_ids": ["inicial_procedimento_comum", "cumprimento_sentenca"], "related_claims": ["civ_tort"], "limitation": "Três anos — conferir; não corre contra absolutamente incapaz"},
-  {"id": "civ_medical", "label": "Responsabilidade médica e hospitalar", "requirements": ["ato_medico", "culpa_ou_defeito", "consentimento_informado", "nexo", "dano"], "claimant_theses": [{"id": "civ_medical.c1", "label": "Profissional responde por culpa; hospital, pelo defeito do serviço", "authority_ids": ["cc_art951", "cdc_art14"]}, {"id": "civ_medical.c2", "label": "Falha no dever de informar sobre riscos", "authority_ids": ["cdc_art6"]}], "defense_theses": [{"id": "civ_medical.d1", "label": "Obrigação de meio e intercorrência prevista na literatura", "authority_ids": ["cc_art951"]}, {"id": "civ_medical.d2", "label": "Ausência de nexo demonstrada por perícia", "authority_ids": ["cpc_art373"]}], "temporal_marker_ids": [], "typical_requests": ["Dano material, moral e estético", "Custeio de tratamento corretivo"], "evidence": ["Prontuário integral", "Termo de consentimento", "Perícia médica e literatura"], "piece_ids": ["inicial_procedimento_comum", "impugnacao_laudo"], "related_claims": ["civ_tort", "civ_death_injury"], "limitation": "CDC, art. 27 (cinco anos) quando houver relação de consumo — conferir"},
-  {"id": "civ_honor_image", "label": "Honra, imagem e nome", "requirements": ["publicacao_ou_uso", "autorizacao", "finalidade_economica", "dano"], "claimant_theses": [{"id": "civ_honor_image.c1", "label": "Uso não autorizado de imagem com fim econômico independe de prova do prejuízo", "authority_ids": ["cc_art20", "stj_sumula_403"]}, {"id": "civ_honor_image.c2", "label": "Tutela inibitória e reparatória dos direitos da personalidade", "authority_ids": ["cc_art12", "cc_art21", "cf_art5"]}, {"id": "civ_honor_image.c3", "label": "Responsabilidade do autor do escrito e do veículo", "authority_ids": ["stj_sumula_221"]}], "defense_theses": [{"id": "civ_honor_image.d1", "label": "Interesse público e liberdade de informação sobre fato verdadeiro", "authority_ids": ["cf_art5"]}, {"id": "civ_honor_image.d2", "label": "Direito ao esquecimento afastado como regra geral", "authority_ids": ["tema_stf_786"]}], "temporal_marker_ids": [], "typical_requests": ["Remoção ou retificação", "Indenização", "Direito de resposta"], "evidence": ["Capturas com data e URL ou exemplar", "Prova do alcance e do uso comercial"], "piece_ids": ["inicial_procedimento_comum", "tutela_urgencia_antecedente", "inicial_juizado"], "related_claims": ["civ_tort", "dp_content_removal"], "limitation": "Três anos — conferir"},
-  {"id": "civ_insurance", "label": "Seguro: negativa de cobertura", "requirements": ["apolice", "sinistro", "aviso", "mora_no_premio", "agravamento_do_risco"], "claimant_theses": [{"id": "civ_insurance.c1", "label": "Recusa por doença preexistente exige exame prévio ou má-fé comprovada", "authority_ids": ["stj_sumula_609", "cc_art766"]}, {"id": "civ_insurance.c2", "label": "Atraso no prêmio exige comunicação prévia para suspender ou resolver o contrato", "authority_ids": ["stj_sumula_616", "cc_art763"]}, {"id": "civ_insurance.c3", "label": "Embriaguez não exclui a cobertura do seguro de vida", "authority_ids": ["stj_sumula_620"]}], "defense_theses": [{"id": "civ_insurance.d1", "label": "Agravamento intencional do risco e declarações inexatas", "authority_ids": ["cc_art768", "cc_art766"]}, {"id": "civ_insurance.d2", "label": "Suicídio nos dois primeiros anos de vigência", "authority_ids": ["stj_sumula_610"]}, {"id": "civ_insurance.d3", "label": "Vítima não pode acionar apenas a seguradora do causador", "authority_ids": ["stj_sumula_529"]}], "temporal_marker_ids": [], "typical_requests": ["Pagamento da indenização securitária", "Correção desde a contratação e juros"], "evidence": ["Apólice e condições gerais", "Aviso de sinistro e negativa", "Laudos e boletim de ocorrência"], "piece_ids": ["inicial_procedimento_comum", "inicial_juizado"], "related_claims": ["civ_contract", "cons_abusive"], "limitation": "Um ano para o segurado (CC, art. 206, § 1º, II) — conferir o termo inicial"},
-  {"id": "civ_unjust_enrichment", "label": "Enriquecimento sem causa e repetição", "requirements": ["transferencia_patrimonial", "ausencia_de_causa", "subsidiariedade"], "claimant_theses": [{"id": "civ_unjust_enrichment.c1", "label": "Restituição do indevidamente auferido com atualização", "authority_ids": ["cc_art884"]}, {"id": "civ_unjust_enrichment.c2", "label": "Cobrança de dívida já paga: devolução em dobro mediante má-fé", "authority_ids": ["cc_art940"]}], "defense_theses": [{"id": "civ_unjust_enrichment.d1", "label": "Existência de causa jurídica ou de outro meio para se ressarcir", "authority_ids": ["cc_art884"]}], "temporal_marker_ids": [], "typical_requests": ["Restituição", "Compensação"], "evidence": ["Comprovantes de transferência", "Documentos que afastem a causa alegada"], "piece_ids": ["inicial_procedimento_comum", "inicial_juizado", "acao_monitoria"], "related_claims": ["civ_collection"], "limitation": "Três anos (CC, art. 206, § 3º, IV) — conferir"},
-  {"id": "civ_enforcement_defense", "label": "Defesas no cumprimento de sentença e na execução", "requirements": ["titulo", "intimacao", "calculo", "bens_atingidos"], "claimant_theses": [{"id": "civ_enforcement_defense.c1", "label": "Excesso de execução com demonstrativo próprio", "authority_ids": ["cpc_art525", "cpc_art917"]}, {"id": "civ_enforcement_defense.c2", "label": "Impenhorabilidade de salário, poupança e bem de família", "authority_ids": ["cpc_art833", "l8009_art1"]}, {"id": "civ_enforcement_defense.c3", "label": "Prescrição intercorrente", "authority_ids": ["cpc_art921"]}], "defense_theses": [{"id": "civ_enforcement_defense.d1", "label": "Multa e honorários de dez por cento após o prazo de pagamento", "authority_ids": ["cpc_art523"]}, {"id": "civ_enforcement_defense.d2", "label": "Ordem preferencial da penhora em dinheiro", "authority_ids": ["cpc_art835"]}, {"id": "civ_enforcement_defense.d3", "label": "Exceções legais à impenhorabilidade", "authority_ids": ["l8009_art3", "cpc_art833"]}], "temporal_marker_ids": [], "typical_requests": ["Redução do valor executado", "Desconstituição da penhora", "Extinção pela prescrição"], "evidence": ["Planilha comparativa", "Extratos que demonstrem a origem dos valores", "Certidão da matrícula e prova de moradia"], "piece_ids": ["impugnacao_cumprimento", "embargos_execucao_civil", "excecao_pre_executividade", "embargos_terceiro", "incidente_desconsideracao", "agravo_instrumento"], "related_claims": ["civ_collection"], "limitation": "Impugnação em quinze dias após o prazo de pagamento (CPC, art. 525) — conferir"},
-  {"id": "civ_neighborhood_condo", "label": "Vizinhança e condomínio edilício", "requirements": ["interferencia", "regras_do_condominio", "notificacao", "reiteracao"], "claimant_theses": [{"id": "civ_neighborhood_condo.c1", "label": "Cessação de interferências prejudiciais à segurança, sossego e saúde", "authority_ids": ["cc_art1277"]}, {"id": "civ_neighborhood_condo.c2", "label": "Cobrança de cotas e multa por descumprimento dos deveres", "authority_ids": ["cc_art1336", "cc_art1348", "cpc_art784"]}, {"id": "civ_neighborhood_condo.c3", "label": "Multa agravada ao condômino antissocial", "authority_ids": ["cc_art1337"]}], "defense_theses": [{"id": "civ_neighborhood_condo.d1", "label": "Uso normal da propriedade e tolerância ordinária", "authority_ids": ["cc_art1277", "cc_art1228"]}, {"id": "civ_neighborhood_condo.d2", "label": "Multa sem deliberação ou defesa prévia", "authority_ids": ["cc_art1337"]}], "temporal_marker_ids": [], "typical_requests": ["Obrigação de não fazer com multa", "Cobrança de cotas", "Anulação de multa ou assembleia"], "evidence": ["Convenção, regimento e atas", "Notificações e registros de ocorrência", "Medições ou laudos"], "piece_ids": ["inicial_procedimento_comum", "inicial_juizado", "execucao_titulo_extrajudicial"], "related_claims": ["civ_possession"], "limitation": "Cotas condominiais: cinco anos — conferir repetitivo do STJ"},
-  {"id": "civ_fees_costs", "label": "Honorários, gratuidade e sucumbência", "requirements": ["valor_da_causa", "proveito_economico", "insuficiencia_de_recursos"], "claimant_theses": [{"id": "civ_fees_costs.c1", "label": "Honorários entre dez e vinte por cento sobre condenação, proveito ou valor da causa", "authority_ids": ["cpc_art85"]}, {"id": "civ_fees_costs.c2", "label": "Gratuidade com presunção de veracidade para a pessoa natural", "authority_ids": ["cpc_art98"]}], "defense_theses": [{"id": "civ_fees_costs.d1", "label": "Fixação por equidade restrita às hipóteses legais — conferir o Tema 1076 do STJ", "authority_ids": ["cpc_art85"]}, {"id": "civ_fees_costs.d2", "label": "Condenação em valor inferior ao pedido de dano moral não gera sucumbência recíproca", "authority_ids": ["stj_sumula_326"]}], "temporal_marker_ids": [], "typical_requests": ["Majoração ou redução dos honorários", "Concessão ou revogação da gratuidade"], "evidence": ["Declaração e documentos de renda", "Memória do proveito econômico"], "piece_ids": ["apelacao_civel", "agravo_instrumento", "embargos_declaracao"], "related_claims": ["civ_urgent_relief"], "limitation": "Conferir"}
+  {
+   "id": "civ_tort",
+   "label": "Responsabilidade civil extracontratual",
+   "requirements": [
+    "conduta",
+    "dano",
+    "nexo",
+    "culpa_ou_risco",
+    "quantificacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_tort.c1",
+     "label": "Ato ilícito e dever de indenizar",
+     "authority_ids": [
+      "cc_art186",
+      "cc_art927"
+     ]
+    },
+    {
+     "id": "civ_tort.c2",
+     "label": "Abuso de direito como ato ilícito",
+     "authority_ids": [
+      "cc_art187"
+     ]
+    },
+    {
+     "id": "civ_tort.c3",
+     "label": "Juros desde o evento danoso e cumulação de danos",
+     "authority_ids": [
+      "stj_sumula_54",
+      "stj_sumula_37",
+      "stj_sumula_387"
+     ]
+    },
+    {
+     "id": "civ_tort.c4",
+     "label": "Pessoa jurídica pode sofrer dano moral",
+     "authority_ids": [
+      "stj_sumula_227"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_tort.d1",
+     "label": "Extensão do dano e redução equitativa",
+     "authority_ids": [
+      "cc_art944"
+     ]
+    },
+    {
+     "id": "civ_tort.d2",
+     "label": "Prescrição trienal da reparação civil",
+     "authority_ids": [
+      "cc_art206"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Danos materiais, morais e estéticos",
+    "Correção monetária desde o efetivo prejuízo (Súmula 43 STJ) ou arbitramento do dano moral (Súmula 362 STJ) e juros desde o evento danoso na responsabilidade extracontratual (Súmula 54 STJ; observar Lei 14.905/2024)"
+   ],
+   "evidence": [
+    "Boletins, laudos, fotos e testemunhas",
+    "Comprovantes de despesas e renda",
+    "Laudo pericial médico ou de engenharia quantificando extensão do dano, nexo causal e eventual culpa concorrente (CC, art. 945)"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado"
+   ],
+   "related_claims": [],
+   "limitation": "Prescrição trienal para a pretensão de reparação civil extracontratual (CC, art. 206, § 3º, V), contada da ciência inequívoca do dano e de sua autoria (teoria da actio nata), suspensa quando o fato dever ser apurado no juízo criminal até a sentença definitiva (CC, art. 200)."
+  },
+  {
+   "id": "civ_contract",
+   "label": "Inadimplemento contratual",
+   "requirements": [
+    "contrato",
+    "obrigacao",
+    "mora",
+    "perdas_danos",
+    "resolucao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_contract.c1",
+     "label": "Inadimplemento gera perdas e danos, correção e juros",
+     "authority_ids": [
+      "cc_art389"
+     ]
+    },
+    {
+     "id": "civ_contract.c2",
+     "label": "Resolução por inadimplemento com indenização",
+     "authority_ids": [
+      "cc_art475"
+     ]
+    },
+    {
+     "id": "civ_contract.c3",
+     "label": "Boa-fé objetiva na execução do contrato",
+     "authority_ids": [
+      "cc_art422"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_contract.d1",
+     "label": "Prescrição da pretensão",
+     "authority_ids": [
+      "cc_art189",
+      "cc_art205",
+      "cc_art206"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis",
+    "lei_13874_liberdade_economica"
+   ],
+   "typical_requests": [
+    "Cumprimento, resolução ou perdas e danos",
+    "Tutela específica da obrigação de fazer ou entregar coisa (CPC, arts. 497 e 498) ou conversão em perdas e danos",
+    "Reconhecimento da exceção do contrato não cumprido (CC, art. 476) ou do adimplemento substancial para vedar resolução desproporcional"
+   ],
+   "evidence": [
+    "Contrato, aditivos e notificações",
+    "Comprovantes de pagamento",
+    "Planilha analítica dos danos emergentes e lucros cessantes efetivamente demonstrados (CC, arts. 402 e 403)"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "acao_monitoria",
+    "execucao_titulo_extrajudicial"
+   ],
+   "related_claims": [],
+   "limitation": "Prescrição decenal para as pretensões de cumprimento forçado, resolução contratual e responsabilidade civil contratual por inadimplemento (CC, art. 205; EREsp 1.281.594/STJ — Corte Especial), salvo cobrança pura de dívida líquida constante de instrumento público ou particular, que prescreve em 5 anos (CC, art. 206, § 5º, I)."
+  },
+  {
+   "id": "civ_collection",
+   "label": "Cobrança, monitória e execução de título",
+   "requirements": [
+    "titulo_ou_prova_escrita",
+    "liquidez",
+    "exigibilidade",
+    "memoria_calculo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_collection.c1",
+     "label": "Prova escrita sem eficácia de título autoriza monitória",
+     "authority_ids": [
+      "cpc_art700"
+     ]
+    },
+    {
+     "id": "civ_collection.c2",
+     "label": "Título executivo extrajudicial",
+     "authority_ids": [
+      "cpc_art784"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_collection.d1",
+     "label": "Embargos monitórios ou à execução com excesso demonstrado",
+     "authority_ids": [
+      "cpc_art702",
+      "cpc_art914"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14620_titulo_eletronico",
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Pagamento com atualização",
+    "Expedição de mandado monitório para pagamento em 15 dias com honorários de 5% e isenção de custas se cumprido (CPC, art. 701)",
+    "Citação na execução para pagamento em 3 dias sob pena de penhora via SISBAJUD/RENAJUD/SNIPER (CPC, art. 829)"
+   ],
+   "evidence": [
+    "Título, contrato e memória de cálculo",
+    "Comprovantes da relação negocial subjacente (notas fiscais, canhotos de entrega, mensagens de confissão) e interrupção anterior por protesto, se houver (CC, art. 202, III)",
+    "Notificação extrajudicial de constituição em mora e extratos de pagamentos parciais eventualmente abatidos"
+   ],
+   "piece_ids": [
+    "acao_monitoria",
+    "execucao_titulo_extrajudicial",
+    "embargos_monitorios",
+    "embargos_execucao_civil"
+   ],
+   "related_claims": [],
+   "limitation": "Prescrição quinquenal para a cobrança/monitória/execução de dívidas líquidas constantes de instrumento público ou particular (CC, art. 206, § 5º, I; Súmulas 503 e 504 do STJ), ou prazos especiais cambiais na execução direta de títulos de crédito (CC, art. 206, § 3º, VIII)."
+  },
+  {
+   "id": "civ_possession",
+   "label": "Proteção possessória",
+   "requirements": [
+    "posse",
+    "esbulho_turbacao_ameaca",
+    "data",
+    "liminar"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_possession.c1",
+     "label": "Reintegração ou manutenção com liminar em força nova",
+     "authority_ids": [
+      "cpc_art554",
+      "cc_art1210"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_possession.d1",
+     "label": "Posse não demonstrada ou posse de força velha",
+     "authority_ids": [
+      "cc_art1196"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Liminar e proteção possessória",
+    "Fungibilidade entre manutenção, reintegração de posse e interdito proibitório com cominação de multa diária (CPC, arts. 554 e 567)",
+    "Indenização cumulada de perdas e danos, frutos percebidos de má-fé e retenção/indenização de benfeitorias (CPC, art. 555; CC, arts. 1.216 e 1.219)"
+   ],
+   "evidence": [
+    "Prova da posse e da data do esbulho",
+    "Contas de consumo, recibos de impostos, fotografias datadas, boletim de ocorrência e rol de testemunhas para audiência de justificação prévia (CPC, art. 562)",
+    "Inspeção judicial ou perícia topográfica delimitando a área esbulhada ou turbada"
+   ],
+   "piece_ids": [
+    "acao_possessoria"
+   ],
+   "related_claims": [
+    "imob_usucapiao"
+   ],
+   "limitation": "Ação de força nova (com direito à liminar inaudita altera parte ou após justificação) se proposta dentro de ano e dia da turbação ou do esbulho; passado esse prazo, segue o procedimento comum sem perder o caráter possessório (CPC, art. 558), extinguindo-se apenas se consumada usucapião pelo possuidor adverso."
+  },
+  {
+   "id": "civ_lease",
+   "label": "Locação: despejo e cobrança",
+   "requirements": [
+    "contrato",
+    "hipotese_legal",
+    "debito",
+    "garantias"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_lease.c1",
+     "label": "Desfazimento da locação nas hipóteses legais",
+     "authority_ids": [
+      "l8245_art9"
+     ]
+    },
+    {
+     "id": "civ_lease.c2",
+     "label": "Despejo por falta de pagamento, com possibilidade de purgação",
+     "authority_ids": [
+      "l8245_art62",
+      "l8245_art59"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_lease.d1",
+     "label": "Purgação da mora no prazo legal",
+     "authority_ids": [
+      "l8245_art62"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Despejo e cobrança",
+    "Decretação do despejo cumulada com condenação do locatário e solidariamente dos fiadores aos aluguéis e encargos vencidos e vincendos até a efetiva desocupação (Lei 8.245/1991, art. 62, I)",
+    "Pelo locatário: autorização para purgação da mora em 15 dias da citação ou retenção por benfeitorias necessárias/úteis autorizadas (salvo cláusula válida de renúncia — Súmula 335 STJ)"
+   ],
+   "evidence": [
+    "Contrato, notificações e demonstrativo do débito",
+    "Vistoria inicial e final do imóvel, recibos de condomínio/IPTU pagos pelo locador e cálculo discriminado (Lei 8.245/1991, art. 62, I)",
+    "Comprovante de prestação de caução ou ausência de garantia locatícia para liminar de desocupação em 15 dias (art. 59, § 1º, IX)"
+   ],
+   "piece_ids": [
+    "acao_despejo",
+    "acao_cobranca_aluguel"
+   ],
+   "related_claims": [],
+   "limitation": "Prescrição trienal para a pretensão de cobrança de aluguéis e acessórios de prédios urbanos ou rústicos, contada do vencimento de cada prestação mensal (CC, art. 206, § 3º, I); purgação da mora em 15 dias da citação (Lei 8.245/1991, art. 62, II)."
+  },
+  {
+   "id": "civ_urgent_relief",
+   "label": "Tutela de urgência",
+   "requirements": [
+    "probabilidade",
+    "perigo",
+    "reversibilidade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_urgent_relief.c1",
+     "label": "Probabilidade do direito e perigo de dano",
+     "authority_ids": [
+      "cpc_art300",
+      "cpc_art303",
+      "cpc_art305"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_urgent_relief.d1",
+     "label": "Irreversibilidade ou ausência de perigo concreto",
+     "authority_ids": [
+      "cpc_art300"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Concessão liminar de tutela provisória de urgência cautelar ou antecipada (antecedente ou incidental) mediante probabilidade do direito e perigo de dano (CPC, arts. 300, 303 e 305)",
+    "Estabilização da tutela antecipada antecedente na ausência de interposição de agravo de instrumento pelo réu (CPC, art. 304; Tema Repetitivo 1186/jurisprudência STJ)",
+    "Pelo requerido: revogação por perigo de irreversibilidade dos efeitos (CPC, art. 300, § 3º), prestação de caução contracautelar (art. 300, § 1º) e liquidação nos próprios autos dos prejuízos causados pela efetivação de tutela revogada (art. 302)"
+   ],
+   "evidence": [
+    "Prova documental pré-constituída demonstrando a plausibilidade fático-jurídica da pretensão principal",
+    "Evidências contemporâneas do perigo iminente de perecimento do direito, dilapidação patrimonial ou dano irreparável",
+    "Demonstração de reversibilidade prática da medida ou oferecimento de caução real/fidejussória idônea"
+   ],
+   "piece_ids": [
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [],
+   "limitation": "Aditamento da inicial em 15 dias úteis (ou prazo maior fixado) na tutela antecipada antecedente concedida (CPC, art. 303, § 1º, I) e formulação do pedido principal em 30 dias da efetivação da tutela cautelar antecedente, sob pena de cessação da eficácia (CPC, arts. 308 e 309, I); ação para rever tutela estabilizada extingue-se em 2 anos da ciência da extinção (CPC, art. 304, § 5º)."
+  },
+  {
+   "id": "civ_defects_invalidity",
+   "label": "Invalidade do negócio jurídico",
+   "requirements": [
+    "negocio",
+    "vicio_alegado",
+    "data_da_celebracao",
+    "prejuizo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_defects_invalidity.c1",
+     "label": "Anulação por erro, dolo, coação ou lesão",
+     "authority_ids": [
+      "cc_art138",
+      "cc_art145",
+      "cc_art151",
+      "cc_art157",
+      "cc_art171"
+     ]
+    },
+    {
+     "id": "civ_defects_invalidity.c2",
+     "label": "Nulidade por simulação ou objeto ilícito, sem prazo de convalidação",
+     "authority_ids": [
+      "cc_art166",
+      "cc_art167"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_defects_invalidity.d1",
+     "label": "Decadência de quatro anos para anular",
+     "authority_ids": [
+      "cc_art178"
+     ]
+    },
+    {
+     "id": "civ_defects_invalidity.d2",
+     "label": "Validade formal e ausência de prova do vício",
+     "authority_ids": [
+      "cc_art104",
+      "cpc_art373"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Anulação ou declaração de nulidade",
+    "Retorno ao estado anterior",
+    "Perdas e danos"
+   ],
+   "evidence": [
+    "Instrumento do negócio",
+    "Mensagens e testemunhas sobre a formação da vontade",
+    "Avaliação do preço à época"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [
+    "civ_contract"
+   ],
+   "limitation": "A nulidade absoluta (CC, arts. 166 e 167 — simulação) não convalesce pelo decurso do tempo (art. 169), embora os efeitos patrimoniais restitutórios ou indenizatórios se submetam à prescrição decenal (CC, art. 205); a anulabilidade por erro, dolo, coação, estado de perigo, lesão ou fraude contra credores decai em 4 anos (CC, art. 178), ou em 2 anos na ausência de prazo legal específico (CC, art. 179)."
+  },
+  {
+   "id": "civ_contract_revision",
+   "label": "Revisão e resolução por fato superveniente",
+   "requirements": [
+    "contrato_de_execucao_continuada",
+    "fato_extraordinario",
+    "desproporcao",
+    "mora_anterior"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_contract_revision.c1",
+     "label": "Revisão da prestação por desproporção manifesta e imprevisível",
+     "authority_ids": [
+      "cc_art317",
+      "cc_art480"
+     ]
+    },
+    {
+     "id": "civ_contract_revision.c2",
+     "label": "Resolução por onerosidade excessiva",
+     "authority_ids": [
+      "cc_art478"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_contract_revision.d1",
+     "label": "Risco alocado no contrato e presunção de paridade entre empresas",
+     "authority_ids": [
+      "cc_art421a",
+      "cc_art421"
+     ]
+    },
+    {
+     "id": "civ_contract_revision.d2",
+     "label": "Devedor em mora antes do evento",
+     "authority_ids": [
+      "cc_art395"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13874_liberdade_economica",
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Reequilíbrio do preço",
+    "Resolução com efeitos desde a citação",
+    "Manutenção da alocação contratual de riscos nos contratos empresariais e civis paritários (CC, art. 421-A, II e III)"
+   ],
+   "evidence": [
+    "Contrato e matriz de riscos",
+    "Índices e evidências do evento",
+    "Planilhas de custo"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [
+    "civ_contract"
+   ],
+   "limitation": "Exercitável durante a vigência do contrato de execução continuada ou diferida enquanto presente a onerosidade excessiva superveniente (CC, arts. 317 e 478), respeitada a prescrição decenal para reflexos patrimoniais contratuais (CC, art. 205)."
+  },
+  {
+   "id": "civ_penalty_damages",
+   "label": "Cláusula penal, juros e perdas e danos",
+   "requirements": [
+    "inadimplemento",
+    "clausula_penal",
+    "dano_emergente",
+    "lucros_cessantes",
+    "termo_dos_juros"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_penalty_damages.c1",
+     "label": "Perdas e danos abrangem o que se perdeu e o que razoavelmente se deixou de lucrar",
+     "authority_ids": [
+      "cc_art402",
+      "cc_art389"
+     ]
+    },
+    {
+     "id": "civ_penalty_damages.c2",
+     "label": "Cláusula penal como piso com indenização suplementar se pactuada",
+     "authority_ids": [
+      "cc_art416"
+     ]
+    },
+    {
+     "id": "civ_penalty_damages.c3",
+     "label": "Juros de mora desde a citação ou do evento, conforme a natureza da obrigação",
+     "authority_ids": [
+      "cc_art405",
+      "cc_art397",
+      "stj_sumula_54"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_penalty_damages.d1",
+     "label": "Redução equitativa da multa manifestamente excessiva ou em cumprimento parcial",
+     "authority_ids": [
+      "cc_art413"
+     ]
+    },
+    {
+     "id": "civ_penalty_damages.d2",
+     "label": "Dano limitado aos efeitos diretos e imediatos",
+     "authority_ids": [
+      "cc_art403"
+     ]
+    },
+    {
+     "id": "civ_penalty_damages.d3",
+     "label": "Taxa legal de juros conforme o período",
+     "authority_ids": [
+      "cc_art406"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Multa contratual",
+    "Indenização suplementar",
+    "Juros e correção com termo inicial definido"
+   ],
+   "evidence": [
+    "Contrato",
+    "Notas e documentos do prejuízo",
+    "Demonstração do lucro esperado"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "cumprimento_sentenca",
+    "impugnacao_cumprimento"
+   ],
+   "related_claims": [
+    "civ_contract"
+   ],
+   "limitation": "A cláusula penal acessória acompanha o prazo prescricional da obrigação principal — 5 anos quando líquida em instrumento contratual (CC, art. 206, § 5º, I) ou 10 anos na responsabilidade contratual ilíquida (CC, art. 205)."
+  },
+  {
+   "id": "civ_third_party_liability",
+   "label": "Responsabilidade por fato de terceiro, coisa ou animal",
+   "requirements": [
+    "vinculo_com_o_causador",
+    "fato",
+    "dano",
+    "nexo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_third_party_liability.c1",
+     "label": "Responsabilidade objetiva do empregador, pais e donos de hotéis pelos atos de seus dependentes",
+     "authority_ids": [
+      "cc_art932",
+      "cc_art933"
+     ]
+    },
+    {
+     "id": "civ_third_party_liability.c2",
+     "label": "Dono do animal e habitante do prédio respondem pelo dano",
+     "authority_ids": [
+      "cc_art936",
+      "cc_art938"
+     ]
+    },
+    {
+     "id": "civ_third_party_liability.c3",
+     "label": "Solidariedade entre os coautores",
+     "authority_ids": [
+      "cc_art942"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_third_party_liability.d1",
+     "label": "Culpa exclusiva da vítima ou força maior",
+     "authority_ids": [
+      "cc_art936",
+      "cc_art393"
+     ]
+    },
+    {
+     "id": "civ_third_party_liability.d2",
+     "label": "Culpa concorrente reduz a indenização",
+     "authority_ids": [
+      "cc_art945"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Dano material e moral",
+    "Pensão",
+    "Ação regressiva contra o causador direto do dano nos casos autorizados pelo art. 934 do Código Civil"
+   ],
+   "evidence": [
+    "Prova do vínculo e do fato",
+    "Laudos e orçamentos",
+    "Boletim de ocorrência"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado"
+   ],
+   "related_claims": [
+    "civ_tort"
+   ],
+   "limitation": "Prescrição trienal para a pretensão de reparação civil contra os responsáveis indiretos/objetivos do art. 932 e detentores de coisas/animais dos arts. 936 a 938 (CC, art. 206, § 3º, V), contado o regresso a partir do efetivo desembolso pelo responsável indireto."
+  },
+  {
+   "id": "civ_death_injury",
+   "label": "Morte, lesão e pensão civil",
+   "requirements": [
+    "evento",
+    "vitima_e_dependentes",
+    "renda",
+    "incapacidade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_death_injury.c1",
+     "label": "Despesas, luto e alimentos a quem o morto os devia",
+     "authority_ids": [
+      "cc_art948"
+     ]
+    },
+    {
+     "id": "civ_death_injury.c2",
+     "label": "Tratamento, lucros cessantes e pensão por redução da capacidade",
+     "authority_ids": [
+      "cc_art949",
+      "cc_art950"
+     ]
+    },
+    {
+     "id": "civ_death_injury.c3",
+     "label": "Cumulação de dano moral e estético e transmissão do direito aos herdeiros",
+     "authority_ids": [
+      "stj_sumula_387",
+      "stj_sumula_642"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_death_injury.d1",
+     "label": "Dedução do seguro obrigatório e culpa concorrente",
+     "authority_ids": [
+      "stj_sumula_246",
+      "cc_art945"
+     ]
+    },
+    {
+     "id": "civ_death_injury.d2",
+     "label": "Sentença penal absolutória por inexistência do fato ou negativa de autoria",
+     "authority_ids": [
+      "cc_art935"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Pensão mensal ou parcela única",
+    "Dano moral reflexo",
+    "Constituição de capital"
+   ],
+   "evidence": [
+    "Certidão de óbito ou laudos",
+    "Prova de renda e dependência",
+    "Despesas"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "cumprimento_sentenca"
+   ],
+   "related_claims": [
+    "civ_tort"
+   ],
+   "limitation": "Prescrição trienal da reparação civil (CC, art. 206, § 3º, V — ou quinquenal se acidente de consumo/transporte público, CDC, art. 27 / Decreto 20.910/1932), não correndo contra absolutamente incapazes (CC, art. 198, I)."
+  },
+  {
+   "id": "civ_medical",
+   "label": "Responsabilidade médica e hospitalar",
+   "requirements": [
+    "ato_medico",
+    "culpa_ou_defeito",
+    "consentimento_informado",
+    "nexo",
+    "dano"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_medical.c1",
+     "label": "Profissional responde por culpa; hospital, pelo defeito do serviço",
+     "authority_ids": [
+      "cc_art951",
+      "cdc_art14"
+     ]
+    },
+    {
+     "id": "civ_medical.c2",
+     "label": "Falha no dever de informar sobre riscos",
+     "authority_ids": [
+      "cdc_art6"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_medical.d1",
+     "label": "Obrigação de meio e intercorrência prevista na literatura",
+     "authority_ids": [
+      "cc_art951"
+     ]
+    },
+    {
+     "id": "civ_medical.d2",
+     "label": "Ausência de nexo demonstrada por perícia",
+     "authority_ids": [
+      "cpc_art373"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Dano material, moral e estético",
+    "Custeio de tratamento corretivo",
+    "Distinção entre obrigação de meio (regra geral da atividade médica, exigindo prova de culpa) e responsabilidade solidária/objetiva hospitalar quanto a defeitos de internação, equipamentos ou equipe subordinada (CDC, art. 14, caput e § 4º)"
+   ],
+   "evidence": [
+    "Prontuário integral",
+    "Termo de consentimento",
+    "Perícia médica e literatura"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "impugnacao_laudo"
+   ],
+   "related_claims": [
+    "civ_tort",
+    "civ_death_injury"
+   ],
+   "limitation": "Prescrição quinquenal por fato do serviço médico-hospitalar na relação de consumo privada (CDC, art. 27), contada da ciência inequívoca da lesão e de sua consolidação/extensão, ou quinquenal contra o Estado/SUS (Decreto 20.910/1932, art. 1º)."
+  },
+  {
+   "id": "civ_honor_image",
+   "label": "Honra, imagem e nome",
+   "requirements": [
+    "publicacao_ou_uso",
+    "autorizacao",
+    "finalidade_economica",
+    "dano"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_honor_image.c1",
+     "label": "Uso não autorizado de imagem com fim econômico independe de prova do prejuízo",
+     "authority_ids": [
+      "cc_art20",
+      "stj_sumula_403"
+     ]
+    },
+    {
+     "id": "civ_honor_image.c2",
+     "label": "Tutela inibitória e reparatória dos direitos da personalidade",
+     "authority_ids": [
+      "cc_art12",
+      "cc_art21",
+      "cf_art5"
+     ]
+    },
+    {
+     "id": "civ_honor_image.c3",
+     "label": "Responsabilidade do autor do escrito e do veículo",
+     "authority_ids": [
+      "stj_sumula_221"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_honor_image.d1",
+     "label": "Interesse público e liberdade de informação sobre fato verdadeiro",
+     "authority_ids": [
+      "cf_art5"
+     ]
+    },
+    {
+     "id": "civ_honor_image.d2",
+     "label": "Direito ao esquecimento afastado como regra geral",
+     "authority_ids": [
+      "tema_stf_786"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Remoção ou retificação",
+    "Indenização",
+    "Direito de resposta"
+   ],
+   "evidence": [
+    "Capturas com data e URL ou exemplar",
+    "Prova do alcance e do uso comercial",
+    "Ata notarial preservando a integridade probatória da publicação ofensiva ou do uso comercial desautorizado da imagem (Súmula 403 do STJ)"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente",
+    "inicial_juizado"
+   ],
+   "related_claims": [
+    "civ_tort",
+    "dp_content_removal"
+   ],
+   "limitation": "Prescrição trienal para reparação civil por ofensa à honra ou uso indevido da imagem (CC, art. 206, § 3º, V); o pedido de direito de resposta/retificação em veículo de comunicação social decai em 60 dias contados da divulgação (Lei 13.188/2015, art. 3º)."
+  },
+  {
+   "id": "civ_insurance",
+   "label": "Seguro: negativa de cobertura",
+   "requirements": [
+    "apolice",
+    "sinistro",
+    "aviso",
+    "mora_no_premio",
+    "agravamento_do_risco"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_insurance.c1",
+     "label": "Recusa por doença preexistente exige exame prévio ou má-fé comprovada",
+     "authority_ids": [
+      "stj_sumula_609",
+      "cc_art766"
+     ]
+    },
+    {
+     "id": "civ_insurance.c2",
+     "label": "Atraso no prêmio exige comunicação prévia para suspender ou resolver o contrato",
+     "authority_ids": [
+      "stj_sumula_616",
+      "cc_art763"
+     ]
+    },
+    {
+     "id": "civ_insurance.c3",
+     "label": "Embriaguez não exclui a cobertura do seguro de vida",
+     "authority_ids": [
+      "stj_sumula_620"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_insurance.d1",
+     "label": "Agravamento intencional do risco e declarações inexatas",
+     "authority_ids": [
+      "cc_art768",
+      "cc_art766"
+     ]
+    },
+    {
+     "id": "civ_insurance.d2",
+     "label": "Suicídio nos dois primeiros anos de vigência",
+     "authority_ids": [
+      "stj_sumula_610"
+     ]
+    },
+    {
+     "id": "civ_insurance.d3",
+     "label": "Vítima não pode acionar apenas a seguradora do causador",
+     "authority_ids": [
+      "stj_sumula_529"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Pagamento da indenização securitária",
+    "Correção desde a contratação e juros",
+    "Observância da necessidade de prévia interpelação do segurado em mora para cancelamento da apólice (Súmula 616 do STJ) e exame de doença preexistente apenas com má-fé ou prévio exame médico (Súmula 609 do STJ)"
+   ],
+   "evidence": [
+    "Apólice e condições gerais",
+    "Aviso de sinistro e negativa",
+    "Laudos e boletim de ocorrência"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado"
+   ],
+   "related_claims": [
+    "civ_contract",
+    "cons_abusive"
+   ],
+   "limitation": "Prescrição ânua (1 ano) para a pretensão do segurado contra o segurador (CC, art. 206, § 1º, II), suspensa entre a comunicação do sinistro e a ciência inequívoca da recusa fundamentada pela seguradora (Súmula 229 do STJ); para o terceiro beneficiário em seguro de vida ou danos, prescrição decenal (CC, art. 205; jurisprudência do STJ — observar regras de vigência superveniente da Lei 15.040/2024 conforme a data do fato)."
+  },
+  {
+   "id": "civ_unjust_enrichment",
+   "label": "Enriquecimento sem causa e repetição",
+   "requirements": [
+    "transferencia_patrimonial",
+    "ausencia_de_causa",
+    "subsidiariedade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_unjust_enrichment.c1",
+     "label": "Restituição do indevidamente auferido com atualização",
+     "authority_ids": [
+      "cc_art884"
+     ]
+    },
+    {
+     "id": "civ_unjust_enrichment.c2",
+     "label": "Cobrança de dívida já paga: devolução em dobro mediante má-fé",
+     "authority_ids": [
+      "cc_art940"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_unjust_enrichment.d1",
+     "label": "Existência de causa jurídica ou de outro meio para se ressarcir",
+     "authority_ids": [
+      "cc_art884"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Restituição",
+    "Compensação",
+    "Repetição simples (ou equivalente nos termos do art. 940 do CC se demandada dívida já paga sem ressalva e com má-fé comprovada)"
+   ],
+   "evidence": [
+    "Comprovantes de transferência",
+    "Documentos que afastem a causa alegada",
+    "Extratos bancários, comprovantes Pix/TED e comunicações negociais demonstrando erro operacional ou ausência de título jurídico"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "acao_monitoria"
+   ],
+   "related_claims": [
+    "civ_collection"
+   ],
+   "limitation": "Prescrição trienal para a pretensão de ressarcimento de enriquecimento sem causa (CC, art. 206, § 3º, IV), aplicável subsidiariamente quando a lei não conferir outro meio específico (CC, art. 886)."
+  },
+  {
+   "id": "civ_enforcement_defense",
+   "label": "Defesas no cumprimento de sentença e na execução",
+   "requirements": [
+    "titulo",
+    "intimacao",
+    "calculo",
+    "bens_atingidos"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_enforcement_defense.c1",
+     "label": "Excesso de execução com demonstrativo próprio",
+     "authority_ids": [
+      "cpc_art525",
+      "cpc_art917"
+     ]
+    },
+    {
+     "id": "civ_enforcement_defense.c2",
+     "label": "Impenhorabilidade de salário, poupança e bem de família",
+     "authority_ids": [
+      "cpc_art833",
+      "l8009_art1"
+     ]
+    },
+    {
+     "id": "civ_enforcement_defense.c3",
+     "label": "Prescrição intercorrente",
+     "authority_ids": [
+      "cpc_art921"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_enforcement_defense.d1",
+     "label": "Multa e honorários de dez por cento após o prazo de pagamento",
+     "authority_ids": [
+      "cpc_art523"
+     ]
+    },
+    {
+     "id": "civ_enforcement_defense.d2",
+     "label": "Ordem preferencial da penhora em dinheiro",
+     "authority_ids": [
+      "cpc_art835"
+     ]
+    },
+    {
+     "id": "civ_enforcement_defense.d3",
+     "label": "Exceções legais à impenhorabilidade",
+     "authority_ids": [
+      "l8009_art3",
+      "cpc_art833"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14195_prescricao_intercorrente"
+   ],
+   "typical_requests": [
+    "Redução do valor executado",
+    "Desconstituição da penhora",
+    "Extinção pela prescrição"
+   ],
+   "evidence": [
+    "Planilha comparativa",
+    "Extratos que demonstrem a origem dos valores",
+    "Certidão da matrícula e prova de moradia"
+   ],
+   "piece_ids": [
+    "impugnacao_cumprimento",
+    "embargos_execucao_civil",
+    "excecao_pre_executividade",
+    "embargos_terceiro",
+    "incidente_desconsideracao",
+    "agravo_instrumento"
+   ],
+   "related_claims": [
+    "civ_collection"
+   ],
+   "limitation": "Impugnação ao cumprimento de sentença em 15 dias úteis após o término do prazo voluntário de 15 dias, independentemente de penhora ou nova intimação (CPC, art. 525); embargos à execução extrajudicial em 15 dias úteis da juntada do mandado de citação (CPC, art. 915); prescrição da execução no mesmo prazo da ação (Súmula 150 STF)."
+  },
+  {
+   "id": "civ_neighborhood_condo",
+   "label": "Vizinhança e condomínio edilício",
+   "requirements": [
+    "interferencia",
+    "regras_do_condominio",
+    "notificacao",
+    "reiteracao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_neighborhood_condo.c1",
+     "label": "Cessação de interferências prejudiciais à segurança, sossego e saúde",
+     "authority_ids": [
+      "cc_art1277"
+     ]
+    },
+    {
+     "id": "civ_neighborhood_condo.c2",
+     "label": "Cobrança de cotas e multa por descumprimento dos deveres",
+     "authority_ids": [
+      "cc_art1336",
+      "cc_art1348",
+      "cpc_art784"
+     ]
+    },
+    {
+     "id": "civ_neighborhood_condo.c3",
+     "label": "Multa agravada ao condômino antissocial",
+     "authority_ids": [
+      "cc_art1337"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_neighborhood_condo.d1",
+     "label": "Uso normal da propriedade e tolerância ordinária",
+     "authority_ids": [
+      "cc_art1277",
+      "cc_art1228"
+     ]
+    },
+    {
+     "id": "civ_neighborhood_condo.d2",
+     "label": "Multa sem deliberação ou defesa prévia",
+     "authority_ids": [
+      "cc_art1337"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Obrigação de não fazer com multa",
+    "Cobrança de cotas",
+    "Anulação de multa ou assembleia"
+   ],
+   "evidence": [
+    "Convenção, regimento e atas",
+    "Notificações e registros de ocorrência",
+    "Medições ou laudos"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "execucao_titulo_extrajudicial"
+   ],
+   "related_claims": [
+    "civ_possession"
+   ],
+   "limitation": "Prescrição quinquenal para cobrança de cotas condominiais ordinárias e extraordinárias (CC, art. 206, § 5º, I; Tema Repetitivo 949 do STJ); cessação de interferências anormais de vizinhança (CC, art. 1.277) exigível enquanto durar o incômodo continuado, prescrevendo em 3 anos a reparação de danos pretéritos (CC, art. 206, § 3º, V)."
+  },
+  {
+   "id": "civ_fees_costs",
+   "label": "Honorários, gratuidade e sucumbência",
+   "requirements": [
+    "valor_da_causa",
+    "proveito_economico",
+    "insuficiencia_de_recursos"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_fees_costs.c1",
+     "label": "Honorários entre dez e vinte por cento sobre condenação, proveito ou valor da causa",
+     "authority_ids": [
+      "cpc_art85"
+     ]
+    },
+    {
+     "id": "civ_fees_costs.c2",
+     "label": "Gratuidade com presunção de veracidade para a pessoa natural",
+     "authority_ids": [
+      "cpc_art98"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_fees_costs.d1",
+     "label": "Fixação por equidade restrita às hipóteses legais — conferir o Tema 1076 do STJ",
+     "authority_ids": [
+      "cpc_art85"
+     ]
+    },
+    {
+     "id": "civ_fees_costs.d2",
+     "label": "Condenação em valor inferior ao pedido de dano moral não gera sucumbência recíproca",
+     "authority_ids": [
+      "stj_sumula_326"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Majoração ou redução dos honorários",
+    "Concessão ou revogação da gratuidade",
+    "Arbitramento dos honorários sucumbenciais estritamente pelos percentuais de 10% a 20% sobre a condenação/proveito econômico ou valor atualizado da causa, vedada apreciação equitativa fora de valor inestimável ou irrisório (CPC, art. 85, §§ 2º e 8º; Tema Repetitivo 1076 do STJ)"
+   ],
+   "evidence": [
+    "Declaração e documentos de renda",
+    "Memória do proveito econômico",
+    "Extratos bancários, declaração completa de IRPF e holerites comprovando hipossuficiência (ou capacidade financeira na impugnação à gratuidade — CPC, arts. 99 e 100)"
+   ],
+   "piece_ids": [
+    "apelacao_civel",
+    "agravo_instrumento",
+    "embargos_declaracao"
+   ],
+   "related_claims": [
+    "civ_urgent_relief"
+   ],
+   "limitation": "Cobrança de honorários advocatícios contratuais ou sucumbenciais prescreve em 5 anos contados do trânsito em julgado da decisão que os fixar, da ultimação do serviço ou da revogação do mandato (Lei 8.906/1994, art. 25; CC, art. 206, § 5º, II); exigibilidade das obrigações sucumbenciais sob gratuidade extingue-se após 5 anos do trânsito em julgado sem alteração de fortuna (CPC, art. 98, § 3º)."
+  },
+  {
+   "id": "civ_monetary_interest_lei14905",
+   "label": "Correção monetária pelo IPCA e taxa legal de juros moratórios pós-Lei 14.905/2024 (CC, arts. 389 e 406, e Res. CMN 5.171/2024)",
+   "requirements": [
+    "ausencia_convencao_ou_lei_especifica",
+    "transicao_temporal_30_08_2024",
+    "ipca_correcao_monetaria",
+    "taxa_legal_selic_menos_ipca_piso_zero"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_monetary_interest_lei14905.c1",
+     "label": "Prevalência integral dos índices de correção monetária e das taxas de juros moratórios expressamente convencionados no contrato dentro dos limites legais, incidindo o regime supletivo da Lei 14.905/2024 apenas quando o índice ou a taxa não tiverem sido convencionados ou o forem sem taxa estipulada (CC, arts. 389, parágrafo único, e 406, § 1º)",
+     "authority_ids": [
+      "cc_art389",
+      "cc_art406",
+      "l14905_art2"
+     ]
+    },
+    {
+     "id": "civ_monetary_interest_lei14905.c2",
+     "label": "Respeito à coisa julgada nas condenações cujos títulos executivos transitaram em julgado definindo expressamente outro indexador e juros de 1% ao mês, e aplicação bifásica intertemporal nos processos em curso conforme a vigência da Lei 14.905/2024",
+     "authority_ids": [
+      "l14905_art2",
+      "cc_art406",
+      "res_cmn_5171_2024"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_monetary_interest_lei14905.d1",
+     "label": "A partir da vigência da Lei 14.905/2024 (30/08/2024) — e considerando também a interpretação da Corte Especial do STJ (REsp 1.795.982) sobre o art. 406 do CC —, na falta de convenção válida é vedado cumular a SELIC integral com outro índice de inflação, aplicando-se correção pelo IPCA e juros pela Taxa Legal (SELIC deduzido o IPCA, com piso zero quando negativo — Res. CMN 5.171/2024)",
+     "authority_ids": [
+      "cc_art389",
+      "cc_art406",
+      "l14905_art2",
+      "res_cmn_5171_2024"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Liquidação e atualização do débito com separação exata das fases temporais anteriores e posteriores a 30/08/2024",
+    "Impugnação de memória de cálculo que cumule indevidamente SELIC cheia com INPC/IGP-M/IPCA gerando bis in idem inflacionário",
+    "Aplicação da Taxa Legal divulgada pelo Banco Central (SGS) nos termos da Resolução CMN 5.171/2024"
+   ],
+   "evidence": [
+    "Título judicial transitado em julgado ou instrumento contratual verificando se há ou não estipulação expressa de índice e taxa",
+    "Séries oficiais capturadas do SGS/Banco Central (SELIC, IPCA e fator da Taxa Legal da Res. CMN 5.171/2024)",
+    "Memória analítica mês a mês gerada por motor determinístico auditável"
+   ],
+   "piece_ids": [
+    "cumprimento_sentenca",
+    "impugnacao_cumprimento",
+    "embargos_execucao_civil",
+    "apelacao_civel",
+    "recurso_especial"
+   ],
+   "related_claims": [
+    "civ_penalty_damages",
+    "civ_enforcement_defense",
+    "civ_tort"
+   ],
+   "limitation": "Impugnação ao excesso de execução por erro de índice/juros em 15 dias úteis no cumprimento de sentença (CPC, art. 525, § 1º, V, exigindo indicação imediata do valor que entende correto sob pena de rejeição liminar — §§ 4º e 5º); erro puramente aritmético ou ofensa à coisa julgada cognoscível nos limites do art. 494, I, do CPC."
+  },
+  {
+   "id": "civ_loss_of_chance",
+   "label": "Responsabilidade civil pela perda de uma chance séria e real (advocacia, medicina e certames)",
+   "requirements": [
+    "chance_seria_e_real_nao_hipotetica",
+    "conduta_culposa_ou_defeituosa",
+    "extincao_definitiva_oportunidade",
+    "quantificacao_proporcional_probabilidade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_loss_of_chance.c1",
+     "label": "A frustração culposa de uma oportunidade concreta, séria e real de obter vantagem futura ou evitar prejuízo (ex.: perda de prazo recursal com plausibilidade de reforma, atraso de diagnóstico oncológico reduzindo chance de cura, eliminação ilegal na fase final de concurso/certame) configura dano autônomo indenizável (CC, arts. 186, 402 e 927; jurisprudência consolidada do STJ)",
+     "authority_ids": [
+      "cc_art186",
+      "cc_art402",
+      "cc_art927"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_loss_of_chance.d1",
+     "label": "Meras expectativas fluidas, conjecturais ou destituídas de probabilidade séria (ex.: recurso manifestamente improcedente contra jurisprudência pacificada) não configuram perda de uma chance indenizável",
+     "authority_ids": [
+      "cc_art402",
+      "cc_art403"
+     ]
+    },
+    {
+     "id": "civ_loss_of_chance.d2",
+     "label": "A indenização pela perda de uma chance jamais equivale à integralidade do resultado final perdido, devendo ser arbitrada em fração proporcional ao grau estatístico/jurídico de probabilidade da chance suprimida (CC, art. 944)",
+     "authority_ids": [
+      "cc_art944",
+      "cc_art402"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Condenação ao pagamento de indenização autônoma pela perda de uma chance, calculada proporcionalmente sobre o benefício final frustrado",
+    "Reparação cumulativa por danos morais quando a perda da chance atingir direitos da personalidade ou sobrevida/saúde"
+   ],
+   "evidence": [
+    "Cópia integral dos autos originários e precedentes demonstrando a real probabilidade de êxito do recurso perdido (na responsabilidade de advogado)",
+    "Prontuários e literatura médica-epidemiológica quantificando a sobrevida/cura no diagnóstico precoce vs. tardio (na área médica)",
+    "Editais, pontuações e classificações demonstrando a iminência objetiva do resultado frustrado"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "contestacao",
+    "impugnacao_laudo",
+    "apelacao_civel"
+   ],
+   "related_claims": [
+    "civ_tort",
+    "civ_medical",
+    "civ_contract"
+   ],
+   "limitation": "Prescrição trienal na responsabilidade extracontratual (CC, art. 206, § 3º, V), quinquenal por fato do serviço consumerista (CDC, art. 27) ou decenal quando fundada em inadimplemento de mandato/contrato civil não consumerista (CC, art. 205 — jurisprudência do STJ para mandato advocatício)."
+  },
+  {
+   "id": "civ_forum_selection_lei14879",
+   "label": "Cláusula de eleição de foro pós-Lei 14.879/2024: pertinência territorial e declinação de ofício de foro aleatório (CPC, art. 63)",
+   "requirements": [
+    "pertinencia_domicilio_partes_ou_local_obrigacao",
+    "vedacao_foro_aleatorio_forum_shopping",
+    "declinacao_de_oficio",
+    "contratos_consumo_domicilio_consumidor"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_forum_selection_lei14879.c1",
+     "label": "Pós-Lei 14.879/2024, a eleição de foro somente produz efeito quando constar de instrumento escrito, aludir expressamente a determinado negócio jurídico e guardar pertinência com o domicílio ou a residência de uma das partes ou com o local da obrigação, reputando-se prática abusiva o ajuizamento em juízo aleatório, passível de declinação de competência de ofício (CPC, art. 63, §§ 1º e 5º)",
+     "authority_ids": [
+      "cpc_art63",
+      "cdc_art101"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_forum_selection_lei14879.d1",
+     "label": "Higidez plena da cláusula de eleição de foro que elege a comarca da sede matriz/filial contratante ou do local de cumprimento da obrigação em contrato empresarial paritário, bem como observância da regra intertemporal (CPC, art. 43 — perpetuatio jurisdictionis para ações já distribuídas antes da Lei 14.879/2024)",
+     "authority_ids": [
+      "cpc_art63",
+      "cc_art421a"
+     ]
+    },
+    {
+     "id": "civ_forum_selection_lei14879.d2",
+     "label": "Nos contratos de consumo, resguarda-se a faculdade do consumidor de optar pelo foro de seu próprio domicílio (CPC, art. 63, § 2º; CDC, art. 101, I)",
+     "authority_ids": [
+      "cpc_art63",
+      "cdc_art101"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14879_foro_eleicao"
+   ],
+   "typical_requests": [
+    "Acolhimento preliminar de incompetência territorial ou declinação liminar de ofício de foro aleatório para o foro de domicílio do réu (CPC, art. 63, §§ 3º a 5º)",
+    "Manutenção do foro contratualmente eleito quando demonstrado vínculo objetivo com a sede da parte ou o local de execução do contrato"
+   ],
+   "evidence": [
+    "Instrumento contratual escrito contendo a cláusula de eleição de foro e a indicação do local da obrigação",
+    "Comprovantes de domicílio/sede social das partes contratantes (cartão CNPJ, contrato social, comprovante residencial)",
+    "Certidão da data de distribuição da ação para verificação do regime intertemporal da Lei 14.879/2024 (CPC, art. 43)"
+   ],
+   "piece_ids": [
+    "contestacao",
+    "inicial_procedimento_comum",
+    "agravo_instrumento",
+    "manifestacao_especifica"
+   ],
+   "related_claims": [
+    "civ_contract",
+    "cons_burden_venue"
+   ],
+   "limitation": "Declinação de ofício antes da citação nas hipóteses de abusividade ou foro aleatório (CPC, art. 63, §§ 3º e 5º), ou alegação preliminar na contestação em 15 dias úteis sob pena de prorrogação da competência relativa quando não abusiva (CPC, arts. 64 e 65)."
+  },
+  {
+   "id": "civ_prescription_intercorrente_cpc921",
+   "label": "Prescrição intercorrente na execução civil e no cumprimento de sentença pós-Lei 14.195/2021 (CC, art. 206-A, e CPC, art. 921)",
+   "requirements": [
+    "ciencia_primeira_tentativa_infrutifera",
+    "suspensao_unica_um_ano",
+    "prazo_igual_pretensao_material",
+    "contraditorio_previo_art921_par5",
+    "isencao_custas_honorarios"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_prescription_intercorrente_cpc921.c1",
+     "label": "Pelo executado: decorrido 1 ano de suspensão a partir da ciência da primeira tentativa infrutífera de localização do devedor ou de bens penhoráveis (uma única vez) mais o prazo integral de prescrição da pretensão material (Súmula 150 STF; CC, art. 206-A) sem efetiva citação ou constrição patrimonial útil, consuma-se a prescrição intercorrente, extinguindo-se a execução sem honorários nem custas (CPC, art. 921, §§ 4º, 4º-A e 5º)",
+     "authority_ids": [
+      "cc_art206a",
+      "cpc_art921"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_prescription_intercorrente_cpc921.d1",
+     "label": "Pelo exequente: nulidade de extinção surpresa sem prévia intimação das partes por 15 dias para apontar causas suspensivas ou interruptivas (CPC, art. 921, § 5º), efetiva interrupção pela penhora positiva de bens, observância das regras de transição do art. 1.056 do CPC e do IAC 1 do STJ para execuções antigas e vedação de computar demora exclusiva do mecanismo judiciário (CPC, art. 921, § 4º-A, parte final)",
+     "authority_ids": [
+      "cpc_art921",
+      "cc_art206a"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14195_prescricao_intercorrente"
+   ],
+   "typical_requests": [
+    "Intimação do exequente na forma do art. 921, § 5º, do CPC e subsequente extinção da execução pela prescrição intercorrente (art. 924, V), sem ônus sucumbenciais para nenhuma das partes",
+    "Pelo exequente: afastamento da prescrição intercorrente diante de constrição patrimonial efetiva ou demora imputável exclusivamente à serventia judicial"
+   ],
+   "evidence": [
+    "Linha cronológica completa dos autos executivos identificando a data exata da ciência da primeira diligência negativa de citação ou penhora",
+    "Termos de penhora efetiva ou despachos evidenciando paralisação cartorária sem culpa do credor",
+    "Identificação da natureza do título exequendo para definição do prazo prescricional aplicável (1, 3, 5 ou 10 anos — CC, art. 206-A)"
+   ],
+   "piece_ids": [
+    "excecao_pre_executividade",
+    "impugnacao_cumprimento",
+    "embargos_execucao_civil",
+    "manifestacao_especifica",
+    "apelacao_civel"
+   ],
+   "related_claims": [
+    "civ_enforcement_defense",
+    "civ_collection"
+   ],
+   "limitation": "Suspensão pelo prazo máximo de 1 ano (uma única vez) seguida do fluxo automático da prescrição intercorrente pelo exato prazo de prescrição da pretensão material do crédito exequendo (CPC, art. 921, §§ 1º e 4º; CC, art. 206-A; Súmula 150 do STF), precedida de oitiva em 15 dias úteis (§ 5º)."
+  },
+  {
+   "id": "civ_digital_signature_electronic_title",
+   "label": "Títulos executivos eletrônicos sem testemunhas e validade de assinaturas digitais ou avançadas (CPC, art. 784, § 4º — Lei 14.620/2023)",
+   "requirements": [
+    "constituicao_meio_eletronico",
+    "integridade_conferivel_provedor_assinatura",
+    "dispensa_duas_testemunhas",
+    "impugnacao_especifica_autoria"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_digital_signature_electronic_title.c1",
+     "label": "Nos títulos executivos constituídos ou atestados por meio eletrônico, é admitida qualquer modalidade de assinatura eletrônica prevista em lei (qualificada ICP-Brasil ou avançada/admitida pelas partes via provedor auditável), dispensada a assinatura de testemunhas quando sua integridade for conferida por provedor de assinatura (CPC, art. 784, § 4º, incluído pela Lei 14.620/2023)",
+     "authority_ids": [
+      "cpc_art784",
+      "cc_art104"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_digital_signature_electronic_title.d1",
+     "label": "Ausência de força executiva quando apresentado mero PDF estático sem trilha criptográfica/certificado verificável de provedor de assinatura (remetendo o credor à ação monitória) ou falsidade ideológica/material na captura de dados de terceiro vítima de fraude cadastral, incumbindo a prova da autenticidade à parte que produziu o documento impugnado (CPC, art. 429, II)",
+     "authority_ids": [
+      "cpc_art784",
+      "cc_art166"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14620_titulo_eletronico"
+   ],
+   "typical_requests": [
+    "Prosseguimento regular da execução por quantia certa fundada em contrato eletrônico auditável independentemente de testemunhas instrumentárias",
+    "Pelo executado: acolhimento de embargos por inexistência de título executivo diante de arquivo desprovido de verificação criptográfica de integridade ou perícia técnica sobre logs de autenticação"
+   ],
+   "evidence": [
+    "Arquivo eletrônico original (.pdf/.p7s) com cadeia ICP-Brasil ou relatório completo de evidências do provedor de assinatura (hash SHA-256, IPs, e-mails, token SMS/WhatsApp, geolocalização, selfie)",
+    "Comprovante de efetiva transferência do objeto/valores ao executado confirmando a relação negocial",
+    "Perícia forense digital em caso de arguição fundamentada de fraude na subscrição eletrônica"
+   ],
+   "piece_ids": [
+    "execucao_titulo_extrajudicial",
+    "embargos_execucao_civil",
+    "excecao_pre_executividade",
+    "acao_monitoria"
+   ],
+   "related_claims": [
+    "civ_collection",
+    "banc_ccb_execution"
+   ],
+   "limitation": "Execução de dívida líquida em instrumento particular eletrônico prescreve em 5 anos do vencimento (CC, art. 206, § 5º, I); embargos à execução em 15 dias úteis (CPC, art. 915)."
+  },
+  {
+   "id": "civ_donation_inoficiosa_revocation",
+   "label": "Doação inoficiosa, reserva de subsistência e revogação de doação por ingratidão ou inexecução de encargo (CC, arts. 548, 549 e 555)",
+   "requirements": [
+    "excesso_parte_disponivel_no_momento_liberalidade",
+    "reserva_meios_subsistencia",
+    "hipoteses_ingratidao_ou_mora_encargo",
+    "prazo_decadencial_prescricional"
+   ],
+   "claimant_theses": [
+    {
+     "id": "civ_donation_inoficiosa_revocation.c1",
+     "label": "É nula a doação de todos os bens sem reserva de parte ou renda suficiente para a subsistência do doador (CC, art. 548), bem como nula quanto à parte que exceder a metade disponível que o doador poderia dispor em testamento no exato momento da liberalidade — doação inoficiosa (CC, arts. 549 e 1.846)",
+     "authority_ids": [
+      "cc_art548",
+      "cc_art549",
+      "cc_art1846"
+     ]
+    },
+    {
+     "id": "civ_donation_inoficiosa_revocation.c2",
+     "label": "Revogabilidade da doação não remuneratória por atos graves de ingratidão contra o doador ou por inexecução culposa do encargo após constituição em mora (CC, arts. 555, 557 e 562)",
+     "authority_ids": [
+      "cc_art555",
+      "cc_art544"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "civ_donation_inoficiosa_revocation.d1",
+     "label": "A aferição da parte disponível para fins de doação inoficiosa reporta-se exclusivamente ao patrimônio líquido do doador na data da liberalidade (e não na abertura futura da sucessão), além de consumar-se a prescrição decenal contada do registro do ato de doação (CC, art. 205 — jurisprudência consolidada do STJ)",
+     "authority_ids": [
+      "cc_art549",
+      "cc_art205"
+     ]
+    },
+    {
+     "id": "civ_donation_inoficiosa_revocation.d2",
+     "label": "Decadência ânua estrita e caráter personalíssimo da revogação por ingratidão (CC, arts. 559 e 560), vedada revogação por ingratidão nas doações puramente remuneratórias ou oneradas com encargo já cumprido (art. 564)",
+     "authority_ids": [
+      "cc_art555"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Declaração de nulidade parcial da doação inoficiosa na exata medida do excesso sobre a metade disponível à época do ato, com retorno ao acervo ou recomposição em valor",
+    "Declaração de nulidade integral de doação universal sem reserva de usufruto ou renda vitalícia suficiente (CC, art. 548)",
+    "Revogação da doação por ingratidão ou descumprimento de encargo com cancelamento do registro aquisitivo"
+   ],
+   "evidence": [
+    "Escritura pública de doação e certidão da matrícula imobiliária com data do registro",
+    "Inventário patrimonial completo e declarações de IRPF do doador no ano exato da doação para cálculo pericial da metade disponível à época",
+    "Provas documentais/testemunhais/criminais da hipótese de ingratidão (art. 557) ou notificação constituindo o donatário em mora quanto ao encargo"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente",
+    "contestacao",
+    "impugnacao_laudo"
+   ],
+   "related_claims": [
+    "civ_defects_invalidity",
+    "fam_will_legitime"
+   ],
+   "limitation": "Ação de redução/nulidade de doação inoficiosa prescreve em 10 anos contados da data do registro do ato de liberalidade, ainda em vida do doador (CC, arts. 205 e 549 — jurisprudência pacífica do STJ); revogação por ingratidão decai em 1 ano contado de quando chegue ao conhecimento do doador o fato e a autoria (CC, art. 559); revogação por inexecução de encargo prescreve em 10 anos da mora (CC, art. 205)."
+  }
  ]
 }

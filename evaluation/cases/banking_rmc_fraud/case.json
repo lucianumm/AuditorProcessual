@@ -1,0 +1,45 @@
+{
+  "schema_version": "2.0",
+  "synthetic": true,
+  "case_id": "banking_rmc_fraud",
+  "source_files": [
+    {
+      "file": "extrato_inss.txt"
+    }
+  ],
+  "expected": {
+    "facts": [
+      {
+        "id": "G-F1",
+        "text_any": [
+          "reserva de margem consignável"
+        ],
+        "source": {
+          "file": "extrato_inss.txt",
+          "page": 1,
+          "quote": "reserva de margem consignável"
+        },
+        "atoms": {
+          "amount": "184.50",
+          "date": "2023-06-10"
+        }
+      }
+    ],
+    "issues": [
+      {
+        "id": "G-I1",
+        "text_any": [
+          "cartão consignado",
+          "dever de informação"
+        ],
+        "analysis_status": "qualified"
+      }
+    ],
+    "requests": [],
+    "contradictions": [],
+    "catalog_id": "inicial_procedimento_comum",
+    "strategy": {
+      "domain": "bancario"
+    }
+  }
+}

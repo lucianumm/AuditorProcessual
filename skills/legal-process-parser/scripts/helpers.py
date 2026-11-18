@@ -6,47 +6,107 @@ import re
 import shutil
 import unicodedata
 import zipfile
-from dataclasses import dataclass, asdict
+from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
-from functools import lru_cache
 from pathlib import Path
 from typing import Any, Iterable, Iterator, Sequence
 
+try:
+    from .cnj_classifier import (
+        CNJ_NUMBER_RE,
+        CNJ_SEGMENTS,
+        CNJ_UF,
+        LEGAL_PROFILE_PATH,
+        NUP_NUMBER_RE,
+        _cnj_court,
+        _domain_source_text,
+        _fold_legal_text,
+        classify_legal_domain,
+        cnj_check_digits,
+        load_legal_domain_profiles,
+        nup_check_digits,
+        parse_cnj_numbers,
+        parse_nup_numbers,
+    )
+    from .court_systems import (
+        COURT_PAGE_RE,
+        DEFAULT_PIECE_PATTERNS,
+        NUMBER_PROCESS_RE,
+        NUP_PROCESS_RE,
+        PJE_CLAIM_RE,
+        PJE_FLS_RE,
+        PJE_MIN_CONTENT_CHARS,
+        PJE_PAGE_ID_RE,
+        PJE_PROCESS_RE,
+        PJE_RAPPORTEUR_RE,
+        PJE_SIGNATURE_RE,
+        PJE_STAMP_LINE_RE,
+        detect_piece_title,
+        extract_court_stamp,
+        identify_process_number,
+        pje_footer,
+        strip_court_stamps,
+        strip_pje_footer,
+    )
+except ImportError:
+    from cnj_classifier import (  # type: ignore
+        CNJ_NUMBER_RE,
+        CNJ_SEGMENTS,
+        CNJ_UF,
+        LEGAL_PROFILE_PATH,
+        NUP_NUMBER_RE,
+        _cnj_court,
+        _domain_source_text,
+        _fold_legal_text,
+        classify_legal_domain,
+        cnj_check_digits,
+        load_legal_domain_profiles,
+        nup_check_digits,
+        parse_cnj_numbers,
+        parse_nup_numbers,
+    )
+    from court_systems import (  # type: ignore
+        COURT_PAGE_RE,
+        DEFAULT_PIECE_PATTERNS,
+        NUMBER_PROCESS_RE,
+        NUP_PROCESS_RE,
+        PJE_CLAIM_RE,
+        PJE_FLS_RE,
+        PJE_MIN_CONTENT_CHARS,
+        PJE_PAGE_ID_RE,
+        PJE_PROCESS_RE,
+        PJE_RAPPORTEUR_RE,
+        PJE_SIGNATURE_RE,
+        PJE_STAMP_LINE_RE,
+        detect_piece_title,
+        extract_court_stamp,
+        identify_process_number,
+        pje_footer,
+        strip_court_stamps,
+        strip_pje_footer,
+    )
 
+
+# ASCII-safe regex patterns keep matching reliable across platforms and locales.
 INJECTION_PATTERNS = [
-    r"ignore\s+(?:suas|as|all)\s+instru(?:ções|ctions)",
+    r"ignore\s+(?:todas\s+as\s+|all\s+|previous\s+|suas\s+|as\s+)*(?:previous\s+)?instru(?:\u00e7\u00f5es|ctions)(?:\s+anteriores)?",
     r"reveal\s+(?:your|internal)|reveal\s+informa",
     r"execute\s+(?:este|this)\s+comando",
     r"envie\s+(?:os|these|the)\s+documentos",
     r"system\s+prompt|developer\s+message",
+    r"[\u200b\u200c\u200d\ufeff]{3,}",
+    r"!\[[^\]]*\]\(https?://",
+    r"<\s*script\b|javascript\s*:",
 ]
 
 DATE_RE = re.compile(r"\b(?:[0-3]?\d)[/.-](?:0?[1-9]|1[0-2])[/.-](?:\d{2}|\d{4})\b")
-NUMBER_PROCESS_RE = re.compile(r"\b\d{7}-\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}\b")
-COURT_PAGE_RE = re.compile(r"(?:fl\.?|folha|p[áa]g(?:ina)?\s+dos\s+autos)\s*[:.]?\s*(\d{1,5})", re.I)
+IMAGE_MARKDOWN_RE = re.compile(r"!\[([^]]*)\]\(([^)]+)\)")
+PROCESS_ID_RE = re.compile(r"\b\d{7}-\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}\b")
+CPF_CNPJ_RE = re.compile(r"\b(?:\d{3}\.\d{3}\.\d{3}-\d{2}|\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2})\b")
+CURRENCY_RE = re.compile(r"\bR\$\s?[\d.]+(?:,\d{2})?\b|\b\d+(?:[.,]\d{2})?\s?(?:BRL|reais)\b", re.I)
+EMAIL_RE = re.compile(r"\b[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}\b")
 
-PIECE_PATTERNS: list[tuple[str, tuple[str, ...]]] = [
-    ("Peti\u00e7\u00e3o Inicial", ("peti\u00e7\u00e3o inicial", "inicial")),
-    ("Emenda \u00e0 Inicial", ("emenda", "emenda \u00e0 inicial")),
-    ("Contesta\u00e7\u00e3o", ("contesta\u00e7\u00e3o", "defesa")),
-    ("Reconven\u00e7\u00e3o", ("reconven\u00e7\u00e3o",)),
-    ("R\u00e9plica", ("r\u00e9plica", "impugna\u00e7\u00e3o \u00e0 contesta\u00e7\u00e3o")),
-    ("Manifesta\u00e7\u00e3o", ("manifesta\u00e7\u00e3o",)),
-    ("Raz\u00f5es Finais", ("raz\u00f5es finais", "alega\u00e7\u00f5es finais")),
-    ("Contrarraz\u00f5es", ("contrarraz\u00f5es",)),
-    ("Recurso", ("recurso", "raz\u00f5es recursais")),
-    ("Senten\u00e7a", ("senten\u00e7a",)),
-    ("Ac\u00f3rd\u00e3o", ("ac\u00f3rd\u00e3o",)),
-    ("Decis\u00e3o", ("decis\u00e3o", "decis\u00e3o monocr\u00e1tica")),
-    ("Despacho", ("despacho",)),
-    ("Certid\u00e3o", ("certid\u00e3o",)),
-    ("Laudo/Per\u00edcia", ("laudo", "per\u00edcia", "per\u00edcia")),
-    ("Contrato", ("contrato",)),
-    ("Procura\u00e7\u00e3o", ("procura\u00e7\u00e3o",)),
-    ("Documento Financeiro", ("extrato", "holerite", "comprovante", "nota fiscal", "pix")),
-    ("Documento M\u00e9dico", ("atestado", "prontu\u00e1rio", "laudo m\u00e9dico", "aso")),
-    ("Documento", ("documento",)),
-]
+PIECE_PATTERNS: list[tuple[str, tuple[str, ...]]] = list(DEFAULT_PIECE_PATTERNS)
 
 
 @dataclass
@@ -72,6 +132,11 @@ class Page:
     status: str = "PARTIAL"
     source_sha256: str = ""
     page_unit: str = "pdf_page"
+    pje_document_id: str | None = None
+    pje_document_page: int | None = None
+    court_system: str | None = None
+    electronic_document_id: str | None = None
+    signatory: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
         data = asdict(self)
@@ -137,14 +202,39 @@ def _extract_pdf_with_library(path: Path) -> list[str] | None:
 def extract_pages(path: Path) -> tuple[list[str], list[str]]:
     """Return page texts and extraction warnings without invoking document code."""
     try:
-        from .document_formats import inspect_format, extract_office
+        from .document_formats import (
+            extract_bundle,
+            extract_eml,
+            extract_media_manifest,
+            extract_office,
+            extract_p7s,
+            extract_rtf,
+            inspect_format,
+        )
     except ImportError:
-        from document_formats import inspect_format, extract_office
+        from document_formats import (  # type: ignore
+            extract_bundle,
+            extract_eml,
+            extract_media_manifest,
+            extract_office,
+            extract_p7s,
+            extract_rtf,
+            inspect_format,
+        )
     kind = inspect_format(path)
-    suffix = path.suffix.lower()
-    if kind in {"docx", "xlsx"}:
+    if kind in {"docx", "xlsx", "odt", "ods"}:
         return extract_office(path)
-    if suffix == ".pdf":
+    if kind == "rtf":
+        return extract_rtf(path)
+    if kind == "eml":
+        return extract_eml(path)
+    if kind == "zip":
+        return extract_bundle(path)
+    if kind == "p7s":
+        return extract_p7s(path)
+    if kind in {"image", "audio_video"}:
+        return extract_media_manifest(path)
+    if kind == "pdf":
         pages = _extract_pdf_with_library(path)
         if pages is None:
             return [], ["PDF sem extrator disponível; instale pypdf ou PyPDF2."]
@@ -165,7 +255,7 @@ def _ocr_missing_pdf_pages(path: Path, pages: list[str], language: str, dpi: int
     ocr_pages: list[int] = []
     warnings: list[str] = []
     for number, text in enumerate(pages, start=1):
-        if len(normalise_spaces(text)) >= 30:
+        if len(normalise_spaces(strip_court_stamps(text))) >= 30:
             continue
         try:
             images = convert_from_path(str(path), dpi=dpi, first_page=number, last_page=number, fmt="png")
@@ -174,7 +264,8 @@ def _ocr_missing_pdf_pages(path: Path, pages: list[str], language: str, dpi: int
                 continue
             recognised = pytesseract.image_to_string(images[0], lang=language) or ""
             if recognised.strip():
-                pages[number - 1] = recognised
+                # Keep the native layer (court stamp included) next to the OCR text.
+                pages[number - 1] = text + "\n\n[Camada OCR complementar]\n" + recognised if text.strip() else recognised
                 ocr_pages.append(number)
             else:
                 warnings.append(f"PDF p. {number}: OCR não encontrou texto.")
@@ -213,7 +304,7 @@ def page_quality(text: str) -> tuple[str, list[str]]:
         return "unreadable", ["página sem texto extraído; requer visão/OCR"]
     if len(stripped) < 30:
         warnings.append("texto muito curto")
-    replacement_ratio = stripped.count("�") / max(1, len(stripped))
+    replacement_ratio = stripped.count("\ufffd") / max(1, len(stripped))
     if replacement_ratio > 0.01:
         warnings.append("possível encoding corrompido")
     symbols = sum(1 for char in stripped if not char.isalnum() and not char.isspace())
@@ -255,11 +346,21 @@ def build_pages(
     ocr_page_set = set(ocr_pages or [])
     for number, raw in enumerate(texts, start=1):
         text = raw.replace("\r\n", "\n").replace("\r", "\n")
-        quality, warnings = page_quality(text)
-        piece = detect_piece(text, current_piece)
+        # Measure the page without court/administrative signature stamps: a
+        # scanned page whose only native text layer is a stamp needs OCR/vision.
+        content = strip_court_stamps(text)
+        stamp = extract_court_stamp(text)
+        footer = pje_footer(text)
+        quality, warnings = page_quality(content)
+        if text.strip() and not content.strip():
+            if stamp["system"] == "pje":
+                warnings = [*warnings, "s\u00f3 o rodap\u00e9 de assinatura do PJe tem texto; conte\u00fado da p\u00e1gina requer vis\u00e3o/OCR"]
+            else:
+                warnings = [*warnings, f"s\u00f3 o carimbo eletr\u00f4nico ({stamp['system'] or 'sistema'}) tem texto; conte\u00fado da p\u00e1gina requer vis\u00e3o/OCR"]
+        piece = detect_piece(content, current_piece)
         if piece != "N\u00e3o identificado":
             current_piece = piece
-        match = COURT_PAGE_RE.search(text[:2000])
+        match = COURT_PAGE_RE.search(content[:2000])
         dates = DATE_RE.findall(text)
         findings = detect_injection(text)
         if findings:
@@ -267,13 +368,13 @@ def build_pages(
             injections.extend([f"{location} {number}: {pattern}" for pattern in findings])
             warnings = [*warnings, "possível prompt injection tratado como conteúdo documental"]
         page_visuals = (visuals_by_page or {}).get(number, [])
-        semantics = extract_page_semantics(number, text, current_piece, page_visuals, page_unit=page_unit)
+        semantics = extract_page_semantics(number, content, current_piece, page_visuals, page_unit=page_unit)
         processing = build_page_processing_state(
             page_number=number,
-            text=text,
+            text=content,
             page_visuals=page_visuals,
             ocr_pages=ocr_page_set,
-            render= (render_by_page or {}).get(number),
+            render=(render_by_page or {}).get(number),
             page_description=(page_descriptions or {}).get(number),
             source_kind=source_kind,
             vision_mode=vision_mode,
@@ -283,7 +384,7 @@ def build_pages(
         )
         visual_outcome = processing["vision"].get("outcome")
         confirmed_nontext = processing["vision"].get("semantic_checked") and visual_outcome in {"blank", "image_only"}
-        if confirmed_nontext and not text.strip() and processing["status"] == "COMPLETE":
+        if confirmed_nontext and not content.strip() and processing["status"] == "COMPLETE":
             quality = "nontext_confirmed"
             warnings = [warning for warning in warnings if warning != "página sem texto extraído; requer visão/OCR"]
         page = Page(
@@ -291,10 +392,10 @@ def build_pages(
             page_unit=page_unit,
             text=text,
             source="ocr" if number in ocr_page_set else (
-                "native_text" if text.strip() else ("vision_review" if confirmed_nontext else "needs_ocr_or_vision")
+                "native_text" if content.strip() else ("vision_review" if confirmed_nontext else "needs_ocr_or_vision")
             ),
             quality=quality,
-            court_page=int(match.group(1)) if match else None,
+            court_page=stamp["court_page"] if stamp["court_page"] is not None else (int(match.group(1)) if match else None),
             piece=current_piece,
             document_id=make_document_id(text, number),
             dates=dates,
@@ -309,9 +410,46 @@ def build_pages(
             ocr=processing["ocr"],
             consolidation=processing["consolidation"],
             status=processing["status"],
+            pje_document_id=footer["document_id"],
+            pje_document_page=footer["document_page"],
+            court_system=stamp["system"],
+            electronic_document_id=stamp["document_id"],
+            signatory=stamp["signer"],
         )
         pages.append(page)
+    assign_pje_pieces(pages)
     return pages, injections
+
+
+def assign_pje_pieces(pages: Sequence[Page]) -> None:
+    """Relabel pages by electronic document ID: consecutive pages with the same ID are one piece.
+
+    Applies when the records carry PJe or other electronic system document IDs.
+    Each document is named from its own opening page; a label never bleeds into
+    a distinct electronic document.
+    """
+    use_pje = any(page.pje_document_id for page in pages)
+    use_electronic = (not use_pje) and any(page.electronic_document_id for page in pages)
+    if not (use_pje or use_electronic):
+        return
+
+    def _doc_key(page: Page) -> str | None:
+        return page.pje_document_id if use_pje else page.electronic_document_id
+
+    groups: list[list[Page]] = []
+    for page in pages:
+        key = _doc_key(page)
+        if groups and key is not None and _doc_key(groups[-1][0]) == key:
+            groups[-1].append(page)
+        else:
+            groups.append([page])
+    for group in groups:
+        if _doc_key(group[0]) is None:
+            continue
+        opening = next((content for content in (strip_court_stamps(page.text) for page in group) if content.strip()), "")
+        label = detect_piece_title(opening, PIECE_PATTERNS)
+        for page in group:
+            page.piece = label
 
 
 def page_reference(page: Page) -> str:
@@ -324,128 +462,63 @@ def page_reference(page: Page) -> str:
 
 def identify_pieces(pages: Sequence[Page]) -> list[dict[str, Any]]:
     pieces: list[dict[str, Any]] = []
+    by_pje_document = any(page.pje_document_id for page in pages)
+    by_electronic_document = (not by_pje_document) and any(page.electronic_document_id for page in pages)
+    has_court_metadata = any(page.court_system or page.electronic_document_id or page.signatory for page in pages)
     for page in pages:
-        if pieces and pieces[-1]["piece"] == page.piece:
+        if by_pje_document:
+            same = bool(pieces) and (
+                page.pje_document_id is not None
+                and pieces[-1].get("pje_document_id") == page.pje_document_id
+            )
+        elif by_electronic_document:
+            same = bool(pieces) and (
+                page.electronic_document_id is not None
+                and pieces[-1].get("electronic_document_id") == page.electronic_document_id
+            )
+        else:
+            same = bool(pieces) and pieces[-1]["piece"] == page.piece
+
+        if same:
+            if page.court_page is not None:
+                pieces[-1]["court_pages"].append(page.court_page)
             pieces[-1]["pdf_page_end"] = page.pdf_page
             pieces[-1]["pdf_page_count"] += 1
             pieces[-1]["document_ids"].append(page.document_id)
+            if page.signatory and pieces[-1]["party_or_origin"] == "Não identificado nos autos":
+                pieces[-1]["party_or_origin"] = page.signatory
+            if has_court_metadata:
+                if page.signatory and not pieces[-1].get("signatory"):
+                    pieces[-1]["signatory"] = page.signatory
+                if page.court_system and not pieces[-1].get("court_system"):
+                    pieces[-1]["court_system"] = page.court_system
             continue
+
         piece_number = len(pieces) + 1
-        pieces.append(
-            {
-                "id": f"P{piece_number:03d}",
-                "piece": page.piece,
-                "party_or_origin": "Não identificado nos autos",
-                "date": page.dates[0] if page.dates else None,
-                "pdf_page_start": page.pdf_page,
-                "pdf_page_end": page.pdf_page,
-                "court_pages": [page.court_page] if page.court_page else [],
-                "pdf_page_count": 1,
-                "document_ids": [page.document_id],
-            }
-        )
+        entry: dict[str, Any] = {
+            "id": f"P{piece_number:03d}",
+            "piece": page.piece,
+            "party_or_origin": page.signatory or "Não identificado nos autos",
+            "date": page.dates[0] if page.dates else None,
+            "pdf_page_start": page.pdf_page,
+            "pdf_page_end": page.pdf_page,
+            "court_pages": [page.court_page] if page.court_page is not None else [],
+            "pdf_page_count": 1,
+            "document_ids": [page.document_id],
+        }
+        if by_pje_document:
+            entry["pje_document_id"] = page.pje_document_id
+        if has_court_metadata:
+            entry["court_system"] = page.court_system
+            entry["electronic_document_id"] = page.electronic_document_id
+            entry["signatory"] = page.signatory
+        pieces.append(entry)
+
     for piece in pieces:
         piece["court_page_start"] = min(piece["court_pages"]) if piece["court_pages"] else None
         piece["court_page_end"] = max(piece["court_pages"]) if piece["court_pages"] else None
         piece.pop("court_pages", None)
     return pieces
-
-
-def _build_index_records_stage1(pages: Sequence[Page], process_id: str) -> Iterator[dict[str, Any]]:
-    for page in pages:
-        yield {
-            "process": process_id,
-            "piece": page.piece,
-            "pdf_page": page.pdf_page,
-            "court_page": page.court_page,
-            "document_id": page.document_id,
-            "quality": page.quality,
-            "source": page.source,
-            "text": page.text,
-            "summary": page.summary,
-            "entities": page.entities or {},
-            "keywords": page.keywords or [],
-            "visuals": page.visuals or [],
-            "terms": sorted(set(re.findall(r"[\wÀ-ÿ]{3,}", page.text.lower(), flags=re.UNICODE))),
-        }
-
-
-def _classify_process_stage1(pages: Sequence[Page]) -> dict[str, Any]:
-    text = "\n".join(page.text for page in pages)
-    lower = text.lower()
-    areas: list[str] = []
-    for keyword, area in [
-        ("trabalh", "Direito do Trabalho"),
-        ("previd", "Direito Previdenciário"),
-        ("consumidor", "Direito do Consumidor"),
-        ("bancár", "Direito Bancário"),
-        ("tribut", "Direito Tributário"),
-        ("penal", "Direito Penal"),
-        ("criminal", "Direito Penal"),
-        ("família", "Direito de Família"),
-        ("administrativ", "Direito Administrativo"),
-        ("ambiental", "Direito Ambiental"),
-        ("empresarial", "Direito Empresarial"),
-        ("civil", "Direito Civil"),
-    ]:
-        if keyword in lower and area not in areas:
-            areas.append(area)
-    process_match = NUMBER_PROCESS_RE.search(text)
-    return {
-        "sistema_juridico": "Brasil" if any(term in lower for term in ("tribunal", "comarca", "jus.br", "cnj")) else "Não identificado nos autos",
-        "pais": "Brasil" if "brasil" in lower or "jus.br" in lower else "Não identificado nos autos",
-        "justica": "Não identificado nos autos",
-        "tribunal": "Não identificado nos autos",
-        "orgao_julgador": "Não identificado nos autos",
-        "competencia": "Não identificado nos autos",
-        "numero_processo": process_match.group(0) if process_match else "Não identificado nos autos",
-        "classe_processual": "Não identificado nos autos",
-        "procedimento": "Não identificado nos autos",
-        "rito": "Não identificado nos autos",
-        "instancia": "Não identificado nos autos",
-        "fase_processual": "Não identificado nos autos",
-        "area_principal": areas[0] if areas else "Não identificado nos autos",
-        "areas_correlatas": areas[1:],
-        "autor_requerente": "Não identificado nos autos",
-        "reu_requerido": "Não identificado nos autos",
-        "terceiros": [],
-        "advogados": [],
-        "peritos": [],
-        "ministerio_publico": "Não identificado nos autos",
-        "demais_intervenientes": [],
-        "objeto_principal": "Não identificado nos autos",
-        "pedidos_principais": [],
-        "materias_controvertidas": [],
-        "situacao_atual": "Não identificado nos autos",
-    }
-
-
-def _build_structured_markdown_stage1(pages: Sequence[Page], classification: dict[str, Any]) -> str:
-    lines = ["# PROCESSO ESTRUTURADO", "", "## Classificação inicial", "", "```yaml"]
-    for key, value in classification.items():
-        lines.append(f"{key}: {json.dumps(value, ensure_ascii=False)}")
-    lines.extend(["```", "", "## Páginas", ""])
-    for page in pages:
-        lines.extend(
-            [
-                "---",
-                "",
-                f'<a id="p{page.pdf_page:04d}"></a>',
-                f"## [{page_reference(page)}]",
-                "",
-                f"**Folha indicada nos autos:** {page.court_page if page.court_page is not None else 'não identificada'}",
-                f"**Peça:** {page.piece}",
-                f"**Documento ID:** {page.document_id}",
-                f"**Data identificada:** {page.dates[0] if page.dates else 'não identificada'}",
-                f"**Qualidade da extração:** {page.quality}",
-                "",
-                page.text.rstrip() or "[ILEGÍVEL]",
-                "",
-            ]
-        )
-        if page.warnings:
-            lines.extend([f"**Observações:** {'; '.join(page.warnings)}", ""])
-    return "\n".join(lines).rstrip() + "\n"
 
 
 def build_pieces_markdown(pieces: Sequence[dict[str, Any]]) -> str:
@@ -487,69 +560,6 @@ def build_controversy_matrix(pages: Sequence[Page]) -> str:
     return "\n".join(lines + (rows or ["| Não identificado | Não foram localizados núcleos por heurística | — | Necessita conferência |"])) + "\n"
 
 
-def _build_audit_report_stage1(pages: Sequence[Page], classification: dict[str, Any], pieces: Sequence[dict[str, Any]], coverage: dict[str, Any], mode: str) -> str:
-    findings: list[str] = []
-    for page in pages:
-        for warning in page.warnings or []:
-            findings.append(f"- **MÉDIO** — PDF p. {page.pdf_page}: {warning}.")
-    if not findings:
-        findings = ["- **INFORMATIVO** — Nenhum alerta heurístico de extração foi localizado."]
-    pages_with_evidence = [page for page in pages if any(cue in page.text.lower() for cue in ("documento", "prova", "laudo", "contrato", "extrato"))]
-    pages_with_decisions = [page for page in pages if any(cue in page.text.lower() for cue in ("sentença", "acórdão", "decisão", "despacho"))]
-    lines = [
-        "# ANÁLISE JURÍDICA — SÍNTESE",
-        "",
-        f"**Área:** {classification['area_principal']}",
-        f"**Fase:** {classification['fase_processual']}",
-        f"**Páginas representadas no corpus:** {coverage['pages_processed']} de {coverage['pages_total']}",
-        f"**Modo:** {mode}",
-        "",
-        "# QUESTÕES PRIORITÁRIAS",
-        "",
-        *findings,
-        "",
-        "# 1. IDENTIFICAÇÃO DO PROCESSO",
-        "",
-        f"- Número: {classification['numero_processo']}",
-        "- Partes: não identificadas automaticamente; conferir nos autos.",
-        "",
-        "# 2. CLASSIFICAÇÃO JURÍDICA",
-        "",
-        "```json",
-        json.dumps(classification, ensure_ascii=False, indent=2),
-        "```",
-        "",
-        "# 3. PEÇAS E PROVAS",
-        "",
-        f"- Peças/segmentos: {len(pieces)}.",
-        f"- Páginas com menções probatórias: {len(pages_with_evidence)}.",
-        f"- Páginas com decisões: {len(pages_with_decisions)}.",
-        "- Alegações não são tratadas como prova; autenticidade não é presumida.",
-        "",
-        "# 4. REFERÊNCIAS QUE EXIGEM CONFERÊNCIA",
-        "",
-        "Registrar a fonte de toda referência a anexo não localizado; a ausência só pode ser afirmada após conferência do corpus.",
-        "",
-        "# 5. PONTOS QUE EXIGEM CONFERÊNCIA HUMANA",
-        "",
-        "- Conferir classificação, partes, fase, autenticidade, documentos ilegíveis e qualquer conclusão estratégica.",
-        "- Se a cobertura não for integral, tratar conclusões como provisórias.",
-        "",
-        "# COBERTURA DA EXTRAÇÃO",
-        "",
-        f"Páginas existentes: {coverage['pages_total']}",
-        f"Páginas processadas: {coverage['pages_processed']}",
-        f"Páginas com texto nativo: {coverage['pages_native_text']}",
-        f"Páginas submetidas à visão/OCR: {coverage['pages_ocr_or_vision']}",
-        f"Páginas com leitura parcial: {coverage['pages_partial']}",
-        f"Páginas ilegíveis: {coverage['pages_unreadable']}",
-        f"Cobertura: {coverage['coverage_percent']}% das páginas representadas no pipeline.",
-    ]
-    if coverage["pages_processed"] < coverage["pages_total"]:
-        lines.extend(["", "## ATENÇÃO — PROCESSAMENTO INCOMPLETO", "", "As conclusões dependentes das páginas pendentes são provisórias."])
-    return "\n".join(lines) + "\n"
-
-
 def write_json(path: Path, value: Any, encoding: str = "utf-8") -> None:
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding=encoding)
 
@@ -563,24 +573,6 @@ def write_jsonl(path: Path, records: Iterable[dict[str, Any]], encoding: str = "
     return count
 
 
-def _compute_coverage_stage1(pages: Sequence[Page], total: int) -> dict[str, Any]:
-    processed = len(pages)
-    native = sum(page.source == "native_text" and bool(page.text.strip()) for page in pages)
-    ocr = sum(page.source != "native_text" for page in pages)
-    partial = sum(page.quality == "low" for page in pages)
-    unreadable = sum(page.quality == "unreadable" for page in pages)
-    return {
-        "pages_total": total,
-        "pages_processed": processed,
-        "pages_native_text": native,
-        "pages_ocr_or_vision": ocr,
-        "pages_partial": partial,
-        "pages_unreadable": unreadable,
-        "pages_pending": list(range(processed + 1, total + 1)),
-        "coverage_percent": round(100 * processed / total, 2) if total else 0,
-    }
-
-
 def copy_original(source: Path, output: Path) -> Path:
     output.mkdir(parents=True, exist_ok=True)
     digest = sha256_file(source)
@@ -591,40 +583,18 @@ def copy_original(source: Path, output: Path) -> Path:
     return target
 
 
-# ASCII-safe overrides keep regex matching reliable on Windows consoles whose
-# default code page is not UTF-8. Python's regex engine expands ``\u`` escapes.
-INJECTION_PATTERNS = [
-    r"ignore\s+(?:suas|as|all)\s+instru(?:\u00e7\u00f5es|ctions)",
-    r"reveal\s+(?:your|internal)|reveal\s+informa",
-    r"execute\s+(?:este|this)\s+comando",
-    r"envie\s+(?:os|these|the)\s+documentos",
-    r"system\s+prompt|developer\s+message",
-]
-COURT_PAGE_RE = re.compile(r"(?:fl\.?|folha|p[\u00e1a]g(?:ina)?\s+dos\s+autos)\s*[:.]?\s*(\d{1,5})", re.I)
-
-
-IMAGE_MARKDOWN_RE = re.compile(r"!\[([^]]*)\]\(([^)]+)\)")
-PROCESS_ID_RE = re.compile(r"\b\d{7}-\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}\b")
-CPF_CNPJ_RE = re.compile(r"\b(?:\d{3}\.\d{3}\.\d{3}-\d{2}|\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2})\b")
-CURRENCY_RE = re.compile(r"\bR\$\s?[\d.]+(?:,\d{2})?\b|\b\d+(?:[.,]\d{2})?\s?(?:BRL|reais)\b", re.I)
-EMAIL_RE = re.compile(r"\b[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}\b")
-
-
 def _image_dimensions(data: bytes) -> tuple[int | None, int | None]:
     try:
-        from PIL import Image  # type: ignore
-        from io import BytesIO
-
-        with Image.open(BytesIO(data)) as image:
-            return image.width, image.height
-    except Exception:
-        return None, None
+        from .document_formats import parse_image_dimensions
+    except ImportError:
+        from document_formats import parse_image_dimensions  # type: ignore
+    return parse_image_dimensions(data)
 
 
 def _ocr_image_bytes(data: bytes, language: str = "por+eng") -> str:
     try:
-        from PIL import Image  # type: ignore
         from io import BytesIO
+        from PIL import Image  # type: ignore
         import pytesseract  # type: ignore
 
         with Image.open(BytesIO(data)) as image:
@@ -648,129 +618,6 @@ def _visual_fallback_description(record: dict[str, Any]) -> str:
     return f"Imagem documental incorporada ao processo.{dimensions} Não foi possível identificar visualmente objetos, pessoas, valores ou texto com segurança neste ambiente; revisar com visão humana ou modelo multimodal."
 
 
-def _load_image_descriptions_stage1(path: Path | None) -> dict[str, dict[str, Any]]:
-    """Load trusted, human/model-reviewed descriptions without executing their content."""
-    if path is None or not path.exists():
-        return {}
-    try:
-        raw = json.loads(path.read_text(encoding="utf-8-sig"))
-    except (OSError, json.JSONDecodeError):
-        return {}
-    entries = raw.get("images", raw) if isinstance(raw, dict) else raw
-    if isinstance(entries, dict):
-        entries = [{"image_id": key, **(value if isinstance(value, dict) else {"semantic_description": value})} for key, value in entries.items()]
-    result: dict[str, dict[str, Any]] = {}
-    if not isinstance(entries, list):
-        return result
-    for entry in entries:
-        if not isinstance(entry, dict) or not entry.get("image_id"):
-            continue
-        safe = {key: value for key, value in entry.items() if key in {"image_id", "semantic_description", "visible_text", "objects", "people", "tables", "location", "confidence", "description_source"}}
-        if isinstance(safe.get("semantic_description"), str):
-            result[str(safe["image_id"])] = safe
-    return result
-
-
-def _extract_referenced_visuals_stage1(text: str, page_number: int, base_dir: Path | None = None, descriptions: dict[str, dict[str, Any]] | None = None) -> list[dict[str, Any]]:
-    records: list[dict[str, Any]] = []
-    for number, match in enumerate(IMAGE_MARKDOWN_RE.finditer(text), start=1):
-        alt, reference = match.groups()
-        image_id = f"P{page_number:04d}-I{number:03d}"
-        record: dict[str, Any] = {
-            "image_id": image_id,
-            "page_pdf": page_number,
-            "kind": "referenced_image",
-            "source_reference": reference,
-            "alt_text": alt or "não informado",
-            "location": "referência Markdown localizada no conteúdo da página",
-            "description_source": "alt_text_or_fallback",
-        }
-        if base_dir and not reference.startswith(("http://", "https://", "data:")):
-            candidate = (base_dir / reference).resolve()
-            if candidate.is_file() and base_dir.resolve() in candidate.parents:
-                record["image_path"] = str(candidate)
-                record["relative_path"] = reference.replace("\\", "/")
-                data = candidate.read_bytes()
-                record["sha256"] = hashlib.sha256(data).hexdigest()
-                record["width"], record["height"] = _image_dimensions(data)
-        if descriptions and image_id in descriptions:
-            record.update(descriptions[image_id])
-            record["description_source"] = descriptions[image_id].get("description_source", "external_review")
-        record["semantic_description"] = _visual_fallback_description(record)
-        records.append(record)
-    return records
-
-
-def _extract_pdf_visuals_stage1(path: Path, output_dir: Path, use_ocr: bool = False, ocr_language: str = "por+eng", descriptions: dict[str, dict[str, Any]] | None = None) -> dict[int, list[dict[str, Any]]]:
-    """Extract embedded PDF images into derived files and create a per-page inventory."""
-    try:
-        from pypdf import PdfReader  # type: ignore
-    except Exception:
-        try:
-            from PyPDF2 import PdfReader  # type: ignore
-        except Exception:
-            return {}
-    try:
-        reader = PdfReader(str(path))
-    except Exception:
-        return {}
-    output_dir.mkdir(parents=True, exist_ok=True)
-    by_page: dict[int, list[dict[str, Any]]] = {}
-    for page_number, page in enumerate(reader.pages, start=1):
-        images = list(getattr(page, "images", []) or [])
-        records: list[dict[str, Any]] = []
-        for image_number, image in enumerate(images, start=1):
-            data = getattr(image, "data", b"") or b""
-            if not data:
-                continue
-            original_name = str(getattr(image, "name", "image.bin"))
-            suffix = Path(original_name).suffix.lower() or ".bin"
-            image_id = f"P{page_number:04d}-I{image_number:03d}"
-            target = output_dir / f"page-{page_number:04d}-{image_id}{suffix}"
-            target.write_bytes(data)
-            width, height = _image_dimensions(data)
-            record: dict[str, Any] = {
-                "image_id": image_id,
-                "page_pdf": page_number,
-                "kind": "embedded_image",
-                "source_name": original_name,
-                "image_path": str(target),
-                "relative_path": f"images/{target.name}",
-                "format": suffix.lstrip("."),
-                "width": width,
-                "height": height,
-                "sha256": hashlib.sha256(data).hexdigest(),
-                "location": f"imagem incorporada na página PDF {page_number}; coordenadas não expostas pelo extrator",
-                "description_source": "technical_inventory",
-                "ocr_text": _ocr_image_bytes(data, ocr_language) if use_ocr else "",
-            }
-            if descriptions and image_id in descriptions:
-                record.update(descriptions[image_id])
-                record["description_source"] = descriptions[image_id].get("description_source", "external_review")
-            record["semantic_description"] = _visual_fallback_description(record)
-            records.append(record)
-        if not records:
-            page_text = page.extract_text() or ""
-            if not page_text.strip():
-                image_id = f"P{page_number:04d}-SCAN"
-                record = {
-                    "image_id": image_id,
-                    "page_pdf": page_number,
-                    "kind": "page_scan",
-                    "location": f"área integral da página PDF {page_number}",
-                    "description_source": "page_scan_fallback",
-                    "ocr_text": "",
-                }
-                if descriptions and image_id in descriptions:
-                    record.update(descriptions[image_id])
-                    record["description_source"] = descriptions[image_id].get("description_source", "external_review")
-                record["semantic_description"] = _visual_fallback_description(record)
-                records.append(record)
-        if records:
-            by_page[page_number] = records
-    return by_page
-
-
 def extract_page_semantics(page_number: int, text: str, piece: str, visuals: Sequence[dict[str, Any]] | None = None, *, page_unit: str = "pdf_page") -> dict[str, Any]:
     normalised = normalise_spaces(text)
     lines = [line.strip() for line in text.splitlines() if line.strip()]
@@ -782,7 +629,7 @@ def extract_page_semantics(page_number: int, text: str, piece: str, visuals: Seq
     if table_lines:
         blocks.append({"type": "table_or_tabular_text", "items": table_lines[:30]})
     entities = {
-        "process_numbers": sorted(set(PROCESS_ID_RE.findall(text))),
+        "process_numbers": sorted(set(PROCESS_ID_RE.findall(text) + NUP_PROCESS_RE.findall(text))),
         "dates": sorted(set(DATE_RE.findall(text))),
         "cpf_cnpj": sorted(set(CPF_CNPJ_RE.findall(text))),
         "currency_values": sorted(set(CURRENCY_RE.findall(text))),
@@ -800,28 +647,7 @@ def extract_page_semantics(page_number: int, text: str, piece: str, visuals: Seq
     return {"summary": summary, "entities": entities, "keywords": keywords, "content_blocks": blocks}
 
 
-# Rich output overrides keep the original public API while adding page-level
-# navigation and visual semantics to every generated artifact.
-def _build_index_records_stage2(pages: Sequence[Page], process_id: str) -> Iterator[dict[str, Any]]:
-    for page in pages:
-        yield {
-            "process": process_id,
-            "piece": page.piece,
-            "pdf_page": page.pdf_page,
-            "court_page": page.court_page,
-            "document_id": page.document_id,
-            "quality": page.quality,
-            "source": page.source,
-            "text": page.text,
-            "terms": sorted(set(re.findall(r"[\w\u00c0-\u00ff]{3,}", page.text.lower(), flags=re.UNICODE))),
-            "summary": page.summary,
-            "entities": page.entities or {},
-            "keywords": page.keywords or [],
-            "visuals": page.visuals or [],
-        }
-
-
-def _build_structured_markdown_stage2(pages: Sequence[Page], classification: dict[str, Any]) -> str:
+def _render_structured_markdown_pages(pages: Sequence[Page], classification: dict[str, Any]) -> str:
     lines = ["# PROCESSO ESTRUTURADO", "", "## Classifica\u00e7\u00e3o inicial", "", "```yaml"]
     for key, value in classification.items():
         lines.append(f"{key}: {json.dumps(value, ensure_ascii=False)}")
@@ -852,7 +678,7 @@ def _build_structured_markdown_stage2(pages: Sequence[Page], classification: dic
                     f"- Classe/relevância: {visual.get('asset_class', 'unknown')} / {'relevante' if visual.get('relevant', True) else 'recurso técnico'}",
                     f"- Ocorrência: {visual.get('occurrence_index', 1)} / ID único: {visual.get('unique_image_id', 'não informado')}",
                     f"- Arquivo derivado: `{visual.get('relative_path') or ('images/' + Path(str(visual.get('image_path', ''))).name)}`" if visual.get("image_path") or visual.get("relative_path") else "- Arquivo derivado: n\u00e3o gerado",
-                    f"- Crop ampliado: `{visual.get('zoom_relative_path')}`" if visual.get('zoom_relative_path') else "- Crop ampliado: n\u00e3o gerado ou n\u00e3o necess\u00e1rio",
+                    f"- Crop ampliado: `{visual.get('zoom_relative_path')}`" if visual.get("zoom_relative_path") else "- Crop ampliado: n\u00e3o gerado ou n\u00e3o necess\u00e1rio",
                     f"- Formato/dimensões: {visual.get('format', 'não identificado')} / {visual.get('width') or '?'}×{visual.get('height') or '?'} px",
                     f"- SHA-256: `{visual.get('sha256', 'não calculado')}`",
                     f"- Descri\u00e7\u00e3o sem\u00e2ntica: {description}",
@@ -863,6 +689,10 @@ def _build_structured_markdown_stage2(pages: Sequence[Page], classification: dic
                     f"- Confiança/origem: {visual.get('confidence', 'não informada')} / {visual.get('description_source', 'fallback')}",
                     "",
                 ])
+        render = page.render or {}
+        vision = page.vision or {}
+        ocr = page.ocr or {}
+        consolidation = page.consolidation or {}
         lines.extend([
             "---", "", f'<a id="p{page.pdf_page:04d}"></a>',
             f"## [{page_reference(page)}]", "",
@@ -870,6 +700,15 @@ def _build_structured_markdown_stage2(pages: Sequence[Page], classification: dic
             f"**Pe\u00e7a:** {page.piece}", f"**Documento ID:** {page.document_id}",
             f"**Data identificada:** {page.dates[0] if page.dates else 'não identificada'}",
             f"**Qualidade da extra\u00e7\u00e3o:** {page.quality}", "",
+            "### Processamento por camada", "",
+            f"- Texto nativo: {'verificado' if page.text.strip() else 'não disponível'}",
+            f"- Renderização: {'concluída' if render.get('validated') else 'não disponível'}",
+            f"- Inspeção técnica: {'concluída' if render.get('checked') else 'não executada'}",
+            f"- Visão semântica: {'concluída' if vision.get('semantic_checked') else 'não disponível'}",
+            f"- Provider de visão: {vision.get('provider', 'none')}",
+            f"- OCR: {'utilizado' if ocr.get('used') else ('tentado' if ocr.get('attempted') else 'não utilizado')}",
+            f"- Consolidação: {'concluída' if consolidation.get('completed') else 'pendente'}",
+            f"- Status: **{page.status}**", "",
             "### Resumo sem\u00e2ntico e localiza\u00e7\u00e3o r\u00e1pida", "",
             page.summary or "Resumo sem\u00e2ntico n\u00e3o dispon\u00edvel; revisar a p\u00e1gina.", "",
             f"- \u00c2ncora principal: `{page_reference(page)}`",
@@ -878,51 +717,12 @@ def _build_structured_markdown_stage2(pages: Sequence[Page], classification: dic
             "### Blocos, t\u00edtulos e tabelas identificados", "",
             *(f"- **{block.get('type', 'bloco')}**: {'; '.join(map(str, block.get('items', [])))}" for block in (page.content_blocks or [])),
             "- Nenhum bloco tabular/t\u00edtulo foi identificado automaticamente." if not page.content_blocks else "", "",
-            f"### Imagens e elementos visuais ({len(page.visuals or [])})", "", *visual_lines, "",
+            f"### Imagens visuais relevantes ({len(page.visuals or [])})", "", *visual_lines, "",
             "### Texto integral extra\u00eddo", "", page.text.rstrip() or "[ILEG\u00cdVEL]", "",
         ])
         if page.warnings:
             lines.extend([f"**Observa\u00e7\u00f5es:** {'; '.join(page.warnings)}", ""])
     return "\n".join(lines).rstrip() + "\n"
-
-
-def _compute_coverage_stage2(pages: Sequence[Page], total: int) -> dict[str, Any]:
-    processed = len(pages)
-    native = sum(page.source == "native_text" and bool(page.text.strip()) for page in pages)
-    ocr = sum(page.source != "native_text" for page in pages)
-    partial = sum(page.quality == "low" for page in pages)
-    unreadable = sum(page.quality == "unreadable" for page in pages)
-    visual_records = [visual for page in pages for visual in (page.visuals or [])]
-    reviewed = sum(visual.get("description_source") in {"external_review", "human_review", "vision_model"} for visual in visual_records)
-    return {
-        "pages_total": total,
-        "pages_processed": processed,
-        "pages_native_text": native,
-        "pages_ocr_or_vision": ocr,
-        "pages_partial": partial,
-        "pages_unreadable": unreadable,
-        "pages_pending": list(range(processed + 1, total + 1)),
-        "coverage_percent": round(100 * processed / total, 2) if total else 0,
-        "visual_elements": len(visual_records),
-        "pages_with_visuals": sum(bool(page.visuals) for page in pages),
-        "visual_descriptions_reviewed": reviewed,
-        "visual_descriptions_pending": len(visual_records) - reviewed,
-    }
-
-
-_build_audit_report_legacy = _build_audit_report_stage1
-
-
-def _build_audit_report_stage2(pages: Sequence[Page], classification: dict[str, Any], pieces: Sequence[dict[str, Any]], coverage: dict[str, Any], mode: str) -> str:
-    # Keep the established report and append a machine-readable visual coverage section.
-    original = _build_audit_report_legacy(pages, classification, pieces, coverage, mode)
-    return original.rstrip() + "\n\n## COBERTURA VISUAL E DESCRI\u00c7\u00d5ES SEM\u00c2NTICAS\n\n" + "\n".join([
-        f"Elementos visuais inventariados: {coverage.get('visual_elements', 0)}",
-        f"P\u00e1ginas com elementos visuais: {coverage.get('pages_with_visuals', 0)}",
-        f"Descri\u00e7\u00f5es sem\u00e2nticas completas/revisadas: {coverage.get('visual_descriptions_reviewed', 0)}",
-        f"Descri\u00e7\u00f5es de fallback pendentes de revis\u00e3o visual: {coverage.get('visual_descriptions_pending', 0)}",
-        "O invent\u00e1rio visual n\u00e3o presume autenticidade, identidade de pessoas ou significado jur\u00eddico; confirme cada item no original.",
-    ]) + "\n"
 
 
 def load_page_descriptions(path: Path | None) -> dict[int, dict[str, Any]]:
@@ -1053,7 +853,7 @@ def build_page_processing_state(
     return {"render": render_state, "vision": vision_state, "ocr": ocr_state, "consolidation": consolidation, "status": status}
 
 
-def _compute_coverage_stage3(pages: Sequence[Page], total: int) -> dict[str, Any]:
+def compute_coverage(pages: Sequence[Page], total: int) -> dict[str, Any]:
     """Report physical, textual, rendering and semantic coverage separately."""
     processed = len(pages)
     native = sum(page.source == "native_text" and bool(page.text.strip()) for page in pages)
@@ -1072,7 +872,7 @@ def _compute_coverage_stage3(pages: Sequence[Page], total: int) -> dict[str, Any
     rendered = sum(bool(page.render and page.render.get("validated")) for page in pages)
     failed = sum(page.status == "FAILED" for page in pages)
     textual_complete = bool(pages) and all(
-        bool(page.text.strip()) or bool(page.ocr and page.ocr.get("used"))
+        bool(strip_court_stamps(page.text).strip()) or bool(page.ocr and page.ocr.get("used"))
         or (page.status == "COMPLETE" and (page.vision or {}).get("outcome") in {"blank", "image_only"})
         for page in pages
     )
@@ -1111,288 +911,66 @@ def _compute_coverage_stage3(pages: Sequence[Page], total: int) -> dict[str, Any
         "render_coverage_complete": render_complete,
         "semantic_visual_coverage_complete": semantic_complete,
         "full_conversion_complete": full_complete,
-        "conversion_result": "CONVERSÃO INTEGRAL" if full_complete else ("CONVERSÃO FÍSICA COMPLETA COM LIMITAÇÕES VISUAIS" if physical_complete else "CONVERSÃO PARCIAL"),
+        "conversion_result": "CONVERSAO INTEGRAL" if full_complete else (
+            "CONVERSAO FISICA COMPLETA COM LIMITACOES VISUAIS" if physical_complete else "CONVERSAO PARCIAL"
+        ),
     }
-
-
-_build_audit_report_with_visuals = _build_audit_report_stage2
-
-
-def _build_audit_report_stage3(pages: Sequence[Page], classification: dict[str, Any], pieces: Sequence[dict[str, Any]], coverage: dict[str, Any], mode: str) -> str:
-    original = _build_audit_report_with_visuals(pages, classification, pieces, coverage, mode)
-    flags = [
-        "## RESULTADO DE CONVERSÃO",
-        "",
-        f"- Resultado: **{coverage.get('conversion_result', 'CONVERSÃO PARCIAL')}**",
-        f"- Cobertura física completa: `{str(coverage.get('physical_coverage_complete', False)).lower()}`",
-        f"- Cobertura textual completa: `{str(coverage.get('textual_coverage_complete', False)).lower()}`",
-        f"- Renderização completa: `{str(coverage.get('render_coverage_complete', False)).lower()}`",
-        f"- Visão semântica completa: `{str(coverage.get('semantic_visual_coverage_complete', False)).lower()}`",
-        f"- Conversão integral demonstrável: `{str(coverage.get('full_conversion_complete', False)).lower()}`",
-        "Renderização, OCR e inspeção técnica não são tratados como equivalentes à visão semântica multimodal.",
-    ]
-    return original.rstrip() + "\n\n" + "\n".join(flags) + "\n"
-
-
-_build_structured_markdown_with_semantics = _build_structured_markdown_stage2
-
-
-def _build_structured_markdown_stage3(pages: Sequence[Page], classification: dict[str, Any]) -> str:
-    markdown = _build_structured_markdown_with_semantics(pages, classification)
-    for page in pages:
-        render = page.render or {}
-        vision = page.vision or {}
-        ocr = page.ocr or {}
-        consolidation = page.consolidation or {}
-        processing = "\n".join([
-            "### Processamento por camada",
-            "",
-            f"- Texto nativo: {'verificado' if page.text.strip() else 'não disponível'}",
-            f"- Renderização: {'concluída' if render.get('validated') else 'não disponível'}",
-            f"- Inspeção técnica: {'concluída' if render.get('checked') else 'não executada'}",
-            f"- Visão semântica: {'concluída' if vision.get('semantic_checked') else 'não disponível'}",
-            f"- Provider de visão: {vision.get('provider', 'none')}",
-            f"- OCR: {'utilizado' if ocr.get('used') else ('tentado' if ocr.get('attempted') else 'não utilizado')}",
-            f"- Consolidação: {'concluída' if consolidation.get('completed') else 'pendente'}",
-            f"- Status: **{page.status}**",
-            "",
-        ])
-        marker = f"**Qualidade da extração:** {page.quality}\n"
-        if marker in markdown:
-            markdown = markdown.replace(marker, marker + "\n" + processing, 1)
-    return markdown
-
-
-# Domain routing is deliberately data-driven. The profile selects candidates
-# and writing conventions; it never turns a keyword hit into a legal conclusion.
-LEGAL_PROFILE_PATH = Path(__file__).resolve().parent.parent / "references" / "legal_domain_profiles.json"
-
-
-def _fold_legal_text(value: str) -> str:
-    value = unicodedata.normalize("NFD", value or "")
-    return "".join(char for char in value if unicodedata.category(char) != "Mn").lower()
-
-
-@lru_cache(maxsize=1)
-def load_legal_domain_profiles() -> dict[str, Any]:
-    try:
-        payload = json.loads(LEGAL_PROFILE_PATH.read_text(encoding="utf-8-sig"))
-    except (OSError, json.JSONDecodeError):
-        payload = {"schema_version": "fallback", "default_domain": "processual", "domains": []}
-    domains = payload.get("domains") if isinstance(payload, dict) else None
-    payload["domains"] = domains if isinstance(domains, list) else []
-    payload["by_key"] = {item.get("key"): item for item in payload["domains"] if isinstance(item, dict) and item.get("key")}
-    return payload
-
-
-def _domain_source_text(pages: Sequence[Page]) -> str:
-    chunks: list[str] = []
-    for page in pages:
-        chunks.append(page.text or "")
-        for visual in page.visuals or []:
-            chunks.extend([
-                str(visual.get("semantic_description", "")),
-                str(visual.get("visible_text", "")),
-                str(visual.get("ocr_text", "")),
-            ])
-    return "\n".join(chunks)
-
-
-# Aceita a forma abreviada sem zeros à esquerda usada pelo TST ("RR-713-03.2010.5.04.0029").
-CNJ_NUMBER_RE = re.compile(r"(?<!\d)(\d{1,7})-(\d{2})\.(\d{4})\.(\d)\.(\d{2})\.(\d{4})(?!\d)")
-# Segmento "J" do número único (Res. CNJ 65/2008).
-CNJ_SEGMENTS = {"1": "Supremo Tribunal Federal", "2": "Conselho Nacional de Justiça", "3": "Superior Tribunal de Justiça",
-                "4": "Justiça Federal", "5": "Justiça do Trabalho", "6": "Justiça Eleitoral",
-                "7": "Justiça Militar da União", "8": "Justiça dos Estados e do Distrito Federal", "9": "Justiça Militar Estadual"}
-# Código "TR" da Justiça Estadual, Eleitoral e Militar Estadual: unidades da Federação em ordem alfabética.
-CNJ_UF = {"01": "AC", "02": "AL", "03": "AP", "04": "AM", "05": "BA", "06": "CE", "07": "DF", "08": "ES", "09": "GO",
-          "10": "MA", "11": "MT", "12": "MS", "13": "MG", "14": "PA", "15": "PB", "16": "PR", "17": "PE", "18": "PI",
-          "19": "RJ", "20": "RN", "21": "RS", "22": "RO", "23": "RR", "24": "SC", "25": "SE", "26": "SP", "27": "TO"}
-
-
-def cnj_check_digits(sequence: str, year: str, segment: str, court: str, origin: str) -> str:
-    """Dígitos verificadores pelo módulo 97 (ISO 7064), como no Anexo VIII da Res. CNJ 65/2008."""
-    remainder = int(sequence) % 97
-    remainder = int(f"{remainder}{year}{segment}{court}") % 97
-    remainder = int(f"{remainder}{origin}00") % 97
-    return f"{98 - remainder:02d}"
-
-
-def _cnj_court(segment: str, court: str) -> str:
-    if segment in {"1", "2", "3"}:
-        return CNJ_SEGMENTS[segment]
-    if court == "00":
-        return {"4": "Conselho da Justiça Federal", "5": "Tribunal Superior do Trabalho", "6": "Tribunal Superior Eleitoral",
-                "7": "Superior Tribunal Militar"}.get(segment, "Tribunal não identificado")
-    if segment == "4":
-        return f"Tribunal Regional Federal da {int(court)}ª Região"
-    if segment == "5":
-        return f"Tribunal Regional do Trabalho da {int(court)}ª Região"
-    if segment == "6" and court in CNJ_UF:
-        return f"Tribunal Regional Eleitoral ({CNJ_UF[court]})"
-    if segment == "8" and court in CNJ_UF:
-        return f"Tribunal de Justiça ({CNJ_UF[court]})"
-    if segment == "9" and court in CNJ_UF:
-        return f"Tribunal de Justiça Militar ({CNJ_UF[court]})"
-    if segment == "7":
-        return f"Justiça Militar da União — {int(court)}ª Circunscrição"
-    return "Tribunal não identificado"
-
-
-def parse_cnj_numbers(text: str) -> list[dict[str, Any]]:
-    """Números únicos CNJ no texto, com segmento, tribunal e conferência do dígito verificador."""
-    found: list[dict[str, Any]] = []
-    seen: set[str] = set()
-    for match in CNJ_NUMBER_RE.finditer(text or ""):
-        sequence, digits, year, segment, court, origin = match.groups()
-        sequence = sequence.zfill(7)
-        number = f"{sequence}-{digits}.{year}.{segment}.{court}.{origin}"
-        if number in seen:
-            continue
-        seen.add(number)
-        found.append({
-            "number": number, "segment": segment, "justice": CNJ_SEGMENTS.get(segment, "Segmento desconhecido"),
-            "court_code": court, "court": _cnj_court(segment, court), "origin": origin, "year": year,
-            "check_digits_valid": cnj_check_digits(sequence, year, segment, court, origin) == digits,
-        })
-    return found
-
-
-@lru_cache(maxsize=4096)
-def _term_pattern(term: str) -> re.Pattern[str]:
-    """Termo dobrado com limite de palavra: 'adi' não casa com 'adicional', nem 'reu' com 'reunião'."""
-    body = r"\s+".join(re.escape(part) for part in _fold_legal_text(term).split())
-    return re.compile(r"(?<![a-z0-9])" + body + r"(?![a-z0-9])")
-
-
-def _strip_noise(folded: str, profiles: dict[str, Any]) -> str:
-    """Remove qualificação e endereço (estado civil, município de residência) antes da contagem."""
-    for pattern in profiles.get("noise_patterns", []):
-        try:
-            folded = re.sub(pattern, " ", folded)
-        except re.error:
-            continue
-    return folded
-
-
-def classify_legal_domain(pages: Sequence[Page]) -> dict[str, Any]:
-    profiles = load_legal_domain_profiles()
-    source_text = _domain_source_text(pages)
-    folded = _strip_noise(_fold_legal_text(source_text), profiles)
-    page_folded = [(page, _strip_noise(_fold_legal_text(page.text), profiles)) for page in pages]
-    cnj_numbers = parse_cnj_numbers(source_text)
-    segment_rules = profiles.get("justice_segments", {})
-    scores: list[dict[str, Any]] = []
-    for profile in profiles.get("domains", []):
-        key = profile.get("key")
-        if not key:
-            continue
-        score = 0
-        evidence: list[dict[str, Any]] = []
-        for pattern in profile.get("patterns", []):
-            weight = int(pattern.get("weight", 1))
-            for term in pattern.get("terms", []):
-                regex = _term_pattern(str(term))
-                occurrences = len(regex.findall(folded)) if str(term).strip() else 0
-                if not occurrences:
-                    continue
-                score += weight * min(occurrences, 3)
-                for page, folded_page in page_folded:
-                    if not regex.search(folded_page):
-                        continue
-                    snippet = normalise_spaces(page.text).replace("|", "\\|")[:260]
-                    evidence.append({
-                        "term": term,
-                        "weight": weight,
-                        "occurrences": occurrences,
-                        "source": {"pdf_page": page.pdf_page, "document_id": page.document_id, "snippet": snippet},
-                    })
-                    break
-        # O segmento do número único é sinal forte, mas não substitui a leitura do objeto do pedido.
-        for item in cnj_numbers:
-            rule = segment_rules.get(item["segment"])
-            if rule and rule.get("domain") == key:
-                weight = int(rule.get("weight", 0)) if item["check_digits_valid"] else int(rule.get("weight", 0)) // 2
-                score += weight
-                holder = next((page for page in pages
-                               if any(found["number"] == item["number"] for found in parse_cnj_numbers(page.text))), None)
-                source = {"pdf_page": holder.pdf_page if holder else None, "document_id": holder.document_id if holder else "",
-                          "snippet": item["justice"] + " — " + item["court"] + ("" if item["check_digits_valid"] else " (dígito verificador divergente)"),
-                          "cnj": item}
-                evidence.insert(0, {"term": "número CNJ " + item["number"], "weight": weight, "occurrences": 1, "source": source})
-                break
-        scores.append({
-            "key": key,
-            "label": profile.get("label", key),
-            "score": score,
-            "evidence": evidence[:12],
-        })
-
-    specialized = [item for item in scores if item["key"] != profiles.get("default_domain")]
-    specialized.sort(key=lambda item: (-item["score"], item["label"]))
-    fallback = next((item for item in scores if item["key"] == profiles.get("default_domain")), {
-        "key": "processual", "label": "Direito Processual (área a confirmar)", "score": 0, "evidence": []
-    })
-    # Prefer a sufficiently supported specialized area; otherwise allow the
-    # generic processual profile to identify a procedural-only corpus. A blank
-    # or generic text still remains explicitly unidentified.
-    if specialized and specialized[0]["score"] >= 4:
-        top = specialized[0]
-        competitors = specialized[1:]
-    elif fallback["score"] >= 4:
-        top = fallback
-        competitors = specialized
-    else:
-        top = specialized[0] if specialized else fallback
-        competitors = specialized[1:] if specialized else []
-    second_score = competitors[0]["score"] if competitors else 0
-    margin = top["score"] - second_score
-    # A leading candidate is still useful for routing when the margin is small;
-    # the ambiguity flag forces human/source verification instead of hiding it.
-    identified = top["score"] >= 4
-    if top["key"] == "processual" and top["score"] < 4:
-        identified = False
-    confidence = "high" if identified and top["score"] >= 12 and margin >= 4 else ("medium" if identified else "low")
-    label = top["label"] if identified else "Não identificado nos autos"
-    candidates = [item for item in ([top] + competitors) if item["score"] > 0][:5]
-    if top["score"] == 0 and fallback["score"] > 0:
-        candidates = [fallback]
-    profile = profiles.get("by_key", {}).get(top["key"], profiles.get("by_key", {}).get("processual", {}))
-    return {
-        "primary_key": top["key"] if identified else None,
-        "label": label,
-        "confidence": confidence,
-        "score": top["score"],
-        "margin_to_next": margin,
-        "ambiguous": identified and margin < 2,
-        "candidates": candidates,
-        "profile": profile,
-        "source_policy": profiles.get("verification_policy", {}),
-        "pages_considered": len(pages),
-        "cnj_numbers": cnj_numbers,
-    }
-
-
-_classify_process_legacy = _classify_process_stage1
 
 
 def classify_process(pages: Sequence[Page]) -> dict[str, Any]:
-    classification = _classify_process_legacy(pages)
+    text = "\n".join(page.text for page in pages)
+    lower = text.lower()
+    process_number = identify_process_number(text)
     domain = classify_legal_domain(pages)
-    classification["area_principal"] = domain["label"]
-    classification["areas_correlatas"] = [item["label"] for item in domain["candidates"] if item["label"] != domain["label"]]
-    classification["legal_domain"] = domain["primary_key"]
-    classification["classification_confidence"] = domain["confidence"]
-    classification["classification_ambiguous"] = domain["ambiguous"]
-    classification["domain_candidates"] = domain["candidates"]
-    classification["writing_profile"] = domain["profile"].get("writing_profile", {}) if isinstance(domain.get("profile"), dict) else {}
+    has_br_cues = any(term in lower for term in ("tribunal", "comarca", "jus.br", "cnj", "gov.br", "sei")) or bool(domain.get("nup_numbers"))
+    classification: dict[str, Any] = {
+        "sistema_juridico": "Brasil" if has_br_cues else "Não identificado nos autos",
+        "pais": "Brasil" if "brasil" in lower or "jus.br" in lower or "gov.br" in lower else "Não identificado nos autos",
+        "justica": "Não identificado nos autos",
+        "tribunal": "Não identificado nos autos",
+        "orgao_julgador": "Não identificado nos autos",
+        "competencia": "Não identificado nos autos",
+        "numero_processo": process_number["numero"] or "Não identificado nos autos",
+        "numero_processo_criterio": process_number["criterio"],
+        "numeros_processo_citados": process_number["citados"],
+        "classe_processual": "Não identificado nos autos",
+        "procedimento": "Não identificado nos autos",
+        "rito": "Não identificado nos autos",
+        "instancia": "Não identificado nos autos",
+        "fase_processual": "Não identificado nos autos",
+        "area_principal": domain["label"],
+        "areas_correlatas": [item["label"] for item in domain["candidates"] if item["label"] != domain["label"]],
+        "autor_requerente": "Não identificado nos autos",
+        "reu_requerido": "Não identificado nos autos",
+        "terceiros": [],
+        "advogados": [],
+        "peritos": [],
+        "ministerio_publico": "Não identificado nos autos",
+        "demais_intervenientes": [],
+        "objeto_principal": "Não identificado nos autos",
+        "pedidos_principais": [],
+        "materias_controvertidas": [],
+        "situacao_atual": "Não identificado nos autos",
+        "legal_domain": domain["primary_key"],
+        "classification_confidence": domain["confidence"],
+        "classification_ambiguous": domain["ambiguous"],
+        "domain_candidates": domain["candidates"],
+        "writing_profile": domain["profile"].get("writing_profile", {}) if isinstance(domain.get("profile"), dict) else {},
+    }
     numbers = domain.get("cnj_numbers", [])
     if numbers:
-        first = next((item for item in numbers if item["check_digits_valid"]), numbers[0])
+        # Justice and court follow the case number chosen above, not a precedent cited earlier in the records.
+        first = (
+            next((item for item in numbers if item["number"] == classification.get("numero_processo")), None)
+            or next((item for item in numbers if item["check_digits_valid"]), numbers[0])
+        )
         classification["numeros_cnj"] = numbers
         if first["check_digits_valid"]:
             classification["justica"] = first["justice"]
             classification["tribunal"] = first["court"]
+    nup_numbers = domain.get("nup_numbers", [])
+    if nup_numbers:
+        classification["numeros_nup"] = nup_numbers
     return classification
 
 
@@ -1402,9 +980,6 @@ def build_legal_basis_plan(
     task: str = "ingest",
 ) -> dict[str, Any]:
     profiles = load_legal_domain_profiles()
-    # Reuse the classification already computed for the manifest. This keeps
-    # ingestion deterministic and avoids scanning every page twice; the
-    # fallback is retained for callers that provide a legacy classification.
     has_domain_metadata = isinstance(classification, dict) and (
         "legal_domain" in classification or "domain_candidates" in classification
     )
@@ -1519,7 +1094,7 @@ def build_legal_basis_markdown(plan: dict[str, Any]) -> str:
 def _fact_nature(page: Page) -> str:
     """Classify the wording of a page without asserting its legal truth."""
     lower = _fold_legal_text(page.text)
-    if page.piece in {"Sentença", "Acórdão", "Decisão", "Despacho"}:
+    if page.piece in {"Sentença", "Acórdão", "Decisão", "Despacho", "Embargos de Declaração"}:
         return "decisao_documentada"
     if re.search(r"\b(alega|afirma|sustenta|narra|segundo o autor|segundo a parte)\b", lower):
         return "alegacao"
@@ -1592,10 +1167,6 @@ def build_fact_evidence_norm_request_matrix(
         row_status = "review_required"
         if page.text.strip() and source.get("document_id") and evidence_refs:
             row_status = "traceable_candidate"
-        # Keep the classifier's candidates visible, but never present them as
-        # verified law.  The authoring pass must replace these candidates with
-        # individually captured official sources before a legal conclusion can
-        # pass the quality gate.
         row_norms = [
             {**candidate, "status": "candidate_unverified_for_this_fact"}
             for candidate in norm_candidates
@@ -1696,10 +1267,15 @@ def build_quality_gate(
     narrative: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Expose explicit pass/review gates instead of implying legal certainty."""
+    _ = legal_basis
     physical_ok = bool(coverage.get("physical_coverage_complete")) and len(pages) == coverage.get("pages_total")
     provenance_ok = bool(pages) and all(page.pdf_page > 0 and bool(page.document_id) for page in pages)
-    narrative_style_ok = bool(narrative) and narrative.get("prohibited_phrase_check", {}).get("final_authorial_text_checked") is True and narrative.get("prohibited_phrase_check", {}).get("passed") is True
-    gates = {
+    narrative_style_ok = (
+        bool(narrative)
+        and narrative.get("prohibited_phrase_check", {}).get("final_authorial_text_checked") is True
+        and narrative.get("prohibited_phrase_check", {}).get("passed") is True
+    )
+    gates: dict[str, dict[str, Any]] = {
         "coverage": {"status": "passed" if physical_ok and coverage.get("full_conversion_complete") else "review_required"},
         "provenance": {"status": "passed" if provenance_ok else "review_required"},
     }
@@ -1715,16 +1291,20 @@ def build_quality_gate(
         })
     blockers = [name for name, gate in gates.items() if gate["status"] != "passed"]
     return {
-        "schema_version": "1.1", "task": task,
+        "schema_version": "1.1",
+        "task": task,
         "status": "passed" if not blockers else "review_required",
         "can_describe_corpus": physical_ok and provenance_ok,
         "can_issue_final_legal_conclusion": False,
         "legal_status": "professional_review_required",
         "draft_allowed_with_warning": task in {"petition", "audit"},
-        "blocking_gates": blockers, "gates": gates,
-        "rules": ["Extração não é revisão jurídica; conferir legal_review.json com legal_review.py.",
-                  "Cobertura visual obrigatória incompleta impede conclusão integral.",
-                  "Fontes e relações precisam de verificação individual; status global não basta."],
+        "blocking_gates": blockers,
+        "gates": gates,
+        "rules": [
+            "Extração não é revisão jurídica; conferir legal_review.json com legal_review.py.",
+            "Cobertura visual obrigatória incompleta impede conclusão integral.",
+            "Fontes e relações precisam de verificação individual; status global não basta.",
+        ],
     }
 
 
@@ -1774,23 +1354,12 @@ def build_index_records(pages: Sequence[Page], process_id: str) -> Iterator[dict
             "vision": page.vision or {},
             "ocr": page.ocr or {},
             "status": page.status,
+            "court_system": page.court_system,
+            "electronic_document_id": page.electronic_document_id,
+            "signatory": page.signatory,
         }
 
 
-_compute_coverage_stateful = _compute_coverage_stage3
-
-
-def compute_coverage(pages: Sequence[Page], total: int) -> dict[str, Any]:
-    result = _compute_coverage_stateful(pages, total)
-    result["conversion_result"] = "CONVERSAO INTEGRAL" if result.get("full_conversion_complete") else (
-        "CONVERSAO FISICA COMPLETA COM LIMITACOES VISUAIS" if result.get("physical_coverage_complete") else "CONVERSAO PARCIAL"
-    )
-    return result
-
-
-# Procedural progression artifacts. These functions deliberately produce a
-# review queue, not legal conclusions: every item carries a page source and is
-# marked as heuristic until a professional approves it.
 def _page_source(page: Page) -> dict[str, Any]:
     return {
         "pdf_page": page.pdf_page,
@@ -2219,9 +1788,6 @@ def build_cumulative_report(output: Path) -> str:
     return "\n".join(lines)
 
 
-# Portable visual inventory and delivery helpers. These are intentionally
-# provider-neutral: a host IA may create the review sidecar, while the local
-# parser validates, classifies and preserves its result.
 VISUAL_ASSET_CLASSES = (
     "visual_asset",
     "technical_artifact",
@@ -2283,7 +1849,6 @@ def _create_zoom_asset(record: dict[str, Any], output_dir: Path) -> None:
     if not source.is_file() or not isinstance(width, int) or not isinstance(height, int) or min(width, height) >= 200:
         return
     try:
-        from io import BytesIO
         from PIL import Image  # type: ignore
 
         with Image.open(source) as image:
@@ -2295,7 +1860,6 @@ def _create_zoom_asset(record: dict[str, Any], output_dir: Path) -> None:
             record["zoom_path"] = str(target)
             record["zoom_relative_path"] = f"images/crops/{target.name}"
     except Exception:
-        # A crop is an enhancement; absence must remain explicit, not fatal.
         record.setdefault("limitations", []).append("Ampliação não gerada: Pillow indisponível ou imagem incompatível.")
 
 
@@ -2409,10 +1973,25 @@ def write_process_bundle(output: Path, destination: Path | None = None) -> Path:
 
 
 def detect_text_encoding(path: Path) -> str:
-    if path.suffix.lower() == ".pdf":
+    suffix = path.suffix.lower()
+    if suffix == ".pdf":
         return "binary/pdf"
-    if path.suffix.lower() in {".docx", ".xlsx"}:
+    if suffix in {".docx", ".xlsx"}:
         return "binary/ooxml; extracted-utf-8"
+    if suffix in {".odt", ".ods"}:
+        return "binary/odf; extracted-utf-8"
+    if suffix == ".rtf":
+        return "text/rtf; extracted-utf-8"
+    if suffix == ".eml":
+        return "message/rfc822; extracted-utf-8"
+    if suffix == ".zip":
+        return "application/zip; extracted-utf-8"
+    if suffix == ".p7s":
+        return "application/pkcs7-mime"
+    if suffix in {".png", ".jpg", ".jpeg", ".webp", ".tiff", ".tif", ".bmp"}:
+        return f"image/{suffix.lstrip('.')}"
+    if suffix in {".mp3", ".ogg", ".opus", ".wav", ".mp4", ".webm"}:
+        return f"media/{suffix.lstrip('.')}"
     raw = path.read_bytes()
     if raw.startswith(b"\xef\xbb\xbf"):
         return "utf-8-sig"
@@ -2429,12 +2008,9 @@ def detect_text_encoding(path: Path) -> str:
     return "utf-8-replace"
 
 
-_load_image_descriptions_legacy = _load_image_descriptions_stage1
-
-
 def load_image_descriptions(path: Path | None) -> dict[str, dict[str, Any]]:
-    """Load legacy descriptions plus classification/relevance metadata safely."""
-    result = _load_image_descriptions_legacy(path)
+    """Load trusted, human/model-reviewed descriptions plus classification/relevance metadata safely."""
+    result: dict[str, dict[str, Any]] = {}
     if path is None or not path.exists():
         return result
     try:
@@ -2443,20 +2019,27 @@ def load_image_descriptions(path: Path | None) -> dict[str, dict[str, Any]]:
         return result
     entries = raw.get("images", raw) if isinstance(raw, dict) else raw
     if isinstance(entries, dict):
-        entries = [{"image_id": key, **(value if isinstance(value, dict) else {})} for key, value in entries.items()]
+        entries = [
+            {"image_id": key, **(value if isinstance(value, dict) else {"semantic_description": value})}
+            for key, value in entries.items()
+        ]
     if not isinstance(entries, list):
         return result
-    allowed = {"asset_class", "visual_class", "relevant", "crop_path", "zoom_relative_path", "limitations"}
+    base_allowed = {
+        "image_id", "semantic_description", "visible_text", "objects", "people",
+        "tables", "location", "confidence", "description_source",
+    }
+    extra_allowed = {"asset_class", "visual_class", "relevant", "crop_path", "zoom_relative_path", "limitations"}
     for entry in entries:
         if not isinstance(entry, dict) or not entry.get("image_id"):
             continue
         image_id = str(entry["image_id"])
+        safe = {key: value for key, value in entry.items() if key in base_allowed}
+        if isinstance(safe.get("semantic_description"), str):
+            result[image_id] = safe
         result.setdefault(image_id, {"image_id": image_id})
-        result[image_id].update({key: value for key, value in entry.items() if key in allowed})
+        result[image_id].update({key: value for key, value in entry.items() if key in extra_allowed})
     return result
-
-
-_extract_referenced_visuals_legacy = _extract_referenced_visuals_stage1
 
 
 def extract_referenced_visuals(
@@ -2465,13 +2048,34 @@ def extract_referenced_visuals(
     base_dir: Path | None = None,
     descriptions: dict[str, dict[str, Any]] | None = None,
 ) -> list[dict[str, Any]]:
-    records = _extract_referenced_visuals_legacy(text, page_number, base_dir, descriptions)
-    for record in records:
+    records: list[dict[str, Any]] = []
+    for number, match in enumerate(IMAGE_MARKDOWN_RE.finditer(text), start=1):
+        alt, reference = match.groups()
+        image_id = f"P{page_number:04d}-I{number:03d}"
+        record: dict[str, Any] = {
+            "image_id": image_id,
+            "page_pdf": page_number,
+            "kind": "referenced_image",
+            "source_reference": reference,
+            "alt_text": alt or "não informado",
+            "location": "referência Markdown localizada no conteúdo da página",
+            "description_source": "alt_text_or_fallback",
+        }
+        if base_dir and not reference.startswith(("http://", "https://", "data:")):
+            candidate = (base_dir / reference).resolve()
+            if candidate.is_file() and base_dir.resolve() in candidate.parents:
+                record["image_path"] = str(candidate)
+                record["relative_path"] = reference.replace("\\", "/")
+                data = candidate.read_bytes()
+                record["sha256"] = hashlib.sha256(data).hexdigest()
+                record["width"], record["height"] = _image_dimensions(data)
+        if descriptions and image_id in descriptions:
+            record.update(descriptions[image_id])
+            record["description_source"] = descriptions[image_id].get("description_source", "external_review")
+        record["semantic_description"] = _visual_fallback_description(record)
         annotate_visual_record(record)
+        records.append(record)
     return records
-
-
-_extract_pdf_visuals_legacy = _extract_pdf_visuals_stage1
 
 
 def extract_pdf_visuals(
@@ -2481,11 +2085,73 @@ def extract_pdf_visuals(
     ocr_language: str = "por+eng",
     descriptions: dict[str, dict[str, Any]] | None = None,
 ) -> dict[int, list[dict[str, Any]]]:
-    records = _extract_pdf_visuals_legacy(path, output_dir, use_ocr, ocr_language, descriptions)
-    return consolidate_visual_inventory(records, output_dir)
-
-
-_build_structured_markdown_legacy = _build_structured_markdown_stage3
+    """Extract embedded PDF images into derived files and create a consolidated per-page inventory."""
+    try:
+        from pypdf import PdfReader  # type: ignore
+    except Exception:
+        try:
+            from PyPDF2 import PdfReader  # type: ignore
+        except Exception:
+            return {}
+    try:
+        reader = PdfReader(str(path))
+    except Exception:
+        return {}
+    output_dir.mkdir(parents=True, exist_ok=True)
+    by_page: dict[int, list[dict[str, Any]]] = {}
+    for page_number, page in enumerate(reader.pages, start=1):
+        images = list(getattr(page, "images", []) or [])
+        records: list[dict[str, Any]] = []
+        for image_number, image in enumerate(images, start=1):
+            data = getattr(image, "data", b"") or b""
+            if not data:
+                continue
+            original_name = str(getattr(image, "name", "image.bin"))
+            suffix = Path(original_name).suffix.lower() or ".bin"
+            image_id = f"P{page_number:04d}-I{image_number:03d}"
+            target = output_dir / f"page-{page_number:04d}-{image_id}{suffix}"
+            target.write_bytes(data)
+            width, height = _image_dimensions(data)
+            record: dict[str, Any] = {
+                "image_id": image_id,
+                "page_pdf": page_number,
+                "kind": "embedded_image",
+                "source_name": original_name,
+                "image_path": str(target),
+                "relative_path": f"images/{target.name}",
+                "format": suffix.lstrip("."),
+                "width": width,
+                "height": height,
+                "sha256": hashlib.sha256(data).hexdigest(),
+                "location": f"imagem incorporada na página PDF {page_number}; coordenadas não expostas pelo extrator",
+                "description_source": "technical_inventory",
+                "ocr_text": _ocr_image_bytes(data, ocr_language) if use_ocr else "",
+            }
+            if descriptions and image_id in descriptions:
+                record.update(descriptions[image_id])
+                record["description_source"] = descriptions[image_id].get("description_source", "external_review")
+            record["semantic_description"] = _visual_fallback_description(record)
+            records.append(record)
+        if not records:
+            page_text = page.extract_text() or ""
+            if not strip_court_stamps(page_text).strip():
+                image_id = f"P{page_number:04d}-SCAN"
+                record = {
+                    "image_id": image_id,
+                    "page_pdf": page_number,
+                    "kind": "page_scan",
+                    "location": f"área integral da página PDF {page_number}",
+                    "description_source": "page_scan_fallback",
+                    "ocr_text": "",
+                }
+                if descriptions and image_id in descriptions:
+                    record.update(descriptions[image_id])
+                    record["description_source"] = descriptions[image_id].get("description_source", "external_review")
+                record["semantic_description"] = _visual_fallback_description(record)
+                records.append(record)
+        if records:
+            by_page[page_number] = records
+    return consolidate_visual_inventory(by_page, output_dir)
 
 
 def build_structured_markdown(pages: Sequence[Page], classification: dict[str, Any]) -> str:
@@ -2518,11 +2184,10 @@ def build_structured_markdown(pages: Sequence[Page], classification: dict[str, A
                 filtered.append(visual)
         page.visuals = filtered
     try:
-        markdown = _build_structured_markdown_legacy(pages, classification)
+        markdown = _render_structured_markdown_pages(pages, classification)
     finally:
         for page in pages:
             page.visuals = originals[id(page)]
-    markdown = markdown.replace("### Imagens e elementos visuais (", "### Imagens visuais relevantes (")
     if technical_count:
         markdown = (
             "## Recursos técnicos omitidos dos blocos semânticos\n\n"
@@ -2532,9 +2197,6 @@ def build_structured_markdown(pages: Sequence[Page], classification: dict[str, A
     return markdown
 
 
-# The legal narrative is deliberately separate from the extraction inventory.
-# It gives an AI a source-grounded factual voice without allowing a heuristic
-# parser to manufacture a legal conclusion.
 PROHIBITED_NARRATIVE_PHRASES = (
     "conforme documentação",
     "conforme documentos",
@@ -2599,8 +2261,6 @@ def _narrative_statement_parts(page: Page) -> tuple[str, str, str, list[str], li
         limitations.append("Elementos visuais relevantes devem ser confrontados com o arquivo de imagem e a página renderizada.")
     citation = _narrative_citation(page)
     statement = f"{lead}: “{excerpt}” {citation}."
-    # A future change to a piece label must not silently reintroduce audit
-    # filler into the principal narrative.
     if any(phrase in _fold_legal_text(lead) for phrase in PROHIBITED_NARRATIVE_PHRASES):
         lead = f"A peça identificada como {piece} registra o seguinte conteúdo"
         statement = f"{lead}: “{excerpt}” {citation}."
@@ -2628,24 +2288,30 @@ def build_legal_narrative(
 ) -> dict[str, Any]:
     """Create a source-linked narrative scaffold for an AI/legal reviewer."""
     try:
-        from .corpus_analysis import passages, coverage_errors
+        from .corpus_analysis import coverage_errors, passages
     except ImportError:
-        from corpus_analysis import passages, coverage_errors
+        from corpus_analysis import coverage_errors, passages  # type: ignore
     records = passages(pages)
     pages_by_id = {p.document_id: p for p in pages}
     paragraphs: list[dict[str, Any]] = []
     style_findings: list[dict[str, Any]] = []
-    for index, record in enumerate(records, start=1):
+    for record in records:
         source = record["source"]
         page = pages_by_id[source["document_id"]]
         text = record["text"]
-        # Source quotations remain intact; the host AI writes the final narrative.
         statement = f'“{text}” {_narrative_citation(page)}' if text else f"A página PDF {page.pdf_page} permanece sem conteúdo legível; revisão necessária."
         paragraphs.append({
-            "paragraph_id": record["id"], "page_pdf": page.pdf_page, "nature": record["nature"],
-            "text": statement, "source_excerpt": text, "source": source,
-            "start": record["start"], "end": record["end"], "previous_id": record["previous_id"],
-            "next_id": record["next_id"], "visual_sources": page.visuals or [],
+            "paragraph_id": record["id"],
+            "page_pdf": page.pdf_page,
+            "nature": record["nature"],
+            "text": statement,
+            "source_excerpt": text,
+            "source": source,
+            "start": record["start"],
+            "end": record["end"],
+            "previous_id": record["previous_id"],
+            "next_id": record["next_id"],
+            "visual_sources": page.visuals or [],
             "limitations": ["Passagem integral extraída; síntese e qualificação jurídicas pendentes."],
         })
     extraction_errors = coverage_errors(pages, records)
@@ -2681,7 +2347,7 @@ def build_legal_narrative(
             "status": source.get("verification_status", "pending_current_text_and_case_fit"),
             "must_quote_only_after_verification": True,
         })
-    status = "review_required"  # Extraction is never a completed semantic legal analysis.
+    status = "review_required"
     return {
         "schema_version": "1.0",
         "task": task,
@@ -2767,7 +2433,10 @@ def build_legal_narrative_markdown(narrative: dict[str, Any]) -> str:
         lines.append("| Nenhuma fonte encaminhada | Confirmar jurisdição e área | `pending` |")
     lines.extend(["", "## Lacunas que impedem certeza", ""])
     unresolved = narrative.get("unresolved", [])
-    lines.extend(f"- {item}" for item in unresolved) if unresolved else lines.append("- Nenhuma lacuna automática; a revisão profissional continua necessária.")
+    if unresolved:
+        lines.extend(f"- {item}" for item in unresolved)
+    else:
+        lines.append("- Nenhuma lacuna automática; a revisão profissional continua necessária.")
     lines.extend([
         "",
         "## Regra de conclusão",
@@ -2788,6 +2457,7 @@ def build_audit_report(
     mode: str,
 ) -> str:
     """Legacy filename with a legal narrative body, not an audit inventory."""
+    _ = pieces
     lines = [
         "# ANÁLISE JURÍDICA ESTRUTURADA",
         "",
@@ -2813,7 +2483,10 @@ def build_audit_report(
         for page in pages
         for warning in (page.warnings or [])
     ]
-    lines.extend(f"- {item}" for item in warnings) if warnings else lines.append("- Nenhuma limitação técnica foi registrada; a revisão da fonte original continua necessária.")
+    if warnings:
+        lines.extend(f"- {item}" for item in warnings)
+    else:
+        lines.append("- Nenhuma limitação técnica foi registrada; a revisão da fonte original continua necessária.")
     lines.extend([
         "",
         "## Cobertura da fonte",

@@ -1,0 +1,44 @@
+{
+  "schema_version": "2.0",
+  "synthetic": true,
+  "case_id": "arbitration_annulment_deadline",
+  "source_files": [
+    {
+      "file": "sentenca_arbitral.txt"
+    }
+  ],
+  "expected": {
+    "facts": [
+      {
+        "id": "G-F1",
+        "text_any": [
+          "intimada da decisão final de esclarecimentos arbitrais em 10/01/2025"
+        ],
+        "source": {
+          "file": "sentenca_arbitral.txt",
+          "page": 1,
+          "quote": "intimada da decisão final de esclarecimentos arbitrais em 10/01/2025"
+        },
+        "atoms": {
+          "date": "2025-01-10"
+        }
+      }
+    ],
+    "issues": [
+      {
+        "id": "G-I1",
+        "text_any": [
+          "decadência de 90 dias",
+          "limites da ação anulatória"
+        ],
+        "analysis_status": "qualified"
+      }
+    ],
+    "requests": [],
+    "contradictions": [],
+    "catalog_id": "contestacao",
+    "strategy": {
+      "domain": "arbitragem_mediacao"
+    }
+  }
+}

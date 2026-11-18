@@ -4,14 +4,1020 @@
  "label": "Direito à Saúde (SUS)",
  "guide": "domain_guides/saude_publica.md",
  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
- "polo_labels": {"claimant_theses": "Teses do paciente", "defense_theses": "Teses do ente público"},
+ "polo_labels": {
+  "claimant_theses": "Teses do paciente",
+  "defense_theses": "Teses do ente público"
+ },
  "claims": [
-  {"id": "sus_treatment", "label": "Acesso a tratamento e medicamento pelo SUS", "requirements": ["prescricao", "incorporacao", "alternativas", "ente_responsavel"], "claimant_theses": [{"id": "sus_treatment.c1", "label": "Direito à saúde e assistência terapêutica integral", "authority_ids": ["cf_art196", "l8080_art2", "l8080_art19m"]}, {"id": "sus_treatment.c2", "label": "Requisitos para fornecimento de medicamento — conferir Temas 6 e 1234 do STF", "authority_ids": ["tema_stf_6", "tema_stf_1234"]}], "defense_theses": [{"id": "sus_treatment.d1", "label": "Incorporação regulada pela Conitec e alternativas terapêuticas", "authority_ids": ["l8080_art19q"]}, {"id": "sus_treatment.d2", "label": "Organização e diretrizes do SUS", "authority_ids": ["cf_art198", "l8080_art7"]}], "temporal_marker_ids": [], "typical_requests": ["Fornecimento do tratamento", "Tutela de urgência"], "evidence": ["Laudo e prescrição fundamentados", "Negativa administrativa e alternativas tentadas"], "piece_ids": ["tutela_urgencia_antecedente", "inicial_procedimento_comum", "inicial_juizado", "mandado_seguranca"], "related_claims": ["cons_health_plan"], "limitation": "conferir"},
-  {"id": "sus_unlisted_drug", "label": "Medicamento não incorporado às listas do SUS", "requirements": ["prescricao_fundamentada", "registro_anvisa", "negativa_administrativa", "ineficacia_das_alternativas", "incapacidade_financeira", "ente_e_competencia"], "claimant_theses": [{"id": "sus_unlisted_drug.c1", "label": "Dispensação fora de protocolo quando demonstrados os requisitos fixados pelo STF — conferir as teses dos Temas 6 e 1234", "authority_ids": ["tema_stf_6", "tema_stf_1234", "l8080_art19m", "l8080_art19p"]}, {"id": "sus_unlisted_drug.c2", "label": "Dever comum dos entes de cuidar da saúde e direcionamento do cumprimento ao ente competente", "authority_ids": ["cf_art23", "cf_art196", "tema_stf_793"]}, {"id": "sus_unlisted_drug.c3", "label": "Demora no processo de incorporação além do prazo legal", "authority_ids": ["l8080_art19r", "l8080_art19q"]}], "defense_theses": [{"id": "sus_unlisted_drug.d1", "label": "Existência de alternativa terapêutica incorporada e ausência de evidência científica de alto nível", "authority_ids": ["l8080_art19q", "l8080_art19n"]}, {"id": "sus_unlisted_drug.d2", "label": "Medicamento sem registro na Anvisa ou de uso experimental", "authority_ids": ["l8080_art19t", "tema_stf_500"]}, {"id": "sus_unlisted_drug.d3", "label": "Competência da Justiça Federal e inclusão da União conforme o Tema 1234", "authority_ids": ["tema_stf_1234"]}], "temporal_marker_ids": [], "typical_requests": ["Fornecimento do medicamento pelo ente competente", "Tutela de urgência com prazo e medida de apoio", "Ressarcimento entre entes na via própria"], "evidence": ["Relatório médico circunstanciado com CID, tratamentos já usados e razão da ineficácia", "Negativa administrativa ou protocolo sem resposta", "Registro na Anvisa e parecer da Conitec, se houver", "Comprovantes de renda e orçamento do tratamento"], "piece_ids": ["tutela_urgencia_antecedente", "inicial_procedimento_comum", "inicial_juizado", "mandado_seguranca", "agravo_instrumento"], "related_claims": ["sus_treatment", "sus_procedure_queue"], "limitation": "Prestação continuada: conferir o termo inicial; mandado de segurança em 120 dias do ato (Lei 12.016/2009, art. 23)"},
-  {"id": "sus_procedure_queue", "label": "Cirurgia, exame, leito e fila de regulação", "requirements": ["indicacao_medica", "urgencia_ou_risco", "tempo_de_espera", "regulacao", "ente_responsavel"], "claimant_theses": [{"id": "sus_procedure_queue.c1", "label": "Assistência integral e acesso às linhas de cuidado", "authority_ids": ["cf_art196", "l8080_art7", "l8080_art6"]}, {"id": "sus_procedure_queue.c2", "label": "Urgência com risco de dano irreversível autoriza tutela imediata", "authority_ids": ["cpc_art300", "cpc_art536"]}, {"id": "sus_procedure_queue.c3", "label": "Prioridade legal de criança, adolescente e pessoa idosa", "authority_ids": ["eca_art11", "l10741_art15"]}], "defense_theses": [{"id": "sus_procedure_queue.d1", "label": "Ordem de regulação e isonomia entre os pacientes da fila", "authority_ids": ["cf_art198", "l8080_art7"]}, {"id": "sus_procedure_queue.d2", "label": "Ausência de urgência demonstrada por laudo", "authority_ids": ["cpc_art300"]}], "temporal_marker_ids": [], "typical_requests": ["Realização do procedimento em prazo certo, na rede pública ou privada às expensas do ente", "Multa ou bloqueio de verba como medida de apoio"], "evidence": ["Laudo com classificação de risco e consequências da espera", "Comprovante de inscrição e posição na regulação", "Protocolos e respostas da secretaria de saúde"], "piece_ids": ["tutela_urgencia_antecedente", "inicial_procedimento_comum", "inicial_juizado", "mandado_seguranca", "acao_civil_publica"], "related_claims": ["sus_treatment", "sus_oncology"], "limitation": "Conferir; mandado de segurança em 120 dias do ato"},
-  {"id": "sus_oncology", "label": "Tratamento oncológico e prazo de início", "requirements": ["diagnostico_firmado", "data_do_laudo", "prazo_legal", "unidade_habilitada"], "claimant_theses": [{"id": "sus_oncology.c1", "label": "Primeiro tratamento em até 60 dias do diagnóstico em laudo patológico", "authority_ids": ["l12732_art2"]}, {"id": "sus_oncology.c2", "label": "Integralidade da assistência terapêutica", "authority_ids": ["l8080_art19m", "cf_art196"]}], "defense_theses": [{"id": "sus_oncology.d1", "label": "Prazo contado do laudo e da necessidade terapêutica registrada em prontuário", "authority_ids": ["l12732_art2"]}], "temporal_marker_ids": [], "typical_requests": ["Início imediato do tratamento", "Encaminhamento a unidade habilitada"], "evidence": ["Laudo patológico com data", "Prontuário e registros de agendamento", "Protocolos de regulação"], "piece_ids": ["tutela_urgencia_antecedente", "inicial_procedimento_comum", "mandado_seguranca"], "related_claims": ["sus_procedure_queue"], "limitation": "Conferir"},
-  {"id": "sus_mental_health", "label": "Internação psiquiátrica e tratamento de dependência", "requirements": ["laudo_medico_circunstanciado", "insuficiencia_extra_hospitalar", "modalidade_da_internacao", "comunicacao_ao_mp"], "claimant_theses": [{"id": "sus_mental_health.c1", "label": "Internação compulsória por ordem judicial com laudo circunstanciado", "authority_ids": ["l10216_art6", "l10216_art9"]}, {"id": "sus_mental_health.c2", "label": "Dever do Estado de ofertar tratamento em rede de atenção psicossocial", "authority_ids": ["cf_art196", "l8080_art7"]}], "defense_theses": [{"id": "sus_mental_health.d1", "label": "Internação é excepcional e só cabe quando os recursos extra-hospitalares forem insuficientes", "authority_ids": ["l10216_art4"]}, {"id": "sus_mental_health.d2", "label": "Ausência de laudo médico que caracterize os motivos", "authority_ids": ["l10216_art6"]}], "temporal_marker_ids": [], "typical_requests": ["Internação em estabelecimento adequado", "Tratamento ambulatorial e acompanhamento"], "evidence": ["Laudo médico circunstanciado", "Histórico de tratamentos extra-hospitalares", "Relatórios do CAPS ou da rede de atenção"], "piece_ids": ["inicial_procedimento_comum", "tutela_urgencia_antecedente"], "related_claims": ["sus_treatment"], "limitation": "Conferir"},
-  {"id": "sus_enforcement", "label": "Cumprimento de decisão de saúde: multa, bloqueio e sequestro", "requirements": ["decisao_exequenda", "intimacao_do_ente", "descumprimento", "orcamentos"], "claimant_theses": [{"id": "sus_enforcement.c1", "label": "Medidas de apoio para efetivar a obrigação de fazer, inclusive bloqueio de valores — conferir precedente repetitivo do STJ", "authority_ids": ["cpc_art536", "cpc_art537", "cpc_art497"]}, {"id": "sus_enforcement.c2", "label": "Direcionamento do cumprimento conforme as regras de repartição de competências", "authority_ids": ["tema_stf_793", "cf_art23"]}], "defense_theses": [{"id": "sus_enforcement.d1", "label": "Multa excessiva ou prazo inexequível: modificação do valor e da periodicidade", "authority_ids": ["cpc_art537"]}, {"id": "sus_enforcement.d2", "label": "Cumprimento demonstrado ou impossibilidade material comprovada", "authority_ids": ["cpc_art536"]}], "temporal_marker_ids": [], "typical_requests": ["Bloqueio do valor do tratamento com prestação de contas", "Fixação ou majoração de multa", "Compra direta com três orçamentos"], "evidence": ["Decisão e certidão de intimação", "Receituário atualizado", "Orçamentos e comprovantes de aquisição"], "piece_ids": ["cumprimento_sentenca", "impugnacao_cumprimento", "agravo_instrumento"], "related_claims": ["sus_unlisted_drug", "sus_procedure_queue"], "limitation": "Conferir"},
-  {"id": "sus_disability_home_care", "label": "Atendimento domiciliar, insumos e reabilitação", "requirements": ["prescricao", "necessidade_continua", "plano_terapeutico", "disponibilidade_na_rede"], "claimant_theses": [{"id": "sus_disability_home_care.c1", "label": "Atenção integral à pessoa com deficiência, inclusive órteses, próteses e reabilitação", "authority_ids": ["l13146_art18", "cf_art196"]}, {"id": "sus_disability_home_care.c2", "label": "Assistência terapêutica integral inclui produtos de interesse para a saúde", "authority_ids": ["l8080_art19m", "l8080_art19n"]}], "defense_theses": [{"id": "sus_disability_home_care.d1", "label": "Insumo fora das relações oficiais e existência de substituto fornecido pela rede", "authority_ids": ["l8080_art19p", "l8080_art19q"]}], "temporal_marker_ids": [], "typical_requests": ["Fornecimento contínuo de insumos, dietas e equipamentos", "Atendimento domiciliar multiprofissional"], "evidence": ["Prescrição com quantidade e periodicidade", "Relatório funcional", "Negativa ou ausência de oferta na rede"], "piece_ids": ["inicial_procedimento_comum", "inicial_juizado", "tutela_urgencia_antecedente"], "related_claims": ["sus_treatment"], "limitation": "Conferir"}
+  {
+   "id": "sus_treatment",
+   "label": "Acesso a tratamento e medicamento pelo SUS",
+   "requirements": [
+    "prescricao",
+    "incorporacao",
+    "alternativas",
+    "ente_responsavel"
+   ],
+   "claimant_theses": [
+    {
+     "id": "sus_treatment.c1",
+     "label": "Direito à saúde e assistência terapêutica integral",
+     "authority_ids": [
+      "cf_art196",
+      "l8080_art2",
+      "l8080_art19m"
+     ]
+    },
+    {
+     "id": "sus_treatment.c2",
+     "label": "Requisitos para fornecimento de medicamento — conferir Temas 6 e 1234 do STF",
+     "authority_ids": [
+      "tema_stf_6",
+      "tema_stf_1234"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "sus_treatment.d1",
+     "label": "Incorporação regulada pela Conitec e alternativas terapêuticas",
+     "authority_ids": [
+      "l8080_art19q"
+     ]
+    },
+    {
+     "id": "sus_treatment.d2",
+     "label": "Organização e diretrizes do SUS",
+     "authority_ids": [
+      "cf_art198",
+      "l8080_art7"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "tema_1234_sv60_sv61_sus"
+   ],
+   "typical_requests": [
+    "Fornecimento do tratamento",
+    "Tutela de urgência",
+    "Fornecimento contínuo do medicamento ou tratamento padronizado mediante apresentação periódica de receituário atualizado"
+   ],
+   "evidence": [
+    "Laudo e prescrição fundamentados",
+    "Negativa administrativa e alternativas tentadas",
+    "Comprovante de residência, cartão nacional de saúde (CNS) e consulta às listas RENAME/PCDT"
+   ],
+   "piece_ids": [
+    "tutela_urgencia_antecedente",
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "mandado_seguranca"
+   ],
+   "related_claims": [
+    "cons_health_plan"
+   ],
+   "limitation": "Obrigação continuada vinculada à saúde e à vida não sofre prescrição do fundo de direito enquanto persistir a necessidade clínica (CF, art. 196); pretensão de reembolso de despesas pretéritas prescreve em 5 anos (Decreto 20.910/1932, art. 1º) e mandado de segurança decai em 120 dias do ato (Lei 12.016/2009, art. 23)."
+  },
+  {
+   "id": "sus_unlisted_drug",
+   "label": "Medicamento não incorporado às listas do SUS",
+   "requirements": [
+    "prescricao_fundamentada",
+    "registro_anvisa",
+    "negativa_administrativa",
+    "ineficacia_das_alternativas",
+    "incapacidade_financeira",
+    "ente_e_competencia"
+   ],
+   "claimant_theses": [
+    {
+     "id": "sus_unlisted_drug.c1",
+     "label": "Dispensação fora de protocolo quando demonstrados os requisitos fixados pelo STF — conferir as teses dos Temas 6 e 1234",
+     "authority_ids": [
+      "tema_stf_6",
+      "tema_stf_1234",
+      "l8080_art19m",
+      "l8080_art19p"
+     ]
+    },
+    {
+     "id": "sus_unlisted_drug.c2",
+     "label": "Dever comum dos entes de cuidar da saúde e direcionamento do cumprimento ao ente competente",
+     "authority_ids": [
+      "cf_art23",
+      "cf_art196",
+      "tema_stf_793"
+     ]
+    },
+    {
+     "id": "sus_unlisted_drug.c3",
+     "label": "Demora no processo de incorporação além do prazo legal",
+     "authority_ids": [
+      "l8080_art19r",
+      "l8080_art19q"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "sus_unlisted_drug.d1",
+     "label": "Existência de alternativa terapêutica incorporada e ausência de evidência científica de alto nível",
+     "authority_ids": [
+      "l8080_art19q",
+      "l8080_art19n"
+     ]
+    },
+    {
+     "id": "sus_unlisted_drug.d2",
+     "label": "Medicamento sem registro na Anvisa ou de uso experimental",
+     "authority_ids": [
+      "l8080_art19t",
+      "tema_stf_500"
+     ]
+    },
+    {
+     "id": "sus_unlisted_drug.d3",
+     "label": "Competência da Justiça Federal e inclusão da União conforme o Tema 1234",
+     "authority_ids": [
+      "tema_stf_1234"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "tema_1234_sv60_sv61_sus"
+   ],
+   "typical_requests": [
+    "Fornecimento do medicamento pelo ente competente",
+    "Tutela de urgência com prazo e medida de apoio",
+    "Ressarcimento entre entes na via própria"
+   ],
+   "evidence": [
+    "Relatório médico circunstanciado com CID, tratamentos já usados e razão da ineficácia",
+    "Negativa administrativa ou protocolo sem resposta",
+    "Registro na Anvisa e parecer da Conitec, se houver",
+    "Comprovantes de renda e orçamento do tratamento"
+   ],
+   "piece_ids": [
+    "tutela_urgencia_antecedente",
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "mandado_seguranca",
+    "agravo_instrumento"
+   ],
+   "related_claims": [
+    "sus_treatment",
+    "sus_procedure_queue"
+   ],
+   "limitation": "Prestação continuada de saúde exigível enquanto perdurar a indicação clínica comprovada; reembolso de gastos próprios prescreve em 5 anos (Decreto 20.910/1932, art. 1º) e mandado de segurança decai em 120 dias da negativa administrativa (Lei 12.016/2009, art. 23)."
+  },
+  {
+   "id": "sus_procedure_queue",
+   "label": "Cirurgia, exame, leito e fila de regulação",
+   "requirements": [
+    "indicacao_medica",
+    "urgencia_ou_risco",
+    "tempo_de_espera",
+    "regulacao",
+    "ente_responsavel"
+   ],
+   "claimant_theses": [
+    {
+     "id": "sus_procedure_queue.c1",
+     "label": "Assistência integral e acesso às linhas de cuidado",
+     "authority_ids": [
+      "cf_art196",
+      "l8080_art7",
+      "l8080_art6"
+     ]
+    },
+    {
+     "id": "sus_procedure_queue.c2",
+     "label": "Urgência com risco de dano irreversível autoriza tutela imediata",
+     "authority_ids": [
+      "cpc_art300",
+      "cpc_art536"
+     ]
+    },
+    {
+     "id": "sus_procedure_queue.c3",
+     "label": "Prioridade legal de criança, adolescente e pessoa idosa",
+     "authority_ids": [
+      "eca_art11",
+      "l10741_art15"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "sus_procedure_queue.d1",
+     "label": "Ordem de regulação e isonomia entre os pacientes da fila",
+     "authority_ids": [
+      "cf_art198",
+      "l8080_art7"
+     ]
+    },
+    {
+     "id": "sus_procedure_queue.d2",
+     "label": "Ausência de urgência demonstrada por laudo",
+     "authority_ids": [
+      "cpc_art300"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Realização do procedimento em prazo certo, na rede pública ou privada às expensas do ente",
+    "Multa ou bloqueio de verba como medida de apoio",
+    "Custeio integral na rede privada suplementar caso comprovada inexistência de vaga na rede pública no prazo médico"
+   ],
+   "evidence": [
+    "Laudo com classificação de risco e consequências da espera",
+    "Comprovante de inscrição e posição na regulação",
+    "Protocolos e respostas da secretaria de saúde",
+    "Espelho do sistema SISREG/CROSS indicando data de inserção, código do procedimento e classificação de prioridade"
+   ],
+   "piece_ids": [
+    "tutela_urgencia_antecedente",
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "mandado_seguranca",
+    "acao_civil_publica"
+   ],
+   "related_claims": [
+    "sus_treatment",
+    "sus_oncology"
+   ],
+   "limitation": "Omissão estatal continuada no atendimento médico-cirúrgico não faz perecer o direito fundamental à saúde (CF, art. 196); mandado de segurança em 120 dias do ato omissivo/comissivo impugnado (Lei 12.016/2009, art. 23) e reparação civil em 5 anos (Decreto 20.910/1932, art. 1º)."
+  },
+  {
+   "id": "sus_oncology",
+   "label": "Tratamento oncológico e prazo de início",
+   "requirements": [
+    "diagnostico_firmado",
+    "data_do_laudo",
+    "prazo_legal",
+    "unidade_habilitada"
+   ],
+   "claimant_theses": [
+    {
+     "id": "sus_oncology.c1",
+     "label": "Primeiro tratamento em até 60 dias do diagnóstico em laudo patológico",
+     "authority_ids": [
+      "l12732_art2"
+     ]
+    },
+    {
+     "id": "sus_oncology.c2",
+     "label": "Integralidade da assistência terapêutica",
+     "authority_ids": [
+      "l8080_art19m",
+      "cf_art196"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "sus_oncology.d1",
+     "label": "Prazo contado do laudo e da necessidade terapêutica registrada em prontuário",
+     "authority_ids": [
+      "l12732_art2"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "tema_1234_sv60_sv61_sus"
+   ],
+   "typical_requests": [
+    "Início imediato do tratamento",
+    "Encaminhamento a unidade habilitada",
+    "Fornecimento imediato de quimioterapia, radioterapia ou cirurgia oncológica em CACON/UNACON ou rede credenciada"
+   ],
+   "evidence": [
+    "Laudo patológico com data",
+    "Prontuário e registros de agendamento",
+    "Protocolos de regulação",
+    "Exame anatomopatológico/biópsia datado, estadiamento clínico e prescrição do oncologista assistente"
+   ],
+   "piece_ids": [
+    "tutela_urgencia_antecedente",
+    "inicial_procedimento_comum",
+    "mandado_seguranca"
+   ],
+   "related_claims": [
+    "sus_procedure_queue"
+   ],
+   "limitation": "Prazo legal máximo de 60 dias a partir do diagnóstico firmado em laudo patológico para início do primeiro tratamento no SUS (Lei 12.732/2012, art. 2º); mandado de segurança em 120 dias e prescrição quinquenal para ressarcimento (Decreto 20.910/1932, art. 1º)."
+  },
+  {
+   "id": "sus_mental_health",
+   "label": "Internação psiquiátrica e tratamento de dependência",
+   "requirements": [
+    "laudo_medico_circunstanciado",
+    "insuficiencia_extra_hospitalar",
+    "modalidade_da_internacao",
+    "comunicacao_ao_mp"
+   ],
+   "claimant_theses": [
+    {
+     "id": "sus_mental_health.c1",
+     "label": "Internação compulsória por ordem judicial com laudo circunstanciado",
+     "authority_ids": [
+      "l10216_art6",
+      "l10216_art9"
+     ]
+    },
+    {
+     "id": "sus_mental_health.c2",
+     "label": "Dever do Estado de ofertar tratamento em rede de atenção psicossocial",
+     "authority_ids": [
+      "cf_art196",
+      "l8080_art7"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "sus_mental_health.d1",
+     "label": "Internação é excepcional e só cabe quando os recursos extra-hospitalares forem insuficientes",
+     "authority_ids": [
+      "l10216_art4"
+     ]
+    },
+    {
+     "id": "sus_mental_health.d2",
+     "label": "Ausência de laudo médico que caracterize os motivos",
+     "authority_ids": [
+      "l10216_art6"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Internação em estabelecimento adequado",
+    "Tratamento ambulatorial e acompanhamento",
+    "Comunicação obrigatória ao Ministério Público Estadual em 72 horas e reavaliação médica periódica do plano terapêutico"
+   ],
+   "evidence": [
+    "Laudo médico circunstanciado",
+    "Histórico de tratamentos extra-hospitalares",
+    "Relatórios do CAPS ou da rede de atenção",
+    "Plano Terapêutico Singular (PTS) e atestado de esgotamento dos dispositivos extra-hospitalares da RAPS"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [
+    "sus_treatment"
+   ],
+   "limitation": "Tutela de urgência protetiva exigível enquanto persistir o quadro agudo atestado por médico (Lei 10.216/2001, arts. 6º e 9º), vedada internação por prazo indeterminado sem revisão periódica; pretensão indenizatória em 5 anos (Decreto 20.910/1932, art. 1º)."
+  },
+  {
+   "id": "sus_enforcement",
+   "label": "Cumprimento de decisão de saúde: multa, bloqueio e sequestro",
+   "requirements": [
+    "decisao_exequenda",
+    "intimacao_do_ente",
+    "descumprimento",
+    "orcamentos"
+   ],
+   "claimant_theses": [
+    {
+     "id": "sus_enforcement.c1",
+     "label": "Medidas de apoio para efetivar a obrigação de fazer, inclusive bloqueio de valores — conferir precedente repetitivo do STJ",
+     "authority_ids": [
+      "cpc_art536",
+      "cpc_art537",
+      "cpc_art497"
+     ]
+    },
+    {
+     "id": "sus_enforcement.c2",
+     "label": "Direcionamento do cumprimento conforme as regras de repartição de competências",
+     "authority_ids": [
+      "tema_stf_793",
+      "cf_art23"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "sus_enforcement.d1",
+     "label": "Multa excessiva ou prazo inexequível: modificação do valor e da periodicidade",
+     "authority_ids": [
+      "cpc_art537"
+     ]
+    },
+    {
+     "id": "sus_enforcement.d2",
+     "label": "Cumprimento demonstrado ou impossibilidade material comprovada",
+     "authority_ids": [
+      "cpc_art536"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "tema_1234_sv60_sv61_sus",
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Bloqueio do valor do tratamento com prestação de contas",
+    "Fixação ou majoração de multa",
+    "Compra direta com três orçamentos"
+   ],
+   "evidence": [
+    "Decisão e certidão de intimação",
+    "Receituário atualizado",
+    "Orçamentos e comprovantes de aquisição",
+    "Extrato da subconta judicial e notas fiscais nominais para prestação de contas dos valores sequestrados"
+   ],
+   "piece_ids": [
+    "cumprimento_sentenca",
+    "impugnacao_cumprimento",
+    "agravo_instrumento"
+   ],
+   "related_claims": [
+    "sus_unlisted_drug",
+    "sus_procedure_queue"
+   ],
+   "limitation": "Medidas executivas de apoio (CPC, arts. 536 e 537; Tema Repetitivo 84 do STJ) são exigíveis imediatamente após o escoamento do prazo assinado na tutela; impugnação da Fazenda ao cumprimento definitivo em 30 dias úteis (CPC, art. 535) e prescrição quinquenal da pretensão executiva contra a Fazenda (Súmula 150 do STF)."
+  },
+  {
+   "id": "sus_disability_home_care",
+   "label": "Atendimento domiciliar, insumos e reabilitação",
+   "requirements": [
+    "prescricao",
+    "necessidade_continua",
+    "plano_terapeutico",
+    "disponibilidade_na_rede"
+   ],
+   "claimant_theses": [
+    {
+     "id": "sus_disability_home_care.c1",
+     "label": "Atenção integral à pessoa com deficiência, inclusive órteses, próteses e reabilitação",
+     "authority_ids": [
+      "l13146_art18",
+      "cf_art196"
+     ]
+    },
+    {
+     "id": "sus_disability_home_care.c2",
+     "label": "Assistência terapêutica integral inclui produtos de interesse para a saúde",
+     "authority_ids": [
+      "l8080_art19m",
+      "l8080_art19n"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "sus_disability_home_care.d1",
+     "label": "Insumo fora das relações oficiais e existência de substituto fornecido pela rede",
+     "authority_ids": [
+      "l8080_art19p",
+      "l8080_art19q"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "tema_1234_sv60_sv61_sus"
+   ],
+   "typical_requests": [
+    "Fornecimento contínuo de insumos, dietas e equipamentos",
+    "Atendimento domiciliar multiprofissional",
+    "Entrega mensal de fraldas, sondas, dietas enterais e insumos respiratórios com quantidade especificada"
+   ],
+   "evidence": [
+    "Prescrição com quantidade e periodicidade",
+    "Relatório funcional",
+    "Negativa ou ausência de oferta na rede",
+    "Orçamentos de insumos e comprovantes de hipossuficiência financeira do núcleo familiar"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [
+    "sus_treatment"
+   ],
+   "limitation": "Prestação assistencial de trato sucessivo exigível enquanto perdurar o quadro incapacitante (CF, art. 196; Lei 13.146/2015, art. 18); parcelas de ressarcimento prescrevem em 5 anos (Decreto 20.910/1932, art. 1º)."
+  },
+  {
+   "id": "sus_tema1234_sv60_sv61",
+   "label": "Medicamento não incorporado pós-Tema 1234 e Súmulas Vinculantes 60 e 61 do STF",
+   "requirements": [
+    "registro_anvisa_indicacao_bula",
+    "custo_anual_210_sm",
+    "negativa_administrativa_previa",
+    "evidencia_cientifica_alto_nivel",
+    "ineficacia_alternativas_sus",
+    "hipossuficiencia"
+   ],
+   "claimant_theses": [
+    {
+     "id": "sus_tema1234_sv60_sv61.c1",
+     "label": "Concessão judicial excepcional de medicamento registrado na ANVISA e não incorporado ao SUS quando comprovados cumulativamente todos os requisitos das Súmulas Vinculantes 60 e 61 e dos Temas 6 e 1234 do STF, apoiada em ensaios clínicos randomizados ou revisão sistemática/meta-análise",
+     "authority_ids": [
+      "sv_60",
+      "sv_61",
+      "tema_stf_1234",
+      "tema_stf_6"
+     ]
+    },
+    {
+     "id": "sus_tema1234_sv60_sv61.c2",
+     "label": "Competência da Justiça Federal com inclusão obrigatória da União quando o custo anual do tratamento não incorporado igualar ou superar 210 salários mínimos, vedada extinção sem remessa ao juízo competente",
+     "authority_ids": [
+      "sv_60",
+      "tema_stf_1234",
+      "cf_art23"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "sus_tema1234_sv60_sv61.d1",
+     "label": "Deferência técnica à deliberação negativa da Conitec e vedação de concessão fundada apenas em relato isolado do médico prescritor sem evidência científica de alto nível (SV 61 e Tema 6 do STF)",
+     "authority_ids": [
+      "sv_61",
+      "tema_stf_6",
+      "l8080_art19q",
+      "tema_stj_106"
+     ]
+    },
+    {
+     "id": "sus_tema1234_sv60_sv61.d2",
+     "label": "Limitação do valor de aquisição judicial aos tetos regulatórios da CMED (PMVG/CAP) e observância das regras de ressarcimento interfederativo fixadas no Tema 1234",
+     "authority_ids": [
+      "sv_60",
+      "tema_stf_1234",
+      "l8080_art19t"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "tema_1234_sv60_sv61_sus"
+   ],
+   "typical_requests": [
+    "Fixação ou declinação da competência conforme o piso anual de 210 salários mínimos da Súmula Vinculante 60 do STF",
+    "Consulta prévia ao NATJUS e dispensação do fármaco com observância do desconto CAP/PMVG da CMED",
+    "Ressarcimento interfederativo automático via plataforma nacional conforme percentuais do Tema 1234 do STF"
+   ],
+   "evidence": [
+    "Laudo médico circunstanciado preenchido conforme os quesitos das SVs 60/61 e nota técnica do NATJUS/e-NatJus",
+    "Estudos científicos de alto nível (ensaios clínicos randomizados, revisão sistemática ou meta-análise) e relatório da Conitec",
+    "Certidão de registro ativo na ANVISA para a indicação clínica pleiteada e cálculo anual do custo pela tabela CMED",
+    "Negativa administrativa formal e comprovantes de renda e patrimônio familiar"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "tutela_urgencia_antecedente",
+    "contestacao",
+    "reclamacao_constitucional"
+   ],
+   "related_claims": [
+    "sus_unlisted_drug",
+    "sus_treatment",
+    "const_binding_precedent"
+   ],
+   "limitation": "Enquanto persistir a necessidade clínica atual, não há perecimento do fundo de direito à saúde; reclamação constitucional por violação às SVs 60 e 61 cabe antes do trânsito em julgado da decisão reclamada (CPC, art. 988, § 5º, I)."
+  },
+  {
+   "id": "sus_oncology_60days_high_cost",
+   "label": "Oncologia no SUS: prazo legal de 60 dias, CACON/UNACON e antineoplásicos",
+   "requirements": [
+    "laudo_anatomopatologico",
+    "transcurso_60_dias",
+    "habilitacao_cacon_unacon",
+    "financiamento_apac_ou_compra_centralizada"
+   ],
+   "claimant_theses": [
+    {
+     "id": "sus_oncology_60days_high_cost.c1",
+     "label": "Direito subjetivo do paciente com neoplasia maligna a iniciar o primeiro tratamento cirúrgico, radioterápico ou quimioterápico no prazo máximo de 60 dias da assinatura do laudo patológico",
+     "authority_ids": [
+      "l12732_art2",
+      "cf_art196",
+      "l8080_art19m"
+     ]
+    },
+    {
+     "id": "sus_oncology_60days_high_cost.c2",
+     "label": "Responsabilidade solidária e direcionamento do custeio federal/estadual em assistência oncológica de alta complexidade (Tema 793 e Tema 1234 do STF)",
+     "authority_ids": [
+      "tema_stf_793",
+      "tema_stf_1234",
+      "sv_60"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "sus_oncology_60days_high_cost.d1",
+     "label": "Na oncologia do SUS inexiste lista fechada única de quimioterápicos, cabendo aos CACONs/UNACONs padronizar e fornecer mediante ressarcimento via APAC, salvo medicamento não incorporado de alto custo regido pelo Tema 1234",
+     "authority_ids": [
+      "l8080_art19m",
+      "tema_stf_1234",
+      "sv_60"
+     ]
+    },
+    {
+     "id": "sus_oncology_60days_high_cost.d2",
+     "label": "Exigência de evidência científica robusta de ganho de sobrevida global ou livre de progressão quando pleiteado imunoterápico ou terapia-alvo fora das Diretrizes Diagnósticas e Terapêuticas (DDT)",
+     "authority_ids": [
+      "sv_61",
+      "tema_stf_6",
+      "l8080_art19q"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "tema_1234_sv60_sv61_sus"
+   ],
+   "typical_requests": [
+    "Determinação de início imediato da cirurgia, radioterapia ou protocolo antineoplásico em até 5 dias sob pena de bloqueio",
+    "Fornecimento contínuo dos ciclos de imunoterapia ou terapia-alvo conforme resposta clínica oncológica",
+    "Inclusão da União no polo passivo nas hipóteses de competência federal da SV 60 e Tema 1234 do STF"
+   ],
+   "evidence": [
+    "Laudo anatomopatológico e imuno-histoquímico com data de emissão e CID-10 oncológico",
+    "Relatório do oncologista com estadiamento TNM, performance status (ECOG) e justificativa frente às DDTs do Ministério da Saúde",
+    "Comprovante de inserção no sistema de regulação oncológica e parecer técnico do NATJUS",
+    "Orçamento pelo Preço Máximo de Venda ao Governo (PMVG) com alíquota zero/CAP quando aplicável"
+   ],
+   "piece_ids": [
+    "tutela_urgencia_antecedente",
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "mandado_seguranca",
+    "agravo_instrumento"
+   ],
+   "related_claims": [
+    "sus_oncology",
+    "sus_tema1234_sv60_sv61"
+   ],
+   "limitation": "Direito exigível imediatamente após o decurso dos 60 dias do art. 2º da Lei 12.732/2012 (ou antes, em urgência clínica aguda); mandado de segurança em 120 dias e reembolso em 5 anos (Decreto 20.910/1932, art. 1º)."
+  },
+  {
+   "id": "sus_icu_bed_zero_vacancy",
+   "label": "Internação de urgência em leito de UTI, vaga zero e rede privada suplementar",
+   "requirements": [
+    "risco_iminente_morte_ou_sequela",
+    "indisponibilidade_rede_publica",
+    "regulacao_central_leitos",
+    "transferencia_segura"
+   ],
+   "claimant_theses": [
+    {
+     "id": "sus_icu_bed_zero_vacancy.c1",
+     "label": "Diante de risco iminente de morte e indisponibilidade comprovada de leito de UTI na rede pública ou conveniada, impõe-se ao Poder Público custear imediatamente a internação em hospital privado até surgir vaga pública segura",
+     "authority_ids": [
+      "cf_art196",
+      "l8080_art2",
+      "l8080_art7",
+      "cpc_art300"
+     ]
+    },
+    {
+     "id": "sus_icu_bed_zero_vacancy.c2",
+     "label": "Admissibilidade de sequestro/bloqueio direto de verbas públicas para pagamento de diárias hospitalares privadas diante de recalcitrância estatal (CPC, art. 536; Tema 84 do STJ)",
+     "authority_ids": [
+      "cpc_art536",
+      "tema_stj_84"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "sus_icu_bed_zero_vacancy.d1",
+     "label": "Remuneração de hospital privado requisitado judicialmente limitada à tabela SUS ou valores de referência auditados e transferência imediata tão logo disponibilizado leito público compatível com estabilidade clínica",
+     "authority_ids": [
+      "cf_art198",
+      "cf_art199",
+      "l8080_art7"
+     ]
+    },
+    {
+     "id": "sus_icu_bed_zero_vacancy.d2",
+     "label": "Observância da regulação médica de urgência (SAMU/Central de Leitos) para evitar preterição de pacientes em estado clínico ainda mais grave",
+     "authority_ids": [
+      "cf_art198",
+      "l8080_art7"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Tutela de urgência em regime de plantão judiciário para transferência imediata a leito de UTI adulto/pediátrico/neonatal com transporte UTI móvel",
+    "Autorização subsidiária de internação em hospital privado às expensas dos réus, com bloqueio de valores em caso de descumprimento em horas",
+    "Manutenção da internação privada até alta da terapia intensiva ou disponibilização de leito público com transporte seguro atestado pelo médico assistente"
+   ],
+   "evidence": [
+    "Boletim médico de emergência atualizado com sinais vitais, suporte ventilatório/vasoativo e risco iminente de óbito",
+    "Número da ficha/senha na Central Estadual ou Municipal de Regulação de Leitos (SISREG/CROSS)",
+    "Informação da unidade de pronto atendimento (UPA/hospital de origem) sobre indisponibilidade de vaga na rede SUS"
+   ],
+   "piece_ids": [
+    "tutela_urgencia_antecedente",
+    "inicial_procedimento_comum",
+    "mandado_seguranca",
+    "cumprimento_sentenca"
+   ],
+   "related_claims": [
+    "sus_procedure_queue",
+    "sus_enforcement"
+   ],
+   "limitation": "Tutela de urgência vital sem prazo preclusivo enquanto durar a emergência médica; pretensão de cobrança/ressarcimento hospitalar em 5 anos contra a Fazenda Pública (Decreto 20.910/1932, art. 1º)."
+  },
+  {
+   "id": "sus_home_care_multidisciplinary",
+   "label": "Internação domiciliar (home care) pelo SUS, suporte ventilatório e enfermagem",
+   "requirements": [
+    "indicacao_medica_expressa",
+    "concordancia_familiar",
+    "diferenciacao_cuidador_enfermagem",
+    "insuficiencia_sad_melhor_em_casa"
+   ],
+   "claimant_theses": [
+    {
+     "id": "sus_home_care_multidisciplinary.c1",
+     "label": "Previsão expressa de atendimento e internação domiciliar no SUS por equipe multidisciplinar e fornecimento de equipamentos/insumos quando indicado para desospitalização segura (Lei 8.080/1990, art. 19-I)",
+     "authority_ids": [
+      "l8080_art19i",
+      "cf_art196",
+      "l13146_art18"
+     ]
+    },
+    {
+     "id": "sus_home_care_multidisciplinary.c2",
+     "label": "Necessidade técnica de enfermagem contínua (12h ou 24h) em pacientes traqueostomizados, dependentes de ventilação mecânica ou procedimentos privativos de saúde",
+     "authority_ids": [
+      "l8080_art19i",
+      "cf_art196"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "sus_home_care_multidisciplinary.d1",
+     "label": "Distinção técnica entre internação hospitalar domiciliar complexa (nursing care) e atividades cotidianas de cuidador leigo (higiene, alimentação oral e companhia), cujo dever primário incumbe à família (CF, arts. 229 e 230)",
+     "authority_ids": [
+      "l8080_art19i",
+      "cf_art198"
+     ]
+    },
+    {
+     "id": "sus_home_care_multidisciplinary.d2",
+     "label": "Suficiência das visitas periódicas do Serviço de Atenção Domiciliar (Programa Melhor em Casa) sem necessidade de posto exclusivo de enfermagem 24 horas",
+     "authority_ids": [
+      "l8080_art19i",
+      "l8080_art7"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Implantação de internação domiciliar (home care) com equipamentos respiratórios, cama hospitalar e visitas multiprofissionais",
+    "Disponibilização de técnico de enfermagem pelo período diário estritamente exigido pela complexidade clínica apurada em perícia",
+    "Fornecimento mensal regular dos insumos descartáveis, oxigenoterapia e dieta enteral prescritos"
+   ],
+   "evidence": [
+    "Relatório médico hospitalar de desospitalização pontuando escore de complexidade (ex.: NEAD/ABEMID) e procedimentos invasivos",
+    "Avaliação da equipe do Serviço de Atenção Domiciliar (SAD/EMAD) do Município ou Estado",
+    "Estudo social da residência (condições sanitárias, rede elétrica e presença de familiar responsável)",
+    "Três orçamentos de empresas especializadas em atenção domiciliar para eventual bloqueio executivo"
+   ],
+   "piece_ids": [
+    "tutela_urgencia_antecedente",
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "impugnacao_laudo"
+   ],
+   "related_claims": [
+    "sus_disability_home_care",
+    "sus_enforcement"
+   ],
+   "limitation": "Obrigação continuada exigível enquanto perdurar o quadro clínico que demanda suporte domiciliar (Lei 8.080/1990, art. 19-I); reembolso de despesas pretéritas prescreve em 5 anos (Decreto 20.910/1932, art. 1º)."
+  },
+  {
+   "id": "sus_medical_error_public_hospital",
+   "label": "Erro médico e falha assistencial em hospital público ou conveniado ao SUS (Tema 940 STF)",
+   "requirements": [
+    "atendimento_pelo_sus",
+    "conduta_comissiva_ou_omissiva",
+    "dano_e_nexo_causal",
+    "ilegitimidade_agente_publico"
+   ],
+   "claimant_theses": [
+    {
+     "id": "sus_medical_error_public_hospital.c1",
+     "label": "Responsabilidade civil objetiva do ente público e dos hospitais privados filantrópicos ou conveniados quanto aos atendimentos custeados pelo SUS (CF, art. 37, § 6º), inclusive por falha estrutural, infecção hospitalar evitável ou demora obstétrica",
+     "authority_ids": [
+      "cf_art37",
+      "cc_art927",
+      "cc_art949",
+      "cc_art950"
+     ]
+    },
+    {
+     "id": "sus_medical_error_public_hospital.c2",
+     "label": "Cabimento cumulativo de danos materiais, pensão vitalícia por redução da capacidade laborativa ou morte e danos morais e estéticos (Súmula 387 do STJ)",
+     "authority_ids": [
+      "stj_sumula_387",
+      "cc_art948",
+      "cc_art950"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "sus_medical_error_public_hospital.d1",
+     "label": "Ilegitimidade passiva ad causam do médico ou profissional de saúde agente público na ação indenizatória movida pelo paciente, respondendo perante o Estado apenas em ação regressiva nos casos de dolo ou culpa (Tema 940 do STF)",
+     "authority_ids": [
+      "tema_stf_940",
+      "cf_art37"
+     ]
+    },
+    {
+     "id": "sus_medical_error_public_hospital.d2",
+     "label": "Inexistência de nexo causal quando o desfecho decorreu da evolução natural e iatrogênica inevitável da patologia de base, observados todos os protocolos clínicos vigentes",
+     "authority_ids": [
+      "cf_art37",
+      "cc_art393"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Condenação do ente público e/ou da entidade hospitalar conveniada ao pagamento de danos materiais, morais e estéticos",
+    "Pensão mensal civil às vítimas incapacitadas ou aos dependentes do falecido até a expectativa de sobrevida",
+    "Reconhecimento de preliminar de ilegitimidade passiva da pessoa física do médico público nos termos do Tema 940 do STF"
+   ],
+   "evidence": [
+    "Prontuário médico-hospitalar integral (evolução médica, prescrições, partograma, ficha anestésica e enfermagem)",
+    "Laudo necroscópico do IML ou perícia médica judicial com quesitos específicos de nexo e protocolos clínicos",
+    "Sindicância hospitalar, parecer de comissão de óbito/infecção hospitalar e apuração ético-profissional no CRM",
+    "Comprovantes de renda da vítima, despesas funerárias/tratamentos e certidões de dependência"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "contestacao",
+    "impugnacao_laudo",
+    "apelacao_civel"
+   ],
+   "related_claims": [
+    "adm_state_liability",
+    "civ_medical"
+   ],
+   "limitation": "Prescrição quinquenal contra a Fazenda Pública e pessoas jurídicas prestadoras de serviço público de saúde (Decreto 20.910/1932, art. 1º; Lei 9.494/1997, art. 1º-C), contada da ciência inequívoca da lesão e de sua extensão, não correndo contra absolutamente incapazes (CC, art. 198, I)."
+  },
+  {
+   "id": "sus_tfd_out_of_domicile",
+   "label": "Tratamento Fora de Domicílio (TFD): transporte sanitário, passagens e ajuda de custo",
+   "requirements": [
+    "esgotamento_meios_no_municipio",
+    "referenciamento_interestadual_ou_intermunicipal",
+    "necessidade_acompanhante",
+    "distancia_minima"
+   ],
+   "claimant_theses": [
+    {
+     "id": "sus_tfd_out_of_domicile.c1",
+     "label": "Integralidade da assistência no SUS abrange transporte sanitário adequado (aéreo ou terrestre), diárias de alimentação e pernoite para paciente e acompanhante quando esgotados os meios terapêuticos no domicílio",
+     "authority_ids": [
+      "cf_art196",
+      "l8080_art6",
+      "l8080_art7"
+     ]
+    },
+    {
+     "id": "sus_tfd_out_of_domicile.c2",
+     "label": "Prioridade absoluta de transporte e permanência de acompanhante para crianças, adolescentes, idosos e pessoas com deficiência em centros de referência",
+     "authority_ids": [
+      "eca_art11",
+      "l10741_art15",
+      "l13146_art18"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "sus_tfd_out_of_domicile.d1",
+     "label": "O TFD pressupõe prévio agendamento confirmado em unidade pública/conveniada do SUS de referência e inexistência de unidade habilitada no próprio Município ou região de saúde",
+     "authority_ids": [
+      "cf_art198",
+      "l8080_art7"
+     ]
+    },
+    {
+     "id": "sus_tfd_out_of_domicile.d2",
+     "label": "Descabimento de custeio de deslocamento para clínicas puramente particulares escolhidas unilateralmente pelo paciente sem regulação pública",
+     "authority_ids": [
+      "cf_art198",
+      "l8080_art7"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Fornecimento de passagens aéreas ou transporte sanitário adaptado de ida e volta para o paciente e seu acompanhante",
+    "Pagamento tempestivo de ajuda de custo para alimentação e hospedagem conforme as consultas e procedimentos agendados",
+    "Reembolso de despesas de deslocamento emergencial suportadas pela família diante da omissão administrativa"
+   ],
+   "evidence": [
+    "Laudo padrão de TFD assinado pelo médico assistente da rede pública justificando a impossibilidade de tratamento local e a necessidade de acompanhante",
+    "Comprovante de agendamento/aceite da consulta, exame ou cirurgia no centro de referência do SUS de destino",
+    "Protocolo administrativo na Secretaria de Saúde e notas fiscais/bilhetes de gastos já efetuados"
+   ],
+   "piece_ids": [
+    "tutela_urgencia_antecedente",
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "mandado_seguranca"
+   ],
+   "related_claims": [
+    "sus_procedure_queue",
+    "sus_treatment"
+   ],
+   "limitation": "Direito exigível a cada etapa agendada do tratamento continuado; reembolso de despesas pretéritas prescreve em 5 anos (Decreto 20.910/1932, art. 1º) e mandado de segurança decai em 120 dias da negativa."
+  },
+  {
+   "id": "sus_sanitary_surveillance_anvisa",
+   "label": "Vigilância sanitária, autuação administrativa, interdição e registro na ANVISA",
+   "requirements": [
+    "competencia_snvs",
+    "tipicidade_sanitaria",
+    "auto_infracao_interdicao",
+    "prazo_legal_analise_anvisa"
+   ],
+   "claimant_theses": [
+    {
+     "id": "sus_sanitary_surveillance_anvisa.c1",
+     "label": "Anulação de auto de infração ou interdição sanitária desprovida de motivação técnica concreta, colheita regular de contraprova ou observância do contraditório (Lei 6.437/1977)",
+     "authority_ids": [
+      "l6437_art10",
+      "l9784_art2",
+      "l9784_art50"
+     ]
+    },
+    {
+     "id": "sus_sanitary_surveillance_anvisa.c2",
+     "label": "Ordem judicial para conclusão de análise de registro sanitário, AFE ou liberação de carga importada quando ultrapassados injustificadamente os prazos legais pela ANVISA",
+     "authority_ids": [
+      "l9782_art7",
+      "l9784_art49",
+      "cf_art5"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "sus_sanitary_surveillance_anvisa.d1",
+     "label": "Legítimo exercício do poder de polícia sanitário preventivo (autoexecutoriedade da interdição cautelar diante de risco iminente à saúde pública) e deferência técnica às exigências regulatórias da ANVISA",
+     "authority_ids": [
+      "l9782_art7",
+      "l6437_art10",
+      "cf_art196"
+     ]
+    },
+    {
+     "id": "sus_sanitary_surveillance_anvisa.d2",
+     "label": "Vedação de comercialização ou dispensação de produtos sujeitos à vigilância sanitária sem prévio registro ou autorização legal (Tema 500 do STF)",
+     "authority_ids": [
+      "l8080_art19t",
+      "tema_stf_500",
+      "l9782_art7"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13655_lindb"
+   ],
+   "typical_requests": [
+    "Determinação em mandado de segurança para apreciação conclusiva de pedido de registro, renovação ou licença de importação em prazo razoável",
+    "Anulação de auto de infração sanitária ou redução proporcional da multa aplicada e levantamento de interdição cautelar",
+    "Realização de perícia de contraprova em lote apreendido"
+   ],
+   "evidence": [
+    "Auto de infração sanitária, termo de interdição/apreensão e laudo laboratorial fiscal",
+    "Dossiê técnico protocolado perante a ANVISA ou Vigilância Sanitária local com comprovante de decurso do prazo legal",
+    "Licenças sanitárias, Autorização de Funcionamento de Empresa (AFE) e manuais de boas práticas de fabricação"
+   ],
+   "piece_ids": [
+    "mandado_seguranca",
+    "recurso_administrativo",
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [
+    "adm_act_review",
+    "adm_silence_delay"
+   ],
+   "limitation": "Defesa administrativa sanitária em 15 dias da notificação (Lei 6.437/1977, art. 22); prescrição da ação punitiva da Administração Federal em 5 anos e intercorrente em 3 anos (Lei 9.873/1999, art. 1º); mandado de segurança em 120 dias."
+  }
  ]
 }

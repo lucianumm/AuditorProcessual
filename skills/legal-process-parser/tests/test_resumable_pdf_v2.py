@@ -10,10 +10,16 @@ from unittest.mock import patch
 SKILL_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(SKILL_ROOT))
 
+try:
+    import pypdf
+except ImportError:
+    pypdf = None
+
 from scripts import resumable_pdf  # noqa: E402
 
 
 class ResumablePdfTests(unittest.TestCase):
+    @unittest.skipIf(pypdf is None, "pypdf opcional não instalado")
     def test_text_checkpoint_is_bound_to_pdf_bytes_and_corrupt_cache_is_retried(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -48,6 +54,7 @@ class ResumablePdfTests(unittest.TestCase):
                 self.assertEqual(calls[-1], "Segundo texto")
                 self.assertEqual(len(calls), 3)
 
+    @unittest.skipIf(pypdf is None, "pypdf opcional não instalado")
     def test_failed_ocr_preserves_native_text_and_retry_adds_separate_layer(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

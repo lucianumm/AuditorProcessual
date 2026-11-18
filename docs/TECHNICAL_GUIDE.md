@@ -1,5 +1,7 @@
 # Guia técnico de extração, revisão e compatibilidade
 
+Na **v1.0.0**, o AuditorProcessual consolida **29 ramos especialistas (123 pretensões trabalhistas e 483 nos outros 28 ramos, somando 606 pretensões)**, ingestão nativa de carimbos e documentos de **PJe, eproc, e-SAJ, PROJUDI e SEI/NUP** (`court_systems.py` e `cnj_classifier.py`), suporte seguro a `.xlsx` (com datas seriais), `.odt`, `.ods`, `.rtf`, `.eml`, `.zip`, `.p7s` e mídias (`document_formats.py`), pseudonimização reversível LGPD e auditoria conforme a Res. CNJ 615/2025 (`privacy_redactor.py`), seis novos motores determinísticos (`deadline_calculator.py`, `civil_monetary_engine.py`, `social_security_calc.py`, `penal_dosimetry.py`, `limitation_checker.py`, `datajud_lookup.py`), servidor MCP JSON-RPC 2.0 (`mcp_server.py`), exportador forense `.docx` (`docx_exporter.py`) e busca BM25 com sinônimos coloquiais (`claim_search.py`). Veja o plano arquitetural em [ROADMAP.md](../ROADMAP.md).
+
 Na v0.23.0, os catálogos foram ampliados para 123 pretensões trabalhistas e 257 nos
 demais ramos, e cada autoridade nova passou por `scripts/catalog_intake.py`: a norma é
 resolvida nos dados abertos do Senado, o texto é capturado no normas.leg.br com recibo e o
@@ -74,7 +76,7 @@ Skill e pipeline local para transformar autos judiciais ou administrativos em um
 
 ## O que está pronto
 
-Versão **0.23.0**: catálogos ampliados com conferência de assunto no texto oficial, precedentes lidos nos portais e busca por fatos. Na 0.22.0: rota oficial alternativa de legislação (normas.leg.br), catálogos de 19 ramos, classificador com número CNJ e catálogo trabalhista aprofundado. Na 0.21.0: conferência estrutural de citações em fonte oficial (dispositivo,
+Versão **1.0.0**: 29 ramos especialistas (606 pretensões), motores determinísticos multirramo, ingestão PJe/eproc/e-SAJ/PROJUDI/SEI, multiformatos, LGPD/CNJ 615/2025, servidor MCP e exportador `.docx`. Na 0.23.0: catálogos ampliados com conferência de assunto no texto oficial, precedentes lidos nos portais e busca por fatos. Na 0.22.0: rota oficial alternativa de legislação (normas.leg.br), catálogos de 19 ramos, classificador com número CNJ e catálogo trabalhista aprofundado. Na 0.21.0: conferência estrutural de citações em fonte oficial (dispositivo,
 trecho, marcas de redação, situação de precedente), registro de portais por via de
 acesso, catálogo trabalhista v2 com teses dos dois polos e autoridades candidatas,
 além do atendimento com poucos documentos, desenvolvimento por pretensão,

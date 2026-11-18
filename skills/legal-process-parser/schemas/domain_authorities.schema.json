@@ -71,7 +71,17 @@
               "ilo_convention",
               "tema_tst",
               "sumula_stj",
-              "tema_stj"
+              "tema_stj",
+              "iac_stj",
+              "sumula_tnu",
+              "tema_tnu",
+              "sumula_tse",
+              "sumula_carf",
+              "sumula_tcu",
+              "resolucao_cnj",
+              "provimento_cnj",
+              "enunciado_cjf",
+              "enunciado_fonaje"
             ]
           },
           "label": {

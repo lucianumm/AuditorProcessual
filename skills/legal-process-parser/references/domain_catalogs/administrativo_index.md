@@ -31,3 +31,8 @@ Guia: `domain_guides/administrativo.md` · catálogo: `domain_catalogs/administr
 | `adm_information_access` | Acesso à informação | 1/1 |
 | `adm_accounts_defense` | Defesa em tomada de contas e prescrição | 2/1 |
 | `adm_silence_delay` | Silêncio administrativo e demora em decidir | 2/1 |
+| `adm_fazenda_monetary_ec113` | Atualização monetária e juros nas condenações da Fazenda Pública: Tema 810 STF, Tema 905 STJ e EC 113/2021 (SELIC única) | 1/2 |
+| `adm_temporary_hiring_fgts` | Contratação temporária irregular pela Administração Pública: desvirtuamento e direito ao FGTS (CF, art. 37, IX, e Tema 916 STF) | 2/2 |
+| `adm_public_health_education_duty` | Responsabilidade civil do Estado por omissão específica: custódia prisional (Tema 592 STF), rede escolar e vias públicas | 2/1 |
+| `adm_environmental_urban_embargo` | Poder de polícia urbanístico e edilício: interdição, embargo de obra, demolição administrativa e devido processo | 1/1 |
+| `adm_public_servant_quintus_salary` | Remuneração de servidores públicos: teto constitucional, irredutibilidade nominal, vedação de equiparação (SV 37) e quintos (Tema 395 STF) | 1/2 |

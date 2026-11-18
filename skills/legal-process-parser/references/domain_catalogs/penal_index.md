@@ -32,3 +32,9 @@ Guia: `domain_guides/penal.md` · catálogo: `domain_catalogs/penal.json`
 | `pen_weapons_traffic` | Armas de fogo e crimes de trânsito | 2/2 |
 | `pen_execution_incidents` | Execução penal: falta grave, remição e saídas | 4/3 |
 | `pen_jury` | Tribunal do júri | 2/2 |
+| `pen_anpp_retroactivity_tema1098` | Acordo de Não Persecução Penal (ANPP) retroativo (Tema 1098 STF) e controle da recusa ministerial | 2/2 |
+| `pen_femicide_autonomous_14994` | Crime autônomo de feminicídio (CP, art. 121-A — Lei 14.994/2024): irretroatividade da lex gravior e vedação de bis in idem | 2/2 |
+| `pen_jury_immediate_execution_tema1068` | Execução imediata da condenação pelo Tribunal do Júri (Tema 1068 STF e CPP, art. 492, I, 'e') | 1/1 |
+| `pen_digital_evidence_whatsapp_chain` | Prova digital: espelhamento via WhatsApp Web, extração de celular sem ordem judicial e cadeia de custódia (CPP, arts. 157 e 158-A) | 2/2 |
+| `pen_cannabis_40g_tema506` | Porte de Cannabis sativa para uso pessoal: atipicidade penal e parâmetro objetivo de 40g / 6 plantas fêmeas (Tema 506 STF) | 2/1 |
+| `pen_plea_patrimonial_restitution` | Reparação mínima de danos na sentença penal (CPP, art. 387, IV), medidas assecuratórias e perda alargada (CP, art. 91-A) | 2/2 |

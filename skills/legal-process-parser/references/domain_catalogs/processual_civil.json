@@ -1,0 +1,1036 @@
+{
+  "schema_version": "1.0",
+  "domain": "processual_civil",
+  "label": "Direito Processual Civil",
+  "guide": "domain_guides/processual_civil.md",
+  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
+  "polo_labels": {
+    "claimant_theses": "Teses do autor, recorrente ou requerente",
+    "defense_theses": "Teses do réu, recorrido ou requerido"
+  },
+  "claims": [
+    {
+      "id": "pciv_resp_re_admissibility",
+      "label": "Admissibilidade de Recurso Especial e Recurso Extraordinário",
+      "requirements": [
+        "esgotamento_ordinario",
+        "prequestionamento",
+        "relevancia_ou_repercussao_geral",
+        "revaloracao_juridica_sem_reexame_fatico"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pciv_resp_re_admissibility.c1",
+          "label": "Prequestionamento ficto configurado pela oposição de embargos de declaração sobre ponto relevante omitido na origem",
+          "authority_ids": [
+            "cpc_art1025",
+            "cpc_art1022"
+          ]
+        },
+        {
+          "id": "pciv_resp_re_admissibility.c2",
+          "label": "Revaloração jurídica de premissas fáticas incontroversas delineadas no acórdão não esbarra no óbice da Súmula 7 do STJ",
+          "authority_ids": [
+            "cf_art105",
+            "stj_sumula_7"
+          ]
+        },
+        {
+          "id": "pciv_resp_re_admissibility.c3",
+          "label": "Demonstração específica de relevância da questão federal (EC 125/2022) e de repercussão geral constitucional",
+          "authority_ids": [
+            "ec125_2022_art1",
+            "cf_art102",
+            "cpc_art1035"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pciv_resp_re_admissibility.d1",
+          "label": "Inadmissibilidade por pretensão de simples reexame de provas ou interpretação de cláusulas contratuais",
+          "authority_ids": [
+            "stj_sumula_5",
+            "stj_sumula_7"
+          ]
+        },
+        {
+          "id": "pciv_resp_re_admissibility.d2",
+          "label": "Não conhecimento pela consonância do acórdão recorrido com a jurisprudência pacificada do tribunal superior",
+          "authority_ids": [
+            "stj_sumula_83",
+            "cpc_art932"
+          ]
+        },
+        {
+          "id": "pciv_resp_re_admissibility.d3",
+          "label": "Erro grosseiro na interposição de agravo em REsp/RE contra decisão fundada em precedente vinculante de repercussão geral ou repetitivo",
+          "authority_ids": [
+            "cpc_art1030",
+            "cpc_art1042"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "ec125_relevancia_resp"
+      ],
+      "typical_requests": [
+        "Conhecimento e provimento do Recurso Especial ou Extraordinário para reformar ou anular o acórdão recorrido",
+        "Concessão de efeito suspensivo excepcional ao recurso excepcional (CPC, art. 1.029, § 5º)",
+        "Reconhecimento de distinção fática (distinguishing) em agravo interno contra negativa de seguimento (CPC, art. 1.030, § 2º)"
+      ],
+      "evidence": [
+        "Inteiro teor do acórdão recorrido e do acórdão dos embargos de declaração com certidões de intimação",
+        "Guias de preparo e porte de remessa/retorno quitadas no ato da interposição ou decisão concessiva de gratuidade",
+        "Documento oficial comprobatório de feriado local ou indisponibilidade do sistema eletrônico (CPC, art. 1.003, § 6º)",
+        "Cópia integral ou repositório oficial do acórdão paradigma com cotejo analítico no dissídio jurisprudencial"
+      ],
+      "piece_ids": [
+        "recurso_especial",
+        "recurso_extraordinario",
+        "agravo_interno_civel",
+        "embargos_declaracao"
+      ],
+      "related_claims": [
+        "pciv_irdr_iac_precedents",
+        "const_binding_precedent"
+      ],
+      "limitation": "Prazo recursal peremptório de 15 dias úteis para interposição e contrarrazões de REsp, RE, agravo em REsp/RE e agravo interno (CPC, arts. 219 e 1.003, § 5º)"
+    },
+    {
+      "id": "pciv_interlocutory_appeal_mitigated",
+      "label": "Agravo de instrumento e taxatividade mitigada",
+      "requirements": [
+        "decisao_interlocutoria",
+        "hipotese_legal_ou_urgencia_inutilidade",
+        "formacao_instrumento",
+        "dialeticidade"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pciv_interlocutory_appeal_mitigated.c1",
+          "label": "Cabimento imediato do agravo de instrumento fora do rol literal quando verificada urgência decorrente da inutilidade do julgamento da questão na apelação",
+          "authority_ids": [
+            "cpc_art1015",
+            "tema_stj_988"
+          ]
+        },
+        {
+          "id": "pciv_interlocutory_appeal_mitigated.c2",
+          "label": "Recorribilidade ampla das decisões interlocutórias proferidas nas fases de liquidação, cumprimento de sentença, execução e inventário",
+          "authority_ids": [
+            "cpc_art1015"
+          ]
+        },
+        {
+          "id": "pciv_interlocutory_appeal_mitigated.c3",
+          "label": "Concessão de antecipação da tutela recursal ou efeito suspensivo diante da probabilidade de provimento e risco de dano grave",
+          "authority_ids": [
+            "cpc_art1019",
+            "cpc_art995"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pciv_interlocutory_appeal_mitigated.d1",
+          "label": "Ausência de urgência concreta capaz de justificar a mitigação do rol legal, devendo a matéria aguardar preliminar de apelação",
+          "authority_ids": [
+            "cpc_art1009",
+            "cpc_art1015",
+            "tema_stj_988"
+          ]
+        },
+        {
+          "id": "pciv_interlocutory_appeal_mitigated.d2",
+          "label": "Não conhecimento por ausência de impugnação específica dos fundamentos da decisão agravada ou deficiência de peças obrigatórias em autos físicos",
+          "authority_ids": [
+            "cpc_art1016",
+            "cpc_art1017",
+            "stj_sumula_182"
+          ]
+        },
+        {
+          "id": "pciv_interlocutory_appeal_mitigated.d3",
+          "label": "Preclusão consumativa pela perda do prazo contado da ciência inequívoca da decisão originária, não reaberto por pedido de reconsideração",
+          "authority_ids": [
+            "cpc_art1003",
+            "cpc_art507"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Concessão liminar de efeito suspensivo ou tutela antecipada recursal (CPC, art. 1.019, I)",
+        "Reforma ou invalidação da decisão interlocutória agravada pelo colegiado",
+        "Apreciação de questão interlocutória não agravável em preliminar de apelação ou contrarrazões (CPC, art. 1.009, § 1º)"
+      ],
+      "evidence": [
+        "Decisão interlocutória agravada e certidão ou registro eletrônico de intimação das partes",
+        "Petição inicial, contestação, petição que ensejou a decisão e procurações nos autos de origem",
+        "Prova documental do perigo de dano irreversível ou inutilidade da revisão diferida em apelação"
+      ],
+      "piece_ids": [
+        "agravo_instrumento",
+        "apelacao_civel",
+        "agravo_interno_civel",
+        "embargos_declaracao"
+      ],
+      "related_claims": [
+        "pciv_provisional_relief_stabilization",
+        "pciv_provisional_final_enforcement"
+      ],
+      "limitation": "Prazo de 15 dias úteis para agravo de instrumento (CPC, art. 1.003, § 5º); questões não agraváveis pelo art. 1.015 não precluem até a apelação (CPC, art. 1.009, § 1º)"
+    },
+    {
+      "id": "pciv_irdr_iac_precedents",
+      "label": "IRDR, IAC e observância de precedentes qualificados",
+      "requirements": [
+        "questao_unicamente_de_direito",
+        "repeticao_processos_ou_relevante_questao_social",
+        "risco_isonomia_seguranca",
+        "distinguishing_ou_superacao"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pciv_irdr_iac_precedents.c1",
+          "label": "Instauração de IRDR diante de efetiva repetição de processos sobre a mesma questão unicamente de direito e risco de ofensa à isonomia",
+          "authority_ids": [
+            "cpc_art976",
+            "cpc_art982"
+          ]
+        },
+        {
+          "id": "pciv_irdr_iac_precedents.c2",
+          "label": "Admissão de Incidente de Assunção de Competência em relevante questão de direito com grande repercussão social sem repetição em múltiplos processos",
+          "authority_ids": [
+            "cpc_art947"
+          ]
+        },
+        {
+          "id": "pciv_irdr_iac_precedents.c3",
+          "label": "Vinculação obrigatória dos órgãos fracionários e juízos às teses firmadas em IRDR, IAC e repetitivos, cabendo reclamação após esgotamento das vias cabíveis",
+          "authority_ids": [
+            "cpc_art927",
+            "cpc_art988"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pciv_irdr_iac_precedents.d1",
+          "label": "Inadmissibilidade do IRDR quando ausente causa pendente de julgamento no tribunal ou quando já afetado recurso repetitivo por tribunal superior sobre o tema",
+          "authority_ids": [
+            "cpc_art976"
+          ]
+        },
+        {
+          "id": "pciv_irdr_iac_precedents.d2",
+          "label": "Inaplicabilidade da tese vinculante por distinção fático-jurídica substancial (distinguishing) demonstrada analiticamente no caso concreto",
+          "authority_ids": [
+            "cpc_art489",
+            "cpc_art927"
+          ]
+        },
+        {
+          "id": "pciv_irdr_iac_precedents.d3",
+          "label": "Descabimento de reclamação constitucional como sucedâneo recursal sem aderência estrita ou após o trânsito em julgado",
+          "authority_ids": [
+            "cpc_art988"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Admissão do IRDR ou IAC com suspensão dos processos individuais ou coletivos pendentes na jurisdição do tribunal",
+        "Fixação de tese jurídica vinculante e julgamento do recurso, remessa necessária ou processo originário afetado",
+        "Desvinculação do processo individual sobrestado por demonstração de distinção material (CPC, art. 1.037, § 9º)"
+      ],
+      "evidence": [
+        "Relação de acórdãos e sentenças conflitantes demonstrando repetição efetiva e divergência jurisprudencial atual",
+        "Certidão de pendência de recurso, remessa necessária ou causa de competência originária no tribunal",
+        "Quadro comparativo entre os fatos determinantes do precedente vinculante e as particularidades do caso concreto"
+      ],
+      "piece_ids": [
+        "incidente_irdr_iac",
+        "manifestacao_especifica",
+        "reclamacao_constitucional",
+        "recurso_especial"
+      ],
+      "related_claims": [
+        "pciv_resp_re_admissibility",
+        "const_binding_precedent",
+        "const_complaint"
+      ],
+      "limitation": "IRDR e IAC pressupõem causa pendente de julgamento no tribunal (CPC, arts. 947 e 976); requerimento de distinção contra sobrestamento indevido pode ser formulado enquanto perdurar a suspensão (CPC, art. 1.037, § 9º)"
+    },
+    {
+      "id": "pciv_rescissory_action",
+      "label": "Ação rescisória cível e querela nullitatis",
+      "requirements": [
+        "decisao_transitada_em_julgado",
+        "hipotese_taxativa_art_966",
+        "deposito_previo_cinco_por_cento",
+        "observancia_prazo_decadencial"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pciv_rescissory_action.c1",
+          "label": "Desconstituição de coisa julgada por manifesta violação à norma jurídica, prova nova determinante ou erro de fato verificável nos autos",
+          "authority_ids": [
+            "cpc_art966"
+          ]
+        },
+        {
+          "id": "pciv_rescissory_action.c2",
+          "label": "Termo inicial diferenciado para rescisória fundada em prova nova ou simulação/colusão entre as partes",
+          "authority_ids": [
+            "cpc_art975"
+          ]
+        },
+        {
+          "id": "pciv_rescissory_action.c3",
+          "label": "Cabimento de querela nullitatis ou impugnação por falta ou nulidade absoluta de citação em processo corrido à revelia",
+          "authority_ids": [
+            "cpc_art525",
+            "cpc_art280"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pciv_rescissory_action.d1",
+          "label": "Descabimento de ação rescisória por violação literal de norma quando a decisão rescindenda se baseou em texto legal de interpretação controvertida nos tribunais à época",
+          "authority_ids": [
+            "tema_stf_136",
+            "cpc_art966"
+          ]
+        },
+        {
+          "id": "pciv_rescissory_action.d2",
+          "label": "Inadmissibilidade da rescisória utilizada como sucedâneo recursal para rejulgamento da justiça da decisão ou reexame de provas já valoradas",
+          "authority_ids": [
+            "cpc_art966",
+            "cpc_art968"
+          ]
+        },
+        {
+          "id": "pciv_rescissory_action.d3",
+          "label": "Extinção por decadência bienal contada do trânsito em julgado da última decisão proferida no processo ou ausência do depósito legal de 5%",
+          "authority_ids": [
+            "cpc_art968",
+            "cpc_art975",
+            "stj_sumula_401"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Concessão de tutela provisória para suspender o cumprimento da decisão rescindenda (CPC, art. 969)",
+        "Procedência do juízo rescindente (iudicium rescindens) para desconstituir o acórdão ou sentença transitada em julgado",
+        "Novo julgamento da matéria em juízo rescisório (iudicium rescissorium) quando cabível"
+      ],
+      "evidence": [
+        "Cópia integral da decisão rescindenda e certidão oficial de trânsito em julgado da última decisão no processo",
+        "Comprovante de recolhimento do depósito prévio de 5% sobre o valor atualizado da causa, observado o teto de 1.000 salários mínimos (CPC, art. 968, II e § 2º)",
+        "Prova nova preexistente cuja existência era ignorada ou de que não se pôde fazer uso na ação primitiva"
+      ],
+      "piece_ids": [
+        "acao_rescisoria",
+        "contestacao",
+        "impugnacao_cumprimento"
+      ],
+      "related_claims": [
+        "pciv_res_judicata_issue_preclusion",
+        "pciv_provisional_final_enforcement"
+      ],
+      "limitation": "Decadência geral em 2 anos contados do trânsito em julgado da última decisão no processo (CPC, art. 975, caput; Súmula 401 do STJ), ou em 2 anos da descoberta da prova nova observado o teto máximo de 5 anos do trânsito em julgado (art. 975, § 2º)"
+    },
+    {
+      "id": "pciv_provisional_relief_stabilization",
+      "label": "Tutelas provisórias de urgência, evidência e estabilização",
+      "requirements": [
+        "probabilidade_direito_ou_evidencia",
+        "perigo_dano_ou_risco_resultado_util",
+        "reversibilidade_efeitos",
+        "aditamento_ou_recurso_oportuno"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pciv_provisional_relief_stabilization.c1",
+          "label": "Concessão liminar de tutela de urgência diante de elementos que evidenciem a probabilidade do direito e o perigo de dano ou risco ao resultado útil do processo",
+          "authority_ids": [
+            "cpc_art300"
+          ]
+        },
+        {
+          "id": "pciv_provisional_relief_stabilization.c2",
+          "label": "Estabilização dos efeitos da tutela antecipada requerida em caráter antecedente quando não interposto agravo de instrumento pelo réu",
+          "authority_ids": [
+            "cpc_art303",
+            "cpc_art304"
+          ]
+        },
+        {
+          "id": "pciv_provisional_relief_stabilization.c3",
+          "label": "Deferimento de tutela da evidência independentemente de urgência diante de prova documental suficiente aliada a tese firmada em repetitivo ou súmula vinculante",
+          "authority_ids": [
+            "cpc_art311"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pciv_provisional_relief_stabilization.d1",
+          "label": "Vedação legal à concessão de tutela antecipada de urgência quando houver perigo de irreversibilidade fática dos efeitos da decisão",
+          "authority_ids": [
+            "cpc_art300"
+          ]
+        },
+        {
+          "id": "pciv_provisional_relief_stabilization.d2",
+          "label": "Ausência de estabilização quando o réu oferece contestação ou impugnação tempestiva manifestando resistência inequívoca no prazo legal, segundo orientação da Terceira Turma vs. Primeira Turma do STJ — conferir divergência",
+          "authority_ids": [
+            "cpc_art304"
+          ]
+        },
+        {
+          "id": "pciv_provisional_relief_stabilization.d3",
+          "label": "Cessação automática da eficácia da tutela cautelar antecedente não aditada com o pedido principal em 30 dias da efetivação",
+          "authority_ids": [
+            "cpc_art308",
+            "cpc_art309"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Deferimento liminar inaudita altera parte de tutela provisória de urgência ou de evidência com fixação de multa cominatória",
+        "Declaração de estabilização da tutela antecipada antecedente e extinção do feito (CPC, art. 304, § 1º)",
+        "Ação autônoma para rever, reformar ou invalidar tutela antecipada estabilizada (CPC, art. 304, § 2º)"
+      ],
+      "evidence": [
+        "Prova documental inequívoca da probabilidade do direito e da atualidade do perigo de dano concreto",
+        "Comprovante de efetivação da medida cautelar ou antecipada para controle dos prazos de 15 ou 30 dias úteis",
+        "Certidão de decurso de prazo sem recurso contra a decisão antecipatória antecedente"
+      ],
+      "piece_ids": [
+        "tutela_urgencia_antecedente",
+        "inicial_procedimento_comum",
+        "agravo_instrumento",
+        "contestacao"
+      ],
+      "related_claims": [
+        "civ_urgent_relief",
+        "pciv_interlocutory_appeal_mitigated"
+      ],
+      "limitation": "Aditamento da inicial em 15 dias úteis na tutela antecipada antecedente (CPC, art. 303, § 1º, I) e pedido principal em 30 dias úteis na cautelar antecedente (art. 308); prazo decadencial de 2 anos para a ação de revisão/invalidação da tutela estabilizada, contado da ciência da extinção (art. 304, § 5º)"
+    },
+    {
+      "id": "pciv_attorney_fees_equitable",
+      "label": "Honorários advocatícios sucumbenciais, recursais e vedação de equidade fora da lei",
+      "requirements": [
+        "sucumbencia_ou_causalidade",
+        "base_calculo_objetiva",
+        "faixas_percentuais_legais",
+        "vedacao_equidade_proveito_elevado"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pciv_attorney_fees_equitable.c1",
+          "label": "Fixação obrigatória dos honorários entre 10% e 20% sobre a condenação, proveito econômico ou valor atualizado da causa, vedada apreciação equitativa por mero valor elevado",
+          "authority_ids": [
+            "cpc_art85",
+            "tema_stj_1076"
+          ]
+        },
+        {
+          "id": "pciv_attorney_fees_equitable.c2",
+          "label": "Observância das faixas escalonadas do art. 85, § 3º, do CPC nas causas em que a Fazenda Pública for vencida",
+          "authority_ids": [
+            "cpc_art85",
+            "tema_stj_1076"
+          ]
+        },
+        {
+          "id": "pciv_attorney_fees_equitable.c3",
+          "label": "Majoração cumulativa de honorários recursais no desprovimento ou não conhecimento integral de recurso em grau superior",
+          "authority_ids": [
+            "cpc_art85"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pciv_attorney_fees_equitable.d1",
+          "label": "Aplicação restrita do juízo de equidade apenas quando inestimável ou irrisório o proveito econômico ou muito baixo o valor da causa, observados os valores referenciais da OAB",
+          "authority_ids": [
+            "cpc_art85"
+          ]
+        },
+        {
+          "id": "pciv_attorney_fees_equitable.d2",
+          "label": "Imputação dos ônus sucumbenciais pelo princípio da causalidade a quem deu causa indevida à instauração ou extinção da demanda",
+          "authority_ids": [
+            "cpc_art85",
+            "stj_sumula_303"
+          ]
+        },
+        {
+          "id": "pciv_attorney_fees_equitable.d3",
+          "label": "Suspensão da exigibilidade das verbas de sucumbência pelo prazo de 5 anos em favor do beneficiário da gratuidade da justiça",
+          "authority_ids": [
+            "cpc_art98"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14365_honorarios_equidade"
+      ],
+      "typical_requests": [
+        "Arbitramento ou reforma do capítulo de honorários sucumbenciais conforme os percentuais objetivos do art. 85, §§ 2º ou 3º, do CPC",
+        "Majoração dos honorários em grau recursal (CPC, art. 85, § 11)",
+        "Cumprimento autônomo de sentença do capítulo de honorários em nome da sociedade de advogados ou do patrono (Lei 8.906/1994, art. 23)"
+      ],
+      "evidence": [
+        "Sentença ou acórdão com delimitação do valor da condenação, do proveito econômico obtido ou do valor atualizado da causa",
+        "Tabela atualizada de honorários do Conselho Seccional da OAB para as hipóteses taxativas do art. 85, § 8º-A, do CPC",
+        "Demonstrativo das fases e atos processuais praticados para gradação dos critérios do art. 85, § 2º, I a IV, do CPC"
+      ],
+      "piece_ids": [
+        "apelacao_civel",
+        "recurso_especial",
+        "cumprimento_sentenca",
+        "embargos_declaracao"
+      ],
+      "related_claims": [
+        "civ_fees_costs",
+        "pciv_provisional_final_enforcement"
+      ],
+      "limitation": "Prescrição quinquenal para execução dos honorários advocatícios contada do trânsito em julgado da decisão que os fixar ou da cessação do mandato (Lei 8.906/1994, art. 25); exigibilidade suspensa por até 5 anos na gratuidade (CPC, art. 98, § 3º)"
+    },
+    {
+      "id": "pciv_nullities_prejudice",
+      "label": "Nulidades processuais, instrumentalidade das formas e prejuízo concreto",
+      "requirements": [
+        "defeito_forma_ou_citacao",
+        "arguicao_primeira_oportunidade",
+        "demonstracao_prejuizo_concreto",
+        "impossibilidade_aproveitamento"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pciv_nullities_prejudice.c1",
+          "label": "Nulidade absoluta dos atos processuais praticados sem citação válida do réu ou sem intimação obrigatória dos patronos constituídos",
+          "authority_ids": [
+            "cpc_art239",
+            "cpc_art272",
+            "cpc_art280"
+          ]
+        },
+        {
+          "id": "pciv_nullities_prejudice.c2",
+          "label": "Cerceamento de defesa pelo julgamento antecipado da lide seguido de improcedência por falta da prova tempestivamente requerida pela parte",
+          "authority_ids": [
+            "cf_art5",
+            "cpc_art355",
+            "cpc_art369"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pciv_nullities_prejudice.d1",
+          "label": "Convalidação do ato que atingiu sua finalidade essencial sem causar prejuízo efetivo à defesa da parte (pas de nullité sans grief)",
+          "authority_ids": [
+            "cpc_art277",
+            "cpc_art282"
+          ]
+        },
+        {
+          "id": "pciv_nullities_prejudice.d2",
+          "label": "Preclusão temporal da nulidade relativa não suscitada na primeira oportunidade em que coube à parte falar nos autos e vedação à nulidade de algibeira",
+          "authority_ids": [
+            "cpc_art278",
+            "cpc_art5"
+          ]
+        },
+        {
+          "id": "pciv_nullities_prejudice.d3",
+          "label": "Desnecessidade de repetição ou declaração de nulidade quando o mérito puder ser decidido em favor da parte a quem aproveitaria a decretação",
+          "authority_ids": [
+            "cpc_art282"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Reconhecimento da nulidade a partir do ato viciado com determinação de renovação ou reabertura de prazo/instrução",
+        "Desconstituição de revelia e atos decisórios subsequentes por vício de citação",
+        "Afastamento da preliminar de nulidade por ausência de prejuízo processual demonstrado"
+      ],
+      "evidence": [
+        "Certidões de publicação no DJe, registros de intimação eletrônica no portal ou aviso de recebimento postal",
+        "Procuração e substabelecimentos vigentes indicando pedido expresso de intimação exclusiva em nome de advogado determinado (CPC, art. 272, § 5º)",
+        "Petição de especificação de provas demonstrando a utilidade e pertinência da prova indeferida"
+      ],
+      "piece_ids": [
+        "manifestacao_especifica",
+        "apelacao_civel",
+        "agravo_instrumento",
+        "impugnacao_cumprimento"
+      ],
+      "related_claims": [
+        "pciv_provisional_final_enforcement",
+        "pciv_rescissory_action"
+      ],
+      "limitation": "Nulidade relativa deve ser alegada na primeira oportunidade em que couber à parte falar nos autos, sob pena de preclusão (CPC, art. 278); nulidade absoluta de falta/vício de citação sobrevive ao trânsito em julgado via impugnação (art. 525, § 1º, I) ou ação anulatória/rescisória"
+    },
+    {
+      "id": "pciv_forum_selection_competence",
+      "label": "Competência territorial e cláusula abusiva de eleição de foro (Lei 14.879/2024)",
+      "requirements": [
+        "instrumento_escrito",
+        "pertinencia_domicilio_ou_local_obrigacao",
+        "inexistencia_juizo_aleatorio",
+        "momento_controle_competencia"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pciv_forum_selection_competence.c1",
+          "label": "Ineficácia da cláusula de eleição de foro divorciada do domicílio ou residência das partes e do local da obrigação, configurando prática abusiva o ajuizamento em juízo aleatório",
+          "authority_ids": [
+            "cpc_art63",
+            "l14879_art1"
+          ]
+        },
+        {
+          "id": "pciv_forum_selection_competence.c2",
+          "label": "Declinação de ofício da competência territorial em caso de eleição abusiva de foro aleatório ou em contrato de adesão consumerista prejudicial à defesa",
+          "authority_ids": [
+            "cpc_art63",
+            "cdc_art101"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pciv_forum_selection_competence.d1",
+          "label": "Validade plena da cláusula de eleição de foro em contrato empresarial/civil quando guardada pertinência com a sede de uma das partes ou o local do negócio",
+          "authority_ids": [
+            "cpc_art63"
+          ]
+        },
+        {
+          "id": "pciv_forum_selection_competence.d2",
+          "label": "Prorrogação da competência relativa quando não arguida pelo réu em preliminar de contestação nas hipóteses fora da abusividade reconhecível de ofício",
+          "authority_ids": [
+            "cpc_art65",
+            "cpc_art337",
+            "stj_sumula_33"
+          ]
+        },
+        {
+          "id": "pciv_forum_selection_competence.d3",
+          "label": "Irretroatividade da Lei 14.879/2024 quanto às ações regularmente distribuídas antes de sua entrada em vigor (perpetuatio jurisdictionis)",
+          "authority_ids": [
+            "cpc_art43",
+            "cpc_art14"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14879_foro_eleicao"
+      ],
+      "typical_requests": [
+        "Acolhimento da preliminar de incompetência territorial com remessa imediata dos autos ao foro do domicílio do réu ou do consumidor",
+        "Declinação liminar de ofício em ajuizamento realizado em comarca aleatória (CPC, art. 63, § 3º)",
+        "Manutenção do foro contratual pertinente eleito livremente entre partes paritárias"
+      ],
+      "evidence": [
+        "Contrato firmado com a redação integral da cláusula de eleição de foro e qualificação das partes",
+        "Comprovantes atualizados de domicílio/sede social das partes e documentos do local de cumprimento da obrigação",
+        "Certidão da data de distribuição da petição inicial para aferição intertemporal da Lei 14.879/2024"
+      ],
+      "piece_ids": [
+        "contestacao",
+        "agravo_instrumento",
+        "inicial_procedimento_comum"
+      ],
+      "related_claims": [
+        "cons_burden_venue",
+        "civ_contract"
+      ],
+      "limitation": "Arguição pelo réu como preliminar de contestação no prazo de 15 dias úteis sob pena de prorrogação da competência relativa (CPC, arts. 64, 65 e 337, II), salvo declinação de ofício antes da citação nas hipóteses do art. 63, § 3º, do CPC"
+    },
+    {
+      "id": "pciv_procedural_business_agreement",
+      "label": "Negócio jurídico processual atípico e calendarização (CPC, art. 190)",
+      "requirements": [
+        "direito_que_admita_autocomposicao",
+        "partes_plenamente_capazes",
+        "ausencia_vulnerabilidade_ou_adesao_abusiva",
+        "objeto_procedimental_licito"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pciv_procedural_business_agreement.c1",
+          "label": "Validade e eficácia imediata das convenções das partes sobre ônus, poderes, faculdades, deveres processuais e calendário vinculante independentemente de homologação judicial",
+          "authority_ids": [
+            "cpc_art190",
+            "cpc_art191"
+          ]
+        },
+        {
+          "id": "pciv_procedural_business_agreement.c2",
+          "label": "Eficácia de pacto sobre rateio de despesas periciais, ampliação de prazos consensuais, escolha conjunta de perito ou renúncia a efeito suspensivo",
+          "authority_ids": [
+            "cpc_art190",
+            "cpc_art471"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pciv_procedural_business_agreement.d1",
+          "label": "Recusa judicial de aplicação de negócio processual nulo, inserido abusivamente em contrato de adesão ou celebrado em situação de manifesta vulnerabilidade",
+          "authority_ids": [
+            "cpc_art190",
+            "cc_art166"
+          ]
+        },
+        {
+          "id": "pciv_procedural_business_agreement.d2",
+          "label": "Inadmissibilidade de convenção processual que suprima poderes-deveres indisponíveis do magistrado, competência absoluta, intervenção do MP ou reserva de ordem pública",
+          "authority_ids": [
+            "cpc_art190",
+            "cpc_art62"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Cumprimento estrito das regras procedimentais ou do calendário processual convencionados pelas partes",
+        "Homologação de calendário processual conjunto com dispensa de intimações para os atos agendados (CPC, art. 191, § 2º)",
+        "Declaração incidental de nulidade ou ineficácia de cláusula processual abusiva em contrato de adesão"
+      ],
+      "evidence": [
+        "Instrumento contratual ou petição conjunta contendo a cláusula de negócio jurídico processual",
+        "Prova da paridade negocial e assistência técnica na celebração ou, em sentido oposto, da adesão estandardizada e vulnerabilidade",
+        "Atas, trocas de mensagens e cronograma de cumprimento demonstrando execução ou violação do calendário processual convencionado"
+      ],
+      "piece_ids": [
+        "manifestacao_especifica",
+        "contestacao",
+        "inicial_procedimento_comum",
+        "agravo_instrumento"
+      ],
+      "related_claims": [
+        "arb_specific_performance_kompetenz",
+        "civ_contract"
+      ],
+      "limitation": "Validade impugnável incidentalmente na primeira oportunidade nos autos; ação anulatória de negócio jurídico submete-se ao prazo decadencial de 4 anos por vício de consentimento (CC, art. 178) e nulidade absoluta não convalesce (CC, art. 169)"
+    },
+    {
+      "id": "pciv_autonomous_early_evidence",
+      "label": "Produção antecipada de provas autônoma sem urgência (CPC, art. 381)",
+      "requirements": [
+        "delimitacao_precisa_dos_fatos",
+        "finalidade_autocomposicao_ou_avaliacao_acao",
+        "ausencia_pronunciamento_merito",
+        "contraditorio_interessados"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pciv_autonomous_early_evidence.c1",
+          "label": "Direito autônomo à produção antecipada de prova pericial, documental ou oral para viabilizar autocomposição ou justificar/evitar o ajuizamento de ação, independentemente de perigo de perecimento",
+          "authority_ids": [
+            "cpc_art381"
+          ]
+        },
+        {
+          "id": "pciv_autonomous_early_evidence.c2",
+          "label": "Ampla citação dos interessados para acompanhamento técnico e formulação de quesitos, sem valoração judicial sobre a ocorrência do fato ou suas consequências jurídicas",
+          "authority_ids": [
+            "cpc_art382"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pciv_autonomous_early_evidence.d1",
+          "label": "Inadmissibilidade de fishing expedition genérica desprovida de indicação precisa dos fatos sobre os quais recairá a prova ou violadora de sigilo empresarial injustificado",
+          "authority_ids": [
+            "cpc_art382",
+            "cpc_art396"
+          ]
+        },
+        {
+          "id": "pciv_autonomous_early_evidence.d2",
+          "label": "Irrecorribilidade das decisões interlocutórias no procedimento probatório autônomo, salvo contra decisão que indeferir totalmente a produção da prova pleiteada",
+          "authority_ids": [
+            "cpc_art382"
+          ]
+        },
+        {
+          "id": "pciv_autonomous_early_evidence.d3",
+          "label": "Incompetência do juízo estatal para produção antecipada de provas sem urgência quando o contrato contiver cláusula compromissória arbitral válida",
+          "authority_ids": [
+            "l9307_art8",
+            "l9307_art22a"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Citação dos interessados para acompanhar a produção da prova pericial, exibição documental ou inquirição de testemunhas",
+        "Homologação formal do procedimento probatório e permanência/entrega dos autos à parte após um mês (CPC, art. 383)",
+        "Indeferimento de quesitos impertinentes ou proteção de sigilo documental sensível"
+      ],
+      "evidence": [
+        "Documentos preliminares demonstrando a relação jurídica base e a delimitação objetiva dos fatos controvertidos",
+        "Rol de quesitos técnicos e indicação de assistente técnico",
+        "Contrato subjacente para verificação de foro competente e inexistência de convenção arbitral impeditiva"
+      ],
+      "piece_ids": [
+        "producao_antecipada_provas",
+        "manifestacao_especifica",
+        "apelacao_civel",
+        "agravo_instrumento"
+      ],
+      "related_claims": [
+        "arb_early_evidence_without_urgency",
+        "not_notarial_deed_digital_evidence"
+      ],
+      "limitation": "Procedimento não previne a competência para eventual ação principal nem interrompe a prescrição da pretensão material subjacente, salvo protesto interruptivo expresso cumulado (CPC, art. 381, § 3º; CC, art. 202, II)"
+    },
+    {
+      "id": "pciv_predatory_abusive_litigation",
+      "label": "Litigância predatória/abusiva e dever de boa-fé processual (Tema 1198 STJ)",
+      "requirements": [
+        "indicios_concretos_abuso_padronizado",
+        "diligencias_acautelatorias_proporcionais",
+        "preservacao_acesso_legitimo_justica",
+        "dolo_ou_ma_fe_comprovados"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pciv_predatory_abusive_litigation.c1",
+          "label": "Condenação por litigância de má-fé e extinção de demandas fabricadas, fracionadas artificialmente ou ajuizadas sem consentimento real e informado da parte autora",
+          "authority_ids": [
+            "cpc_art5",
+            "cpc_art80",
+            "cpc_art81"
+          ]
+        },
+        {
+          "id": "pciv_predatory_abusive_litigation.c2",
+          "label": "Poder-dever judicial de requisitar diligências acautelatórias proporcionais e fundamentadas diante de indícios concretos de uso predatório da jurisdição",
+          "authority_ids": [
+            "tema_stj_1198",
+            "rec_cnj_159_2024"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pciv_predatory_abusive_litigation.d1",
+          "label": "Ilegalidade de exigências generalizadas e automáticas (procuração pública, reconhecimento de firma ou comparecimento pessoal indiscriminado) sem elementos concretos de fraude nos autos",
+          "authority_ids": [
+            "cf_art5",
+            "tema_stj_1198",
+            "cpc_art105"
+          ]
+        },
+        {
+          "id": "pciv_predatory_abusive_litigation.d2",
+          "label": "Exercício regular do direito de ação em demandas repetitivas de massa decorrentes de lesão serial causada pelo próprio fornecedor ou ente público",
+          "authority_ids": [
+            "cf_art5",
+            "cpc_art80"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "rec_cnj_159_litigancia_abusiva"
+      ],
+      "typical_requests": [
+        "Determinação fundamentada de diligência saneadora específica para confirmação da autenticidade da outorga e ciência da demanda",
+        "Extinção do feito sem resolução do mérito por ausência de pressuposto de constituição válida e condenação em multa de 1% a 10% sobre o valor corrigido da causa mais perdas e danos (CPC, art. 81)",
+        "Afastamento de exigência cartorária desproporcional que obstaculize demanda individual legítima"
+      ],
+      "evidence": [
+        "Relatório de distribuição apontando fracionamento artificial de pretensões idênticas, petições genéricas sem aderência fática ou procurações obsoletas",
+        "Procuração atualizada, comprovante recente de residência e documentos originais da contratação impugnada",
+        "Logs de assinatura eletrônica auditável com geolocalização/IP ou confirmação pessoal pelo jurisdicionado"
+      ],
+      "piece_ids": [
+        "contestacao",
+        "manifestacao_especifica",
+        "apelacao_civel",
+        "agravo_instrumento"
+      ],
+      "related_claims": [
+        "pciv_nullities_prejudice",
+        "cons_undue_charge"
+      ],
+      "limitation": "Diligência saneadora deve conceder prazo razoável (em regra 15 dias úteis — CPC, art. 321) antes de eventual indeferimento ou extinção; multa por má-fé apurada nos próprios autos (CPC, art. 81)"
+    },
+    {
+      "id": "pciv_provisional_final_enforcement",
+      "label": "Cumprimento provisório e definitivo de sentença",
+      "requirements": [
+        "titulo_judicial_liquido_certo_exigivel",
+        "intimacao_pagamento_quinze_dias",
+        "caucao_idonea_no_provisorio",
+        "memoria_discriminada_calculo"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pciv_provisional_final_enforcement.c1",
+          "label": "Incidência automática da multa de 10% e de honorários de 10% quando não efetuado o pagamento voluntário no prazo de 15 dias úteis no cumprimento definitivo",
+          "authority_ids": [
+            "cpc_art523"
+          ]
+        },
+        {
+          "id": "pciv_provisional_final_enforcement.c2",
+          "label": "Prosseguimento imediato do cumprimento provisório contra recurso sem efeito suspensivo, dispensada caução até os atos que importem transferência de posse ou levantamento de dinheiro",
+          "authority_ids": [
+            "cpc_art520",
+            "cpc_art521"
+          ]
+        },
+        {
+          "id": "pciv_provisional_final_enforcement.c3",
+          "label": "Responsabilidade objetiva do exequente pela reparação integral dos danos causados ao executado caso reformada ou anulada a decisão exequenda",
+          "authority_ids": [
+            "cpc_art520"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pciv_provisional_final_enforcement.d1",
+          "label": "Não incidência da multa e dos honorários do art. 523, § 1º, do CPC no depósito efetuado para garantia do juízo em cumprimento provisório de sentença — jurisprudência consolidada do STJ",
+          "authority_ids": [
+            "cpc_art520",
+            "cpc_art523"
+          ]
+        },
+        {
+          "id": "pciv_provisional_final_enforcement.d2",
+          "label": "Exigência de caução suficiente e idônea arbitrada pelo juízo antes de qualquer levantamento de depósito em dinheiro no cumprimento provisório fora das exceções do art. 521",
+          "authority_ids": [
+            "cpc_art520",
+            "cpc_art521"
+          ]
+        },
+        {
+          "id": "pciv_provisional_final_enforcement.d3",
+          "label": "Rejeição liminar da impugnação fundada em excesso de execução desacompanhada de demonstrativo atualizado do valor que o executado entende correto",
+          "authority_ids": [
+            "cpc_art525"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14905_juros_civis"
+      ],
+      "typical_requests": [
+        "Intimação do executado para pagamento em 15 dias úteis sob pena de acréscimo de multa de 10%, honorários de 10% e penhora eletrônica SISBAJUD",
+        "Acolhimento de impugnação ao cumprimento de sentença por inexigibilidade do título ou excesso de execução, com atribuição de efeito suspensivo mediante garantia",
+        "Restituição ao estado anterior e liquidação nos mesmos autos dos prejuízos decorrentes da reforma de sentença executada provisoriamente (CPC, art. 520, II)"
+      ],
+      "evidence": [
+        "Título executivo judicial, certidão de trânsito em julgado (ou de interposição de recurso sem efeito suspensivo) e planilha aritmética detalhada (CPC, art. 524)",
+        "Comprovante de depósito judicial, apólice de seguro garantia judicial acrescida de 30% ou fiança bancária (CPC, art. 835, § 2º)",
+        "Memória comparativa do valor incontroverso apresentada pelo executado na impugnação"
+      ],
+      "piece_ids": [
+        "cumprimento_sentenca",
+        "impugnacao_cumprimento",
+        "excecao_pre_executividade",
+        "agravo_instrumento"
+      ],
+      "related_claims": [
+        "civ_enforcement_defense",
+        "sec_surety_bond_judicial_contractual"
+      ],
+      "limitation": "Prazo de 15 dias úteis para pagamento voluntário (CPC, art. 523) seguido imediatamente de 15 dias úteis para impugnação independentemente de penhora ou nova intimação (art. 525); a pretensão executiva prescreve no mesmo prazo da ação de conhecimento (Súmula 150 do STF), observado o Tema 877/880 STJ e prescrição intercorrente (art. 921)"
+    },
+    {
+      "id": "pciv_res_judicata_issue_preclusion",
+      "label": "Coisa julgada material, questões prejudiciais e eficácia preclusiva",
+      "requirements": [
+        "decisao_merito_nao_recorrivel",
+        "limites_objetivos_e_questao_prejudicial",
+        "limites_subjetivos_terceiros",
+        "eficacia_preclusiva_dedutivel"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pciv_res_judicata_issue_preclusion.c1",
+          "label": "Imutabilidade e indiscutibilidade da decisão de mérito e da questão prejudicial incidental expressamente decidida com contraditório prévio e efetivo perante juízo competente",
+          "authority_ids": [
+            "cpc_art502",
+            "cpc_art503"
+          ]
+        },
+        {
+          "id": "pciv_res_judicata_issue_preclusion.c2",
+          "label": "Eficácia preclusiva da coisa julgada reputando deduzidas e repelidas todas as alegações e defesas que a parte poderia opor ao acolhimento ou rejeição do pedido",
+          "authority_ids": [
+            "cpc_art508"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pciv_res_judicata_issue_preclusion.d1",
+          "label": "Inexistência de coisa julgada sobre motivos de fato, verdade dos fatos ou questão prejudicial apreciada com restrição probatória ou à revelia",
+          "authority_ids": [
+            "cpc_art503",
+            "cpc_art504"
+          ]
+        },
+        {
+          "id": "pciv_res_judicata_issue_preclusion.d2",
+          "label": "Inoponibilidade da coisa julgada para prejudicar terceiros que não integraram a relação processual",
+          "authority_ids": [
+            "cpc_art506"
+          ]
+        },
+        {
+          "id": "pciv_res_judicata_issue_preclusion.d3",
+          "label": "Revisão de relação jurídica de trato continuado diante de modificação superveniente no estado de fato ou de direito",
+          "authority_ids": [
+            "cpc_art505"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Extinção do segundo processo sem resolução de mérito por ofensa à coisa julgada (CPC, art. 485, V) ou observância de seu efeito positivo vinculante",
+        "Reconhecimento da inexistência de coisa julgada por diversidade de causa de pedir próxima/remota ou ausência dos pressupostos do art. 503, § 1º, do CPC",
+        "Revisão prospectiva da sentença determinativa em relação continuativa (CPC, art. 505, I)"
+      ],
+      "evidence": [
+        "Petição inicial, contestação, sentença/acórdão e certidão de trânsito em julgado da demanda primitiva",
+        "Prova da alteração fática ou normativa superveniente nas relações jurídicas de trato continuado",
+        "Quadro analítico comparando partes, causa de pedir e dispositivo/questão prejudicial decidida entre as duas ações"
+      ],
+      "piece_ids": [
+        "contestacao",
+        "manifestacao_especifica",
+        "apelacao_civel",
+        "acao_rescisoria"
+      ],
+      "related_claims": [
+        "pciv_rescissory_action",
+        "trib_precedent_change"
+      ],
+      "limitation": "Arguição de coisa julgada cognoscível em qualquer tempo e grau de jurisdição ordinária (CPC, arts. 337, § 5º, e 485, § 3º); após novo trânsito em julgado conflitante, prevalece a primeira coisa julgada enquanto cabível rescisória em 2 anos (CPC, art. 966, IV) — conferir entendimento da Corte Especial do STJ após o decurso do biênio"
+    }
+  ]
+}

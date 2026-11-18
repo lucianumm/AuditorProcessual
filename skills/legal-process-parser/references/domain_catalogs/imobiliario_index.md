@@ -26,3 +26,8 @@ Guia: `domain_guides/imobiliario.md` · catálogo: `domain_catalogs/imobiliario.
 | `imob_land_subdivision` | Loteamento: regularidade e rescisão | 2/1 |
 | `imob_urban_usucapiao` | Usucapião urbana, familiar e Reurb | 4/2 |
 | `imob_registry_rectification` | Retificação, dúvida e nulidade de registro | 3/1 |
+| `imob_short_term_rental_condo` | Locação de curtíssima duração via plataformas digitais (Airbnb) em condomínio edilício residencial | 1/1 |
+| `imob_built_to_suit_shopping` | Locação built to suit e contratos de shopping center: autonomia, renúncia à revisional e cláusula penal (Lei 8.245/1991, arts. 54 e 54-A) | 2/2 |
+| `imob_brokerage_commission` | Comissão de corretagem imobiliária, resultado útil e abusividade da taxa SATI (CC, art. 725, e Tema 938 STJ) | 2/2 |
+| `imob_incorporation_patrimonio_afetacao` | Incorporação imobiliária: patrimônio de afetação, comissão de representantes e insolvência da incorporadora (Lei 4.591/1964, arts. 31-A a 31-F e 43) | 2/2 |
+| `imob_bem_de_familia_fiador` | Bem de família legal: penhorabilidade na fiança locatícia residencial e comercial e imóvel locado (Súmulas 486/549 STJ e Temas 295/1127 STF) | 2/2 |

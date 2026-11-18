@@ -1,0 +1,44 @@
+{
+  "schema_version": "2.0",
+  "synthetic": true,
+  "case_id": "customs_demurrage_prescription",
+  "source_files": [
+    {
+      "file": "fatura_armador.txt"
+    }
+  ],
+  "expected": {
+    "facts": [
+      {
+        "id": "G-F1",
+        "text_any": [
+          "sobre-estadia de contêineres devolvidos em 05/03/2021"
+        ],
+        "source": {
+          "file": "fatura_armador.txt",
+          "page": 1,
+          "quote": "sobre-estadia de contêineres devolvidos em 05/03/2021"
+        },
+        "atoms": {
+          "date": "2021-03-05"
+        }
+      }
+    ],
+    "issues": [
+      {
+        "id": "G-I1",
+        "text_any": [
+          "prazo prescricional de demurrage",
+          "previsão contratual"
+        ],
+        "analysis_status": "qualified"
+      }
+    ],
+    "requests": [],
+    "contradictions": [],
+    "catalog_id": "inicial_procedimento_comum",
+    "strategy": {
+      "domain": "aduaneiro_maritimo"
+    }
+  }
+}

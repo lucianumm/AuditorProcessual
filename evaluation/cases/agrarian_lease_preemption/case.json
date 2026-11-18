@@ -1,0 +1,44 @@
+{
+  "schema_version": "2.0",
+  "synthetic": true,
+  "case_id": "agrarian_lease_preemption",
+  "source_files": [
+    {
+      "file": "notificacao_rural.txt"
+    }
+  ],
+  "expected": {
+    "facts": [
+      {
+        "id": "G-F1",
+        "text_any": [
+          "sem notificar previamente o arrendatário"
+        ],
+        "source": {
+          "file": "notificacao_rural.txt",
+          "page": 1,
+          "quote": "sem notificar previamente o arrendatário"
+        },
+        "atoms": {
+          "date": "2025-04-12"
+        }
+      }
+    ],
+    "issues": [
+      {
+        "id": "G-I1",
+        "text_any": [
+          "direito de preferência",
+          "depósito do preço"
+        ],
+        "analysis_status": "qualified"
+      }
+    ],
+    "requests": [],
+    "contradictions": [],
+    "catalog_id": "inicial_procedimento_comum",
+    "strategy": {
+      "domain": "agrario"
+    }
+  }
+}

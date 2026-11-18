@@ -4,19 +4,1000 @@
  "label": "Proteção de Dados e Direito Digital",
  "guide": "domain_guides/protecao_dados.md",
  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
- "polo_labels": {"claimant_theses": "Teses do autor ou requerente", "defense_theses": "Teses do réu ou requerido"},
+ "polo_labels": {
+  "claimant_theses": "Teses do autor ou requerente",
+  "defense_theses": "Teses do réu ou requerido"
+ },
  "claims": [
-  {"id": "dp_subject_rights", "label": "Direitos do titular de dados", "requirements": ["controlador", "pedido", "resposta"], "claimant_theses": [{"id": "dp_subject_rights.c1", "label": "Acesso, correção, eliminação e informações sobre o tratamento", "authority_ids": ["lgpd_art18"]}], "defense_theses": [{"id": "dp_subject_rights.d1", "label": "Hipóteses legais de conservação dos dados", "authority_ids": ["lgpd_art7"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["requerimento_administrativo", "inicial_juizado", "habeas_data"], "related_claims": [], "limitation": "conferir"},
-  {"id": "dp_incident", "label": "Incidente de segurança e reparação", "requirements": ["incidente", "dano", "seguranca_esperada", "excludentes"], "claimant_theses": [{"id": "dp_incident.c1", "label": "Responsabilidade do controlador ou operador pelo dano", "authority_ids": ["lgpd_art42", "lgpd_art44"]}], "defense_theses": [{"id": "dp_incident.d1", "label": "Dano não demonstrado ou excludentes legais", "authority_ids": ["lgpd_art42"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["inicial_juizado", "acao_civil_publica"], "related_claims": [], "limitation": "conferir"},
-  {"id": "dp_unlawful_processing", "label": "Tratamento sem base legal e dados sensíveis", "requirements": ["finalidade", "base_legal", "dado_sensivel"], "claimant_theses": [{"id": "dp_unlawful_processing.c1", "label": "Princípios e bases legais do tratamento", "authority_ids": ["lgpd_art6", "lgpd_art5", "lgpd_art11"]}], "defense_theses": [{"id": "dp_unlawful_processing.d1", "label": "Base legal válida e finalidade compatível", "authority_ids": ["lgpd_art7"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["inicial_juizado", "acao_civil_publica"], "related_claims": [], "limitation": "conferir"},
-  {"id": "dp_content_removal", "label": "Remoção de conteúdo e responsabilidade de provedores", "requirements": ["conteudo", "ordem_judicial", "notificacao", "intimidade"], "claimant_theses": [{"id": "dp_content_removal.c1", "label": "Exceção da notificação para conteúdo íntimo não autorizado", "authority_ids": ["l12965_art21"]}, {"id": "dp_content_removal.c2", "label": "Direitos dos usuários da internet", "authority_ids": ["l12965_art7"]}], "defense_theses": [{"id": "dp_content_removal.d1", "label": "Responsabilidade civil do provedor após ordem judicial específica", "authority_ids": ["l12965_art19"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["tutela_urgencia_antecedente", "inicial_procedimento_comum"], "related_claims": [], "limitation": "conferir"},
-  {"id": "dp_sanctions", "label": "Sanções administrativas da ANPD", "requirements": ["infracao", "dosimetria", "processo"], "claimant_theses": [{"id": "dp_sanctions.c1", "label": "Proporcionalidade e critérios das sanções", "authority_ids": ["lgpd_art52"]}], "defense_theses": [{"id": "dp_sanctions.d1", "label": "Infração configurada", "authority_ids": ["lgpd_art52"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["recurso_administrativo", "mandado_seguranca"], "related_claims": [], "limitation": "conferir"},
-  {"id": "dp_consent_bases", "label": "Bases legais, consentimento e legítimo interesse", "requirements": ["finalidade", "base_invocada", "informacao_ao_titular", "necessidade"], "claimant_theses": [{"id": "dp_consent_bases.c1", "label": "Consentimento deve ser livre, informado e específico, com ônus do controlador", "authority_ids": ["lgpd_art8", "lgpd_art7"]}, {"id": "dp_consent_bases.c2", "label": "Legítimo interesse exige finalidade legítima e teste de necessidade", "authority_ids": ["lgpd_art10"]}], "defense_theses": [{"id": "dp_consent_bases.d1", "label": "Tratamento amparado em execução de contrato, obrigação legal ou proteção do crédito", "authority_ids": ["lgpd_art7"]}, {"id": "dp_consent_bases.d2", "label": "Tratamento fora do alcance da lei", "authority_ids": ["lgpd_art4"]}], "temporal_marker_ids": ["lgpd_vigencia"], "typical_requests": ["Cessação do tratamento", "Eliminação", "Indenização"], "evidence": ["Política de privacidade e termos", "Registros de consentimento", "Relatório de impacto"], "piece_ids": ["inicial_procedimento_comum", "inicial_juizado", "requerimento_administrativo"], "related_claims": ["dp_unlawful_processing"], "limitation": "Conferir (CDC, art. 27, em relação de consumo)"},
-  {"id": "dp_children_sensitive", "label": "Dados de crianças, adolescentes e dados sensíveis", "requirements": ["idade", "consentimento_dos_pais", "melhor_interesse", "natureza_do_dado"], "claimant_theses": [{"id": "dp_children_sensitive.c1", "label": "Tratamento no melhor interesse e com consentimento específico de um dos pais", "authority_ids": ["lgpd_art14"]}, {"id": "dp_children_sensitive.c2", "label": "Dados sensíveis só nas hipóteses estritas", "authority_ids": ["lgpd_art11", "lgpd_art5"]}], "defense_theses": [{"id": "dp_children_sensitive.d1", "label": "Hipóteses de dispensa de consentimento para proteção da criança ou contato com os pais", "authority_ids": ["lgpd_art14"]}], "temporal_marker_ids": ["lgpd_vigencia"], "typical_requests": ["Eliminação dos dados", "Adequação do serviço", "Indenização"], "evidence": ["Fluxo de cadastro", "Termos e avisos"], "piece_ids": ["inicial_procedimento_comum", "acao_civil_publica", "requerimento_administrativo"], "related_claims": ["dp_unlawful_processing"], "limitation": "Conferir"},
-  {"id": "dp_automated_decisions", "label": "Decisões automatizadas, perfis e pontuação de crédito", "requirements": ["decisao_automatizada", "interesse_afetado", "criterios", "dados_usados"], "claimant_theses": [{"id": "dp_automated_decisions.c1", "label": "Direito de revisão e de informação sobre critérios", "authority_ids": ["lgpd_art20"]}, {"id": "dp_automated_decisions.c2", "label": "Uso de dados excessivos ou sensíveis na pontuação gera dano", "authority_ids": ["stj_sumula_550", "l12414_art5"]}], "defense_theses": [{"id": "dp_automated_decisions.d1", "label": "Pontuação de crédito dispensa consentimento, com dever de esclarecimento", "authority_ids": ["stj_sumula_550"]}, {"id": "dp_automated_decisions.d2", "label": "Segredo comercial e industrial", "authority_ids": ["lgpd_art20"]}], "temporal_marker_ids": [], "typical_requests": ["Revisão da decisão", "Informação dos dados e fontes", "Indenização"], "evidence": ["Negativa de crédito ou serviço", "Resposta do controlador"], "piece_ids": ["inicial_procedimento_comum", "inicial_juizado", "habeas_data", "requerimento_administrativo"], "related_claims": ["dp_subject_rights", "cons_credit_bureau"], "limitation": "Conferir"},
-  {"id": "dp_breach_liability", "label": "Vazamento: dano, nexo e excludentes", "requirements": ["incidente", "dados_expostos", "medidas_de_seguranca", "dano_concreto"], "claimant_theses": [{"id": "dp_breach_liability.c1", "label": "Dever de segurança e comunicação do incidente", "authority_ids": ["lgpd_art46", "lgpd_art48"]}, {"id": "dp_breach_liability.c2", "label": "Responsabilidade do controlador e do operador e inversão do ônus", "authority_ids": ["lgpd_art42", "lgpd_art44"]}], "defense_theses": [{"id": "dp_breach_liability.d1", "label": "Dano moral não é presumido no vazamento de dados comuns — conferir a orientação do STJ", "authority_ids": ["lgpd_art42"]}, {"id": "dp_breach_liability.d2", "label": "Excludentes: não realizou o tratamento, não houve violação ou culpa exclusiva de terceiro", "authority_ids": ["lgpd_art43"]}], "temporal_marker_ids": ["lgpd_vigencia"], "typical_requests": ["Indenização", "Medidas de mitigação", "Monitoramento de crédito"], "evidence": ["Comunicado do incidente", "Prova do uso indevido dos dados", "Relatório técnico"], "piece_ids": ["inicial_procedimento_comum", "inicial_juizado", "acao_civil_publica"], "related_claims": ["dp_incident", "banc_secrecy_data"], "limitation": "Conferir"},
-  {"id": "dp_records_identification", "label": "Identificação de usuário e guarda de registros", "requirements": ["conteudo_ilicito", "indicios", "periodo", "utilidade"], "claimant_theses": [{"id": "dp_records_identification.c1", "label": "Requisição judicial de registros com indícios do ilícito e período delimitado", "authority_ids": ["l12965_art22", "l12965_art10"]}, {"id": "dp_records_identification.c2", "label": "Dever de guarda de registros de conexão e de acesso", "authority_ids": ["l12965_art13", "l12965_art15"]}], "defense_theses": [{"id": "dp_records_identification.d1", "label": "Prazo de guarda esgotado", "authority_ids": ["l12965_art13", "l12965_art15"]}, {"id": "dp_records_identification.d2", "label": "Pedido genérico viola a privacidade de terceiros", "authority_ids": ["l12965_art10", "l12965_art7"]}], "temporal_marker_ids": [], "typical_requests": ["Fornecimento de registros", "Preservação cautelar"], "evidence": ["URLs e capturas", "Datas e horários com fuso"], "piece_ids": ["inicial_procedimento_comum", "tutela_urgencia_antecedente"], "related_claims": ["dp_content_removal"], "limitation": "Registros: um ano (conexão) e seis meses (aplicação) — agir antes do fim da guarda"},
-  {"id": "dp_platform_liability", "label": "Responsabilidade de plataformas por conteúdo de terceiros", "requirements": ["tipo_de_conteudo", "notificacao", "ordem_judicial", "dever_de_cuidado"], "claimant_theses": [{"id": "dp_platform_liability.c1", "label": "Responsabilização conforme a interpretação do STF sobre o art. 19 do Marco Civil — conferir as teses dos Temas 987 e 533", "authority_ids": ["l12965_art19", "tema_stf_987", "tema_stf_533"]}, {"id": "dp_platform_liability.c2", "label": "Imagens íntimas: remoção após notificação", "authority_ids": ["l12965_art21"]}], "defense_theses": [{"id": "dp_platform_liability.d1", "label": "Hipóteses em que permanece necessária ordem judicial específica", "authority_ids": ["l12965_art19"]}, {"id": "dp_platform_liability.d2", "label": "Comunicação ao usuário e contraditório", "authority_ids": ["l12965_art20"]}], "temporal_marker_ids": [], "typical_requests": ["Remoção", "Indenização", "Identificação do autor"], "evidence": ["Notificações enviadas e protocolos", "URLs específicas", "Prova do dano"], "piece_ids": ["inicial_procedimento_comum", "tutela_urgencia_antecedente", "inicial_juizado"], "related_claims": ["dp_content_removal", "civ_honor_image"], "limitation": "Conferir"},
-  {"id": "dp_public_sector", "label": "Tratamento de dados pelo poder público e transferência internacional", "requirements": ["finalidade_publica", "base_legal", "compartilhamento", "pais_de_destino"], "claimant_theses": [{"id": "dp_public_sector.c1", "label": "Tratamento público exige finalidade pública e transparência", "authority_ids": ["lgpd_art23", "l12527_art31"]}, {"id": "dp_public_sector.c2", "label": "Transferência internacional só nas hipóteses legais", "authority_ids": ["lgpd_art33"]}], "defense_theses": [{"id": "dp_public_sector.d1", "label": "Execução de políticas públicas e competência legal", "authority_ids": ["lgpd_art7", "lgpd_art23"]}], "temporal_marker_ids": [], "typical_requests": ["Cessação do compartilhamento", "Informação ao titular"], "evidence": ["Atos normativos e convênios", "Resposta ao pedido de acesso"], "piece_ids": ["mandado_seguranca", "habeas_data", "requerimento_administrativo", "acao_civil_publica"], "related_claims": ["dp_subject_rights", "adm_information_access"], "limitation": "Conferir"}
+  {
+   "id": "dp_subject_rights",
+   "label": "Direitos do titular de dados",
+   "requirements": [
+    "controlador",
+    "pedido",
+    "resposta"
+   ],
+   "claimant_theses": [
+    {
+     "id": "dp_subject_rights.c1",
+     "label": "Acesso, correção, eliminação e informações sobre o tratamento",
+     "authority_ids": [
+      "lgpd_art18"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "dp_subject_rights.d1",
+     "label": "Hipóteses legais de conservação dos dados",
+     "authority_ids": [
+      "lgpd_art7"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lgpd_vigencia"
+   ],
+   "typical_requests": [
+    "Confirmação da existência de tratamento e fornecimento de cópia clara e completa dos dados pessoais em até 15 dias (LGPD, arts. 18 e 19, § 2º)",
+    "Correção de dados incompletos/inexatos, anonimização, bloqueio ou eliminação de dados desnecessários ou excessivos",
+    "Revogação de consentimento e informação detalhada sobre entidades públicas e privadas com as quais o controlador realizou uso compartilhado"
+   ],
+   "evidence": [
+    "Requerimento formal enviado ao canal do Encarregado (DPO) ou SAC do controlador com comprovante de data",
+    "Resposta insatisfatória ou comprovação de omissão além do prazo legal de 15 dias da declaração completa",
+    "Capturas de tela, mensagens comerciais indesejadas ou documentos demonstrando a posse dos dados pelo controlador"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "inicial_juizado",
+    "habeas_data"
+   ],
+   "related_claims": [],
+   "limitation": "Os direitos autodeterminativos de acesso, retificação e oposição são exercitáveis a qualquer tempo enquanto durar o tratamento dos dados (LGPD, art. 18); eventual pretensão indenizatória prescreve em 5 anos nas relações de consumo (CDC, art. 27; LGPD, art. 45) ou 3 anos nas relações civis (CC, art. 206, § 3º, V)."
+  },
+  {
+   "id": "dp_incident",
+   "label": "Incidente de segurança e reparação",
+   "requirements": [
+    "incidente",
+    "dano",
+    "seguranca_esperada",
+    "excludentes"
+   ],
+   "claimant_theses": [
+    {
+     "id": "dp_incident.c1",
+     "label": "Responsabilidade do controlador ou operador pelo dano",
+     "authority_ids": [
+      "lgpd_art42",
+      "lgpd_art44"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "dp_incident.d1",
+     "label": "Dano não demonstrado ou excludentes legais",
+     "authority_ids": [
+      "lgpd_art42"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lgpd_vigencia",
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Condenação à reparação de danos patrimoniais e morais decorrentes de vazamento ou acesso não autorizado de dados sensíveis/concretamente lesivos (LGPD, arts. 42 e 44)",
+    "Obrigação de fazer consistente em medidas técnicas de contenção, desindexação de dados vazados e custeio de monitoramento antifraude",
+    "Em ação civil pública: dano moral coletivo e auditoria independente de segurança da informação"
+   ],
+   "evidence": [
+    "Comunicado oficial de incidente de segurança enviado à ANPD e aos titulares afetados (LGPD, art. 48)",
+    "Comprovação da natureza sensível dos dados vazados ou de efetivo prejuízo/tentativas concretas de fraude (jurisprudência do STJ sobre ausência de dano in re ipsa em dado cadastral comum)",
+    "Relatório técnico forense sobre vulnerabilidades de criptografia, controle de acesso e governança"
+   ],
+   "piece_ids": [
+    "inicial_juizado",
+    "acao_civil_publica"
+   ],
+   "related_claims": [],
+   "limitation": "Prescrição quinquenal nas relações de consumo (LGPD, art. 45 c/c CDC, art. 27) ou trienal nas demais relações civis (CC, art. 206, § 3º, V), contada da comunicação/ciência inequívoca do incidente e de sua autoria."
+  },
+  {
+   "id": "dp_unlawful_processing",
+   "label": "Tratamento sem base legal e dados sensíveis",
+   "requirements": [
+    "finalidade",
+    "base_legal",
+    "dado_sensivel"
+   ],
+   "claimant_theses": [
+    {
+     "id": "dp_unlawful_processing.c1",
+     "label": "Princípios e bases legais do tratamento",
+     "authority_ids": [
+      "lgpd_art6",
+      "lgpd_art5",
+      "lgpd_art11"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "dp_unlawful_processing.d1",
+     "label": "Base legal válida e finalidade compatível",
+     "authority_ids": [
+      "lgpd_art7"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lgpd_vigencia"
+   ],
+   "typical_requests": [
+    "Cessação imediata do tratamento desprovido de hipótese legal nos arts. 7º ou 11 da LGPD sob pena de multa diária",
+    "Eliminação definitiva da base de dados ilícita com certificação técnica de descarte seguro (LGPD, art. 16)",
+    "Indenização pelos danos morais e patrimoniais causados pelo tratamento abusivo ou discriminatório"
+   ],
+   "evidence": [
+    "Política de privacidade, termos de uso e mapeamento de dados (RoPA) apresentados pelo controlador",
+    "Provas de comercialização clandestina de listas de dados (mailing/brokers) ou uso de dados de saúde/biométricos sem base legal",
+    "Notificações extrajudiciais e reclamações registradas perante a ANPD ou Senacon"
+   ],
+   "piece_ids": [
+    "inicial_juizado",
+    "acao_civil_publica"
+   ],
+   "related_claims": [],
+   "limitation": "Tutela inibitória/eliminatória exigível enquanto persistir o tratamento ilícito continuado; pretensão reparatória em 5 anos na relação de consumo (CDC, art. 27; LGPD, art. 45) ou 3 anos no regime geral do Código Civil (art. 206, § 3º, V)."
+  },
+  {
+   "id": "dp_content_removal",
+   "label": "Remoção de conteúdo e responsabilidade de provedores",
+   "requirements": [
+    "conteudo",
+    "ordem_judicial",
+    "notificacao",
+    "intimidade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "dp_content_removal.c1",
+     "label": "Exceção da notificação para conteúdo íntimo não autorizado",
+     "authority_ids": [
+      "l12965_art21"
+     ]
+    },
+    {
+     "id": "dp_content_removal.c2",
+     "label": "Direitos dos usuários da internet",
+     "authority_ids": [
+      "l12965_art7"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "dp_content_removal.d1",
+     "label": "Responsabilidade civil do provedor após ordem judicial específica",
+     "authority_ids": [
+      "l12965_art19"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lgpd_vigencia",
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Tutela de urgência para indisponibilização de URLs específicas contendo conteúdo ofensivo à honra/imagem ou divulgação não autorizada de cenas íntimas (Marco Civil, arts. 19 e 21)",
+    "Condenação solidária do provedor de aplicação por omissão após ordem judicial específica (art. 19 — conferir modulação e teses firmadas no Tema 987 do STF!) ou após simples notificação extrajudicial em nudez não consensual (art. 21)",
+    "Desindexação pontual de resultados ilícitos específicos sem censura prévia genérica"
+   ],
+   "evidence": [
+    "Indicação precisa e individualizada das URLs completas do conteúdo impugnado (Lei 12.965/2014, art. 19, § 1º)",
+    "Ata notarial ou captura autenticada com data, hora e teor das publicações e comentários",
+    "Comprovante de notificação extrajudicial prévia (essencial no art. 21 e nas hipóteses do Tema 987 do STF) ou intimação da liminar"
+   ],
+   "piece_ids": [
+    "tutela_urgencia_antecedente",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [],
+   "limitation": "Prescrição trienal para pretensão de reparação civil por ofensa à honra, imagem ou privacidade na internet (CC, art. 206, § 3º, V), ou quinquenal se configurado defeito de segurança consumerista (CDC, art. 27)."
+  },
+  {
+   "id": "dp_sanctions",
+   "label": "Sanções administrativas da ANPD",
+   "requirements": [
+    "infracao",
+    "dosimetria",
+    "processo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "dp_sanctions.c1",
+     "label": "Proporcionalidade e critérios das sanções",
+     "authority_ids": [
+      "lgpd_art52"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "dp_sanctions.d1",
+     "label": "Infração configurada",
+     "authority_ids": [
+      "lgpd_art52"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lgpd_vigencia",
+    "lei_13655_lindb"
+   ],
+   "typical_requests": [
+    "Anulação ou conversão de sanção administrativa da ANPD por observância prévia de boas práticas, pronta adoção de medidas corretivas e proporcionalidade (LGPD, art. 52, § 1º)",
+    "Substituição de multa simples/diária ou bloqueio de base de dados por advertência ou plano de conformidade",
+    "Reconhecimento de prescrição administrativa ou cerceamento de defesa no processo fiscalizatório"
+   ],
+   "evidence": [
+    "Processo administrativo sancionador integral tramitado perante a Coordenação-Geral de Fiscalização da ANPD",
+    "Programa de governança em privacidade, RIPD, políticas de segurança (ISO 27001/27701) e comprovação de cooperação e comunicação tempestiva",
+    "Demonstrações contábeis do faturamento do exercício anterior no ramo de atividade para aferição do teto de 2% / R$ 50 milhões (LGPD, art. 52, II)"
+   ],
+   "piece_ids": [
+    "recurso_administrativo",
+    "mandado_seguranca"
+   ],
+   "related_claims": [],
+   "limitation": "Aplicabilidade das sanções do art. 52 apenas para infrações ocorridas ou continuadas a partir de 01/08/2021 (Lei 14.010/2020); prescrição punitiva administrativa federal em 5 anos e intercorrente em 3 anos (Lei 9.873/1999, art. 1º); mandado de segurança em 120 dias."
+  },
+  {
+   "id": "dp_consent_bases",
+   "label": "Bases legais, consentimento e legítimo interesse",
+   "requirements": [
+    "finalidade",
+    "base_invocada",
+    "informacao_ao_titular",
+    "necessidade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "dp_consent_bases.c1",
+     "label": "Consentimento deve ser livre, informado e específico, com ônus do controlador",
+     "authority_ids": [
+      "lgpd_art8",
+      "lgpd_art7"
+     ]
+    },
+    {
+     "id": "dp_consent_bases.c2",
+     "label": "Legítimo interesse exige finalidade legítima e teste de necessidade",
+     "authority_ids": [
+      "lgpd_art10"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "dp_consent_bases.d1",
+     "label": "Tratamento amparado em execução de contrato, obrigação legal ou proteção do crédito",
+     "authority_ids": [
+      "lgpd_art7"
+     ]
+    },
+    {
+     "id": "dp_consent_bases.d2",
+     "label": "Tratamento fora do alcance da lei",
+     "authority_ids": [
+      "lgpd_art4"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lgpd_vigencia"
+   ],
+   "typical_requests": [
+    "Cessação do tratamento",
+    "Eliminação",
+    "Indenização"
+   ],
+   "evidence": [
+    "Política de privacidade e termos",
+    "Registros de consentimento",
+    "Relatório de impacto"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "requerimento_administrativo"
+   ],
+   "related_claims": [
+    "dp_unlawful_processing"
+   ],
+   "limitation": "Revogação do consentimento e oposição a tratamento fundado em legítimo interesse exercitáveis a qualquer tempo (LGPD, arts. 8º, § 5º, e 18, § 2º); reparação civil em 5 anos nas relações de consumo (CDC, art. 27) ou 3 anos no Código Civil (art. 206, § 3º, V)."
+  },
+  {
+   "id": "dp_children_sensitive",
+   "label": "Dados de crianças, adolescentes e dados sensíveis",
+   "requirements": [
+    "idade",
+    "consentimento_dos_pais",
+    "melhor_interesse",
+    "natureza_do_dado"
+   ],
+   "claimant_theses": [
+    {
+     "id": "dp_children_sensitive.c1",
+     "label": "Tratamento no melhor interesse e com consentimento específico de um dos pais",
+     "authority_ids": [
+      "lgpd_art14"
+     ]
+    },
+    {
+     "id": "dp_children_sensitive.c2",
+     "label": "Dados sensíveis só nas hipóteses estritas",
+     "authority_ids": [
+      "lgpd_art11",
+      "lgpd_art5"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "dp_children_sensitive.d1",
+     "label": "Hipóteses de dispensa de consentimento para proteção da criança ou contato com os pais",
+     "authority_ids": [
+      "lgpd_art14"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lgpd_vigencia"
+   ],
+   "typical_requests": [
+    "Eliminação dos dados",
+    "Adequação do serviço",
+    "Indenização"
+   ],
+   "evidence": [
+    "Fluxo de cadastro",
+    "Termos e avisos",
+    "Demonstração dos mecanismos de verificação etária (age assurance), controles parentais e coleta mínima estritamente necessária"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "acao_civil_publica",
+    "requerimento_administrativo"
+   ],
+   "related_claims": [
+    "dp_unlawful_processing"
+   ],
+   "limitation": "Contra absolutamente incapazes (menores de 16 anos) não corre a prescrição da pretensão reparatória individual (CC, art. 198, I); tutela coletiva do melhor interesse infantojuvenil imprescritível enquanto durar a prática ilícita."
+  },
+  {
+   "id": "dp_automated_decisions",
+   "label": "Decisões automatizadas, perfis e pontuação de crédito",
+   "requirements": [
+    "decisao_automatizada",
+    "interesse_afetado",
+    "criterios",
+    "dados_usados"
+   ],
+   "claimant_theses": [
+    {
+     "id": "dp_automated_decisions.c1",
+     "label": "Direito de revisão e de informação sobre critérios",
+     "authority_ids": [
+      "lgpd_art20"
+     ]
+    },
+    {
+     "id": "dp_automated_decisions.c2",
+     "label": "Uso de dados excessivos ou sensíveis na pontuação gera dano",
+     "authority_ids": [
+      "stj_sumula_550",
+      "l12414_art5"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "dp_automated_decisions.d1",
+     "label": "Pontuação de crédito dispensa consentimento, com dever de esclarecimento",
+     "authority_ids": [
+      "stj_sumula_550"
+     ]
+    },
+    {
+     "id": "dp_automated_decisions.d2",
+     "label": "Segredo comercial e industrial",
+     "authority_ids": [
+      "lgpd_art20"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lgpd_vigencia"
+   ],
+   "typical_requests": [
+    "Revisão da decisão",
+    "Informação dos dados e fontes",
+    "Indenização"
+   ],
+   "evidence": [
+    "Negativa de crédito ou serviço",
+    "Resposta do controlador",
+    "Histórico do Cadastro Positivo (Lei 12.414/2011), parâmetros estatísticos não sigilosos do credit score e auditoria de não discriminação algorítmica"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "habeas_data",
+    "requerimento_administrativo"
+   ],
+   "related_claims": [
+    "dp_subject_rights",
+    "cons_credit_bureau"
+   ],
+   "limitation": "Pedido de revisão de decisões automatizadas e explicação dos critérios (LGPD, art. 20) exercitável a cada avaliação; pretensão indenizatória por recusa abusiva/dado incorreto em 5 anos na relação de consumo (CDC, art. 27; Súmula 550 do STJ)."
+  },
+  {
+   "id": "dp_breach_liability",
+   "label": "Vazamento: dano, nexo e excludentes",
+   "requirements": [
+    "incidente",
+    "dados_expostos",
+    "medidas_de_seguranca",
+    "dano_concreto"
+   ],
+   "claimant_theses": [
+    {
+     "id": "dp_breach_liability.c1",
+     "label": "Dever de segurança e comunicação do incidente",
+     "authority_ids": [
+      "lgpd_art46",
+      "lgpd_art48"
+     ]
+    },
+    {
+     "id": "dp_breach_liability.c2",
+     "label": "Responsabilidade do controlador e do operador e inversão do ônus",
+     "authority_ids": [
+      "lgpd_art42",
+      "lgpd_art44"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "dp_breach_liability.d1",
+     "label": "Dano moral não é presumido no vazamento de dados comuns — conferir a orientação do STJ",
+     "authority_ids": [
+      "lgpd_art42"
+     ]
+    },
+    {
+     "id": "dp_breach_liability.d2",
+     "label": "Excludentes: não realizou o tratamento, não houve violação ou culpa exclusiva de terceiro",
+     "authority_ids": [
+      "lgpd_art43"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lgpd_vigencia",
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Indenização",
+    "Medidas de mitigação",
+    "Monitoramento de crédito"
+   ],
+   "evidence": [
+    "Comunicado do incidente",
+    "Prova do uso indevido dos dados",
+    "Relatório técnico"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "acao_civil_publica"
+   ],
+   "related_claims": [
+    "dp_incident",
+    "banc_secrecy_data"
+   ],
+   "limitation": "Prescrição quinquenal nas relações submetidas ao CDC (LGPD, art. 45; CDC, art. 27) e trienal nas relações civis paritárias ou institucionais (CC, art. 206, § 3º, V), ou quinquenal contra a Fazenda Pública (Decreto 20.910/1932, art. 1º)."
+  },
+  {
+   "id": "dp_records_identification",
+   "label": "Identificação de usuário e guarda de registros",
+   "requirements": [
+    "conteudo_ilicito",
+    "indicios",
+    "periodo",
+    "utilidade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "dp_records_identification.c1",
+     "label": "Requisição judicial de registros com indícios do ilícito e período delimitado",
+     "authority_ids": [
+      "l12965_art22",
+      "l12965_art10"
+     ]
+    },
+    {
+     "id": "dp_records_identification.c2",
+     "label": "Dever de guarda de registros de conexão e de acesso",
+     "authority_ids": [
+      "l12965_art13",
+      "l12965_art15"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "dp_records_identification.d1",
+     "label": "Prazo de guarda esgotado",
+     "authority_ids": [
+      "l12965_art13",
+      "l12965_art15"
+     ]
+    },
+    {
+     "id": "dp_records_identification.d2",
+     "label": "Pedido genérico viola a privacidade de terceiros",
+     "authority_ids": [
+      "l12965_art10",
+      "l12965_art7"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Fornecimento de registros",
+    "Preservação cautelar",
+    "Requisição judicial de registros de acesso a aplicações (IP, porta lógica de origem, data, hora e fuso UTC) e posterior quebra cadastral junto ao provedor de conexão"
+   ],
+   "evidence": [
+    "URLs e capturas",
+    "Datas e horários com fuso",
+    "Indicação da porta lógica de origem quando envolver compartilhamento de IPv4 (CGNAT) para individualização inequívoca do terminal"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [
+    "dp_content_removal"
+   ],
+   "limitation": "Dever legal mínimo de guarda de 6 meses para registros de acesso a aplicações de internet (Lei 12.965/2014, art. 15) e de 1 ano para registros de conexão (art. 13), impondo ajuizamento ou pedido cautelar de preservação antes do exaurimento desses prazos."
+  },
+  {
+   "id": "dp_platform_liability",
+   "label": "Responsabilidade de plataformas por conteúdo de terceiros",
+   "requirements": [
+    "tipo_de_conteudo",
+    "notificacao",
+    "ordem_judicial",
+    "dever_de_cuidado"
+   ],
+   "claimant_theses": [
+    {
+     "id": "dp_platform_liability.c1",
+     "label": "Responsabilização conforme a interpretação do STF sobre o art. 19 do Marco Civil — conferir as teses dos Temas 987 e 533",
+     "authority_ids": [
+      "l12965_art19",
+      "tema_stf_987",
+      "tema_stf_533"
+     ]
+    },
+    {
+     "id": "dp_platform_liability.c2",
+     "label": "Imagens íntimas: remoção após notificação",
+     "authority_ids": [
+      "l12965_art21"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "dp_platform_liability.d1",
+     "label": "Hipóteses em que permanece necessária ordem judicial específica",
+     "authority_ids": [
+      "l12965_art19"
+     ]
+    },
+    {
+     "id": "dp_platform_liability.d2",
+     "label": "Comunicação ao usuário e contraditório",
+     "authority_ids": [
+      "l12965_art20"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Remoção",
+    "Indenização",
+    "Identificação do autor"
+   ],
+   "evidence": [
+    "Notificações enviadas e protocolos",
+    "URLs específicas",
+    "Prova do dano"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente",
+    "inicial_juizado"
+   ],
+   "related_claims": [
+    "dp_content_removal",
+    "civ_honor_image"
+   ],
+   "limitation": "Prescrição trienal para pretensão reparatória por ilícito informático/ofensa moral (CC, art. 206, § 3º, V) ou quinquenal quando caracterizado defeito do serviço de consumo (CDC, art. 27)."
+  },
+  {
+   "id": "dp_public_sector",
+   "label": "Tratamento de dados pelo poder público e transferência internacional",
+   "requirements": [
+    "finalidade_publica",
+    "base_legal",
+    "compartilhamento",
+    "pais_de_destino"
+   ],
+   "claimant_theses": [
+    {
+     "id": "dp_public_sector.c1",
+     "label": "Tratamento público exige finalidade pública e transparência",
+     "authority_ids": [
+      "lgpd_art23",
+      "l12527_art31"
+     ]
+    },
+    {
+     "id": "dp_public_sector.c2",
+     "label": "Transferência internacional só nas hipóteses legais",
+     "authority_ids": [
+      "lgpd_art33"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "dp_public_sector.d1",
+     "label": "Execução de políticas públicas e competência legal",
+     "authority_ids": [
+      "lgpd_art7",
+      "lgpd_art23"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lgpd_vigencia",
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Cessação do compartilhamento",
+    "Informação ao titular",
+    "Determinação de publicação de informe claro de finalidade pública e realização de Relatório de Impacto antes de interoperabilidade massiva de bases estatais (Tema 1141/ADI 6649 STF)"
+   ],
+   "evidence": [
+    "Atos normativos e convênios",
+    "Resposta ao pedido de acesso",
+    "Parecer do Encarregado governamental, nota técnica da ANPD e acordo de cooperação técnica entre os órgãos públicos"
+   ],
+   "piece_ids": [
+    "mandado_seguranca",
+    "habeas_data",
+    "requerimento_administrativo",
+    "acao_civil_publica"
+   ],
+   "related_claims": [
+    "dp_subject_rights",
+    "adm_information_access"
+   ],
+   "limitation": "Mandado de segurança contra compartilhamento estatal ilegal em 120 dias do ato (Lei 12.016/2009, art. 23); habeas data sem prazo decadencial após recusa/omissão (Lei 9.507/1997) e reparação contra a Fazenda Pública em 5 anos (Decreto 20.910/1932, art. 1º)."
+  },
+  {
+   "id": "dp_biometrics_facial_recognition",
+   "label": "Dados biométricos, reconhecimento facial e prevenção à fraude (LGPD, arts. 5º, II, e 11, II, 'g')",
+   "requirements": [
+    "dado_pessoal_sensivel_biometrico",
+    "necessidade_proporcionalidade",
+    "alternativa_menos_intrusiva",
+    "seguranca_armazenamento_template"
+   ],
+   "claimant_theses": [
+    {
+     "id": "dp_biometrics_facial_recognition.c1",
+     "label": "A biometria facial ou digital constitui dado pessoal sensível (LGPD, art. 5º, II), sendo ilícita sua coleta compulsória desproporcional no varejo, transporte ou espetáculos para fins ocultos de perfilamento comportamental ou publicitário sem consentimento específico e destacado ou estrita necessidade antifraude",
+     "authority_ids": [
+      "lgpd_art5",
+      "lgpd_art6",
+      "lgpd_art11"
+     ]
+    },
+    {
+     "id": "dp_biometrics_facial_recognition.c2",
+     "label": "Responsabilidade civil por erro de falso positivo em sistemas de reconhecimento facial que resulte em abordagem constrangedora, bloqueio indevido de conta/acesso ou acusação infundada",
+     "authority_ids": [
+      "lgpd_art42",
+      "cdc_art14",
+      "lgpd_art20"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "dp_biometrics_facial_recognition.d1",
+     "label": "Legitimidade do tratamento de biometria facial independentemente de consentimento quando estritamente indispensável à garantia da prevenção à fraude e à segurança do próprio titular nos processos de identificação e autenticação em sistemas eletrônicos (LGPD, art. 11, II, 'g')",
+     "authority_ids": [
+      "lgpd_art11",
+      "lgpd_art6"
+     ]
+    },
+    {
+     "id": "dp_biometrics_facial_recognition.d2",
+     "label": "Conversão imediata da imagem em vetor matemático irreversível (hash/template criptografado), sem retenção de banco de fotografias brutas nem compartilhamento com terceiros",
+     "authority_ids": [
+      "lgpd_art6",
+      "lgpd_art38"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lgpd_vigencia"
+   ],
+   "typical_requests": [
+    "Eliminação do template biométrico coletado excessivamente e disponibilização de meio alternativo de acesso quando cabível",
+    "Suspensão coletiva de sistema de reconhecimento facial comercial desprovido de RIPD e de salvaguardas de acurácia/não discriminação",
+    "Indenização por danos morais decorrentes de bloqueio abusivo ou abordagem vexatória por falso positivo biométrico"
+   ],
+   "evidence": [
+    "Relatório de Impacto à Proteção de Dados Pessoais (RIPD) avaliando necessidade, taxas de falso positivo por recorte demográfico e criptografia",
+    "Avisos de privacidade exibidos no ponto de coleta, termos de adesão e arquitetura técnica do fornecedor de biometria",
+    "Filmagens, boletim de ocorrência ou protocolos comprovando o erro de reconhecimento ou a recusa de atendimento"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "acao_civil_publica",
+    "tutela_urgencia_antecedente",
+    "contestacao"
+   ],
+   "related_claims": [
+    "dp_unlawful_processing",
+    "dp_children_sensitive",
+    "banc_pix_fraud_social_engineering"
+   ],
+   "limitation": "Prescrição quinquenal nas relações de consumo (LGPD, art. 45; CDC, art. 27) ou trienal nas relações civis (CC, art. 206, § 3º, V); tutela coletiva inibitória exigível enquanto mantido o sistema biométrico."
+  },
+  {
+   "id": "dp_ai_training_copyright_scraping",
+   "label": "Raspagem de dados (web scraping) e treinamento de modelos de inteligência artificial com dados pessoais",
+   "requirements": [
+    "dados_publicamente_acessiveis",
+    "boa_fe_finalidade_origem",
+    "teste_balanceamento_legitimo_interesse",
+    "mecanismo_opt_out_eliminacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "dp_ai_training_copyright_scraping.c1",
+     "label": "O fato de dados pessoais terem sido tornados manifestamente públicos não dispensa a observância da finalidade, da boa-fé e do interesse público que justificaram sua disponibilização (LGPD, art. 7º, §§ 3º e 7º), sendo vedado o treinamento de IA com dados sensíveis, dados de crianças/adolescentes sem melhor interesse ou sem canal efetivo de oposição (opt-out)",
+     "authority_ids": [
+      "lgpd_art6",
+      "lgpd_art7",
+      "lgpd_art14",
+      "lgpd_art18"
+     ]
+    },
+    {
+     "id": "dp_ai_training_copyright_scraping.c2",
+     "label": "Direito de retificação/supressão de saídas alucinatórias ou difamatórias geradas sobre pessoa natural identificada e explicação sobre o tratamento automatizado",
+     "authority_ids": [
+      "lgpd_art18",
+      "lgpd_art20",
+      "lgpd_art42"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "dp_ai_training_copyright_scraping.d1",
+     "label": "Admissibilidade da base legal do legítimo interesse (LGPD, art. 7º, IX, e art. 10) para treinamento de modelos fundacionais sobre dados públicos não sensíveis quando acompanhada de LIA/RIPD, filtros de desidentificação, transparência ativa e mecanismo facilitado de oposição pelos titulares",
+     "authority_ids": [
+      "lgpd_art7",
+      "lgpd_art10",
+      "lgpd_art38"
+     ]
+    },
+    {
+     "id": "dp_ai_training_copyright_scraping.d2",
+     "label": "Cumprimento das medidas cautelares e diretrizes técnicas expedidas pela ANPD para governança de sistemas de IA generativa",
+     "authority_ids": [
+      "lgpd_art38",
+      "lgpd_art52"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lgpd_vigencia"
+   ],
+   "typical_requests": [
+    "Efetivação de oposição (opt-out) ao uso dos dados pessoais do titular para treinamento de novos modelos de IA e filtros de saída",
+    "Apresentação de Avaliação de Legítimo Interesse (LIA) e Relatório de Impacto (RIPD) em processo administrativo ou ação coletiva",
+    "Suspensão cautelar de treinamento com bases de dados de usuários brasileiros na ausência de transparência e salvaguardas"
+   ],
+   "evidence": [
+    "Políticas de privacidade atualizadas, avisos de opt-out, arquivos robots.txt e termos de serviço das plataformas",
+    "Avaliação de Legítimo Interesse (LIA), RIPD e documentação técnica de curadoria/filtragem de PII nos datasets",
+    "Determinações preventivas da ANPD/Senacon e capturas de tela demonstrando memorização/exposição de dados pessoais pelo modelo"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "recurso_administrativo",
+    "acao_civil_publica",
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [
+    "dp_consent_bases",
+    "dp_automated_decisions",
+    "dp_sanctions"
+   ],
+   "limitation": "Oposição ao tratamento ilícito ou incompatível exercitável a qualquer tempo (LGPD, art. 18, § 2º); reparação civil em 5 anos na relação de consumo (CDC, art. 27) ou 3 anos no Código Civil (art. 206, § 3º, V)."
+  },
+  {
+   "id": "dp_dpo_governance_ripd",
+   "label": "Governança em privacidade, atuação do Encarregado (DPO) e Relatório de Impacto (RIPD — Res. ANPD 18/2024)",
+   "requirements": [
+    "designacao_formal_encarregado",
+    "divulgacao_identidade_contato",
+    "ausencia_conflito_interesses",
+    "elaboracao_ripd_alto_risco"
+   ],
+   "claimant_theses": [
+    {
+     "id": "dp_dpo_governance_ripd.c1",
+     "label": "Dever legal de indicar Encarregado com identidade e canal de contato divulgados de forma clara no sítio eletrônico, autonomia técnica e ausência de conflito de interesses, ressalvada dispensa regulamentar para agentes de pequeno porte sem tratamento de alto risco (LGPD, art. 41)",
+     "authority_ids": [
+      "lgpd_art41",
+      "lgpd_art18"
+     ]
+    },
+    {
+     "id": "dp_dpo_governance_ripd.c2",
+     "label": "Obrigatoriedade de elaboração prévia e disponibilização à ANPD do Relatório de Impacto à Proteção de Dados Pessoais (RIPD) nas operações de alto risco, dados sensíveis em larga escala, vigilância sistemática ou legítimo interesse (LGPD, arts. 10, § 3º, e 38)",
+     "authority_ids": [
+      "lgpd_art38",
+      "lgpd_art10"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "dp_dpo_governance_ripd.d1",
+     "label": "Enquadramento válido como agente de tratamento de pequeno porte (Res. CD/ANPD 2/2022) dispensado da indicação formal de DPO mediante disponibilização de canal alternativo de comunicação com os titulares",
+     "authority_ids": [
+      "lgpd_art41",
+      "lgpd_art52"
+     ]
+    },
+    {
+     "id": "dp_dpo_governance_ripd.d2",
+     "label": "Adoção efetiva e documentada de programa de governança em privacidade como atenuante obrigatória na dosimetria sancionatória administrativa (LGPD, art. 50 e art. 52, § 1º, VIII e IX)",
+     "authority_ids": [
+      "lgpd_art38",
+      "lgpd_art52"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lgpd_vigencia"
+   ],
+   "typical_requests": [
+    "Adequação regulatória com publicação ostensiva da identidade e contato do Encarregado e resposta tempestiva aos titulares",
+    "Exibição judicial ou administrativa do RIPD (resguardados segredos comercial e industrial) em operações de alto risco",
+    "Atenuação de penalidade administrativa da ANPD em razão de programa de governança comprovado antes da infração"
+   ],
+   "evidence": [
+    "Ato formal de designação do Encarregado (pessoa natural ou jurídica), descrição de atribuições e captura do portal de privacidade",
+    "Registro das Operações de Tratamento (RoPA), RIPD assinado e atas do comitê de privacidade/segurança",
+    "Comprovação de porte empresarial (ME/EPP/startup) e avaliação de critérios de alto risco segundo normativos da ANPD"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "recurso_administrativo",
+    "mandado_seguranca",
+    "acao_civil_publica"
+   ],
+   "related_claims": [
+    "dp_sanctions",
+    "dp_subject_rights"
+   ],
+   "limitation": "Deveres regulatórios permanentes enquanto o agente realizar tratamento de dados pessoais; processo sancionador federal sujeito à prescrição quinquenal (Lei 9.873/1999, art. 1º)."
+  },
+  {
+   "id": "dp_international_transfer_clauses",
+   "label": "Transferência internacional de dados pessoais, cláusulas-padrão contratuais e adequação (LGPD, arts. 33–36, e Res. ANPD 19/2024)",
+   "requirements": [
+    "fluxo_transfronteirico_nuvem_grupo",
+    "mecanismo_art_33_adequacao_ou_cpc",
+    "transparencia_ao_titular",
+    "responsabilidade_solidaria_exportador"
+   ],
+   "claimant_theses": [
+    {
+     "id": "dp_international_transfer_clauses.c1",
+     "label": "Ilicitude de transferência internacional de dados pessoais para país sem decisão de adequação quando desacompanhada de cláusulas-padrão contratuais aprovadas pela ANPD, normas corporativas globais homologadas ou hipótese específica estrita do art. 33 da LGPD",
+     "authority_ids": [
+      "lgpd_art33",
+      "lgpd_art6",
+      "lgpd_art42"
+     ]
+    },
+    {
+     "id": "dp_international_transfer_clauses.c2",
+     "label": "Dever de transparência específica na política de privacidade sobre os países de destino, a finalidade da transferência e os direitos exigíveis pelo titular no Brasil",
+     "authority_ids": [
+      "lgpd_art33",
+      "lgpd_art18"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "dp_international_transfer_clauses.d1",
+     "label": "Regularidade da hospedagem em nuvem internacional ou compartilhamento intragrupo amparados integralmente nas Cláusulas-Padrão Contratuais (Res. CD/ANPD 19/2024), Normas Corporativas Globais ou necessidade para execução de contrato a pedido do titular (LGPD, art. 33, IX)",
+     "authority_ids": [
+      "lgpd_art33",
+      "lgpd_art7"
+     ]
+    },
+    {
+     "id": "dp_international_transfer_clauses.d2",
+     "label": "Distinção entre transferência internacional de dados (com importador estabelecido no exterior) e mera coleta direta internacional ou trânsito técnico de pacotes sem tratamento por agente estrangeiro",
+     "authority_ids": [
+      "lgpd_art3",
+      "lgpd_art33"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lgpd_vigencia"
+   ],
+   "typical_requests": [
+    "Fornecimento ao titular da íntegra das Cláusulas-Padrão Contratuais utilizadas na transferência internacional",
+    "Adequação contratual ou suspensão de fluxo transfronteirico de dados realizado sem salvaguarda válida do art. 33 da LGPD",
+    "Reforma de autuação administrativa mediante comprovação de incorporação integral das cláusulas-padrão da ANPD no prazo regulamentar"
+   ],
+   "evidence": [
+    "Contratos internacionais de processamento de dados (DPA) contendo o anexo integral das Cláusulas-Padrão da ANPD ou BCRs aprovadas",
+    "Avaliação de nível de proteção e legislação de acesso governamental da jurisdição importadora",
+    "Aviso de privacidade descrevendo o fluxo internacional, os papéis de exportador/importador e o canal no Brasil"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "recurso_administrativo",
+    "acao_civil_publica",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "dp_public_sector",
+    "dp_sanctions",
+    "dp_dpo_governance_ripd"
+   ],
+   "limitation": "Direito do titular de solicitar cópia das cláusulas-padrão em até 15 dias (Res. CD/ANPD 19/2024); prescrição administrativa sancionadora em 5 anos (Lei 9.873/1999) e reparatória cível/consumerista em 3 ou 5 anos."
+  }
  ]
 }

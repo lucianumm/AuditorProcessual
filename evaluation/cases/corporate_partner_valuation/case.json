@@ -1,0 +1,44 @@
+{
+  "schema_version": "2.0",
+  "synthetic": true,
+  "case_id": "corporate_partner_valuation",
+  "source_files": [
+    {
+      "file": "alteracao_social.txt"
+    }
+  ],
+  "expected": {
+    "facts": [
+      {
+        "id": "G-F1",
+        "text_any": [
+          "omisso sobre o critério de apuração de haveres"
+        ],
+        "source": {
+          "file": "alteracao_social.txt",
+          "page": 1,
+          "quote": "omisso sobre o critério de apuração de haveres"
+        },
+        "atoms": {
+          "date": "2024-05-02"
+        }
+      }
+    ],
+    "issues": [
+      {
+        "id": "G-I1",
+        "text_any": [
+          "balanço de determinação",
+          "data da resolução"
+        ],
+        "analysis_status": "qualified"
+      }
+    ],
+    "requests": [],
+    "contradictions": [],
+    "catalog_id": "inicial_procedimento_comum",
+    "strategy": {
+      "domain": "empresarial"
+    }
+  }
+}

@@ -4,17 +4,894 @@
  "label": "Direito Constitucional",
  "guide": "domain_guides/constitucional.md",
  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
- "polo_labels": {"claimant_theses": "Teses do autor ou requerente", "defense_theses": "Teses do réu ou requerido"},
+ "polo_labels": {
+  "claimant_theses": "Teses do autor ou requerente",
+  "defense_theses": "Teses do réu ou requerido"
+ },
  "claims": [
-  {"id": "const_concentrated", "label": "Controle concentrado de constitucionalidade", "requirements": ["legitimidade", "objeto", "parametro", "subsidiariedade"], "claimant_theses": [{"id": "const_concentrated.c1", "label": "Legitimados e objeto da ADI e da ADPF", "authority_ids": ["cf_art103", "l9868_art2", "l9882_art2"]}], "defense_theses": [{"id": "const_concentrated.d1", "label": "Indeferimento por ausência de requisitos e subsidiariedade da ADPF", "authority_ids": ["l9882_art4"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["acao_controle_concentrado"], "related_claims": [], "limitation": "conferir"},
-  {"id": "const_injunction", "label": "Mandado de injunção", "requirements": ["omissao", "direito_inviabilizado", "legitimidade"], "claimant_theses": [{"id": "const_injunction.c1", "label": "Falta de norma regulamentadora que inviabiliza direito", "authority_ids": ["l13300_art2", "l13300_art12"]}], "defense_theses": [{"id": "const_injunction.d1", "label": "Norma existente ou direito não dependente de regulamentação", "authority_ids": ["l13300_art2"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["mandado_injuncao"], "related_claims": [], "limitation": "conferir"},
-  {"id": "const_habeas_data", "label": "Habeas data", "requirements": ["dados_proprios", "recusa_previa"], "claimant_theses": [{"id": "const_habeas_data.c1", "label": "Conhecimento e retificação de informações pessoais", "authority_ids": ["l9507_art7"]}], "defense_theses": [{"id": "const_habeas_data.d1", "label": "Ausência de recusa administrativa prévia", "authority_ids": ["l9507_art7"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["habeas_data"], "related_claims": ["dp_subject_rights"], "limitation": "conferir"},
-  {"id": "const_complaint", "label": "Reclamação constitucional", "requirements": ["paradigma", "ato_reclamado", "aderencia"], "claimant_theses": [{"id": "const_complaint.c1", "label": "Preservação da autoridade de decisão e de súmula vinculante", "authority_ids": ["cpc_art988", "cf_art102"]}], "defense_theses": [{"id": "const_complaint.d1", "label": "Ausência de aderência estrita ou instâncias não esgotadas", "authority_ids": ["cpc_art988"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["reclamacao_constitucional"], "related_claims": [], "limitation": "conferir"},
-  {"id": "const_adpf", "label": "Arguição de descumprimento de preceito fundamental", "requirements": ["preceito_fundamental", "ato_do_poder_publico", "subsidiariedade"], "claimant_theses": [{"id": "const_adpf.c1", "label": "Cabimento contra ato normativo anterior à Constituição, municipal ou conjunto de decisões", "authority_ids": ["l9882_art1", "cf_art102"]}, {"id": "const_adpf.c2", "label": "Liminar por maioria absoluta", "authority_ids": ["l9882_art5"]}], "defense_theses": [{"id": "const_adpf.d1", "label": "Existência de outro meio eficaz", "authority_ids": ["l9882_art4"]}, {"id": "const_adpf.d2", "label": "Ilegitimidade ativa", "authority_ids": ["l9882_art2"]}], "temporal_marker_ids": [], "typical_requests": ["Liminar", "Fixação de interpretação", "Modulação"], "evidence": ["Ato impugnado", "Demonstração da controvérsia relevante"], "piece_ids": ["acao_controle_concentrado"], "related_claims": ["const_concentrated"], "limitation": "Sem prazo; conferir"},
-  {"id": "const_modulation_effects", "label": "Efeitos, cautelar e modulação no controle concentrado", "requirements": ["norma_impugnada", "seguranca_juridica", "interesse_social", "quorum"], "claimant_theses": [{"id": "const_modulation_effects.c1", "label": "Modulação por dois terços por segurança jurídica ou excepcional interesse social", "authority_ids": ["l9868_art27", "l9882_art11"]}, {"id": "const_modulation_effects.c2", "label": "Cautelar com efeito para o futuro, salvo decisão expressa", "authority_ids": ["l9868_art11", "l9868_art10"]}], "defense_theses": [{"id": "const_modulation_effects.d1", "label": "Regra geral de nulidade com efeitos retroativos", "authority_ids": ["l9868_art28"]}, {"id": "const_modulation_effects.d2", "label": "Decisão irrecorrível, salvo embargos de declaração", "authority_ids": ["l9868_art26"]}], "temporal_marker_ids": [], "typical_requests": ["Modulação em embargos de declaração", "Medida cautelar"], "evidence": ["Acórdão", "Dados sobre o impacto"], "piece_ids": ["acao_controle_concentrado", "embargos_declaracao"], "related_claims": ["const_concentrated"], "limitation": "Conferir"},
-  {"id": "const_binding_precedent", "label": "Súmula vinculante e reclamação", "requirements": ["enunciado", "ato_reclamado", "aderencia_estrita", "esgotamento"], "claimant_theses": [{"id": "const_binding_precedent.c1", "label": "Reclamação contra ato que contrarie súmula vinculante", "authority_ids": ["cf_art103a", "l11417_art7", "cpc_art988"]}, {"id": "const_binding_precedent.c2", "label": "Cassação da decisão e determinação de outra", "authority_ids": ["cpc_art992"]}], "defense_theses": [{"id": "const_binding_precedent.d1", "label": "Ato administrativo exige esgotamento das vias administrativas", "authority_ids": ["l11417_art7"]}, {"id": "const_binding_precedent.d2", "label": "Ausência de aderência estrita e uso como sucedâneo recursal", "authority_ids": ["cpc_art988"]}], "temporal_marker_ids": [], "typical_requests": ["Cassação do ato", "Liminar"], "evidence": ["Ato reclamado", "Prova do esgotamento"], "piece_ids": ["reclamacao_constitucional"], "related_claims": ["const_complaint"], "limitation": "Antes do trânsito em julgado da decisão reclamada (CPC, art. 988, § 5º)"},
-  {"id": "const_incidental_control", "label": "Controle difuso e reserva de plenário", "requirements": ["norma_afastada", "orgao_fracionario", "precedente_do_plenario"], "claimant_theses": [{"id": "const_incidental_control.c1", "label": "Órgão fracionário não pode afastar a lei sem o plenário", "authority_ids": ["cf_art97", "sv_10", "cpc_art949"]}, {"id": "const_incidental_control.c2", "label": "Repercussão geral como requisito do recurso extraordinário", "authority_ids": ["cpc_art1035", "cf_art102"]}], "defense_theses": [{"id": "const_incidental_control.d1", "label": "Dispensa quando já houver pronunciamento do plenário ou do STF", "authority_ids": ["cpc_art949"]}], "temporal_marker_ids": [], "typical_requests": ["Nulidade do acórdão", "Remessa ao órgão especial"], "evidence": ["Acórdão recorrido", "Precedentes"], "piece_ids": ["recurso_extraordinario", "reclamacao_constitucional", "embargos_declaracao"], "related_claims": ["const_binding_precedent"], "limitation": "Quinze dias úteis para o recurso extraordinário"},
-  {"id": "const_collective_writs", "label": "Mandado de segurança coletivo e remédios coletivos", "requirements": ["legitimado", "pertinencia_tematica", "direito_liquido_e_certo"], "claimant_theses": [{"id": "const_collective_writs.c1", "label": "Mandado de segurança coletivo por partido, sindicato, entidade de classe ou associação", "authority_ids": ["cf_art5", "l12016_art1"]}, {"id": "const_collective_writs.c2", "label": "Mandado de injunção coletivo e extensão dos efeitos", "authority_ids": ["l13300_art12", "l13300_art9"]}], "defense_theses": [{"id": "const_collective_writs.d1", "label": "Hipóteses de não cabimento", "authority_ids": ["l12016_art5"]}, {"id": "const_collective_writs.d2", "label": "Associação constituída há menos de um ano ou sem pertinência", "authority_ids": ["cf_art5"]}], "temporal_marker_ids": [], "typical_requests": ["Segurança coletiva", "Liminar após oitiva do ente público"], "evidence": ["Estatuto e ata", "Prova pré-constituída"], "piece_ids": ["mandado_seguranca", "mandado_injuncao"], "related_claims": ["adm_writ", "const_injunction"], "limitation": "Cento e vinte dias (Lei 12.016/2009, art. 23)"},
-  {"id": "const_injunction_effects", "label": "Mandado de injunção: mora e efeitos", "requirements": ["norma_constitucional_de_eficacia_limitada", "omissao", "prazo_razoavel"], "claimant_theses": [{"id": "const_injunction_effects.c1", "label": "Reconhecida a mora, o tribunal fixa prazo e as condições de exercício do direito", "authority_ids": ["l13300_art8", "l13300_art2"]}, {"id": "const_injunction_effects.c2", "label": "Extensão da decisão a casos análogos", "authority_ids": ["l13300_art9"]}], "defense_theses": [{"id": "const_injunction_effects.d1", "label": "Norma superveniente produz efeitos para o futuro", "authority_ids": ["l13300_art11"]}, {"id": "const_injunction_effects.d2", "label": "Existência de norma regulamentadora, ainda que insatisfatória", "authority_ids": ["l13300_art2"]}], "temporal_marker_ids": [], "typical_requests": ["Fixação das condições de exercício"], "evidence": ["Demonstração da omissão", "Requerimento negado"], "piece_ids": ["mandado_injuncao"], "related_claims": ["const_injunction"], "limitation": "Conferir"}
+  {
+   "id": "const_concentrated",
+   "label": "Controle concentrado de constitucionalidade",
+   "requirements": [
+    "legitimidade",
+    "objeto",
+    "parametro",
+    "subsidiariedade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "const_concentrated.c1",
+     "label": "Legitimados e objeto da ADI e da ADPF",
+     "authority_ids": [
+      "cf_art103",
+      "l9868_art2",
+      "l9882_art2"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "const_concentrated.d1",
+     "label": "Indeferimento por ausência de requisitos e subsidiariedade da ADPF",
+     "authority_ids": [
+      "l9882_art4"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Concessão de medida cautelar para suspender a eficácia do ato normativo impugnado com efeitos ex nunc ou ex tunc (Lei 9.868/1999, arts. 10 e 11)",
+    "Procedência do pedido para declarar a inconstitucionalidade formal/material ou fixar interpretação conforme a Constituição sem redução de texto",
+    "Subsidiariamente, modulação temporal dos efeitos por razões de segurança jurídica ou excepcional interesse social (art. 27)"
+   ],
+   "evidence": [
+    "Inteiro teor oficial da lei ou ato normativo impugnado, exposição de motivos e dossiê do processo legislativo",
+    "Estatuto social e comprovação de abrangência nacional e pertinência temática quando proposta por confederação sindical ou entidade de classe (CF, art. 103, IX)",
+    "Pareceres técnicos, dados empíricos e estudos de impacto regulatório/orçamentário para instrução objetiva (art. 9º, § 1º)"
+   ],
+   "piece_ids": [
+    "acao_controle_concentrado"
+   ],
+   "related_claims": [],
+   "limitation": "As ações do controle concentrado e abstrato de constitucionalidade (ADI, ADC, ADO e ADPF) são imprescritíveis e não se sujeitam a prazo decadencial (Lei 9.868/1999 e Lei 9.882/1999)."
+  },
+  {
+   "id": "const_injunction",
+   "label": "Mandado de injunção",
+   "requirements": [
+    "omissao",
+    "direito_inviabilizado",
+    "legitimidade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "const_injunction.c1",
+     "label": "Falta de norma regulamentadora que inviabiliza direito",
+     "authority_ids": [
+      "l13300_art2",
+      "l13300_art12"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "const_injunction.d1",
+     "label": "Norma existente ou direito não dependente de regulamentação",
+     "authority_ids": [
+      "l13300_art2"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Reconhecimento do estado de mora legislativa inconstitucional na regulamentação de norma de eficácia limitada",
+    "Concessão da ordem sob a corrente concretista para estabelecer diretamente as condições de fruição do direito inviabilizado enquanto perdurar a omissão (Lei 13.300/2016, art. 8º, II)",
+    "Extensão subjetiva dos efeitos quando inerente ao exercício do direito (art. 9º, §§ 1º e 2º)"
+   ],
+   "evidence": [
+    "Comprovação documental da titularidade do direito constitucional, nacionalidade/cidadania ou prerrogativa inerente à soberania",
+    "Requerimento administrativo prévio e negativa/silêncio estatal fundados na ausência de norma regulamentadora",
+    "Histórico de tramitação legislativa demonstrando a superação do prazo razoável para legislar"
+   ],
+   "piece_ids": [
+    "mandado_injuncao"
+   ],
+   "related_claims": [],
+   "limitation": "O mandado de injunção não está submetido ao prazo decadencial de 120 dias do mandado de segurança, sendo cabível enquanto subsistir a omissão normativa inconstitucional (Lei 13.300/2016)."
+  },
+  {
+   "id": "const_habeas_data",
+   "label": "Habeas data",
+   "requirements": [
+    "dados_proprios",
+    "recusa_previa"
+   ],
+   "claimant_theses": [
+    {
+     "id": "const_habeas_data.c1",
+     "label": "Conhecimento e retificação de informações pessoais",
+     "authority_ids": [
+      "l9507_art7"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "const_habeas_data.d1",
+     "label": "Ausência de recusa administrativa prévia",
+     "authority_ids": [
+      "l9507_art7"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lgpd_vigencia"
+   ],
+   "typical_requests": [
+    "Acesso integral às informações e registros constantes de bancos de dados governamentais ou de caráter público relativos à pessoa do impetrante",
+    "Retificação de dados inexatos ou anotação de contestação/explicação sobre dado verdadeiro pendente de litígio (Lei 9.507/1997, art. 7º)",
+    "Gratuidade legal do procedimento e da ação de habeas data (CF, art. 5º, LXXVII; Lei 9.507/1997, art. 21)"
+   ],
+   "evidence": [
+    "Comprovante de protocolo do requerimento administrativo de acesso, retificação ou anotação",
+    "Prova da recusa expressa da autoridade/entidade ou do decurso de mais de 10 ou 15 dias sem decisão (Lei 9.507/1997, art. 8º; Súmula 2 do STJ)",
+    "Documentos oficiais comprobatórios da veracidade da informação a ser retificada ou complementada"
+   ],
+   "piece_ids": [
+    "habeas_data"
+   ],
+   "related_claims": [
+    "dp_subject_rights"
+   ],
+   "limitation": "O habeas data não se submete a prazo decadencial preclusivo, mas exige prova pré-constituída de prévia recusa administrativa ou omissão por mais de 10 dias (acesso) ou 15 dias (retificação) (Lei 9.507/1997, art. 8º, parágrafo único; Súmula 2 do STJ)."
+  },
+  {
+   "id": "const_complaint",
+   "label": "Reclamação constitucional",
+   "requirements": [
+    "paradigma",
+    "ato_reclamado",
+    "aderencia"
+   ],
+   "claimant_theses": [
+    {
+     "id": "const_complaint.c1",
+     "label": "Preservação da autoridade de decisão e de súmula vinculante",
+     "authority_ids": [
+      "cpc_art988",
+      "cf_art102"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "const_complaint.d1",
+     "label": "Ausência de aderência estrita ou instâncias não esgotadas",
+     "authority_ids": [
+      "cpc_art988"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Concessão de liminar para suspender o processo de origem ou os efeitos do ato impugnado (CPC, art. 989, II)",
+    "Julgamento de procedência para cassar a decisão exorbitante e determinar que outra seja proferida em estrita observância ao precedente vinculante",
+    "Preservação da competência originária do tribunal superior contra usurpação"
+   ],
+   "evidence": [
+    "Inteiro teor do ato judicial ou administrativo reclamado e comprovação de que ainda não transitou em julgado",
+    "Acórdão paradigma de controle concentrado, Súmula Vinculante ou prova do esgotamento das instâncias ordinárias quando fundado em Tema de Repercussão Geral (CPC, art. 988, § 5º, II)",
+    "Demonstração documental da aderência estrita entre o caso concreto e a ratio decidendi vinculante"
+   ],
+   "piece_ids": [
+    "reclamacao_constitucional"
+   ],
+   "related_claims": [],
+   "limitation": "Inadmissível a reclamação proposta após o trânsito em julgado da decisão reclamada (CPC, art. 988, § 5º, I; Súmula 734 do STF); quando fundada em tese de repercussão geral ou recurso repetitivo, exige prévio esgotamento das instâncias ordinárias (CPC, art. 988, § 5º, II)."
+  },
+  {
+   "id": "const_adpf",
+   "label": "Arguição de descumprimento de preceito fundamental",
+   "requirements": [
+    "preceito_fundamental",
+    "ato_do_poder_publico",
+    "subsidiariedade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "const_adpf.c1",
+     "label": "Cabimento contra ato normativo anterior à Constituição, municipal ou conjunto de decisões",
+     "authority_ids": [
+      "l9882_art1",
+      "cf_art102"
+     ]
+    },
+    {
+     "id": "const_adpf.c2",
+     "label": "Liminar por maioria absoluta",
+     "authority_ids": [
+      "l9882_art5"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "const_adpf.d1",
+     "label": "Existência de outro meio eficaz",
+     "authority_ids": [
+      "l9882_art4"
+     ]
+    },
+    {
+     "id": "const_adpf.d2",
+     "label": "Ilegitimidade ativa",
+     "authority_ids": [
+      "l9882_art2"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Liminar",
+    "Fixação de interpretação",
+    "Modulação"
+   ],
+   "evidence": [
+    "Ato impugnado",
+    "Demonstração da controvérsia relevante",
+    "Demonstração da inexistência de outro meio eficaz capaz de sanar a lesividade de modo amplo, geral e imediato (Lei 9.882/1999, art. 4º, § 1º)"
+   ],
+   "piece_ids": [
+    "acao_controle_concentrado"
+   ],
+   "related_claims": [
+    "const_concentrated"
+   ],
+   "limitation": "A Arguição de Descumprimento de Preceito Fundamental não se sujeita a prazo prescricional ou decadencial (Lei 9.882/1999), respeitada a intangibilidade da coisa julgada material já soberanamente constituída salvo regra específica."
+  },
+  {
+   "id": "const_modulation_effects",
+   "label": "Efeitos, cautelar e modulação no controle concentrado",
+   "requirements": [
+    "norma_impugnada",
+    "seguranca_juridica",
+    "interesse_social",
+    "quorum"
+   ],
+   "claimant_theses": [
+    {
+     "id": "const_modulation_effects.c1",
+     "label": "Modulação por dois terços por segurança jurídica ou excepcional interesse social",
+     "authority_ids": [
+      "l9868_art27",
+      "l9882_art11"
+     ]
+    },
+    {
+     "id": "const_modulation_effects.c2",
+     "label": "Cautelar com efeito para o futuro, salvo decisão expressa",
+     "authority_ids": [
+      "l9868_art11",
+      "l9868_art10"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "const_modulation_effects.d1",
+     "label": "Regra geral de nulidade com efeitos retroativos",
+     "authority_ids": [
+      "l9868_art28"
+     ]
+    },
+    {
+     "id": "const_modulation_effects.d2",
+     "label": "Decisão irrecorrível, salvo embargos de declaração",
+     "authority_ids": [
+      "l9868_art26"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Modulação em embargos de declaração",
+    "Medida cautelar",
+    "Resguardo das relações jurídicas constituídas de boa-fé ou fixação de marco prospectivo a partir da publicação da ata de julgamento"
+   ],
+   "evidence": [
+    "Acórdão",
+    "Dados sobre o impacto",
+    "Notas técnicas fazendárias, atuariais ou institucionais demonstrando risco sistêmico ou impacto social extraordinário"
+   ],
+   "piece_ids": [
+    "acao_controle_concentrado",
+    "embargos_declaracao"
+   ],
+   "related_claims": [
+    "const_concentrated"
+   ],
+   "limitation": "Pedido autônomo de modulação formulável até a conclusão do julgamento de mérito ou em embargos de declaração opostos no prazo de 5 dias úteis (CPC, art. 1.023; Lei 9.868/1999, arts. 26 e 27), exigido quórum qualificado de 2/3 dos Ministros."
+  },
+  {
+   "id": "const_binding_precedent",
+   "label": "Súmula vinculante e reclamação",
+   "requirements": [
+    "enunciado",
+    "ato_reclamado",
+    "aderencia_estrita",
+    "esgotamento"
+   ],
+   "claimant_theses": [
+    {
+     "id": "const_binding_precedent.c1",
+     "label": "Reclamação contra ato que contrarie súmula vinculante",
+     "authority_ids": [
+      "cf_art103a",
+      "l11417_art7",
+      "cpc_art988"
+     ]
+    },
+    {
+     "id": "const_binding_precedent.c2",
+     "label": "Cassação da decisão e determinação de outra",
+     "authority_ids": [
+      "cpc_art992"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "const_binding_precedent.d1",
+     "label": "Ato administrativo exige esgotamento das vias administrativas",
+     "authority_ids": [
+      "l11417_art7"
+     ]
+    },
+    {
+     "id": "const_binding_precedent.d2",
+     "label": "Ausência de aderência estrita e uso como sucedâneo recursal",
+     "authority_ids": [
+      "cpc_art988"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Cassação do ato",
+    "Liminar",
+    "No ato administrativo violador de SV: anulação com orientação ao órgão após esgotamento das vias administrativas (Lei 11.417/2006, art. 7º, § 1º)"
+   ],
+   "evidence": [
+    "Ato reclamado",
+    "Prova do esgotamento",
+    "Certidão de intimação e de ausência de trânsito em julgado da decisão judicial reclamada ou prova do exaurimento administrativo"
+   ],
+   "piece_ids": [
+    "reclamacao_constitucional"
+   ],
+   "related_claims": [
+    "const_complaint"
+   ],
+   "limitation": "Reclamação por contrariedade a Súmula Vinculante deve anteceder o trânsito em julgado da decisão judicial (CPC, art. 988, § 5º, I; Súmula 734 do STF) e, contra omissão ou ato da Administração Pública, exige prévio esgotamento das vias administrativas (Lei 11.417/2006, art. 7º, § 1º)."
+  },
+  {
+   "id": "const_incidental_control",
+   "label": "Controle difuso e reserva de plenário",
+   "requirements": [
+    "norma_afastada",
+    "orgao_fracionario",
+    "precedente_do_plenario"
+   ],
+   "claimant_theses": [
+    {
+     "id": "const_incidental_control.c1",
+     "label": "Órgão fracionário não pode afastar a lei sem o plenário",
+     "authority_ids": [
+      "cf_art97",
+      "sv_10",
+      "cpc_art949"
+     ]
+    },
+    {
+     "id": "const_incidental_control.c2",
+     "label": "Repercussão geral como requisito do recurso extraordinário",
+     "authority_ids": [
+      "cpc_art1035",
+      "cf_art102"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "const_incidental_control.d1",
+     "label": "Dispensa quando já houver pronunciamento do plenário ou do STF",
+     "authority_ids": [
+      "cpc_art949"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Nulidade do acórdão",
+    "Remessa ao órgão especial",
+    "Cassação do acórdão de câmara/turma que declarou inconstitucionalidade ou afastou a incidência de lei sem submissão ao Plenário ou Órgão Especial (SV 10)"
+   ],
+   "evidence": [
+    "Acórdão recorrido",
+    "Precedentes",
+    "Acórdão dos embargos de declaração comprovando o prequestionamento da cláusula de reserva de plenário (CF, art. 97)"
+   ],
+   "piece_ids": [
+    "recurso_extraordinario",
+    "reclamacao_constitucional",
+    "embargos_declaracao"
+   ],
+   "related_claims": [
+    "const_binding_precedent"
+   ],
+   "limitation": "Recurso extraordinário em 15 dias úteis contados da intimação do acórdão recorrido (CPC, art. 1.003, § 5º); reclamação constitucional por ofensa à Súmula Vinculante 10 antes do trânsito em julgado (CPC, art. 988, § 5º, I)."
+  },
+  {
+   "id": "const_collective_writs",
+   "label": "Mandado de segurança coletivo e remédios coletivos",
+   "requirements": [
+    "legitimado",
+    "pertinencia_tematica",
+    "direito_liquido_e_certo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "const_collective_writs.c1",
+     "label": "Mandado de segurança coletivo por partido, sindicato, entidade de classe ou associação",
+     "authority_ids": [
+      "cf_art5",
+      "l12016_art1"
+     ]
+    },
+    {
+     "id": "const_collective_writs.c2",
+     "label": "Mandado de injunção coletivo e extensão dos efeitos",
+     "authority_ids": [
+      "l13300_art12",
+      "l13300_art9"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "const_collective_writs.d1",
+     "label": "Hipóteses de não cabimento",
+     "authority_ids": [
+      "l12016_art5"
+     ]
+    },
+    {
+     "id": "const_collective_writs.d2",
+     "label": "Associação constituída há menos de um ano ou sem pertinência",
+     "authority_ids": [
+      "cf_art5"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Segurança coletiva",
+    "Liminar após oitiva do ente público",
+    "Extensão da ordem a todos os membros da categoria substituídos independentemente de autorização individual expressa ou lista nominal (SV 629 do STF / Lei 12.016/2009, art. 21)"
+   ],
+   "evidence": [
+    "Estatuto e ata",
+    "Prova pré-constituída",
+    "Comprovante de funcionamento regular da associação há pelo menos um ano, dispensado para partidos políticos e sindicatos"
+   ],
+   "piece_ids": [
+    "mandado_seguranca",
+    "mandado_injuncao"
+   ],
+   "related_claims": [
+    "adm_writ",
+    "const_injunction"
+   ],
+   "limitation": "Decadência de 120 dias contados da ciência do ato coator para o mandado de segurança coletivo (Lei 12.016/2009, art. 23); mandado de injunção coletivo não se sujeita a prazo decadencial (Lei 13.300/2016, art. 12)."
+  },
+  {
+   "id": "const_injunction_effects",
+   "label": "Mandado de injunção: mora e efeitos",
+   "requirements": [
+    "norma_constitucional_de_eficacia_limitada",
+    "omissao",
+    "prazo_razoavel"
+   ],
+   "claimant_theses": [
+    {
+     "id": "const_injunction_effects.c1",
+     "label": "Reconhecida a mora, o tribunal fixa prazo e as condições de exercício do direito",
+     "authority_ids": [
+      "l13300_art8",
+      "l13300_art2"
+     ]
+    },
+    {
+     "id": "const_injunction_effects.c2",
+     "label": "Extensão da decisão a casos análogos",
+     "authority_ids": [
+      "l13300_art9"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "const_injunction_effects.d1",
+     "label": "Norma superveniente produz efeitos para o futuro",
+     "authority_ids": [
+      "l13300_art11"
+     ]
+    },
+    {
+     "id": "const_injunction_effects.d2",
+     "label": "Existência de norma regulamentadora, ainda que insatisfatória",
+     "authority_ids": [
+      "l13300_art2"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Fixação das condições de exercício",
+    "Revisão da decisão injuncional por modificação superveniente de fato ou de direito ou advento da lei regulamentadora (Lei 13.300/2016, arts. 10 e 11)"
+   ],
+   "evidence": [
+    "Demonstração da omissão",
+    "Requerimento negado",
+    "Texto da norma superveniente ou documentos comprobatórios do decurso do prazo fixado ao legislador sem deliberação"
+   ],
+   "piece_ids": [
+    "mandado_injuncao"
+   ],
+   "related_claims": [
+    "const_injunction"
+   ],
+   "limitation": "Impetrável enquanto persistir a lacuna regulamentadora inconstitucional; editada a norma regulamentadora superveniente, aplicam-se seus preceitos ex nunc, salvo se mais favoráveis (Lei 13.300/2016, art. 11)."
+  },
+  {
+   "id": "const_structural_litigation_ecp",
+   "label": "Estado de coisas inconstitucional e controle judicial estrutural de políticas públicas (ADPF 347 e Tema 698 STF)",
+   "requirements": [
+    "violacao_massiva_sistemica_direitos",
+    "falha_estrutural_multiplos_orgaos",
+    "plano_estrutural_metas_indicadores",
+    "dialogo_institucional"
+   ],
+   "claimant_theses": [
+    {
+     "id": "const_structural_litigation_ecp.c1",
+     "label": "A intervenção do Poder Judiciário em políticas públicas voltadas à realização de direitos fundamentais é legítima diante de ausência ou deficiência grave do serviço, cabendo determinar resultados, metas e apresentação de plano de ação pelo próprio Poder Público (Tema 698 e ADPF 347 do STF)",
+     "authority_ids": [
+      "tema_stf_698",
+      "adpf_347",
+      "cf_art5"
+     ]
+    },
+    {
+     "id": "const_structural_litigation_ecp.c2",
+     "label": "Inoponibilidade da cláusula da reserva do possível para chancelar omissão estatal crônica que comprometa o mínimo existencial e a dignidade humana",
+     "authority_ids": [
+      "adpf_347",
+      "tema_stf_698",
+      "cf_art6"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "const_structural_litigation_ecp.d1",
+     "label": "Nos termos do Tema 698 do STF e do art. 22 da LINDB, a decisão judicial não deve substituir o gestor na escolha detalhada dos meios técnicos, devendo considerar os obstáculos reais, as capacidades institucionais e os impactos orçamentários sistêmicos",
+     "authority_ids": [
+      "tema_stf_698",
+      "lindb_art20",
+      "lindb_art22"
+     ]
+    },
+    {
+     "id": "const_structural_litigation_ecp.d2",
+     "label": "Existência de política pública em efetiva execução progressiva conforme indicadores oficiais auditáveis, afastando o pressuposto de inércia inconstitucional",
+     "authority_ids": [
+      "tema_stf_698"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13655_lindb"
+   ],
+   "typical_requests": [
+    "Determinação para que o ente público elabore e apresente em prazo certo plano estrutural com cronograma, metas objetivas, fontes orçamentárias e indicadores de monitoramento",
+    "Instalação de audiências públicas ou mesa técnica interinstitucional de acompanhamento da execução",
+    "Vedação de contingenciamento de verbas legalmente vinculadas ao atendimento do direito fundamental violado"
+   ],
+   "evidence": [
+    "Relatórios oficiais de órgãos de controle (TCU/TCE, CNJ, Defensoria, MP), séries estatísticas e inspeções in loco",
+    "Leis orçamentárias (PPA, LDO, LOA) e demonstrativos de baixa execução financeira ou contingenciamento",
+    "Estudos técnicos sobre capacidade instalada, déficit de vagas/serviços e cronograma factível de expansão"
+   ],
+   "piece_ids": [
+    "acao_civil_publica",
+    "acao_controle_concentrado",
+    "contestacao",
+    "recurso_extraordinario"
+   ],
+   "related_claims": [
+    "const_adpf",
+    "amb_climate_litigation_esg"
+   ],
+   "limitation": "Ações estruturais coletivas e ADPFs voltadas à cessação de violação continuada de direitos fundamentais não sofrem prescrição do fundo de direito enquanto perdurar o quadro omissivo inconstitucional."
+  },
+  {
+   "id": "const_parliamentary_immunity_cpi",
+   "label": "Imunidades parlamentares e limites constitucionais das Comissões Parlamentares de Inquérito (CF, arts. 53 e 58, § 3º)",
+   "requirements": [
+    "nexo_funcao_parlamentar",
+    "fato_determinado_prazo_certo_cpi",
+    "reserva_jurisdicao",
+    "direito_nao_autoincriminacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "const_parliamentary_immunity_cpi.c1",
+     "label": "Direito fundamental do investigado ou testemunha convocada a CPI ao silêncio quanto a fatos autoincriminadores, assistência efetiva por advogado e dispensa de compromisso de dizer a verdade quando figurar substancialmente como investigado",
+     "authority_ids": [
+      "cf_art5",
+      "cf_art58"
+     ]
+    },
+    {
+     "id": "const_parliamentary_immunity_cpi.c2",
+     "label": "Cláusula de reserva de jurisdição impede que CPI decrete prisão preventiva, busca e apreensão domiciliar, interceptação telefônica ou indisponibilidade geral de bens, exigindo-se ainda motivação individualizada e colegiada para quebra de sigilos bancário/fiscal",
+     "authority_ids": [
+      "cf_art5",
+      "cf_art58"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "const_parliamentary_immunity_cpi.d1",
+     "label": "Poderes de investigação próprios das autoridades judiciais (CF, art. 58, § 3º) autorizam a CPI, por deliberação fundamentada da maioria de seus membros sobre fato determinado, a decretar diretamente quebra de sigilos bancário, fiscal e de dados telefônicos pretéritos",
+     "authority_ids": [
+      "cf_art58"
+     ]
+    },
+    {
+     "id": "const_parliamentary_immunity_cpi.d2",
+     "label": "A imunidade material parlamentar (CF, art. 53, caput) protege opiniões, palavras e votos conexos ao exercício do mandato, mas não acoberta incitação à abolição violenta do Estado Democrático de Direito nem crimes desvinculados da função representativa",
+     "authority_ids": [
+      "cf_art53",
+      "cf_art5"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Concessão de salvo-conduto em habeas corpus para assegurar o direito ao silêncio, não assinatura de termo de compromisso e comunicação livre com o patrono em depoimento à CPI",
+    "Anulação em mandado de segurança de quebra de sigilo bancário, fiscal ou telemático decretada sem fundamentação individualizada de causa provável",
+    "Instauração obrigatória de CPI quando preenchidos os três requisitos constitucionais de 1/3 de assinaturas, fato determinado e prazo certo (direito público subjetivo das minorias)"
+   ],
+   "evidence": [
+    "Requerimento de criação da CPI, ato de convocação e ata da deliberação colegiada que decretou medidas instrutórias",
+    "Requerimento de quebra de sigilo comprovando presença ou ausência de fundamentação concreta individualizada",
+    "Mídia/notas taquigráficas do pronunciamento parlamentar ou da sessão da comissão"
+   ],
+   "piece_ids": [
+    "habeas_corpus",
+    "mandado_seguranca",
+    "manifestacao_especifica",
+    "recurso_extraordinario"
+   ],
+   "related_claims": [
+    "const_concentrated"
+   ],
+   "limitation": "Habeas corpus preventivo/repressivo cabível imediatamente diante da convocação ou constrangimento; mandado de segurança contra ato da Mesa ou da Presidência da CPI no prazo decadencial de 120 dias (Lei 12.016/2009, art. 23)."
+  },
+  {
+   "id": "const_fundamental_rights_horizontal",
+   "label": "Eficácia horizontal dos direitos fundamentais nas relações privadas e devido processo associativo",
+   "requirements": [
+    "relacao_privada_assimetrica",
+    "exclusao_associado_condomino_cooperado",
+    "contraditorio_ampla_defesa",
+    "vedacao_discriminacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "const_fundamental_rights_horizontal.c1",
+     "label": "Incidência direta dos direitos fundamentais ao contraditório, à ampla defesa e à isonomia nas relações privadas, sendo nula a exclusão de sócio/associado ou aplicação de penalidade grave em associação civil, cooperativa ou condomínio sem prévio processo regular (CF, art. 5º, LIV e LV; CC, art. 57)",
+     "authority_ids": [
+      "cf_art5",
+      "cc_art1337"
+     ]
+    },
+    {
+     "id": "const_fundamental_rights_horizontal.c2",
+     "label": "Nulidade de cláusulas estatutárias ou práticas privadas discriminatórias que afrontem a dignidade da pessoa humana e a liberdade de crença, expressão ou orientação",
+     "authority_ids": [
+      "cf_art5",
+      "cc_art421"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "const_fundamental_rights_horizontal.d1",
+     "label": "Preservação da autonomia privada e da liberdade associativa (CF, art. 5º, XVII e XVIII) quando assegurada notificação prévia com descrição da falta, oportunidade efetiva de defesa escrita e recurso previsto no estatuto",
+     "authority_ids": [
+      "cf_art5",
+      "cc_art421"
+     ]
+    },
+    {
+     "id": "const_fundamental_rights_horizontal.d2",
+     "label": "Proporcionalidade da sanção aplicada diante de conduta antissocial reiterada ou grave violação aos deveres estatutários",
+     "authority_ids": [
+      "cc_art1337",
+      "cc_art187"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Declaração de nulidade do ato punitivo ou de exclusão associativa com reintegração imediata ao quadro social",
+    "Suspensão cautelar dos efeitos de deliberação privada tomada sem observância de contraditório prévio",
+    "Reparação civil por danos morais decorrentes de exposição vexatória ou discriminação ilícita"
+   ],
+   "evidence": [
+    "Estatuto social, convenção ou regimento interno da entidade privada",
+    "Notificação de instauração do procedimento interno, defesa apresentada e ata da assembleia/conselho deliberativo",
+    "Comprovantes de cerceamento de defesa ou tratamento anti-isonômico perante outros membros"
+   ],
+   "piece_ids": [
+    "recurso_extraordinario",
+    "acao_civil_publica",
+    "contestacao",
+    "manifestacao_especifica"
+   ],
+   "related_claims": [
+    "const_incidental_control",
+    "civ_neighborhood_condo"
+   ],
+   "limitation": "Anulação de deliberação associativa/societária decai em 3 anos na regra do art. 48, parágrafo único, do Código Civil; recurso extraordinário em 15 dias úteis (CPC, art. 1.003, § 5º)."
+  },
+  {
+   "id": "const_federalism_competence_conflict",
+   "label": "Repartição constitucional de competências legislativas e administrativas entre União, Estados e Municípios",
+   "requirements": [
+    "materia_predominante",
+    "competencia_privativa_concorrente_local",
+    "norma_geral_federal",
+    "usurpacao_competencia"
+   ],
+   "claimant_theses": [
+    {
+     "id": "const_federalism_competence_conflict.c1",
+     "label": "Inconstitucionalidade formal orgânica de lei estadual ou municipal que invada competência legislativa privativa da União (direito civil, comercial, penal, processual, trabalho, telecomunicações, seguros, trânsito e transporte — CF, art. 22) sem delegação por lei complementar",
+     "authority_ids": [
+      "cf_art22",
+      "cf_art24"
+     ]
+    },
+    {
+     "id": "const_federalism_competence_conflict.c2",
+     "label": "Legitimidade da atuação suplementar dos Estados e Municípios em proteção ambiental, saúde e consumo (CF, arts. 23, 24 e 30, I e II) desde que não contrarie norma geral federal nem crie barreira desproporcional à livre iniciativa",
+     "authority_ids": [
+      "cf_art23",
+      "cf_art24",
+      "cf_art30"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "const_federalism_competence_conflict.d1",
+     "label": "Enquadramento da norma no interesse local ou na competência concorrente suplementar em defesa da saúde, segurança do consumidor ou meio ambiente, sem alterar núcleo de contratos ou regulação setorial federal",
+     "authority_ids": [
+      "cf_art24",
+      "cf_art30"
+     ]
+    },
+    {
+     "id": "const_federalism_competence_conflict.d2",
+     "label": "Superveniência de lei federal sobre normas gerais suspende a eficácia da lei estadual apenas no que lhe for contrário (CF, art. 24, § 4º)",
+     "authority_ids": [
+      "cf_art24"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Declaração de inconstitucionalidade formal em ADI ou afastamento incidental de lei local que usurpe competência privativa da União",
+    "Anulação de autos de infração fundados em legislação municipal/estadual formalmente inconstitucional",
+    "Preservação de norma suplementar protetiva editada dentro das balizas dos arts. 24 e 30 da Constituição"
+   ],
+   "evidence": [
+    "Texto integral da lei estadual ou municipal questionada e justificativa parlamentar",
+    "Quadro comparativo com a legislação federal de normas gerais ou regulação da agência federal competente",
+    "Autos de infração ou atos concretos praticados com fundamento na norma impugnada"
+   ],
+   "piece_ids": [
+    "acao_controle_concentrado",
+    "mandado_seguranca",
+    "recurso_extraordinario",
+    "reclamacao_constitucional"
+   ],
+   "related_claims": [
+    "const_concentrated",
+    "const_incidental_control"
+   ],
+   "limitation": "Controle concentrado (ADI/ADPF) imprescritível; mandado de segurança contra ato concreto em 120 dias (Lei 12.016/2009, art. 23) e recurso extraordinário em 15 dias úteis (CPC, art. 1.003, § 5º)."
+  },
+  {
+   "id": "const_public_budget_precatorios",
+   "label": "Regime constitucional de precatórios, RPV, prioridades e sequestro de rendas públicas (CF, art. 100, e ADI 7047)",
+   "requirements": [
+    "transito_em_julgado",
+    "teto_rpv_ente_devedor",
+    "ordem_cronologica_superpreferencia",
+    "pretericao_ou_nao_alocacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "const_public_budget_precatorios.c1",
+     "label": "Garantia constitucional de pagamento integral na ordem cronológica de apresentação, superpreferência alimentar para idosos, pessoas com deficiência ou doença grave (CF, art. 100, § 2º) e inconstitucionalidade de tetos que posterguem indefinidamente a quitação (ADI 7047 do STF)",
+     "authority_ids": [
+      "cf_art100",
+      "adi_7047"
+     ]
+    },
+    {
+     "id": "const_public_budget_precatorios.c2",
+     "label": "Cabimento de sequestro de rendas públicas no caso de preterição do direito de precedência ou de não alocação orçamentária do valor necessário à satisfação do débito (CF, art. 100, § 6º) e vedação de fracionamento indevido apenas fora de créditos autônomos como honorários sucumbenciais (SV 47)",
+     "authority_ids": [
+      "cf_art100"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "const_public_budget_precatorios.d1",
+     "label": "Vedação constitucional de expedição de precatório complementar/suplementar fora de erro material ou inexatidão aritmética e proibição de fracionamento da execução por um mesmo credor para recebimento parcial por RPV e o restante por precatório, salvo renúncia expressa ao excedente (CF, art. 100, § 8º)",
+     "authority_ids": [
+      "cf_art100"
+     ]
+    },
+    {
+     "id": "const_public_budget_precatorios.d2",
+     "label": "Observância do teto próprio de RPV validamente instituído por lei de cada Estado ou Município, respeitado o piso constitucional do maior benefício do RGPS (CF, art. 100, §§ 3º e 4º)",
+     "authority_ids": [
+      "cf_art100"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Habilitação de crédito alimentar no regime de superpreferência do art. 100, § 2º, da Constituição",
+    "Expedição autônoma de RPV para honorários advocatícios sucumbenciais ou mediante renúncia expressa ao valor excedente",
+    "Pedido administrativo/judicial de sequestro de verbas públicas por quebra da ordem cronológica ou omissão orçamentária"
+   ],
+   "evidence": [
+    "Ofício requisitório de precatório ou RPV, memória de cálculo homologada e certidão de trânsito em julgado",
+    "Documento de identidade (60+ anos) ou laudo médico oficial comprovando doença grave ou deficiência para superpreferência",
+    "Lista pública de ordem cronológica de precatórios do tribunal e lei local fixadora do teto de RPV"
+   ],
+   "piece_ids": [
+    "manifestacao_especifica",
+    "mandado_seguranca",
+    "reclamacao_constitucional",
+    "recurso_extraordinario"
+   ],
+   "related_claims": [
+    "adm_fazenda_monetary_ec113"
+   ],
+   "limitation": "Pretensão executiva contra a Fazenda Pública prescreve em 5 anos do trânsito em julgado (Súmula 150 do STF); expedido o precatório, não corre prescrição durante o aguardo regular na fila constitucional de pagamento (CF, art. 100)."
+  }
  ]
 }

@@ -1,4 +1,6 @@
-# Pesquisa oficial por resposta — v0.23.0
+# Pesquisa oficial por resposta — v1.0.0
+
+Na **v1.0.0**, os 28 catálogos fora do trabalhista somam 483 pretensões (com as 123 trabalhistas, 606 pretensões em 29 ramos) e os cálculos de prazos (`deadline_calculator.py`), atualização monetária e taxas do BCB (`civil_monetary_engine.py` e `official_indices.py` com 21 séries), tempo previdenciário (`social_security_calc.py`), dosimetria/prescrição penal (`penal_dosimetry.py`) e prescrição/intercorrente (`limitation_checker.py`) passam a ter motores determinísticos próprios, também expostos via MCP (`mcp_server.py`). Autoridades recém-curadas marcadas como `pendente_conferencia_oficial` funcionam exclusivamente como pauta de pesquisa e devem ser abertas no portal oficial durante a própria resposta.
 
 Na v0.23.0, o catálogo registra a situação de súmulas e OJs do TST lida na lista oficial
 do portal de jurisprudência em 10/11/2026 e indica, na página do tema do STF, que a tese

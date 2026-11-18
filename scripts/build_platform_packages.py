@@ -155,6 +155,16 @@ def build_packages(output: Path) -> list[Path]:
     write_zip(grok_destination, grok_files)
     created.append(grok_destination)
 
+    antigravity_files = core_at_root() + [
+        (REPO_ROOT / "adapters/antigravity/INSTRUCTIONS.md", "INSTRUCTIONS.md"),
+        (REPO_ROOT / "adapters/antigravity/README.md", "README.md"),
+        (REPO_ROOT / ".mcp.json", ".mcp.json"),
+        (REPO_ROOT / "routing/task-router.json", "routing/task-router.json"),
+    ]
+    antigravity_destination = output / "auditor-processual-antigravity.zip"
+    write_zip(antigravity_destination, antigravity_files)
+    created.append(antigravity_destination)
+
     return created
 
 

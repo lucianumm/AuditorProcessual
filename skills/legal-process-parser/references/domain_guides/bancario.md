@@ -1,27 +1,21 @@
-# Direito Bancário
+# Direito Bancário e Mercado de Crédito
 
 Catálogo: `domain_catalogs/bancario.json`.
 
-## Enquadramento
-- CDC aplicável às instituições financeiras (Súmula 297 do STJ); responsabilidade objetiva por fortuito interno em fraudes de terceiros (Súmula 479), com análise de culpa exclusiva da vítima (CDC, art. 14, § 3º).
-- Consignação em folha nos limites da Lei 10.820/2003 (conferir a redação vigente, frequentemente alterada).
-- Revisão de contratos: taxas, CET, capitalização e encargos de mora examinados com o contrato integral e a evolução da dívida.
+## 1. Regime e competência
+- Incide o CDC às instituições financeiras (Súmula 297 STJ), afastado apenas em operações empresariais de grande porte para insumo produtivo sem vulnerabilidade fática/técnica. Competência da Justiça Estadual (ou Federal quando figurar a Caixa Econômica Federal — CF, art. 109, I).
 
-## Prova típica
-Contrato integral, CET, extratos, registros de acesso e dispositivos, contestação no banco, boletim de ocorrência e protocolos de devolução.
+## 2. Teses do mutuário, correntista ou investidor
+- **Juros, capitalização e tarifas:** confronte a taxa pactuada com a **taxa média de mercado do BCB/SGS** para a mesma modalidade e época da contratação, demonstrando discrepância substancial (Temas 24–27 STJ; Súmula 530 STJ na ausência do contrato). Impugne capitalização diária sem informação clara da taxa diária efetiva (Tema 953 STJ), comissão de permanência cumulada com outros encargos (Súmula 472 STJ) e tarifas de cadastro/avaliação sem serviço efetivo ou seguro prestamista imposto por venda casada (**Tema 972 STJ**).
+- **Fraudes digitais, Pix e consignados (RMC/RCC):** em transferências via Pix, engenharia social, central telefônica falsa ou abertura fraudulenta de conta, sustente a responsabilidade objetiva pelo risco da atividade e falha nos mecanismos de segurança/perfil transacional (**Súmula 479 STJ** — fortuito interno). Em cartões consignados (RMC/RCC) contratados sob aparência de empréstimo fixo ou descontos previdenciários sem contratação hígida, peça nulidade/conversão à taxa do consignado comum e repetição, observada a impenhorabilidade de até 40 SM poupados de boa-fé (CPC, art. 833, X — STJ).
 
-## Armadilhas
-- Pedido de revisão sem demonstrar a abusividade concreta e o valor.
-- Relação empresarial de crédito tratada como consumo sem examinar a destinação.
-- Normas do Banco Central e do CMN: conferir a redação vigente no portal do regulador (a busca de normativos respondeu apenas a estrutura da página em 02/11/2026).
+## 3. Teses da instituição financeira
+- **Pactuação expressa e culpa exclusiva:** demonstre a assinatura física ou biométrica auditável (geolocalização, selfie com prova de vida, IP, crédito efetivo na conta de titularidade do autor), taxa contratual próxima à média divulgada pelo BACEN (Súmula 382 STJ), pactuação expressa da capitalização mensal (Súmula 539 e 541 STJ) e culpa exclusiva da vítima ou de terceiro externo sem falha de segurança bancária.
+- **Alienação fiduciária e garantias:** exija na revisional a quantificação incontroversa e o depósito das parcelas no tempo e modo contratados (CPC, art. 330, § 2º; Súmula 380 STJ) e defenda a consolidação da propriedade e busca e apreensão após constituição em mora (DL 911/1969 c/ **Lei 14.711/2023**, pagamento da integralidade da dívida pendente — Tema 722 STJ).
 
-## Roteiro das pretensões acrescentadas
+## 4. Magistratura e gabinete (CPC, art. 489, § 1º)
+- Rejeitar petição inicial revisional genérica que não discrimine as obrigações controvertidas nem indique o valor incontroverso (CPC, art. 330, §§ 2º e 3º). Ao aferir abusividade de juros, cotejar concretamente a série temporal do BCB da data e linha de crédito exatas, vedada limitação abstrata a 12% ao ano (Súmula 382 STJ). Nas fraudes eletrônicas, examinar se a movimentação destoava do perfil histórico do correntista.
 
-Dispositivos localizados no texto oficial em 10/11/2026; súmulas e temas com situação lida no portal do tribunal. A página de tema do STF não traz a tese: ler a tese antes de citar.
-
-- Juros e tarifas (`banc_interest_fees`): comparar a taxa contratada com a série da taxa média do Banco Central para a modalidade e o mês da contratação (Súmula 530 do STJ). Juros acima de 12% ao ano não indicam abuso por si (Súmula 382). Capitalização exige pacto (Súmulas 539 e 541). O juiz não reconhece abusividade de ofício (Súmula 381).
-- Encargos de mora (`banc_default_charges`): comissão de permanência não se cumula (Súmula 472); revisional não afasta a mora (Súmula 380).
-- Veículo (`banc_fiduciary_vehicle`): mora comprovada antes da liminar (Súmula 72; Decreto-Lei 911/1969, arts. 2º e 3º); cinco dias após a execução da liminar consolida-se a propriedade, e nesse prazo se paga a integralidade.
-- Cédula de crédito bancário (`banc_ccb_execution`): título executivo com planilha e extratos (Lei 10.931/2004, art. 28).
-- Conta e cartão (`banc_overdraft_account`): exigir contas (Súmula 259); monitória com contrato e demonstrativo (Súmula 247).
-- Sigilo (`banc_secrecy_data`): LC 105/2001, arts. 1º e 6º; fraude com dados vazados é fortuito interno (Súmula 479).
+## 5. Marcos intertemporais e motores
+- **31/03/2000 (MP 1.963-17 / MP 2.170-36 — capitalização inferior à anual)** · **02/07/2021 (Lei 14.181/2021 — superendividamento)** · **30/10/2023 (Lei 14.711/2023 — execução extrajudicial DL 911/69)** · **30/08/2024 (Lei 14.905/2024 — inaplicabilidade da limitação geral do CC às instituições reguladas pelo CMN/BCB)**.
+- Motores: `official_indices.py` (séries de taxas médias de crédito BCB `20714`, `25461`–`25471`, `22022`), `civil_monetary_engine.py` (`--compare-bank-rate`), `limitation_checker.py` e `domain_catalog.py`.

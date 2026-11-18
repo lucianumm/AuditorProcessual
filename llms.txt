@@ -35,6 +35,8 @@ por questão nos Markdown cumulativos.
 Atendimento sem anexos: labor_intake_rules.md; client_intake.py preserva relatos.
 Desenvolvimento: labor_development_rules.md; selecionar pretensões/setores e carregar só os guias pertinentes.
 Elaboração incremental: incremental_petition_rules.md; análise integral, mapa de teses, capítulo selecionado e consolidação explícita. petition_workspace.py preserva versões e registra somente manifestações reais de revisão/aprovação.
-- `references/domain_guides/` e `references/domain_catalogs/`: guias e catálogos de 19 ramos e 257 pretensões fora do trabalhista (índice por ramo em `<ramo>_index.md`; geral em `references/domain_claims_index.md`).
-- `scripts/claim_search.py`: pretensões candidatas a partir de palavras dos fatos, nos catálogos trabalhista e dos ramos.
+- `references/domain_guides/` e `references/domain_catalogs/`: guias bilaterais e catálogos de 28 ramos e 483 pretensões fora do trabalhista (índice por ramo em `<ramo>_index.md`; geral em `references/domain_claims_index.md`).
+- `scripts/claim_search.py`: pretensões candidatas a partir de palavras técnicas ou coloquiais dos fatos (BM25), nos catálogos trabalhista e dos 28 ramos.
+- `scripts/deadline_calculator.py`, `scripts/civil_monetary_engine.py`, `scripts/social_security_calc.py`, `scripts/penal_dosimetry.py`, `scripts/limitation_checker.py`: motores determinísticos de prazos, atualização monetária/BCB, previdenciário, dosimetria penal e prescrição/intercorrente.
+- `scripts/mcp_server.py`, `scripts/docx_exporter.py`, `scripts/privacy_redactor.py`: servidor MCP JSON-RPC 2.0, exportador forense `.docx` e pseudonimização LGPD / auditoria Res. CNJ 615/2025.
 - `scripts/legislation_lookup.py`: norma federal por tipo, número e ano via normas.leg.br, com vigência informada pelo portal e recibo da captura.

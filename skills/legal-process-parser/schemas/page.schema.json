@@ -18,12 +18,58 @@
     "entities": {"type": "object", "additionalProperties": {"type": "array", "items": {"type": "string"}}},
     "keywords": {"type": "array", "items": {"type": "string"}},
     "content_blocks": {"type": "array", "items": {"type": "object"}},
-    "visuals": {"type": "array", "items": {"$ref": "visual_element.schema.json"}},
+    "visuals": {"type": "array", "items": {"$ref": "#/$defs/visual_element"}},
     "render": {"type": "object"},
     "vision": {"type": "object"},
     "ocr": {"type": "object"},
     "consolidation": {"type": "object"},
-    "status": {"enum": ["COMPLETE", "COMPLETE_WITH_LIMITATION", "PARTIAL", "FAILED"]}
+    "status": {"enum": ["COMPLETE", "COMPLETE_WITH_LIMITATION", "PARTIAL", "FAILED"]},
+    "source_sha256": {"type": "string"},
+    "page_unit": {"type": "string"},
+    "pje_document_id": {"type": ["string", "null"]},
+    "pje_document_page": {"type": ["integer", "null"]},
+    "court_system": {
+      "type": ["string", "null"],
+      "enum": ["pje", "eproc", "esaj", "projudi", "sei", null]
+    },
+    "electronic_document_id": {"type": ["string", "null"]},
+    "signatory": {"type": ["string", "null"]}
+  },
+  "$defs": {
+    "visual_element": {
+      "type": "object",
+      "required": ["image_id", "page_pdf", "kind", "location", "semantic_description", "description_source"],
+      "properties": {
+        "image_id": {"type": "string", "pattern": "^P[0-9]{4}-(?:I[0-9]{3}|SCAN)$"},
+        "page_pdf": {"type": "integer", "minimum": 1},
+        "kind": {"enum": ["embedded_image", "referenced_image", "page_scan"]},
+        "asset_class": {"enum": ["visual_asset", "technical_artifact", "qr_code", "logo", "document_scan", "photo", "unknown"]},
+        "visual_class": {"type": "string"},
+        "unique_image_id": {"type": "string", "pattern": "^IMG-[A-Za-z0-9_-]+$"},
+        "relevant": {"type": "boolean"},
+        "occurrence_index": {"type": "integer", "minimum": 1},
+        "source_name": {"type": "string"},
+        "source_reference": {"type": "string"},
+        "alt_text": {"type": "string"},
+        "image_path": {"type": "string"},
+        "relative_path": {"type": "string"},
+        "zoom_relative_path": {"type": "string"},
+        "format": {"type": "string"},
+        "width": {"type": ["integer", "null"], "minimum": 1},
+        "height": {"type": ["integer", "null"], "minimum": 1},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "location": {"type": "string"},
+        "semantic_description": {"type": "string", "minLength": 1},
+        "visible_text": {"type": "string"},
+        "ocr_text": {"type": "string"},
+        "objects": {"type": "array", "items": {"type": "string"}},
+        "people": {"type": "array", "items": {"type": "string"}},
+        "tables": {"type": "array", "items": {"type": "string"}},
+        "confidence": {"enum": ["high", "medium", "low", "not_assessed"]},
+        "description_source": {"type": "string"}
+      },
+      "additionalProperties": true
+    }
   },
   "additionalProperties": true
 }

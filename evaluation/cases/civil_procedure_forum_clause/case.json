@@ -1,0 +1,44 @@
+{
+  "schema_version": "2.0",
+  "synthetic": true,
+  "case_id": "civil_procedure_forum_clause",
+  "source_files": [
+    {
+      "file": "peticao_foro.txt"
+    }
+  ],
+  "expected": {
+    "facts": [
+      {
+        "id": "G-F1",
+        "text_any": [
+          "comarca aleatória sem relação com o domicílio"
+        ],
+        "source": {
+          "file": "peticao_foro.txt",
+          "page": 1,
+          "quote": "comarca aleatória sem relação com o domicílio"
+        },
+        "atoms": {
+          "date": "2024-09-03"
+        }
+      }
+    ],
+    "issues": [
+      {
+        "id": "G-I1",
+        "text_any": [
+          "ineficácia de foro aleatório",
+          "declinação de ofício"
+        ],
+        "analysis_status": "qualified"
+      }
+    ],
+    "requests": [],
+    "contradictions": [],
+    "catalog_id": "contestacao",
+    "strategy": {
+      "domain": "processual_civil"
+    }
+  }
+}

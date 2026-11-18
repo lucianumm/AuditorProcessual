@@ -4,31 +4,1990 @@
  "label": "Direito Penal e Processo Penal",
  "guide": "domain_guides/penal.md",
  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
- "polo_labels": {"claimant_theses": "Teses da defesa", "defense_theses": "Teses da acusação"},
+ "polo_labels": {
+  "claimant_theses": "Teses da defesa",
+  "defense_theses": "Teses da acusação"
+ },
  "claims": [
-  {"id": "pen_retroactivity", "label": "Lei penal no tempo", "requirements": ["data_fato", "lei_vigente", "lei_posterior", "beneficio"], "claimant_theses": [{"id": "pen_retroactivity.c1", "label": "Lei posterior mais benéfica retroage; abolitio criminis", "authority_ids": ["cp_art2", "cf_art5"]}], "defense_theses": [{"id": "pen_retroactivity.d1", "label": "Aplica-se a lei vigente ao tempo do fato quando a posterior não beneficia", "authority_ids": ["cp_art1"]}], "temporal_marker_ids": ["lei_13964_pacote_anticrime", "lei_14994_feminicidio"], "typical_requests": [], "evidence": [], "piece_ids": ["habeas_corpus", "pedido_liberdade", "revisao_criminal"], "related_claims": [], "limitation": "conferir"},
-  {"id": "pen_prescription", "label": "Prescrição e extinção da punibilidade", "requirements": ["pena", "marcos_interruptivos", "idade", "modalidade"], "claimant_theses": [{"id": "pen_prescription.c1", "label": "Prescrição pela pena máxima ou aplicada e causas de extinção", "authority_ids": ["cp_art107", "cp_art109", "cp_art110"]}], "defense_theses": [{"id": "pen_prescription.d1", "label": "Marcos interruptivos e suspensivos afastam a prescrição", "authority_ids": ["cp_art109", "cp_art110"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["resposta_acusacao", "alegacoes_finais_memoriais", "habeas_corpus"], "related_claims": [], "limitation": "conferir"},
-  {"id": "pen_evidence_nullity", "label": "Prova, cadeia de custódia e nulidades", "requirements": ["prova", "custodia", "pericia", "prejuizo", "acesso_autos"], "claimant_theses": [{"id": "pen_evidence_nullity.c1", "label": "Condenação não pode basear-se só em elementos do inquérito", "authority_ids": ["cpp_art155"]}, {"id": "pen_evidence_nullity.c2", "label": "Quebra da cadeia de custódia e perícia", "authority_ids": ["cpp_art158a", "cpp_art159"]}, {"id": "pen_evidence_nullity.c3", "label": "Acesso amplo da defesa aos elementos documentados", "authority_ids": ["sv_14"]}, {"id": "pen_evidence_nullity.c4", "label": "Nulidades do processo", "authority_ids": ["cpp_art564"]}], "defense_theses": [{"id": "pen_evidence_nullity.d1", "label": "Sem prejuízo demonstrado não se declara nulidade", "authority_ids": ["cpp_art563"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["resposta_acusacao", "alegacoes_finais_memoriais", "apelacao_criminal", "habeas_corpus"], "related_claims": [], "limitation": "conferir"},
-  {"id": "pen_custody", "label": "Prisão preventiva, flagrante e liberdade", "requirements": ["flagrante", "requisitos_preventiva", "contemporaneidade", "cautelares_diversas"], "claimant_theses": [{"id": "pen_custody.c1", "label": "Relaxamento de prisão ilegal e liberdade provisória", "authority_ids": ["cpp_art310", "cpp_art321"]}, {"id": "pen_custody.c2", "label": "Preventiva exige requisitos e revisão periódica", "authority_ids": ["cpp_art312", "cpp_art313", "cpp_art316"]}, {"id": "pen_custody.c3", "label": "Uso de algemas só nas hipóteses excepcionais", "authority_ids": ["sv_11"]}], "defense_theses": [{"id": "pen_custody.d1", "label": "Garantia da ordem pública ou da aplicação da lei penal fundamentada em fatos concretos", "authority_ids": ["cpp_art312"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["pedido_liberdade", "habeas_corpus"], "related_claims": [], "limitation": "conferir"},
-  {"id": "pen_sentencing", "label": "Dosimetria da pena", "requirements": ["circunstancias_judiciais", "atenuantes_agravantes", "causas_aumento_diminuicao", "regime"], "claimant_theses": [{"id": "pen_sentencing.c1", "label": "Inquéritos e ações em curso não agravam a pena-base", "authority_ids": ["stj_sumula_444"]}, {"id": "pen_sentencing.c2", "label": "Confissão atenua independentemente do uso na fundamentação (redação revisada em 2025)", "authority_ids": ["stj_sumula_545"]}], "defense_theses": [{"id": "pen_sentencing.d1", "label": "Atenuante não reduz a pena abaixo do mínimo legal", "authority_ids": ["stj_sumula_231"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["alegacoes_finais_memoriais", "apelacao_criminal"], "related_claims": [], "limitation": "conferir"},
-  {"id": "pen_anpp", "label": "Acordo de não persecução penal e institutos despenalizadores", "requirements": ["requisitos_objetivos", "confissao", "vedacoes", "momento"], "claimant_theses": [{"id": "pen_anpp.c1", "label": "Cabimento do ANPP nos requisitos legais", "authority_ids": ["cpp_art28a"]}, {"id": "pen_anpp.c2", "label": "Transação penal e suspensão condicional do processo", "authority_ids": ["l9099_art76", "l9099_art89", "l9099_art61"]}], "defense_theses": [{"id": "pen_anpp.d1", "label": "Vedação legal ou requisitos subjetivos ausentes", "authority_ids": ["cpp_art28a"]}], "temporal_marker_ids": ["lei_13964_pacote_anticrime"], "typical_requests": [], "evidence": [], "piece_ids": ["acordo_nao_persecucao_penal", "transacao_suspensao_juizado_criminal"], "related_claims": [], "limitation": "conferir"},
-  {"id": "pen_drugs", "label": "Drogas: uso pessoal e tráfico", "requirements": ["quantidade", "circunstancias", "destinacao", "prova"], "claimant_theses": [{"id": "pen_drugs.c1", "label": "Desclassificação para posse para consumo pessoal — conferir Tema 506 do STF", "authority_ids": ["l11343_art28", "tema_stf_506"]}], "defense_theses": [{"id": "pen_drugs.d1", "label": "Elementos de traficância pelas circunstâncias concretas", "authority_ids": ["l11343_art33"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["resposta_acusacao", "alegacoes_finais_memoriais", "apelacao_criminal", "habeas_corpus"], "related_claims": [], "limitation": "conferir"},
-  {"id": "pen_execution", "label": "Execução penal: progressão e regime", "requirements": ["calculo_pena", "requisitos_objetivos_subjetivos", "vagas", "falta_grave"], "claimant_theses": [{"id": "pen_execution.c1", "label": "Progressão pelos requisitos legais", "authority_ids": ["lep_art112"]}, {"id": "pen_execution.c2", "label": "Falta de vaga não autoriza regime mais gravoso", "authority_ids": ["sv_56"]}, {"id": "pen_execution.c3", "label": "Exame criminológico apenas fundamentado (crimes hediondos)", "authority_ids": ["sv_26"]}], "defense_theses": [{"id": "pen_execution.d1", "label": "Falta grave e requisitos subjetivos não preenchidos", "authority_ids": ["lep_art112"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["agravo_execucao_penal", "habeas_corpus"], "related_claims": [], "limitation": "conferir"},
-  {"id": "pen_tax_crime", "label": "Crimes contra a ordem tributária", "requirements": ["lancamento_definitivo", "tributo", "dolo"], "claimant_theses": [{"id": "pen_tax_crime.c1", "label": "Crime material só se tipifica após o lançamento definitivo", "authority_ids": ["sv_24"]}], "defense_theses": [{"id": "pen_tax_crime.d1", "label": "Lançamento definitivo e dolo demonstrados", "authority_ids": []}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["resposta_acusacao", "habeas_corpus"], "related_claims": ["trib_limitation"], "limitation": "conferir"},
-  {"id": "pen_appeals", "label": "Recursos e ações autônomas criminais", "requirements": ["decisao", "cabimento", "prazo", "efeitos"], "claimant_theses": [{"id": "pen_appeals.c1", "label": "Apelação, RESE, revisão criminal e habeas corpus nas hipóteses legais", "authority_ids": ["cpp_art593", "cpp_art581", "cpp_art621", "cpp_art647", "cpp_art648"]}], "defense_theses": [{"id": "pen_appeals.d1", "label": "Hipótese não prevista ou intempestividade", "authority_ids": ["cpp_art581"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["apelacao_criminal", "rese", "revisao_criminal", "habeas_corpus", "embargos_infringentes_criminais"], "related_claims": [], "limitation": "conferir"},
-  {"id": "pen_typicity_defenses", "label": "Atipicidade, erro e excludentes", "requirements": ["conduta", "resultado", "dolo_ou_culpa", "excludente"], "claimant_theses": [{"id": "pen_typicity_defenses.c1", "label": "Crime impossível, desistência voluntária e arrependimento eficaz", "authority_ids": ["cp_art17", "cp_art15"]}, {"id": "pen_typicity_defenses.c2", "label": "Erro de tipo e erro de proibição", "authority_ids": ["cp_art20", "cp_art21"]}, {"id": "pen_typicity_defenses.c3", "label": "Legítima defesa e demais excludentes de ilicitude", "authority_ids": ["cp_art23", "cp_art25"]}, {"id": "pen_typicity_defenses.c4", "label": "Insignificância conforme os vetores fixados pelos tribunais superiores", "authority_ids": ["cp_art13"]}], "defense_theses": [{"id": "pen_typicity_defenses.d1", "label": "Vigilância eletrônica não torna o furto impossível", "authority_ids": ["stj_sumula_567"]}, {"id": "pen_typicity_defenses.d2", "label": "Insignificância afastada em crimes contra a administração e na violência doméstica", "authority_ids": ["stj_sumula_599", "stj_sumula_589"]}], "temporal_marker_ids": [], "typical_requests": ["Absolvição", "Desclassificação", "Rejeição da denúncia"], "evidence": ["Laudo de avaliação do bem", "Imagens e testemunhas", "Folha de antecedentes"], "piece_ids": ["resposta_acusacao", "alegacoes_finais_memoriais", "apelacao_criminal", "habeas_corpus"], "related_claims": ["pen_evidence_nullity"], "limitation": "Prescrição pela pena em abstrato ou aplicada (CP, arts. 109 e 110)"},
-  {"id": "pen_charge_defects", "label": "Inépcia da denúncia, absolvição sumária e pronúncia", "requirements": ["descricao_do_fato", "justa_causa", "indicios_de_autoria"], "claimant_theses": [{"id": "pen_charge_defects.c1", "label": "Denúncia genérica que não descreve o fato com suas circunstâncias", "authority_ids": ["cpp_art41", "cpp_art395"]}, {"id": "pen_charge_defects.c2", "label": "Absolvição sumária por atipicidade evidente ou excludente", "authority_ids": ["cpp_art397", "cpp_art396a"]}, {"id": "pen_charge_defects.c3", "label": "Impronúncia por falta de indícios suficientes", "authority_ids": ["cpp_art414"]}], "defense_theses": [{"id": "pen_charge_defects.d1", "label": "Pronúncia exige apenas materialidade e indícios de autoria", "authority_ids": ["cpp_art413"]}, {"id": "pen_charge_defects.d2", "label": "Superveniência de sentença prejudica a alegação de inépcia — conferir", "authority_ids": ["stj_sumula_648"]}], "temporal_marker_ids": [], "typical_requests": ["Rejeição ou trancamento", "Absolvição sumária", "Despronúncia"], "evidence": ["Denúncia e elementos do inquérito", "Documentos que demonstrem a atipicidade"], "piece_ids": ["resposta_acusacao", "habeas_corpus", "rese"], "related_claims": ["pen_evidence_nullity", "pen_appeals"], "limitation": "Resposta à acusação em dez dias (CPP, art. 396)"},
-  {"id": "pen_search_recognition", "label": "Busca pessoal, domiciliar e reconhecimento de pessoas", "requirements": ["fundada_suspeita", "consentimento_ou_mandado", "procedimento_do_reconhecimento", "prova_independente"], "claimant_theses": [{"id": "pen_search_recognition.c1", "label": "Ingresso em domicílio sem mandado exige fundadas razões justificadas posteriormente", "authority_ids": ["cf_art5", "tema_stf_280", "cpp_art240"]}, {"id": "pen_search_recognition.c2", "label": "Busca pessoal baseada em impressão subjetiva é ilícita", "authority_ids": ["cpp_art244", "cpp_art157"]}, {"id": "pen_search_recognition.c3", "label": "Reconhecimento sem as formalidades legais não sustenta condenação", "authority_ids": ["cpp_art226"]}], "defense_theses": [{"id": "pen_search_recognition.d1", "label": "Flagrante de crime permanente e fundada suspeita objetivamente descrita", "authority_ids": ["cpp_art302", "cpp_art244"]}, {"id": "pen_search_recognition.d2", "label": "Outras provas independentes sustentam a autoria", "authority_ids": ["cpp_art155", "cpp_art157"]}], "temporal_marker_ids": [], "typical_requests": ["Desentranhamento da prova e das derivadas", "Absolvição", "Relaxamento da prisão"], "evidence": ["Auto de prisão e depoimentos dos agentes", "Imagens de câmeras corporais", "Termo de reconhecimento"], "piece_ids": ["resposta_acusacao", "alegacoes_finais_memoriais", "habeas_corpus", "apelacao_criminal"], "related_claims": ["pen_evidence_nullity", "pen_custody"], "limitation": "Conferir"},
-  {"id": "pen_cautionary_alternatives", "label": "Cautelares diversas, domiciliar e excesso de prazo", "requirements": ["contemporaneidade", "fundamentacao_concreta", "situacao_pessoal", "duracao"], "claimant_theses": [{"id": "pen_cautionary_alternatives.c1", "label": "Preventiva é subsidiária às cautelares diversas e exige motivação concreta", "authority_ids": ["cpp_art282", "cpp_art319", "cpp_art315"]}, {"id": "pen_cautionary_alternatives.c2", "label": "Prisão domiciliar para gestante, mãe de criança e outros casos legais", "authority_ids": ["cpp_art318"]}, {"id": "pen_cautionary_alternatives.c3", "label": "Revisão periódica e excesso de prazo", "authority_ids": ["cpp_art316"]}], "defense_theses": [{"id": "pen_cautionary_alternatives.d1", "label": "Encerrada a instrução, fica superado o excesso de prazo", "authority_ids": ["stj_sumula_52"]}, {"id": "pen_cautionary_alternatives.d2", "label": "Gravidade concreta e risco de reiteração demonstrados", "authority_ids": ["cpp_art312"]}], "temporal_marker_ids": ["lei_13964_pacote_anticrime"], "typical_requests": ["Revogação ou substituição da prisão", "Prisão domiciliar"], "evidence": ["Decisão de prisão e reavaliações", "Certidões de nascimento e laudos", "Comprovante de residência e trabalho"], "piece_ids": ["pedido_liberdade", "habeas_corpus"], "related_claims": ["pen_custody"], "limitation": "Conferir"},
-  {"id": "pen_concurrence_continuity", "label": "Concurso de crimes e continuidade delitiva", "requirements": ["numero_de_condutas", "contexto", "unidade_de_designios", "fracao"], "claimant_theses": [{"id": "pen_concurrence_continuity.c1", "label": "Crime continuado com exasperação em vez de soma", "authority_ids": ["cp_art71"]}, {"id": "pen_concurrence_continuity.c2", "label": "Concurso formal próprio", "authority_ids": ["cp_art70"]}], "defense_theses": [{"id": "pen_concurrence_continuity.d1", "label": "Concurso material por desígnios autônomos ou habitualidade", "authority_ids": ["cp_art69"]}], "temporal_marker_ids": [], "typical_requests": ["Reconhecimento da continuidade", "Redução da pena unificada"], "evidence": ["Sentenças e datas dos fatos", "Guia de execução"], "piece_ids": ["apelacao_criminal", "agravo_execucao_penal", "revisao_criminal"], "related_claims": ["pen_sentencing", "pen_execution"], "limitation": "Conferir"},
-  {"id": "pen_regime_substitution", "label": "Regime inicial, penas alternativas e sursis", "requirements": ["quantum_da_pena", "reincidencia", "circunstancias_judiciais"], "claimant_theses": [{"id": "pen_regime_substitution.c1", "label": "Regime mais gravoso exige motivação idônea além da gravidade abstrata", "authority_ids": ["cp_art33", "stj_sumula_440"]}, {"id": "pen_regime_substitution.c2", "label": "Substituição por restritivas de direitos", "authority_ids": ["cp_art44"]}, {"id": "pen_regime_substitution.c3", "label": "Reincidente com pena até quatro anos e circunstâncias favoráveis: semiaberto", "authority_ids": ["stj_sumula_269"]}], "defense_theses": [{"id": "pen_regime_substitution.d1", "label": "Circunstâncias judiciais desfavoráveis justificam regime mais severo", "authority_ids": ["cp_art59", "cp_art33"]}, {"id": "pen_regime_substitution.d2", "label": "Violência doméstica impede a substituição", "authority_ids": ["stj_sumula_588"]}], "temporal_marker_ids": [], "typical_requests": ["Fixação de regime mais brando", "Substituição da pena", "Suspensão condicional"], "evidence": ["Sentença", "Certidões de antecedentes"], "piece_ids": ["apelacao_criminal", "habeas_corpus", "embargos_declaracao"], "related_claims": ["pen_sentencing"], "limitation": "Conferir"},
-  {"id": "pen_drug_privilege", "label": "Tráfico privilegiado e associação", "requirements": ["primariedade", "dedicacao_a_atividade_criminosa", "quantidade_e_natureza", "estabilidade_do_vinculo"], "claimant_theses": [{"id": "pen_drug_privilege.c1", "label": "Redução de um sexto a dois terços para o agente primário que não integra organização", "authority_ids": ["l11343_art33"]}, {"id": "pen_drug_privilege.c2", "label": "Associação exige estabilidade e permanência", "authority_ids": ["l11343_art35"]}, {"id": "pen_drug_privilege.c3", "label": "Quantidade de droga não pode ser usada em duas fases da dosimetria", "authority_ids": ["l11343_art42", "cp_art68"]}], "defense_theses": [{"id": "pen_drug_privilege.d1", "label": "Dedicação a atividades criminosas demonstrada por elementos concretos", "authority_ids": ["l11343_art33"]}, {"id": "pen_drug_privilege.d2", "label": "Confissão de posse para uso não atenua o tráfico", "authority_ids": ["stj_sumula_630"]}, {"id": "pen_drug_privilege.d3", "label": "Vedação de combinação de leis", "authority_ids": ["stj_sumula_501"]}], "temporal_marker_ids": [], "typical_requests": ["Aplicação do redutor na fração máxima", "Absolvição da associação", "Regime aberto e substituição"], "evidence": ["Laudo toxicológico", "Auto de apreensão", "Ausência de registros de investigação anterior"], "piece_ids": ["alegacoes_finais_memoriais", "apelacao_criminal", "habeas_corpus"], "related_claims": ["pen_drugs", "pen_sentencing"], "limitation": "Conferir"},
-  {"id": "pen_domestic", "label": "Violência doméstica: rito e vedações", "requirements": ["relacao_domestica_ou_de_afeto", "genero", "representacao", "medidas"], "claimant_theses": [{"id": "pen_domestic.c1", "label": "Lesão corporal em violência doméstica é de ação pública incondicionada", "authority_ids": ["stj_sumula_542", "l11340_art41"]}, {"id": "pen_domestic.c2", "label": "Coabitação não é exigida", "authority_ids": ["stj_sumula_600", "l11340_art5"]}], "defense_theses": [{"id": "pen_domestic.d1", "label": "Retratação da representação só perante o juiz e nos crimes que a admitem", "authority_ids": ["l11340_art16"]}, {"id": "pen_domestic.d2", "label": "Sem transação penal nem suspensão condicional do processo", "authority_ids": ["stj_sumula_536"]}], "temporal_marker_ids": ["lei_14994_feminicidio"], "typical_requests": ["Condenação e reparação mínima", "Medidas protetivas"], "evidence": ["Laudo, fotos e prontuário", "Mensagens e testemunhas", "Histórico de ocorrências"], "piece_ids": ["resposta_acusacao", "alegacoes_finais_memoriais", "apelacao_criminal", "medida_protetiva_urgencia"], "related_claims": ["fam_domestic_violence"], "limitation": "Conferir"},
-  {"id": "pen_property_crimes", "label": "Furto, roubo e estelionato", "requirements": ["bem_e_valor", "violencia_ou_fraude", "consumacao", "representacao"], "claimant_theses": [{"id": "pen_property_crimes.c1", "label": "Privilégio no furto qualificado quando a qualificadora é objetiva", "authority_ids": ["stj_sumula_511", "cp_art155"]}, {"id": "pen_property_crimes.c2", "label": "Estelionato depende de representação, salvo exceções legais", "authority_ids": ["cp_art171"]}, {"id": "pen_property_crimes.c3", "label": "Aumento na terceira fase do roubo exige fundamentação concreta", "authority_ids": ["stj_sumula_443", "cp_art157"]}], "defense_theses": [{"id": "pen_property_crimes.d1", "label": "Consumação do roubo com a inversão da posse", "authority_ids": ["stj_sumula_582"]}, {"id": "pen_property_crimes.d2", "label": "Arrependimento posterior exige reparação integral antes do recebimento da denúncia", "authority_ids": ["cp_art16"]}], "temporal_marker_ids": ["lei_13964_pacote_anticrime"], "typical_requests": ["Desclassificação", "Redução da pena", "Extinção por falta de representação"], "evidence": ["Auto de avaliação", "Imagens", "Termo de representação e data"], "piece_ids": ["resposta_acusacao", "alegacoes_finais_memoriais", "apelacao_criminal"], "related_claims": ["pen_typicity_defenses", "pen_sentencing"], "limitation": "Conferir"},
-  {"id": "pen_economic_crimes", "label": "Lavagem, organização criminosa e colaboração premiada", "requirements": ["infracao_antecedente", "atos_de_ocultacao", "estrutura_ordenada", "corroboracao"], "claimant_theses": [{"id": "pen_economic_crimes.c1", "label": "Colaboração é meio de obtenção de prova e não basta para condenar", "authority_ids": ["l12850_art3a", "l12850_art4"]}, {"id": "pen_economic_crimes.c2", "label": "Organização criminosa exige quatro ou mais pessoas e estrutura ordenada", "authority_ids": ["l12850_art1"]}, {"id": "pen_economic_crimes.c3", "label": "Lavagem exige ato de ocultação distinto do exaurimento do crime antecedente", "authority_ids": ["l9613_art1"]}], "defense_theses": [{"id": "pen_economic_crimes.d1", "label": "Autonomia do crime de lavagem em relação ao antecedente", "authority_ids": ["l9613_art1"]}, {"id": "pen_economic_crimes.d2", "label": "Compartilhamento de relatórios de inteligência financeira com a persecução penal", "authority_ids": ["tema_stf_990"]}], "temporal_marker_ids": ["lei_13964_pacote_anticrime"], "typical_requests": ["Absolvição", "Rescisão ou homologação do acordo", "Restituição de bens"], "evidence": ["Termos de colaboração e elementos de corroboração", "Relatórios financeiros", "Laudos contábeis"], "piece_ids": ["resposta_acusacao", "alegacoes_finais_memoriais", "apelacao_criminal", "habeas_corpus"], "related_claims": ["pen_tax_crime", "pen_evidence_nullity"], "limitation": "Conferir"},
-  {"id": "pen_interception", "label": "Interceptação telefônica e dados", "requirements": ["decisao_fundamentada", "indicios_razoaveis", "subsidiariedade", "prazo"], "claimant_theses": [{"id": "pen_interception.c1", "label": "Interceptação só é cabível quando a prova não puder ser feita por outros meios", "authority_ids": ["l9296_art2"]}, {"id": "pen_interception.c2", "label": "Prazo de quinze dias com renovações fundamentadas", "authority_ids": ["l9296_art5"]}, {"id": "pen_interception.c3", "label": "Prova derivada da ilícita é inadmissível", "authority_ids": ["cpp_art157"]}], "defense_theses": [{"id": "pen_interception.d1", "label": "Renovações sucessivas motivadas são válidas — conferir o Tema 661 do STF", "authority_ids": ["l9296_art5"]}, {"id": "pen_interception.d2", "label": "Fonte independente e descoberta inevitável", "authority_ids": ["cpp_art157"]}], "temporal_marker_ids": [], "typical_requests": ["Nulidade das interceptações e derivadas", "Acesso integral aos áudios"], "evidence": ["Decisões e ofícios", "Relatórios de inteligência", "Mídias integrais"], "piece_ids": ["resposta_acusacao", "habeas_corpus", "alegacoes_finais_memoriais"], "related_claims": ["pen_evidence_nullity"], "limitation": "Conferir"},
-  {"id": "pen_weapons_traffic", "label": "Armas de fogo e crimes de trânsito", "requirements": ["tipo_de_arma", "registro", "local_da_apreensao", "exame_de_alcoolemia"], "claimant_theses": [{"id": "pen_weapons_traffic.c1", "label": "Distinção entre posse em residência e porte", "authority_ids": ["l10826_art12", "l10826_art14"]}, {"id": "pen_weapons_traffic.c2", "label": "Embriaguez ao volante por qualquer meio de prova da alteração psicomotora", "authority_ids": ["l9503_art306"]}], "defense_theses": [{"id": "pen_weapons_traffic.d1", "label": "Arma de uso restrito e porte em via pública", "authority_ids": ["l10826_art16", "l10826_art14"]}, {"id": "pen_weapons_traffic.d2", "label": "Crime de perigo abstrato", "authority_ids": ["l9503_art306"]}], "temporal_marker_ids": [], "typical_requests": ["Desclassificação para posse", "Absolvição por falta de prova técnica"], "evidence": ["Laudo de eficiência da arma", "Registro", "Teste de alcoolemia e exame clínico"], "piece_ids": ["resposta_acusacao", "alegacoes_finais_memoriais", "apelacao_criminal"], "related_claims": ["pen_typicity_defenses"], "limitation": "Conferir"},
-  {"id": "pen_execution_incidents", "label": "Execução penal: falta grave, remição e saídas", "requirements": ["regime", "data_base", "falta_apurada", "trabalho_ou_estudo"], "claimant_theses": [{"id": "pen_execution_incidents.c1", "label": "Falta grave exige procedimento administrativo com defesa técnica", "authority_ids": ["stj_sumula_533", "lep_art50"]}, {"id": "pen_execution_incidents.c2", "label": "Remição pelo trabalho e pelo estudo", "authority_ids": ["lep_art126", "stj_sumula_562"]}, {"id": "pen_execution_incidents.c3", "label": "Falta de vaga em regime adequado não autoriza regime mais gravoso", "authority_ids": ["sv_56", "lep_art117"]}, {"id": "pen_execution_incidents.c4", "label": "Falta grave não interrompe o prazo do livramento, da comutação e do indulto", "authority_ids": ["stj_sumula_441", "stj_sumula_535"]}], "defense_theses": [{"id": "pen_execution_incidents.d1", "label": "Falta grave interrompe o prazo para progressão", "authority_ids": ["stj_sumula_534", "lep_art118"]}, {"id": "pen_execution_incidents.d2", "label": "Crime doloso na execução é falta grave sem depender do trânsito em julgado", "authority_ids": ["stj_sumula_526"]}, {"id": "pen_execution_incidents.d3", "label": "Restrições legais à saída temporária", "authority_ids": ["lep_art122"]}], "temporal_marker_ids": ["lei_13964_pacote_anticrime", "lei_14843_saida_temporaria"], "typical_requests": ["Progressão ou livramento", "Homologação de remição", "Prisão domiciliar"], "evidence": ["Atestado de pena e cálculo", "Procedimento disciplinar", "Atestados de trabalho e estudo"], "piece_ids": ["agravo_execucao_penal", "habeas_corpus"], "related_claims": ["pen_execution"], "limitation": "Agravo em cinco dias — conferir (Súmula 700 do STF)"},
-  {"id": "pen_jury", "label": "Tribunal do júri", "requirements": ["pronuncia", "quesitos", "plenario", "soberania"], "claimant_theses": [{"id": "pen_jury.c1", "label": "Decisão manifestamente contrária à prova dos autos autoriza novo júri uma única vez", "authority_ids": ["cpp_art593"]}, {"id": "pen_jury.c2", "label": "Nulidades do plenário devem ser arguidas logo e constar da ata", "authority_ids": ["cpp_art564", "cpp_art565"]}], "defense_theses": [{"id": "pen_jury.d1", "label": "Soberania dos veredictos", "authority_ids": ["cf_art5"]}, {"id": "pen_jury.d2", "label": "Execução imediata da condenação pelo júri — conferir o Tema 1068 do STF", "authority_ids": ["cpp_art492", "tema_stf_1068"]}], "temporal_marker_ids": ["lei_13964_pacote_anticrime"], "typical_requests": ["Anulação do julgamento", "Novo júri", "Efeito suspensivo à apelação"], "evidence": ["Ata da sessão", "Quesitos e termo de votação", "Mídias do plenário"], "piece_ids": ["apelacao_criminal", "rese", "habeas_corpus"], "related_claims": ["pen_appeals", "pen_charge_defects"], "limitation": "Apelação em cinco dias (CPP, art. 593)"}
+  {
+   "id": "pen_retroactivity",
+   "label": "Lei penal no tempo",
+   "requirements": [
+    "data_fato",
+    "lei_vigente",
+    "lei_posterior",
+    "beneficio"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_retroactivity.c1",
+     "label": "Lei posterior mais benéfica retroage; abolitio criminis",
+     "authority_ids": [
+      "cp_art2",
+      "cf_art5"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_retroactivity.d1",
+     "label": "Aplica-se a lei vigente ao tempo do fato quando a posterior não beneficia",
+     "authority_ids": [
+      "cp_art1"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime",
+    "lei_14994_feminicidio"
+   ],
+   "typical_requests": [
+    "Aplicação imediata de lex mitior superveniente pelo juízo do conhecimento ou pelo juízo da execução penal mesmo após o trânsito em julgado (CF, art. 5º, XL; CP, art. 2º, parágrafo único; Súmula 611 do STF)",
+    "Afastamento da incidência retroativa de lei penal ou executória mais gravosa (ex.: Lei 13.964/2019 e Lei 14.994/2024) a fatos praticados antes de sua vigência",
+    "Vedação de combinação híbrida de leis (lex tertia) quando desautorizada pela jurisprudência vinculante (Súmula 501 do STJ)"
+   ],
+   "evidence": [
+    "Denúncia, boletim de ocorrência e prova pericial/oral precisando a data exata da conduta ou da cessação da permanência (Súmula 711 do STF)",
+    "Quadro comparativo integral da dosimetria e das frações de execução sob a lei da época do fato e sob a lei posterior",
+    "Guia de recolhimento definitiva ou provisória e cálculo de liquidação de penas no SEEU"
+   ],
+   "piece_ids": [
+    "habeas_corpus",
+    "pedido_liberdade",
+    "revisao_criminal"
+   ],
+   "related_claims": [],
+   "limitation": "O pedido de aplicação de lei penal posterior mais benigna não se submete a preclusão nem prazo decadencial, podendo ser formulado a qualquer tempo inclusive após o trânsito em julgado perante o Juízo das Execuções (LEP, art. 66, I; Súmula 611 do STF)."
+  },
+  {
+   "id": "pen_prescription",
+   "label": "Prescrição e extinção da punibilidade",
+   "requirements": [
+    "pena",
+    "marcos_interruptivos",
+    "idade",
+    "modalidade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_prescription.c1",
+     "label": "Prescrição pela pena máxima ou aplicada e causas de extinção",
+     "authority_ids": [
+      "cp_art107",
+      "cp_art109",
+      "cp_art110"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_prescription.d1",
+     "label": "Marcos interruptivos e suspensivos afastam a prescrição",
+     "authority_ids": [
+      "cp_art109",
+      "cp_art110"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime"
+   ],
+   "typical_requests": [
+    "Declaração de ofício ou a requerimento da extinção da punibilidade pela prescrição da pretensão punitiva (abstrata, retroativa ou intercorrente) ou executória (CP, arts. 107, IV, 109 e 110; CPP, art. 61)",
+    "Redução dos prazos prescricionais pela metade para agente menor de 21 anos na data do fato ou maior de 70 anos na data da sentença (CP, art. 115)",
+    "Exclusão de todos os efeitos penais e extrapenais quando reconhecida prescrição da pretensão punitiva"
+   ],
+   "evidence": [
+    "Certidão de nascimento ou carteira de identidade comprovando menoridade relativa (< 21 anos no fato) ou senilidade (> 70 anos na sentença)",
+    "Certidões exatas das datas de consumação do fato, recebimento da denúncia, publicação da sentença/acórdão condenatório e início do cumprimento ou trânsito em julgado para ambas as partes (Tema 1100 do STF)",
+    "Folha de antecedentes criminais verificando primariedade (inaplicabilidade da majoração do art. 110 caput à prescrição da pretensão punitiva — Súmula 220 STJ)"
+   ],
+   "piece_ids": [
+    "resposta_acusacao",
+    "alegacoes_finais_memoriais",
+    "habeas_corpus"
+   ],
+   "related_claims": [],
+   "limitation": "Prazos prescricionais escalonados de 3 a 20 anos conforme o máximo da pena privativa de liberdade cominada ou a pena concretamente aplicada após trânsito para a acusação (CP, arts. 109 e 110, § 1º; prescrição da pena de multa em 2 anos ou no mesmo prazo da privativa quando cumulativa — art. 114), vedada prescrição retroativa a termo anterior à denúncia após a Lei 12.234/2010."
+  },
+  {
+   "id": "pen_evidence_nullity",
+   "label": "Prova, cadeia de custódia e nulidades",
+   "requirements": [
+    "prova",
+    "custodia",
+    "pericia",
+    "prejuizo",
+    "acesso_autos"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_evidence_nullity.c1",
+     "label": "Condenação não pode basear-se só em elementos do inquérito",
+     "authority_ids": [
+      "cpp_art155"
+     ]
+    },
+    {
+     "id": "pen_evidence_nullity.c2",
+     "label": "Quebra da cadeia de custódia e perícia",
+     "authority_ids": [
+      "cpp_art158a",
+      "cpp_art159"
+     ]
+    },
+    {
+     "id": "pen_evidence_nullity.c3",
+     "label": "Acesso amplo da defesa aos elementos documentados",
+     "authority_ids": [
+      "sv_14"
+     ]
+    },
+    {
+     "id": "pen_evidence_nullity.c4",
+     "label": "Nulidades do processo",
+     "authority_ids": [
+      "cpp_art564"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_evidence_nullity.d1",
+     "label": "Sem prejuízo demonstrado não se declara nulidade",
+     "authority_ids": [
+      "cpp_art563"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime"
+   ],
+   "typical_requests": [
+    "Reconhecimento da ilicitude da prova obtida com violação a normas constitucionais ou legais e das provas dela derivadas (CPP, art. 157, caput e § 1º), determinando seu imediato desentranhamento físico/eletrônico",
+    "Acesso amplo da defesa técnica à integralidade dos elementos informativos já documentados e mídias brutas (Súmula Vinculante 14)",
+    "Absolvição por insuficiência probatória remanescente ou exclusão do suporte de elementos colhidos exclusivamente no inquérito sem repetição contraditória (CPP, art. 155)"
+   ],
+   "evidence": [
+    "Formulários de cadeia de custódia (rastreamento da coleta ao laudo — CPP, arts. 158-A a 158-F), lacres numerados e metadados/hashes dos arquivos periciados",
+    "Decisões judiciais cautelares, relatórios policiais originais e certidões de disponibilização integral das mídias à defesa",
+    "Demonstração concreta do prejuízo defensivo nos casos de nulidade processual relativa (CPP, art. 563)"
+   ],
+   "piece_ids": [
+    "resposta_acusacao",
+    "alegacoes_finais_memoriais",
+    "apelacao_criminal",
+    "habeas_corpus"
+   ],
+   "related_claims": [],
+   "limitation": "Nulidades relativas devem ser arguidas na primeira oportunidade processual (resposta à acusação ou alegações finais — CPP, art. 571), enquanto a prova ilícita constitucional (CF, art. 5º, LVI) e as nulidades absolutas podem ser suscitadas em qualquer fase, apelação, habeas corpus ou revisão criminal."
+  },
+  {
+   "id": "pen_custody",
+   "label": "Prisão preventiva, flagrante e liberdade",
+   "requirements": [
+    "flagrante",
+    "requisitos_preventiva",
+    "contemporaneidade",
+    "cautelares_diversas"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_custody.c1",
+     "label": "Relaxamento de prisão ilegal e liberdade provisória",
+     "authority_ids": [
+      "cpp_art310",
+      "cpp_art321"
+     ]
+    },
+    {
+     "id": "pen_custody.c2",
+     "label": "Preventiva exige requisitos e revisão periódica",
+     "authority_ids": [
+      "cpp_art312",
+      "cpp_art313",
+      "cpp_art316"
+     ]
+    },
+    {
+     "id": "pen_custody.c3",
+     "label": "Uso de algemas só nas hipóteses excepcionais",
+     "authority_ids": [
+      "sv_11"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_custody.d1",
+     "label": "Garantia da ordem pública ou da aplicação da lei penal fundamentada em fatos concretos",
+     "authority_ids": [
+      "cpp_art312"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime"
+   ],
+   "typical_requests": [
+    "Relaxamento de prisão em flagrante ilegal (CF, art. 5º, LXV; CPP, art. 310, I) ou concessão de liberdade provisória com ou sem medidas cautelares diversas (art. 310, III, e art. 319)",
+    "Revogação da prisão preventiva por ausência de contemporaneidade, fundamentação genérica baseada na gravidade abstrata (CPP, art. 315, § 2º) ou descumprimento da revisão nonagesimal (art. 316, parágrafo único — conferir tese do STF na SL 1.395/ADIs 6581 e 6582)",
+    "Impossibilidade de conversão de ofício da prisão em flagrante em preventiva pelo juiz sem prévia representação policial ou requerimento do MP (CPP, art. 311)"
+   ],
+   "evidence": [
+    "Auto de prisão em flagrante delito (APFD), nota de culpa, ata e mídia da audiência de custódia realizada em 24 horas",
+    "Comprovantes de primariedade, residência fixa, ocupação lícita e condições de saúde/parentalidade (CPP, art. 318)",
+    "Decisão judicial decretando a preventiva e certidão do decurso do prazo de 90 dias sem reavaliação fundamentada"
+   ],
+   "piece_ids": [
+    "pedido_liberdade",
+    "habeas_corpus"
+   ],
+   "related_claims": [],
+   "limitation": "Audiência de custódia em até 24 horas da prisão (CPP, art. 310) e dever de revisão da necessidade de manutenção da prisão preventiva a cada 90 dias mediante decisão fundamentada pelo órgão emissor (CPP, art. 316, parágrafo único); pedido de liberdade e habeas corpus cabíveis enquanto perdurar a custódia."
+  },
+  {
+   "id": "pen_sentencing",
+   "label": "Dosimetria da pena",
+   "requirements": [
+    "circunstancias_judiciais",
+    "atenuantes_agravantes",
+    "causas_aumento_diminuicao",
+    "regime"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_sentencing.c1",
+     "label": "Inquéritos e ações em curso não agravam a pena-base",
+     "authority_ids": [
+      "stj_sumula_444"
+     ]
+    },
+    {
+     "id": "pen_sentencing.c2",
+     "label": "Confissão atenua independentemente do uso na fundamentação (redação revisada em 2025)",
+     "authority_ids": [
+      "stj_sumula_545"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_sentencing.d1",
+     "label": "Atenuante não reduz a pena abaixo do mínimo legal",
+     "authority_ids": [
+      "stj_sumula_231"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Redução da pena-base ao mínimo legal por afastamento de valorações indevidas (inquéritos/ações em curso — Súmula 444 STJ, ou elementos inerentes ao próprio tipo penal)",
+    "Compensação integral entre confissão espontânea (ainda que parcial/qualificada se usada na formação da convicção — Súmula 545 STJ) e reincidência, observada a trava da Súmula 231 do STJ na segunda fase",
+    "Aplicação das causas especiais de diminuição na fração máxima fundamentada na terceira fase e adequação do regime inicial"
+   ],
+   "evidence": [
+    "Certidão de antecedentes criminais atualizada discriminando datas de fatos, trânsitos em julgado e extinção/cumprimento há mais de 5 anos (período depurador — CP, art. 64, I, e Tema 150 do STF)",
+    "Interrogatório judicial registrando a confissão espontânea ou reparação do dano antes do julgamento",
+    "Memória aritmética auditável das três fases do art. 68 do Código Penal"
+   ],
+   "piece_ids": [
+    "alegacoes_finais_memoriais",
+    "apelacao_criminal"
+   ],
+   "related_claims": [],
+   "limitation": "Insurgência contra a dosimetria da pena em apelação criminal no prazo de 5 dias corridos da intimação (CPP, art. 593), em embargos de declaração em 2 dias (CPP, art. 619) para erro material/omissão, ou em habeas corpus/revisão criminal quando houver ilegalidade flagrante manifesta."
+  },
+  {
+   "id": "pen_anpp",
+   "label": "Acordo de não persecução penal e institutos despenalizadores",
+   "requirements": [
+    "requisitos_objetivos",
+    "confissao",
+    "vedacoes",
+    "momento"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_anpp.c1",
+     "label": "Cabimento do ANPP nos requisitos legais",
+     "authority_ids": [
+      "cpp_art28a"
+     ]
+    },
+    {
+     "id": "pen_anpp.c2",
+     "label": "Transação penal e suspensão condicional do processo",
+     "authority_ids": [
+      "l9099_art76",
+      "l9099_art89",
+      "l9099_art61"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_anpp.d1",
+     "label": "Vedação legal ou requisitos subjetivos ausentes",
+     "authority_ids": [
+      "cpp_art28a"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime"
+   ],
+   "typical_requests": [
+    "Remessa dos autos ao órgão superior de revisão do Ministério Público diante de recusa de oferecimento do ANPP pela promotoria/procuradoria (CPP, art. 28-A, § 14)",
+    "Abertura de oportunidade para negociação de ANPP, transação penal ou suspensão condicional do processo após desclassificação judicial ou procedência parcial que retire majorante impeditiva (Súmula 337 do STJ)",
+    "Homologação judicial do acordo e declaração de extinção da punibilidade após cumprimento integral sem registro em certidão de antecedentes criminais (art. 28-A, §§ 12 e 13)"
+   ],
+   "evidence": [
+    "Folha de antecedentes criminais atestando ausência de reincidência, habitualidade criminosa e benefício nos últimos 5 anos (CPP, art. 28-A, § 2º)",
+    "Cálculo da pena mínima cominada inferior a 4 anos consideradas as causas de aumento e diminuição aplicáveis (§ 1º)",
+    "Comprovantes de reparação do dano ou impossibilidade econômica justificada e mídia da audiência de homologação voluntária (§ 4º)"
+   ],
+   "piece_ids": [
+    "acordo_nao_persecucao_penal",
+    "transacao_suspensao_juizado_criminal"
+   ],
+   "related_claims": [],
+   "limitation": "Aplicável inclusive retroativamente a processos em curso iniciados antes da Lei 13.964/2019 desde que não haja trânsito em julgado e seja postulado na primeira oportunidade de manifestação nos autos (Tema 1098 / HC 185.913 Plenário do STF); cumprimento do ANPP suspende o curso da prescrição (CP, art. 116, IV)."
+  },
+  {
+   "id": "pen_drugs",
+   "label": "Drogas: uso pessoal e tráfico",
+   "requirements": [
+    "quantidade",
+    "circunstancias",
+    "destinacao",
+    "prova"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_drugs.c1",
+     "label": "Desclassificação para posse para consumo pessoal — conferir Tema 506 do STF",
+     "authority_ids": [
+      "l11343_art28",
+      "tema_stf_506"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_drugs.d1",
+     "label": "Elementos de traficância pelas circunstâncias concretas",
+     "authority_ids": [
+      "l11343_art33"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime"
+   ],
+   "typical_requests": [
+    "Desclassificação da imputação de tráfico (art. 33) para porte para consumo pessoal (art. 28 da Lei 11.343/2006) — ou atipicidade penal na hipótese de Cannabis sativa até 40g conforme Tema 506 do STF",
+    "Reconhecimento da causa de diminuição do tráfico privilegiado (art. 33, § 4º) em 2/3, afastamento da hediondez (Tema 600 STF / LEP, art. 112, § 5º), regime aberto e substituição por restritivas de direitos (Res. Senado 5/2012)",
+    "Absolvição por ausência de laudo toxicológico definitivo materializando a substância proscrita (Tema Repetitivo 1006/jurisprudência STJ)"
+   ],
+   "evidence": [
+    "Auto de constatação preliminar e laudo pericial químico-toxicológico definitivo indicando massa líquida e princípio ativo",
+    "Circunstâncias objetivas da apreensão, histórico de dependência/uso do agente e ausência de apetrechos de mercancia ou contabilidade do tráfico",
+    "Folha de antecedentes comprovando primariedade e inexistência de dedicação a atividades criminosas"
+   ],
+   "piece_ids": [
+    "resposta_acusacao",
+    "alegacoes_finais_memoriais",
+    "apelacao_criminal",
+    "habeas_corpus"
+   ],
+   "related_claims": [],
+   "limitation": "No rito especial da Lei 11.343/2006, defesa prévia em 10 dias corridos da notificação (art. 55); prescrição em 2 anos nas medidas do art. 28 (art. 30, ressalvado o Tema 506 do STF para Cannabis) e em até 20 anos no tráfico do art. 33 caput (CP, art. 109, I)."
+  },
+  {
+   "id": "pen_execution",
+   "label": "Execução penal: progressão e regime",
+   "requirements": [
+    "calculo_pena",
+    "requisitos_objetivos_subjetivos",
+    "vagas",
+    "falta_grave"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_execution.c1",
+     "label": "Progressão pelos requisitos legais",
+     "authority_ids": [
+      "lep_art112"
+     ]
+    },
+    {
+     "id": "pen_execution.c2",
+     "label": "Falta de vaga não autoriza regime mais gravoso",
+     "authority_ids": [
+      "sv_56"
+     ]
+    },
+    {
+     "id": "pen_execution.c3",
+     "label": "Exame criminológico apenas fundamentado (crimes hediondos)",
+     "authority_ids": [
+      "sv_26"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_execution.d1",
+     "label": "Falta grave e requisitos subjetivos não preenchidos",
+     "authority_ids": [
+      "lep_art112"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime",
+    "lei_14843_saida_temporaria",
+    "lei_14994_feminicidio"
+   ],
+   "typical_requests": [
+    "Progressão a regime menos rigoroso mediante preenchimento do percentual objetivo aplicável na data do fato (LEP, art. 112) e bom comportamento carcerário (Súmula 439 STJ / SV 26 quanto à excepcionalidade motivada de exame criminológico; conferir alterações da Lei 14.843/2024 para fatos novos)",
+    "Observância da Súmula Vinculante 56 na falta de vagas no regime semiaberto ou aberto (inexistência de cumprimento em regime mais gravoso)",
+    "Concessão de livramento condicional, indulto ou comutação de penas"
+   ],
+   "evidence": [
+    "Atestado atualizado de conduta carcerária emitido pela direção do estabelecimento prisional e cálculo de liquidação de penas no SEEU",
+    "Certidões das datas de cada infração penal para separação estrita dos percentuais antes e depois da Lei 13.964/2019, Lei 14.843/2024 e Lei 14.994/2024",
+    "Informação oficial da administração penitenciária sobre disponibilidade de vagas em colônia agrícola/casa do albergado (SV 56)"
+   ],
+   "piece_ids": [
+    "agravo_execucao_penal",
+    "habeas_corpus"
+   ],
+   "related_claims": [],
+   "limitation": "Agravo em execução penal no prazo de 5 dias corridos contados da intimação, seguindo o rito do recurso em sentido estrito (LEP, art. 197; Súmula 700 do STF); prescrição da pretensão executória regulada pelos arts. 110 e 112 do CP (início no trânsito em julgado para ambas as partes — Tema 1100 do STF)."
+  },
+  {
+   "id": "pen_tax_crime",
+   "label": "Crimes contra a ordem tributária",
+   "requirements": [
+    "lancamento_definitivo",
+    "tributo",
+    "dolo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_tax_crime.c1",
+     "label": "Crime material só se tipifica após o lançamento definitivo",
+     "authority_ids": [
+      "sv_24"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_tax_crime.d1",
+     "label": "Lançamento definitivo e dolo demonstrados",
+     "authority_ids": []
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14689_carf"
+   ],
+   "typical_requests": [
+    "Trancamento do inquérito policial ou rejeição/absolvição sumária nos crimes materiais contra a ordem tributária antes da constituição definitiva do crédito tributário na esfera administrativa (Súmula Vinculante 24)",
+    "Suspensão da pretensão punitiva e da prescrição pela adesão a parcelamento fiscal, ou extinção da punibilidade pelo pagamento integral a qualquer tempo (Lei 10.684/2003, art. 9º; Lei 9.430/1996, art. 83)",
+    "Aplicação do princípio da insignificância quando o tributo elidido, somado aos consolidados federais, não ultrapassar R$ 20.000,00 (Tema Repetitivo 157 do STJ; no estadual/municipal depende do parâmetro de ajuizamento da respectiva lei local)"
+   ],
+   "evidence": [
+    "Certidão atualizada do Processo Administrativo Fiscal comprovando pendência de impugnação/recurso ou decisão de cancelamento (inclusive por voto de qualidade no CARF — Lei 14.689/2023)",
+    "Termo de adesão ativa a parcelamento/transação tributária ou DARF de quitação integral do crédito principal e acessórios",
+    "Contrato social e prova de quem efetivamente exercia a gestão contábil-fiscal, afastando responsabilidade penal objetiva pelo simples cargo societário"
+   ],
+   "piece_ids": [
+    "resposta_acusacao",
+    "habeas_corpus"
+   ],
+   "related_claims": [
+    "trib_limitation"
+   ],
+   "limitation": "Nos crimes materiais da Lei 8.137/1990 (art. 1º, I a IV), o prazo prescricional de 12 anos (CP, art. 109, III) só começa a correr após o lançamento definitivo do crédito tributário (Súmula Vinculante 24), ficando suspenso durante o parcelamento ativo."
+  },
+  {
+   "id": "pen_appeals",
+   "label": "Recursos e ações autônomas criminais",
+   "requirements": [
+    "decisao",
+    "cabimento",
+    "prazo",
+    "efeitos"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_appeals.c1",
+     "label": "Apelação, RESE, revisão criminal e habeas corpus nas hipóteses legais",
+     "authority_ids": [
+      "cpp_art593",
+      "cpp_art581",
+      "cpp_art621",
+      "cpp_art647",
+      "cpp_art648"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_appeals.d1",
+     "label": "Hipótese não prevista ou intempestividade",
+     "authority_ids": [
+      "cpp_art581"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Reforma integral ou parcial do julgado em apelação criminal (observada a proibição de reformatio in pejus em recurso exclusivo da defesa — CPP, art. 617)",
+    "Prevalência do voto vencido mais favorável à defesa em embargos infringentes e de nulidade contra acórdão não unânime de segunda instância (CPP, art. 609, parágrafo único)",
+    "Absolvição, anulação ou redução da pena em revisão criminal fundada em contrariedade à evidência dos autos ou prova nova (CPP, arts. 621 e 626)"
+   ],
+   "evidence": [
+    "Sentença ou acórdão recorrido com todos os votos declarados (vencedores e vencido) e certidões de intimação pessoal do réu preso e do defensor",
+    "Prequestionamento explícito ou ficto em embargos de declaração para interposição de REsp ou RE",
+    "Justificação judicial prévia ou documento novo idôneo para instrução de revisão criminal"
+   ],
+   "piece_ids": [
+    "apelacao_criminal",
+    "rese",
+    "revisao_criminal",
+    "habeas_corpus",
+    "embargos_infringentes_criminais"
+   ],
+   "related_claims": [],
+   "limitation": "Prazos em dias corridos (CPP, art. 798): embargos de declaração em 2 dias (art. 619 — 5 dias nos Juizados, Lei 9.099/1995, art. 83, § 1º); RESE e apelação em 5 dias para interposição mais 2 ou 8 dias para razões (arts. 586, 588, 593 e 600 — 10 dias na apelação do Juizado, art. 82, § 1º); embargos infringentes em 10 dias (art. 609); REsp e RE em 15 dias corridos em matéria criminal (Lei 8.038/1990, art. 26; Súmula 799 STF / jurisprudência STJ); revisão criminal e habeas corpus sem prazo decadencial."
+  },
+  {
+   "id": "pen_typicity_defenses",
+   "label": "Atipicidade, erro e excludentes",
+   "requirements": [
+    "conduta",
+    "resultado",
+    "dolo_ou_culpa",
+    "excludente"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_typicity_defenses.c1",
+     "label": "Crime impossível, desistência voluntária e arrependimento eficaz",
+     "authority_ids": [
+      "cp_art17",
+      "cp_art15"
+     ]
+    },
+    {
+     "id": "pen_typicity_defenses.c2",
+     "label": "Erro de tipo e erro de proibição",
+     "authority_ids": [
+      "cp_art20",
+      "cp_art21"
+     ]
+    },
+    {
+     "id": "pen_typicity_defenses.c3",
+     "label": "Legítima defesa e demais excludentes de ilicitude",
+     "authority_ids": [
+      "cp_art23",
+      "cp_art25"
+     ]
+    },
+    {
+     "id": "pen_typicity_defenses.c4",
+     "label": "Insignificância conforme os vetores fixados pelos tribunais superiores",
+     "authority_ids": [
+      "cp_art13"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_typicity_defenses.d1",
+     "label": "Vigilância eletrônica não torna o furto impossível",
+     "authority_ids": [
+      "stj_sumula_567"
+     ]
+    },
+    {
+     "id": "pen_typicity_defenses.d2",
+     "label": "Insignificância afastada em crimes contra a administração e na violência doméstica",
+     "authority_ids": [
+      "stj_sumula_599",
+      "stj_sumula_589"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Absolvição",
+    "Desclassificação",
+    "Rejeição da denúncia"
+   ],
+   "evidence": [
+    "Laudo de avaliação do bem",
+    "Imagens e testemunhas",
+    "Folha de antecedentes"
+   ],
+   "piece_ids": [
+    "resposta_acusacao",
+    "alegacoes_finais_memoriais",
+    "apelacao_criminal",
+    "habeas_corpus"
+   ],
+   "related_claims": [
+    "pen_evidence_nullity"
+   ],
+   "limitation": "Defesa preliminar/resposta à acusação em 10 dias corridos da citação efetiva (CPP, art. 396); prescrição regulada pelos arts. 109 e 110 do Código Penal."
+  },
+  {
+   "id": "pen_charge_defects",
+   "label": "Inépcia da denúncia, absolvição sumária e pronúncia",
+   "requirements": [
+    "descricao_do_fato",
+    "justa_causa",
+    "indicios_de_autoria"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_charge_defects.c1",
+     "label": "Denúncia genérica que não descreve o fato com suas circunstâncias",
+     "authority_ids": [
+      "cpp_art41",
+      "cpp_art395"
+     ]
+    },
+    {
+     "id": "pen_charge_defects.c2",
+     "label": "Absolvição sumária por atipicidade evidente ou excludente",
+     "authority_ids": [
+      "cpp_art397",
+      "cpp_art396a"
+     ]
+    },
+    {
+     "id": "pen_charge_defects.c3",
+     "label": "Impronúncia por falta de indícios suficientes",
+     "authority_ids": [
+      "cpp_art414"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_charge_defects.d1",
+     "label": "Pronúncia exige apenas materialidade e indícios de autoria",
+     "authority_ids": [
+      "cpp_art413"
+     ]
+    },
+    {
+     "id": "pen_charge_defects.d2",
+     "label": "Superveniência de sentença prejudica a alegação de inépcia — conferir",
+     "authority_ids": [
+      "stj_sumula_648"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Rejeição ou trancamento",
+    "Absolvição sumária",
+    "Despronúncia"
+   ],
+   "evidence": [
+    "Denúncia e elementos do inquérito",
+    "Documentos que demonstrem a atipicidade",
+    "Mídias e transcrições da primeira fase do procedimento do Júri demonstrando ausência de indícios suficientes de autoria para pronúncia (in dubio pro societate não dispensa standard probatório mínimo — STF/STJ)"
+   ],
+   "piece_ids": [
+    "resposta_acusacao",
+    "habeas_corpus",
+    "rese"
+   ],
+   "related_claims": [
+    "pen_evidence_nullity",
+    "pen_appeals"
+   ],
+   "limitation": "Resposta à acusação em 10 dias corridos (CPP, art. 396) e recurso em sentido estrito contra decisão de pronúncia em 5 dias corridos (CPP, arts. 581, IV, e 586)."
+  },
+  {
+   "id": "pen_search_recognition",
+   "label": "Busca pessoal, domiciliar e reconhecimento de pessoas",
+   "requirements": [
+    "fundada_suspeita",
+    "consentimento_ou_mandado",
+    "procedimento_do_reconhecimento",
+    "prova_independente"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_search_recognition.c1",
+     "label": "Ingresso em domicílio sem mandado exige fundadas razões justificadas posteriormente",
+     "authority_ids": [
+      "cf_art5",
+      "tema_stf_280",
+      "cpp_art240"
+     ]
+    },
+    {
+     "id": "pen_search_recognition.c2",
+     "label": "Busca pessoal baseada em impressão subjetiva é ilícita",
+     "authority_ids": [
+      "cpp_art244",
+      "cpp_art157"
+     ]
+    },
+    {
+     "id": "pen_search_recognition.c3",
+     "label": "Reconhecimento sem as formalidades legais não sustenta condenação",
+     "authority_ids": [
+      "cpp_art226"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_search_recognition.d1",
+     "label": "Flagrante de crime permanente e fundada suspeita objetivamente descrita",
+     "authority_ids": [
+      "cpp_art302",
+      "cpp_art244"
+     ]
+    },
+    {
+     "id": "pen_search_recognition.d2",
+     "label": "Outras provas independentes sustentam a autoria",
+     "authority_ids": [
+      "cpp_art155",
+      "cpp_art157"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Desentranhamento da prova e das derivadas",
+    "Absolvição",
+    "Relaxamento da prisão"
+   ],
+   "evidence": [
+    "Auto de prisão e depoimentos dos agentes",
+    "Imagens de câmeras corporais",
+    "Termo de reconhecimento"
+   ],
+   "piece_ids": [
+    "resposta_acusacao",
+    "alegacoes_finais_memoriais",
+    "habeas_corpus",
+    "apelacao_criminal"
+   ],
+   "related_claims": [
+    "pen_evidence_nullity",
+    "pen_custody"
+   ],
+   "limitation": "A nulidade por invasão domiciliar sem fundada razão previamente justificada (Tema 280 do STF) ou por inobservância do procedimento obrigatório do art. 226 do CPP não preclui, sendo cognoscível na resposta à acusação, alegações finais, apelação, habeas corpus ou revisão criminal."
+  },
+  {
+   "id": "pen_cautionary_alternatives",
+   "label": "Cautelares diversas, domiciliar e excesso de prazo",
+   "requirements": [
+    "contemporaneidade",
+    "fundamentacao_concreta",
+    "situacao_pessoal",
+    "duracao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_cautionary_alternatives.c1",
+     "label": "Preventiva é subsidiária às cautelares diversas e exige motivação concreta",
+     "authority_ids": [
+      "cpp_art282",
+      "cpp_art319",
+      "cpp_art315"
+     ]
+    },
+    {
+     "id": "pen_cautionary_alternatives.c2",
+     "label": "Prisão domiciliar para gestante, mãe de criança e outros casos legais",
+     "authority_ids": [
+      "cpp_art318"
+     ]
+    },
+    {
+     "id": "pen_cautionary_alternatives.c3",
+     "label": "Revisão periódica e excesso de prazo",
+     "authority_ids": [
+      "cpp_art316"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_cautionary_alternatives.d1",
+     "label": "Encerrada a instrução, fica superado o excesso de prazo",
+     "authority_ids": [
+      "stj_sumula_52"
+     ]
+    },
+    {
+     "id": "pen_cautionary_alternatives.d2",
+     "label": "Gravidade concreta e risco de reiteração demonstrados",
+     "authority_ids": [
+      "cpp_art312"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime"
+   ],
+   "typical_requests": [
+    "Revogação ou substituição da prisão",
+    "Prisão domiciliar"
+   ],
+   "evidence": [
+    "Decisão de prisão e reavaliações",
+    "Certidões de nascimento e laudos",
+    "Comprovante de residência e trabalho"
+   ],
+   "piece_ids": [
+    "pedido_liberdade",
+    "habeas_corpus"
+   ],
+   "related_claims": [
+    "pen_custody"
+   ],
+   "limitation": "Pedido de revogação ou substituição por prisão domiciliar (CPP, arts. 318 e 318-A — gestantes e mães/responsáveis por crianças até 12 anos, salvo crimes com violência/grave ameaça ou contra o próprio descendente) cabível a qualquer tempo enquanto durar a medida cautelar."
+  },
+  {
+   "id": "pen_concurrence_continuity",
+   "label": "Concurso de crimes e continuidade delitiva",
+   "requirements": [
+    "numero_de_condutas",
+    "contexto",
+    "unidade_de_designios",
+    "fracao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_concurrence_continuity.c1",
+     "label": "Crime continuado com exasperação em vez de soma",
+     "authority_ids": [
+      "cp_art71"
+     ]
+    },
+    {
+     "id": "pen_concurrence_continuity.c2",
+     "label": "Concurso formal próprio",
+     "authority_ids": [
+      "cp_art70"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_concurrence_continuity.d1",
+     "label": "Concurso material por desígnios autônomos ou habitualidade",
+     "authority_ids": [
+      "cp_art69"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Reconhecimento da continuidade",
+    "Redução da pena unificada"
+   ],
+   "evidence": [
+    "Sentenças e datas dos fatos",
+    "Guia de execução",
+    "Quadro demonstrativo das condições de tempo (intervalo até 30 dias), lugar, maneira de execução e outras semelhantes (CP, art. 71)"
+   ],
+   "piece_ids": [
+    "apelacao_criminal",
+    "agravo_execucao_penal",
+    "revisao_criminal"
+   ],
+   "related_claims": [
+    "pen_sentencing",
+    "pen_execution"
+   ],
+   "limitation": "Na unificação superveniente de penas em sede de execução (LEP, art. 66, III, 'a'), o pedido cabe a qualquer tempo durante o cumprimento das penas, recorrendo-se por agravo em execução em 5 dias corridos; para fins prescricionais, a prescrição incide isoladamente sobre cada crime sem computar o acréscimo da continuidade (CP, art. 119; Súmula 497 do STF)."
+  },
+  {
+   "id": "pen_regime_substitution",
+   "label": "Regime inicial, penas alternativas e sursis",
+   "requirements": [
+    "quantum_da_pena",
+    "reincidencia",
+    "circunstancias_judiciais"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_regime_substitution.c1",
+     "label": "Regime mais gravoso exige motivação idônea além da gravidade abstrata",
+     "authority_ids": [
+      "cp_art33",
+      "stj_sumula_440"
+     ]
+    },
+    {
+     "id": "pen_regime_substitution.c2",
+     "label": "Substituição por restritivas de direitos",
+     "authority_ids": [
+      "cp_art44"
+     ]
+    },
+    {
+     "id": "pen_regime_substitution.c3",
+     "label": "Reincidente com pena até quatro anos e circunstâncias favoráveis: semiaberto",
+     "authority_ids": [
+      "stj_sumula_269"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_regime_substitution.d1",
+     "label": "Circunstâncias judiciais desfavoráveis justificam regime mais severo",
+     "authority_ids": [
+      "cp_art59",
+      "cp_art33"
+     ]
+    },
+    {
+     "id": "pen_regime_substitution.d2",
+     "label": "Violência doméstica impede a substituição",
+     "authority_ids": [
+      "stj_sumula_588"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Fixação de regime mais brando",
+    "Substituição da pena",
+    "Suspensão condicional"
+   ],
+   "evidence": [
+    "Sentença",
+    "Certidões de antecedentes",
+    "Comprovação de reparação do dano ou condições pessoais favoráveis que recomendem substituição mesmo ao reincidente não específico (CP, art. 44, § 3º)"
+   ],
+   "piece_ids": [
+    "apelacao_criminal",
+    "habeas_corpus",
+    "embargos_declaracao"
+   ],
+   "related_claims": [
+    "pen_sentencing"
+   ],
+   "limitation": "Apelação criminal em 5 dias corridos (CPP, art. 593) ou habeas corpus substitutivo/de ofício diante de constrangimento ilegal manifesto à liberdade de locomoção por imposição de regime mais gravoso em desacordo com as Súmulas 718 e 719 do STF e 440 do STJ."
+  },
+  {
+   "id": "pen_drug_privilege",
+   "label": "Tráfico privilegiado e associação",
+   "requirements": [
+    "primariedade",
+    "dedicacao_a_atividade_criminosa",
+    "quantidade_e_natureza",
+    "estabilidade_do_vinculo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_drug_privilege.c1",
+     "label": "Redução de um sexto a dois terços para o agente primário que não integra organização",
+     "authority_ids": [
+      "l11343_art33"
+     ]
+    },
+    {
+     "id": "pen_drug_privilege.c2",
+     "label": "Associação exige estabilidade e permanência",
+     "authority_ids": [
+      "l11343_art35"
+     ]
+    },
+    {
+     "id": "pen_drug_privilege.c3",
+     "label": "Quantidade de droga não pode ser usada em duas fases da dosimetria",
+     "authority_ids": [
+      "l11343_art42",
+      "cp_art68"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_drug_privilege.d1",
+     "label": "Dedicação a atividades criminosas demonstrada por elementos concretos",
+     "authority_ids": [
+      "l11343_art33"
+     ]
+    },
+    {
+     "id": "pen_drug_privilege.d2",
+     "label": "Confissão de posse para uso não atenua o tráfico",
+     "authority_ids": [
+      "stj_sumula_630"
+     ]
+    },
+    {
+     "id": "pen_drug_privilege.d3",
+     "label": "Vedação de combinação de leis",
+     "authority_ids": [
+      "stj_sumula_501"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime"
+   ],
+   "typical_requests": [
+    "Aplicação do redutor na fração máxima",
+    "Absolvição da associação",
+    "Regime aberto e substituição"
+   ],
+   "evidence": [
+    "Laudo toxicológico",
+    "Auto de apreensão",
+    "Ausência de registros de investigação anterior"
+   ],
+   "piece_ids": [
+    "alegacoes_finais_memoriais",
+    "apelacao_criminal",
+    "habeas_corpus"
+   ],
+   "related_claims": [
+    "pen_drugs",
+    "pen_sentencing"
+   ],
+   "limitation": "Defesa prévia em 10 dias (Lei 11.343/2006, art. 55) e apelação em 5 dias (CPP, art. 593); no cálculo da prescrição retroativa/intercorrente, computa-se a pena já reduzida pela minorante do § 4º do art. 33 reconhecida na sentença."
+  },
+  {
+   "id": "pen_domestic",
+   "label": "Violência doméstica: rito e vedações",
+   "requirements": [
+    "relacao_domestica_ou_de_afeto",
+    "genero",
+    "representacao",
+    "medidas"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_domestic.c1",
+     "label": "Lesão corporal em violência doméstica é de ação pública incondicionada",
+     "authority_ids": [
+      "stj_sumula_542",
+      "l11340_art41"
+     ]
+    },
+    {
+     "id": "pen_domestic.c2",
+     "label": "Coabitação não é exigida",
+     "authority_ids": [
+      "stj_sumula_600",
+      "l11340_art5"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_domestic.d1",
+     "label": "Retratação da representação só perante o juiz e nos crimes que a admitem",
+     "authority_ids": [
+      "l11340_art16"
+     ]
+    },
+    {
+     "id": "pen_domestic.d2",
+     "label": "Sem transação penal nem suspensão condicional do processo",
+     "authority_ids": [
+      "stj_sumula_536"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14994_feminicidio"
+   ],
+   "typical_requests": [
+    "Condenação e reparação mínima",
+    "Medidas protetivas",
+    "Vedação de aplicação da Lei 9.099/1995 e de substituição por cesta básica/prestação pecuniária isolada nos crimes praticados com violência doméstica (Lei 11.340/2006, arts. 17 e 41; Súmulas 536 e 588 do STJ)"
+   ],
+   "evidence": [
+    "Laudo, fotos e prontuário",
+    "Mensagens e testemunhas",
+    "Histórico de ocorrências"
+   ],
+   "piece_ids": [
+    "resposta_acusacao",
+    "alegacoes_finais_memoriais",
+    "apelacao_criminal",
+    "medida_protetiva_urgencia"
+   ],
+   "related_claims": [
+    "fam_domestic_violence"
+   ],
+   "limitation": "Na lesão corporal praticada contra a mulher em âmbito doméstico, a ação penal é pública incondicionada (Súmula 542 do STJ; ADI 4424 STF); nos crimes condicionados à representação (ex.: ameaça), decadência em 6 meses da ciência da autoria (CP, art. 103), exigindo audiência específica perante o juiz antes do recebimento da denúncia para eventual retratação (Lei 11.340/2006, art. 16)."
+  },
+  {
+   "id": "pen_property_crimes",
+   "label": "Furto, roubo e estelionato",
+   "requirements": [
+    "bem_e_valor",
+    "violencia_ou_fraude",
+    "consumacao",
+    "representacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_property_crimes.c1",
+     "label": "Privilégio no furto qualificado quando a qualificadora é objetiva",
+     "authority_ids": [
+      "stj_sumula_511",
+      "cp_art155"
+     ]
+    },
+    {
+     "id": "pen_property_crimes.c2",
+     "label": "Estelionato depende de representação, salvo exceções legais",
+     "authority_ids": [
+      "cp_art171"
+     ]
+    },
+    {
+     "id": "pen_property_crimes.c3",
+     "label": "Aumento na terceira fase do roubo exige fundamentação concreta",
+     "authority_ids": [
+      "stj_sumula_443",
+      "cp_art157"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_property_crimes.d1",
+     "label": "Consumação do roubo com a inversão da posse",
+     "authority_ids": [
+      "stj_sumula_582"
+     ]
+    },
+    {
+     "id": "pen_property_crimes.d2",
+     "label": "Arrependimento posterior exige reparação integral antes do recebimento da denúncia",
+     "authority_ids": [
+      "cp_art16"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime"
+   ],
+   "typical_requests": [
+    "Desclassificação",
+    "Redução da pena",
+    "Extinção por falta de representação"
+   ],
+   "evidence": [
+    "Auto de avaliação",
+    "Imagens",
+    "Termo de representação e data"
+   ],
+   "piece_ids": [
+    "resposta_acusacao",
+    "alegacoes_finais_memoriais",
+    "apelacao_criminal"
+   ],
+   "related_claims": [
+    "pen_typicity_defenses",
+    "pen_sentencing"
+   ],
+   "limitation": "No estelionato (salvo as exceções do § 5º do art. 171 do CP — vítima Administração Pública, criança/adolescente, PCD ou maior de 70 anos/incapaz), a ação penal é pública condicionada à representação, sujeita ao prazo decadencial de 6 meses contados do conhecimento da autoria (CPP, art. 38; Tema 1117/HC 187.341 STF sobre irretroatividade após recebimento da denúncia)."
+  },
+  {
+   "id": "pen_economic_crimes",
+   "label": "Lavagem, organização criminosa e colaboração premiada",
+   "requirements": [
+    "infracao_antecedente",
+    "atos_de_ocultacao",
+    "estrutura_ordenada",
+    "corroboracao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_economic_crimes.c1",
+     "label": "Colaboração é meio de obtenção de prova e não basta para condenar",
+     "authority_ids": [
+      "l12850_art3a",
+      "l12850_art4"
+     ]
+    },
+    {
+     "id": "pen_economic_crimes.c2",
+     "label": "Organização criminosa exige quatro ou mais pessoas e estrutura ordenada",
+     "authority_ids": [
+      "l12850_art1"
+     ]
+    },
+    {
+     "id": "pen_economic_crimes.c3",
+     "label": "Lavagem exige ato de ocultação distinto do exaurimento do crime antecedente",
+     "authority_ids": [
+      "l9613_art1"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_economic_crimes.d1",
+     "label": "Autonomia do crime de lavagem em relação ao antecedente",
+     "authority_ids": [
+      "l9613_art1"
+     ]
+    },
+    {
+     "id": "pen_economic_crimes.d2",
+     "label": "Compartilhamento de relatórios de inteligência financeira com a persecução penal",
+     "authority_ids": [
+      "tema_stf_990"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime"
+   ],
+   "typical_requests": [
+    "Absolvição",
+    "Rescisão ou homologação do acordo",
+    "Restituição de bens"
+   ],
+   "evidence": [
+    "Termos de colaboração e elementos de corroboração",
+    "Relatórios financeiros",
+    "Laudos contábeis"
+   ],
+   "piece_ids": [
+    "resposta_acusacao",
+    "alegacoes_finais_memoriais",
+    "apelacao_criminal",
+    "habeas_corpus"
+   ],
+   "related_claims": [
+    "pen_tax_crime",
+    "pen_evidence_nullity"
+   ],
+   "limitation": "Proibição legal expressa de decretar medidas cautelares reais/pessoais, receber denúncia ou proferir sentença condenatória com fundamento apenas nas declarações do colaborador desacompanhadas de provas autônomas de corroboração (Lei 12.850/2013, art. 4º, § 16); prescrição do crime autônomo de lavagem em 16 anos (CP, art. 109, II)."
+  },
+  {
+   "id": "pen_interception",
+   "label": "Interceptação telefônica e dados",
+   "requirements": [
+    "decisao_fundamentada",
+    "indicios_razoaveis",
+    "subsidiariedade",
+    "prazo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_interception.c1",
+     "label": "Interceptação só é cabível quando a prova não puder ser feita por outros meios",
+     "authority_ids": [
+      "l9296_art2"
+     ]
+    },
+    {
+     "id": "pen_interception.c2",
+     "label": "Prazo de quinze dias com renovações fundamentadas",
+     "authority_ids": [
+      "l9296_art5"
+     ]
+    },
+    {
+     "id": "pen_interception.c3",
+     "label": "Prova derivada da ilícita é inadmissível",
+     "authority_ids": [
+      "cpp_art157"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_interception.d1",
+     "label": "Renovações sucessivas motivadas são válidas — conferir o Tema 661 do STF",
+     "authority_ids": [
+      "l9296_art5"
+     ]
+    },
+    {
+     "id": "pen_interception.d2",
+     "label": "Fonte independente e descoberta inevitável",
+     "authority_ids": [
+      "cpp_art157"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime"
+   ],
+   "typical_requests": [
+    "Nulidade das interceptações e derivadas",
+    "Acesso integral aos áudios",
+    "Nulidade de quebra de sigilo telemático genérica (fishing expedition / dados de geolocalização ERB indiscriminados) ou de prorrogações automáticas copiadas sem motivação contemporânea (Lei 9.296/1996, art. 5º)"
+   ],
+   "evidence": [
+    "Decisões e ofícios",
+    "Relatórios de inteligência",
+    "Mídias integrais"
+   ],
+   "piece_ids": [
+    "resposta_acusacao",
+    "habeas_corpus",
+    "alegacoes_finais_memoriais"
+   ],
+   "related_claims": [
+    "pen_evidence_nullity"
+   ],
+   "limitation": "Prazo legal de cada ciclo de interceptação telefônica limitado a 15 dias, renovável por igual período uma ou mais vezes desde que comprovada concretamente a indispensabilidade do meio de prova (Lei 9.296/1996, art. 5º; Tema 661 do STF)."
+  },
+  {
+   "id": "pen_weapons_traffic",
+   "label": "Armas de fogo e crimes de trânsito",
+   "requirements": [
+    "tipo_de_arma",
+    "registro",
+    "local_da_apreensao",
+    "exame_de_alcoolemia"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_weapons_traffic.c1",
+     "label": "Distinção entre posse em residência e porte",
+     "authority_ids": [
+      "l10826_art12",
+      "l10826_art14"
+     ]
+    },
+    {
+     "id": "pen_weapons_traffic.c2",
+     "label": "Embriaguez ao volante por qualquer meio de prova da alteração psicomotora",
+     "authority_ids": [
+      "l9503_art306"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_weapons_traffic.d1",
+     "label": "Arma de uso restrito e porte em via pública",
+     "authority_ids": [
+      "l10826_art16",
+      "l10826_art14"
+     ]
+    },
+    {
+     "id": "pen_weapons_traffic.d2",
+     "label": "Crime de perigo abstrato",
+     "authority_ids": [
+      "l9503_art306"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Desclassificação para posse",
+    "Absolvição por falta de prova técnica",
+    "Atipicidade material quando o laudo pericial oficial atestar ineficiência absoluta e total inaptidão da arma de fogo para produzir disparos ou quantidade ínfima de munição desacompanhada de arma sem lesividade concreta"
+   ],
+   "evidence": [
+    "Laudo de eficiência da arma",
+    "Registro",
+    "Teste de alcoolemia e exame clínico"
+   ],
+   "piece_ids": [
+    "resposta_acusacao",
+    "alegacoes_finais_memoriais",
+    "apelacao_criminal"
+   ],
+   "related_claims": [
+    "pen_typicity_defenses"
+   ],
+   "limitation": "Prescrição conforme a pena máxima de cada tipo da Lei 10.826/2003 e do CTB (CP, art. 109); cabimento de ANPP nos delitos sem violência ou grave ameaça com pena mínima inferior a 4 anos (ex.: posse/porte de arma de uso permitido ou embriaguez ao volante simples sem lesão, preenchidos os requisitos do art. 28-A do CPP)."
+  },
+  {
+   "id": "pen_execution_incidents",
+   "label": "Execução penal: falta grave, remição e saídas",
+   "requirements": [
+    "regime",
+    "data_base",
+    "falta_apurada",
+    "trabalho_ou_estudo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_execution_incidents.c1",
+     "label": "Falta grave exige procedimento administrativo com defesa técnica",
+     "authority_ids": [
+      "stj_sumula_533",
+      "lep_art50"
+     ]
+    },
+    {
+     "id": "pen_execution_incidents.c2",
+     "label": "Remição pelo trabalho e pelo estudo",
+     "authority_ids": [
+      "lep_art126",
+      "stj_sumula_562"
+     ]
+    },
+    {
+     "id": "pen_execution_incidents.c3",
+     "label": "Falta de vaga em regime adequado não autoriza regime mais gravoso",
+     "authority_ids": [
+      "sv_56",
+      "lep_art117"
+     ]
+    },
+    {
+     "id": "pen_execution_incidents.c4",
+     "label": "Falta grave não interrompe o prazo do livramento, da comutação e do indulto",
+     "authority_ids": [
+      "stj_sumula_441",
+      "stj_sumula_535"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_execution_incidents.d1",
+     "label": "Falta grave interrompe o prazo para progressão",
+     "authority_ids": [
+      "stj_sumula_534",
+      "lep_art118"
+     ]
+    },
+    {
+     "id": "pen_execution_incidents.d2",
+     "label": "Crime doloso na execução é falta grave sem depender do trânsito em julgado",
+     "authority_ids": [
+      "stj_sumula_526"
+     ]
+    },
+    {
+     "id": "pen_execution_incidents.d3",
+     "label": "Restrições legais à saída temporária",
+     "authority_ids": [
+      "lep_art122"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime",
+    "lei_14843_saida_temporaria"
+   ],
+   "typical_requests": [
+    "Progressão ou livramento",
+    "Homologação de remição",
+    "Prisão domiciliar"
+   ],
+   "evidence": [
+    "Atestado de pena e cálculo",
+    "Procedimento disciplinar",
+    "Atestados de trabalho e estudo"
+   ],
+   "piece_ids": [
+    "agravo_execucao_penal",
+    "habeas_corpus"
+   ],
+   "related_claims": [
+    "pen_execution"
+   ],
+   "limitation": "A prescrição da falta disciplinar de natureza grave no curso da execução penal verifica-se em 3 anos (menor prazo do art. 109 do CP vigente — Súmula 534 e Tema 435/jurisprudência STJ), exigindo PAD com defesa técnica para seu reconhecimento (Súmula 533 do STJ); agravo em execução em 5 dias corridos (Súmula 700 do STF)."
+  },
+  {
+   "id": "pen_jury",
+   "label": "Tribunal do júri",
+   "requirements": [
+    "pronuncia",
+    "quesitos",
+    "plenario",
+    "soberania"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_jury.c1",
+     "label": "Decisão manifestamente contrária à prova dos autos autoriza novo júri uma única vez",
+     "authority_ids": [
+      "cpp_art593"
+     ]
+    },
+    {
+     "id": "pen_jury.c2",
+     "label": "Nulidades do plenário devem ser arguidas logo e constar da ata",
+     "authority_ids": [
+      "cpp_art564",
+      "cpp_art565"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_jury.d1",
+     "label": "Soberania dos veredictos",
+     "authority_ids": [
+      "cf_art5"
+     ]
+    },
+    {
+     "id": "pen_jury.d2",
+     "label": "Execução imediata da condenação pelo júri — conferir o Tema 1068 do STF",
+     "authority_ids": [
+      "cpp_art492",
+      "tema_stf_1068"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime"
+   ],
+   "typical_requests": [
+    "Anulação do julgamento",
+    "Novo júri",
+    "Efeito suspensivo à apelação"
+   ],
+   "evidence": [
+    "Ata da sessão",
+    "Quesitos e termo de votação",
+    "Mídias do plenário"
+   ],
+   "piece_ids": [
+    "apelacao_criminal",
+    "rese",
+    "habeas_corpus"
+   ],
+   "related_claims": [
+    "pen_appeals",
+    "pen_charge_defects"
+   ],
+   "limitation": "Apelação contra decisão do Tribunal do Júri restrita às alíneas taxativas do art. 593, III, do CPP (Súmula 713 do STF) no prazo de 5 dias corridos, sendo cabível uma única vez apelação pelo mérito de decisão manifestamente contrária à prova dos autos (art. 593, § 3º)."
+  },
+  {
+   "id": "pen_anpp_retroactivity_tema1098",
+   "label": "Acordo de Não Persecução Penal (ANPP) retroativo (Tema 1098 STF) e controle da recusa ministerial",
+   "requirements": [
+    "processo_sem_transito_em_julgado",
+    "pedido_primeira_oportunidade",
+    "desnecessidade_confissao_no_inquerito",
+    "controle_recusa_art28a_par14"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_anpp_retroactivity_tema1098.c1",
+     "label": "Por possuir natureza híbrida (processual-penal material), o art. 28-A do CPP retroage para alcançar processos em curso iniciados antes da Lei 13.964/2019 (mesmo com denúncia já recebida ou sentença condenatória recorrível), desde que não haja trânsito em julgado e tenha sido postulado pela defesa na primeira oportunidade de se manifestar nos autos (Tema 1098 / HC 185.913 Plenário do STF)",
+     "authority_ids": [
+      "cpp_art28a",
+      "tema_stf_1098",
+      "cf_art5"
+     ]
+    },
+    {
+     "id": "pen_anpp_retroactivity_tema1098.c2",
+     "label": "A ausência de confissão na fase inquisitorial ou em juízo antes da abertura da negociação não impede a propositura do ANPP, devendo a confissão formal e circunstanciada ser colhida apenas no ato de celebração do acordo com assistência técnica, cabendo remessa ao órgão revisional superior do MP contra recusa ilegal (CPP, art. 28-A, § 14)",
+     "authority_ids": [
+      "cpp_art28a"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_anpp_retroactivity_tema1098.d1",
+     "label": "Inadmissibilidade do ANPP após o trânsito em julgado, quando preclusa a primeira oportunidade defensiva após a vigência do Pacote Anticrime ou quando presentes as vedações legais expressas (violência ou grave ameaça, reincidência, habitualidade criminosa, violência doméstica ou de gênero contra a mulher — CPP, art. 28-A, § 2º)",
+     "authority_ids": [
+      "cpp_art28a",
+      "tema_stf_1098"
+     ]
+    },
+    {
+     "id": "pen_anpp_retroactivity_tema1098.d2",
+     "label": "O oferecimento do ANPP insere-se na titularidade da opinio delicti mitigada do Ministério Público (não constituindo direito subjetivo automático imposto pelo juiz contra manifestação motivada confirmada pela instância superior do Parquet)",
+     "authority_ids": [
+      "cpp_art28a"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime"
+   ],
+   "typical_requests": [
+    "Sobrestamento do feito em grau recursal e baixa em diligência para manifestação do Ministério Público sobre proposta de ANPP nos termos do Tema 1098 do STF",
+    "Remessa dos autos à Câmara de Coordenação e Revisão / Procuradoria-Geral de Justiça na forma do § 14 do art. 28-A do CPP diante de recusa desmotivada ou fundada exclusivamente na falta de confissão policial",
+    "Anulação de condenação proferida sem apreciação de requerimento tempestivo de ANPP formulado na primeira oportunidade"
+   ],
+   "evidence": [
+    "Petição nos autos comprovando o requerimento do ANPP na primeira manifestação defensiva após a entrada em vigor da Lei 13.964/2019",
+    "Certidão de ausência de trânsito em julgado e folha de antecedentes criminais atualizada",
+    "Cota ministerial de recusa e deliberação do órgão revisional superior do Ministério Público"
+   ],
+   "piece_ids": [
+    "acordo_nao_persecucao_penal",
+    "resposta_acusacao",
+    "apelacao_criminal",
+    "habeas_corpus",
+    "recurso_extraordinario"
+   ],
+   "related_claims": [
+    "pen_anpp",
+    "pen_retroactivity"
+   ],
+   "limitation": "Exigível até o trânsito em julgado definitivo da ação penal, observada a preclusão se a defesa permaneceu silente na primeira oportunidade de falar nos autos após 23/01/2020 (Tema 1098 / HC 185.913 do STF)."
+  },
+  {
+   "id": "pen_femicide_autonomous_14994",
+   "label": "Crime autônomo de feminicídio (CP, art. 121-A — Lei 14.994/2024): irretroatividade da lex gravior e vedação de bis in idem",
+   "requirements": [
+    "marco_temporal_10_10_2024",
+    "razoes_condicao_sexo_feminino",
+    "pena_20_a_40_anos_pos_lei14994",
+    "fracao_55_execucao_penal"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_femicide_autonomous_14994.c1",
+     "label": "Irretroatividade constitucional absoluta (CF, art. 5º, XL; CP, art. 2º) das disposições mais gravosas da Lei 14.994/2024 (pena de 20 a 40 anos no art. 121-A do CP, causas de aumento de 1/3 até metade, patamar de 55% para progressão e vedação de livramento condicional no art. 112, VI-A, da LEP) aos fatos consumados antes de 10/10/2024, que permanecem regidos pelo art. 121, § 2º, VI, na redação anterior (12 a 30 anos)",
+     "authority_ids": [
+      "cf_art5",
+      "cp_art2",
+      "cp_art121a",
+      "l14994_art1"
+     ]
+    },
+    {
+     "id": "pen_femicide_autonomous_14994.c2",
+     "label": "Afastamento da tipificação de feminicídio na pronúncia/plenário quando o crime não envolver violência doméstica/familiar nem menosprezo ou discriminação à condição de mulher (ex.: disputa patrimonial fortuita entre estranhos), bem como vedação de bis in idem entre elementares/majorantes subjetivas e o feminicídio",
+     "authority_ids": [
+      "cp_art121a",
+      "cpp_art413"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_femicide_autonomous_14994.d1",
+     "label": "Para fatos ocorridos a partir de 10/10/2024, aplica-se integralmente o tipo autônomo do art. 121-A do Código Penal (reclusão de 20 a 40 anos), comunicando-se as circunstâncias elementares de condição do sexo feminino aos coautores/partícipes que delas tinham ciência (CP, art. 30, e art. 121-A, § 3º) e incidindo as majorantes de 1/3 até metade (§ 2º, inclusive descumprimento de medida protetiva, gestação/puerpério ou presença de descendentes)",
+     "authority_ids": [
+      "cp_art121a",
+      "l14994_art1",
+      "cp_art29"
+     ]
+    },
+    {
+     "id": "pen_femicide_autonomous_14994.d2",
+     "label": "Natureza objetiva das qualificadoras/majorantes relativas aos meios e modos de execução (meio cruel, recurso que dificultou a defesa, emprego de veneno/fogo/asfixia), plenamente compatíveis em concurso com o feminicídio sem configurar bis in idem (Súmula/jurisprudência pacífica do STJ e STF)",
+     "authority_ids": [
+      "cp_art121a",
+      "l8072_art1"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14994_feminicidio"
+   ],
+   "typical_requests": [
+    "Pela defesa: aplicação estrita da pena abstrata de 12 a 30 anos e da fração executória vigente na data do fato para delitos anteriores a 10/10/2024, ou decote do feminicídio na pronúncia quando ausentes razões da condição de sexo feminino",
+    "Pela acusação (fatos pós-10/10/2024): pronúncia e condenação nas penas do art. 121-A, caput e § 2º, do CP, com perda automática de poder familiar/cargo quando cabível (CP, art. 92)"
+   ],
+   "evidence": [
+    "Certidão de óbito/exame necroscópico e boletim de ocorrência atestando a data exata da ação ou omissão delitiva (CP, art. 4º — teoria da atividade)",
+    "Histórico de relacionamento íntimo de afeto, medidas protetivas anteriores, mensagens e depoimentos sobre o contexto de gênero",
+    "Quesitação específica no plenário do Tribunal do Júri separando materialidade, autoria, elementar do feminicídio e causas de aumento"
+   ],
+   "piece_ids": [
+    "resposta_acusacao",
+    "alegacoes_finais_memoriais",
+    "rese",
+    "apelacao_criminal",
+    "agravo_execucao_penal",
+    "habeas_corpus"
+   ],
+   "related_claims": [
+    "pen_jury",
+    "pen_domestic",
+    "pen_retroactivity"
+   ],
+   "limitation": "Prescrição em 20 anos (teto máximo do art. 109, I, do CP) tanto na pena anterior (30 anos) quanto na pena pós-Lei 14.994/2024 (40 anos); recurso em sentido estrito da pronúncia em 5 dias e apelação do Júri em 5 dias corridos."
+  },
+  {
+   "id": "pen_jury_immediate_execution_tema1068",
+   "label": "Execução imediata da condenação pelo Tribunal do Júri (Tema 1068 STF e CPP, art. 492, I, 'e')",
+   "requirements": [
+    "soberania_dos_veredictos",
+    "condenacao_pelo_conselho_de_sentenca",
+    "execucao_imediata_independente_quantum_pena",
+    "efeito_suspensivo_excepcional_nulidade_manifesta"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_jury_immediate_execution_tema1068.c1",
+     "label": "Mesmo diante da tese do Tema 1068 do STF, cabe concessão excepcional de efeito suspensivo à apelação pelo Presidente do Júri ou pelo relator no Tribunal (CPP, art. 492, §§ 3º e 5º) ou habeas corpus quando demonstrada questão substancial não preclusa de nulidade absoluta do julgamento em plenário ou decisão manifestamente contrária à prova dos autos com plausibilidade evidente de cassação do veredicto",
+     "authority_ids": [
+      "cpp_art492",
+      "cpp_art593",
+      "cf_art5"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_jury_immediate_execution_tema1068.d1",
+     "label": "A soberania dos veredictos do Tribunal do Júri (CF, art. 5º, XXXVIII, 'c') autoriza a imediata execução de condenação imposta pelo corpo de jurados, independentemente do total da pena aplicada, tendo o STF declarado inconstitucional por arrastamento o piso de 15 anos do art. 492, I, 'e', do CPP (Tema 1068 da repercussão geral)",
+     "authority_ids": [
+      "tema_stf_1068",
+      "cpp_art492",
+      "cf_art5"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime"
+   ],
+   "typical_requests": [
+    "Pela defesa: atribuição excepcional de efeito suspensivo ao recurso de apelação (CPP, art. 492, § 5º) diante de nulidade gritante consignada na ata da sessão plenária ou erro na fixação de regime inicial fechado para pena compatível com semiaberto/aberto",
+    "Pela acusação: expedição imediata de mandado de prisão e guia de execução provisória na própria sessão plenária por força vinculante do Tema 1068 do STF"
+   ],
+   "evidence": [
+    "Ata integral da sessão de julgamento do Tribunal do Júri contendo registro tempestivo dos protestos de nulidade em plenário (CPP, art. 571, VIII)",
+    "Termo de votação dos quesitos, sentença do Juiz Presidente e mídia audiovisual da sessão",
+    "Petição de apelação interposta e pedido incidental fundamentado de efeito suspensivo dirigido ao relator no Tribunal"
+   ],
+   "piece_ids": [
+    "apelacao_criminal",
+    "habeas_corpus",
+    "reclamacao_constitucional",
+    "manifestacao_especifica"
+   ],
+   "related_claims": [
+    "pen_jury",
+    "pen_appeals",
+    "pen_custody"
+   ],
+   "limitation": "Apelação em 5 dias corridos (CPP, art. 593, III), podendo o requerimento de efeito suspensivo ser deduzido na própria interposição ou em petição autônoma ao relator (CPP, art. 492, §§ 5º e 6º)."
+  },
+  {
+   "id": "pen_digital_evidence_whatsapp_chain",
+   "label": "Prova digital: espelhamento via WhatsApp Web, extração de celular sem ordem judicial e cadeia de custódia (CPP, arts. 157 e 158-A)",
+   "requirements": [
+    "proibicao_espelhamento_whatsapp_web",
+    "reserva_jurisdicao_acesso_celular_apreendido",
+    "preservacao_hash_criptografico_extracao_forense",
+    "nulidade_prints_unilaterais_editaveis"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_digital_evidence_whatsapp_chain.c1",
+     "label": "São nulas as provas obtidas por espelhamento contínuo de conversas via WhatsApp Web (híbrido atípico de interceptação e quebra de dados em tempo real com possibilidade de inserção/exclusão sem rastro auditável — jurisprudência pacífica do STJ e STF) e por vasculhamento policial direto de aparelho celular apreendido em flagrante sem prévia autorização judicial fundamentada",
+     "authority_ids": [
+      "cpp_art157",
+      "l12965_art7",
+      "cf_art5"
+     ]
+    },
+    {
+     "id": "pen_digital_evidence_whatsapp_chain.c2",
+     "label": "Inadmissibilidade/inidoneidade probatória de meras capturas de tela (prints) estáticas desacompanhadas de extração forense certificada (ex.: Cellebrite/IPED) e cálculo de hash criptográfico que garantam a mesmidade e a integridade da cadeia de custódia digital (CPP, arts. 158-A a 158-F)",
+     "authority_ids": [
+      "cpp_art158a",
+      "cpp_art157",
+      "cpp_art159"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_digital_evidence_whatsapp_chain.d1",
+     "label": "Licitude plena da extração de dados de aparelho celular apreendido quando precedida de decisão judicial fundamentada (ou em aparelho abandonado na fuga/entregue espontaneamente pela própria vítima do crime), acompanhada de relatório pericial oficial com hash criptográfico e disponibilização da mídia integral à defesa",
+     "authority_ids": [
+      "cpp_art158a",
+      "cpp_art240",
+      "l12965_art7"
+     ]
+    },
+    {
+     "id": "pen_digital_evidence_whatsapp_chain.d2",
+     "label": "Eventual irregularidade formal menor na documentação da cadeia de custódia não gera nulidade automática quando comprovada por outros elementos técnicos a integridade do vestígio digital e ausente demonstração plausível de adulteração ou prejuízo concreto",
+     "authority_ids": [
+      "cpp_art158a",
+      "cpp_art563"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime"
+   ],
+   "typical_requests": [
+    "Declaração de ilicitude da devassa policial sem mandado no celular ou do espelhamento via WhatsApp Web, com desentranhamento das mensagens e de todas as provas derivadas (CPP, art. 157, § 1º)",
+    "Exclusão de capturas de tela unilaterais sem preservação de metadados/hash e acesso da defesa técnica à imagem forense bruta (espelho binário) para perícia assistente",
+    "Absolvição por ausência de lastro probatório independente válido"
+   ],
+   "evidence": [
+    "Auto de apreensão do dispositivo móvel (com IMEI, estado ligado/modo avião e número de lacre) e cronologia frente à data e hora da decisão judicial de quebra de sigilo",
+    "Laudo de perícia criminal de informática (relatório Cellebrite/UFED ou IPED) exibindo algoritmo hash (SHA-256/MD5) na coleta e no exame",
+    "Relatórios policiais descrevendo eventual uso de QR Code / WhatsApp Web"
+   ],
+   "piece_ids": [
+    "resposta_acusacao",
+    "alegacoes_finais_memoriais",
+    "apelacao_criminal",
+    "habeas_corpus",
+    "recurso_especial"
+   ],
+   "related_claims": [
+    "pen_evidence_nullity",
+    "pen_interception",
+    "pen_search_recognition"
+   ],
+   "limitation": "Arguição de ilicitude de prova digital admitida na resposta à acusação, alegações finais, apelação, recurso especial, habeas corpus e revisão criminal."
+  },
+  {
+   "id": "pen_cannabis_40g_tema506",
+   "label": "Porte de Cannabis sativa para uso pessoal: atipicidade penal e parâmetro objetivo de 40g / 6 plantas fêmeas (Tema 506 STF)",
+   "requirements": [
+    "substancia_exclusiva_cannabis_sativa",
+    "parametro_presuncao_40g_ou_6_plantas",
+    "natureza_ilicito_extra_penal",
+    "onus_acusatorio_elementos_trafico"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_cannabis_40g_tema506.c1",
+     "label": "Não comete infração penal quem adquirir, guardar, tiver em depósito, transportar ou trouxer consigo, para consumo pessoal, a substância cannabis sativa, presumindo-se usuário quem portar até 40 gramas ou 6 plantas fêmeas, sem efeitos penais nem reincidência, cabendo apenas apreensão e medidas educativas não penais (Tema 506 da repercussão geral do STF)",
+     "authority_ids": [
+      "tema_stf_506",
+      "l11343_art28",
+      "cf_art5"
+     ]
+    },
+    {
+     "id": "pen_cannabis_40g_tema506.c2",
+     "label": "Mesmo em quantidades superiores a 40g (ou abaixo dela quando impugnada), a condenação por tráfico exige demonstração concreta e fundamentada pela acusação de elementos objetivos de mercancia (balança, contabilidade, fracionamento comercial, contatos), vedada condenação baseada em preconceitos sociais ou mera presunção policial",
+     "authority_ids": [
+      "tema_stf_506",
+      "l11343_art28",
+      "l11343_art33"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_cannabis_40g_tema506.d1",
+     "label": "O parâmetro de 40g ou 6 plantas fêmeas estabelece presunção apenas relativa: mesmo abaixo de 40g, se presentes provas concretas e autônomas da destinação comercial (anotações de contabilidade do tráfico, balança de precisão, variedade concomitante de outras drogas sintéticas/cocaína/crack — não abrangidas pelo Tema 506 — ou flagrante de venda a terceiros), configura-se o crime do art. 33 da Lei 11.343/2006",
+     "authority_ids": [
+      "tema_stf_506",
+      "l11343_art33"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Trancamento da persecução penal, rejeição da denúncia ou absolvição atípica com exclusão de qualquer registro criminal (inclusive retroativamente via revisão/HC em mutirão carcerário nos termos determinados pelo STF/CNJ no Tema 506)",
+    "Relaxamento imediato de prisão em flagrante lavrada sem fundamentação idônea que supere os critérios objetivos do Tema 506 do STF"
+   ],
+   "evidence": [
+    "Laudo químico-toxicológico precisando tratar-se exclusivamente de Cannabis sativa e indicando a massa líquida exata em gramas ou número/sexo botânico das plantas",
+    "Auto de apreensão demonstrando inexistência de balança, caderno de contabilidade, dinheiro trocado de mercancia ou outras substâncias ilícitas",
+    "Comprovantes de ocupação lícita e histórico pessoal de uso recreativo ou medicinal"
+   ],
+   "piece_ids": [
+    "pedido_liberdade",
+    "habeas_corpus",
+    "resposta_acusacao",
+    "apelacao_criminal",
+    "revisao_criminal",
+    "reclamacao_constitucional"
+   ],
+   "related_claims": [
+    "pen_drugs",
+    "pen_drug_privilege",
+    "pen_retroactivity"
+   ],
+   "limitation": "Aplicação imediata e retroativa para desconstituir efeitos penais de condenações ou termos circunstanciados exclusivamente pelo porte de Cannabis para consumo pessoal (Tema 506 do STF); reclamação constitucional ao STF cabível antes do trânsito em julgado contra prisão/decisão que descumpra frontalmente os parâmetros vinculantes do Tema 506."
+  },
+  {
+   "id": "pen_plea_patrimonial_restitution",
+   "label": "Reparação mínima de danos na sentença penal (CPP, art. 387, IV), medidas assecuratórias e perda alargada (CP, art. 91-A)",
+   "requirements": [
+    "pedido_expresso_denuncia",
+    "instrucao_especifica_contraditorio_dano_moral_material",
+    "sequestro_arresto_bens_ilicitos",
+    "perda_alargada_incompatibilidade_renda_licita"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pen_plea_patrimonial_restitution.c1",
+     "label": "O arbitramento de valor mínimo indenizatório na sentença penal condenatória (CPP, art. 387, IV) exige pedido expresso e determinado na inicial acusatória (com indicação de montante mínimo para danos materiais e, salvo violência doméstica nos termos do Tema Repetitivo 983 do STJ, também instrução probatória contraditória específica), sob pena de violação à correlação e à ampla defesa",
+     "authority_ids": [
+      "cpp_art387",
+      "cf_art5"
+     ]
+    },
+    {
+     "id": "pen_plea_patrimonial_restitution.c2",
+     "label": "Levantamento de sequestro/indisponibilidade sobre bens comprovadamente adquiridos com renda lícita anterior à infração ou pertencentes à meação de cônjuge/terceiro de boa-fé, e inaplicabilidade da perda alargada (CP, art. 91-A) a crimes com pena máxima não superior a 6 anos ou anteriores à Lei 13.964/2019",
+     "authority_ids": [
+      "cpp_art125",
+      "cp_art91a",
+      "cp_art91"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pen_plea_patrimonial_restitution.d1",
+     "label": "Nos crimes praticados contra a mulher no âmbito de violência doméstica e familiar, basta pedido expresso da acusação ou da ofendida na denúncia/queixa para fixação de valor mínimo de indenização por dano moral (in re ipsa), independentemente de indicação de valor específico ou instrução probatória autônoma sobre o abalo psíquico (Tema Repetitivo 983 do STJ)",
+     "authority_ids": [
+      "cpp_art387",
+      "l11340_art5"
+     ]
+    },
+    {
+     "id": "pen_plea_patrimonial_restitution.d2",
+     "label": "Cabimento do confisco do produto/proveito do crime (ou pelo equivalente em bens lícitos — CP, art. 91, §§ 1º e 2º) e da perda alargada mediante requerimento expresso do MP na denúncia para crimes com pena máxima superior a 6 anos quando demonstrada incompatibilidade patrimonial com a renda lícita do condenado (CP, art. 91-A)",
+     "authority_ids": [
+      "cp_art91",
+      "cp_art91a",
+      "cpp_art125"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime"
+   ],
+   "typical_requests": [
+    "Pela defesa: decote em apelação da verba indenizatória do art. 387, IV, do CPP fixada de ofício sem pedido expresso na denúncia ou sem contraditório específico",
+    "Acolhimento de embargos à medida assecuratória para liberar ativos de origem lícita comprovada ou meação de terceiro de boa-fé (CPP, arts. 129 e 130)",
+    "Pela acusação/assistente: manutenção do valor mínimo executável no cível (CPC, art. 515, VI) e decretação do perdimento alargado"
+   ],
+   "evidence": [
+    "Peça acusatória inicial verificando existência ou ausência de pedido expresso e indicação do quantum mínimo pretendido",
+    "Declarações de IRPF, escrituras anteriores ao delito, holerites e laudo contábil demonstrando a evolução patrimonial lícita",
+    "Notas fiscais, laudos de avaliação do prejuízo material da vítima e decisão cautelar de sequestro/indisponibilidade"
+   ],
+   "piece_ids": [
+    "apelacao_criminal",
+    "alegacoes_finais_memoriais",
+    "manifestacao_especifica",
+    "recurso_especial"
+   ],
+   "related_claims": [
+    "pen_sentencing",
+    "pen_domestic",
+    "pen_economic_crimes"
+   ],
+   "limitation": "Embargos de terceiro de boa-fé ao sequestro penal a qualquer tempo antes do trânsito em julgado (CPP, art. 129), cabendo apelação da decisão que julgar o incidente (CPP, art. 593, II) em 5 dias corridos; decote do art. 387, IV, em apelação criminal em 5 dias."
+  }
  ]
 }

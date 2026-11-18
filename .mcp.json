@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "auditor-processual": {
+      "command": "python3",
+      "args": [
+        "skills/legal-process-parser/scripts/mcp_server.py"
+      ],
+      "env": {
+        "PYTHONUTF8": "1"
+      }
+    }
+  }
+}

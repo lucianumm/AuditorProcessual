@@ -1,0 +1,44 @@
+{
+  "schema_version": "2.0",
+  "synthetic": true,
+  "case_id": "insolvency_essential_asset",
+  "source_files": [
+    {
+      "file": "decisao_penhora.txt"
+    }
+  ],
+  "expected": {
+    "facts": [
+      {
+        "id": "G-F1",
+        "text_any": [
+          "maquinário industrial único da linha produtiva"
+        ],
+        "source": {
+          "file": "decisao_penhora.txt",
+          "page": 1,
+          "quote": "maquinário industrial único da linha produtiva"
+        },
+        "atoms": {
+          "date": "2025-03-11"
+        }
+      }
+    ],
+    "issues": [
+      {
+        "id": "G-I1",
+        "text_any": [
+          "essencialidade de bem de capital",
+          "competência do juízo recuperacional"
+        ],
+        "analysis_status": "qualified"
+      }
+    ],
+    "requests": [],
+    "contradictions": [],
+    "catalog_id": "agravo_instrumento",
+    "strategy": {
+      "domain": "insolvencia"
+    }
+  }
+}

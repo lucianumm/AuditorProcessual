@@ -18,8 +18,10 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import ssl
 from http.client import HTTPException
 from pathlib import Path
+from urllib.error import URLError
 from urllib.parse import quote
 from urllib.request import Request, urlopen
 
@@ -36,19 +38,56 @@ NORMAS_DETAIL = "https://normas.leg.br/api/public/normas?urn={urn}&tipo_document
 NORMAS_PAGE = "https://normas.leg.br/?urn={urn}"
 # Siglas do Senado → tipo LexML.
 KINDS = {"LEI": "lei", "LCP": "lei.complementar", "DEL": "decreto.lei", "DEC": "decreto",
-         "EMC": "emenda.constitucional", "MPV": "medida.provisoria"}
-ALIASES = {"LC": "LCP", "DL": "DEL", "EC": "EMC", "MP": "MPV", "DECRETO": "DEC"}
+         "EMC": "emenda.constitucional", "MPV": "medida.provisoria", "DLG": "decreto.legislativo"}
+ALIASES = {"LC": "LCP", "DL": "DEL", "EC": "EMC", "MP": "MPV", "PDL": "DLG", "DECRETO": "DEC"}
+
+
+def _ssl_context() -> ssl.SSLContext:
+    """Contexto TLS tolerante a encerramento abrupto sem close_notify (OP_IGNORE_UNEXPECTED_EOF)."""
+    ctx = ssl.create_default_context()
+    ignore_eof = getattr(ssl, "OP_IGNORE_UNEXPECTED_EOF", 0)
+    if ignore_eof:
+        ctx.options |= ignore_eof
+    return ctx
+
+
+def _is_ssl_eof(error: BaseException) -> bool:
+    if isinstance(error, ssl.SSLEOFError):
+        return True
+    if isinstance(error, URLError) and isinstance(error.reason, ssl.SSLEOFError):
+        return True
+    return False
 
 
 def _get_json(url: str, timeout: int = 60, attempts: int = 3) -> dict:
     """Lê JSON oficial; repete a leitura quando a resposta chega truncada (metadados grandes do normas.leg.br)."""
     last: Exception | None = None
+    use_eof_context = False
+    headers = {"User-Agent": USER_AGENT, "Accept": "application/json"}
     for _ in range(max(1, attempts)):
         try:
-            with urlopen(Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"}), timeout=timeout) as response:
+            kwargs: dict = {"timeout": timeout}
+            if use_eof_context:
+                kwargs["context"] = _ssl_context()
+            with urlopen(Request(url, headers=headers), **kwargs) as response:
                 return json.loads(response.read())
-        except (HTTPException, TimeoutError, json.JSONDecodeError) as error:
+        except (HTTPException, json.JSONDecodeError) as error:
             last = error
+        except TimeoutError as error:
+            last = error
+        except (ssl.SSLError, URLError) as error:
+            if not _is_ssl_eof(error):
+                raise
+            last = error
+            if not use_eof_context:
+                use_eof_context = True
+                try:
+                    with urlopen(Request(url, headers=headers), timeout=timeout, context=_ssl_context()) as response:
+                        return json.loads(response.read())
+                except (HTTPException, TimeoutError, json.JSONDecodeError, ssl.SSLError, URLError) as retry_error:
+                    if isinstance(retry_error, (ssl.SSLError, URLError)) and not _is_ssl_eof(retry_error):
+                        raise
+                    last = retry_error
     raise OSError("Resposta incompleta do portal oficial: " + type(last).__name__)
 
 
@@ -154,7 +193,7 @@ def lookup(output: Path, act: str, articles: list[str] | None = None, *, capture
 def main() -> int:
     parser = argparse.ArgumentParser(description="Resolve e captura norma federal por via oficial do Congresso (normas.leg.br)")
     parser.add_argument("output", type=Path)
-    parser.add_argument("--act", required=True, help="TIPO:NUMERO:ANO (LEI, LC, DL, DEC, EC, MP) ou CF")
+    parser.add_argument("--act", required=True, help="TIPO:NUMERO:ANO (LEI, LC, DL, DEC, EC, MP, MPV, DLG, PDL) ou CF")
     parser.add_argument("--article", action="append", default=[], help="Artigo a localizar (ex.: 442, 59-A)")
     parser.add_argument("--metadata-only", action="store_true")
     args = parser.parse_args()

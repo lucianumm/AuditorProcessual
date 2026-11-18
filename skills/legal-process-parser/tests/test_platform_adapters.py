@@ -23,7 +23,7 @@ class PlatformRoutingTests(unittest.TestCase):
         )
         self.assertEqual(
             set(router["platforms"]),
-            {"manus", "gemini_cli", "gemini_gem", "grok", "chatgpt", "claude"},
+            {"manus", "gemini_cli", "gemini_gem", "grok", "chatgpt", "claude", "antigravity"},
         )
 
     def test_platform_entrypoints_are_present_and_separate(self) -> None:
@@ -31,10 +31,12 @@ class PlatformRoutingTests(unittest.TestCase):
             "SKILL.md",
             "GEMINI.md",
             "gemini-extension.json",
+            ".mcp.json",
             "adapters/gemini/GEM_INSTRUCTIONS.md",
             "adapters/grok/SYSTEM_INSTRUCTIONS.md",
             "adapters/chatgpt/INSTRUCTIONS.md",
             "adapters/claude/CLAUDE_INSTRUCTIONS.md",
+            "adapters/antigravity/INSTRUCTIONS.md",
         ]
         for relative in expected:
             self.assertTrue((REPO_ROOT / relative).is_file(), relative)

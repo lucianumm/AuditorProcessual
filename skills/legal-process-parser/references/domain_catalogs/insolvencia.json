@@ -1,0 +1,938 @@
+{
+  "schema_version": "1.0",
+  "domain": "insolvencia",
+  "label": "Direito da Insolvência, Recuperação Empresarial e Falência",
+  "guide": "domain_guides/insolvencia.md",
+  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
+  "polo_labels": {
+    "claimant_theses": "Teses do devedor, recuperanda ou habilitante",
+    "defense_theses": "Teses do credor oponente, massa falida ou impugnante"
+  },
+  "claims": [
+    {
+      "id": "insolv_judicial_recovery_filing",
+      "label": "Processamento de Recuperação Judicial, requisitos e constatação prévia",
+      "requirements": [
+        "legitimidade_empresarial_bienal",
+        "instrucao_contabil_art_51",
+        "competencia_principal_estabelecimento",
+        "constatacao_previa_funcionamento"
+      ],
+      "claimant_theses": [
+        {
+          "id": "insolv_judicial_recovery_filing.c1",
+          "label": "Preenchimento dos requisitos objetivos dos arts. 48 e 51 impõe o deferimento do processamento da recuperação judicial sob o princípio da preservação da empresa",
+          "authority_ids": [
+            "l11101_art47",
+            "l11101_art48",
+            "l11101_art51",
+            "l11101_art52"
+          ]
+        },
+        {
+          "id": "insolv_judicial_recovery_filing.c2",
+          "label": "Fixação da competência no local do principal estabelecimento compreendido como o centro decisório e de maior volume negocial da empresa",
+          "authority_ids": [
+            "l11101_art3"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "insolv_judicial_recovery_filing.d1",
+          "label": "Indeferimento da petição inicial quando a constatação prévia revelar inexistência de atividade empresarial real ou fraude documental grave",
+          "authority_ids": [
+            "l11101_art51a"
+          ]
+        },
+        {
+          "id": "insolv_judicial_recovery_filing.d2",
+          "label": "Ilegitimidade ativa de agentes excluídos por lei ou sem exercício regular de atividade há mais de dois anos",
+          "authority_ids": [
+            "l11101_art2",
+            "l11101_art48"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14112_recuperacao"
+      ],
+      "typical_requests": [
+        "Deferimento do processamento da recuperação judicial com nomeação de administrador judicial e suspensão das execuções (art. 52)",
+        "Dispensa de apresentação de certidões negativas para o exercício das atividades empresariais, ressalvadas as exigências fiscais específicas",
+        "Realização ou impugnação de laudo de constatação prévia (art. 51-A)"
+      ],
+      "evidence": [
+        "Demonstrações contábeis dos 3 últimos exercícios e levantamentos especiais (balanço, DRE, fluxo de caixa projetado)",
+        "Relação nominal completa de credores com endereço, natureza, classificação e valor atualizado",
+        "Certidão de regularidade na Junta Comercial, relação de bens particulares dos sócios controladores/administradores e extratos bancários",
+        "Relação de ações judiciais e procedimentos arbitrais em curso com estimativa de valores demandados"
+      ],
+      "piece_ids": [
+        "pedido_recuperacao_judicial",
+        "agravo_instrumento",
+        "manifestacao_especifica"
+      ],
+      "related_claims": [
+        "emp_recovery",
+        "insolv_stay_period_extension",
+        "insolv_procedural_substantive_consolidation"
+      ],
+      "limitation": "Apresentação obrigatória do plano de recuperação judicial no prazo improrrogável de 60 dias corridos da publicação da decisão de processamento, sob pena de convolação em falência (Lei 11.101/2005, arts. 53, caput, 73, II, e 189, § 1º, I)"
+    },
+    {
+      "id": "insolv_stay_period_extension",
+      "label": "Stay period, suspensão de execuções e prorrogação excepcional",
+      "requirements": [
+        "deferimento_processamento",
+        "credito_sujeito_ou_bem_essencial",
+        "ausencia_culpa_devedora_atraso",
+        "limite_prorrogacao_legal"
+      ],
+      "claimant_theses": [
+        {
+          "id": "insolv_stay_period_extension.c1",
+          "label": "Suspensão imediata do curso da prescrição e das execuções de créditos sujeitos, bem como proibição de constrição sobre patrimônio da recuperanda por 180 dias corridos",
+          "authority_ids": [
+            "l11101_art6",
+            "l11101_art52"
+          ]
+        },
+        {
+          "id": "insolv_stay_period_extension.c2",
+          "label": "Prorrogação excepcional do stay period por igual período de 180 dias corridos, uma única vez, quando a recuperanda não houver concorrido para a superação do lapso",
+          "authority_ids": [
+            "l11101_art6"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "insolv_stay_period_extension.d1",
+          "label": "Escoamento definitivo do prazo máximo legal de suspensão restabelece o direito dos credores de iniciar ou continuar suas ações e execuções, ressalvado plano alternativo dos credores",
+          "authority_ids": [
+            "l11101_art6",
+            "l11101_art56"
+          ]
+        },
+        {
+          "id": "insolv_stay_period_extension.d2",
+          "label": "Não suspensão de ações que demandem quantias ilíquidas, execuções trabalhistas até a apuração do crédito e cobranças em face de coobrigados, fiadores e obrigados de regresso",
+          "authority_ids": [
+            "l11101_art6",
+            "l11101_art49",
+            "stj_sumula_581"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14112_recuperacao"
+      ],
+      "typical_requests": [
+        "Suspensão de atos de penhora, arresto, sequestro, busca e apreensão e constrição sobre bens da recuperanda pelo prazo de 180 dias corridos",
+        "Prorrogação excepcional do stay period por mais 180 dias corridos até a realização da Assembleia Geral de Credores",
+        "Prosseguimento de execução individual contra devedores solidários/avalistas ou após o exaurimento do prazo máximo legal"
+      ],
+      "evidence": [
+        "Decisão de deferimento do processamento da recuperação judicial e certidão de data de publicação",
+        "Cronograma processual e atas demonstrando que a demora na realização da AGC decorreu da estrutura judiciária ou de incidentes alheios à culpa da recuperanda",
+        "Cópia dos títulos executivos com identificação de coobrigados cambiais ou fidejussórios"
+      ],
+      "piece_ids": [
+        "manifestacao_especifica",
+        "agravo_instrumento",
+        "pedido_recuperacao_judicial"
+      ],
+      "related_claims": [
+        "insolv_judicial_recovery_filing",
+        "insolv_extraconcursal_fiduciary_essentiality"
+      ],
+      "limitation": "Prazo inicial de 180 dias corridos contados do deferimento do processamento, prorrogável excepcionalmente uma única vez por mais 180 dias corridos (Lei 11.101/2005, arts. 6º, § 4º, e 189, § 1º, I), admitida nova suspensão de 180 dias se os credores deliberarem apresentar plano alternativo (art. 6º, § 4º-A)"
+    },
+    {
+      "id": "insolv_extraconcursal_fiduciary_essentiality",
+      "label": "Créditos extraconcursais, trava bancária e essencialidade de bens de capital",
+      "requirements": [
+        "data_fato_gerador_credito",
+        "constituicao_registro_garantia_fiduciaria",
+        "natureza_bem_de_capital_ou_recebivel",
+        "essencialidade_atividade_empresarial"
+      ],
+      "claimant_theses": [
+        {
+          "id": "insolv_extraconcursal_fiduciary_essentiality.c1",
+          "label": "Competência exclusiva do juízo da recuperação judicial para aferir a essencialidade de bens de capital e vedar sua venda ou retirada do estabelecimento durante o stay period, mesmo em alienação fiduciária",
+          "authority_ids": [
+            "l11101_art49",
+            "l11101_art6",
+            "stj_sumula_480"
+          ]
+        },
+        {
+          "id": "insolv_extraconcursal_fiduciary_essentiality.c2",
+          "label": "Sujeição ao concurso recuperacional do crédito cuja garantia fiduciária sobre bens móveis infungíveis não foi devidamente registrada na repartição competente antes do pedido, ou quando ausente individualização precisa do objeto",
+          "authority_ids": [
+            "l11101_art49",
+            "cc_art1361"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "insolv_extraconcursal_fiduciary_essentiality.d1",
+          "label": "Não sujeição aos efeitos da recuperação judicial dos créditos garantidos por propriedade fiduciária regularmente constituída, arrendamento mercantil, adiantamento de contrato de câmbio e créditos com fato gerador posterior ao pedido",
+          "authority_ids": [
+            "l11101_art49",
+            "tema_stj_1051"
+          ]
+        },
+        {
+          "id": "insolv_extraconcursal_fiduciary_essentiality.d2",
+          "label": "Direito de crédito cedido fiduciariamente em garantia (trava bancária de recebíveis) não se qualifica como bem de capital corpóreo para a ressalva final do art. 49, § 3º — jurisprudência pacífica do STJ",
+          "authority_ids": [
+            "l11101_art49"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14112_recuperacao"
+      ],
+      "typical_requests": [
+        "Reconhecimento da essencialidade de maquinário, frota ou imóvel industrial com proibição de retomada durante o stay period",
+        "Declaração de extraconcursalidade do crédito fiduciário ou pós-pedido com exclusão do quadro-geral de credores e liberação de recebíveis cedidos (trava bancária)",
+        "Reclassificação do crédito como quirografário por vício na constituição ou registro prévio da garantia fiduciária"
+      ],
+      "evidence": [
+        "Cédula ou contrato de alienação/cessão fiduciária e certidão de registro no Registro de Títulos e Documentos, Detran ou Registro de Imóveis anterior ao pedido de RJ",
+        "Laudo técnico operacional comprovando que o maquinário ou imóvel integra diretamente o processo produtivo essencial da recuperanda",
+        "Borderôs e relações individualizadas dos títulos/recebíveis performados ou a performar cedidos fiduciariamente"
+      ],
+      "piece_ids": [
+        "habilitacao_impugnacao_credito",
+        "agravo_instrumento",
+        "manifestacao_especifica",
+        "tutela_urgencia_antecedente"
+      ],
+      "related_claims": [
+        "emp_recovery_creditor",
+        "insolv_stay_period_extension",
+        "banc_fiduciary_vehicle"
+      ],
+      "limitation": "Proibição de retirada de bens de capital essenciais limitada ao stay period (Lei 11.101/2005, art. 49, § 3º, parte final); divergência/impugnação quanto à sujeição do crédito nos prazos de 15 e 10 dias corridos dos arts. 7º, § 1º, e 8º"
+    },
+    {
+      "id": "insolv_credit_verification_late_claim",
+      "label": "Habilitação, divergência administrativa e impugnação ou habilitação retardatária de crédito",
+      "requirements": [
+        "origem_existencia_liquidez_credito",
+        "classificacao_concursal_correta",
+        "atualizacao_ate_data_pedido_ou_quebra",
+        "tempestividade_administrativa_ou_judicial"
+      ],
+      "claimant_theses": [
+        {
+          "id": "insolv_credit_verification_late_claim.c1",
+          "label": "Inclusão, majoração ou reclassificação do crédito pelo valor atualizado até a data do pedido de recuperação judicial ou da decretação da falência",
+          "authority_ids": [
+            "l11101_art7",
+            "l11101_art9"
+          ]
+        },
+        {
+          "id": "insolv_credit_verification_late_claim.c2",
+          "label": "Admissibilidade da habilitação retardatária até o encerramento do processo, assegurada reserva judicial de valor para evitar preterição nos rateios",
+          "authority_ids": [
+            "l11101_art10",
+            "l11101_art6"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "insolv_credit_verification_late_claim.d1",
+          "label": "Limitação da atualização monetária e dos juros à estrita data do pedido de recuperação judicial ou da decretação da quebra para igualdade concursal",
+          "authority_ids": [
+            "l11101_art9",
+            "l11101_art124"
+          ]
+        },
+        {
+          "id": "insolv_credit_verification_late_claim.d2",
+          "label": "Perda do direito a voto em Assembleia Geral de Credores (salvo titulares de crédito trabalhista) e condenação do habilitante retardatário ao pagamento de custas processuais",
+          "authority_ids": [
+            "l11101_art10"
+          ]
+        },
+        {
+          "id": "insolv_credit_verification_late_claim.d3",
+          "label": "Decadência do direito à habilitação/reserva na falência quando não apresentado o pedido em até 3 anos da publicação da sentença que decretar a quebra",
+          "authority_ids": [
+            "l11101_art10"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14112_recuperacao"
+      ],
+      "typical_requests": [
+        "Inclusão ou retificação do valor e da classe do crédito no Quadro-Geral de Credores (Classes I, II, III ou IV)",
+        "Determinação de reserva cautelar do crédito ilíquido ou sub judice nas listas de votação e rateio (art. 6º, § 3º)",
+        "Exclusão de crédito inexistente, prescrito, quitado ou calculado com encargos posteriores à data-corte legal"
+      ],
+      "evidence": [
+        "Título executivo, contrato, notas fiscais com aceite ou sentença trabalhista/cível certificando a existência e a data do fato gerador",
+        "Memória aritmética demonstrando principal, correção monetária e juros calculados estritamente até a data do pedido de RJ ou da decretação da falência (art. 9º, II)",
+        "Editais publicados dos arts. 52, § 1º, e 7º, § 2º, da Lei 11.101/2005 para aferição da tempestividade"
+      ],
+      "piece_ids": [
+        "habilitacao_impugnacao_credito",
+        "agravo_instrumento",
+        "impugnacao_laudo"
+      ],
+      "related_claims": [
+        "emp_credit_claims",
+        "insolv_extraconcursal_fiduciary_essentiality"
+      ],
+      "limitation": "15 dias corridos do edital do art. 52, § 1º/99, parágrafo único para habilitação/divergência administrativa ao administrador judicial (art. 7º, § 1º) e 10 dias corridos do edital da 2ª lista para impugnação judicial (art. 8º); na falência, decadência em 3 anos da publicação da sentença de quebra (art. 10, § 10, incluído pela Lei 14.112/2020)"
+    },
+    {
+      "id": "insolv_cram_down_creditor_plan",
+      "label": "Assembleia Geral de Credores, cram down e plano alternativo dos credores",
+      "requirements": [
+        "quorum_deliberacao_por_classes",
+        "requisitos_cumulativos_cram_down",
+        "legalidade_clausulas_plano",
+        "faculdade_plano_alternativo_credores"
+      ],
+      "claimant_theses": [
+        {
+          "id": "insolv_cram_down_creditor_plan.c1",
+          "label": "Concessão judicial da recuperação por cram down diante da aprovação cumulativa da maioria dos créditos presentes, de 2 de 3 classes (ou 3 de 4) e de mais de 1/3 na classe que rejeitou o plano, sem tratamento diferenciado",
+          "authority_ids": [
+            "l11101_art58",
+            "l11101_art45"
+          ]
+        },
+        {
+          "id": "insolv_cram_down_creditor_plan.c2",
+          "label": "Soberania da Assembleia Geral de Credores quanto à viabilidade econômico-financeira, deságios, prazos e carências negociados entre partes capazes",
+          "authority_ids": [
+            "l11101_art35",
+            "l11101_art50"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "insolv_cram_down_creditor_plan.d1",
+          "label": "Controle judicial obrigatório de legalidade para anular cláusulas violadoras de norma cogente, como supressão de garantias reais ou fidejussórias de coobrigados sem consentimento expresso do credor titular",
+          "authority_ids": [
+            "l11101_art50",
+            "l11101_art49",
+            "tema_stj_885"
+          ]
+        },
+        {
+          "id": "insolv_cram_down_creditor_plan.d2",
+          "label": "Rejeição do plano na AGC habilita os credores a deliberarem pela apresentação de plano alternativo próprio em 30 dias, vedada imposição de sacrifício maior aos sócios que na falência e liberadas as garantias pessoais dos que não aderirem",
+          "authority_ids": [
+            "l11101_art56"
+          ]
+        },
+        {
+          "id": "insolv_cram_down_creditor_plan.d3",
+          "label": "Abuso do direito de voto do credor que atua com finalidade extraconcursal de eliminar concorrente ou obter vantagem ilícita isolada",
+          "authority_ids": [
+            "l11101_art39",
+            "cc_art187"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14112_recuperacao"
+      ],
+      "typical_requests": [
+        "Homologação judicial do plano aprovado em AGC ou concessão por cram down (art. 58, § 1º)",
+        "Declaração de ineficácia ou nulidade parcial de cláusulas ilegais (notadamente extinção de garantias contra terceiros coobrigados em relação aos credores dissidentes/ausentes)",
+        "Autorização para submissão e votação de plano alternativo elaborado pelos credores (art. 56, §§ 4º a 7º) ou convolação em falência"
+      ],
+      "evidence": [
+        "Plano de recuperação judicial, aditivos modificativos e laudos de viabilidade econômico-financeira e avaliação patrimonial (art. 53)",
+        "Ata integral da Assembleia Geral de Credores com mapas detalhados de votação por cabeça e por valor em cada classe",
+        "Termos de adesão (art. 56-A) quando substituída a assembleia presencial/virtual"
+      ],
+      "piece_ids": [
+        "objecao_plano_recuperacao",
+        "agravo_instrumento",
+        "manifestacao_especifica"
+      ],
+      "related_claims": [
+        "emp_recovery",
+        "insolv_judicial_recovery_filing",
+        "insolv_bankruptcy_conversion_priority"
+      ],
+      "limitation": "Objeção ao plano no prazo de 30 dias corridos da publicação da relação de credores do art. 7º, § 2º, ou do aviso de recebimento do plano se posterior (Lei 11.101/2005, art. 55); plano alternativo dos credores apresentado em 30 dias corridos da deliberação da AGC que rejeitar o plano do devedor (art. 56, § 4º)"
+    },
+    {
+      "id": "insolv_rural_producer_recovery",
+      "label": "Recuperação judicial do produtor rural e créditos rurais sujeitos",
+      "requirements": [
+        "exercicio_atividade_rural_bienal",
+        "escrituracao_contabil_fiscal_rural",
+        "vinculacao_exclusiva_atividade_rural",
+        "excecoes_cpr_fisica_credito_oficial"
+      ],
+      "claimant_theses": [
+        {
+          "id": "insolv_rural_producer_recovery.c1",
+          "label": "Legitimidade do produtor rural pessoa natural para requerer recuperação judicial comprovando o biênio de atividade por Escrituração Contábil Fiscal/LCDPR, independentemente de o registro na Junta Comercial ser recente (Tema 1145 STJ)",
+          "authority_ids": [
+            "l11101_art48",
+            "tema_stj_1145"
+          ]
+        },
+        {
+          "id": "insolv_rural_producer_recovery.c2",
+          "label": "Sujeição dos créditos anteriores decorrentes da atividade rural mesmo que contraídos antes da inscrição empresarial na Junta Comercial",
+          "authority_ids": [
+            "l11101_art49",
+            "tema_stj_1145"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "insolv_rural_producer_recovery.d1",
+          "label": "Sujeição restrita exclusivamente aos créditos que decorram da atividade rural e estejam discriminados nos documentos contábeis/fiscais exigidos (art. 49, § 6º)",
+          "authority_ids": [
+            "l11101_art49"
+          ]
+        },
+        {
+          "id": "insolv_rural_producer_recovery.d2",
+          "label": "Exclusão legal dos recursos controlados e já renegociados do crédito rural oficial (art. 49, §§ 7º–8º), de dívida para aquisição de propriedade rural nos últimos 3 anos (§ 9º) e da CPR com liquidação física ou antecipação de preço (Lei 8.929/1994, art. 11)",
+          "authority_ids": [
+            "l11101_art49",
+            "l8929_art11"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14112_recuperacao"
+      ],
+      "typical_requests": [
+        "Deferimento do processamento da recuperação judicial do produtor rural individual ou em grupo familiar rural",
+        "Exclusão do quadro de credores de CPR com liquidação física, dívida de aquisição de terra do triênio anterior ou crédito alheio à atividade rural",
+        "Suspensão de constrições sobre maquinário agrícola, colheitadeiras e terras essenciais à safra no stay period"
+      ],
+      "evidence": [
+        "Certidão de inscrição do produtor rural no Registro Público de Empresas Mercantis anterior ao protocolo do pedido",
+        "Escrituração Contábil Digital (ECD), Livro Caixa Digital do Produtor Rural (LCDPR) e declarações de IRPF comprovando mais de 2 anos de atividade rural",
+        "Contratos de custeio, CPRs físicas ou financeiras e matrículas dos imóveis rurais adquiridos"
+      ],
+      "piece_ids": [
+        "pedido_recuperacao_judicial",
+        "habilitacao_impugnacao_credito",
+        "agravo_instrumento"
+      ],
+      "related_claims": [
+        "agr_rural_credit",
+        "agr_cpr",
+        "insolv_judicial_recovery_filing"
+      ],
+      "limitation": "Requisito de mais de 2 anos de exercício regular da atividade rural na data do pedido (Lei 11.101/2005, art. 48, §§ 2º e 3º; Tema 1145 STJ); exclusão da dívida de aquisição de imóvel rural contraída nos 3 anos anteriores ao pedido (art. 49, § 9º)"
+    },
+    {
+      "id": "insolv_tax_regularity_transaction",
+      "label": "Certidões de regularidade fiscal, transação tributária e cooperação com execução fiscal na RJ",
+      "requirements": [
+        "aprovacao_plano_recuperacao",
+        "apresentacao_cnd_ou_cpen",
+        "transacao_ou_parcelamento_especial",
+        "controle_constricao_juizo_recuperacional"
+      ],
+      "claimant_theses": [
+        {
+          "id": "insolv_tax_regularity_transaction.c1",
+          "label": "Direito subjetivo da recuperanda à transação tributária individual/por adesão em condições diferenciadas de desconto e prazo (Lei 13.988/2020 e Lei 10.522/2002, arts. 10-A a 10-C), ensejando expedição de CPEN",
+          "authority_ids": [
+            "l13988_art1",
+            "l13988_art11",
+            "ctn_art206"
+          ]
+        },
+        {
+          "id": "insolv_tax_regularity_transaction.c2",
+          "label": "Competência do juízo da recuperação judicial para determinar a substituição dos atos de constrição da execução fiscal que recaiam sobre bens de capital essenciais à manutenção da empresa",
+          "authority_ids": [
+            "l11101_art6"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "insolv_tax_regularity_transaction.d1",
+          "label": "Exigibilidade efetiva da apresentação das certidões negativas de débitos tributários (ou positivas com efeito de negativa) para concessão definitiva da recuperação judicial após o advento das Leis 13.988/2020 e 14.112/2020 — atual orientação da Terceira e Quarta Turmas do STJ",
+          "authority_ids": [
+            "l11101_art57",
+            "ctn_art191a"
+          ]
+        },
+        {
+          "id": "insolv_tax_regularity_transaction.d2",
+          "label": "Não suspensão do curso das execuções fiscais pelo deferimento da recuperação judicial, ressalvada a suspensão por adesão a parcelamento ou transação",
+          "authority_ids": [
+            "l11101_art6",
+            "ctn_art187"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14112_recuperacao"
+      ],
+      "typical_requests": [
+        "Suspensão do julgamento concessivo da RJ por prazo razoável para conclusão da negociação de transação tributária e juntada de CPEN",
+        "Substituição de penhora fiscal sobre faturamento excessivo ou ativo operacional vital mediante cooperação jurisdicional (art. 6º, § 7º-B)",
+        "Revisão judicial de indeferimento administrativo imotivado de proposta de transação tributária recuperacional que atenda aos parâmetros da capacidade de pagamento"
+      ],
+      "evidence": [
+        "Certidões fiscais federais, estaduais e municipais ou protocolos de adesão à transação tributária / parcelamento especial dos arts. 10-A a 10-C da Lei 10.522/2002",
+        "Laudo de capacidade de pagamento (CAPAG) e demonstração do grau de recuperabilidade do crédito fiscal",
+        "Auto de penhora lavrado na execução fiscal e prova do impacto imediato sobre a folha salarial e operação da recuperanda"
+      ],
+      "piece_ids": [
+        "transacao_tributaria",
+        "manifestacao_especifica",
+        "agravo_instrumento",
+        "mandado_seguranca"
+      ],
+      "related_claims": [
+        "trib_settlement",
+        "trib_suspension_certificate",
+        "insolv_judicial_recovery_filing"
+      ],
+      "limitation": "Apresentação das certidões dos arts. 205/206 do CTN logo após a juntada do plano aprovado em assembleia (Lei 11.101/2005, art. 57), concedendo a jurisprudência prazo razoável para ultimação da transação sob pena de suspensão do processo recuperacional"
+    },
+    {
+      "id": "insolv_procedural_substantive_consolidation",
+      "label": "Consolidação processual vs. consolidação substancial de grupos econômicos",
+      "requirements": [
+        "grupo_sob_controle_societario_comum",
+        "independencia_ou_interconexao_patrimonial",
+        "requisitos_cumulativos_art_69j",
+        "tratamento_unificado_ou_separado_credores"
+      ],
+      "claimant_theses": [
+        {
+          "id": "insolv_procedural_substantive_consolidation.c1",
+          "label": "Admissibilidade de litisconsórcio ativo em consolidação processual para sociedades do mesmo grupo econômico, mantendo-se separação de ativos/passivos e deliberações independentes por devedor",
+          "authority_ids": [
+            "l11101_art69g",
+            "l11101_art69i"
+          ]
+        },
+        {
+          "id": "insolv_procedural_substantive_consolidation.c2",
+          "label": "Autorização excepcional da consolidação substancial quando constatada interconexão e confusão de ativos/passivos somada a no mínimo dois requisitos do art. 69-J (garantias cruzadas, controle comum, identidade societária ou atuação conjunta)",
+          "authority_ids": [
+            "l11101_art69j",
+            "l11101_art69k"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "insolv_procedural_substantive_consolidation.d1",
+          "label": "Impugnação à consolidação substancial imposta artificialmente quando sociedades solventes ou veículos de propósito específico com garantias segregadas forem misturados para diluir o poder de voto de credores",
+          "authority_ids": [
+            "l11101_art69i",
+            "l11101_art69j"
+          ]
+        },
+        {
+          "id": "insolv_procedural_substantive_consolidation.d2",
+          "label": "Preservação das garantias reais e fiduciárias constituídas antes do pedido mesmo diante de plano unitário na consolidação substancial",
+          "authority_ids": [
+            "l11101_art69l",
+            "l11101_art49"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14112_recuperacao"
+      ],
+      "typical_requests": [
+        "Processamento em consolidação processual com apresentação de documentação contábil individualizada por sociedade requerente",
+        "Reconhecimento judicial da consolidação substancial com apresentação de plano unitário e votação em assembleia única (arts. 69-J a 69-L)",
+        "Reversão para consolidação meramente processual por ausência de confusão patrimonial e dos requisitos cumulativos do art. 69-J"
+      ],
+      "evidence": [
+        "Organograma societário completo, contratos sociais/estatutos e acordos de acionistas do grupo econômico",
+        "Contratos de mútuo intragrupo, avais/garantias cruzadas, caixa único (cash pooling) e demonstrações contábeis individuais e consolidadas",
+        "Relatório pormenorizado do administrador judicial sobre o grau de interconexão operacional e patrimonial das devedoras"
+      ],
+      "piece_ids": [
+        "pedido_recuperacao_judicial",
+        "agravo_instrumento",
+        "objecao_plano_recuperacao"
+      ],
+      "related_claims": [
+        "emp_veil_piercing",
+        "insolv_judicial_recovery_filing"
+      ],
+      "limitation": "Avaliação na fase inicial ou antes da votação do plano; apresentação de plano unitário na consolidação substancial obedece ao prazo de 60 dias corridos ou ao prazo assinado na decisão que a reconhecer (Lei 11.101/2005, arts. 53 e 69-L)"
+    },
+    {
+      "id": "insolv_bankruptcy_conversion_priority",
+      "label": "Convolação em falência, decretação direta e classificação de créditos",
+      "requirements": [
+        "hipotese_convolacao_ou_impontualidade",
+        "fixacao_termo_legal_ate_90_dias",
+        "ordem_extraconcursais_art_84",
+        "ordem_concursais_art_83"
+      ],
+      "claimant_theses": [
+        {
+          "id": "insolv_bankruptcy_conversion_priority.c1",
+          "label": "Convolação da recuperação judicial em falência por não apresentação tempestiva do plano, rejeição sem plano alternativo, descumprimento de obrigação no período de fiscalização ou esvaziamento patrimonial",
+          "authority_ids": [
+            "l11101_art73",
+            "l11101_art61"
+          ]
+        },
+        {
+          "id": "insolv_bankruptcy_conversion_priority.c2",
+          "label": "Preferência legal dos créditos extraconcursais (incluindo financiamento DIP autorizado do art. 69-A e restituições em dinheiro) sobre os concursais do art. 83",
+          "authority_ids": [
+            "l11101_art84",
+            "l11101_art83",
+            "l11101_art69a"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "insolv_bankruptcy_conversion_priority.d1",
+          "label": "Elisão do pedido de falência fundado em impontualidade injustificada mediante depósito elisivo integral em 10 dias ou demonstração de relevante razão de direito (nulidade, prescrição, pagamento ou vício do protesto falimentar)",
+          "authority_ids": [
+            "l11101_art94",
+            "l11101_art96",
+            "l11101_art98",
+            "stj_sumula_361"
+          ]
+        },
+        {
+          "id": "insolv_bankruptcy_conversion_priority.d2",
+          "label": "Encerramento do período de supervisão judicial no máximo em 2 anos da concessão, após o qual eventual inadimplemento do plano enseja apenas execução específica ou pedido autônomo de falência (art. 62), e não mais convolação direta",
+          "authority_ids": [
+            "l11101_art61",
+            "l11101_art62"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14112_recuperacao"
+      ],
+      "typical_requests": [
+        "Decretação da falência ou convolação da RJ em falência com fixação do termo legal (até 90 dias do pedido ou primeiro protesto) e arrecadação célere de ativos",
+        "Improcedência do pedido de falência por vício de protesto (Súmula 361 STJ), valor inferior a 40 salários mínimos ou relevante razão de direito, ou extinção da falência pelo depósito elisivo",
+        "Reclassificação do crédito nas ordens dos arts. 83 (limitado a 150 salários mínimos por credor na classe trabalhista) e 84 da LREF"
+      ],
+      "evidence": [
+        "Títulos executivos vencidos que ultrapassem 40 salários mínimos acompanhados de instrumento de protesto especial com identificação pessoal de quem recebeu a intimação",
+        "Comprovante de descumprimento de obrigação vencida prevista no plano homologado dentro do biênio de supervisão judicial",
+        "Guia de depósito elisivo acrescido de correção monetária, juros e honorários (art. 98, parágrafo único)"
+      ],
+      "piece_ids": [
+        "pedido_falencia",
+        "contestacao",
+        "agravo_instrumento",
+        "habilitacao_impugnacao_credito"
+      ],
+      "related_claims": [
+        "emp_bankruptcy",
+        "emp_bankruptcy_claims",
+        "insolv_fresh_start_discharge"
+      ],
+      "limitation": "Contestação e depósito elisivo no pedido de falência no prazo de 10 dias corridos da citação (Lei 11.101/2005, art. 98 e art. 189, § 1º, I); supervisão judicial para convolação direta limitada a 2 anos da concessão da RJ (art. 61)"
+    },
+    {
+      "id": "insolv_revocatory_objective_inefficacy",
+      "label": "Ação revocatória subjetiva e declaração de ineficácia objetiva na falência",
+      "requirements": [
+        "termo_legal_da_falencia",
+        "tipicidade_objetiva_art_129_ou_fraude_art_130",
+        "prejuizo_efetivo_massa_na_revocatoria",
+        "protecao_atos_aprovados_plano_rj"
+      ],
+      "claimant_theses": [
+        {
+          "id": "insolv_revocatory_objective_inefficacy.c1",
+          "label": "Ineficácia objetiva perante a massa falida dos atos taxativos do art. 129 (pagamento de dívida não vencida ou por forma não prevista no contrato, constituição de garantia real por dívida anterior no termo legal, atos gratuitos nos 2 anos anteriores à quebra), independentemente de intenção fraudulenta",
+          "authority_ids": [
+            "l11101_art129"
+          ]
+        },
+        {
+          "id": "insolv_revocatory_objective_inefficacy.c2",
+          "label": "Revogação de atos praticados com a intenção de prejudicar credores mediante prova do conluio fraudulento entre o devedor e o terceiro contratante e do efetivo prejuízo sofrido pela massa falida",
+          "authority_ids": [
+            "l11101_art130"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "insolv_revocatory_objective_inefficacy.d1",
+          "label": "Irrevogabilidade e proteção legal de atos, alienações de UPI e garantias praticados em cumprimento a plano de recuperação judicial ou financiamento DIP regularmente aprovados (art. 131 e art. 66-A)",
+          "authority_ids": [
+            "l11101_art131",
+            "l11101_art66a"
+          ]
+        },
+        {
+          "id": "insolv_revocatory_objective_inefficacy.d2",
+          "label": "Improcedência da ação revocatória subjetiva por ausência de prova cabal do consilium fraudis do terceiro adquirente de boa-fé ou por preço de mercado com ingresso efetivo dos recursos no caixa da empresa",
+          "authority_ids": [
+            "l11101_art130"
+          ]
+        },
+        {
+          "id": "insolv_revocatory_objective_inefficacy.d3",
+          "label": "Extinção da ação revocatória pelo transcurso do prazo decadencial de 3 anos contados da decretação da falência",
+          "authority_ids": [
+            "l11101_art132"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14112_recuperacao"
+      ],
+      "typical_requests": [
+        "Declaração incidental/direta de ineficácia objetiva de ato do art. 129 ou sentença revocatória do art. 130 com restituição dos bens/valores à massa falida em espécie ou pelo valor de mercado",
+        "Indisponibilidade cautelar ou sequestro dos bens desviados (art. 137)",
+        "Reconhecimento da higidez e intangibilidade da alienação de ativos realizada nos termos dos arts. 60, 66, 66-A e 131 da LREF"
+      ],
+      "evidence": [
+        "Sentença de quebra com fixação do termo legal da falência e matrículas/registros datados dos atos de disposição ou oneração",
+        "Extratos bancários, contabilidade e escrituras demonstrando ausência de contraprestação financeira real, subavaliação ou vínculo societário/familiar oculto",
+        "Decisão judicial homologatória do plano de RJ ou autorizativa de venda de UPI/financiamento DIP"
+      ],
+      "piece_ids": [
+        "acao_revocatoria_falimentar",
+        "manifestacao_especifica",
+        "contestacao",
+        "apelacao_civel"
+      ],
+      "related_claims": [
+        "emp_bankruptcy_claims",
+        "insolv_bankruptcy_conversion_priority"
+      ],
+      "limitation": "Ação revocatória (art. 130) deve ser proposta no prazo decadencial de 3 anos contados da decretação da falência (Lei 11.101/2005, art. 132); atos gratuitos praticados nos 2 anos anteriores à decretação são objetivamente ineficazes (art. 129, IV), podendo a ineficácia objetiva do art. 129 ser declarada de ofício, alegada em defesa ou pleiteada mediante ação própria (art. 129, parágrafo único)"
+    },
+    {
+      "id": "insolv_fresh_start_discharge",
+      "label": "Fresh start empresarial e extinção das obrigações do falido",
+      "requirements": [
+        "decretacao_falencia",
+        "ausencia_condenacao_crime_falimentar",
+        "decurso_trienio_ou_pagamento_percentual",
+        "requerimento_declaracao_extincao"
+      ],
+      "claimant_theses": [
+        {
+          "id": "insolv_fresh_start_discharge.c1",
+          "label": "Extinção das obrigações do falido, inclusive para imediato retorno ao exercício empresarial, pelo decurso do prazo de 3 anos contado da decretação da falência, ressalvada a utilização dos bens já arrecadados",
+          "authority_ids": [
+            "l11101_art158",
+            "l11101_art159"
+          ]
+        },
+        {
+          "id": "insolv_fresh_start_discharge.c2",
+          "label": "Extinção das obrigações pelo pagamento de mais de 25% dos créditos quirografários após realização do ativo ou pelo encerramento da falência nos termos dos arts. 114-A ou 156",
+          "authority_ids": [
+            "l11101_art158"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "insolv_fresh_start_discharge.d1",
+          "label": "Exclusão dos créditos tributários do efeito extintivo cível do art. 158 da LREF, os quais seguem regime próprio do CTN, e subsistência de impedimento enquanto não reabilitado penalmente em caso de condenação por crime falimentar",
+          "authority_ids": [
+            "l11101_art158",
+            "l11101_art181",
+            "ctn_art187"
+          ]
+        },
+        {
+          "id": "insolv_fresh_start_discharge.d2",
+          "label": "Oposição por credor no prazo legal de 30 dias limitada exclusivamente a inconsistências formais nos requisitos objetivos do art. 158 (art. 159, § 1º)",
+          "authority_ids": [
+            "l11101_art159"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14112_recuperacao"
+      ],
+      "typical_requests": [
+        "Sentença declaratória de extinção das obrigações civis e empresariais sujeitas à falência com baixa de inabilitações na Junta Comercial e órgãos cadastrais",
+        "Prosseguimento independente da liquidação apenas sobre os bens arrecadados anteriormente ao requerimento do art. 158, V"
+      ],
+      "evidence": [
+        "Sentença de decretação da falência (ou marco da vigência da Lei 14.112/2020 para falências anteriores conforme art. 5º, § 3º, da lei reformadora)",
+        "Certidões criminais atestando ausência de condenação transitada em julgado por crime previsto na Lei 11.101/2005",
+        "Relatório do administrador judicial sobre o estado da arrecadação de bens e pagamentos efetuados"
+      ],
+      "piece_ids": [
+        "manifestacao_especifica",
+        "apelacao_civel",
+        "agravo_instrumento"
+      ],
+      "related_claims": [
+        "insolv_bankruptcy_conversion_priority",
+        "emp_bankruptcy"
+      ],
+      "limitation": "Requerimento formulável imediatamente após 3 anos corridos da sentença de decretação da falência (Lei 11.101/2005, art. 158, V; para falências decretadas antes da Lei 14.112/2020, triênio contado de 23/01/2021 conforme regra de transição); prazo de 30 dias corridos para manifestação de credores restrita a requisitos formais (art. 159, § 1º)"
+    },
+    {
+      "id": "insolv_cross_border_insolvency",
+      "label": "Insolvência transnacional e reconhecimento de processo estrangeiro (UNCITRAL)",
+      "requirements": [
+        "processo_coletivo_estrangeiro",
+        "representante_estrangeiro_habilitado",
+        "centro_principais_interesses_comi",
+        "respeito_ordem_publica_e_credores_locais"
+      ],
+      "claimant_theses": [
+        {
+          "id": "insolv_cross_border_insolvency.c1",
+          "label": "Reconhecimento pelo juízo brasileiro do local do principal estabelecimento do processo estrangeiro como principal (no país do COMI) ou não principal, dispensada homologação prévia pelo STJ",
+          "authority_ids": [
+            "l11101_art167d",
+            "l11101_art167h",
+            "l11101_art167j"
+          ]
+        },
+        {
+          "id": "insolv_cross_border_insolvency.c2",
+          "label": "Suspensão automática de execuções e da prescrição sobre bens do devedor situados no Brasil a partir do reconhecimento de processo estrangeiro principal (art. 167-M)",
+          "authority_ids": [
+            "l11101_art167m"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "insolv_cross_border_insolvency.d1",
+          "label": "Recusa de medida ou reconhecimento que seja manifestamente contrário à ordem pública brasileira ou deixe desprotegidos os interesses dos credores domiciliados/estabelecidos no Brasil",
+          "authority_ids": [
+            "l11101_art167a",
+            "l11101_art167n"
+          ]
+        },
+        {
+          "id": "insolv_cross_border_insolvency.d2",
+          "label": "Proibição de remessa de ativos arrecadados no Brasil ao exterior sem prévia satisfação ou proteção adequada dos créditos locais preferenciais e concursais",
+          "authority_ids": [
+            "l11101_art167m",
+            "l11101_art167n"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14112_recuperacao"
+      ],
+      "typical_requests": [
+        "Reconhecimento judicial do processo estrangeiro de insolvência (Chapter 11 / processo concursal estrangeiro) como processo principal ou não principal",
+        "Concessão de tutela provisória de urgência (art. 167-L) e efeitos automáticos de suspensão de constrições no território nacional (art. 167-M)",
+        "Cooperação e comunicação direta entre o juízo falimentar brasileiro, o administrador judicial e a corte/representante estrangeiro"
+      ],
+      "evidence": [
+        "Decisão certificada de abertura do processo estrangeiro e de nomeação do representante estrangeiro, acompanhada de tradução juramentada",
+        "Relação completa de todos os processos estrangeiros e nacionais conhecidos relativos ao devedor (art. 167-H, § 2º)",
+        "Demonstração fática e societária da localização do Centro dos Principais Interesses (COMI) do devedor"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "tutela_urgencia_antecedente",
+        "agravo_instrumento",
+        "manifestacao_especifica"
+      ],
+      "related_claims": [
+        "arb_foreign_award_homologation_stj",
+        "insolv_stay_period_extension"
+      ],
+      "limitation": "Medidas urgentes provisórias podem ser requeridas desde o protocolo do pedido de reconhecimento (Lei 11.101/2005, art. 167-L), cessando com a decisão de mérito sobre o reconhecimento (§ 2º)"
+    },
+    {
+      "id": "insolv_extrajudicial_recovery",
+      "label": "Homologação de plano de recuperação extrajudicial",
+      "requirements": [
+        "requisitos_subjetivos_art_48",
+        "quorum_adesao_mais_da_metade_por_especie",
+        "ausencia_pagamento_antecipado_ou_desfavoravel",
+        "respeito_creditos_excluidos"
+      ],
+      "claimant_theses": [
+        {
+          "id": "insolv_extrajudicial_recovery.c1",
+          "label": "Homologação judicial obrigatória para estender o plano de recuperação extrajudicial a todos os credores das espécies/grupos abrangidos mediante adesão de mais da metade dos créditos de cada espécie",
+          "authority_ids": [
+            "l11101_art161",
+            "l11101_art163"
+          ]
+        },
+        {
+          "id": "insolv_extrajudicial_recovery.c2",
+          "label": "Concessão imediata do stay period de 180 dias já no pedido inicial instruído com anuência de ao menos 1/3 dos créditos de cada espécie abrangida, mediante compromisso de atingir o quórum definitivo em 90 dias",
+          "authority_ids": [
+            "l11101_art163"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "insolv_extrajudicial_recovery.d1",
+          "label": "Impugnação restrita às matérias taxativas do art. 164, § 3º: não preenchimento do percentual mínimo de mais da metade, prática de ato falimentar/ineficaz, descumprimento de requisito legal ou favorecimento ilícito",
+          "authority_ids": [
+            "l11101_art164"
+          ]
+        },
+        {
+          "id": "insolv_extrajudicial_recovery.d2",
+          "label": "Exclusão dos créditos tributários, fiduciários, arrendamento mercantil e ACC, exigindo-se negociação coletiva com o sindicato da categoria profissional para eventual inclusão de créditos trabalhistas (art. 161, § 1º)",
+          "authority_ids": [
+            "l11101_art161"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14112_recuperacao"
+      ],
+      "typical_requests": [
+        "Deferimento liminar da suspensão de execuções dos créditos das espécies abrangidas com base na adesão preliminar de 1/3 (art. 163, § 8º)",
+        "Sentença de homologação do plano de recuperação extrajudicial constituindo título executivo judicial vinculante para a minoria dissidente (art. 161, § 6º)",
+        "Improcedência da homologação por insuficiência de quórum ou tratamento desigual dentro do mesmo grupo de credores"
+      ],
+      "evidence": [
+        "Instrumento do plano de recuperação extrajudicial e termos individuais de adesão assinados representando mais de 50% (ou 1/3 inicial) de cada espécie abrangida",
+        "Exposição da situação patrimonial, demonstrações contábeis, relação nominal completa de credores sujeitos e não sujeitos e documentos que comprovem os poderes dos subscritores (art. 163, § 6º)",
+        "Acordo ou convenção coletiva firmada com o sindicato representativo caso o plano inclua créditos trabalhistas ou acidentários"
+      ],
+      "piece_ids": [
+        "homologacao_recuperacao_extrajudicial",
+        "manifestacao_especifica",
+        "apelacao_civel",
+        "agravo_instrumento"
+      ],
+      "related_claims": [
+        "emp_recovery",
+        "insolv_judicial_recovery_filing"
+      ],
+      "limitation": "Prazo de 90 dias corridos improrrogáveis para complementar o quórum de 1/3 até mais da metade no pedido com stay antecipado (Lei 11.101/2005, art. 163, § 8º); impugnação pelos credores no prazo de 30 dias corridos da publicação do edital de convocação (art. 164, § 2º); vedado novo pedido em menos de 2 anos (art. 161, § 3º)"
+    }
+  ]
+}

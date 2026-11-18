@@ -1,17 +1,19 @@
 """Restartable per-page text/OCR and rendering. Cache contains no API credentials."""
 from __future__ import annotations
 
-import importlib.metadata
-import shutil
 import hashlib
+import importlib.metadata
 import os
+import shutil
 import tempfile
 from pathlib import Path
 
 try:
     from .case_memory import checkpoint, identity
+    from .court_systems import strip_court_stamps
 except ImportError:
     from case_memory import checkpoint, identity
+    from court_systems import strip_court_stamps
 
 
 def dependency_versions() -> dict:
@@ -87,7 +89,7 @@ def extract(path: Path, cache: Path, use_ocr: bool, language: str, dpi: int) -> 
         except Exception as exc:
             text = ""
             warnings.append(f"PDF p. {number}: extração falhou ({type(exc).__name__}); nova tentativa necessária.")
-        if use_ocr and len(text.strip()) < 30:
+        if use_ocr and len(strip_court_stamps(text).strip()) < 30:
             def recognise() -> str:
                 from pdf2image import convert_from_path
                 import pytesseract

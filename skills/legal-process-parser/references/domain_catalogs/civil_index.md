@@ -26,3 +26,9 @@ Guia: `domain_guides/civil.md` · catálogo: `domain_catalogs/civil.json`
 | `civ_enforcement_defense` | Defesas no cumprimento de sentença e na execução | 3/3 |
 | `civ_neighborhood_condo` | Vizinhança e condomínio edilício | 3/2 |
 | `civ_fees_costs` | Honorários, gratuidade e sucumbência | 2/2 |
+| `civ_monetary_interest_lei14905` | Correção monetária pelo IPCA e taxa legal de juros moratórios pós-Lei 14.905/2024 (CC, arts. 389 e 406, e Res. CMN 5.171/2024) | 2/1 |
+| `civ_loss_of_chance` | Responsabilidade civil pela perda de uma chance séria e real (advocacia, medicina e certames) | 1/2 |
+| `civ_forum_selection_lei14879` | Cláusula de eleição de foro pós-Lei 14.879/2024: pertinência territorial e declinação de ofício de foro aleatório (CPC, art. 63) | 1/2 |
+| `civ_prescription_intercorrente_cpc921` | Prescrição intercorrente na execução civil e no cumprimento de sentença pós-Lei 14.195/2021 (CC, art. 206-A, e CPC, art. 921) | 1/1 |
+| `civ_digital_signature_electronic_title` | Títulos executivos eletrônicos sem testemunhas e validade de assinaturas digitais ou avançadas (CPC, art. 784, § 4º — Lei 14.620/2023) | 1/1 |
+| `civ_donation_inoficiosa_revocation` | Doação inoficiosa, reserva de subsistência e revogação de doação por ingratidão ou inexecução de encargo (CC, arts. 548, 549 e 555) | 2/2 |

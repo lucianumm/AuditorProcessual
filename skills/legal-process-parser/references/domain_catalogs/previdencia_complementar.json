@@ -4,13 +4,874 @@
  "label": "Previdência complementar",
  "guide": "domain_guides/previdencia_complementar.md",
  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
- "polo_labels": {"claimant_theses": "Teses do autor ou requerente", "defense_theses": "Teses do réu ou requerido"},
+ "polo_labels": {
+  "claimant_theses": "Teses do autor ou requerente",
+  "defense_theses": "Teses do réu ou requerido"
+ },
  "claims": [
-  {"id": "pc_benefit", "label": "Benefício e complementação na previdência complementar", "requirements": ["plano_regulamento", "entidade_aberta_ou_fechada", "elegibilidade", "calculo", "prescricao"], "claimant_theses": [{"id": "pc_benefit.c1", "label": "Benefício conforme o regulamento vigente na elegibilidade e institutos legais", "authority_ids": ["lc109_art14"]}, {"id": "pc_benefit.c2", "label": "CDC aplicável apenas às entidades abertas", "authority_ids": ["stj_sumula_563"]}], "defense_theses": [{"id": "pc_benefit.d1", "label": "Contribuições e benefícios não integram o contrato de trabalho", "authority_ids": ["lc109_art68"]}, {"id": "pc_benefit.d2", "label": "Prescrição quinquenal das prestações não reclamadas", "authority_ids": ["lc109_art75"]}], "temporal_marker_ids": [], "typical_requests": ["Revisão ou pagamento do benefício", "Resgate ou portabilidade"], "evidence": ["Regulamento do plano por período", "Extratos de contribuição e cálculos atuariais"], "piece_ids": ["inicial_procedimento_comum", "requerimento_administrativo"], "related_claims": ["pc_jurisdiction"], "limitation": "Prescrição quinquenal das prestações (LC 109/2001, art. 75)."},
-  {"id": "pc_jurisdiction", "label": "Competência e patrocínio público", "requirements": ["patrocinador", "natureza_pedido", "relacao_trabalho"], "claimant_theses": [{"id": "pc_jurisdiction.c1", "label": "Demanda contra a entidade de previdência na Justiça Comum — conferir Tema 190 do STF", "authority_ids": ["tema_stf_190"]}], "defense_theses": [{"id": "pc_jurisdiction.d1", "label": "Patrocínio por ente público e regras próprias", "authority_ids": ["lc108_art1"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": ["Estatuto da entidade e convênio de adesão"], "piece_ids": ["inicial_procedimento_comum"], "related_claims": ["pc_benefit"], "limitation": "conferir"},
-  {"id": "pc_regulation_change", "label": "Alteração de regulamento e direito acumulado", "requirements": ["regulamento_na_adesao", "regulamento_na_elegibilidade", "data_da_alteracao", "direito_acumulado"], "claimant_theses": [{"id": "pc_regulation_change.c1", "label": "Direito acumulado preservado nas alterações do regulamento", "authority_ids": ["lc109_art17", "cf_art202"]}, {"id": "pc_regulation_change.c2", "label": "Benefício regido pelas regras vigentes quando o participante se tornou elegível", "authority_ids": ["lc109_art17", "lc109_art68"]}], "defense_theses": [{"id": "pc_regulation_change.d1", "label": "Não há direito adquirido a regime de regulamento antes da elegibilidade", "authority_ids": ["lc109_art17"]}, {"id": "pc_regulation_change.d2", "label": "Contratos previdenciários não integram o contrato de trabalho", "authority_ids": ["lc109_art68", "cf_art202"]}], "temporal_marker_ids": [], "typical_requests": ["Recálculo pelo regulamento aplicável", "Diferenças vencidas"], "evidence": ["Regulamentos de cada época", "Extrato de contribuições", "Carta de concessão"], "piece_ids": ["inicial_procedimento_comum", "apelacao_civel", "recurso_especial"], "related_claims": ["pc_benefit"], "limitation": "Prestações: cinco anos (LC 109/2001, art. 75) — conferir"},
-  {"id": "pc_deficit", "label": "Equacionamento de déficit e contribuição extraordinária", "requirements": ["resultado_do_plano", "plano_de_equacionamento", "proporcao_contributiva", "aprovacao"], "claimant_theses": [{"id": "pc_deficit.c1", "label": "Rateio proporcional às contribuições e observância do plano de custeio", "authority_ids": ["lc109_art21", "lc109_art18"]}, {"id": "pc_deficit.c2", "label": "Paridade contributiva no patrocínio público", "authority_ids": ["lc108_art6"]}], "defense_theses": [{"id": "pc_deficit.d1", "label": "Equacionamento obrigatório de resultado deficitário por participantes e assistidos", "authority_ids": ["lc109_art21"]}], "temporal_marker_ids": [], "typical_requests": ["Revisão do percentual", "Suspensão cautelar da cobrança"], "evidence": ["Demonstrações atuariais", "Plano de equacionamento aprovado", "Contracheques"], "piece_ids": ["inicial_procedimento_comum", "tutela_urgencia_antecedente"], "related_claims": ["pc_benefit"], "limitation": "Conferir"},
-  {"id": "pc_portability_redemption", "label": "Resgate, portabilidade e benefício proporcional diferido", "requirements": ["cessacao_do_vinculo", "carencia_do_plano", "saldo", "valores_do_patrocinador"], "claimant_theses": [{"id": "pc_portability_redemption.c1", "label": "Institutos obrigatórios do plano de benefícios", "authority_ids": ["lc109_art14"]}, {"id": "pc_portability_redemption.c2", "label": "Correção plena das contribuições resgatadas", "authority_ids": ["stj_sumula_289"]}], "defense_theses": [{"id": "pc_portability_redemption.d1", "label": "Resgate limitado às contribuições do participante conforme o regulamento", "authority_ids": ["lc109_art14"]}, {"id": "pc_portability_redemption.d2", "label": "Prescrição quinquenal das parcelas e diferenças cobradas da entidade", "authority_ids": ["stj_sumula_291", "lc109_art75"]}], "temporal_marker_ids": [], "typical_requests": ["Diferenças de resgate", "Portabilidade do saldo"], "evidence": ["Regulamento e extrato da reserva", "Termo de opção"], "piece_ids": ["inicial_procedimento_comum", "requerimento_administrativo"], "related_claims": ["pc_benefit"], "limitation": "Cinco anos (LC 109/2001, art. 75; Súmula 291 do STJ) — conferir"},
-  {"id": "pc_labor_reflex", "label": "Reflexo de verbas trabalhistas no benefício complementar", "requirements": ["verba_reconhecida", "fonte_de_custeio", "reserva_matematica", "competencia"], "claimant_theses": [{"id": "pc_labor_reflex.c1", "label": "Recálculo exige recomposição prévia da reserva matemática — conferir os Temas 955 e 1021 do STJ", "authority_ids": ["lc109_art18", "cf_art202"]}], "defense_theses": [{"id": "pc_labor_reflex.d1", "label": "Ausência de fonte de custeio e de previsão no regulamento", "authority_ids": ["lc109_art18"]}, {"id": "pc_labor_reflex.d2", "label": "Competência da Justiça Comum para ações contra entidades de previdência privada", "authority_ids": ["tema_stf_190"]}], "temporal_marker_ids": [], "typical_requests": ["Recálculo mediante aporte", "Indenização contra o ex-empregador na via própria"], "evidence": ["Sentença trabalhista e cálculos", "Regulamento", "Nota técnica atuarial"], "piece_ids": ["inicial_procedimento_comum"], "related_claims": ["pc_jurisdiction", "pc_benefit"], "limitation": "Conferir"}
+  {
+   "id": "pc_benefit",
+   "label": "Benefício e complementação na previdência complementar",
+   "requirements": [
+    "plano_regulamento",
+    "entidade_aberta_ou_fechada",
+    "elegibilidade",
+    "calculo",
+    "prescricao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pc_benefit.c1",
+     "label": "Benefício conforme o regulamento vigente na elegibilidade e institutos legais",
+     "authority_ids": [
+      "lc109_art14"
+     ]
+    },
+    {
+     "id": "pc_benefit.c2",
+     "label": "CDC aplicável apenas às entidades abertas, não incidindo nas fechadas (Súmula 563 do STJ, editada após cancelamento da Súmula 321; conferir situação no SCON)",
+     "authority_ids": [
+      "stj_sumula_563"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pc_benefit.d1",
+     "label": "Contribuições e benefícios não integram o contrato de trabalho",
+     "authority_ids": [
+      "lc109_art68"
+     ]
+    },
+    {
+     "id": "pc_benefit.d2",
+     "label": "Prescrição quinquenal das prestações não reclamadas",
+     "authority_ids": [
+      "lc109_art75"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Revisão ou pagamento do benefício",
+    "Resgate ou portabilidade",
+    "Pagamento das diferenças vencidas e vincendas com correção monetária pelo índice do plano e juros"
+   ],
+   "evidence": [
+    "Regulamento do plano por período",
+    "Extratos de contribuição e cálculos atuariais",
+    "Demonstrativos de pagamento do benefício complementar e memória da concessão inicial"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "requerimento_administrativo"
+   ],
+   "related_claims": [
+    "pc_jurisdiction"
+   ],
+   "limitation": "Prescrição quinquenal das prestações vencidas e não reclamadas (LC 109/2001, art. 75; Súmula 291 do STJ), contada do vencimento de cada parcela ou da ciência inequívoca do indeferimento."
+  },
+  {
+   "id": "pc_jurisdiction",
+   "label": "Competência e patrocínio público",
+   "requirements": [
+    "patrocinador",
+    "natureza_pedido",
+    "relacao_trabalho"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pc_jurisdiction.c1",
+     "label": "Demanda contra a entidade de previdência na Justiça Comum — conferir Tema 190 do STF",
+     "authority_ids": [
+      "tema_stf_190"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pc_jurisdiction.d1",
+     "label": "Patrocínio por ente público e regras próprias",
+     "authority_ids": [
+      "lc108_art1"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Reconhecimento da competência absoluta da Justiça Comum para julgar pretensão previdenciária complementar",
+    "Remessa dos autos ao juízo cível competente com aproveitamento dos atos instrutórios",
+    "Observância das regras de governança e paridade contributiva da LC 108/2001 nos planos de patrocínio estatal"
+   ],
+   "evidence": [
+    "Estatuto da entidade e convênio de adesão",
+    "Regulamento do plano de benefícios e comprovação da natureza jurídica pública ou privada do patrocinador",
+    "Petição inicial e peças da reclamação trabalhista conexa para distinção da causa de pedir"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "pc_benefit"
+   ],
+   "limitation": "Incompetência absoluta arguível em qualquer tempo e grau de jurisdição (CPC, art. 64, § 1º); quanto ao mérito previdenciário, prescrição quinquenal das prestações (LC 109/2001, art. 75; Súmula 291 do STJ)."
+  },
+  {
+   "id": "pc_regulation_change",
+   "label": "Alteração de regulamento e direito acumulado",
+   "requirements": [
+    "regulamento_na_adesao",
+    "regulamento_na_elegibilidade",
+    "data_da_alteracao",
+    "direito_acumulado"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pc_regulation_change.c1",
+     "label": "Direito acumulado preservado nas alterações do regulamento",
+     "authority_ids": [
+      "lc109_art17",
+      "cf_art202"
+     ]
+    },
+    {
+     "id": "pc_regulation_change.c2",
+     "label": "Benefício regido pelas regras vigentes quando o participante se tornou elegível",
+     "authority_ids": [
+      "lc109_art17",
+      "lc109_art68"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pc_regulation_change.d1",
+     "label": "Não há direito adquirido a regime de regulamento antes da elegibilidade",
+     "authority_ids": [
+      "lc109_art17"
+     ]
+    },
+    {
+     "id": "pc_regulation_change.d2",
+     "label": "Contratos previdenciários não integram o contrato de trabalho",
+     "authority_ids": [
+      "lc109_art68",
+      "cf_art202"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Recálculo pelo regulamento aplicável",
+    "Diferenças vencidas",
+    "Preservação da reserva correspondente ao direito acumulado até a data da alteração regulamentar"
+   ],
+   "evidence": [
+    "Regulamentos de cada época",
+    "Extrato de contribuições",
+    "Carta de concessão",
+    "Parecer atuarial comparativo entre as regras da adesão, da alteração e da elegibilidade"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "apelacao_civel",
+    "recurso_especial"
+   ],
+   "related_claims": [
+    "pc_benefit"
+   ],
+   "limitation": "Prescrição quinquenal das diferenças de complementação de aposentadoria nas relações de trato sucessivo (LC 109/2001, art. 75; Súmulas 291 e 427 do STJ)."
+  },
+  {
+   "id": "pc_deficit",
+   "label": "Equacionamento de déficit e contribuição extraordinária",
+   "requirements": [
+    "resultado_do_plano",
+    "plano_de_equacionamento",
+    "proporcao_contributiva",
+    "aprovacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pc_deficit.c1",
+     "label": "Rateio proporcional às contribuições e observância do plano de custeio",
+     "authority_ids": [
+      "lc109_art21",
+      "lc109_art18"
+     ]
+    },
+    {
+     "id": "pc_deficit.c2",
+     "label": "Paridade contributiva no patrocínio público",
+     "authority_ids": [
+      "lc108_art6"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pc_deficit.d1",
+     "label": "Equacionamento obrigatório de resultado deficitário por participantes e assistidos",
+     "authority_ids": [
+      "lc109_art21"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Revisão do percentual",
+    "Suspensão cautelar da cobrança",
+    "Limitação do desconto mensal à estrita proporção contributiva entre participantes/assistidos e patrocinador"
+   ],
+   "evidence": [
+    "Demonstrações atuariais",
+    "Plano de equacionamento aprovado",
+    "Contracheques",
+    "Pareceres do conselho fiscal, atas deliberativas e relatórios de fiscalização da PREVIC"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [
+    "pc_benefit"
+   ],
+   "limitation": "Prescrição quinquenal sobre cada desconto mensal de contribuição extraordinária impugnado (LC 109/2001, art. 75; Súmula 291 do STJ)."
+  },
+  {
+   "id": "pc_portability_redemption",
+   "label": "Resgate, portabilidade e benefício proporcional diferido",
+   "requirements": [
+    "cessacao_do_vinculo",
+    "carencia_do_plano",
+    "saldo",
+    "valores_do_patrocinador"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pc_portability_redemption.c1",
+     "label": "Institutos obrigatórios do plano de benefícios",
+     "authority_ids": [
+      "lc109_art14"
+     ]
+    },
+    {
+     "id": "pc_portability_redemption.c2",
+     "label": "Correção plena das contribuições resgatadas",
+     "authority_ids": [
+      "stj_sumula_289"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pc_portability_redemption.d1",
+     "label": "Resgate limitado às contribuições do participante conforme o regulamento",
+     "authority_ids": [
+      "lc109_art14"
+     ]
+    },
+    {
+     "id": "pc_portability_redemption.d2",
+     "label": "Prescrição quinquenal das parcelas e diferenças cobradas da entidade",
+     "authority_ids": [
+      "stj_sumula_291",
+      "lc109_art75"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Diferenças de resgate",
+    "Portabilidade do saldo",
+    "Restituição de expurgos inflacionários incidentes sobre a reserva de poupança resgatada"
+   ],
+   "evidence": [
+    "Regulamento e extrato da reserva",
+    "Termo de opção",
+    "Comprovante de rescisão do vínculo empregatício com o patrocinador e planilha histórica de aportes"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "requerimento_administrativo"
+   ],
+   "related_claims": [
+    "pc_benefit"
+   ],
+   "limitation": "Prescrição quinquenal contada da data do pagamento a menor do resgate ou da recusa de portabilidade (LC 109/2001, art. 75; Súmulas 291 e 427 do STJ)."
+  },
+  {
+   "id": "pc_labor_reflex",
+   "label": "Reflexo de verbas trabalhistas no benefício complementar",
+   "requirements": [
+    "verba_reconhecida",
+    "fonte_de_custeio",
+    "reserva_matematica",
+    "competencia"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pc_labor_reflex.c1",
+     "label": "Recálculo exige recomposição prévia da reserva matemática — conferir os Temas 955 e 1021 do STJ",
+     "authority_ids": [
+      "lc109_art18",
+      "cf_art202"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pc_labor_reflex.d1",
+     "label": "Ausência de fonte de custeio e de previsão no regulamento",
+     "authority_ids": [
+      "lc109_art18"
+     ]
+    },
+    {
+     "id": "pc_labor_reflex.d2",
+     "label": "Competência da Justiça Comum para ações contra entidades de previdência privada",
+     "authority_ids": [
+      "tema_stf_190"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Recálculo mediante aporte",
+    "Indenização contra o ex-empregador na via própria",
+    "Apuração atuarial em liquidação do aporte necessário à recomposição integral da reserva matemática"
+   ],
+   "evidence": [
+    "Sentença trabalhista e cálculos",
+    "Regulamento",
+    "Nota técnica atuarial",
+    "Certidão de trânsito em julgado da ação trabalhista e fichas financeiras das verbas salariais deferidas"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "pc_jurisdiction",
+    "pc_benefit"
+   ],
+   "limitation": "Prescrição quinquenal para exigir revisão da entidade fechada (LC 109/2001, art. 75); na ação indenizatória autônoma contra o empregador/patrocinador pelos prejuízos previdenciários (Temas 955 e 1021 do STJ), observar a actio nata no trânsito em julgado trabalhista e o prazo aplicável ao vínculo."
+  },
+  {
+   "id": "pc_plan_migration_bd_cd",
+   "label": "Migração de plano BD para CD, transação extrajudicial e reserva de migração",
+   "requirements": [
+    "plano_origem_bd",
+    "plano_destino_cd_cv",
+    "termo_de_migracao",
+    "calculo_reserva_matematica",
+    "vicio_consentimento_ou_erro_atuarial"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pc_plan_migration_bd_cd.c1",
+     "label": "A transação para migração de plano BD para CD não impede a correção de erro material ou atuarial no cálculo da reserva matemática de migração nem a incidência de expurgos inflacionários sobre o direito acumulado",
+     "authority_ids": [
+      "lc109_art17",
+      "stj_sumula_289",
+      "cf_art202"
+     ]
+    },
+    {
+     "id": "pc_plan_migration_bd_cd.c2",
+     "label": "Anulabilidade do termo de adesão/migração apenas quando demonstrado vício de consentimento ou sonegação de informação atuarial essencial ao participante",
+     "authority_ids": [
+      "cc_art138",
+      "lc109_art17"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pc_plan_migration_bd_cd.d1",
+     "label": "Validade e eficácia liberatória da migração voluntária acompanhada de incentivo financeiro ou desbloqueio de reserva (ato jurídico perfeito e vedação ao pinçamento de dois regimes)",
+     "authority_ids": [
+      "lc109_art17",
+      "lc109_art68",
+      "cc_art422"
+     ]
+    },
+    {
+     "id": "pc_plan_migration_bd_cd.d2",
+     "label": "Decadência quadrienal para pleitear anulação do negócio jurídico de migração por alegado vício de vontade e prescrição quinquenal para diferenças atuariais",
+     "authority_ids": [
+      "cc_art178",
+      "lc109_art75"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Recálculo atuarial da reserva matemática transferida na migração do plano BD para o plano CD/CV",
+    "Pagamento das diferenças mensais no benefício saldado ou aporte suplementar na conta individual do plano migrado",
+    "Subsidiariamente, anulação do termo de migração por vício de informação com retorno ao plano de origem e compensação de valores"
+   ],
+   "evidence": [
+    "Regulamentos completos do plano de origem (BD) e do plano de destino (CD/CV)",
+    "Termo individual de opção de migração, cartilhas explicativas e simulações entregues pela entidade",
+    "Memória de cálculo atuarial da reserva matemática individual na data-base da migração",
+    "Laudo pericial atuarial apurando eventuais defasagens de índice ou tábua biométrica"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "contestacao",
+    "impugnacao_laudo",
+    "apelacao_civel"
+   ],
+   "related_claims": [
+    "pc_regulation_change",
+    "pc_benefit"
+   ],
+   "limitation": "Quatro anos de decadência para anular o termo de transação/migração por vício de consentimento (CC, art. 178) e prescrição quinquenal para diferenças de prestações do benefício saldado/migrado (LC 109/2001, art. 75; Súmula 291 do STJ)."
+  },
+  {
+   "id": "pc_labor_reserve_recomposition",
+   "label": "Recomposição de reserva matemática por verbas trabalhistas e indenização contra o patrocinador (Temas 955 e 1021 STJ)",
+   "requirements": [
+    "titulo_judicial_trabalhista",
+    "previsao_regulamentar_salario_participacao",
+    "recomposicao_previa_integral",
+    "legitimidade_patrocinador"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pc_labor_reserve_recomposition.c1",
+     "label": "Nas demandas ajuizadas até a modulação ou com recomposição prévia e integral da reserva matemática em liquidação, as verbas remuneratórias trabalhistas previstas no regulamento integram o salário de participação (Temas 955 e 1021 do STJ)",
+     "authority_ids": [
+      "tema_stj_955",
+      "tema_stj_1021",
+      "lc109_art18",
+      "cf_art202"
+     ]
+    },
+    {
+     "id": "pc_labor_reserve_recomposition.c2",
+     "label": "Eventual prejuízo causado ao participante pelo não recolhimento oportuno sobre verbas salariais resolvidas na Justiça do Trabalho repara-se por ação autônoma de indenização contra o ex-empregador/patrocinador",
+     "authority_ids": [
+      "tema_stj_955",
+      "tema_stj_1021",
+      "cc_art186",
+      "cc_art927"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pc_labor_reserve_recomposition.d1",
+     "label": "Impossibilidade de inclusão direta de reflexos trabalhistas no benefício pago pela entidade fechada sem prévia e integral formação da fonte de custeio e da reserva matemática (CF, art. 202, caput)",
+     "authority_ids": [
+      "cf_art202",
+      "lc109_art18",
+      "tema_stj_955",
+      "tema_stj_1021"
+     ]
+    },
+    {
+     "id": "pc_labor_reserve_recomposition.d2",
+     "label": "Verba trabalhista de natureza indenizatória ou expressamente excluída da base do salário de contribuição pelo regulamento do plano",
+     "authority_ids": [
+      "lc109_art17",
+      "lc109_art68"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Condenação do ex-empregador/patrocinador à indenização dos prejuízos materiais decorrentes da menor complementação de aposentadoria",
+    "Recálculo atuarial do benefício complementar condicionado ao aporte integral da reserva matemática apurada em perícia",
+    "Constituição de capital ou pagamento em parcela única/mensal equivalente à diferença atuarial apurada"
+   ],
+   "evidence": [
+    "Sentença, acórdãos, certidão de trânsito em julgado e cálculos homologados na reclamação trabalhista",
+    "Regulamento do plano definindo a composição do salário-real-de-participação",
+    "Contracheques contemporâneos ao contrato de trabalho e demonstrativos de concessão do benefício complementar",
+    "Laudo pericial atuarial quantificando a reserva matemática necessária e a perda mensal vitalícia"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "contestacao",
+    "impugnacao_laudo",
+    "recurso_especial"
+   ],
+   "related_claims": [
+    "pc_labor_reflex",
+    "pc_jurisdiction"
+   ],
+   "limitation": "Prescrição quinquenal para prestações previdenciárias perante a EFPC (LC 109/2001, art. 75); na ação indenizatória contra o ex-empregador, termo inicial (actio nata) a partir do trânsito em julgado da sentença trabalhista que reconheceu as verbas (conferir prazo trienal cível ou trabalhista conforme a competência firmada)."
+  },
+  {
+   "id": "pc_extraordinary_deficit_retirees",
+   "label": "Equacionamento de déficit extraordinário: assistidos, paridade e responsabilidade de gestores",
+   "requirements": [
+    "deficit_tecnico_acumulado",
+    "aprovacao_orgaos_governanca",
+    "proporcao_contributiva_lc108",
+    "causa_do_deficit"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pc_extraordinary_deficit_retirees.c1",
+     "label": "Nulidade de cobrança extraordinária que viole a proporção contributiva legal, transfira aos participantes/assistidos passivo exclusivo do patrocinador ou deixe de apurar responsabilidade civil de gestores e patrocinadora",
+     "authority_ids": [
+      "lc109_art21",
+      "lc108_art6",
+      "cf_art202"
+     ]
+    },
+    {
+     "id": "pc_extraordinary_deficit_retirees.c2",
+     "label": "Ilegalidade da majoração da base de incidência ou instituição de alíquotas sem regular aprovação atuarial e transparência das premissas",
+     "authority_ids": [
+      "lc109_art18",
+      "lc109_art21"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pc_extraordinary_deficit_retirees.d1",
+     "label": "Mutualismo e obrigatoriedade legal do equacionamento do resultado deficitário conjuntamente por patrocinadores, participantes e assistidos na proporção de suas contribuições e reservas (LC 109/2001, art. 21, § 1º)",
+     "authority_ids": [
+      "lc109_art21",
+      "lc109_art18"
+     ]
+    },
+    {
+     "id": "pc_extraordinary_deficit_retirees.d2",
+     "label": "Eventuais ações regressivas contra gestores ou terceiros não suspendem automaticamente o dever legal imediato de reequilíbrio solvencial do plano, revertendo futuras recuperações ao patrimônio comum",
+     "authority_ids": [
+      "lc109_art21"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Declaração de inexigibilidade ou limitação percentual das contribuições extraordinárias de equacionamento",
+    "Tutela de urgência para limitar os descontos mensais em folha de aposentadoria a patamar compatível com a subsistência",
+    "Restituição simples dos valores descontados em excesso à proporção contributiva legal"
+   ],
+   "evidence": [
+    "Plano de Equacionamento de Déficit (PED), parecer atuarial e ata de aprovação pelo Conselho Deliberativo",
+    "Demonstrações contábeis do plano, relatórios de auditoria independente e autos de infração da PREVIC",
+    "Contracheques do assistido demonstrando o impacto percentual das contribuições normal e extraordinária"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente",
+    "contestacao",
+    "impugnacao_laudo"
+   ],
+   "related_claims": [
+    "pc_deficit",
+    "pc_benefit"
+   ],
+   "limitation": "Prescrição quinquenal das parcelas descontadas mensalmente (LC 109/2001, art. 75; Súmula 291 do STJ)."
+  },
+  {
+   "id": "pc_portability_tax_withdrawal",
+   "label": "Portabilidade, autopatrocínio, resgate e regime tributário das reservas",
+   "requirements": [
+    "extincao_vinculo_empregaticio",
+    "carencia_portabilidade",
+    "regra_resgate",
+    "opcao_tributaria_progressiva_regressiva"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pc_portability_tax_withdrawal.c1",
+     "label": "Direito à portabilidade integral do direito acumulado para outro plano ou ao resgate das contribuições vertidas pelo participante corrigidas plenamente por índice que recomponha a inflação real",
+     "authority_ids": [
+      "lc109_art14",
+      "lc109_art15",
+      "stj_sumula_289"
+     ]
+    },
+    {
+     "id": "pc_portability_tax_withdrawal.c2",
+     "label": "Não incidência de imposto de renda na mera portabilidade direta entre planos previdenciários sem disponibilidade econômica ao participante",
+     "authority_ids": [
+      "lc109_art15",
+      "ctn_art111"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pc_portability_tax_withdrawal.d1",
+     "label": "Vedação de resgate das contribuições normais vertidas pelo patrocinador salvo expressa previsão regulamentar, distinguindo-se resgate (liquidação) de portabilidade (transferência vinculada)",
+     "authority_ids": [
+      "lc109_art14",
+      "lc109_art15"
+     ]
+    },
+    {
+     "id": "pc_portability_tax_withdrawal.d2",
+     "label": "Irretratabilidade da opção pelo regime regressivo ou progressivo de tributação e retenção legal na fonte no ato do resgate",
+     "authority_ids": [
+      "lc109_art14",
+      "ctn_art111"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Efetivação da portabilidade integral do direito acumulado para a entidade receptora indicada sem retenção tributária",
+    "Pagamento de diferenças de resgate de reserva de poupança pela aplicação de índices plenos de correção monetária",
+    "Restituição de descontos administrativos ou multas de saída não pactuadas no regulamento"
+   ],
+   "evidence": [
+    "Termo de rescisão do contrato de trabalho (TRCT) comprovando a cessação do vínculo com o patrocinador",
+    "Extrato analítico da reserva individual discriminando cotas pessoais e patronais",
+    "Termo de portabilidade ou recibo de resgate com demonstrativo de retenção de IRRF"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "requerimento_administrativo",
+    "contestacao",
+    "apelacao_civel"
+   ],
+   "related_claims": [
+    "pc_portability_redemption"
+   ],
+   "limitation": "Prescrição quinquenal contada da efetivação do resgate a menor ou da negativa de portabilidade (LC 109/2001, art. 75; Súmula 291 do STJ)."
+  },
+  {
+   "id": "pc_initial_benefit_ceiling",
+   "label": "Revisão de benefício complementar inicial (RMI), teto regulamentar e reajustes anuais",
+   "requirements": [
+    "data_da_elegibilidade",
+    "formula_rmi_regulamentar",
+    "desvinculacao_rgps",
+    "indice_reajuste_plano"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pc_initial_benefit_ceiling.c1",
+     "label": "Cálculo da renda mensal inicial segundo o regulamento vigente na data do preenchimento dos requisitos de elegibilidade, vedada aplicação retroativa de redutor ou fator previdenciário não previsto no plano",
+     "authority_ids": [
+      "lc109_art17",
+      "cf_art202"
+     ]
+    },
+    {
+     "id": "pc_initial_benefit_ceiling.c2",
+     "label": "Autonomia contratual do índice de reajuste anual do plano complementar em face dos índices oficiais do RGPS quando o regulamento estipula indexador próprio",
+     "authority_ids": [
+      "lc109_art17",
+      "lc109_art68"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pc_initial_benefit_ceiling.d1",
+     "label": "Estrita observância do teto do salário-de-participação, do valor hipotético/efetivo do INSS previsto na fórmula regulamentar e do equilíbrio atuarial do plano",
+     "authority_ids": [
+      "lc109_art17",
+      "lc109_art18",
+      "cf_art202"
+     ]
+    },
+    {
+     "id": "pc_initial_benefit_ceiling.d2",
+     "label": "Prescrição quinquenal das diferenças anteriores aos cinco anos da propositura da ação e vedação de interpretação extensiva sem custeio",
+     "authority_ids": [
+      "lc109_art75",
+      "stj_sumula_291"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Revisão da renda mensal inicial (RMI) da suplementação de aposentadoria ou pensão conforme a fórmula regulamentar",
+    "Implantação da nova renda mensal em folha e pagamento das diferenças vencidas nos últimos cinco anos",
+    "Aplicação do índice inflacionário contratual previsto no regulamento nas datas-bases anuais"
+   ],
+   "evidence": [
+    "Carta de concessão e memória de cálculo inicial elaborada pela entidade de previdência",
+    "Exemplar integral do regulamento vigente na data da elegibilidade e histórico de alterações",
+    "Carta de concessão do benefício do RGPS/INSS quando o plano adotar suplementação integrada",
+    "Planilha contábil/atuarial apurando a RMI devida e as diferenças mensais"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "requerimento_administrativo",
+    "contestacao",
+    "impugnacao_laudo"
+   ],
+   "related_claims": [
+    "pc_benefit",
+    "pc_regulation_change"
+   ],
+   "limitation": "Prescrição quinquenal sobre as diferenças mensais vencidas antes do quinquênio que precede o ajuizamento, não atingindo o fundo de direito em prestações sucessivas (LC 109/2001, art. 75; Súmulas 291 e 427 do STJ)."
+  },
+  {
+   "id": "pc_pgbl_vgbl_open_plans",
+   "label": "Previdência aberta (PGBL e VGBL): natureza securitária/previdenciária, partilha, herança e penhora",
+   "requirements": [
+    "modalidade_pgbl_ou_vgbl",
+    "fase_acumulacao_ou_beneficio",
+    "finalidade_investimento_ou_previdencia",
+    "evento_familia_sucessao_execucao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pc_pgbl_vgbl_open_plans.c1",
+     "label": "Na fase de acumulação com livre resgate, saldos de PGBL/VGBL com feição de aplicação financeira podem integrar a meação conjugal na dissolução em vida e sofrer constrição executiva naquilo que exceder a reserva alimentar razoável",
+     "authority_ids": [
+      "lc109_art36",
+      "lc109_art73",
+      "cc_art1658"
+     ]
+    },
+    {
+     "id": "pc_pgbl_vgbl_open_plans.c2",
+     "label": "No óbito do titular, a transmissão direta aos beneficiários indicados em VGBL e PGBL de natureza securitária/previdenciária afasta o inventário ordinário e a incidência de ITCMD (Tema 1236 do STF), ressalvada fraude à legítima",
+     "authority_ids": [
+      "cc_art794",
+      "tema_stf_1236",
+      "lc109_art73"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pc_pgbl_vgbl_open_plans.d1",
+     "label": "Incomunicabilidade dos planos previdenciários fechados e dos planos abertos efetivamente convertidos em renda previdenciária vitalícia e personalíssima (CC, art. 1.659, VII)",
+     "authority_ids": [
+      "cc_art1659",
+      "lc109_art36"
+     ]
+    },
+    {
+     "id": "pc_pgbl_vgbl_open_plans.d2",
+     "label": "Desvirtuamento de aportes milionários de última hora em VGBL/PGBL com intuito de fraudar credores ou lesar a legítima dos herdeiros necessários (CC, arts. 549 e 1.846)",
+     "authority_ids": [
+      "cc_art549",
+      "cc_art1846",
+      "cc_art166"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Liberação direta do saldo de VGBL/PGBL aos beneficiários indicados independentemente de alvará no inventário e sem retenção de ITCMD",
+    "Partilha de 50% dos aportes realizados com patrimônio comum na fase de acumulação aberta durante o casamento/união",
+    "Desbloqueio de saldo previdenciário de caráter alimentar até o limite de proteção da subsistência"
+   ],
+   "evidence": [
+    "Proposta de inscrição, certificado do plano PGBL/VGBL e quadro de beneficiários designados",
+    "Extratos históricos de aportes, resgates parciais e rentabilidade durante a constância da união ou antes do óbito",
+    "Certidão de óbito ou de casamento e declaração de imposto de renda do titular"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente",
+    "contestacao",
+    "impugnacao_cumprimento"
+   ],
+   "related_claims": [
+    "pc_benefit",
+    "fam_property_regime",
+    "fam_will_legitime"
+   ],
+   "limitation": "Cobrança do capital pelo beneficiário indicado contra a seguradora/entidade aberta: conferir prescrição quinquenal previdenciária (LC 109/2001, art. 75) versus prazos do Código Civil; repetição de ITCMD em 5 anos do pagamento indevido (CTN, art. 168)."
+  },
+  {
+   "id": "pc_sponsor_withdrawal",
+   "label": "Retirada de patrocínio, liquidação de plano fechado e reserva individual",
+   "requirements": [
+    "autorizacao_previc",
+    "data_de_calculo",
+    "quitacao_compromissos_patrocinador",
+    "destinacao_superavit_ou_reserva"
+   ],
+   "claimant_theses": [
+    {
+     "id": "pc_sponsor_withdrawal.c1",
+     "label": "A retirada de patrocínio exige prévia autorização do órgão fiscalizador (PREVIC), quitação integral de dívidas e déficits pelo patrocinador retirante e apuração fidedigna da reserva matemática individual de cada participante e assistido",
+     "authority_ids": [
+      "lc109_art25",
+      "lc109_art17",
+      "cf_art202"
+     ]
+    },
+    {
+     "id": "pc_sponsor_withdrawal.c2",
+     "label": "Direito dos participantes e assistidos ao rateio proporcional de eventual fundo previdenciário ou reserva de contingência conforme a regulamentação aplicável",
+     "authority_ids": [
+      "lc109_art25",
+      "lc109_art21"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "pc_sponsor_withdrawal.d1",
+     "label": "Faculdade legal do patrocinador de retirar o patrocínio mediante procedimento aprovado pela PREVIC, extinguindo-se o vínculo previdenciário futuro após a opção ou liquidação da reserva individual",
+     "authority_ids": [
+      "lc109_art25",
+      "cf_art202"
+     ]
+    },
+    {
+     "id": "pc_sponsor_withdrawal.d2",
+     "label": "Estrita vinculação aos critérios técnicos da Resolução CNPC vigente na data do protocolo e da autorização administrativa da retirada",
+     "authority_ids": [
+      "lc109_art25"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Revisão atuarial do valor da reserva matemática individual apurada no processo de retirada de patrocínio",
+    "Suspensão cautelar da liquidação final até o saneamento de passivos não aportados pelo patrocinador",
+    "Pagamento da diferença apurada em perícia atuarial acrescida de correção pelo índice do plano e juros"
+   ],
+   "evidence": [
+    "Processo administrativo completo e portaria de autorização da retirada de patrocínio na PREVIC",
+    "Termo de retirada de patrocínio, avaliação atuarial específica e demonstrativo individual entregue ao participante",
+    "Laudo contábil-atuarial apurando premissas biométricas, taxa de juros e destinação de fundos"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente",
+    "contestacao",
+    "impugnacao_laudo"
+   ],
+   "related_claims": [
+    "pc_portability_redemption",
+    "pc_regulation_change"
+   ],
+   "limitation": "Prescrição quinquenal contada da ciência do pagamento/transferência da reserva individual na conclusão da retirada de patrocínio (LC 109/2001, art. 75; Súmula 291 do STJ)."
+  }
  ]
 }

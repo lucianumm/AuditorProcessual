@@ -4,17 +4,989 @@
  "label": "Direito Ambiental",
  "guide": "domain_guides/ambiental.md",
  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
- "polo_labels": {"claimant_theses": "Teses do autor ou requerente", "defense_theses": "Teses do réu ou requerido"},
+ "polo_labels": {
+  "claimant_theses": "Teses do autor ou requerente",
+  "defense_theses": "Teses do réu ou requerido"
+ },
  "claims": [
-  {"id": "amb_civil_liability", "label": "Responsabilidade civil ambiental", "requirements": ["dano", "nexo", "poluidor", "recuperacao"], "claimant_theses": [{"id": "amb_civil_liability.c1", "label": "Responsabilidade objetiva do poluidor", "authority_ids": ["l6938_art14", "cf_art225"]}, {"id": "amb_civil_liability.c2", "label": "Inversão do ônus da prova em degradação ambiental", "authority_ids": ["stj_sumula_618"]}, {"id": "amb_civil_liability.c3", "label": "Obrigações ambientais propter rem", "authority_ids": ["stj_sumula_623"]}], "defense_theses": [{"id": "amb_civil_liability.d1", "label": "Ausência de nexo ou de dano", "authority_ids": ["l6938_art14"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["acao_civil_publica", "inicial_procedimento_comum"], "related_claims": [], "limitation": "conferir"},
-  {"id": "amb_admin_fine", "label": "Infrações e multas ambientais", "requirements": ["auto_infracao", "processo", "sancao", "prescricao"], "claimant_theses": [{"id": "amb_admin_fine.c1", "label": "Prescrição quinquenal da execução da multa após o processo administrativo", "authority_ids": ["stj_sumula_467"]}], "defense_theses": [{"id": "amb_admin_fine.d1", "label": "Infração e sanções administrativas", "authority_ids": ["l9605_art70", "l9605_art72"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["recurso_administrativo", "acao_anulatoria_debito_fiscal", "embargos_execucao_fiscal"], "related_claims": [], "limitation": "conferir"},
-  {"id": "amb_forest_code", "label": "APP e Reserva Legal", "requirements": ["area", "uso", "regularizacao"], "claimant_theses": [{"id": "amb_forest_code.c1", "label": "Manutenção da vegetação de APP e obrigação de recompor", "authority_ids": ["l12651_art4", "l12651_art7"]}, {"id": "amb_forest_code.c2", "label": "Reserva Legal obrigatória", "authority_ids": ["l12651_art12"]}], "defense_theses": [{"id": "amb_forest_code.d1", "label": "Conceitos e regimes do Código Florestal aplicáveis", "authority_ids": ["l12651_art3"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["acao_civil_publica", "inicial_procedimento_comum"], "related_claims": [], "limitation": "conferir"},
-  {"id": "amb_corporate_crime", "label": "Responsabilidade penal da pessoa jurídica", "requirements": ["decisao_representante", "interesse_beneficio"], "claimant_theses": [{"id": "amb_corporate_crime.c1", "label": "Responsabilização penal da pessoa jurídica nos termos legais", "authority_ids": ["l9605_art3"]}], "defense_theses": [{"id": "amb_corporate_crime.d1", "label": "Infração não cometida por decisão do representante ou no interesse da entidade", "authority_ids": ["l9605_art3"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["resposta_acusacao", "habeas_corpus"], "related_claims": [], "limitation": "conferir"},
-  {"id": "amb_licensing", "label": "Licenciamento ambiental e competência", "requirements": ["atividade", "ente_licenciador", "estudo_ambiental", "condicionantes"], "claimant_theses": [{"id": "amb_licensing.c1", "label": "Licenciamento por um único ente e atuação supletiva", "authority_ids": ["lc140_art13", "lc140_art7", "lc140_art9"]}, {"id": "amb_licensing.c2", "label": "Atividade potencialmente poluidora depende de licença", "authority_ids": ["l6938_art10", "l6938_art9"]}], "defense_theses": [{"id": "amb_licensing.d1", "label": "Prevalece o auto de infração do órgão licenciador", "authority_ids": ["lc140_art17"]}, {"id": "amb_licensing.d2", "label": "Operação sem licença é infração e crime", "authority_ids": ["l9605_art60"]}], "temporal_marker_ids": [], "typical_requests": ["Anulação de auto lavrado por ente incompetente", "Expedição ou renovação da licença", "Suspensão de atividade"], "evidence": ["Licenças e condicionantes", "Estudos ambientais", "Pareceres técnicos"], "piece_ids": ["mandado_seguranca", "recurso_administrativo", "inicial_procedimento_comum", "acao_civil_publica"], "related_claims": ["amb_admin_fine"], "limitation": "Conferir"},
-  {"id": "amb_fine_defense", "label": "Auto de infração ambiental: defesa e prescrição", "requirements": ["autuacao", "autoria", "dosimetria", "paralisacao_do_processo"], "claimant_theses": [{"id": "amb_fine_defense.c1", "label": "Prescrição da ação punitiva em cinco anos e intercorrente em três", "authority_ids": ["d6514_art21", "stj_sumula_467"]}, {"id": "amb_fine_defense.c2", "label": "Responsabilidade administrativa ambiental é subjetiva — conferir a jurisprudência do STJ", "authority_ids": ["l9605_art70", "l9605_art72"]}, {"id": "amb_fine_defense.c3", "label": "Gradação conforme gravidade, antecedentes e situação econômica", "authority_ids": ["l9605_art6", "l9605_art75"]}], "defense_theses": [{"id": "amb_fine_defense.d1", "label": "Presunção de legitimidade do auto", "authority_ids": ["l9605_art70"]}, {"id": "amb_fine_defense.d2", "label": "Obrigação de reparar independe da prescrição da multa", "authority_ids": ["l6938_art14"]}], "temporal_marker_ids": [], "typical_requests": ["Anulação ou redução da multa", "Conversão em serviços ambientais", "Levantamento de embargo"], "evidence": ["Auto, relatório de fiscalização e imagens", "Cronologia do processo", "Prova da autoria e da área"], "piece_ids": ["defesa_auto_infracao_ambiental", "recurso_administrativo", "acao_anulatoria_debito_fiscal", "embargos_execucao_fiscal", "mandado_seguranca"], "related_claims": ["amb_admin_fine"], "limitation": "Defesa em vinte dias da ciência (Decreto 6.514/2008, art. 113)"},
-  {"id": "amb_consolidated_area", "label": "Área rural consolidada, CAR e regularização", "requirements": ["data_da_supressao", "tamanho_do_imovel", "inscricao_no_car", "adesao_ao_pra"], "claimant_theses": [{"id": "amb_consolidated_area.c1", "label": "Continuidade de atividades em área consolidada com recomposição escalonada", "authority_ids": ["l12651_art61a", "l12651_art3"]}, {"id": "amb_consolidated_area.c2", "label": "Adesão ao programa de regularização suspende sanções por infrações anteriores ao marco", "authority_ids": ["l12651_art59", "l12651_art29"]}, {"id": "amb_consolidated_area.c3", "label": "Dispensa de recomposição para supressão conforme a lei da época", "authority_ids": ["l12651_art68"]}], "defense_theses": [{"id": "amb_consolidated_area.d1", "label": "Obrigação propter rem de recompor", "authority_ids": ["stj_sumula_623", "l12651_art7"]}, {"id": "amb_consolidated_area.d2", "label": "Inexistência de direito adquirido a poluir ou de fato consumado", "authority_ids": ["stj_sumula_613"]}], "temporal_marker_ids": ["codigo_florestal_marco_2008"], "typical_requests": ["Reconhecimento da área consolidada", "Suspensão de multa", "Homologação de plano de recomposição"], "evidence": ["Imagens de satélite datadas", "Recibo do CAR e termo de compromisso", "Laudo técnico"], "piece_ids": ["inicial_procedimento_comum", "recurso_administrativo", "contestacao"], "related_claims": ["amb_forest_code"], "limitation": "Conferir"},
-  {"id": "amb_class_action", "label": "Ação civil pública ambiental", "requirements": ["dano", "responsavel", "nexo", "medida_reparatoria"], "claimant_theses": [{"id": "amb_class_action.c1", "label": "Cumulação de obrigação de fazer, não fazer e indenizar", "authority_ids": ["stj_sumula_629", "l7347_art3"]}, {"id": "amb_class_action.c2", "label": "Inversão do ônus da prova", "authority_ids": ["stj_sumula_618"]}, {"id": "amb_class_action.c3", "label": "Responsabilidade solidária do Estado por omissão, de execução subsidiária", "authority_ids": ["stj_sumula_652"]}], "defense_theses": [{"id": "amb_class_action.d1", "label": "Ausência de nexo entre a atividade e o dano", "authority_ids": ["l6938_art14"]}, {"id": "amb_class_action.d2", "label": "Recuperação integral já realizada afasta a indenização cumulada", "authority_ids": ["l7347_art3"]}], "temporal_marker_ids": [], "typical_requests": ["Recuperação da área", "Indenização por dano interino e residual", "Dano moral coletivo"], "evidence": ["Laudos e autos de infração", "Imagens temporais", "Inquérito civil"], "piece_ids": ["acao_civil_publica", "contestacao", "agravo_instrumento", "apelacao_civel"], "related_claims": ["amb_civil_liability"], "limitation": "Reparação civil ambiental imprescritível — conferir o Tema 999 do STF"},
-  {"id": "amb_protected_areas", "label": "Unidades de conservação e compensação", "requirements": ["categoria_da_unidade", "ato_de_criacao", "impacto", "valor"], "claimant_theses": [{"id": "amb_protected_areas.c1", "label": "Criação de unidade exige estudos e consulta pública", "authority_ids": ["l9985_art22"]}, {"id": "amb_protected_areas.c2", "label": "Compensação proporcional ao impacto", "authority_ids": ["l9985_art36"]}], "defense_theses": [{"id": "amb_protected_areas.d1", "label": "Dever de apoiar unidade de proteção integral em empreendimento de significativo impacto", "authority_ids": ["l9985_art36"]}], "temporal_marker_ids": [], "typical_requests": ["Revisão do valor da compensação", "Indenização por limitação"], "evidence": ["Estudo de impacto", "Ato de criação e plano de manejo"], "piece_ids": ["inicial_procedimento_comum", "mandado_seguranca"], "related_claims": ["amb_licensing"], "limitation": "Conferir"},
-  {"id": "amb_waste_pollution", "label": "Poluição e resíduos sólidos", "requirements": ["emissao_ou_descarte", "padroes", "licenca", "dano"], "claimant_theses": [{"id": "amb_waste_pollution.c1", "label": "Poluidor responde independentemente de culpa", "authority_ids": ["l6938_art14", "l6938_art3"]}, {"id": "amb_waste_pollution.c2", "label": "Responsabilidade compartilhada e logística reversa", "authority_ids": ["l12305_art30", "l12305_art33"]}], "defense_theses": [{"id": "amb_waste_pollution.d1", "label": "Atendimento aos padrões e ausência de nexo", "authority_ids": ["l6938_art3"]}, {"id": "amb_waste_pollution.d2", "label": "Crime de poluição exige resultado ou risco de dano à saúde", "authority_ids": ["l9605_art54"]}], "temporal_marker_ids": [], "typical_requests": ["Cessação da atividade", "Remediação", "Indenização"], "evidence": ["Laudos de análise", "Licença e automonitoramento", "Manifestos de resíduos"], "piece_ids": ["acao_civil_publica", "inicial_procedimento_comum", "resposta_acusacao"], "related_claims": ["amb_civil_liability", "amb_corporate_crime"], "limitation": "Conferir"}
+  {
+   "id": "amb_civil_liability",
+   "label": "Responsabilidade civil ambiental",
+   "requirements": [
+    "dano",
+    "nexo",
+    "poluidor",
+    "recuperacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "amb_civil_liability.c1",
+     "label": "Responsabilidade objetiva do poluidor",
+     "authority_ids": [
+      "l6938_art14",
+      "cf_art225"
+     ]
+    },
+    {
+     "id": "amb_civil_liability.c2",
+     "label": "Inversão do ônus da prova em degradação ambiental",
+     "authority_ids": [
+      "stj_sumula_618"
+     ]
+    },
+    {
+     "id": "amb_civil_liability.c3",
+     "label": "Obrigações ambientais propter rem",
+     "authority_ids": [
+      "stj_sumula_623"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "amb_civil_liability.d1",
+     "label": "Ausência de nexo ou de dano",
+     "authority_ids": [
+      "l6938_art14"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "codigo_florestal_marco_2008"
+   ],
+   "typical_requests": [
+    "Condenação solidária à reparação integral in natura da área degradada mediante PRAD aprovado pelo órgão ambiental",
+    "Indenização pecuniária cumulativa pelos danos ambientais interinos/transitórios, residuais irreversíveis e dano moral coletivo (Súmula 629 do STJ)",
+    "Inversão do ônus da prova em matéria de degradação ambiental (Súmula 618 do STJ)"
+   ],
+   "evidence": [
+    "Laudo pericial multidisciplinar ambiental, químico, florestal ou hidrológico",
+    "Séries históricas de imagens de satélite (PRODES/MapBiomas/INPE) demonstrando a evolução espaço-temporal da degradação",
+    "Autos de infração, termos de embargo e relatórios técnicos de vistoria do IBAMA ou órgão estadual"
+   ],
+   "piece_ids": [
+    "acao_civil_publica",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [],
+   "limitation": "É imprescritível a pretensão de reparação civil de dano ambiental coletivo/difuso (Tema 999 do STF); para danos reflexos estritamente individuais/privados (microlesão patrimonial), aplica-se a prescrição trienal ou quinquenal conforme o regime (CC, art. 206, § 3º, V; CDC, art. 27)."
+  },
+  {
+   "id": "amb_admin_fine",
+   "label": "Infrações e multas ambientais",
+   "requirements": [
+    "auto_infracao",
+    "processo",
+    "sancao",
+    "prescricao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "amb_admin_fine.c1",
+     "label": "Prescrição quinquenal da execução da multa após o processo administrativo",
+     "authority_ids": [
+      "stj_sumula_467"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "amb_admin_fine.d1",
+     "label": "Infração e sanções administrativas",
+     "authority_ids": [
+      "l9605_art70",
+      "l9605_art72"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13655_lindb"
+   ],
+   "typical_requests": [
+    "Declaração de nulidade do auto de infração ambiental por vício de competência, ausência de elemento subjetivo ou prescrição",
+    "Redução do valor da multa ambiental aos parâmetros legais de proporcionalidade ou conversão em serviços ambientais",
+    "Suspensão da exigibilidade do crédito não tributário e exclusão do CADIN/dívida ativa"
+   ],
+   "evidence": [
+    "Processo administrativo ambiental integral com certidões de movimentação para aferição de prescrição intercorrente",
+    "Auto de infração, relatório de fiscalização, coordenadas geográficas do polígono e termo de embargo",
+    "Prova técnica de ausência de autoria/nexo ou de adesão tempestiva ao Programa de Regularização Ambiental (PRA)"
+   ],
+   "piece_ids": [
+    "recurso_administrativo",
+    "acao_anulatoria_debito_fiscal",
+    "embargos_execucao_fiscal"
+   ],
+   "related_claims": [],
+   "limitation": "Prescrição da pretensão punitiva ambiental federal em 5 anos (ou pelo prazo da lei penal quando a infração também constituir crime — Lei 9.873/1999, art. 1º, § 2º; Decreto 6.514/2008, art. 21) e prescrição intercorrente em 3 anos de paralisação injustificada (Lei 9.873/1999, art. 1º, § 1º)."
+  },
+  {
+   "id": "amb_forest_code",
+   "label": "APP e Reserva Legal",
+   "requirements": [
+    "area",
+    "uso",
+    "regularizacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "amb_forest_code.c1",
+     "label": "Manutenção da vegetação de APP e obrigação de recompor",
+     "authority_ids": [
+      "l12651_art4",
+      "l12651_art7"
+     ]
+    },
+    {
+     "id": "amb_forest_code.c2",
+     "label": "Reserva Legal obrigatória",
+     "authority_ids": [
+      "l12651_art12"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "amb_forest_code.d1",
+     "label": "Conceitos e regimes do Código Florestal aplicáveis",
+     "authority_ids": [
+      "l12651_art3"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "codigo_florestal_marco_2008"
+   ],
+   "typical_requests": [
+    "Aprovação e execução de Projeto de Recuperação de Área Degradada ou Alterada (PRADA) em APP e Reserva Legal",
+    "Regularização de Reserva Legal mediante recomposição, regeneração natural ou compensação no mesmo bioma (Lei 12.651/2012, art. 66)",
+    "Reconhecimento de hipótese legal de utilidade pública, interesse social ou baixo impacto para intervenção em APP"
+   ],
+   "evidence": [
+    "Cadastro Ambiental Rural (CAR) ativo, planta georreferenciada de uso e cobertura do solo e hidrografia",
+    "Imagens orbitais anteriores e posteriores a 22/07/2008 para enquadramento no regime do Código Florestal",
+    "Matrícula imobiliária e termo de compromisso firmado perante o órgão ambiental estadual"
+   ],
+   "piece_ids": [
+    "acao_civil_publica",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [],
+   "limitation": "A obrigação de recompor APP e Reserva Legal possui natureza propter rem e é imprescritível enquanto subsistir o passivo florestal (Súmula 623 do STJ; Tema 999 do STF)."
+  },
+  {
+   "id": "amb_corporate_crime",
+   "label": "Responsabilidade penal da pessoa jurídica",
+   "requirements": [
+    "decisao_representante",
+    "interesse_beneficio"
+   ],
+   "claimant_theses": [
+    {
+     "id": "amb_corporate_crime.c1",
+     "label": "Responsabilização penal da pessoa jurídica nos termos legais",
+     "authority_ids": [
+      "l9605_art3"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "amb_corporate_crime.d1",
+     "label": "Infração não cometida por decisão do representante ou no interesse da entidade",
+     "authority_ids": [
+      "l9605_art3"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime"
+   ],
+   "typical_requests": [
+    "Rejeição da denúncia ou trancamento da ação penal ambiental por ausência de deliberação de representante legal/contratual no interesse ou benefício da entidade (Lei 9.605/1998, art. 3º)",
+    "Absolvição por atipicidade material, ausência de prova pericial da poluição em níveis danosos (Lei 9.605/1998, art. 54) ou cumprimento estrito de licença válida",
+    "Celebração de Acordo de Não Persecução Penal ou transação penal mediante comprovação de reparação do dano ambiental"
+   ],
+   "evidence": [
+    "Contrato/estatuto social, organograma de compliance ambiental e atas comprovando a esfera de decisão societária",
+    "Licenças ambientais vigentes, relatórios de automonitoramento e laudo pericial oficial de corpo de delito ambiental",
+    "Termo de Ajustamento de Conduta (TAC) ou PRAD comprovando a integral reparação ou composição do dano"
+   ],
+   "piece_ids": [
+    "resposta_acusacao",
+    "habeas_corpus"
+   ],
+   "related_claims": [],
+   "limitation": "Prescrição penal regulada pelos arts. 109 e 114 do Código Penal (aplicáveis às penas restritivas/multa da pessoa jurídica conforme jurisprudência do STF e STJ), admitida a imputação isolada da pessoa jurídica sem dupla imputação obrigatória."
+  },
+  {
+   "id": "amb_licensing",
+   "label": "Licenciamento ambiental e competência",
+   "requirements": [
+    "atividade",
+    "ente_licenciador",
+    "estudo_ambiental",
+    "condicionantes"
+   ],
+   "claimant_theses": [
+    {
+     "id": "amb_licensing.c1",
+     "label": "Licenciamento por um único ente e atuação supletiva",
+     "authority_ids": [
+      "lc140_art13",
+      "lc140_art7",
+      "lc140_art9"
+     ]
+    },
+    {
+     "id": "amb_licensing.c2",
+     "label": "Atividade potencialmente poluidora depende de licença",
+     "authority_ids": [
+      "l6938_art10",
+      "l6938_art9"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "amb_licensing.d1",
+     "label": "Prevalece o auto de infração do órgão licenciador",
+     "authority_ids": [
+      "lc140_art17"
+     ]
+    },
+    {
+     "id": "amb_licensing.d2",
+     "label": "Operação sem licença é infração e crime",
+     "authority_ids": [
+      "l9605_art60"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13655_lindb"
+   ],
+   "typical_requests": [
+    "Anulação de auto lavrado por ente incompetente",
+    "Expedição ou renovação da licença",
+    "Suspensão de atividade"
+   ],
+   "evidence": [
+    "Licenças e condicionantes",
+    "Estudos ambientais",
+    "Pareceres técnicos"
+   ],
+   "piece_ids": [
+    "mandado_seguranca",
+    "recurso_administrativo",
+    "inicial_procedimento_comum",
+    "acao_civil_publica"
+   ],
+   "related_claims": [
+    "amb_admin_fine"
+   ],
+   "limitation": "O decurso dos prazos de análise da licença não implica emissão tácita, mas instaura competência supletiva (LC 140/2011, art. 14, § 3º); a renovação requerida com antecedência mínima de 120 dias prorroga automaticamente a licença até decisão definitiva (LC 140/2011, art. 14, § 4º)."
+  },
+  {
+   "id": "amb_fine_defense",
+   "label": "Auto de infração ambiental: defesa e prescrição",
+   "requirements": [
+    "autuacao",
+    "autoria",
+    "dosimetria",
+    "paralisacao_do_processo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "amb_fine_defense.c1",
+     "label": "Prescrição da ação punitiva em cinco anos e intercorrente em três",
+     "authority_ids": [
+      "d6514_art21",
+      "stj_sumula_467"
+     ]
+    },
+    {
+     "id": "amb_fine_defense.c2",
+     "label": "Responsabilidade administrativa ambiental é subjetiva — conferir a jurisprudência do STJ",
+     "authority_ids": [
+      "l9605_art70",
+      "l9605_art72"
+     ]
+    },
+    {
+     "id": "amb_fine_defense.c3",
+     "label": "Gradação conforme gravidade, antecedentes e situação econômica",
+     "authority_ids": [
+      "l9605_art6",
+      "l9605_art75"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "amb_fine_defense.d1",
+     "label": "Presunção de legitimidade do auto",
+     "authority_ids": [
+      "l9605_art70"
+     ]
+    },
+    {
+     "id": "amb_fine_defense.d2",
+     "label": "Obrigação de reparar independe da prescrição da multa",
+     "authority_ids": [
+      "l6938_art14"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "codigo_florestal_marco_2008"
+   ],
+   "typical_requests": [
+    "Anulação ou redução da multa",
+    "Conversão em serviços ambientais",
+    "Levantamento de embargo"
+   ],
+   "evidence": [
+    "Auto, relatório de fiscalização e imagens",
+    "Cronologia do processo",
+    "Prova da autoria e da área"
+   ],
+   "piece_ids": [
+    "defesa_auto_infracao_ambiental",
+    "recurso_administrativo",
+    "acao_anulatoria_debito_fiscal",
+    "embargos_execucao_fiscal",
+    "mandado_seguranca"
+   ],
+   "related_claims": [
+    "amb_admin_fine"
+   ],
+   "limitation": "Defesa administrativa e recurso em 20 dias na esfera federal (Decreto 6.514/2008, arts. 113 e 127); prescrição punitiva em 5 anos, intercorrente em 3 anos e executória da multa inscrita em 5 anos (Lei 9.873/1999, arts. 1º e 1º-A; Súmula 467 do STJ)."
+  },
+  {
+   "id": "amb_consolidated_area",
+   "label": "Área rural consolidada, CAR e regularização",
+   "requirements": [
+    "data_da_supressao",
+    "tamanho_do_imovel",
+    "inscricao_no_car",
+    "adesao_ao_pra"
+   ],
+   "claimant_theses": [
+    {
+     "id": "amb_consolidated_area.c1",
+     "label": "Continuidade de atividades em área consolidada com recomposição escalonada",
+     "authority_ids": [
+      "l12651_art61a",
+      "l12651_art3"
+     ]
+    },
+    {
+     "id": "amb_consolidated_area.c2",
+     "label": "Adesão ao programa de regularização suspende sanções por infrações anteriores ao marco",
+     "authority_ids": [
+      "l12651_art59",
+      "l12651_art29"
+     ]
+    },
+    {
+     "id": "amb_consolidated_area.c3",
+     "label": "Dispensa de recomposição para supressão conforme a lei da época",
+     "authority_ids": [
+      "l12651_art68"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "amb_consolidated_area.d1",
+     "label": "Obrigação propter rem de recompor",
+     "authority_ids": [
+      "stj_sumula_623",
+      "l12651_art7"
+     ]
+    },
+    {
+     "id": "amb_consolidated_area.d2",
+     "label": "Inexistência de direito adquirido a poluir ou de fato consumado",
+     "authority_ids": [
+      "stj_sumula_613"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "codigo_florestal_marco_2008"
+   ],
+   "typical_requests": [
+    "Reconhecimento da área consolidada",
+    "Suspensão de multa",
+    "Homologação de plano de recomposição"
+   ],
+   "evidence": [
+    "Imagens de satélite datadas",
+    "Recibo do CAR e termo de compromisso",
+    "Laudo técnico"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "recurso_administrativo",
+    "contestacao"
+   ],
+   "related_claims": [
+    "amb_forest_code"
+   ],
+   "limitation": "Regime especial de áreas consolidadas restrito às ocupações antrópicas preexistentes a 22 de julho de 2008 (Lei 12.651/2012, arts. 3º, IV, e 61-A); suspensão e conversão das multas vinculadas ao cumprimento tempestivo do Termo de Compromisso no PRA (art. 59, §§ 4º e 5º)."
+  },
+  {
+   "id": "amb_class_action",
+   "label": "Ação civil pública ambiental",
+   "requirements": [
+    "dano",
+    "responsavel",
+    "nexo",
+    "medida_reparatoria"
+   ],
+   "claimant_theses": [
+    {
+     "id": "amb_class_action.c1",
+     "label": "Cumulação de obrigação de fazer, não fazer e indenizar",
+     "authority_ids": [
+      "stj_sumula_629",
+      "l7347_art3"
+     ]
+    },
+    {
+     "id": "amb_class_action.c2",
+     "label": "Inversão do ônus da prova",
+     "authority_ids": [
+      "stj_sumula_618"
+     ]
+    },
+    {
+     "id": "amb_class_action.c3",
+     "label": "Responsabilidade solidária do Estado por omissão, de execução subsidiária",
+     "authority_ids": [
+      "stj_sumula_652"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "amb_class_action.d1",
+     "label": "Ausência de nexo entre a atividade e o dano",
+     "authority_ids": [
+      "l6938_art14"
+     ]
+    },
+    {
+     "id": "amb_class_action.d2",
+     "label": "Recuperação integral já realizada afasta a indenização cumulada",
+     "authority_ids": [
+      "l7347_art3"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Recuperação da área",
+    "Indenização por dano interino e residual",
+    "Dano moral coletivo"
+   ],
+   "evidence": [
+    "Laudos e autos de infração",
+    "Imagens temporais",
+    "Inquérito civil"
+   ],
+   "piece_ids": [
+    "acao_civil_publica",
+    "contestacao",
+    "agravo_instrumento",
+    "apelacao_civel"
+   ],
+   "related_claims": [
+    "amb_civil_liability"
+   ],
+   "limitation": "Imprescritível a pretensão de reparação civil de dano ao meio ambiente veiculada em Ação Civil Pública, inclusive quanto à execução do título coletivo ambiental (Tema 999 do STF)."
+  },
+  {
+   "id": "amb_protected_areas",
+   "label": "Unidades de conservação e compensação",
+   "requirements": [
+    "categoria_da_unidade",
+    "ato_de_criacao",
+    "impacto",
+    "valor"
+   ],
+   "claimant_theses": [
+    {
+     "id": "amb_protected_areas.c1",
+     "label": "Criação de unidade exige estudos e consulta pública",
+     "authority_ids": [
+      "l9985_art22"
+     ]
+    },
+    {
+     "id": "amb_protected_areas.c2",
+     "label": "Compensação proporcional ao impacto",
+     "authority_ids": [
+      "l9985_art36"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "amb_protected_areas.d1",
+     "label": "Dever de apoiar unidade de proteção integral em empreendimento de significativo impacto",
+     "authority_ids": [
+      "l9985_art36"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Revisão do valor da compensação",
+    "Indenização por limitação",
+    "Desapropriação indireta ou regularização fundiária indenizatória quando esvaziado economicamente o domínio privado em unidade de proteção integral"
+   ],
+   "evidence": [
+    "Estudo de impacto",
+    "Ato de criação e plano de manejo",
+    "Memória de cálculo do Grau de Impacto e do Valor de Referência na compensação ambiental do art. 36 da Lei 9.985/2000"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "mandado_seguranca"
+   ],
+   "related_claims": [
+    "amb_licensing"
+   ],
+   "limitation": "Decadência de 5 anos para desapropriação direta contada do decreto de criação da UC quando aplicável o DL 3.365/1941, art. 10; ação de indenização por desapropriação indireta/apossamento administrativo em unidade de conservação prescreve conforme o prazo da usucapião extraordinária ou quinquenal (conferir jurisprudência STJ — Súmula 119/CC, art. 1.238)."
+  },
+  {
+   "id": "amb_waste_pollution",
+   "label": "Poluição e resíduos sólidos",
+   "requirements": [
+    "emissao_ou_descarte",
+    "padroes",
+    "licenca",
+    "dano"
+   ],
+   "claimant_theses": [
+    {
+     "id": "amb_waste_pollution.c1",
+     "label": "Poluidor responde independentemente de culpa",
+     "authority_ids": [
+      "l6938_art14",
+      "l6938_art3"
+     ]
+    },
+    {
+     "id": "amb_waste_pollution.c2",
+     "label": "Responsabilidade compartilhada e logística reversa",
+     "authority_ids": [
+      "l12305_art30",
+      "l12305_art33"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "amb_waste_pollution.d1",
+     "label": "Atendimento aos padrões e ausência de nexo",
+     "authority_ids": [
+      "l6938_art3"
+     ]
+    },
+    {
+     "id": "amb_waste_pollution.d2",
+     "label": "Crime de poluição exige resultado ou risco de dano à saúde",
+     "authority_ids": [
+      "l9605_art54"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Cessação da atividade",
+    "Remediação",
+    "Indenização"
+   ],
+   "evidence": [
+    "Laudos de análise",
+    "Licença e automonitoramento",
+    "Manifestos de resíduos"
+   ],
+   "piece_ids": [
+    "acao_civil_publica",
+    "inicial_procedimento_comum",
+    "resposta_acusacao"
+   ],
+   "related_claims": [
+    "amb_civil_liability",
+    "amb_corporate_crime"
+   ],
+   "limitation": "Imprescritível a reparação ambiental do passivo de contaminação do solo e águas subterrâneas (Tema 999 do STF); pretensões individuais de vizinhos/atingidos por danos reflexos seguem o prazo quinquenal (CDC, art. 27, por equiparação — art. 17) ou trienal (CC, art. 206, § 3º, V)."
+  },
+  {
+   "id": "amb_forfeiture_seizure_vehicles",
+   "label": "Apreensão, perdimento e fiel depositário de veículos e maquinários em infração ambiental (Tema 1043 STJ)",
+   "requirements": [
+    "nexo_instrumental_infracao",
+    "desnecessidade_uso_exclusivo",
+    "excepcionalidade_depositario_autuado",
+    "contraditorio_perdimento"
+   ],
+   "claimant_theses": [
+    {
+     "id": "amb_forfeiture_seizure_vehicles.c1",
+     "label": "Restituição do veículo ou maquinário apreendido quando comprovada ausência de relação instrumental direta com a infração ambiental, boa-fé de terceiro proprietário locador/transportador regular ou desproporcionalidade manifesta sem risco de reiteração",
+     "authority_ids": [
+      "l9605_art25",
+      "d6514_art3",
+      "cf_art5"
+     ]
+    },
+    {
+     "id": "amb_forfeiture_seizure_vehicles.c2",
+     "label": "Ilegalidade da destruição sumária de equipamentos fora das hipóteses estritas de impossibilidade de remoção ou risco iminente de novo dano ambiental grave (Decreto 6.514/2008, art. 111)",
+     "authority_ids": [
+      "l9605_art25",
+      "l9784_art2"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "amb_forfeiture_seizure_vehicles.d1",
+     "label": "A apreensão do instrumento utilizado na infração ambiental independe de seu uso específico, exclusivo ou habitual para a empreitada ilícita (Tema Repetitivo 1043 do STJ)",
+     "authority_ids": [
+      "tema_stj_1043",
+      "l9605_art25"
+     ]
+    },
+    {
+     "id": "amb_forfeiture_seizure_vehicles.d2",
+     "label": "Excepcionalidade da nomeação do próprio infrator/proprietário como fiel depositário do bem apreendido pela fiscalização ambiental",
+     "authority_ids": [
+      "tema_stj_1043",
+      "l9605_art25"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Tutela provisória para restituição ou nomeação excepcional de fiel depositário de caminhão/trator lícito mediante compromisso de não ingresso em área embargada",
+    "Anulação de pena administrativa de perdimento por ausência de nexo instrumental ou violação ao contraditório",
+    "Indenização por destruição administrativa ilegal de bem fora das hipóteses estritas do regulamento"
+   ],
+   "evidence": [
+    "Termo de apreensão e depósito, auto de infração ambiental e relatório fotográfico da fiscalização",
+    "CRLV/nota fiscal do maquinário, contrato de frete/locação de boa-fé, manifesto de carga (DOF/GTA) e rastreamento por GPS",
+    "Defesa administrativa protocolada no IBAMA/ICMBio/órgão estadual e decisão sobre o perdimento"
+   ],
+   "piece_ids": [
+    "defesa_auto_infracao_ambiental",
+    "mandado_seguranca",
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [
+    "amb_fine_defense",
+    "amb_admin_fine"
+   ],
+   "limitation": "Defesa administrativa em 20 dias do termo de apreensão/autuação (Decreto 6.514/2008, art. 113); mandado de segurança em 120 dias do ato constritivo (Lei 12.016/2009, art. 23) e ação anulatória/indenizatória em 5 anos (Decreto 20.910/1932, art. 1º)."
+  },
+  {
+   "id": "amb_propter_rem_obligation",
+   "label": "Obrigação ambiental propter rem do adquirente vs. intransmissibilidade da multa administrativa (Súmula 623 e Tema 1204 STJ)",
+   "requirements": [
+    "aquisicao_imovel_degradado",
+    "solidariedade_reparacao_civil",
+    "pessoalidade_multa_administrativa",
+    "direito_regresso"
+   ],
+   "claimant_theses": [
+    {
+     "id": "amb_propter_rem_obligation.c1",
+     "label": "As obrigações ambientais possuem natureza propter rem, sendo admissível cobrá-las do proprietário ou possuidor atual e/ou dos anteriores, à escolha do credor coletivo (Súmula 623 e Tema Repetitivo 1204 do STJ; Lei 12.651/2012, art. 2º, § 2º)",
+     "authority_ids": [
+      "stj_sumula_623",
+      "tema_stj_1204",
+      "l12651_art3",
+      "l6938_art14"
+     ]
+    },
+    {
+     "id": "amb_propter_rem_obligation.c2",
+     "label": "Direito de regresso cível do adquirente de boa-fé contra o alienante que omitiu passivo ambiental oculto ou embargo administrativo",
+     "authority_ids": [
+      "cc_art441",
+      "cc_art422"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "amb_propter_rem_obligation.d1",
+     "label": "Diferentemente da reparação civil do dano ambiental (propter rem), a multa administrativa ambiental tem caráter sancionatório e submete-se à responsabilidade subjetiva e pessoalidade da pena, não podendo ser imposta a terceiro adquirente que não concorreu para a infração",
+     "authority_ids": [
+      "cf_art5",
+      "l9605_art70",
+      "l9605_art72"
+     ]
+    },
+    {
+     "id": "amb_propter_rem_obligation.d2",
+     "label": "Ilegitimidade passiva do antigo proprietário quanto a degradações novas praticadas exclusivamente após a alienação registrada e perda total do vínculo possessório com o imóvel",
+     "authority_ids": [
+      "tema_stj_1204",
+      "l6938_art14"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "codigo_florestal_marco_2008"
+   ],
+   "typical_requests": [
+    "Condenação solidária do atual proprietário e do degradador originário à recomposição integral do passivo florestal",
+    "Anulação de auto de infração/multa administrativa lavrada contra mero adquirente posterior que não praticou o desmatamento",
+    "Ressarcimento regressivo ou abatimento do preço em face do vendedor que ocultou passivo ambiental"
+   ],
+   "evidence": [
+    "Cadeia dominial da matrícula, escritura de compra e venda e data da imissão na posse",
+    "Imagens históricas de satélite com carimbo temporal preciso demonstrando a data exata da supressão vegetal",
+    "Certidões ambientais apresentadas no negócio e autos de infração lavrados pelo órgão fiscalizador"
+   ],
+   "piece_ids": [
+    "acao_civil_publica",
+    "contestacao",
+    "acao_anulatoria_debito_fiscal",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "amb_civil_liability",
+    "amb_forest_code",
+    "amb_fine_defense"
+   ],
+   "limitation": "Imprescritível a obrigação civil propter rem de recomposição ambiental (Tema 999 do STF); anulação de multa administrativa em 5 anos (Decreto 20.910/1932, art. 1º) e regresso contratual conforme prazos do Código Civil."
+  },
+  {
+   "id": "amb_climate_litigation_esg",
+   "label": "Litigância climática, vedação de contingenciamento de fundos ambientais e deveres ESG (ADPF 708 STF)",
+   "requirements": [
+    "meta_climatica_ou_fundo_publico",
+    "omissao_estatal_ou_greenwashing",
+    "inventario_gee_impacto_climatico",
+    "principio_proibicao_retrocesso"
+   ],
+   "claimant_theses": [
+    {
+     "id": "amb_climate_litigation_esg.c1",
+     "label": "Os tratados internacionais climáticos incorporados detêm estatura supralegal/direitos humanos, sendo inconstitucionais a paralisação administrativa e o contingenciamento dos recursos vinculados ao Fundo Clima (CF, art. 225; ADPF 708 do STF)",
+     "authority_ids": [
+      "cf_art225",
+      "adpf_708",
+      "tema_stf_698"
+     ]
+    },
+    {
+     "id": "amb_climate_litigation_esg.c2",
+     "label": "Exigibilidade da variável climática no licenciamento de grandes emissores e responsabilidade civil/consumerista por propaganda ambiental enganosa (greenwashing)",
+     "authority_ids": [
+      "cf_art225",
+      "l6938_art10",
+      "cdc_art37"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "amb_climate_litigation_esg.d1",
+     "label": "Separação de poderes na escolha técnica dos instrumentos de política pública climática quando comprovada execução orçamentária regular e observados os parâmetros do órgão licenciador competente",
+     "authority_ids": [
+      "tema_stf_698",
+      "lc140_art7",
+      "lindb_art22"
+     ]
+    },
+    {
+     "id": "amb_climate_litigation_esg.d2",
+     "label": "Veracidade auditada por terceira parte das declarações de sustentabilidade, inventários de emissões e créditos de carbono utilizados em compensação voluntária",
+     "authority_ids": [
+      "cdc_art37",
+      "cc_art422"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13655_lindb"
+   ],
+   "typical_requests": [
+    "Ordem estrutural para execução integral de dotação de fundo ambiental/climático e vedação de contingenciamento",
+    "Complementação de EIA/RIMA com inventário e medidas mitigadoras de emissões de gases de efeito estufa",
+    "Cessação de campanha publicitária caracterizada como greenwashing e indenização por dano moral coletivo"
+   ],
+   "evidence": [
+    "Relatórios de execução orçamentária (SIAFI/SIGA), planos de ação climática e séries oficiais do SEEG/INPE",
+    "Estudo de Impacto Ambiental (EIA/RIMA), inventário de emissões (Escopos 1, 2 e 3) e auditorias independentes",
+    "Peças publicitárias, relatórios de sustentabilidade ESG e certificações dos créditos de carbono alegados"
+   ],
+   "piece_ids": [
+    "acao_civil_publica",
+    "acao_popular",
+    "contestacao",
+    "recurso_extraordinario"
+   ],
+   "related_claims": [
+    "amb_class_action",
+    "amb_licensing",
+    "const_structural_litigation_ecp"
+   ],
+   "limitation": "Tutela coletiva de proteção climática e reparação ambiental difusa é imprescritível (CF, art. 225; Tema 999 do STF); ação popular prescreve em 5 anos para invalidação de atos lesivos específicos (Lei 4.717/1965, art. 21)."
+  },
+  {
+   "id": "amb_mining_dam_disaster",
+   "label": "Mineração, segurança de barragens e reparação integral de desastres socioambientais (Risco Integral — Tema 680 STJ)",
+   "requirements": [
+    "atividade_mineraria_ou_barragem",
+    "plano_seguranca_paebm",
+    "teoria_risco_integral",
+    "danos_coletivos_e_individuais_homogeneos"
+   ],
+   "claimant_theses": [
+    {
+     "id": "amb_mining_dam_disaster.c1",
+     "label": "Responsabilidade civil objetiva sob a teoria do risco integral pelo rompimento, vazamento ou evacuação preventiva de barragem, não se admitindo excludentes de caso fortuito, força maior ou fato de terceiro (Lei 6.938/1981, art. 14, § 1º; Lei 12.334/2010; Tema Repetitivo 680 e Súmula 618 do STJ)",
+     "authority_ids": [
+      "l6938_art14",
+      "l12334_art2",
+      "tema_stj_680",
+      "stj_sumula_618"
+     ]
+    },
+    {
+     "id": "amb_mining_dam_disaster.c2",
+     "label": "Dever de auxílio financeiro emergencial, reassentamento digno e reparação integral de pescadores, ribeirinhos, agricultores e comerciantes atingidos direta ou indiretamente",
+     "authority_ids": [
+      "l6938_art14",
+      "cc_art927",
+      "cdc_art17"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "amb_mining_dam_disaster.d1",
+     "label": "Embora inaplicáveis excludentes ao dever geral de reparar o evento ambiental, exige-se comprovação mínima da condição de atingido (residência/atividade na mancha ou área impactada) e dedução de valores pagos em programas extrajudiciais de indenização com quitação válida",
+     "authority_ids": [
+      "cc_art884",
+      "cc_art422",
+      "l6938_art14"
+     ]
+    },
+    {
+     "id": "amb_mining_dam_disaster.d2",
+     "label": "Regularidade técnica da Declaração de Condição de Estabilidade (DCE) e cumprimento das determinações cautelares da ANM e da Defesa Civil",
+     "authority_ids": [
+      "l12334_art2"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Interdição cautelar de operação de barragem sem Declaração de Condição de Estabilidade (DCE) positiva e bloqueio de garantias para descomissionamento",
+    "Condenação à recomposição socioambiental integral da bacia hidrográfica e pagamento de dano moral coletivo",
+    "Indenização individual de lucros cessantes, danos emergentes, perda da qualidade de vida/água e danos morais aos atingidos"
+   ],
+   "evidence": [
+    "Relatórios de inspeção da ANM, Plano de Segurança da Barragem (PSB), PAEBM e Declarações de Condição de Estabilidade",
+    "Laudos hidrossedimentológicos, ecotoxicológicos e mapeamento oficial das áreas atingidas",
+    "Comprovantes de domicílio, exercício de atividade pesqueira/agrícola/comercial na região e termos de quitação eventualmente firmados"
+   ],
+   "piece_ids": [
+    "acao_civil_publica",
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente",
+    "cumprimento_sentenca",
+    "contestacao"
+   ],
+   "related_claims": [
+    "amb_civil_liability",
+    "amb_class_action",
+    "cons_collective_enforcement"
+   ],
+   "limitation": "Reparação ambiental difusa/coletiva é imprescritível (Tema 999 do STF); pretensões indenizatórias individuais reflexas de vítimas por equiparação (CDC, arts. 17 e 27) sujeitam-se ao prazo quinquenal contado da ciência inequívoca do dano e de sua extensão (observadas causas suspensivas/interruptivas de ações coletivas)."
+  },
+  {
+   "id": "amb_water_resources_grant",
+   "label": "Outorga de uso de recursos hídricos, cobrança pelo uso da água e alocação em escassez hídrica",
+   "requirements": [
+    "dominialidade_uniao_ou_estado",
+    "ato_de_outorga_ou_dispensa",
+    "usos_prioritarios_escassez",
+    "cobranca_uso_agua"
+   ],
+   "claimant_theses": [
+    {
+     "id": "amb_water_resources_grant.c1",
+     "label": "Em situações de escassez hídrica, o uso prioritário dos recursos hídricos é o consumo humano e a dessedentação de animais, autorizando suspensão parcial ou total de outorgas industriais/irrigação sem direito adquirido à captação predatória (Lei 9.433/1997, arts. 1º, III, 12 e 15)",
+     "authority_ids": [
+      "l9433_art12",
+      "cf_art225"
+     ]
+    },
+    {
+     "id": "amb_water_resources_grant.c2",
+     "label": "Pelo usuário regular: nulidade de autuação lavrada por órgão incompetente (rio estadual vs. federal — CF, arts. 20, III, e 26, I) ou sobre captação insignificante expressamente dispensada de outorga pelo Comitê de Bacia",
+     "authority_ids": [
+      "l9433_art12",
+      "lc140_art17"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "amb_water_resources_grant.d1",
+     "label": "A outorga não implica alienação parcial das águas (inapropriáveis), mas simples direito administrativo precário de uso condicionado às disponibilidades hídricas da bacia e ao cumprimento das condicionantes de vazão residual",
+     "authority_ids": [
+      "l9433_art12",
+      "cf_art225"
+     ]
+    },
+    {
+     "id": "amb_water_resources_grant.d2",
+     "label": "Natureza jurídica de preço público/remuneração patrimonial da cobrança pelo uso de recursos hídricos fixada pelos Comitês de Bacia, não sujeita à anterioridade tributária",
+     "authority_ids": [
+      "l9433_art12"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Anulação de auto de infração e deslacração de bomba de captação para uso insignificante ou devidamente outorgado",
+    "Ordem para apreciação tempestiva de pedido de renovação de outorga na ANA ou órgão gestor estadual",
+    "Tutela coletiva para garantia de vazão ecológica mínima e abastecimento humano prioritário na bacia hidrográfica"
+   ],
+   "evidence": [
+    "Portaria de outorga de direito de uso ou cadastro de uso insignificante na ANA / órgão gestor estadual",
+    "Estudos hidrológicos de disponibilidade hídrica, hidrômetros/horímetros de captação e deliberações do Comitê de Bacia",
+    "Mapa hidrográfico definindo o domínio federal ou estadual do corpo d'água e auto de infração impugnado"
+   ],
+   "piece_ids": [
+    "mandado_seguranca",
+    "defesa_auto_infracao_ambiental",
+    "inicial_procedimento_comum",
+    "acao_civil_publica"
+   ],
+   "related_claims": [
+    "amb_licensing",
+    "amb_fine_defense"
+   ],
+   "limitation": "Defesa administrativa em 20 dias na esfera federal (Decreto 6.514/2008, art. 113); mandado de segurança em 120 dias do ato restritivo (Lei 12.016/2009, art. 23) e prescrição quinquenal para pretensões patrimoniais/punitivas (Decreto 20.910/1932; Lei 9.873/1999)."
+  }
  ]
 }

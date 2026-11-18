@@ -4,16 +4,983 @@
  "label": "Direito Migratório",
  "guide": "domain_guides/migratorio.md",
  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
- "polo_labels": {"claimant_theses": "Teses do autor ou requerente", "defense_theses": "Teses do réu ou requerido"},
+ "polo_labels": {
+  "claimant_theses": "Teses do autor ou requerente",
+  "defense_theses": "Teses do réu ou requerido"
+ },
  "claims": [
-  {"id": "mig_residence", "label": "Autorização de residência e regularização", "requirements": ["hipotese", "documentos", "registro"], "claimant_theses": [{"id": "mig_residence.c1", "label": "Hipóteses de autorização de residência", "authority_ids": ["l13445_art30"]}, {"id": "mig_residence.c2", "label": "Princípios da política migratória e igualdade de direitos", "authority_ids": ["l13445_art3", "l13445_art4"]}], "defense_theses": [{"id": "mig_residence.d1", "label": "Hipótese legal não preenchida", "authority_ids": ["l13445_art30"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["requerimento_administrativo", "recurso_administrativo", "mandado_seguranca"], "related_claims": [], "limitation": "conferir"},
-  {"id": "mig_refugee", "label": "Reconhecimento da condição de refugiado", "requirements": ["perseguicao", "fundado_temor", "grave_violacao"], "claimant_theses": [{"id": "mig_refugee.c1", "label": "Requisitos para reconhecimento de refugiado", "authority_ids": ["l9474_art1"]}], "defense_theses": [{"id": "mig_refugee.d1", "label": "Ausência de fundado temor ou cláusula de exclusão", "authority_ids": ["l9474_art1"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["requerimento_administrativo", "recurso_administrativo", "mandado_seguranca"], "related_claims": [], "limitation": "conferir"},
-  {"id": "mig_deportation", "label": "Deportação e repatriação", "requirements": ["situacao_migratoria", "notificacao", "prazo_de_regularizacao", "defesa"], "claimant_theses": [{"id": "mig_deportation.c1", "label": "Deportação exige notificação pessoal, prazo para regularização e defesa", "authority_ids": ["l13445_art50", "l13445_art51"]}, {"id": "mig_deportation.c2", "label": "Vedação de devolução de solicitante de refúgio e de pessoa em risco", "authority_ids": ["l9474_art7", "l13445_art49"]}, {"id": "mig_deportation.c3", "label": "Ninguém é privado de liberdade por razões migratórias fora das hipóteses legais", "authority_ids": ["l13445_art123"]}], "defense_theses": [{"id": "mig_deportation.d1", "label": "Irregularidade não sanada no prazo", "authority_ids": ["l13445_art50"]}, {"id": "mig_deportation.d2", "label": "Impedimento de ingresso por hipótese legal", "authority_ids": ["l13445_art45"]}], "temporal_marker_ids": ["lei_13445_migracao"], "typical_requests": ["Suspensão da medida", "Prazo para regularização", "Liberdade"], "evidence": ["Notificação e auto", "Documentos de viagem", "Protocolo de pedido de residência ou refúgio"], "piece_ids": ["habeas_corpus", "mandado_seguranca", "recurso_administrativo", "requerimento_administrativo"], "related_claims": ["mig_residence", "mig_refugee"], "limitation": "Prazos da notificação — conferir o regulamento"},
-  {"id": "mig_expulsion", "label": "Expulsão", "requirements": ["condenacao_transitada", "vinculos_no_brasil", "processo_administrativo"], "claimant_theses": [{"id": "mig_expulsion.c1", "label": "Vedação de expulsão de quem tem filho brasileiro sob guarda ou dependência, cônjuge ou companheiro residente", "authority_ids": ["l13445_art55"]}, {"id": "mig_expulsion.c2", "label": "Contraditório, ampla defesa e assistência da Defensoria", "authority_ids": ["l13445_art58"]}], "defense_theses": [{"id": "mig_expulsion.d1", "label": "Condenação definitiva por crime grave nas hipóteses legais", "authority_ids": ["l13445_art54"]}, {"id": "mig_expulsion.d2", "label": "Vínculo familiar não comprovado ou constituído sem dependência — conferir a jurisprudência", "authority_ids": ["l13445_art55"]}], "temporal_marker_ids": ["lei_13445_migracao"], "typical_requests": ["Anulação ou revogação da portaria", "Suspensão do ato"], "evidence": ["Certidões de nascimento e prova de dependência", "Sentença penal e certidão de trânsito", "Processo administrativo"], "piece_ids": ["habeas_corpus", "mandado_seguranca", "recurso_administrativo"], "related_claims": ["mig_deportation"], "limitation": "Conferir"},
-  {"id": "mig_naturalization", "label": "Naturalização e nacionalidade", "requirements": ["tempo_de_residencia", "idioma", "antecedentes", "capacidade_civil"], "claimant_theses": [{"id": "mig_naturalization.c1", "label": "Naturalização ordinária com residência, idioma e ausência de condenação", "authority_ids": ["l13445_art65", "cf_art12"]}, {"id": "mig_naturalization.c2", "label": "Naturalização extraordinária após quinze anos de residência sem condenação", "authority_ids": ["l13445_art67", "cf_art12"]}], "defense_theses": [{"id": "mig_naturalization.d1", "label": "Requisito não comprovado no procedimento", "authority_ids": ["l13445_art65"]}], "temporal_marker_ids": ["lei_13445_migracao"], "typical_requests": ["Deferimento do pedido", "Reabertura do procedimento"], "evidence": ["Registros migratórios", "Certidões criminais", "Certificado de proficiência"], "piece_ids": ["requerimento_administrativo", "recurso_administrativo", "mandado_seguranca"], "related_claims": ["mig_residence"], "limitation": "Conferir"},
-  {"id": "mig_family_humanitarian", "label": "Reunião familiar e acolhida humanitária", "requirements": ["vinculo_familiar", "chamante", "nacionalidade_abrangida", "documentos"], "claimant_theses": [{"id": "mig_family_humanitarian.c1", "label": "Autorização de residência para reunião familiar", "authority_ids": ["l13445_art37", "l13445_art30"]}, {"id": "mig_family_humanitarian.c2", "label": "Visto temporário para acolhida humanitária", "authority_ids": ["l13445_art14"]}, {"id": "mig_family_humanitarian.c3", "label": "Não criminalização da migração e acolhida humanitária como princípios", "authority_ids": ["l13445_art3"]}], "defense_theses": [{"id": "mig_family_humanitarian.d1", "label": "Vínculo ou documentação insuficiente", "authority_ids": ["l13445_art37"]}, {"id": "mig_family_humanitarian.d2", "label": "Hipótese depende de ato conjunto dos ministérios", "authority_ids": ["l13445_art14"]}], "temporal_marker_ids": ["lei_13445_migracao"], "typical_requests": ["Concessão do visto ou da residência", "Dispensa justificada de documento impossível"], "evidence": ["Certidões de vínculo", "Documentos do chamante", "Prova da situação no país de origem"], "piece_ids": ["requerimento_administrativo", "recurso_administrativo", "mandado_seguranca", "inicial_procedimento_comum"], "related_claims": ["mig_residence", "mig_refugee"], "limitation": "Conferir"},
-  {"id": "mig_refugee_procedure", "label": "Refúgio: procedimento, recurso e cessação", "requirements": ["fundado_temor", "entrevista", "decisao_do_conare", "prazo"], "claimant_theses": [{"id": "mig_refugee_procedure.c1", "label": "Protocolo garante residência provisória e documentos", "authority_ids": ["l9474_art21"]}, {"id": "mig_refugee_procedure.c2", "label": "Ingresso irregular não impede o pedido e suspende o procedimento sancionatório", "authority_ids": ["l9474_art8", "l9474_art10"]}, {"id": "mig_refugee_procedure.c3", "label": "Recurso da decisão negativa", "authority_ids": ["l9474_art29"]}], "defense_theses": [{"id": "mig_refugee_procedure.d1", "label": "Cessação ou perda da condição nas hipóteses legais", "authority_ids": ["l9474_art38", "l9474_art39"]}, {"id": "mig_refugee_procedure.d2", "label": "Expulsão por segurança nacional ou ordem pública", "authority_ids": ["l9474_art36"]}], "temporal_marker_ids": [], "typical_requests": ["Reforma da decisão", "Manutenção da residência provisória"], "evidence": ["Protocolo e termo de declarações", "Relatórios sobre o país de origem", "Decisão notificada"], "piece_ids": ["recurso_refugio", "requerimento_administrativo", "mandado_seguranca"], "related_claims": ["mig_refugee"], "limitation": "Recurso em quinze dias da notificação (Lei 9.474/1997, art. 29)"},
-  {"id": "mig_extradition", "label": "Extradição e prisão cautelar", "requirements": ["pedido_formal", "dupla_tipicidade", "prescricao", "natureza_do_crime"], "claimant_theses": [{"id": "mig_extradition.c1", "label": "Vedação de extradição nas hipóteses legais, inclusive crime político e risco de perseguição", "authority_ids": ["l13445_art82"]}, {"id": "mig_extradition.c2", "label": "Refúgio reconhecido obsta o pedido baseado nos mesmos fatos", "authority_ids": ["l9474_art33"]}], "defense_theses": [{"id": "mig_extradition.d1", "label": "Requisitos formais atendidos e compromissos do Estado requerente", "authority_ids": ["l13445_art81"]}], "temporal_marker_ids": ["lei_13445_migracao"], "typical_requests": ["Indeferimento da extradição", "Revogação da prisão cautelar"], "evidence": ["Pedido e documentos do Estado requerente", "Legislação estrangeira", "Prova de vínculos"], "piece_ids": ["habeas_corpus"], "related_claims": ["mig_refugee_procedure"], "limitation": "Conferir"},
-  {"id": "mig_fines", "label": "Multas e infrações migratórias", "requirements": ["infracao", "auto", "valor", "hipossuficiencia"], "claimant_theses": [{"id": "mig_fines.c1", "label": "Dosimetria conforme a condição econômica e vedação de sanção por ingresso de solicitante de refúgio", "authority_ids": ["l13445_art109", "l9474_art8"]}], "defense_theses": [{"id": "mig_fines.d1", "label": "Infração configurada e multa dentro dos limites", "authority_ids": ["l13445_art109"]}], "temporal_marker_ids": [], "typical_requests": ["Anulação ou redução da multa"], "evidence": ["Auto de infração", "Prova de renda"], "piece_ids": ["recurso_administrativo", "mandado_seguranca"], "related_claims": ["mig_residence"], "limitation": "Conferir"}
+  {
+   "id": "mig_residence",
+   "label": "Autorização de residência e regularização",
+   "requirements": [
+    "hipotese",
+    "documentos",
+    "registro"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mig_residence.c1",
+     "label": "Hipóteses de autorização de residência",
+     "authority_ids": [
+      "l13445_art30"
+     ]
+    },
+    {
+     "id": "mig_residence.c2",
+     "label": "Princípios da política migratória e igualdade de direitos",
+     "authority_ids": [
+      "l13445_art3",
+      "l13445_art4"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mig_residence.d1",
+     "label": "Hipótese legal não preenchida",
+     "authority_ids": [
+      "l13445_art30"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13445_migracao"
+   ],
+   "typical_requests": [
+    "Deferimento da autorização de residência e expedição da Carteira de Registro Nacional Migratório (CRNM)",
+    "Dispensa excepcional de apostilamento ou tradução juramentada em caso de hipossuficiência ou impossibilidade material no país de origem",
+    "Suspensão de medida compulsória de retirada até o exame definitivo do pedido de regularização"
+   ],
+   "evidence": [
+    "Passaporte ou documento oficial de identidade do país de origem e protocolo no sistema MigranteWeb/SISMIGRA",
+    "Certidões de antecedentes criminais ou autodeclaração nas hipóteses regulamentares admitidas",
+    "Comprovantes do fundamento legal do pedido (vínculo laboral, familiar, estudo, saúde ou acordo Mercosul)"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "recurso_administrativo",
+    "mandado_seguranca"
+   ],
+   "related_claims": [],
+   "limitation": "Recurso administrativo em 10 dias da ciência do indeferimento (Lei 9.784/1999, art. 59; Decreto 9.199/2017); mandado de segurança em 120 dias da notificação da recusa (Lei 12.016/2009, art. 23) ou ação ordinária em 5 anos (Decreto 20.910/1932, art. 1º)."
+  },
+  {
+   "id": "mig_refugee",
+   "label": "Reconhecimento da condição de refugiado",
+   "requirements": [
+    "perseguicao",
+    "fundado_temor",
+    "grave_violacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mig_refugee.c1",
+     "label": "Requisitos para reconhecimento de refugiado",
+     "authority_ids": [
+      "l9474_art1"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mig_refugee.d1",
+     "label": "Ausência de fundado temor ou cláusula de exclusão",
+     "authority_ids": [
+      "l9474_art1"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13445_migracao"
+   ],
+   "typical_requests": [
+    "Reconhecimento da condição de refugiado pelo CONARE ou anulação de indeferimento desmotivado",
+    "Emissão e renovação do Documento Provisório de Registro Nacional Migratório (DPRNM) e CTPS",
+    "Observância absoluta da proibição de devolução (non-refoulement) e suspensão de extradição ou deportação (Lei 9.474/1997, arts. 7º e 34)"
+   ],
+   "evidence": [
+    "Termo de solicitação de refúgio no Sisconare e gravação/transcrição da entrevista de elegibilidade",
+    "Relatórios internacionais de direitos humanos (ACNUR, ONU, OEA) sobre a perseguição ou grave e generalizada violação no país de origem",
+    "Documentos pessoais, notícias, ameaças ou registros médicos compatíveis com o relato de perseguição"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "recurso_administrativo",
+    "mandado_seguranca"
+   ],
+   "related_claims": [],
+   "limitation": "Solicitação de refúgio não se sujeita a prazo preclusivo de entrada no território nacional (Lei 9.474/1997, art. 8º); recurso ao Ministro da Justiça em 15 dias do recebimento da notificação negativa do CONARE (Lei 9.474/1997, art. 29) e mandado de segurança em 120 dias."
+  },
+  {
+   "id": "mig_deportation",
+   "label": "Deportação e repatriação",
+   "requirements": [
+    "situacao_migratoria",
+    "notificacao",
+    "prazo_de_regularizacao",
+    "defesa"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mig_deportation.c1",
+     "label": "Deportação exige notificação pessoal, prazo para regularização e defesa",
+     "authority_ids": [
+      "l13445_art50",
+      "l13445_art51"
+     ]
+    },
+    {
+     "id": "mig_deportation.c2",
+     "label": "Vedação de devolução de solicitante de refúgio e de pessoa em risco",
+     "authority_ids": [
+      "l9474_art7",
+      "l13445_art49"
+     ]
+    },
+    {
+     "id": "mig_deportation.c3",
+     "label": "Ninguém é privado de liberdade por razões migratórias fora das hipóteses legais",
+     "authority_ids": [
+      "l13445_art123"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mig_deportation.d1",
+     "label": "Irregularidade não sanada no prazo",
+     "authority_ids": [
+      "l13445_art50"
+     ]
+    },
+    {
+     "id": "mig_deportation.d2",
+     "label": "Impedimento de ingresso por hipótese legal",
+     "authority_ids": [
+      "l13445_art45"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13445_migracao"
+   ],
+   "typical_requests": [
+    "Suspensão da medida",
+    "Prazo para regularização",
+    "Liberdade"
+   ],
+   "evidence": [
+    "Notificação e auto",
+    "Documentos de viagem",
+    "Protocolo de pedido de residência ou refúgio"
+   ],
+   "piece_ids": [
+    "habeas_corpus",
+    "mandado_seguranca",
+    "recurso_administrativo",
+    "requerimento_administrativo"
+   ],
+   "related_claims": [
+    "mig_residence",
+    "mig_refugee"
+   ],
+   "limitation": "Prazo mínimo de 60 dias na notificação pessoal para regularização migratória, prorrogável por igual período (Lei 13.445/2017, art. 50, § 1º); defesa/recurso administrativo nos prazos do Decreto 9.199/2017 e habeas corpus a qualquer tempo contra coação à liberdade."
+  },
+  {
+   "id": "mig_expulsion",
+   "label": "Expulsão",
+   "requirements": [
+    "condenacao_transitada",
+    "vinculos_no_brasil",
+    "processo_administrativo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mig_expulsion.c1",
+     "label": "Vedação de expulsão de quem tem filho brasileiro sob guarda ou dependência, cônjuge ou companheiro residente",
+     "authority_ids": [
+      "l13445_art55"
+     ]
+    },
+    {
+     "id": "mig_expulsion.c2",
+     "label": "Contraditório, ampla defesa e assistência da Defensoria",
+     "authority_ids": [
+      "l13445_art58"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mig_expulsion.d1",
+     "label": "Condenação definitiva por crime grave nas hipóteses legais",
+     "authority_ids": [
+      "l13445_art54"
+     ]
+    },
+    {
+     "id": "mig_expulsion.d2",
+     "label": "Vínculo familiar não comprovado ou constituído sem dependência — conferir a jurisprudência",
+     "authority_ids": [
+      "l13445_art55"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13445_migracao"
+   ],
+   "typical_requests": [
+    "Anulação ou revogação da portaria",
+    "Suspensão do ato"
+   ],
+   "evidence": [
+    "Certidões de nascimento e prova de dependência",
+    "Sentença penal e certidão de trânsito",
+    "Processo administrativo"
+   ],
+   "piece_ids": [
+    "habeas_corpus",
+    "mandado_seguranca",
+    "recurso_administrativo"
+   ],
+   "related_claims": [
+    "mig_deportation"
+   ],
+   "limitation": "Pedido administrativo de reconsideração em 10 dias da notificação pessoal da portaria expulsória (Lei 13.445/2017, art. 59); habeas corpus cabível a qualquer tempo contra constrangimento à liberdade de permanecer no território e ação anulatória em 5 anos (Decreto 20.910/1932, art. 1º)."
+  },
+  {
+   "id": "mig_naturalization",
+   "label": "Naturalização e nacionalidade",
+   "requirements": [
+    "tempo_de_residencia",
+    "idioma",
+    "antecedentes",
+    "capacidade_civil"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mig_naturalization.c1",
+     "label": "Naturalização ordinária com residência, idioma e ausência de condenação",
+     "authority_ids": [
+      "l13445_art65",
+      "cf_art12"
+     ]
+    },
+    {
+     "id": "mig_naturalization.c2",
+     "label": "Naturalização extraordinária após quinze anos de residência sem condenação",
+     "authority_ids": [
+      "l13445_art67",
+      "cf_art12"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mig_naturalization.d1",
+     "label": "Requisito não comprovado no procedimento",
+     "authority_ids": [
+      "l13445_art65"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13445_migracao"
+   ],
+   "typical_requests": [
+    "Deferimento do pedido",
+    "Reabertura do procedimento"
+   ],
+   "evidence": [
+    "Registros migratórios",
+    "Certidões criminais",
+    "Certificado de proficiência"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "recurso_administrativo",
+    "mandado_seguranca"
+   ],
+   "related_claims": [
+    "mig_residence"
+   ],
+   "limitation": "Recurso administrativo em 10 dias da ciência do indeferimento no sistema Naturalizar-se (Lei 9.784/1999, art. 59); mandado de segurança em 120 dias (Lei 12.016/2009, art. 23) e ação ordinária na Justiça Federal em 5 anos (CF, art. 109, X; Decreto 20.910/1932, art. 1º)."
+  },
+  {
+   "id": "mig_family_humanitarian",
+   "label": "Reunião familiar e acolhida humanitária",
+   "requirements": [
+    "vinculo_familiar",
+    "chamante",
+    "nacionalidade_abrangida",
+    "documentos"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mig_family_humanitarian.c1",
+     "label": "Autorização de residência para reunião familiar",
+     "authority_ids": [
+      "l13445_art37",
+      "l13445_art30"
+     ]
+    },
+    {
+     "id": "mig_family_humanitarian.c2",
+     "label": "Visto temporário para acolhida humanitária",
+     "authority_ids": [
+      "l13445_art14"
+     ]
+    },
+    {
+     "id": "mig_family_humanitarian.c3",
+     "label": "Não criminalização da migração e acolhida humanitária como princípios",
+     "authority_ids": [
+      "l13445_art3"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mig_family_humanitarian.d1",
+     "label": "Vínculo ou documentação insuficiente",
+     "authority_ids": [
+      "l13445_art37"
+     ]
+    },
+    {
+     "id": "mig_family_humanitarian.d2",
+     "label": "Hipótese depende de ato conjunto dos ministérios",
+     "authority_ids": [
+      "l13445_art14"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13445_migracao"
+   ],
+   "typical_requests": [
+    "Concessão do visto ou da residência",
+    "Dispensa justificada de documento impossível"
+   ],
+   "evidence": [
+    "Certidões de vínculo",
+    "Documentos do chamante",
+    "Prova da situação no país de origem"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "recurso_administrativo",
+    "mandado_seguranca",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "mig_residence",
+    "mig_refugee"
+   ],
+   "limitation": "Requerimento de acolhida humanitária ou reunião familiar formulável a qualquer tempo enquanto subsistir o vínculo ou a crise humanitária; mandado de segurança em 120 dias do ato denegatório (Lei 12.016/2009, art. 23)."
+  },
+  {
+   "id": "mig_refugee_procedure",
+   "label": "Refúgio: procedimento, recurso e cessação",
+   "requirements": [
+    "fundado_temor",
+    "entrevista",
+    "decisao_do_conare",
+    "prazo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mig_refugee_procedure.c1",
+     "label": "Protocolo garante residência provisória e documentos",
+     "authority_ids": [
+      "l9474_art21"
+     ]
+    },
+    {
+     "id": "mig_refugee_procedure.c2",
+     "label": "Ingresso irregular não impede o pedido e suspende o procedimento sancionatório",
+     "authority_ids": [
+      "l9474_art8",
+      "l9474_art10"
+     ]
+    },
+    {
+     "id": "mig_refugee_procedure.c3",
+     "label": "Recurso da decisão negativa",
+     "authority_ids": [
+      "l9474_art29"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mig_refugee_procedure.d1",
+     "label": "Cessação ou perda da condição nas hipóteses legais",
+     "authority_ids": [
+      "l9474_art38",
+      "l9474_art39"
+     ]
+    },
+    {
+     "id": "mig_refugee_procedure.d2",
+     "label": "Expulsão por segurança nacional ou ordem pública",
+     "authority_ids": [
+      "l9474_art36"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13445_migracao"
+   ],
+   "typical_requests": [
+    "Reforma da decisão",
+    "Manutenção da residência provisória"
+   ],
+   "evidence": [
+    "Protocolo e termo de declarações",
+    "Relatórios sobre o país de origem",
+    "Decisão notificada"
+   ],
+   "piece_ids": [
+    "recurso_refugio",
+    "requerimento_administrativo",
+    "mandado_seguranca"
+   ],
+   "related_claims": [
+    "mig_refugee"
+   ],
+   "limitation": "Recurso administrativo com efeito suspensivo automático em 15 dias contados da ciência pessoal da decisão do CONARE (Lei 9.474/1997, arts. 29 e 31); mandado de segurança em 120 dias da decisão ministerial final."
+  },
+  {
+   "id": "mig_extradition",
+   "label": "Extradição e prisão cautelar",
+   "requirements": [
+    "pedido_formal",
+    "dupla_tipicidade",
+    "prescricao",
+    "natureza_do_crime"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mig_extradition.c1",
+     "label": "Vedação de extradição nas hipóteses legais, inclusive crime político e risco de perseguição",
+     "authority_ids": [
+      "l13445_art82"
+     ]
+    },
+    {
+     "id": "mig_extradition.c2",
+     "label": "Refúgio reconhecido obsta o pedido baseado nos mesmos fatos",
+     "authority_ids": [
+      "l9474_art33"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mig_extradition.d1",
+     "label": "Requisitos formais atendidos e compromissos do Estado requerente",
+     "authority_ids": [
+      "l13445_art81"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13445_migracao"
+   ],
+   "typical_requests": [
+    "Indeferimento da extradição",
+    "Revogação da prisão cautelar",
+    "Assunção de compromissos formais de comutação de pena perpétua/corporal e detração da prisão preventiva extradicional (Lei 13.445/2017, art. 96)"
+   ],
+   "evidence": [
+    "Pedido e documentos do Estado requerente",
+    "Legislação estrangeira",
+    "Prova de vínculos"
+   ],
+   "piece_ids": [
+    "habeas_corpus"
+   ],
+   "related_claims": [
+    "mig_refugee_procedure"
+   ],
+   "limitation": "Defesa escrita no processo de extradição perante o STF após o interrogatório (Lei 13.445/2017, art. 91) e extinção da pretensão extradicional se consumada a prescrição segundo a lei brasileira ou a do Estado requerente (Lei 13.445/2017, art. 82, VI)."
+  },
+  {
+   "id": "mig_fines",
+   "label": "Multas e infrações migratórias",
+   "requirements": [
+    "infracao",
+    "auto",
+    "valor",
+    "hipossuficiencia"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mig_fines.c1",
+     "label": "Dosimetria conforme a condição econômica e vedação de sanção por ingresso de solicitante de refúgio",
+     "authority_ids": [
+      "l13445_art109",
+      "l9474_art8"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mig_fines.d1",
+     "label": "Infração configurada e multa dentro dos limites",
+     "authority_ids": [
+      "l13445_art109"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13445_migracao"
+   ],
+   "typical_requests": [
+    "Anulação ou redução da multa",
+    "Isenção total de taxas e multas migratórias diante de comprovada hipossuficiência econômica para fins de regularização (Lei 13.445/2017, art. 4º, XII, e art. 108, parágrafo único)"
+   ],
+   "evidence": [
+    "Auto de infração",
+    "Prova de renda",
+    "Declaração de hipossuficiência econômica, comprovantes de renda familiar e inscrição no CadÚnico"
+   ],
+   "piece_ids": [
+    "recurso_administrativo",
+    "mandado_seguranca"
+   ],
+   "related_claims": [
+    "mig_residence"
+   ],
+   "limitation": "Defesa administrativa em 10 dias da lavratura do auto de infração migratória e recurso em 10 dias (Lei 13.445/2017, art. 109; Decreto 9.199/2017); prescrição punitiva federal em 5 anos (Lei 9.873/1999, art. 1º)."
+  },
+  {
+   "id": "mig_naturalization_appeal",
+   "label": "Naturalização ordinária e extraordinária: proficiência, residência e controle do indeferimento",
+   "requirements": [
+    "modalidade_ordinaria_ou_extraordinaria",
+    "residencia_indeterminada_pelo_prazo",
+    "comunicacao_lingua_portuguesa",
+    "ausencia_condenacao_sem_reabilitacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mig_naturalization_appeal.c1",
+     "label": "A naturalização extraordinária de residente há mais de 15 anos ininterruptos e sem condenação penal constitui direito subjetivo constitucional (CF, art. 12, II, 'b'), e na ordinária a capacidade de comunicação em língua portuguesa comporta comprovação por meios idôneos previstos em regulamento além do Celpe-Bras",
+     "authority_ids": [
+      "cf_art12",
+      "l13445_art65",
+      "l13445_art67"
+     ]
+    },
+    {
+     "id": "mig_naturalization_appeal.c2",
+     "label": "Ilegalidade de arquivamento sumário ou indeferimento de naturalização por exigência documental extralegal ou falha sistêmica sem prévia intimação para suprimento (Lei 9.784/1999, arts. 2º e 50)",
+     "authority_ids": [
+      "l9784_art2",
+      "l9784_art50",
+      "l13445_art65"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mig_naturalization_appeal.d1",
+     "label": "Necessidade de residência por prazo indeterminado (não computados períodos meramente provisórios ou de visitante) e comprovação formal de proficiência presencial reconhecida pelo MEC na naturalização ordinária",
+     "authority_ids": [
+      "l13445_art65",
+      "cf_art12"
+     ]
+    },
+    {
+     "id": "mig_naturalization_appeal.d2",
+     "label": "Existência de condenação penal sem reabilitação ou ausência de documentos de antecedentes criminais devidamente legalizados/apostilados",
+     "authority_ids": [
+      "l13445_art65",
+      "l13445_art67"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13445_migracao"
+   ],
+   "typical_requests": [
+    "Anulação da decisão administrativa denegatória no sistema Naturalizar-se com determinação de reanálise ou deferimento da naturalização",
+    "Reconhecimento judicial da condição de brasileiro naturalizado na hipótese vinculada do art. 12, II, 'b', da Constituição (CF, art. 109, X)",
+    "Aceitação de certificado de curso de língua portuguesa ou escolarização presencial no Brasil conforme os normativos vigentes"
+   ],
+   "evidence": [
+    "Certidão de Movimentos Migratórios (STI-MAR) e histórico completo da CRNM junto à Polícia Federal",
+    "Certificado Celpe-Bras ou diploma/histórico de instituição de ensino brasileira credenciada pelo MEC",
+    "Certidões negativas de antecedentes criminais da Justiça Federal, Estadual e do país de origem",
+    "Cópia integral do processo eletrônico no portal Naturalizar-se e despacho de indeferimento"
+   ],
+   "piece_ids": [
+    "recurso_administrativo",
+    "mandado_seguranca",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "mig_naturalization",
+    "mig_residence"
+   ],
+   "limitation": "Recurso administrativo em 10 dias da notificação (Lei 9.784/1999, art. 59); mandado de segurança em 120 dias da ciência do indeferimento (Lei 12.016/2009, art. 23) ou ação na Justiça Federal em 5 anos (CF, art. 109, X; Decreto 20.910/1932, art. 1º)."
+  },
+  {
+   "id": "mig_family_reunion_brazilian_child",
+   "label": "Autorização de residência por reunião familiar, união estável ou prole brasileira",
+   "requirements": [
+    "chamante_brasileiro_ou_residente",
+    "vinculo_parentesco_ou_conjugal",
+    "guarda_ou_dependencia",
+    "vedacao_discriminacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mig_family_reunion_brazilian_child.c1",
+     "label": "Direito à residência por reunião familiar independentemente da situação migratória prévia ou de multas pendentes, em proteção constitucional à família e ao melhor interesse da criança brasileira (CF, arts. 226 e 227; Lei 13.445/2017, arts. 3º, VIII, 30, I, 'i', e 37)",
+     "authority_ids": [
+      "cf_art226",
+      "cf_art227",
+      "l13445_art3",
+      "l13445_art30",
+      "l13445_art37"
+     ]
+    },
+    {
+     "id": "mig_family_reunion_brazilian_child.c2",
+     "label": "Vedação de condicionar o protocolo de registro migratório por prole brasileira ao pagamento prévio de multa por estada irregular de hipossuficiente",
+     "authority_ids": [
+      "l13445_art4",
+      "l13445_art37",
+      "cf_art227"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mig_family_reunion_brazilian_child.d1",
+     "label": "Exigência de comprovação documental idônea do vínculo familiar, da identidade civil do imigrante e da ausência de simulação matrimonial (casamento de conveniência)",
+     "authority_ids": [
+      "l13445_art37",
+      "cc_art167"
+     ]
+    },
+    {
+     "id": "mig_family_reunion_brazilian_child.d2",
+     "label": "Vedação de concessão de visto/residência quando o chamante já se beneficiou anteriormente de reunião familiar derivada nos casos vedados pelo § 2º do art. 37 da Lei 13.445/2017",
+     "authority_ids": [
+      "l13445_art37"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13445_migracao"
+   ],
+   "typical_requests": [
+    "Determinação de imediato recebimento do pedido de autorização de residência por reunião familiar pela Polícia Federal",
+    "Expedição de protocolo provisório e da CRNM independentemente do pagamento prévio de multa migratória",
+    "Concessão de visto consular de reunião familiar em favor de cônjuge ou dependente retido no exterior"
+   ],
+   "evidence": [
+    "Certidão de nascimento de filho brasileiro ou certidão de casamento / escritura de união estável com chamante brasileiro ou residente",
+    "Declaração conjunta de manutenção da convivência familiar ou comprovantes de guarda e sustento da prole",
+    "Documentos de identificação das partes e protocolo/recusa de agendamento no SISMIGRA"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "mandado_seguranca",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "mig_family_humanitarian",
+    "mig_expulsion_family_bar"
+   ],
+   "limitation": "Direito exercitável a qualquer tempo enquanto vigente o vínculo familiar protetivo; mandado de segurança contra recusa administrativa ou exigência abusiva em 120 dias do ato (Lei 12.016/2009, art. 23)."
+  },
+  {
+   "id": "mig_labor_visa_residence",
+   "label": "Visto temporário e autorização de residência laboral, investimento ou nômade digital",
+   "requirements": [
+    "oferta_trabalho_ou_investimento",
+    "compatibilidade_qualificacao",
+    "autorizacao_ministerial",
+    "igualdade_direitos_trabalhistas"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mig_labor_visa_residence.c1",
+     "label": "Preenchidos os requisitos objetivos das Resoluções Normativas do CNIg e da Lei 13.445/2017 (arts. 14 e 30), o deferimento da residência laboral ou de investidor vincula-se à motivação legal, assegurada igualdade de direitos trabalhistas e previdenciários",
+     "authority_ids": [
+      "l13445_art4",
+      "l13445_art14",
+      "l13445_art30"
+     ]
+    },
+    {
+     "id": "mig_labor_visa_residence.c2",
+     "label": "Direito à mudança de empregador ou renovação para prazo indeterminado mediante comunicação e comprovação da continuidade laboral nos termos regulamentares",
+     "authority_ids": [
+      "l13445_art30",
+      "l9784_art2"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mig_labor_visa_residence.d1",
+     "label": "Ausência de comprovação da qualificação profissional/experiência exigida, da regularidade cambial do investimento externo no Banco Central ou de proporcionalidade de mão de obra nacional",
+     "authority_ids": [
+      "l13445_art14",
+      "l13445_art30"
+     ]
+    },
+    {
+     "id": "mig_labor_visa_residence.d2",
+     "label": "Cancelamento da autorização de residência quando cessado o fundamento laboral ou de investimento sem comunicação nem reenquadramento tempestivo",
+     "authority_ids": [
+      "l13445_art30",
+      "l9784_art53"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13445_migracao"
+   ],
+   "typical_requests": [
+    "Ordem para apreciação conclusiva ou anulação de indeferimento ilegal no sistema MigranteWeb",
+    "Renovação ou alteração de prazo da autorização de residência laboral para prazo indeterminado",
+    "Autorização de mudança de empregador com manutenção da regularidade migratória"
+   ],
+   "evidence": [
+    "Contrato de trabalho, comprovação de qualificação acadêmica/profissional ou registro de capital estrangeiro no RDE-IED/SCE-IED do Banco Central",
+    "Processo administrativo integral tramitado no portal MigranteWeb com exigências e recursos",
+    "Guias de recolhimento de FGTS, eSocial e certidões de regularidade da empresa contratante"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "recurso_administrativo",
+    "mandado_seguranca",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "mig_residence"
+   ],
+   "limitation": "Prazo regulamentar de 30 dias para cumprimento de exigências e 10 dias para recurso administrativo no MigranteWeb (Lei 9.784/1999, art. 59); mandado de segurança em 120 dias da decisão denegatória."
+  },
+  {
+   "id": "mig_stateless_complementary_protection",
+   "label": "Reconhecimento de apatridia, acolhida humanitária e proteção complementar contra devolução",
+   "requirements": [
+    "ausencia_vinculo_nacionalidade",
+    "crise_humanitaria_ou_desastre",
+    "risco_vida_integridade",
+    "non_refoulement"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mig_stateless_complementary_protection.c1",
+     "label": "Reconhecimento da condição de apátrida a quem não seja considerado nacional por nenhum Estado, assegurando residência definitiva e naturalização simplificada em 2 anos (Lei 13.445/2017, art. 26)",
+     "authority_ids": [
+      "l13445_art26",
+      "l13445_art3"
+     ]
+    },
+    {
+     "id": "mig_stateless_complementary_protection.c2",
+     "label": "Vedação absoluta de repatriação, deportação ou expulsão para país ou região onde a vida, integridade pessoal ou liberdade do migrante corra grave risco, cabendo visto/residência por acolhida humanitária (Lei 13.445/2017, arts. 14, § 3º, 30, I, 'c', e 49, § 4º)",
+     "authority_ids": [
+      "l13445_art14",
+      "l13445_art30",
+      "l13445_art49"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mig_stateless_complementary_protection.d1",
+     "label": "Improcedência do pedido de apatridia quando a missão diplomática estrangeira confirma vínculo jurídico efetivo de nacionalidade originária ou derivada",
+     "authority_ids": [
+      "l13445_art26"
+     ]
+    },
+    {
+     "id": "mig_stateless_complementary_protection.d2",
+     "label": "A acolhida humanitária submete-se às portarias interministeriais vigentes para as situações objetivas de calamidade, conflito armado ou violação institucional de direitos humanos",
+     "authority_ids": [
+      "l13445_art14",
+      "l13445_art30"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13445_migracao"
+   ],
+   "typical_requests": [
+    "Reconhecimento formal da condição de apátrida no SisApátrida e subsequente opção simplificada de nacionalidade",
+    "Concessão de autorização de residência por acolhida humanitária com expedição de CRNM e CTPS",
+    "Impedimento liminar de repatriação em zona primária aeroportuária ou fronteiriça por risco de devolução vedada"
+   ],
+   "evidence": [
+    "Consultas consulares negativas, legislação de nacionalidade do país de nascimento/ascendência e requerimento no SisApátrida",
+    "Portarias interministeriais vigentes de acolhida humanitária e relatórios da ONU/ACNUR/OIM sobre o país de origem",
+    "Auto de infração ou termo de impedimento de ingresso lavrado em posto de controle migratório"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "habeas_corpus",
+    "mandado_seguranca",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "mig_refugee",
+    "mig_family_humanitarian",
+    "mig_deportation"
+   ],
+   "limitation": "Proteção contra devolução (non-refoulement) e reconhecimento de apatridia não se sujeitam a decadência enquanto perdurar o estado de vulnerabilidade ou ausência de nacionalidade; habeas corpus cabível imediatamente contra retenção em zona primária."
+  },
+  {
+   "id": "mig_expulsion_family_bar",
+   "label": "Impedimento à expulsão por guarda ou dependência de filho ou cônjuge brasileiro (Lei 13.445/2017, art. 55, e Tema 373 STF)",
+   "requirements": [
+    "portaria_de_expulsao",
+    "filho_brasileiro_ou_conjuge",
+    "guarda_ou_dependencia_socioafetiva_economica",
+    "data_do_nascimento"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mig_expulsion_family_bar.c1",
+     "label": "Inexpulsabilidade do estrangeiro que tiver filho brasileiro sob sua guarda ou dependência econômica ou socioafetiva, ainda que a concepção ou o nascimento tenha ocorrido após o fato criminoso motivador (Lei 13.445/2017, art. 55, II, 'a'; Tema 373 do STF)",
+     "authority_ids": [
+      "l13445_art55",
+      "tema_stf_373",
+      "cf_art227"
+     ]
+    },
+    {
+     "id": "mig_expulsion_family_bar.c2",
+     "label": "Vedação de expulsão quando houver cônjuge ou companheiro residente no Brasil sem discriminação, ingresso no País até os 12 anos de idade ou idade superior a 70 anos com 10 anos de residência (Lei 13.445/2017, art. 55, II, 'b' a 'd')",
+     "authority_ids": [
+      "l13445_art55",
+      "cf_art226"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mig_expulsion_family_bar.d1",
+     "label": "O mero registro formal de paternidade biológico-cartorial desacompanhado de efetiva assistência afetiva, convivência ou sustento econômico da criança não configura a causa impeditiva de expulsão",
+     "authority_ids": [
+      "l13445_art55",
+      "tema_stf_373"
+     ]
+    },
+    {
+     "id": "mig_expulsion_family_bar.d2",
+     "label": "Abandono comprovado do filho ou dissolução da união antes da decisão expulsória afasta o óbice legal à soberania estatal de retirada compulsória após condenação criminal",
+     "authority_ids": [
+      "l13445_art54",
+      "l13445_art55"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13445_migracao"
+   ],
+   "typical_requests": [
+    "Concessão de ordem de habeas corpus ou segurança para revogar/anular a portaria ministerial de expulsão",
+    "Suspensão liminar da efetivação da saída compulsória e do impedimento de reingresso no STI",
+    "Regularização migratória consequente para o exercício regular do poder familiar no Brasil"
+   ],
+   "evidence": [
+    "Certidão de nascimento do filho brasileiro e documentos escolares, médicos e fotográficos comprovando convivência socioafetiva",
+    "Comprovantes de transferência de alimentos, despesas familiares, visitas em estabelecimento prisional e declarações da genitora/estudo social",
+    "Cópia integral do Inquérito Policial de Expulsão (IPE) e da Portaria publicada no Diário Oficial da União"
+   ],
+   "piece_ids": [
+    "habeas_corpus",
+    "mandado_seguranca",
+    "recurso_administrativo",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "mig_expulsion",
+    "mig_family_reunion_brazilian_child"
+   ],
+   "limitation": "Pedido administrativo de reconsideração em 10 dias (Lei 13.445/2017, art. 59); habeas corpus perante o STJ (contra ato de Ministro de Estado, CF, art. 105, I, 'c') cabível a qualquer tempo enquanto vigente o decreto/portaria expulsória."
+  },
+  {
+   "id": "mig_international_cooperation_sentence_transfer",
+   "label": "Cooperação jurídica internacional penal e transferência de pessoa condenada ou execução da pena",
+   "requirements": [
+    "tratado_ou_promessa_reciprocidade",
+    "transito_em_julgado",
+    "dupla_tipicidade",
+    "anuencia_na_transferencia_humanitaria"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mig_international_cooperation_sentence_transfer.c1",
+     "label": "A transferência humanitária de pessoa condenada para cumprimento da pena restante no país de nacionalidade ou vínculos exige sentença definitiva, dupla incriminação e consentimento voluntário expresso do sentenciado (Lei 13.445/2017, arts. 103 a 105)",
+     "authority_ids": [
+      "l13445_art103",
+      "l13445_art4"
+     ]
+    },
+    {
+     "id": "mig_international_cooperation_sentence_transfer.c2",
+     "label": "Na transferência de execução da pena (quando o condenado refugia-se em seu país de nacionalidade impedido de extraditar), impõe-se homologação da sentença estrangeira pelo STJ, vedada pena perpétua/morte e respeitado o limite constitucional brasileiro (Lei 13.445/2017, arts. 100 a 102)",
+     "authority_ids": [
+      "l13445_art100",
+      "cf_art5",
+      "cf_art105"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mig_international_cooperation_sentence_transfer.d1",
+     "label": "Na transferência de execução da pena do art. 100 da Lei 13.445/2017 (nacional brasileiro que praticou crime no exterior e retornou ao Brasil para evitar impunidade), prescinde-se da concordância do condenado, exigida apenas na transferência humanitária do art. 103",
+     "authority_ids": [
+      "l13445_art100",
+      "cf_art5"
+     ]
+    },
+    {
+     "id": "mig_international_cooperation_sentence_transfer.d2",
+     "label": "Juízo delibatório do STJ na homologação de sentença estrangeira restrito aos requisitos formais, competência, citação regular, trânsito em julgado e ordem pública nacional, sem rediscussão probatória do mérito penal",
+     "authority_ids": [
+      "cf_art105",
+      "l13445_art100"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13445_migracao"
+   ],
+   "typical_requests": [
+    "Deferimento administrativo e diplomático de transferência voluntária de pessoa condenada para seu país de origem",
+    "Indeferimento de homologação de sentença penal estrangeira no STJ por ausência de citação regular, prescrição ou ofensa à ordem pública",
+    "Cômputo integral da detração penal pelo tempo cumprido no Estado sentenciador e observância dos benefícios da LEP brasileira"
+   ],
+   "evidence": [
+    "Sentença penal estrangeira traduzida oficialmente, acompanhada de certidão de trânsito em julgado e textos legais aplicados",
+    "Tramitação perante a Autoridade Central (DRCI/Ministério da Justiça) e tratado bilateral/multilateral ou promessa de reciprocidade",
+    "Termo de consentimento livre e informado do apenado (na hipótese do art. 103) e atestado de pena a cumprir"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "manifestacao_especifica",
+    "habeas_corpus",
+    "mandado_seguranca"
+   ],
+   "related_claims": [
+    "mig_extradition",
+    "pen_execution"
+   ],
+   "limitation": "Contestação à homologação de sentença estrangeira no STJ em 15 dias úteis (CPC, art. 965; RISTJ); impedimento absoluto se extinta a punibilidade pela prescrição segundo a lei brasileira ou a do Estado requerente (Lei 13.445/2017, art. 100, parágrafo único)."
+  }
  ]
 }

@@ -4,25 +4,1504 @@
  "label": "Direito Previdenciário (RGPS e assistência)",
  "guide": "domain_guides/previdenciario.md",
  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
- "polo_labels": {"claimant_theses": "Teses do segurado ou dependente", "defense_theses": "Teses do INSS"},
+ "polo_labels": {
+  "claimant_theses": "Teses do segurado ou dependente",
+  "defense_theses": "Teses do INSS"
+ },
  "claims": [
-  {"id": "prev_incapacity", "label": "Benefício por incapacidade temporária ou permanente", "requirements": ["qualidade_segurado", "carencia_ou_isencao", "incapacidade_e_dii", "pericia", "der_dib_dcb"], "claimant_theses": [{"id": "prev_incapacity.c1", "label": "Incapacidade para a atividade habitual comprovada (benefício temporário)", "authority_ids": ["l8213_art59"]}, {"id": "prev_incapacity.c2", "label": "Incapacidade total e permanente para o trabalho", "authority_ids": ["l8213_art42"]}, {"id": "prev_incapacity.c3", "label": "Isenção de carência nas hipóteses legais", "authority_ids": ["l8213_art26", "l8213_art25"]}, {"id": "prev_incapacity.c4", "label": "Qualidade de segurado mantida no período de graça", "authority_ids": ["l8213_art15"]}, {"id": "prev_incapacity.c5", "label": "Recurso administrativo ao CRPS antes ou em paralelo à via judicial, conforme a estratégia", "authority_ids": ["d3048_art305", "tema_stf_350"]}], "defense_theses": [{"id": "prev_incapacity.d1", "label": "Perda da qualidade de segurado ou carência incompleta na data de início da incapacidade", "authority_ids": ["l8213_art15", "l8213_art25"]}, {"id": "prev_incapacity.d2", "label": "Capacidade atestada pela perícia ou incapacidade preexistente à filiação", "authority_ids": ["l8213_art59", "l8213_art42"]}, {"id": "prev_incapacity.d3", "label": "Honorários não incidem sobre prestações vencidas após a sentença", "authority_ids": ["stj_sumula_111"]}], "temporal_marker_ids": ["ec103_reforma_previdencia"], "typical_requests": ["Concessão ou restabelecimento com DIB fixada", "Atrasados com atualização", "Tutela de urgência"], "evidence": ["Requerimento e decisão do INSS (DER)", "Laudos, exames e prontuários", "CNIS e carteira de trabalho"], "piece_ids": ["requerimento_administrativo", "recurso_administrativo_previdenciario", "inicial_juizado", "inicial_procedimento_comum", "tutela_urgencia_antecedente"], "related_claims": ["prev_accident_aid"], "limitation": "Prestações: prescrição quinquenal; revisão: decadência do art. 103 da Lei 8.213/1991 (conferir)."},
-  {"id": "prev_accident_aid", "label": "Auxílio-acidente", "requirements": ["consolidacao_lesoes", "sequela", "reducao_capacidade", "qualidade_segurado"], "claimant_theses": [{"id": "prev_accident_aid.c1", "label": "Sequela consolidada que reduz a capacidade para o trabalho habitual", "authority_ids": ["l8213_art86"]}], "defense_theses": [{"id": "prev_accident_aid.d1", "label": "Sequela sem redução da capacidade ou ausência de nexo com acidente", "authority_ids": ["l8213_art86"]}], "temporal_marker_ids": [], "typical_requests": ["Concessão desde a cessação do benefício por incapacidade"], "evidence": ["Laudo pericial e CAT", "Histórico de benefícios"], "piece_ids": ["inicial_juizado", "inicial_procedimento_comum"], "related_claims": ["prev_incapacity"], "limitation": "conferir"},
-  {"id": "prev_retirement", "label": "Aposentadoria programada, regras de transição e direito adquirido", "requirements": ["filiacao_antes_ou_depois_ec103", "tempo_contribuicao", "idade", "pontos_ou_pedagio", "calculo"], "claimant_theses": [{"id": "prev_retirement.c1", "label": "Direito adquirido às regras anteriores com requisitos cumpridos até a vigência da EC 103/2019", "authority_ids": ["ec103_art3"]}, {"id": "prev_retirement.c2", "label": "Transição por pontos, idade mínima progressiva ou pedágio", "authority_ids": ["ec103_art15", "ec103_art16", "ec103_art20"]}, {"id": "prev_retirement.c3", "label": "Transição com pedágio de 50% para quem estava perto do tempo exigido", "authority_ids": ["ec103_art17"]}], "defense_theses": [{"id": "prev_retirement.d1", "label": "Requisitos da regra escolhida não cumpridos na DER; cálculo pela regra permanente", "authority_ids": ["ec103_art26"]}], "temporal_marker_ids": ["ec103_reforma_previdencia"], "typical_requests": ["Concessão pela regra mais vantajosa", "Reafirmação da DER, se cabível"], "evidence": ["CNIS, CTPS e carnês", "Simulação por regra de transição"], "piece_ids": ["requerimento_administrativo", "recurso_administrativo_previdenciario", "inicial_juizado", "inicial_procedimento_comum"], "related_claims": ["prev_special_time", "prev_review"], "limitation": "conferir"},
-  {"id": "prev_special_time", "label": "Aposentadoria especial e tempo especial", "requirements": ["agente_nocivo", "periodo", "ppp_ltcat", "epi", "conversao_temporal"], "claimant_theses": [{"id": "prev_special_time.c1", "label": "Exposição a agentes nocivos comprovada por PPP e LTCAT", "authority_ids": ["l8213_art57", "l8213_art58"]}], "defense_theses": [{"id": "prev_special_time.d1", "label": "EPI eficaz ou agente abaixo do limite de tolerância; PPP sem responsável técnico", "authority_ids": ["l8213_art58", "tema_stf_555"]}], "temporal_marker_ids": ["ec103_reforma_previdencia"], "typical_requests": ["Reconhecimento do tempo especial e conversão quando permitida no período"], "evidence": ["PPP, LTCAT e laudos", "CTPS com função e empregador"], "piece_ids": ["requerimento_administrativo", "inicial_procedimento_comum", "inicial_juizado"], "related_claims": ["prev_retirement"], "limitation": "conferir"},
-  {"id": "prev_bpc", "label": "Benefício de prestação continuada (BPC/LOAS)", "requirements": ["idade_ou_deficiencia", "avaliacao_biopsicossocial", "grupo_familiar", "renda", "cadunico"], "claimant_theses": [{"id": "prev_bpc.c1", "label": "Deficiência ou idade e renda familiar dentro do critério legal, com avaliação biopsicossocial", "authority_ids": ["cf_art203", "l8742_art20"]}], "defense_theses": [{"id": "prev_bpc.d1", "label": "Renda per capita acima do critério legal ou ausência de impedimento de longo prazo", "authority_ids": ["l8742_art20"]}, {"id": "prev_bpc.d2", "label": "Revisão bienal e cessação por mudança das condições", "authority_ids": ["l8742_art21"]}], "temporal_marker_ids": ["lei_14176_bpc"], "typical_requests": ["Concessão desde a DER"], "evidence": ["CadÚnico, composição familiar e despesas", "Laudos e avaliação social"], "piece_ids": ["requerimento_administrativo", "inicial_juizado"], "related_claims": ["prev_incapacity"], "limitation": "conferir"},
-  {"id": "prev_death_pension", "label": "Pensão por morte", "requirements": ["obito", "qualidade_segurado_instituidor", "dependencia", "duracao_cotas"], "claimant_theses": [{"id": "prev_death_pension.c1", "label": "Qualidade de segurado do instituidor e dependência comprovada", "authority_ids": ["l8213_art74", "l8213_art15"]}], "defense_theses": [{"id": "prev_death_pension.d1", "label": "Perda da qualidade de segurado do instituidor ou dependência não provada", "authority_ids": ["l8213_art15", "l8213_art74"]}], "temporal_marker_ids": ["ec103_reforma_previdencia"], "typical_requests": ["Concessão desde o óbito ou a DER conforme o prazo legal"], "evidence": ["Certidão de óbito e prova da união ou filiação", "CNIS do instituidor"], "piece_ids": ["requerimento_administrativo", "inicial_juizado"], "related_claims": ["fam_stable_union"], "limitation": "conferir"},
-  {"id": "prev_maternity", "label": "Salário-maternidade", "requirements": ["evento", "qualidade_segurada", "carencia_quando_exigida"], "claimant_theses": [{"id": "prev_maternity.c1", "label": "Parto, adoção ou guarda para adoção com qualidade de segurada", "authority_ids": ["l8213_art71"]}], "defense_theses": [{"id": "prev_maternity.d1", "label": "Carência não cumprida pela categoria de segurada", "authority_ids": ["l8213_art25"]}], "temporal_marker_ids": [], "typical_requests": ["Pagamento do benefício"], "evidence": ["Certidão de nascimento ou termo de guarda", "CNIS e contribuições"], "piece_ids": ["requerimento_administrativo", "inicial_juizado"], "related_claims": [], "limitation": "conferir"},
-  {"id": "prev_review", "label": "Revisão de benefício e decadência", "requirements": ["ato_concessorio", "erro_calculo", "regra_transicao", "prazo_decadencial"], "claimant_theses": [{"id": "prev_review.c1", "label": "Erro no salário de benefício ou nos salários de contribuição", "authority_ids": ["l8213_art29"]}, {"id": "prev_review.c2", "label": "Regra de transição do art. 3º da Lei 9.876/1999 — conferir ADIs 2110 e 2111", "authority_ids": ["l9876_art3", "adi_2110"]}], "defense_theses": [{"id": "prev_review.d1", "label": "Decadência decenal do direito de revisão", "authority_ids": ["l8213_art103"]}], "temporal_marker_ids": [], "typical_requests": ["Revisão da RMI e diferenças"], "evidence": ["Carta de concessão e memória de cálculo", "CNIS completo"], "piece_ids": ["requerimento_administrativo", "inicial_juizado"], "related_claims": ["prev_retirement"], "limitation": "Decadência decenal do art. 103 e prescrição quinquenal das parcelas (conferir)."},
-  {"id": "prev_rpps_special", "label": "Aposentadoria especial de servidor (RPPS)", "requirements": ["ente", "regime_proprio", "atividade_especial", "lei_local"], "claimant_theses": [{"id": "prev_rpps_special.c1", "label": "Regras do RGPS sobre aposentadoria especial aplicáveis ao servidor, no que couber", "authority_ids": ["sv_33"]}], "defense_theses": [{"id": "prev_rpps_special.d1", "label": "Legislação do ente e reformas próprias", "authority_ids": ["ec103_art3"]}], "temporal_marker_ids": ["ec103_reforma_previdencia"], "typical_requests": [], "evidence": [], "piece_ids": ["requerimento_administrativo", "mandado_injuncao", "inicial_procedimento_comum"], "related_claims": [], "limitation": "conferir"},
-  {"id": "prev_rural", "label": "Segurado especial e aposentadoria rural ou híbrida", "requirements": ["atividade_rural_no_periodo", "inicio_de_prova_material", "prova_testemunhal", "idade", "carencia_em_meses"], "claimant_theses": [{"id": "prev_rural.c1", "label": "Aposentadoria por idade do segurado especial com início de prova material corroborado por testemunhas", "authority_ids": ["l8213_art11", "l8213_art39", "l8213_art48", "l8213_art55", "stj_sumula_149"]}, {"id": "prev_rural.c2", "label": "Prova material não precisa cobrir todo o período e pode ser estendida por testemunhos", "authority_ids": ["l8213_art106", "stj_sumula_577"]}, {"id": "prev_rural.c3", "label": "Aposentadoria híbrida somando tempo rural e urbano", "authority_ids": ["l8213_art48"]}], "defense_theses": [{"id": "prev_rural.d1", "label": "Prova exclusivamente testemunhal não basta", "authority_ids": ["stj_sumula_149", "l8213_art55"]}, {"id": "prev_rural.d2", "label": "Descaracterização do regime de economia familiar por outra fonte de renda ou empregados permanentes", "authority_ids": ["l8213_art11"]}], "temporal_marker_ids": ["lei_13846_2019"], "typical_requests": ["Concessão desde a DER", "Averbação do tempo rural"], "evidence": ["Autodeclaração e documentos em nome próprio ou do grupo familiar", "Notas de produtor, contratos agrários, cadastros no INCRA e no CAF", "Testemunhas do período"], "piece_ids": ["requerimento_administrativo", "recurso_administrativo_previdenciario", "inicial_juizado", "inicial_procedimento_comum"], "related_claims": ["prev_retirement"], "limitation": "Prestações: prescrição quinquenal (Lei 8.213/1991, art. 103, parágrafo único) — conferir"},
-  {"id": "prev_disability_retirement", "label": "Aposentadoria da pessoa com deficiência", "requirements": ["deficiencia_e_grau", "data_de_inicio", "tempo_de_contribuicao", "avaliacao_biopsicossocial"], "claimant_theses": [{"id": "prev_disability_retirement.c1", "label": "Tempo reduzido conforme o grau da deficiência ou aposentadoria por idade com requisitos próprios", "authority_ids": ["lc142_art3", "cf_art201"]}, {"id": "prev_disability_retirement.c2", "label": "Avaliação médica e funcional define grau e data de início da deficiência", "authority_ids": ["lc142_art3", "l13146_art84"]}], "defense_theses": [{"id": "prev_disability_retirement.d1", "label": "Grau ou período de deficiência não comprovados na avaliação", "authority_ids": ["lc142_art3"]}], "temporal_marker_ids": ["ec103_reforma_previdencia"], "typical_requests": ["Concessão com o grau reconhecido", "Conversão de períodos"], "evidence": ["Laudos e prontuários antigos", "Avaliação biopsicossocial", "CNIS e CTPS"], "piece_ids": ["requerimento_administrativo", "recurso_administrativo_previdenciario", "inicial_juizado", "inicial_procedimento_comum"], "related_claims": ["prev_retirement", "prev_special_time"], "limitation": "Conferir"},
-  {"id": "prev_caregiver_addition", "label": "Acréscimo de 25% por assistência permanente", "requirements": ["aposentadoria_por_incapacidade_permanente", "necessidade_de_terceiro", "laudo"], "claimant_theses": [{"id": "prev_caregiver_addition.c1", "label": "Acréscimo ao aposentado por incapacidade permanente que necessita de assistência permanente", "authority_ids": ["l8213_art45"]}], "defense_theses": [{"id": "prev_caregiver_addition.d1", "label": "Extensão a outras aposentadorias afastada — conferir o Tema 1095 do STF", "authority_ids": ["l8213_art45", "tema_stf_1095"]}], "temporal_marker_ids": [], "typical_requests": ["Acréscimo desde o requerimento ou da necessidade comprovada"], "evidence": ["Laudo que descreva a dependência de terceiros", "Carta de concessão"], "piece_ids": ["requerimento_administrativo", "inicial_juizado"], "related_claims": ["prev_incapacity"], "limitation": "Conferir"},
-  {"id": "prev_reclusion_aid", "label": "Auxílio-reclusão", "requirements": ["qualidade_de_segurado", "baixa_renda", "regime_fechado", "carencia", "dependencia"], "claimant_theses": [{"id": "prev_reclusion_aid.c1", "label": "Dependentes do segurado de baixa renda recolhido em regime fechado", "authority_ids": ["l8213_art80", "l8213_art16", "cf_art201"]}], "defense_theses": [{"id": "prev_reclusion_aid.d1", "label": "Renda do segurado acima do limite ou carência não cumprida", "authority_ids": ["l8213_art80", "l8213_art25"]}], "temporal_marker_ids": ["lei_13846_2019"], "typical_requests": ["Concessão desde a prisão ou do requerimento, conforme o prazo"], "evidence": ["Certidão de recolhimento prisional atualizada", "CNIS", "Prova da dependência"], "piece_ids": ["requerimento_administrativo", "inicial_juizado"], "related_claims": ["prev_death_pension"], "limitation": "Conferir"},
-  {"id": "prev_dependents_union", "label": "Dependência e união estável na pensão por morte", "requirements": ["obito", "qualidade_de_segurado_do_instituidor", "classe_do_dependente", "prova_da_uniao", "duracao"], "claimant_theses": [{"id": "prev_dependents_union.c1", "label": "Companheiro como dependente de primeira classe com dependência presumida", "authority_ids": ["l8213_art16", "l8213_art74"]}, {"id": "prev_dependents_union.c2", "label": "Lei aplicável é a vigente na data do óbito", "authority_ids": ["stj_sumula_340"]}, {"id": "prev_dependents_union.c3", "label": "Pensão devida mesmo após perda da qualidade de segurado se já preenchidos os requisitos de aposentadoria", "authority_ids": ["stj_sumula_416", "l8213_art102"]}], "defense_theses": [{"id": "prev_dependents_union.d1", "label": "Exigência de início de prova material contemporânea da união", "authority_ids": ["l8213_art16"]}, {"id": "prev_dependents_union.d2", "label": "Duração da cota conforme idade e tempo de união ou de contribuição", "authority_ids": ["l8213_art77"]}, {"id": "prev_dependents_union.d3", "label": "Cálculo em cotas e limites de acumulação", "authority_ids": ["ec103_art23", "ec103_art24"]}], "temporal_marker_ids": ["ec103_reforma_previdencia", "lei_13846_2019"], "typical_requests": ["Habilitação e pagamento desde o óbito ou do requerimento", "Rateio entre dependentes"], "evidence": ["Certidão de óbito", "Documentos de endereço comum, contas, filhos, declarações fiscais", "Testemunhas"], "piece_ids": ["requerimento_administrativo", "recurso_administrativo_previdenciario", "inicial_juizado", "inicial_procedimento_comum"], "related_claims": ["prev_death_pension"], "limitation": "Prazos de requerimento definem o termo inicial (Lei 8.213/1991, art. 74) — conferir"},
-  {"id": "prev_overpayment", "label": "Devolução de valores e descontos no benefício", "requirements": ["origem_do_pagamento", "boa_fe", "erro_administrativo", "percentual_do_desconto"], "claimant_theses": [{"id": "prev_overpayment.c1", "label": "Verba alimentar recebida de boa-fé por erro da administração — conferir o Tema 979 do STJ", "authority_ids": ["l8213_art115"]}, {"id": "prev_overpayment.c2", "label": "Desconto limitado ao percentual legal e precedido de defesa", "authority_ids": ["l8213_art115", "cf_art5"]}], "defense_theses": [{"id": "prev_overpayment.d1", "label": "Restituição de valores pagos por tutela posteriormente revogada — conferir o Tema 692 do STJ", "authority_ids": ["l8213_art115"]}], "temporal_marker_ids": [], "typical_requests": ["Inexigibilidade do débito", "Cessação dos descontos e devolução"], "evidence": ["Ofício de cobrança e memória de cálculo", "Histórico de créditos", "Processo administrativo"], "piece_ids": ["recurso_administrativo_previdenciario", "inicial_juizado", "inicial_procedimento_comum", "mandado_seguranca"], "related_claims": ["prev_review"], "limitation": "Conferir"},
-  {"id": "prev_accumulation", "label": "Acumulação de benefícios", "requirements": ["beneficios_envolvidos", "datas_de_inicio", "regimes", "redutores"], "claimant_theses": [{"id": "prev_accumulation.c1", "label": "Acumulação permitida de pensões e aposentadorias de regimes distintos com redutores", "authority_ids": ["ec103_art24"]}, {"id": "prev_accumulation.c2", "label": "Opção pelo benefício mais vantajoso", "authority_ids": ["l8213_art124"]}], "defense_theses": [{"id": "prev_accumulation.d1", "label": "Vedação de recebimento conjunto nas hipóteses legais", "authority_ids": ["l8213_art124"]}, {"id": "prev_accumulation.d2", "label": "Auxílio-acidente não se acumula com aposentadoria após a alteração legal — conferir a data", "authority_ids": ["l8213_art86", "stj_sumula_507"]}], "temporal_marker_ids": ["ec103_reforma_previdencia"], "typical_requests": ["Manutenção ou restabelecimento do benefício", "Recálculo com redutor"], "evidence": ["Cartas de concessão", "Histórico de créditos"], "piece_ids": ["requerimento_administrativo", "inicial_juizado", "inicial_procedimento_comum"], "related_claims": ["prev_death_pension", "prev_accident_aid"], "limitation": "Conferir"},
-  {"id": "prev_judicial_incapacity_procedure", "label": "Ação de benefício por incapacidade: requisitos e perícia", "requirements": ["requerimento_previo", "descricao_da_doenca", "documentos_medicos", "quesitos"], "claimant_theses": [{"id": "prev_judicial_incapacity_procedure.c1", "label": "Petição inicial com descrição da doença, atividade e inconsistências da perícia administrativa", "authority_ids": ["l8213_art129a", "cpc_art319"]}, {"id": "prev_judicial_incapacity_procedure.c2", "label": "Reabilitação profissional antes da cessação quando insuscetível de recuperação para a atividade habitual", "authority_ids": ["l8213_art62"]}], "defense_theses": [{"id": "prev_judicial_incapacity_procedure.d1", "label": "Ausência de requerimento administrativo ou de documentos indispensáveis", "authority_ids": ["l8213_art129a", "tema_stf_350"]}, {"id": "prev_judicial_incapacity_procedure.d2", "label": "Convocação para reavaliação periódica", "authority_ids": ["l8213_art101"]}], "temporal_marker_ids": [], "typical_requests": ["Restabelecimento com prazo de duração fundamentado", "Encaminhamento à reabilitação"], "evidence": ["Laudos e exames datados", "Comunicado de decisão do INSS", "Descrição das tarefas do trabalho"], "piece_ids": ["inicial_juizado", "inicial_procedimento_comum", "tutela_urgencia_antecedente", "impugnacao_laudo", "recurso_inominado"], "related_claims": ["prev_incapacity"], "limitation": "Conferir"},
-  {"id": "prev_rpps_server", "label": "Servidor em regime próprio: aposentadoria e abono", "requirements": ["ente_e_lei_local", "data_de_ingresso", "regra_de_transicao", "tempo_de_cargo"], "claimant_theses": [{"id": "prev_rpps_server.c1", "label": "Direito adquirido e regras de transição do servidor conforme a data de ingresso", "authority_ids": ["cf_art40", "ec103_art3", "ec103_art20"]}, {"id": "prev_rpps_server.c2", "label": "Aplicação das regras do RGPS à aposentadoria especial do servidor", "authority_ids": ["sv_33"]}], "defense_theses": [{"id": "prev_rpps_server.d1", "label": "Regras dependem da lei do ente federativo após a EC 103/2019", "authority_ids": ["cf_art40"]}], "temporal_marker_ids": ["ec103_reforma_previdencia"], "typical_requests": ["Concessão pela regra mais vantajosa", "Abono de permanência"], "evidence": ["Certidão de tempo de contribuição", "Ficha funcional e lei local"], "piece_ids": ["requerimento_administrativo", "mandado_seguranca", "inicial_procedimento_comum"], "related_claims": ["prev_rpps_special"], "limitation": "Prescrição quinquenal contra a Fazenda (Decreto 20.910/1932) — conferir"}
+  {
+   "id": "prev_incapacity",
+   "label": "Benefício por incapacidade temporária ou permanente",
+   "requirements": [
+    "qualidade_segurado",
+    "carencia_ou_isencao",
+    "incapacidade_e_dii",
+    "pericia",
+    "der_dib_dcb"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_incapacity.c1",
+     "label": "Incapacidade para a atividade habitual comprovada (benefício temporário)",
+     "authority_ids": [
+      "l8213_art59"
+     ]
+    },
+    {
+     "id": "prev_incapacity.c2",
+     "label": "Incapacidade total e permanente para o trabalho",
+     "authority_ids": [
+      "l8213_art42"
+     ]
+    },
+    {
+     "id": "prev_incapacity.c3",
+     "label": "Isenção de carência nas hipóteses legais",
+     "authority_ids": [
+      "l8213_art26",
+      "l8213_art25"
+     ]
+    },
+    {
+     "id": "prev_incapacity.c4",
+     "label": "Qualidade de segurado mantida no período de graça",
+     "authority_ids": [
+      "l8213_art15"
+     ]
+    },
+    {
+     "id": "prev_incapacity.c5",
+     "label": "Recurso administrativo ao CRPS antes ou em paralelo à via judicial, conforme a estratégia",
+     "authority_ids": [
+      "d3048_art305",
+      "tema_stf_350"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_incapacity.d1",
+     "label": "Perda da qualidade de segurado ou carência incompleta na data de início da incapacidade",
+     "authority_ids": [
+      "l8213_art15",
+      "l8213_art25"
+     ]
+    },
+    {
+     "id": "prev_incapacity.d2",
+     "label": "Capacidade atestada pela perícia ou incapacidade preexistente à filiação",
+     "authority_ids": [
+      "l8213_art59",
+      "l8213_art42"
+     ]
+    },
+    {
+     "id": "prev_incapacity.d3",
+     "label": "Honorários não incidem sobre prestações vencidas após a sentença",
+     "authority_ids": [
+      "stj_sumula_111"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec103_reforma_previdencia"
+   ],
+   "typical_requests": [
+    "Concessão ou restabelecimento com DIB fixada",
+    "Atrasados com atualização",
+    "Tutela de urgência"
+   ],
+   "evidence": [
+    "Requerimento e decisão do INSS (DER)",
+    "Laudos, exames e prontuários",
+    "CNIS e carteira de trabalho"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "recurso_administrativo_previdenciario",
+    "inicial_juizado",
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [
+    "prev_accident_aid"
+   ],
+   "limitation": "Não incide decadência sobre o indeferimento ou cessação administrativa de benefício (Tema 1064/Súmula 81 TNU — apenas sobre o ato de concessão/revisão, Lei 8.213/1991, art. 103, observada a inconstitucionalidade parcial na ADI 6096 do STF), aplicando-se a prescrição quinquenal às prestações vencidas antes do ajuizamento (art. 103, parágrafo único; Súmula 85 do STJ)."
+  },
+  {
+   "id": "prev_accident_aid",
+   "label": "Auxílio-acidente",
+   "requirements": [
+    "consolidacao_lesoes",
+    "sequela",
+    "reducao_capacidade",
+    "qualidade_segurado"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_accident_aid.c1",
+     "label": "Sequela consolidada que reduz a capacidade para o trabalho habitual",
+     "authority_ids": [
+      "l8213_art86"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_accident_aid.d1",
+     "label": "Sequela sem redução da capacidade ou ausência de nexo com acidente",
+     "authority_ids": [
+      "l8213_art86"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec103_reforma_previdencia"
+   ],
+   "typical_requests": [
+    "Concessão desde a cessação do benefício por incapacidade",
+    "Implantação do auxílio-acidente de natureza indenizatória ainda que a lesão seja mínima, desde que implique redução da capacidade para o trabalho habitual ou maior esforço (Tema Repetitivo 416 do STJ)",
+    "Pagamento das parcelas atrasadas desde o dia seguinte ao da cessação do auxílio por incapacidade temporária antecedente (Tema Repetitivo 862 do STJ)"
+   ],
+   "evidence": [
+    "Laudo pericial e CAT",
+    "Histórico de benefícios",
+    "Prontuários de reabilitação fisioterápica, exames funcionais e descrição profissiográfica da atividade habitual na época do acidente"
+   ],
+   "piece_ids": [
+    "inicial_juizado",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "prev_incapacity"
+   ],
+   "limitation": "Inexiste decadência para o pedido inicial de concessão do auxílio-acidente (Súmula 81 da TNU; ADI 6096 STF), prescrevendo apenas as prestações mensais anteriores ao quinquênio que antecede a propositura da ação (Lei 8.213/1991, art. 103, parágrafo único)."
+  },
+  {
+   "id": "prev_retirement",
+   "label": "Aposentadoria programada, regras de transição e direito adquirido",
+   "requirements": [
+    "filiacao_antes_ou_depois_ec103",
+    "tempo_contribuicao",
+    "idade",
+    "pontos_ou_pedagio",
+    "calculo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_retirement.c1",
+     "label": "Direito adquirido às regras anteriores com requisitos cumpridos até a vigência da EC 103/2019",
+     "authority_ids": [
+      "ec103_art3"
+     ]
+    },
+    {
+     "id": "prev_retirement.c2",
+     "label": "Transição por pontos, idade mínima progressiva ou pedágio",
+     "authority_ids": [
+      "ec103_art15",
+      "ec103_art16",
+      "ec103_art20"
+     ]
+    },
+    {
+     "id": "prev_retirement.c3",
+     "label": "Transição com pedágio de 50% para quem estava perto do tempo exigido",
+     "authority_ids": [
+      "ec103_art17"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_retirement.d1",
+     "label": "Requisitos da regra escolhida não cumpridos na DER; cálculo pela regra permanente",
+     "authority_ids": [
+      "ec103_art26"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec103_reforma_previdencia"
+   ],
+   "typical_requests": [
+    "Concessão pela regra mais vantajosa",
+    "Reafirmação da DER, se cabível",
+    "Reconhecimento de vínculos pendentes de validação ou recolhimento extemporâneo de responsabilidade do empregador no CNIS"
+   ],
+   "evidence": [
+    "CNIS, CTPS e carnês",
+    "Simulação por regra de transição",
+    "Processo administrativo previdenciário integral (PAP) e planilha comparativa da RMI em cada regra permanente e de transição da EC 103/2019"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "recurso_administrativo_previdenciario",
+    "inicial_juizado",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "prev_special_time",
+    "prev_review"
+   ],
+   "limitation": "Direito fundamental à concessão de aposentadoria é imprescritível e não decai pelo não exercício (Lei 8.213/1991, art. 102, § 1º; ADI 6096 do STF); prescrição quinquenal das parcelas vencidas (art. 103, parágrafo único) e decadência decenal apenas para revisão do ato concessório (art. 103, caput)."
+  },
+  {
+   "id": "prev_special_time",
+   "label": "Aposentadoria especial e tempo especial",
+   "requirements": [
+    "agente_nocivo",
+    "periodo",
+    "ppp_ltcat",
+    "epi",
+    "conversao_temporal"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_special_time.c1",
+     "label": "Exposição a agentes nocivos comprovada por PPP e LTCAT",
+     "authority_ids": [
+      "l8213_art57",
+      "l8213_art58"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_special_time.d1",
+     "label": "EPI eficaz ou agente abaixo do limite de tolerância; PPP sem responsável técnico",
+     "authority_ids": [
+      "l8213_art58",
+      "tema_stf_555"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec103_reforma_previdencia"
+   ],
+   "typical_requests": [
+    "Reconhecimento do tempo especial e conversão quando permitida no período",
+    "Concessão da aposentadoria especial ou averbação e conversão em tempo comum pelo fator 1,4 ou 1,2 para os períodos trabalhados até 13/11/2019 (EC 103/2019, art. 25, § 2º)",
+    "Determinação de perícia técnica no local de trabalho ou em empresa paradigma similar quando extinto o estabelecimento"
+   ],
+   "evidence": [
+    "PPP, LTCAT e laudos",
+    "CTPS com função e empregador",
+    "Laudos técnicos de reclamações trabalhistas, programas PPRA/PGR/PCMSO ou perícia judicial por similaridade"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "inicial_procedimento_comum",
+    "inicial_juizado"
+   ],
+   "related_claims": [
+    "prev_retirement"
+   ],
+   "limitation": "Conversão de tempo especial em comum admitida exclusivamente para competências laboradas até 13/11/2019 (EC 103/2019, art. 25, § 2º; constitucionalidade reconhecida pelo STF); inexiste decadência para o indeferimento (ADI 6096 STF), incidindo prescrição quinquenal sobre atrasados (Lei 8.213/1991, art. 103, parágrafo único)."
+  },
+  {
+   "id": "prev_bpc",
+   "label": "Benefício de prestação continuada (BPC/LOAS)",
+   "requirements": [
+    "idade_ou_deficiencia",
+    "avaliacao_biopsicossocial",
+    "grupo_familiar",
+    "renda",
+    "cadunico"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_bpc.c1",
+     "label": "Deficiência ou idade e renda familiar dentro do critério legal, com avaliação biopsicossocial",
+     "authority_ids": [
+      "cf_art203",
+      "l8742_art20"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_bpc.d1",
+     "label": "Renda per capita acima do critério legal ou ausência de impedimento de longo prazo",
+     "authority_ids": [
+      "l8742_art20"
+     ]
+    },
+    {
+     "id": "prev_bpc.d2",
+     "label": "Revisão bienal e cessação por mudança das condições",
+     "authority_ids": [
+      "l8742_art21"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14176_bpc"
+   ],
+   "typical_requests": [
+    "Concessão desde a DER",
+    "Exclusão do cômputo da renda familiar de benefício previdenciário ou assistencial de até um salário mínimo percebido por idoso ou pessoa com deficiência do grupo e abatimento de gastos extraordinários de saúde (Lei 8.742/1993, art. 20, §§ 14 e 11-A; Tema 27 do STF)",
+    "Implantação imediata em tutela de evidência/urgência alimentar"
+   ],
+   "evidence": [
+    "CadÚnico, composição familiar e despesas",
+    "Laudos e avaliação social",
+    "Comprovantes de gastos mensais não fornecidos gratuitamente pela rede pública com medicamentos, fraldas, alimentação especial e aluguel"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "inicial_juizado"
+   ],
+   "related_claims": [
+    "prev_incapacity"
+   ],
+   "limitation": "Benefício assistencial não se sujeita a decadência para concessão inicial; prescrição quinquenal das parcelas vencidas antes do ajuizamento (Lei 8.213/1991, art. 103, parágrafo único, aplicável subsidiariamente — LOAS, art. 37), exigindo atualização bienal do CadÚnico."
+  },
+  {
+   "id": "prev_death_pension",
+   "label": "Pensão por morte",
+   "requirements": [
+    "obito",
+    "qualidade_segurado_instituidor",
+    "dependencia",
+    "duracao_cotas"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_death_pension.c1",
+     "label": "Qualidade de segurado do instituidor e dependência comprovada",
+     "authority_ids": [
+      "l8213_art74",
+      "l8213_art15"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_death_pension.d1",
+     "label": "Perda da qualidade de segurado do instituidor ou dependência não provada",
+     "authority_ids": [
+      "l8213_art15",
+      "l8213_art74"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec103_reforma_previdencia",
+    "lei_13846_2019"
+   ],
+   "typical_requests": [
+    "Concessão desde o óbito ou a DER conforme o prazo legal",
+    "Habilitação tardia ou exclusão de dependente aparente e fixação das cotas conforme a lei vigente na data do óbito (Súmula 340 do STJ)"
+   ],
+   "evidence": [
+    "Certidão de óbito e prova da união ou filiação",
+    "CNIS do instituidor",
+    "Provas materiais contemporâneas exigidas pelo § 5º do art. 16 da Lei 8.213/1991 quando envolver união estável ou dependência econômica"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "inicial_juizado"
+   ],
+   "related_claims": [
+    "fam_stable_union"
+   ],
+   "limitation": "Requerimento em até 90 dias do óbito (180 dias para filhos menores de 16 anos) assegura DIB na data do óbito; requerido após esses prazos, a DIB fixa-se na DER (Lei 8.213/1991, art. 74); prescrição quinquenal das parcelas (art. 103, parágrafo único), não correndo contra absolutamente incapazes (art. 79 e CC, art. 198, I)."
+  },
+  {
+   "id": "prev_maternity",
+   "label": "Salário-maternidade",
+   "requirements": [
+    "evento",
+    "qualidade_segurada",
+    "carencia_quando_exigida"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_maternity.c1",
+     "label": "Parto, adoção ou guarda para adoção com qualidade de segurada",
+     "authority_ids": [
+      "l8213_art71"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_maternity.d1",
+     "label": "Carência não cumprida pela categoria de segurada",
+     "authority_ids": [
+      "l8213_art25"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "adi_2110_vida_toda"
+   ],
+   "typical_requests": [
+    "Pagamento do benefício",
+    "Reconhecimento da inconstitucionalidade da exigência de carência de 10 contribuições para segurada contribuinte individual, facultativa e especial (ADI 2110 do STF!), bastando uma contribuição prévia e qualidade de segurada"
+   ],
+   "evidence": [
+    "Certidão de nascimento ou termo de guarda",
+    "CNIS e contribuições",
+    "Provas de atividade rural nos meses anteriores ao parto quando se tratar de segurada especial rural ou boia-fria"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "inicial_juizado"
+   ],
+   "related_claims": [],
+   "limitation": "O salário-maternidade pode ser requerido em até 5 anos contados do parto, adoção ou guarda para fins de adoção, sob pena de prescrição quinquenal das prestações (Lei 8.213/1991, arts. 71 e 103, parágrafo único), não correndo contra menor absolutamente incapaz."
+  },
+  {
+   "id": "prev_review",
+   "label": "Revisão de benefício e decadência",
+   "requirements": [
+    "ato_concessorio",
+    "erro_calculo",
+    "regra_transicao",
+    "prazo_decadencial"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_review.c1",
+     "label": "Erro no salário de benefício ou nos salários de contribuição",
+     "authority_ids": [
+      "l8213_art29"
+     ]
+    },
+    {
+     "id": "prev_review.c2",
+     "label": "Regra de transição do art. 3º da Lei 9.876/1999 — conferir ADIs 2110 e 2111",
+     "authority_ids": [
+      "l9876_art3",
+      "adi_2110"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_review.d1",
+     "label": "Decadência decenal do direito de revisão",
+     "authority_ids": [
+      "l8213_art103"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec103_reforma_previdencia",
+    "adi_2110_vida_toda"
+   ],
+   "typical_requests": [
+    "Revisão da RMI e diferenças",
+    "Afastamento da decadência quanto a questões não apreciadas no ato administrativo de concessão (Tema Repetitivo 975 do STJ — ex.: teto das ECs 20/1998 e 41/2003 no Tema 76 do STF)"
+   ],
+   "evidence": [
+    "Carta de concessão e memória de cálculo",
+    "CNIS completo",
+    "Cópia integral do processo administrativo de concessão para verificar quais elementos foram efetivamente examinados pelo INSS"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "inicial_juizado"
+   ],
+   "related_claims": [
+    "prev_retirement"
+   ],
+   "limitation": "Prazo decadencial de 10 anos para todo e qualquer direito ou ação do segurado ou beneficiário para a revisão do ato de concessão de benefício, a contar do dia primeiro do mês seguinte ao do recebimento da primeira prestação (Lei 8.213/1991, art. 103, caput), cumulado com a prescrição quinquenal das diferenças mensais (parágrafo único)."
+  },
+  {
+   "id": "prev_rpps_special",
+   "label": "Aposentadoria especial de servidor (RPPS)",
+   "requirements": [
+    "ente",
+    "regime_proprio",
+    "atividade_especial",
+    "lei_local"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_rpps_special.c1",
+     "label": "Regras do RGPS sobre aposentadoria especial aplicáveis ao servidor, no que couber",
+     "authority_ids": [
+      "sv_33"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_rpps_special.d1",
+     "label": "Legislação do ente e reformas próprias",
+     "authority_ids": [
+      "ec103_art3"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec103_reforma_previdencia",
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Reconhecimento do tempo de serviço público exercido sob condições especiais insalubres com aplicação da Súmula Vinculante 33 até a edição de lei complementar do ente federativo pós-EC 103/2019",
+    "Concessão de aposentadoria especial estatutária ou expedição de Certidão de Tempo de Contribuição (CTC), observada a vedação/limitação de conversão em tempo comum no RPPS conforme o Tema 942 do STF (fatos anteriores à EC 103/2019)",
+    "Pagamento de abono de permanência desde o preenchimento dos requisitos voluntários"
+   ],
+   "evidence": [
+    "Perfil Profissiográfico Previdenciário (PPP) ou laudo técnico oficial das condições ambientais do órgão público (LTCAT)",
+    "Portarias de concessão de adicional de insalubridade, fichas funcionais e descrição das atribuições do cargo efetivo",
+    "Legislação previdenciária própria do Estado ou Município após a Emenda Constitucional 103/2019"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "mandado_injuncao",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [],
+   "limitation": "Conversão de tempo especial em comum para servidores de RPPS admitida pelas normas do RGPS apenas para períodos laborados até a edição da EC 103/2019 (13/11/2019 — Tema 942 do STF); prescrição quinquenal das parcelas financeiras contra a Fazenda Pública (Decreto 20.910/1932, art. 1º; Súmula 85 do STJ)."
+  },
+  {
+   "id": "prev_rural",
+   "label": "Segurado especial e aposentadoria rural ou híbrida",
+   "requirements": [
+    "atividade_rural_no_periodo",
+    "inicio_de_prova_material",
+    "prova_testemunhal",
+    "idade",
+    "carencia_em_meses"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_rural.c1",
+     "label": "Aposentadoria por idade do segurado especial com início de prova material corroborado por testemunhas",
+     "authority_ids": [
+      "l8213_art11",
+      "l8213_art39",
+      "l8213_art48",
+      "l8213_art55",
+      "stj_sumula_149"
+     ]
+    },
+    {
+     "id": "prev_rural.c2",
+     "label": "Prova material não precisa cobrir todo o período e pode ser estendida por testemunhos",
+     "authority_ids": [
+      "l8213_art106",
+      "stj_sumula_577"
+     ]
+    },
+    {
+     "id": "prev_rural.c3",
+     "label": "Aposentadoria híbrida somando tempo rural e urbano",
+     "authority_ids": [
+      "l8213_art48"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_rural.d1",
+     "label": "Prova exclusivamente testemunhal não basta",
+     "authority_ids": [
+      "stj_sumula_149",
+      "l8213_art55"
+     ]
+    },
+    {
+     "id": "prev_rural.d2",
+     "label": "Descaracterização do regime de economia familiar por outra fonte de renda ou empregados permanentes",
+     "authority_ids": [
+      "l8213_art11"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13846_2019",
+    "ec103_reforma_previdencia"
+   ],
+   "typical_requests": [
+    "Concessão desde a DER",
+    "Averbação do tempo rural"
+   ],
+   "evidence": [
+    "Autodeclaração e documentos em nome próprio ou do grupo familiar",
+    "Notas de produtor, contratos agrários, cadastros no INCRA e no CAF",
+    "Testemunhas do período"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "recurso_administrativo_previdenciario",
+    "inicial_juizado",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "prev_retirement"
+   ],
+   "limitation": "Inexiste decadência para o pedido de concessão inicial ou averbação de tempo rural (ADI 6096 STF); prescrição quinquenal das prestações vencidas antes do ajuizamento (Lei 8.213/1991, art. 103, parágrafo único)."
+  },
+  {
+   "id": "prev_disability_retirement",
+   "label": "Aposentadoria da pessoa com deficiência",
+   "requirements": [
+    "deficiencia_e_grau",
+    "data_de_inicio",
+    "tempo_de_contribuicao",
+    "avaliacao_biopsicossocial"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_disability_retirement.c1",
+     "label": "Tempo reduzido conforme o grau da deficiência ou aposentadoria por idade com requisitos próprios",
+     "authority_ids": [
+      "lc142_art3",
+      "cf_art201"
+     ]
+    },
+    {
+     "id": "prev_disability_retirement.c2",
+     "label": "Avaliação médica e funcional define grau e data de início da deficiência",
+     "authority_ids": [
+      "lc142_art3",
+      "l13146_art84"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_disability_retirement.d1",
+     "label": "Grau ou período de deficiência não comprovados na avaliação",
+     "authority_ids": [
+      "lc142_art3"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec103_reforma_previdencia"
+   ],
+   "typical_requests": [
+    "Concessão com o grau reconhecido",
+    "Conversão de períodos"
+   ],
+   "evidence": [
+    "Laudos e prontuários antigos",
+    "Avaliação biopsicossocial",
+    "CNIS e CTPS"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "recurso_administrativo_previdenciario",
+    "inicial_juizado",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "prev_retirement",
+    "prev_special_time"
+   ],
+   "limitation": "Concessão inicial da aposentadoria da LC 142/2013 não decai; prescrição quinquenal das parcelas atrasadas anteriores aos 5 anos do ajuizamento e decadência decenal apenas após concedido o benefício para revisar o grau ou a RMI (Lei 8.213/1991, art. 103)."
+  },
+  {
+   "id": "prev_caregiver_addition",
+   "label": "Acréscimo de 25% por assistência permanente",
+   "requirements": [
+    "aposentadoria_por_incapacidade_permanente",
+    "necessidade_de_terceiro",
+    "laudo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_caregiver_addition.c1",
+     "label": "Acréscimo ao aposentado por incapacidade permanente que necessita de assistência permanente",
+     "authority_ids": [
+      "l8213_art45"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_caregiver_addition.d1",
+     "label": "Extensão a outras aposentadorias afastada — conferir o Tema 1095 do STF",
+     "authority_ids": [
+      "l8213_art45",
+      "tema_stf_1095"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Acréscimo desde o requerimento ou da necessidade comprovada",
+    "Concessão exclusiva na aposentadoria por incapacidade permanente (vedada extensão judicial às demais espécies de aposentadoria — Tema 1095 do STF)"
+   ],
+   "evidence": [
+    "Laudo que descreva a dependência de terceiros",
+    "Carta de concessão",
+    "Avaliação pericial médica atestando o enquadramento no Anexo I do Regulamento da Previdência Social ou dependência permanente de terceiros para atos da vida diária"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "inicial_juizado"
+   ],
+   "related_claims": [
+    "prev_incapacity"
+   ],
+   "limitation": "Requerível a qualquer tempo quando sobrevier a necessidade permanente da assistência de outra pessoa no aposentado por incapacidade permanente (Lei 8.213/1991, art. 45, 'a'), incidindo prescrição quinquenal sobre parcelas anteriores a 5 anos do requerimento."
+  },
+  {
+   "id": "prev_reclusion_aid",
+   "label": "Auxílio-reclusão",
+   "requirements": [
+    "qualidade_de_segurado",
+    "baixa_renda",
+    "regime_fechado",
+    "carencia",
+    "dependencia"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_reclusion_aid.c1",
+     "label": "Dependentes do segurado de baixa renda recolhido em regime fechado",
+     "authority_ids": [
+      "l8213_art80",
+      "l8213_art16",
+      "cf_art201"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_reclusion_aid.d1",
+     "label": "Renda do segurado acima do limite ou carência não cumprida",
+     "authority_ids": [
+      "l8213_art80",
+      "l8213_art25"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13846_2019",
+    "ec103_reforma_previdencia"
+   ],
+   "typical_requests": [
+    "Concessão desde a prisão ou do requerimento, conforme o prazo",
+    "Aferição do critério de baixa renda pela média dos salários de contribuição dos 12 meses anteriores ao recolhimento prisional pós-Lei 13.846/2019 (ou flexibilização na ausência de renda no mês do encarceramento para fatos anteriores — Tema 896 STJ)"
+   ],
+   "evidence": [
+    "Certidão de recolhimento prisional atualizada",
+    "CNIS",
+    "Prova da dependência"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "inicial_juizado"
+   ],
+   "related_claims": [
+    "prev_death_pension"
+   ],
+   "limitation": "Aplica-se ao auxílio-reclusão a mesma regra da pensão por morte: requerido até 90 dias da prisão (180 dias para menores de 16 anos), devido desde o recolhimento; após esse prazo, devido desde a DER (Lei 8.213/1991, arts. 74 e 80), respeitada a prescrição quinquenal e a suspensão contra absolutamente incapazes."
+  },
+  {
+   "id": "prev_dependents_union",
+   "label": "Dependência e união estável na pensão por morte",
+   "requirements": [
+    "obito",
+    "qualidade_de_segurado_do_instituidor",
+    "classe_do_dependente",
+    "prova_da_uniao",
+    "duracao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_dependents_union.c1",
+     "label": "Companheiro como dependente de primeira classe com dependência presumida",
+     "authority_ids": [
+      "l8213_art16",
+      "l8213_art74"
+     ]
+    },
+    {
+     "id": "prev_dependents_union.c2",
+     "label": "Lei aplicável é a vigente na data do óbito",
+     "authority_ids": [
+      "stj_sumula_340"
+     ]
+    },
+    {
+     "id": "prev_dependents_union.c3",
+     "label": "Pensão devida mesmo após perda da qualidade de segurado se já preenchidos os requisitos de aposentadoria",
+     "authority_ids": [
+      "stj_sumula_416",
+      "l8213_art102"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_dependents_union.d1",
+     "label": "Exigência de início de prova material contemporânea da união",
+     "authority_ids": [
+      "l8213_art16"
+     ]
+    },
+    {
+     "id": "prev_dependents_union.d2",
+     "label": "Duração da cota conforme idade e tempo de união ou de contribuição",
+     "authority_ids": [
+      "l8213_art77"
+     ]
+    },
+    {
+     "id": "prev_dependents_union.d3",
+     "label": "Cálculo em cotas e limites de acumulação",
+     "authority_ids": [
+      "ec103_art23",
+      "ec103_art24"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec103_reforma_previdencia",
+    "lei_13846_2019"
+   ],
+   "typical_requests": [
+    "Habilitação e pagamento desde o óbito ou do requerimento",
+    "Rateio entre dependentes"
+   ],
+   "evidence": [
+    "Certidão de óbito",
+    "Documentos de endereço comum, contas, filhos, declarações fiscais",
+    "Testemunhas"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "recurso_administrativo_previdenciario",
+    "inicial_juizado",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "prev_death_pension"
+   ],
+   "limitation": "Prazos do art. 74 da Lei 8.213/1991 definem a DIB (óbito ou DER; na habilitação tardia existindo outros dependentes já habilitados, efeitos apenas a partir da DER — art. 76); exigência de pelo menos dois documentos de início de prova material produzidos em período não superior a 24 meses antes do óbito após a Lei 13.846/2019 (art. 16, § 5º)."
+  },
+  {
+   "id": "prev_overpayment",
+   "label": "Devolução de valores e descontos no benefício",
+   "requirements": [
+    "origem_do_pagamento",
+    "boa_fe",
+    "erro_administrativo",
+    "percentual_do_desconto"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_overpayment.c1",
+     "label": "Verba alimentar recebida de boa-fé por erro da administração — conferir o Tema 979 do STJ",
+     "authority_ids": [
+      "l8213_art115"
+     ]
+    },
+    {
+     "id": "prev_overpayment.c2",
+     "label": "Desconto limitado ao percentual legal e precedido de defesa",
+     "authority_ids": [
+      "l8213_art115",
+      "cf_art5"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_overpayment.d1",
+     "label": "Restituição de valores pagos por tutela posteriormente revogada — conferir o Tema 692 do STJ",
+     "authority_ids": [
+      "l8213_art115"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Inexigibilidade do débito",
+    "Cessação dos descontos e devolução",
+    "Observância da irrepetibilidade dos valores alimentares recebidos de boa-fé por erro administrativo/interpretação do INSS (Tema 979 do STJ) vs. dever de restituição na revogação de tutela provisória judicial (Tema 692 do STJ, salvo modulação/dupla conformidade)"
+   ],
+   "evidence": [
+    "Ofício de cobrança e memória de cálculo",
+    "Histórico de créditos",
+    "Processo administrativo"
+   ],
+   "piece_ids": [
+    "recurso_administrativo_previdenciario",
+    "inicial_juizado",
+    "inicial_procedimento_comum",
+    "mandado_seguranca"
+   ],
+   "related_claims": [
+    "prev_review"
+   ],
+   "limitation": "Decadência decenal para a Previdência Social anular atos administrativos de que decorram efeitos favoráveis aos beneficiários de boa-fé (Lei 8.213/1991, art. 103-A) e limite de desconto mensal de até 30% quando cabível a consignação restitutória (art. 115, II)."
+  },
+  {
+   "id": "prev_accumulation",
+   "label": "Acumulação de benefícios",
+   "requirements": [
+    "beneficios_envolvidos",
+    "datas_de_inicio",
+    "regimes",
+    "redutores"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_accumulation.c1",
+     "label": "Acumulação permitida de pensões e aposentadorias de regimes distintos com redutores",
+     "authority_ids": [
+      "ec103_art24"
+     ]
+    },
+    {
+     "id": "prev_accumulation.c2",
+     "label": "Opção pelo benefício mais vantajoso",
+     "authority_ids": [
+      "l8213_art124"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_accumulation.d1",
+     "label": "Vedação de recebimento conjunto nas hipóteses legais",
+     "authority_ids": [
+      "l8213_art124"
+     ]
+    },
+    {
+     "id": "prev_accumulation.d2",
+     "label": "Auxílio-acidente não se acumula com aposentadoria após a alteração legal — conferir a data",
+     "authority_ids": [
+      "l8213_art86",
+      "stj_sumula_507"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec103_reforma_previdencia"
+   ],
+   "typical_requests": [
+    "Manutenção ou restabelecimento do benefício",
+    "Recálculo com redutor"
+   ],
+   "evidence": [
+    "Cartas de concessão",
+    "Histórico de créditos",
+    "Demonstrativo de aplicação das faixas escalonadas de percepção do benefício menos vantajoso do art. 24, § 2º, da EC 103/2019"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "inicial_juizado",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "prev_death_pension",
+    "prev_accident_aid"
+   ],
+   "limitation": "Direito adquirido à acumulação integral sem os redutores do art. 24 da EC 103/2019 quando preenchidos os requisitos de ambos os benefícios até 13/11/2019 (EC 103/2019, art. 24, § 4º); prescrição quinquenal das parcelas glosadas indevidamente (Lei 8.213/1991, art. 103, parágrafo único)."
+  },
+  {
+   "id": "prev_judicial_incapacity_procedure",
+   "label": "Ação de benefício por incapacidade: requisitos e perícia",
+   "requirements": [
+    "requerimento_previo",
+    "descricao_da_doenca",
+    "documentos_medicos",
+    "quesitos"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_judicial_incapacity_procedure.c1",
+     "label": "Petição inicial com descrição da doença, atividade e inconsistências da perícia administrativa",
+     "authority_ids": [
+      "l8213_art129a",
+      "cpc_art319"
+     ]
+    },
+    {
+     "id": "prev_judicial_incapacity_procedure.c2",
+     "label": "Reabilitação profissional antes da cessação quando insuscetível de recuperação para a atividade habitual",
+     "authority_ids": [
+      "l8213_art62"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_judicial_incapacity_procedure.d1",
+     "label": "Ausência de requerimento administrativo ou de documentos indispensáveis",
+     "authority_ids": [
+      "l8213_art129a",
+      "tema_stf_350"
+     ]
+    },
+    {
+     "id": "prev_judicial_incapacity_procedure.d2",
+     "label": "Convocação para reavaliação periódica",
+     "authority_ids": [
+      "l8213_art101"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Restabelecimento com prazo de duração fundamentado",
+    "Encaminhamento à reabilitação"
+   ],
+   "evidence": [
+    "Laudos e exames datados",
+    "Comunicado de decisão do INSS",
+    "Descrição das tarefas do trabalho"
+   ],
+   "piece_ids": [
+    "inicial_juizado",
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente",
+    "impugnacao_laudo",
+    "recurso_inominado"
+   ],
+   "related_claims": [
+    "prev_incapacity"
+   ],
+   "limitation": "Exigência de prévio requerimento administrativo (configurado se não decidido em 45 dias ou na prorrogação negada — Tema 350 do STF; Lei 8.213/1991, art. 129-A); recurso administrativo ao CRPS em 30 dias (Decreto 3.048/1999, art. 305) e prescrição quinquenal judicial das prestações."
+  },
+  {
+   "id": "prev_rpps_server",
+   "label": "Servidor em regime próprio: aposentadoria e abono",
+   "requirements": [
+    "ente_e_lei_local",
+    "data_de_ingresso",
+    "regra_de_transicao",
+    "tempo_de_cargo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_rpps_server.c1",
+     "label": "Direito adquirido e regras de transição do servidor conforme a data de ingresso",
+     "authority_ids": [
+      "cf_art40",
+      "ec103_art3",
+      "ec103_art20"
+     ]
+    },
+    {
+     "id": "prev_rpps_server.c2",
+     "label": "Aplicação das regras do RGPS à aposentadoria especial do servidor",
+     "authority_ids": [
+      "sv_33"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_rpps_server.d1",
+     "label": "Regras dependem da lei do ente federativo após a EC 103/2019",
+     "authority_ids": [
+      "cf_art40"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec103_reforma_previdencia",
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Concessão pela regra mais vantajosa",
+    "Abono de permanência"
+   ],
+   "evidence": [
+    "Certidão de tempo de contribuição",
+    "Ficha funcional e lei local",
+    "Histórico completo de remunerações contributivas desde julho/1994 quando aplicável a média aritmética sem integralidade/paridade"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "mandado_seguranca",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "prev_rpps_special"
+   ],
+   "limitation": "Prescrição quinquenal das prestações vencidas perante a Fazenda Pública (Decreto 20.910/1932, art. 1º; Súmula 85 do STJ), observadas as regras locais de transição previdenciária editadas pelos Estados e Municípios após a EC 103/2019."
+  },
+  {
+   "id": "prev_der_reaffirmation",
+   "label": "Reafirmação da DER para cômputo de tempo superveniente no curso do processo (Tema 995 STJ)",
+   "requirements": [
+    "implementacao_requisitos_ate_segunda_instancia",
+    "pedido_ate_julgamento_apelacao",
+    "termo_inicial_efeitos_financeiros",
+    "juros_mora_citacao_ou_intimacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_der_reaffirmation.c1",
+     "label": "É possível a reafirmação da DER para se computar tempo de contribuição (inclusive especial) implementado no curso do processo judicial até a conclusão do julgamento em segunda instância, independentemente de prévio requerimento administrativo suplementar (Tema Repetitivo 995 do STJ; CPC, art. 493)",
+     "authority_ids": [
+      "tema_stj_995",
+      "l8213_art49"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_der_reaffirmation.d1",
+     "label": "Na reafirmação judicial da DER (Tema 995 do STJ), os valores atrasados são devidos apenas a partir da data em que preenchidos todos os requisitos ou da data do requerimento judicial de reafirmação/juntada dos documentos conforme o julgamento, fluindo juros moratórios somente após a intimação do INSS acerca do fato superveniente (e não desde a citação inicial) e observada a sucumbência recíproca/causalidade",
+     "authority_ids": [
+      "tema_stj_995",
+      "l8213_art49"
+     ]
+    },
+    {
+     "id": "prev_der_reaffirmation.d2",
+     "label": "Quando a reafirmação da DER deslocar o preenchimento dos requisitos para data posterior a 13/11/2019, incidem obrigatoriamente as regras de elegibilidade e cálculo da EC 103/2019 vigentes na nova DER",
+     "authority_ids": [
+      "ec103_art3",
+      "ec103_art26",
+      "tema_stj_995"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec103_reforma_previdencia",
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Subsidiariamente à concessão na DER originária, reafirmação da DER para a competência exata em que implementados todos os requisitos no curso da lide",
+    "Simulação comparativa de vantajosidade entre múltiplas datas possíveis de reafirmação da DER antes e após a EC 103/2019",
+    "Pagamento das prestações vencidas a contar da DER reafirmada"
+   ],
+   "evidence": [
+    "Extrato atualizado do CNIS obtido no curso da demanda demonstrando os salários de contribuição vertidos após o ajuizamento",
+    "Simulação determinística da RMI e da soma de atrasados para cada data candidata de reafirmação",
+    "PPPs complementares ou CTPS comprovando a continuidade do vínculo no período superveniente"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "replica",
+    "apelacao_civel",
+    "recurso_inominado"
+   ],
+   "related_claims": [
+    "prev_retirement",
+    "prev_special_time"
+   ],
+   "limitation": "O pedido de reafirmação da DER deve ser formulado ou apreciado até o encerramento da instância ordinária (antes do julgamento definitivo da apelação/recurso inominado, incluídos embargos de declaração — Tema Repetitivo 995 do STJ)."
+  },
+  {
+   "id": "prev_special_noise_epi_temas",
+   "label": "Tempo especial: ruído variável (Tema 1083 STJ), eficácia de EPI (Tema 555 STF / Tema 1090 STJ) e vigilante (Tema 1031 STJ)",
+   "requirements": [
+    "limites_tolerancia_epoca_80_90_85_db",
+    "vedacao_media_aritmetica_simples_ruido",
+    "onus_impugnacao_epi_ppp",
+    "periculosidade_vigilante"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_special_noise_epi_temas.c1",
+     "label": "Para exposição ao agente físico ruído (limites de 80 dB até 05/03/1997; 90 dB de 06/03/1997 a 18/11/2003; 85 dB a partir de 19/11/2003 — Tema 694 STJ), a declaração de EPI eficaz no PPP jamais descaracteriza a especialidade (Tema 555 do STF), e diante de níveis variados sem NEN aplica-se o critério do pico de ruído, vedada média aritmética simples (Tema Repetitivo 1083 do STJ)",
+     "authority_ids": [
+      "tema_stf_555",
+      "tema_stj_1083",
+      "l8213_art57",
+      "l8213_art58"
+     ]
+    },
+    {
+     "id": "prev_special_noise_epi_temas.c2",
+     "label": "É admissível o reconhecimento da especialidade da atividade de vigilante, com ou sem o uso de arma de fogo, em período posterior à Lei 9.032/1995 e ao Decreto 2.172/1997, desde que comprovada a exposição à periculosidade/nocividade até a EC 103/2019 (Tema Repetitivo 1031 do STJ)",
+     "authority_ids": [
+      "tema_stj_1031",
+      "l8213_art57"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_special_noise_epi_temas.d1",
+     "label": "Para agentes nocivos diversos do ruído, a anotação positiva de EPI eficaz no PPP descaracteriza o tempo especial, cabendo ao segurado impugnar especificamente a eficácia mediante demonstração de ausência de CA, inadequação, falta de higienização/troca ou treinamento, resolvendo-se a dúvida real em favor do trabalhador (Tema 555 STF e Tema Repetitivo 1090 do STJ)",
+     "authority_ids": [
+      "tema_stf_555",
+      "tema_stj_1090",
+      "l8213_art58"
+     ]
+    },
+    {
+     "id": "prev_special_noise_epi_temas.d2",
+     "label": "Exigência de indicação de metodologia dosimétrica (NHO-01 da Fundacentro ou NR-15) para períodos posteriores a 19/11/2003 e vedação de aplicação retroativa do limite de 85 dB(A) ao intervalo de vigência do Decreto 2.172/1997 a 18/11/2003 (90 dB)",
+     "authority_ids": [
+      "l8213_art58"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec103_reforma_previdencia"
+   ],
+   "typical_requests": [
+    "Averbação da natureza especial dos intervalos laborados com ruído acima do limite da época ou como vigilante patrimonial",
+    "Desconsideração da informação formal de EPI eficaz no PPP para ruído ou após impugnação comprovada nos termos do Tema 1090 do STJ",
+    "Concessão de aposentadoria especial ou aposentadoria por tempo de contribuição mediante conversão até 13/11/2019"
+   ],
+   "evidence": [
+    "Perfis Profissiográficos Previdenciários (PPPs) contendo responsável técnico pelos registros ambientais, intensidade em dB(A) e metodologia",
+    "LTCAT, PPRA/PGR, fichas de entrega/substituição de EPIs com Certificados de Aprovação (CA) ou laudo trabalhista/paradigma",
+    "Certificado de curso de formação de vigilante, registro na Polícia Federal ou descrição de escolta/guarda patrimonial"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "impugnacao_laudo",
+    "recurso_especial"
+   ],
+   "related_claims": [
+    "prev_special_time",
+    "prev_retirement"
+   ],
+   "limitation": "Direito à averbação de tempo especial imprescritível; conversão em tempo comum limitada a 13/11/2019 (EC 103/2019, art. 25, § 2º) e prescrição quinquenal das parcelas vencidas (Lei 8.213/1991, art. 103, parágrafo único)."
+  },
+  {
+   "id": "prev_hybrid_retirement",
+   "label": "Aposentadoria por idade híbrida ou mista: soma de tempo rural e urbano (Lei 8.213/1991, art. 48, § 3º, e Tema 1007 STJ)",
+   "requirements": [
+    "requisito_etario_urbano_65_62",
+    "soma_tempo_rural_e_urbano",
+    "irrelevancia_ultima_atividade",
+    "dispensa_qualidade_segurado_na_der"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_hybrid_retirement.c1",
+     "label": "O tempo de serviço rural remoto (ainda que anterior à Lei 8.213/1991 e sem contribuições diretas, salvo se pretendido para CTC recíproca) pode ser somado ao tempo de contribuição urbano para fins de carência da aposentadoria por idade híbrida, independentemente de qual tenha sido a última atividade profissional exercida e ainda que o segurado não esteja exercendo atividade na DER (Lei 8.213/1991, art. 48, § 3º; Tema Repetitivo 1007 do STJ)",
+     "authority_ids": [
+      "l8213_art48",
+      "tema_stj_1007",
+      "l8213_art106"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_hybrid_retirement.d1",
+     "label": "A aposentadoria híbrida submete-se aos requisitos etários urbanos (65 anos para homem e 62 anos para mulher após a EC 103/2019, e não à idade reduzida de 60/55 anos exclusiva do rurícola puro) e exige início de prova material contemporânea corroborada por prova testemunhal idônea do período campesino (Lei 8.213/1991, arts. 48, § 3º, e 55, § 3º)",
+     "authority_ids": [
+      "l8213_art48",
+      "l8213_art55",
+      "ec103_art19"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec103_reforma_previdencia",
+    "lei_13846_2019"
+   ],
+   "typical_requests": [
+    "Reconhecimento e averbação do período de labor rural em regime de economia familiar ou diarista rural",
+    "Concessão da aposentadoria por idade híbrida mediante soma dos meses rurais e urbanos desde a DER, com pagamento dos atrasados"
+   ],
+   "evidence": [
+    "Autodeclaração do segurado especial rural acompanhada de documentos contemporâneos (certidão de casamento/nascimento com profissão lavrador, histórico escolar rural, notas de produtor, ITR, sindicato)",
+    "CNIS e CTPS comprovando as competências urbanas recolhidas e a data de implemento da idade",
+    "Prova testemunhal idônea colhida em audiência sobre a lida campesina sem empregados permanentes"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "recurso_administrativo_previdenciario",
+    "inicial_juizado",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "prev_rural",
+    "prev_retirement"
+   ],
+   "limitation": "Inexiste decadência para concessão inicial de aposentadoria por idade híbrida, nem perda do direito pela perda superveniente da qualidade de segurado (Lei 10.666/2003, art. 3º, § 1º); prescrição quinquenal das parcelas atrasadas (Lei 8.213/1991, art. 103, parágrafo único)."
+  },
+  {
+   "id": "prev_whole_life_review_adi2110",
+   "label": "Revisão da Vida Toda: cogência da regra de transição do art. 3º da Lei 9.876/1999 (ADI 2110 STF)",
+   "requirements": [
+    "filiacao_anterior_26_11_1999",
+    "salarios_anteriores_julho_1994",
+    "cogencia_art_3_l9876",
+    "modulacao_irrepetibilidade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_whole_life_review_adi2110.c1",
+     "label": "Para segurados que eventualmente pleiteiem preservação de valores já recebidos de boa-fé por decisões anteriores ou modulação quanto a honorários sucumbenciais/custas em ações ajuizadas sob a égide da jurisprudência pretérita do STJ/Tema 1102, invoca-se proteção da confiança legítima e irrepetibilidade alimentar (conferir modulação final dos embargos nas ADIs 2.110/2.111 e Tema 1102 no STF)",
+     "authority_ids": [
+      "adi_2110",
+      "l9876_art3",
+      "l8213_art115"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_whole_life_review_adi2110.d1",
+     "label": "A declaração de constitucionalidade no julgamento conjunto das ADIs 2.110 e 2.111 pelo Plenário do STF impõe a aplicação cogente e obrigatória da regra de transição do art. 3º da Lei 9.876/1999 (média restrita aos salários a partir de julho de 1994) aos segurados filiados antes de sua vigência, vedada a escolha da regra definitiva do art. 29, I e II, da Lei 8.213/1991 ainda que mais favorável",
+     "authority_ids": [
+      "adi_2110",
+      "l9876_art3",
+      "l8213_art29"
+     ]
+    },
+    {
+     "id": "prev_whole_life_review_adi2110.d2",
+     "label": "Além da improcedência material de mérito por força vinculante da ADI 2.110, aplica-se a decadência decenal do art. 103 da Lei 8.213/1991 aos benefícios concedidos há mais de dez anos",
+     "authority_ids": [
+      "l8213_art103",
+      "adi_2110"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "adi_2110_vida_toda"
+   ],
+   "typical_requests": [
+    "Pelo INSS: improcedência do pedido de revisão da vida toda com fundamento vinculante no julgamento da ADI 2.110 pelo STF",
+    "Pelo segurado em ações pendentes: aplicação das balizas modulatórias do STF quanto à irrepetibilidade de parcelas alimentares percebidas de boa-fé e exoneração de ônus sucumbenciais/custas conforme o entendimento vinculante"
+   ],
+   "evidence": [
+    "Carta de concessão do benefício previdenciário, data do recebimento do primeiro pagamento (para aferição de decadência) e histórico de tutelas concedidas nos autos",
+    "Extrato de julgamento atualizado das ADIs 2.110 e 2.111 e do RE 1.276.977 (Tema 1102) no portal oficial do STF",
+    "Microfichas ou carteiras de trabalho anteriores a julho de 1994 anexadas à inicial"
+   ],
+   "piece_ids": [
+    "contestacao",
+    "manifestacao_especifica",
+    "apelacao_civel",
+    "recurso_extraordinario",
+    "reclamacao_constitucional"
+   ],
+   "related_claims": [
+    "prev_review",
+    "prev_retirement"
+   ],
+   "limitation": "Qualquer revisão do ato de concessão submete-se à decadência decenal do art. 103 da Lei 8.213/1991; no mérito, a tese da revisão da vida toda foi afastada pelo caráter cogente do art. 3º da Lei 9.876/1999 firmado na ADI 2.110 do STF."
+  },
+  {
+   "id": "prev_grace_period_unemployment",
+   "label": "Manutenção e prorrogação do período de graça por desemprego involuntário e mais de 120 contribuições (Lei 8.213/1991, art. 15, e Súmula 27 TNU)",
+   "requirements": [
+    "periodo_basico_12_meses",
+    "acrescimo_12_meses_mais_120_contribuicoes",
+    "acrescimo_12_meses_desemprego_involuntario",
+    "prova_ampla_situacao_desemprego"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_grace_period_unemployment.c1",
+     "label": "O período básico de graça de 12 meses após a cessação das contribuições prorroga-se para 24 meses se o segurado tiver pago mais de 120 contribuições mensais sem interrupção que acarrete a perda da qualidade de segurado, acrescendo-se mais 12 meses (totalizando até 36 meses) se comprovada situação de desemprego involuntário por qualquer meio idôneo de prova, e não apenas por registro no SINE ou seguro-desemprego (Lei 8.213/1991, art. 15, II e §§ 1º e 2º; Súmula 27 da TNU)",
+     "authority_ids": [
+      "l8213_art15",
+      "sumula_tnu_27"
+     ]
+    },
+    {
+     "id": "prev_grace_period_unemployment.c2",
+     "label": "A perda da qualidade de segurado só ocorre no dia seguinte ao do término do prazo fixado para recolhimento da contribuição referente ao mês imediatamente posterior ao final do período de graça (Lei 8.213/1991, art. 15, § 4º — dia 16 do segundo mês subsequente)",
+     "authority_ids": [
+      "l8213_art15"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_grace_period_unemployment.d1",
+     "label": "A simples ausência de novos registros formais em CTPS ou no CNIS, isoladamente considerada e sem prova testemunhal/documental complementar, não comprova desemprego involuntário, podendo refletir opção por informalidade ou retirada espontânea do mercado (Tema 202/jurisprudência do STJ)",
+     "authority_ids": [
+      "l8213_art15"
+     ]
+    },
+    {
+     "id": "prev_grace_period_unemployment.d2",
+     "label": "O acréscimo do § 1º do art. 15 exige mais de 120 contribuições sem perda intermediária da qualidade de segurado; ocorrida perda anterior, exige-se novo bloco de 120 contribuições ou cumprimento das regras de reaquisição de carência (art. 27-A)",
+     "authority_ids": [
+      "l8213_art15",
+      "l8213_art25"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13846_2019"
+   ],
+   "typical_requests": [
+    "Reconhecimento da manutenção da qualidade de segurado até 24 ou 36 meses (mais a extensão do art. 15, § 4º) na data do início da incapacidade ou do óbito",
+    "Concessão do benefício por incapacidade ou pensão por morte indeferido sob alegação de perda da qualidade de segurado"
+   ],
+   "evidence": [
+    "CTPS integral sem novos vínculos, extrato completo do CNIS, requerimento de seguro-desemprego ou inscrição no SINE/CadÚnico",
+    "Currículos entregues, e-mails de processos seletivos e prova testemunhal atestando busca infrutífera de emprego e sustento por ajuda de terceiros/bicos eventuais de sobrevivência",
+    "Contagem exata de contribuições para aferição do bloco ininterrupto superior a 120 meses"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "recurso_administrativo_previdenciario",
+    "inicial_juizado",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "prev_incapacity",
+    "prev_death_pension"
+   ],
+   "limitation": "Regra material de conservação da qualidade de segurado por 12, 24 ou 36 meses mais a extensão até o dia 16 do segundo mês subsequente (Lei 8.213/1991, art. 15, § 4º); prescrição quinquenal das parcelas vencidas na ação judicial (art. 103, parágrafo único)."
+  },
+  {
+   "id": "prev_late_contributions_indemnity",
+   "label": "Recolhimento em atraso e indenização de contribuições de contribuinte individual (Lei 8.212/1991, art. 45-A, e Lei 8.213/1991, art. 27, II)",
+   "requirements": [
+    "comprovacao_efetivo_exercicio_atividade_remunerada",
+    "calculo_art_45a_periodo_decadencial",
+    "primeira_contribuicao_em_dia_para_carencia",
+    "responsabilidade_tomador_pj_apos_2003"
+   ],
+   "claimant_theses": [
+    {
+     "id": "prev_late_contributions_indemnity.c1",
+     "label": "A partir da Lei 10.666/2003 (04/2003), a obrigação de arrecadar e recolher a contribuição do contribuinte individual prestador de serviço à pessoa jurídica é da empresa tomadora, presumindo-se o desconto e sendo vedado penalizar o segurado pela omissão fiscal de terceiro",
+     "authority_ids": [
+      "l8213_art11",
+      "l8213_art55"
+     ]
+    },
+    {
+     "id": "prev_late_contributions_indemnity.c2",
+     "label": "Para o contribuinte individual por conta própria, comprovado o efetivo exercício da atividade remunerada, o recolhimento em atraso/indenização computa-se para tempo de contribuição, e também para carência caso já houvesse prévia inscrição e primeira contribuição recolhida sem atraso na categoria (Lei 8.213/1991, art. 27, II)",
+     "authority_ids": [
+      "l8212_art45a",
+      "l8213_art25",
+      "l8213_art55"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "prev_late_contributions_indemnity.d1",
+     "label": "Contribuições pagas com atraso referentes a competências anteriores à primeira contribuição paga sem atraso jamais são computadas para efeito de carência (Lei 8.213/1991, art. 27, II; jurisprudência pacífica do STJ e TNU), além de exigirem cálculo indenizatório com juros e multa do art. 45-A da Lei 8.212/1991 nos períodos atingidos pela decadência tributária (Tema 192 STF/STJ para fatos após MP 1.523/1996)",
+     "authority_ids": [
+      "l8212_art45a",
+      "l8213_art25"
+     ]
+    },
+    {
+     "id": "prev_late_contributions_indemnity.d2",
+     "label": "Para sócio-administrador com retirada de pró-labore, cabe a ele próprio provar o efetivo recebimento de remuneração ou o recolhimento, não se beneficiando da presunção aplicável ao prestador autônomo externo",
+     "authority_ids": [
+      "l8213_art11",
+      "l8212_art45a"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec103_reforma_previdencia"
+   ],
+   "typical_requests": [
+    "Averbação imediata sem ônus ao segurado de períodos prestados como autônomo a pessoas jurídicas a partir de 04/2003",
+    "Expedição de guia de indenização pelo INSS (e validação de GPS já pagas) mediante comprovação documental do exercício da atividade autônoma",
+    "Cômputo das competências indenizadas para tempo de contribuição e, se existente prévia contribuição tempestiva, também para carência"
+   ],
+   "evidence": [
+    "Recibos de Pagamento a Autônomo (RPAs), notas fiscais de serviços, declarações de IRPF, alvarás municipais de ISS e inscrição em conselho profissional",
+    "Extrato do CNIS evidenciando a data da primeira contribuição recolhida em dia como contribuinte individual/empresário",
+    "Guias de recolhimento (GPS/DARF) e cálculo administrativo de indenização emitido pelo INSS nos moldes do art. 45-A da Lei 8.212/1991"
+   ],
+   "piece_ids": [
+    "requerimento_administrativo",
+    "recurso_administrativo_previdenciario",
+    "mandado_seguranca",
+    "inicial_procedimento_comum",
+    "inicial_juizado"
+   ],
+   "related_claims": [
+    "prev_retirement",
+    "prev_review"
+   ],
+   "limitation": "Para períodos atingidos pela decadência quinquenal tributária (CTN, art. 173), o cômputo pelo contribuinte individual por conta própria depende de indenização calculada segundo o art. 45-A da Lei 8.212/1991 (juros e multa incidindo apenas para fatos posteriores à MP 1.523/1996 — Lei 9.528/1997 conforme jurisprudência do STJ)."
+  }
  ]
 }

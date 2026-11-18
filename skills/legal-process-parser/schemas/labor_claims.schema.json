@@ -66,6 +66,7 @@
         "temporal_marker_ids",
         "typical_requests",
         "evidence",
+        "piece_ids",
         "calculation_profiles",
         "related_claims",
         "prescription"
@@ -132,6 +133,15 @@
         },
         "evidence": {
           "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "piece_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
           "items": {
             "type": "string",
             "minLength": 1

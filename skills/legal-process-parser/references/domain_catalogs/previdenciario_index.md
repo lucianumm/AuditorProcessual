@@ -26,3 +26,9 @@ Guia: `domain_guides/previdenciario.md` · catálogo: `domain_catalogs/previdenc
 | `prev_accumulation` | Acumulação de benefícios | 2/2 |
 | `prev_judicial_incapacity_procedure` | Ação de benefício por incapacidade: requisitos e perícia | 2/2 |
 | `prev_rpps_server` | Servidor em regime próprio: aposentadoria e abono | 2/1 |
+| `prev_der_reaffirmation` | Reafirmação da DER para cômputo de tempo superveniente no curso do processo (Tema 995 STJ) | 1/2 |
+| `prev_special_noise_epi_temas` | Tempo especial: ruído variável (Tema 1083 STJ), eficácia de EPI (Tema 555 STF / Tema 1090 STJ) e vigilante (Tema 1031 STJ) | 2/2 |
+| `prev_hybrid_retirement` | Aposentadoria por idade híbrida ou mista: soma de tempo rural e urbano (Lei 8.213/1991, art. 48, § 3º, e Tema 1007 STJ) | 1/1 |
+| `prev_whole_life_review_adi2110` | Revisão da Vida Toda: cogência da regra de transição do art. 3º da Lei 9.876/1999 (ADI 2110 STF) | 1/2 |
+| `prev_grace_period_unemployment` | Manutenção e prorrogação do período de graça por desemprego involuntário e mais de 120 contribuições (Lei 8.213/1991, art. 15, e Súmula 27 TNU) | 2/2 |
+| `prev_late_contributions_indemnity` | Recolhimento em atraso e indenização de contribuições de contribuinte individual (Lei 8.212/1991, art. 45-A, e Lei 8.213/1991, art. 27, II) | 2/2 |

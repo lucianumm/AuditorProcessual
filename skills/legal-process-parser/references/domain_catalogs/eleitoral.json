@@ -4,19 +4,946 @@
  "label": "Direito Eleitoral",
  "guide": "domain_guides/eleitoral.md",
  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
- "polo_labels": {"claimant_theses": "Teses do impugnante ou representante", "defense_theses": "Teses do candidato ou representado"},
+ "polo_labels": {
+  "claimant_theses": "Teses do impugnante ou representante",
+  "defense_theses": "Teses do candidato ou representado"
+ },
  "claims": [
-  {"id": "ele_candidacy", "label": "Impugnação de registro de candidatura", "requirements": ["prazo", "legitimidade", "inelegibilidade", "condicao_elegibilidade"], "claimant_theses": [{"id": "ele_candidacy.c1", "label": "Impugnação por inelegibilidade no prazo legal", "authority_ids": ["lc64_art3", "lc64_art1"]}], "defense_theses": [{"id": "ele_candidacy.d1", "label": "Causa de inelegibilidade não configurada ou superada", "authority_ids": ["lc64_art1"]}, {"id": "ele_candidacy.d2", "label": "Registro requerido no prazo e com documentos", "authority_ids": ["l9504_art11"]}], "temporal_marker_ids": ["lc135_ficha_limpa"], "typical_requests": [], "evidence": [], "piece_ids": ["impugnacao_registro_candidatura", "recurso_eleitoral"], "related_claims": [], "limitation": "conferir"},
-  {"id": "ele_abuse", "label": "Abuso de poder e AIJE", "requirements": ["conduta", "gravidade", "beneficio", "prova"], "claimant_theses": [{"id": "ele_abuse.c1", "label": "Abuso de poder econômico, político ou uso indevido dos meios de comunicação", "authority_ids": ["lc64_art22"]}], "defense_theses": [{"id": "ele_abuse.d1", "label": "Ausência de gravidade ou de prova robusta", "authority_ids": ["lc64_art22"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["aije", "recurso_eleitoral"], "related_claims": [], "limitation": "conferir"},
-  {"id": "ele_vote_buying", "label": "Captação ilícita de sufrágio e gastos ilícitos", "requirements": ["conduta", "finalidade", "prova"], "claimant_theses": [{"id": "ele_vote_buying.c1", "label": "Captação de sufrágio", "authority_ids": ["l9504_art41a"]}, {"id": "ele_vote_buying.c2", "label": "Arrecadação e gastos ilícitos de campanha", "authority_ids": ["l9504_art30a"]}], "defense_theses": [{"id": "ele_vote_buying.d1", "label": "Ausência de prova do especial fim de agir", "authority_ids": ["l9504_art41a"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["representacao_eleitoral", "recurso_eleitoral"], "related_claims": [], "limitation": "conferir"},
-  {"id": "ele_public_agents", "label": "Condutas vedadas a agentes públicos", "requirements": ["agente", "conduta", "periodo"], "claimant_theses": [{"id": "ele_public_agents.c1", "label": "Condutas que afetam a igualdade de oportunidades", "authority_ids": ["l9504_art73"]}], "defense_theses": [{"id": "ele_public_agents.d1", "label": "Conduta fora do período ou das hipóteses legais", "authority_ids": ["l9504_art73"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["representacao_eleitoral"], "related_claims": [], "limitation": "conferir"},
-  {"id": "ele_accounts", "label": "Prestação de contas de campanha", "requirements": ["forma", "prazo", "irregularidade"], "claimant_theses": [{"id": "ele_accounts.c1", "label": "Contas apresentadas na forma legal", "authority_ids": ["l9504_art28"]}], "defense_theses": [{"id": "ele_accounts.d1", "label": "Irregularidade grave que compromete a confiabilidade", "authority_ids": ["l9504_art28"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["recurso_eleitoral"], "related_claims": [], "limitation": "conferir"},
-  {"id": "ele_appeals", "label": "Recursos eleitorais e prazos", "requirements": ["ato", "prazo_especial", "cabimento"], "claimant_theses": [{"id": "ele_appeals.c1", "label": "Recurso ao Tribunal Regional no prazo de três dias, salvo prazo especial", "authority_ids": ["ce_art258", "ce_art265"]}, {"id": "ele_appeals.c2", "label": "Representações por descumprimento da Lei das Eleições", "authority_ids": ["l9504_art96"]}], "defense_theses": [{"id": "ele_appeals.d1", "label": "Intempestividade", "authority_ids": ["ce_art258"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["recurso_eleitoral", "representacao_eleitoral"], "related_claims": [], "limitation": "conferir"},
-  {"id": "ele_propaganda", "label": "Propaganda eleitoral antecipada e irregular", "requirements": ["data_do_ato", "pedido_explicito_de_voto", "meio_utilizado", "previo_conhecimento"], "claimant_theses": [{"id": "ele_propaganda.c1", "label": "Propaganda antes do período permitido com pedido explícito de voto", "authority_ids": ["l9504_art36", "l9504_art36a"]}, {"id": "ele_propaganda.c2", "label": "Propaganda em bem público ou de uso comum", "authority_ids": ["l9504_art37"]}], "defense_theses": [{"id": "ele_propaganda.d1", "label": "Menção à pretensa candidatura e exaltação de qualidades pessoais sem pedido de voto", "authority_ids": ["l9504_art36a"]}, {"id": "ele_propaganda.d2", "label": "Ausência de prévio conhecimento do beneficiário", "authority_ids": ["l9504_art36"]}], "temporal_marker_ids": [], "typical_requests": ["Multa", "Remoção do conteúdo"], "evidence": ["Capturas com data, URL e autoria", "Ata notarial", "Notas de impulsionamento"], "piece_ids": ["representacao_eleitoral", "recurso_eleitoral"], "related_claims": ["ele_abuse"], "limitation": "Representação até a data da eleição e recurso em prazo curto — conferir a resolução do pleito"},
-  {"id": "ele_internet_response", "label": "Internet, desinformação e direito de resposta", "requirements": ["conteudo", "autoria_identificavel", "fato_sabidamente_inveridico", "alcance"], "claimant_theses": [{"id": "ele_internet_response.c1", "label": "Direito de resposta contra afirmação caluniosa, difamatória, injuriosa ou sabidamente inverídica", "authority_ids": ["l9504_art58"]}, {"id": "ele_internet_response.c2", "label": "Vedação do anonimato e remoção de conteúdo", "authority_ids": ["l9504_art57d"]}], "defense_theses": [{"id": "ele_internet_response.d1", "label": "Liberdade de manifestação e crítica política", "authority_ids": ["l9504_art57d", "cf_art5"]}, {"id": "ele_internet_response.d2", "label": "Decadência do pedido de resposta pelo prazo do veículo", "authority_ids": ["l9504_art58"]}], "temporal_marker_ids": [], "typical_requests": ["Direito de resposta", "Remoção", "Multa"], "evidence": ["Capturas e URLs", "Identificação do perfil", "Prova da falsidade"], "piece_ids": ["representacao_eleitoral", "recurso_eleitoral", "mandado_seguranca"], "related_claims": ["ele_propaganda"], "limitation": "Prazos em horas ou dias conforme o meio (Lei 9.504/1997, art. 58) — conferir"},
-  {"id": "ele_mandate_challenge", "label": "Impugnação de mandato e recurso contra diplomação", "requirements": ["diplomacao", "fundamento", "provas", "gravidade"], "claimant_theses": [{"id": "ele_mandate_challenge.c1", "label": "Ação de impugnação de mandato por abuso do poder econômico, corrupção ou fraude", "authority_ids": ["cf_art14"]}, {"id": "ele_mandate_challenge.c2", "label": "Recurso contra expedição de diploma por inelegibilidade superveniente ou constitucional", "authority_ids": ["ce_art262"]}, {"id": "ele_mandate_challenge.c3", "label": "Fraude à cota de gênero — conferir a Súmula 73 do TSE", "authority_ids": ["l9504_art10", "cf_art14"]}], "defense_theses": [{"id": "ele_mandate_challenge.d1", "label": "Prova robusta e gravidade das circunstâncias", "authority_ids": ["lc64_art22"]}, {"id": "ele_mandate_challenge.d2", "label": "Decadência do prazo de quinze dias da diplomação", "authority_ids": ["cf_art14"]}], "temporal_marker_ids": [], "typical_requests": ["Cassação do diploma ou mandato", "Nulidade dos votos", "Inelegibilidade na ação própria"], "evidence": ["Ata de diplomação", "Prestação de contas", "Provas documentais e testemunhais"], "piece_ids": ["aime", "rced", "aije", "recurso_eleitoral"], "related_claims": ["ele_abuse", "ele_vote_buying"], "limitation": "AIME: quinze dias da diplomação (CF, art. 14, § 10); RCED: três dias — conferir"},
-  {"id": "ele_ineligibility_relief", "label": "Inelegibilidade: suspensão e efeitos", "requirements": ["decisao_colegiada", "hipotese_legal", "prazo_de_oito_anos", "plausibilidade_do_recurso"], "claimant_theses": [{"id": "ele_ineligibility_relief.c1", "label": "Suspensão cautelar da inelegibilidade pelo tribunal do recurso", "authority_ids": ["lc64_art26c"]}, {"id": "ele_ineligibility_relief.c2", "label": "Contagem do prazo de inelegibilidade — conferir a redação vigente da LC 64/1990", "authority_ids": ["lc64_art1"]}], "defense_theses": [{"id": "ele_ineligibility_relief.d1", "label": "Efeitos sobre registro e diploma com a decisão colegiada", "authority_ids": ["lc64_art15", "lc64_art1"]}], "temporal_marker_ids": ["lc135_ficha_limpa"], "typical_requests": ["Efeito suspensivo", "Deferimento do registro"], "evidence": ["Acórdão condenatório e certidões", "Recurso interposto"], "piece_ids": ["impugnacao_registro_candidatura", "recurso_eleitoral", "mandado_seguranca"], "related_claims": ["ele_candidacy"], "limitation": "Conferir"},
-  {"id": "ele_party_fidelity", "label": "Fidelidade partidária e contas de partido", "requirements": ["desfiliacao", "justa_causa", "janela", "exercicio_financeiro"], "claimant_theses": [{"id": "ele_party_fidelity.c1", "label": "Perda do mandato por desfiliação sem justa causa nas eleições proporcionais", "authority_ids": ["l9096_art22a", "cf_art17"]}], "defense_theses": [{"id": "ele_party_fidelity.d1", "label": "Justa causa: desvio do programa, grave discriminação ou janela partidária", "authority_ids": ["l9096_art22a"]}, {"id": "ele_party_fidelity.d2", "label": "Sanção proporcional na desaprovação de contas", "authority_ids": ["l9096_art37"]}], "temporal_marker_ids": [], "typical_requests": ["Decretação da perda do mandato", "Reconhecimento da justa causa"], "evidence": ["Ficha de filiação e comunicações", "Atas partidárias", "Prestação de contas"], "piece_ids": ["representacao_eleitoral", "recurso_eleitoral"], "related_claims": ["ele_accounts"], "limitation": "Conferir a resolução do TSE aplicável"},
-  {"id": "ele_crimes", "label": "Crimes eleitorais", "requirements": ["conduta", "dolo_especifico", "finalidade_eleitoral", "competencia"], "claimant_theses": [{"id": "ele_crimes.c1", "label": "Atipicidade sem a finalidade de obter voto ou abstenção", "authority_ids": ["ce_art299"]}, {"id": "ele_crimes.c2", "label": "Falsidade ideológica eleitoral exige finalidade eleitoral e potencial lesivo", "authority_ids": ["ce_art350"]}], "defense_theses": [{"id": "ele_crimes.d1", "label": "Competência da Justiça Eleitoral para os crimes comuns conexos — conferir o precedente do STF", "authority_ids": ["ce_art350"]}, {"id": "ele_crimes.d2", "label": "Crime formal na corrupção eleitoral", "authority_ids": ["ce_art299"]}], "temporal_marker_ids": [], "typical_requests": ["Absolvição", "Acordo de não persecução"], "evidence": ["Prestação de contas", "Testemunhas", "Documentos apreendidos"], "piece_ids": ["recurso_eleitoral", "mandado_seguranca"], "related_claims": ["ele_vote_buying"], "limitation": "Conferir"}
+  {
+   "id": "ele_candidacy",
+   "label": "Impugnação de registro de candidatura",
+   "requirements": [
+    "prazo",
+    "legitimidade",
+    "inelegibilidade",
+    "condicao_elegibilidade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "ele_candidacy.c1",
+     "label": "Impugnação por inelegibilidade no prazo legal",
+     "authority_ids": [
+      "lc64_art3",
+      "lc64_art1"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "ele_candidacy.d1",
+     "label": "Causa de inelegibilidade não configurada ou superada",
+     "authority_ids": [
+      "lc64_art1"
+     ]
+    },
+    {
+     "id": "ele_candidacy.d2",
+     "label": "Registro requerido no prazo e com documentos",
+     "authority_ids": [
+      "l9504_art11"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lc135_ficha_limpa"
+   ],
+   "typical_requests": [
+    "Procedência da Ação de Impugnação de Registro de Candidatura (AIRC) com indeferimento do RRC",
+    "Pelo candidato: reconhecimento do preenchimento das condições constitucionais de elegibilidade e afastamento de inelegibilidade com deferimento do registro",
+    "Aplicação de fato superveniente que afaste a inelegibilidade ou restabeleça direitos políticos até a data da diplomação (Lei 9.504/1997, art. 11, § 10)"
+   ],
+   "evidence": [
+    "Requerimento de Registro de Candidatura (RRC), certidões de quitação eleitoral, filiação partidária, domicílio e ata de convenção",
+    "Certidões criminais de inteiro teor ('objeto e pé'), acórdãos de órgãos colegiados e decisões de tribunais de contas",
+    "Comprovantes de desincompatibilização tempestiva do cargo ou função pública conforme os prazos da LC 64/1990"
+   ],
+   "piece_ids": [
+    "impugnacao_registro_candidatura",
+    "recurso_eleitoral"
+   ],
+   "related_claims": [],
+   "limitation": "Prazo decadencial peremptório de 5 dias corridos contados da publicação do edital do pedido de registro de candidatura no DJe para propor a AIRC (LC 64/1990, art. 3º, caput), ressalvadas matérias constitucionais não preclusivas arguíveis em RCED."
+  },
+  {
+   "id": "ele_abuse",
+   "label": "Abuso de poder e AIJE",
+   "requirements": [
+    "conduta",
+    "gravidade",
+    "beneficio",
+    "prova"
+   ],
+   "claimant_theses": [
+    {
+     "id": "ele_abuse.c1",
+     "label": "Abuso de poder econômico, político ou uso indevido dos meios de comunicação",
+     "authority_ids": [
+      "lc64_art22"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "ele_abuse.d1",
+     "label": "Ausência de gravidade ou de prova robusta",
+     "authority_ids": [
+      "lc64_art22"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lc135_ficha_limpa"
+   ],
+   "typical_requests": [
+    "Procedência da AIJE para cassar o registro ou o diploma dos beneficiários e declarar a inelegibilidade por 8 anos dos responsáveis pelo abuso (LC 64/1990, art. 22, XIV)",
+    "Pela defesa: improcedência por ausência de gravidade das circunstâncias (art. 22, XVI) ou formação de litisconsórcio passivo necessário viciado",
+    "Indeferimento de provas ilícitas e preservação da soberania popular quando o fato for atípico ou irrelevante"
+   ],
+   "evidence": [
+    "Documentos contábeis, contratos públicos, notas fiscais, quebras de sigilo judicialmente autorizadas e atas notariais",
+    "Mídias audiovisuais integrais (com hash de integridade) demonstrando uso desvirtuado de meios de comunicação ou estrutura estatal",
+    "Prova testemunhal arrolada na inicial e na defesa até o limite legal do rito do art. 22 da LC 64/1990"
+   ],
+   "piece_ids": [
+    "aije",
+    "recurso_eleitoral"
+   ],
+   "related_claims": [],
+   "limitation": "A AIJE pode ser ajuizada até a data da diplomação dos eleitos (jurisprudência consolidada do TSE sobre o art. 22 da LC 64/1990); defesa e recursos seguem prazos céleres em dias corridos na fase do período eleitoral."
+  },
+  {
+   "id": "ele_vote_buying",
+   "label": "Captação ilícita de sufrágio e gastos ilícitos",
+   "requirements": [
+    "conduta",
+    "finalidade",
+    "prova"
+   ],
+   "claimant_theses": [
+    {
+     "id": "ele_vote_buying.c1",
+     "label": "Captação de sufrágio",
+     "authority_ids": [
+      "l9504_art41a"
+     ]
+    },
+    {
+     "id": "ele_vote_buying.c2",
+     "label": "Arrecadação e gastos ilícitos de campanha",
+     "authority_ids": [
+      "l9504_art30a"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "ele_vote_buying.d1",
+     "label": "Ausência de prova do especial fim de agir",
+     "authority_ids": [
+      "l9504_art41a"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Cassação do registro ou do diploma e aplicação de multa pecuniária por captação ilícita de sufrágio (Lei 9.504/1997, art. 41-A) ou captação/gastos ilícitos de campanha (art. 30-A)",
+    "Pelo representado: improcedência por inexistência de participação, anuência ou ciência inequívoca do candidato e fragilidade de prova exclusivamente testemunhal isolada"
+   ],
+   "evidence": [
+    "Comprovantes de transferência financeira (Pix, recibos, vales-combustível, cestas) vinculados à promessa ou pedido de voto",
+    "Prestação de contas eleitoral, extratos bancários da conta de campanha e documentos apreendidos por ordem judicial",
+    "Depoimentos testemunhais consistentes corroborados por elementos materiais independentes"
+   ],
+   "piece_ids": [
+    "representacao_eleitoral",
+    "recurso_eleitoral"
+   ],
+   "related_claims": [],
+   "limitation": "Representação por captação ilícita de sufrágio (Lei 9.504/1997, art. 41-A) até a data da diplomação; representação por arrecadação ou gastos ilícitos de recursos (art. 30-A) em até 15 dias contados da diplomação (art. 30-A, § 2º)."
+  },
+  {
+   "id": "ele_public_agents",
+   "label": "Condutas vedadas a agentes públicos",
+   "requirements": [
+    "agente",
+    "conduta",
+    "periodo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "ele_public_agents.c1",
+     "label": "Condutas que afetam a igualdade de oportunidades",
+     "authority_ids": [
+      "l9504_art73"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "ele_public_agents.d1",
+     "label": "Conduta fora do período ou das hipóteses legais",
+     "authority_ids": [
+      "l9504_art73"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Suspensão imediata da conduta vedada e aplicação de multa proporcional aos agentes responsáveis e beneficiários (Lei 9.504/1997, art. 73, §§ 4º e 5º)",
+    "Cassação do registro ou diploma apenas quando comprovada gravidade proporcional da conduta vedada",
+    "Pela defesa: enquadramento na exceção legal de calamidade/emergência ou programa social instituído em lei e já em execução orçamentária no exercício anterior (art. 73, § 10)"
+   ],
+   "evidence": [
+    "Publicações oficiais, leis instituidoras do programa social e execução orçamentária do exercício anterior",
+    "Atas notariais de postagens em perfis institucionais, fotografias de eventos públicos e portarias de nomeação/remoção nos três meses anteriores ao pleito",
+    "Comprovantes de ressarcimento ou de ausência de uso promocional em favor de candidatura"
+   ],
+   "piece_ids": [
+    "representacao_eleitoral"
+   ],
+   "related_claims": [],
+   "limitation": "Representações por condutas vedadas aos agentes públicos (Lei 9.504/1997, arts. 73 a 77) podem ser propostas até a data da diplomação dos eleitos."
+  },
+  {
+   "id": "ele_accounts",
+   "label": "Prestação de contas de campanha",
+   "requirements": [
+    "forma",
+    "prazo",
+    "irregularidade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "ele_accounts.c1",
+     "label": "Contas apresentadas na forma legal",
+     "authority_ids": [
+      "l9504_art28"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "ele_accounts.d1",
+     "label": "Irregularidade grave que compromete a confiabilidade",
+     "authority_ids": [
+      "l9504_art28"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Aprovação ou aprovação com ressalvas das contas de campanha diante de impropriedades formais ou valor ínfimo (princípios da proporcionalidade e razoabilidade — Lei 9.504/1997, art. 30, § 2º-A)",
+    "Afastamento ou redução do recolhimento ao Tesouro Nacional de recursos tidos por origem não identificada ou aplicação irregular do FEFC/Fundo Partidário",
+    "Emissão de certidão de quitação eleitoral pela efetiva apresentação das contas (art. 11, § 7º)"
+   ],
+   "evidence": [
+    "Demonstrativos gerados no Sistema de Prestação de Contas Eleitorais (SPCE), extratos bancários eletrônicos e notas fiscais eletrônicas",
+    "Contratos de prestação de serviços advocatícios/contábeis, comprovantes de militância e material gráfico produzido",
+    "Parecer conclusivo da unidade técnica de exame de contas e diligências saneadoras tempestivas"
+   ],
+   "piece_ids": [
+    "recurso_eleitoral"
+   ],
+   "related_claims": [],
+   "limitation": "Apresentação final das contas até 30 dias após o 1º turno (ou 20 dias após o 2º turno para quem o disputou — Lei 9.504/1997, art. 29); recurso eleitoral em 3 dias da publicação da sentença ou acórdão (art. 30, § 5º)."
+  },
+  {
+   "id": "ele_appeals",
+   "label": "Recursos eleitorais e prazos",
+   "requirements": [
+    "ato",
+    "prazo_especial",
+    "cabimento"
+   ],
+   "claimant_theses": [
+    {
+     "id": "ele_appeals.c1",
+     "label": "Recurso ao Tribunal Regional no prazo de três dias, salvo prazo especial",
+     "authority_ids": [
+      "ce_art258",
+      "ce_art265"
+     ]
+    },
+    {
+     "id": "ele_appeals.c2",
+     "label": "Representações por descumprimento da Lei das Eleições",
+     "authority_ids": [
+      "l9504_art96"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "ele_appeals.d1",
+     "label": "Intempestividade",
+     "authority_ids": [
+      "ce_art258"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Atribuição de efeito suspensivo automático ao recurso ordinário/especial contra decisão que resulte em cassação de registro, afastamento do titular ou perda de mandato eletivo (CE, art. 257, § 2º)",
+    "Reforma do acórdão regional por violação a dispositivo de lei ou divergência jurisprudencial sem revolvimento fático-probatório vedado (Súmula 24 do TSE)",
+    "Conhecimento de embargos de declaração para suprir omissão essencial e prequestionar matéria constitucional/legal"
+   ],
+   "evidence": [
+    "Inteiro teor da sentença ou acórdão regional, certidão de publicação em mural eletrônico, sessão ou DJe",
+    "Cópia integral ou indicação precisa do acórdão paradigma com cotejo analítico na divergência jurisprudencial",
+    "Certidão de diplomação e exercício do mandato para incidência do efeito suspensivo legal (CE, art. 257, § 2º)"
+   ],
+   "piece_ids": [
+    "recurso_eleitoral",
+    "representacao_eleitoral"
+   ],
+   "related_claims": [],
+   "limitation": "Regra geral de 3 dias no Código Eleitoral (art. 258), prazos de 24 horas ou 1 a 3 dias nas representações especiais da Lei 9.504/1997 (art. 96, § 8º) e 15 dias úteis fora do período eleitoral conforme regulamentação processual do TSE."
+  },
+  {
+   "id": "ele_propaganda",
+   "label": "Propaganda eleitoral antecipada e irregular",
+   "requirements": [
+    "data_do_ato",
+    "pedido_explicito_de_voto",
+    "meio_utilizado",
+    "previo_conhecimento"
+   ],
+   "claimant_theses": [
+    {
+     "id": "ele_propaganda.c1",
+     "label": "Propaganda antes do período permitido com pedido explícito de voto",
+     "authority_ids": [
+      "l9504_art36",
+      "l9504_art36a"
+     ]
+    },
+    {
+     "id": "ele_propaganda.c2",
+     "label": "Propaganda em bem público ou de uso comum",
+     "authority_ids": [
+      "l9504_art37"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "ele_propaganda.d1",
+     "label": "Menção à pretensa candidatura e exaltação de qualidades pessoais sem pedido de voto",
+     "authority_ids": [
+      "l9504_art36a"
+     ]
+    },
+    {
+     "id": "ele_propaganda.d2",
+     "label": "Ausência de prévio conhecimento do beneficiário",
+     "authority_ids": [
+      "l9504_art36"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Multa",
+    "Remoção do conteúdo"
+   ],
+   "evidence": [
+    "Capturas com data, URL e autoria",
+    "Ata notarial",
+    "Notas de impulsionamento"
+   ],
+   "piece_ids": [
+    "representacao_eleitoral",
+    "recurso_eleitoral"
+   ],
+   "related_claims": [
+    "ele_abuse"
+   ],
+   "limitation": "Representação por propaganda irregular admitida até a data da eleição (ou até 48 horas / prazos da resolução do pleito), com defesa em 2 dias e recurso em 1 dia no rito sumário da Lei 9.504/1997, art. 96."
+  },
+  {
+   "id": "ele_internet_response",
+   "label": "Internet, desinformação e direito de resposta",
+   "requirements": [
+    "conteudo",
+    "autoria_identificavel",
+    "fato_sabidamente_inveridico",
+    "alcance"
+   ],
+   "claimant_theses": [
+    {
+     "id": "ele_internet_response.c1",
+     "label": "Direito de resposta contra afirmação caluniosa, difamatória, injuriosa ou sabidamente inverídica",
+     "authority_ids": [
+      "l9504_art58"
+     ]
+    },
+    {
+     "id": "ele_internet_response.c2",
+     "label": "Vedação do anonimato e remoção de conteúdo",
+     "authority_ids": [
+      "l9504_art57d"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "ele_internet_response.d1",
+     "label": "Liberdade de manifestação e crítica política",
+     "authority_ids": [
+      "l9504_art57d",
+      "cf_art5"
+     ]
+    },
+    {
+     "id": "ele_internet_response.d2",
+     "label": "Decadência do pedido de resposta pelo prazo do veículo",
+     "authority_ids": [
+      "l9504_art58"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Direito de resposta",
+    "Remoção",
+    "Multa"
+   ],
+   "evidence": [
+    "Capturas e URLs",
+    "Identificação do perfil",
+    "Prova da falsidade"
+   ],
+   "piece_ids": [
+    "representacao_eleitoral",
+    "recurso_eleitoral",
+    "mandado_seguranca"
+   ],
+   "related_claims": [
+    "ele_propaganda"
+   ],
+   "limitation": "Direito de resposta requerido a partir da escolha em convenção nos prazos decadenciais estritos de 24 horas (horário eleitoral gratuito), 48 horas (programação normal de rádio/TV), 72 horas (imprensa escrita) e a qualquer tempo enquanto divulgada a ofensa na internet, ou até 72 horas após sua retirada (Lei 9.504/1997, art. 58, § 1º, IV)."
+  },
+  {
+   "id": "ele_mandate_challenge",
+   "label": "Impugnação de mandato e recurso contra diplomação",
+   "requirements": [
+    "diplomacao",
+    "fundamento",
+    "provas",
+    "gravidade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "ele_mandate_challenge.c1",
+     "label": "Ação de impugnação de mandato por abuso do poder econômico, corrupção ou fraude",
+     "authority_ids": [
+      "cf_art14"
+     ]
+    },
+    {
+     "id": "ele_mandate_challenge.c2",
+     "label": "Recurso contra expedição de diploma por inelegibilidade superveniente ou constitucional",
+     "authority_ids": [
+      "ce_art262"
+     ]
+    },
+    {
+     "id": "ele_mandate_challenge.c3",
+     "label": "Fraude à cota de gênero — conferir a Súmula 73 do TSE",
+     "authority_ids": [
+      "l9504_art10",
+      "cf_art14"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "ele_mandate_challenge.d1",
+     "label": "Prova robusta e gravidade das circunstâncias",
+     "authority_ids": [
+      "lc64_art22"
+     ]
+    },
+    {
+     "id": "ele_mandate_challenge.d2",
+     "label": "Decadência do prazo de quinze dias da diplomação",
+     "authority_ids": [
+      "cf_art14"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Cassação do diploma ou mandato",
+    "Nulidade dos votos",
+    "Inelegibilidade na ação própria"
+   ],
+   "evidence": [
+    "Ata de diplomação",
+    "Prestação de contas",
+    "Provas documentais e testemunhais"
+   ],
+   "piece_ids": [
+    "aime",
+    "rced",
+    "aije",
+    "recurso_eleitoral"
+   ],
+   "related_claims": [
+    "ele_abuse",
+    "ele_vote_buying"
+   ],
+   "limitation": "Ação de Impugnação de Mandato Eletivo (AIME) no prazo decadencial constitucional de 15 dias contados da diplomação (CF, art. 14, § 10); Recurso Contra Expedição de Diploma (RCED) em 3 dias contados do último dia fixado para a diplomação (CE, arts. 258 e 262)."
+  },
+  {
+   "id": "ele_ineligibility_relief",
+   "label": "Inelegibilidade: suspensão e efeitos",
+   "requirements": [
+    "decisao_colegiada",
+    "hipotese_legal",
+    "prazo_de_oito_anos",
+    "plausibilidade_do_recurso"
+   ],
+   "claimant_theses": [
+    {
+     "id": "ele_ineligibility_relief.c1",
+     "label": "Suspensão cautelar da inelegibilidade pelo tribunal do recurso",
+     "authority_ids": [
+      "lc64_art26c"
+     ]
+    },
+    {
+     "id": "ele_ineligibility_relief.c2",
+     "label": "Contagem do prazo de inelegibilidade — conferir a redação vigente da LC 64/1990",
+     "authority_ids": [
+      "lc64_art1"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "ele_ineligibility_relief.d1",
+     "label": "Efeitos sobre registro e diploma com a decisão colegiada",
+     "authority_ids": [
+      "lc64_art15",
+      "lc64_art1"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lc135_ficha_limpa"
+   ],
+   "typical_requests": [
+    "Efeito suspensivo",
+    "Deferimento do registro"
+   ],
+   "evidence": [
+    "Acórdão condenatório e certidões",
+    "Recurso interposto",
+    "Decisão liminar ou tutela cautelar proferida pelo órgão colegiado do tribunal competente na ação revisional/anulatória ou recurso"
+   ],
+   "piece_ids": [
+    "impugnacao_registro_candidatura",
+    "recurso_eleitoral",
+    "mandado_seguranca"
+   ],
+   "related_claims": [
+    "ele_candidacy"
+   ],
+   "limitation": "Medida cautelar de suspensão de inelegibilidade (LC 64/1990, art. 26-C) pode ser requerida a qualquer tempo perante o tribunal competente para o recurso contra a decisão colegiada condenatória, surtindo efeito imediato no registro se obtida até a diplomação (Lei 9.504/1997, art. 11, § 10)."
+  },
+  {
+   "id": "ele_party_fidelity",
+   "label": "Fidelidade partidária e contas de partido",
+   "requirements": [
+    "desfiliacao",
+    "justa_causa",
+    "janela",
+    "exercicio_financeiro"
+   ],
+   "claimant_theses": [
+    {
+     "id": "ele_party_fidelity.c1",
+     "label": "Perda do mandato por desfiliação sem justa causa nas eleições proporcionais",
+     "authority_ids": [
+      "l9096_art22a",
+      "cf_art17"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "ele_party_fidelity.d1",
+     "label": "Justa causa: desvio do programa, grave discriminação ou janela partidária",
+     "authority_ids": [
+      "l9096_art22a"
+     ]
+    },
+    {
+     "id": "ele_party_fidelity.d2",
+     "label": "Sanção proporcional na desaprovação de contas",
+     "authority_ids": [
+      "l9096_art37"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Decretação da perda do mandato",
+    "Reconhecimento da justa causa"
+   ],
+   "evidence": [
+    "Ficha de filiação e comunicações",
+    "Atas partidárias",
+    "Prestação de contas"
+   ],
+   "piece_ids": [
+    "representacao_eleitoral",
+    "recurso_eleitoral"
+   ],
+   "related_claims": [
+    "ele_accounts"
+   ],
+   "limitation": "Ação de perda de cargo eletivo por desfiliação sem justa causa em 30 dias pelo partido político interessado, e nos 30 dias subsequentes pelo Ministério Público Eleitoral ou suplente (Res. TSE 22.610/2007, art. 1º, § 2º; Lei 9.096/1995, art. 22-A)."
+  },
+  {
+   "id": "ele_crimes",
+   "label": "Crimes eleitorais",
+   "requirements": [
+    "conduta",
+    "dolo_especifico",
+    "finalidade_eleitoral",
+    "competencia"
+   ],
+   "claimant_theses": [
+    {
+     "id": "ele_crimes.c1",
+     "label": "Atipicidade sem a finalidade de obter voto ou abstenção",
+     "authority_ids": [
+      "ce_art299"
+     ]
+    },
+    {
+     "id": "ele_crimes.c2",
+     "label": "Falsidade ideológica eleitoral exige finalidade eleitoral e potencial lesivo",
+     "authority_ids": [
+      "ce_art350"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "ele_crimes.d1",
+     "label": "Competência da Justiça Eleitoral para os crimes comuns conexos — conferir o precedente do STF",
+     "authority_ids": [
+      "ce_art350"
+     ]
+    },
+    {
+     "id": "ele_crimes.d2",
+     "label": "Crime formal na corrupção eleitoral",
+     "authority_ids": [
+      "ce_art299"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime"
+   ],
+   "typical_requests": [
+    "Absolvição",
+    "Acordo de não persecução",
+    "Declaração de competência da Justiça Eleitoral para processar os crimes eleitorais e os crimes comuns que lhes forem conexos (CE, art. 35, II; Tema 928 do STF / Inq 4.435)"
+   ],
+   "evidence": [
+    "Prestação de contas",
+    "Testemunhas",
+    "Documentos apreendidos"
+   ],
+   "piece_ids": [
+    "recurso_eleitoral",
+    "mandado_seguranca"
+   ],
+   "related_claims": [
+    "ele_vote_buying"
+   ],
+   "limitation": "Prescrição penal eleitoral segue os prazos gerais do art. 109 do Código Penal (por força do art. 287 do Código Eleitoral), admitidos ANPP e institutos despenalizadores quando preenchidos os requisitos objetivos e subjetivos."
+  },
+  {
+   "id": "ele_gender_quota_fraud",
+   "label": "Fraude à cota de gênero por candidaturas fictícias, cassação do DRAP e inelegibilidade (Súmula 73 TSE)",
+   "requirements": [
+    "percentual_minimo_30_por_cento",
+    "votacao_zerada_ou_infima",
+    "contas_padronizadas_sem_gastos",
+    "ausencia_atos_efetivos_campanha"
+   ],
+   "claimant_theses": [
+    {
+     "id": "ele_gender_quota_fraud.c1",
+     "label": "Configura-se fraude à cota de gênero (Lei 9.504/1997, art. 10, § 3º) pela presença de votação zerada ou ínfima, prestação de contas zerada/padronizada e ausência de atos efetivos de campanha em benefício próprio, acarretando desconstituição integral do DRAP, nulidade dos votos da legenda, recálculo dos quocientes e inelegibilidade apenas de quem praticou ou anuiu com a conduta (Súmula 73 do TSE)",
+     "authority_ids": [
+      "l9504_art10",
+      "sumula_tse_73",
+      "lc64_art22"
+     ]
+    },
+    {
+     "id": "ele_gender_quota_fraud.c2",
+     "label": "Dispensabilidade de litisconsórcio passivo necessário dos candidatos meramente atingidos como efeito reflexo da invalidação do DRAP em AIJE ou AIME segundo a Súmula 73 do TSE",
+     "authority_ids": [
+      "sumula_tse_73",
+      "cf_art14"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "ele_gender_quota_fraud.d1",
+     "label": "Desistência tácita ou expressa justificada por motivo superveniente comprovado (doença, mudança familiar, falta de repasse prometido pelo partido) após início real de atos de pré-campanha/campanha afasta o dolo fraudulento na origem",
+     "authority_ids": [
+      "l9504_art10",
+      "sumula_tse_73"
+     ]
+    },
+    {
+     "id": "ele_gender_quota_fraud.d2",
+     "label": "A baixa votação isoladamente considerada não basta para presumir candidatura fictícia quando provada campanha efetiva nas redes sociais e nas ruas",
+     "authority_ids": [
+      "l9504_art10",
+      "sumula_tse_73"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lc135_ficha_limpa"
+   ],
+   "typical_requests": [
+    "Reconhecimento da fraude à cota de gênero com cassação integral do DRAP proporcional e dos diplomas dele decorrentes",
+    "Anulação dos votos atribuídos ao partido/federação no cargo proporcional com retotalização dos quocientes eleitoral e partidário",
+    "Declaração de inelegibilidade por 8 anos exclusivamente dos dirigentes e candidatas que praticaram ou anuíram com o ilícito"
+   ],
+   "evidence": [
+    "Boletins de urna e resultado oficial de totalização apontando votação igual a zero ou inexpressiva",
+    "Autos de prestação de contas no SPCE evidenciando ausência de movimentação, notas fiscais idênticas ou doações cruzadas",
+    "Atas notariais das redes sociais das candidatas demonstrando inexistência de postagens próprias ou pedido de voto exclusivo para terceiros"
+   ],
+   "piece_ids": [
+    "aije",
+    "aime",
+    "recurso_eleitoral",
+    "contestacao"
+   ],
+   "related_claims": [
+    "ele_abuse",
+    "ele_mandate_challenge",
+    "ele_candidacy"
+   ],
+   "limitation": "Via AIJE até a data da diplomação (LC 64/1990, art. 22) ou via AIME no prazo decadencial de 15 dias após a diplomação (CF, art. 14, § 10; Súmula 73 do TSE)."
+  },
+  {
+   "id": "ele_ai_deepfake_propaganda",
+   "label": "Inteligência artificial, deepfakes, conteúdo sintético e desinformação eleitoral",
+   "requirements": [
+    "conteudo_sintetico_multimidia",
+    "dever_rotulagem_explicita",
+    "vedacao_deepfake_voz_imagem",
+    "responsabilidade_solidaria_provedor"
+   ],
+   "claimant_theses": [
+    {
+     "id": "ele_ai_deepfake_propaganda.c1",
+     "label": "Proibição absoluta do uso de conteúdo fabricado ou manipulado digitalmente (deepfake de áudio ou vídeo) para criar, substituir ou alterar imagem ou voz de pessoa viva, falecida ou fictícia a fim de prejudicar ou favorecer candidatura, bem como dever de rotulagem ostensiva de qualquer conteúdo sintético auxiliar",
+     "authority_ids": [
+      "l9504_art57b",
+      "l9504_art57d",
+      "l9504_art58"
+     ]
+    },
+    {
+     "id": "ele_ai_deepfake_propaganda.c2",
+     "label": "Remoção imediata de desinformação grave sobre a integridade do processo eleitoral, aplicação de multa e apuração de abuso dos meios de comunicação digital quando houver alcance massivo capaz de desequilibrar o pleito",
+     "authority_ids": [
+      "lc64_art22",
+      "l9504_art57d"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "ele_ai_deepfake_propaganda.d1",
+     "label": "Liberdade de expressão político-eleitoral, crítica ácida, charge/humor claramente identificáveis e uso regular de ferramentas de edição estética com aviso explícito de emprego de IA nos termos regulamentares",
+     "authority_ids": [
+      "cf_art5",
+      "l9504_art57b",
+      "l9504_art36a"
+     ]
+    },
+    {
+     "id": "ele_ai_deepfake_propaganda.d2",
+     "label": "Exigência de indicação precisa e inequívoca das URLs específicas a serem removidas e ausência de prévio conhecimento do candidato beneficiado quanto a postagem orgânica de terceiro",
+     "authority_ids": [
+      "l9504_art57b",
+      "l12965_art19"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Tutela inibitória urgente para remoção imediata em horas das URLs contendo deepfake ou fato sabidamente inverídico",
+    "Requisição judicial de dados de registro, IP e impulsionamento para identificação da autoria de perfil apócrifo",
+    "Concessão de direito de resposta impulsionado na mesma proporção, aplicação de multa e apuração de abuso em AIJE"
+   ],
+   "evidence": [
+    "Ata notarial ou captura técnica preservando metadados, hash SHA-256, data/hora e URL exata do vídeo/áudio manipulado",
+    "Parecer pericial audiovisual/forense demonstrando artefatos de síntese de voz ou manipulação facial por IA",
+    "Relatórios da biblioteca de anúncios da plataforma comprovando alcance, visualizações e gastos de impulsionamento"
+   ],
+   "piece_ids": [
+    "representacao_eleitoral",
+    "aije",
+    "recurso_eleitoral",
+    "contestacao"
+   ],
+   "related_claims": [
+    "ele_internet_response",
+    "ele_propaganda",
+    "ele_abuse"
+   ],
+   "limitation": "Representação para remoção de conteúdo ilícito na internet cabível enquanto mantida a disponibilidade da postagem no período eleitoral; direito de resposta até 72 horas após a retirada (Lei 9.504/1997, art. 58, § 1º, IV) e AIJE até a diplomação."
+  },
+  {
+   "id": "ele_party_federation_fefc",
+   "label": "Federações partidárias, financiamento público (FEFC/Fundo Partidário) e cotas raciais e femininas",
+   "requirements": [
+    "permanencia_minima_quatro_anos",
+    "criterios_objetivos_distribuicao_fefc",
+    "proporcionalidade_candidaturas_negras_mulheres",
+    "anistia_ou_devolucao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "ele_party_federation_fefc.c1",
+     "label": "A distribuição dos recursos do FEFC e do tempo de propaganda gratuita deve guardar estrita proporcionalidade com o percentual de candidaturas femininas (mínimo de 30%) e de pessoas negras registradas pelo partido ou federação",
+     "authority_ids": [
+      "l9504_art16c",
+      "l9504_art10",
+      "cf_art17"
+     ]
+    },
+    {
+     "id": "ele_party_federation_fefc.c2",
+     "label": "A federação partidária atua como se fosse uma única agremiação em todas as circunscrições por no mínimo quatro anos, sujeitando o partido que dela se desligar precocemente às vedações legais de utilização do fundo partidário (Lei 9.096/1995, art. 11-A)",
+     "authority_ids": [
+      "l9096_art11a",
+      "cf_art17"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "ele_party_federation_fefc.d1",
+     "label": "Autonomia partidária constitucional (CF, art. 17, § 1º) para definir critérios internos objetivos e públicos de alocação estratégica dos recursos do FEFC, desde que respeitados os pisos constitucionais de gênero e raça",
+     "authority_ids": [
+      "cf_art17",
+      "l9504_art16c"
+     ]
+    },
+    {
+     "id": "ele_party_federation_fefc.d2",
+     "label": "Admissibilidade de financiamento compartilhado de dobradinhas ou material conjunto com candidatos homens/brancos quando comprovado benefício efetivo e proporcional às candidaturas femininas e negras",
+     "authority_ids": [
+      "l9504_art16c",
+      "l9096_art37"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Tutela de urgência em favor de candidata prejudicada ou pelo MPE para obrigar o diretório partidário a repassar o piso proporcional do FEFC",
+    "Rejeição de contas partidárias/eleitorais por desvio de finalidade na aplicação da reserva de gênero/raça com recolhimento ao Erário",
+    "Reconhecimento de sanções estatutárias e legais por rompimento antecipado de federação partidária"
+   ],
+   "evidence": [
+    "Deliberação da executiva nacional do partido/federação fixando os critérios de distribuição do FEFC protocolada no TSE",
+    "Extratos bancários das contas específicas de campanha (FEFC, Fundo Partidário e Outros Recursos) e relação nominal de candidaturas por gênero e cor/raça no DivulgaCandContas",
+    "Contratos e notas fiscais comprovando a efetiva entrega de serviços às campanhas femininas e negras"
+   ],
+   "piece_ids": [
+    "representacao_eleitoral",
+    "mandado_seguranca",
+    "recurso_eleitoral",
+    "requerimento_administrativo"
+   ],
+   "related_claims": [
+    "ele_accounts",
+    "ele_party_fidelity",
+    "ele_gender_quota_fraud"
+   ],
+   "limitation": "Impugnação à distribuição no curso da campanha enquanto pendente o repasse; fiscalização na prestação de contas eleitoral ou partidária anual (prescrição quinquenal para exame das contas partidárias anuais — Lei 9.096/1995, art. 37, § 3º)."
+  },
+  {
+   "id": "ele_rejection_public_accounts",
+   "label": "Inelegibilidade por rejeição de contas públicas: competência da Câmara Municipal e ato doloso (LC 64/1990, art. 1º, I, 'g')",
+   "requirements": [
+    "rejeicao_por_orgao_competente",
+    "decisao_irrecorrivel",
+    "irregularidade_insanavel_ato_doloso_improbidade",
+    "ausencia_suspensao_judicial"
+   ],
+   "claimant_theses": [
+    {
+     "id": "ele_rejection_public_accounts.c1",
+     "label": "Configurada cumulativamente decisão irrecorrível do órgão competente por irregularidade insanável que caracterize em tese ato doloso de improbidade administrativa, sem liminar suspensiva na Justiça Comum, incide a inelegibilidade de 8 anos, vedado à Justiça Eleitoral rediscutir o acerto da decisão de contas (LC 64/1990, art. 1º, I, 'g'; Súmula 41 do TSE)",
+     "authority_ids": [
+      "lc64_art1",
+      "sumula_tse_41"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "ele_rejection_public_accounts.d1",
+     "label": "Para contas de Prefeito Municipal (tanto de governo quanto de gestão/ordenador de despesas, salvo convênios estaduais/federais), o órgão constitucionalmente competente é exclusivamente a Câmara Municipal por 2/3 dos votos, servindo o parecer do Tribunal de Contas apenas como peça opinativa (CF, art. 31, § 2º; Temas 157 e 835 do STF)",
+     "authority_ids": [
+      "lc64_art1",
+      "cf_art30"
+     ]
+    },
+    {
+     "id": "ele_rejection_public_accounts.d2",
+     "label": "Ausência de dolo específico de improbidade administrativa (conforme parâmetro pós-Lei 14.230/2021 — art. 1º, § 4º-A, da LC 64/1990, se aplicável, ou jurisprudência do TSE sobre mera falha formal/contábil) ou obtenção de tutela suspensiva na Justiça Comum até a diplomação",
+     "authority_ids": [
+      "lc64_art1",
+      "l8429_art1"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lc135_ficha_limpa",
+    "lei_14230_improbidade"
+   ],
+   "typical_requests": [
+    "Indeferimento do registro de candidatura em AIRC por incidência da alínea 'g' do art. 1º, I, da LC 64/1990",
+    "Pelo candidato: deferimento do registro por incompetência do Tribunal de Contas isoladamente quanto a Prefeito, ausência de dolo específico ou existência de decisão suspensiva da Justiça Comum"
+   ],
+   "evidence": [
+    "Decreto legislativo da Câmara Municipal (para ex-prefeitos) ou acórdão definitivo do TCU/TCE com certidão de trânsito em julgado administrativo",
+    "Inteiro teor do voto condutor no órgão de contas permitindo enquadrar a natureza sanável ou insanável/dolosa da falha",
+    "Decisão liminar ou sentença da Justiça Comum suspendendo ou anulando o julgamento de contas"
+   ],
+   "piece_ids": [
+    "impugnacao_registro_candidatura",
+    "contestacao",
+    "recurso_eleitoral",
+    "rced"
+   ],
+   "related_claims": [
+    "ele_candidacy",
+    "ele_ineligibility_relief",
+    "adm_accounts_defense"
+   ],
+   "limitation": "Inelegibilidade perdura por 8 anos contados da data da decisão irrecorrível do órgão competente (LC 64/1990, art. 1º, I, 'g'); impugnação em 5 dias do edital de registro (LC 64/1990, art. 3º)."
+  }
  ]
 }

@@ -1,0 +1,952 @@
+{
+  "schema_version": "1.0",
+  "domain": "arbitragem_mediacao",
+  "label": "Arbitragem, Mediação e Métodos Adequados de Solução de Disputas",
+  "guide": "domain_guides/arbitragem_mediacao.md",
+  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
+  "polo_labels": {
+    "claimant_theses": "Teses do requerente ou exequente arbitral",
+    "defense_theses": "Teses do requerido, impugnante ou objetante"
+  },
+  "claims": [
+    {
+      "id": "arb_specific_performance_kompetenz",
+      "label": "Execução específica da convenção de arbitragem, cláusula cheia/vazia e Kompetenz-Kompetenz",
+      "requirements": [
+        "direito_patrimonial_disponivel",
+        "clausula_compromissoria_escrita",
+        "autonomia_e_kompetenz_kompetenz",
+        "destaque_em_contrato_adesao"
+      ],
+      "claimant_theses": [
+        {
+          "id": "arb_specific_performance_kompetenz.c1",
+          "label": "Autonomia da cláusula compromissória em relação ao contrato em que estiver inserta e competência prioritária do árbitro para decidir de ofício ou por provocação sobre existência, validade e eficácia da convenção de arbitragem (Kompetenz-Kompetenz)",
+          "authority_ids": [
+            "l9307_art8",
+            "cpc_art485"
+          ]
+        },
+        {
+          "id": "arb_specific_performance_kompetenz.c2",
+          "label": "Execução específica judicial (Lei 9.307/1996, art. 7º) restrita à hipótese de cláusula compromissória vazia resistida, valendo a sentença estatal como compromisso arbitral",
+          "authority_ids": [
+            "l9307_art7",
+            "l9307_art4",
+            "l9307_art5"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "arb_specific_performance_kompetenz.d1",
+          "label": "Ineficácia da cláusula compromissória em contrato de adesão quando o aderente não tomar a iniciativa de instituir a arbitragem nem concordar expressamente por escrito em documento anexo ou em negrito com assinatura/visto especial (art. 4º, § 2º), ou nulidade absoluta na relação de consumo compulsória (CDC, art. 51, VII)",
+          "authority_ids": [
+            "l9307_art4",
+            "cdc_art51"
+          ]
+        },
+        {
+          "id": "arb_specific_performance_kompetenz.d2",
+          "label": "Renúncia tácita definitiva à convenção de arbitragem pela ausência de alegação pelo réu em preliminar de contestação na jurisdição estatal (CPC, art. 337, X e § 6º)",
+          "authority_ids": [
+            "cpc_art337"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_13129_reforma_arbitragem"
+      ],
+      "typical_requests": [
+        "Acolhimento da preliminar de convenção de arbitragem com extinção do processo judicial sem resolução do mérito (CPC, art. 485, VII)",
+        "Citação da parte resistente em cláusula vazia para lavratura judicial do compromisso arbitral e nomeação de árbitro (Lei 9.307/1996, art. 7º)",
+        "Reconhecimento excepcional prima facie da ineficácia de cláusula arbitral patológica ou imposta abusivamente em contrato de adesão consumerista"
+      ],
+      "evidence": [
+        "Instrumento contratual contendo a cláusula compromissória (cheia ou vazia) e verificação visual de negrito e assinatura específica em contrato de adesão",
+        "Regulamento da câmara arbitral eleita prevendo forma automática de instituição do tribunal arbitral independentemente de ação do art. 7º",
+        "Notificação extrajudicial prévia convocando a parte contrária para firmar compromisso arbitral na cláusula vazia (art. 6º)"
+      ],
+      "piece_ids": [
+        "contestacao",
+        "requerimento_instauracao_arbitragem",
+        "inicial_procedimento_comum",
+        "agravo_instrumento"
+      ],
+      "related_claims": [
+        "pciv_procedural_business_agreement",
+        "arb_annulment_arbitral_award"
+      ],
+      "limitation": "Arguição na jurisdição estatal obrigatoriamente em preliminar de contestação no prazo de 15 dias úteis sob pena de aceitação da jurisdição estatal e renúncia ao juízo arbitral (CPC, art. 337, X e § 6º); da decisão interlocutória que rejeita a alegação de convenção de arbitragem ou homologa/extingue cabe agravo de instrumento ou apelação conforme a natureza do ato (CPC, arts. 1.009 e 1.015, III)"
+    },
+    {
+      "id": "arb_pre_arbitral_relief_letter",
+      "label": "Tutela cautelar/urgência pré-arbitral e cooperação por carta arbitral",
+      "requirements": [
+        "urgencia_anterior_instituicao_arbitragem",
+        "protocolo_arbitragem_em_trinta_dias",
+        "reexame_pelos_arbitros_instituidos",
+        "cooperacao_estatal_carta_arbitral"
+      ],
+      "claimant_theses": [
+        {
+          "id": "arb_pre_arbitral_relief_letter.c1",
+          "label": "Antes de instituída a arbitragem (aceitação da nomeação pelos árbitros — art. 19), as partes podem recorrer ao Poder Judiciário para a concessão de medida cautelar ou de urgência indispensável",
+          "authority_ids": [
+            "l9307_art22a",
+            "l9307_art19",
+            "cpc_art300"
+          ]
+        },
+        {
+          "id": "arb_pre_arbitral_relief_letter.c2",
+          "label": "Instituída a arbitragem, compete exclusivamente aos árbitros manter, modificar ou revogar a medida concedida pelo Judiciário, cumprindo ao juízo estatal executar coercitivamente cartas arbitrais sem incursão no mérito da decisão arbitral",
+          "authority_ids": [
+            "l9307_art22b",
+            "l9307_art22c",
+            "cpc_art237",
+            "cpc_art260"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "arb_pre_arbitral_relief_letter.d1",
+          "label": "Cessação automática da eficácia da medida cautelar ou de urgência pré-arbitral se a parte interessada não requerer a instituição da arbitragem no prazo decadencial de 30 dias contados da data de efetivação da decisão",
+          "authority_ids": [
+            "l9307_art22a"
+          ]
+        },
+        {
+          "id": "arb_pre_arbitral_relief_letter.d2",
+          "label": "Recusa de cumprimento de carta arbitral apenas por ausência dos requisitos formais extrínsecos do art. 260, § 3º, do CPC (convenção de arbitragem e prova da nomeação/aceitação do árbitro) ou incompetência absoluta territorial/material do juízo destinatário",
+          "authority_ids": [
+            "cpc_art260",
+            "cpc_art267"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_13129_reforma_arbitragem"
+      ],
+      "typical_requests": [
+        "Concessão judicial de arresto, bloqueio, sustação de garantia ou tutela de urgência antecedente à instituição do tribunal arbitral",
+        "Cumprimento imediato de carta arbitral para efetivação de penhora/arresto, condução de testemunha renitente ou ordem a terceiro sob segredo de justiça se comprovada confidencialidade",
+        "Declaração de perda de eficácia da liminar pré-arbitral pelo decurso in albis dos 30 dias sem requerimento de instauração na câmara"
+      ],
+      "evidence": [
+        "Contrato com cláusula compromissória e prova documental do periculum in mora anterior à constituição do painel arbitral",
+        "Protocolo datado do requerimento de instauração de arbitragem na câmara eleita e comprovante de pagamento da taxa de registro dentro de 30 dias da efetivação",
+        "Carta arbitral instruída com a convenção de arbitragem, termo de nomeação/aceitação dos árbitros, inteiro teor da decisão arbitral e prova de confidencialidade (CPC, art. 260, § 3º)"
+      ],
+      "piece_ids": [
+        "tutela_urgencia_antecedente",
+        "carta_arbitral",
+        "agravo_instrumento",
+        "manifestacao_especifica"
+      ],
+      "related_claims": [
+        "pciv_provisional_relief_stabilization",
+        "arb_confidentiality_court_secrecy",
+        "arb_early_evidence_without_urgency"
+      ],
+      "limitation": "Prazo peremptório de 30 dias contados da efetivação da respectiva decisão para requerer a instituição da arbitragem sob pena de cessação da eficácia da tutela pré-arbitral (Lei 9.307/1996, art. 22-A, parágrafo único — contado em dias corridos pela natureza decadencial/pré-arbitral segundo orientação doutrinária e prudência forense; conferir no caso)"
+    },
+    {
+      "id": "arb_arbitrator_disclosure_challenge",
+      "label": "Dever de revelação, imparcialidade, impedimento e impugnação de árbitro",
+      "requirements": [
+        "dever_continuo_revelacao_fatos_relevantes",
+        "duvida_justificada_independencia_imparcialidade",
+        "arguicao_primeira_oportunidade_art_20",
+        "substituicao_ou_nulidade_sentenca"
+      ],
+      "claimant_theses": [
+        {
+          "id": "arb_arbitrator_disclosure_challenge.c1",
+          "label": "As pessoas indicadas para funcionar como árbitro têm o dever contínuo de revelar, antes da aceitação e ao longo de todo o procedimento, qualquer fato que denote dúvida justificada quanto à sua imparcialidade e independência",
+          "authority_ids": [
+            "l9307_art13",
+            "l9307_art14"
+          ]
+        },
+        {
+          "id": "arb_arbitrator_disclosure_challenge.c2",
+          "label": "Anulação da sentença arbitral quando proferida por quem não podia ser árbitro ou quando a omissão de fato relevante sobre vínculo econômico/profissional comprometer concretamente a imparcialidade e o devido processo legal",
+          "authority_ids": [
+            "l9307_art32",
+            "l9307_art21"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "arb_arbitrator_disclosure_challenge.d1",
+          "label": "Preclusão consumativa quando a parte já conhecia ou tinha acesso público evidente ao fato supostamente suspeito durante a arbitragem e deixou de apresentar exceção de recusa na primeira oportunidade que teve de se manifestar (vedação à reserva estratégica de nulidade — art. 20)",
+          "authority_ids": [
+            "l9307_art20",
+            "cc_art422"
+          ]
+        },
+        {
+          "id": "arb_arbitrator_disclosure_challenge.d2",
+          "label": "Mera falha formal de revelação de contato acadêmico, institucional ou indireto irrelevante não acarreta anulação automática da sentença arbitral se não demonstrada dúvida objetivamente justificada quanto à isenção do julgador — diretrizes IBA e jurisprudência do STJ",
+          "authority_ids": [
+            "l9307_art14",
+            "l9307_art32"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_13129_reforma_arbitragem"
+      ],
+      "typical_requests": [
+        "Acolhimento de impugnação/recusa de árbitro perante o comitê administrativo da câmara arbitral com nomeação de substituto (arts. 15 e 16)",
+        "Desconstituição de sentença arbitral em ação anulatória fundada nos arts. 14, 21, § 2º, e 32, II e VIII, da Lei 9.307/1996",
+        "Improcedência da arguição tardia por preclusão e ausência de fato gerador de dúvida justificada sob a perspectiva de terceiro razoável"
+      ],
+      "evidence": [
+        "Questionários de independência, termos de aceitação e revelações complementares firmados pelos árbitros",
+        "Documentos comprobatórios do vínculo societário, atuação recorrente como patrono/parecerista ou interesse econômico omitido e da data da ciência superveniente",
+        "Decisão administrativa da instituição arbitral que apreciou o incidente de impugnação de árbitro"
+      ],
+      "piece_ids": [
+        "manifestacao_especifica",
+        "acao_anulatoria_sentenca_arbitral",
+        "contestacao"
+      ],
+      "related_claims": [
+        "arb_annulment_arbitral_award",
+        "pciv_nullities_prejudice"
+      ],
+      "limitation": "Arguição perante a câmara/tribunal arbitral na primeira oportunidade após a ciência do fato (Lei 9.307/1996, art. 20 e prazo regulamentar da câmara); se rejeitada a arguição tempestiva, renovável em ação anulatória no prazo decadencial de 90 dias da notificação da sentença arbitral (art. 20, § 2º, e art. 33, § 1º)"
+    },
+    {
+      "id": "arb_annulment_arbitral_award",
+      "label": "Ação anulatória de sentença arbitral e prazo decadencial de 90 dias",
+      "requirements": [
+        "hipotese_taxativa_art_32",
+        "vedacao_revisao_merito_error_in_judicando",
+        "prazo_decadencial_noventa_dias",
+        "demonstracao_prejuizo_processual"
+      ],
+      "claimant_theses": [
+        {
+          "id": "arb_annulment_arbitral_award.c1",
+          "label": "Decretação de nulidade da sentença arbitral incursa nas hipóteses estritas do art. 32: convenção nula/extinta, decisão fora dos limites da convenção (extra/ultra petita arbitral), ausência de fundamentação (art. 26), violação do contraditório/igualdade das partes (art. 21, § 2º) ou prolação fora do prazo estipulado após notificação prévia",
+          "authority_ids": [
+            "l9307_art32",
+            "l9307_art33",
+            "l9307_art26"
+          ]
+        },
+        {
+          "id": "arb_annulment_arbitral_award.c2",
+          "label": "Determinação judicial para que o tribunal arbitral profira nova sentença nos casos de vício formal, decisão citra/extra petita ou cerceamento instrutório (art. 33, § 2º, II)",
+          "authority_ids": [
+            "l9307_art33"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "arb_annulment_arbitral_award.d1",
+          "label": "Extinção com resolução de mérito pela consumação do prazo decadencial peremptório de 90 dias contados do recebimento da notificação da sentença arbitral (parcial ou final, quanto aos respectivos capítulos autônomos) ou da decisão do pedido de esclarecimentos",
+          "authority_ids": [
+            "l9307_art33",
+            "cpc_art487"
+          ]
+        },
+        {
+          "id": "arb_annulment_arbitral_award.d2",
+          "label": "Inadmissibilidade absoluta de utilização da ação anulatória para rediscutir justiça da decisão, valoração da prova pericial/documental ou suposto erro de aplicação do direito material (error in judicando) pelos árbitros — jurisprudência firme do STJ",
+          "authority_ids": [
+            "l9307_art18",
+            "l9307_art31",
+            "l9307_art32"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_13129_reforma_arbitragem"
+      ],
+      "typical_requests": [
+        "Concessão excepcional de tutela de urgência para suspender a exigibilidade da sentença arbitral (exigida probabilidade qualificada de vício do art. 32 e garantia/periculum in mora)",
+        "Procedência do pedido para decretar a nulidade total ou parcial da sentença arbitral nos termos dos arts. 32 e 33 da Lei 9.307/1996",
+        "Improcedência ou reconhecimento da decadência de 90 dias com condenação em honorários sucumbenciais sobre o valor econômico da condenação arbitral impugnada"
+      ],
+      "evidence": [
+        "Convenção de arbitragem, Termo de Arbitragem (delimitando pedidos e regras procedimentais), ordens processuais relevantes e íntegra da sentença arbitral e da decisão de esclarecimentos",
+        "Comprovante físico ou eletrônico exato da data de recebimento da notificação da sentença final/parcial ou da decisão dos esclarecimentos (art. 33, § 1º)",
+        "Prova de protesto oportuno nos autos arbitrais contra o ato apontado como cerceamento de defesa (art. 20)"
+      ],
+      "piece_ids": [
+        "acao_anulatoria_sentenca_arbitral",
+        "contestacao",
+        "apelacao_civel",
+        "recurso_especial"
+      ],
+      "related_claims": [
+        "arb_arbitrator_disclosure_challenge",
+        "arb_award_enforcement_impugnation",
+        "pciv_rescissory_action"
+      ],
+      "limitation": "Prazo decadencial improrrogável de 90 dias corridos contados do recebimento da notificação da respectiva sentença arbitral (parcial ou final) ou da decisão do pedido de esclarecimentos (Lei 9.307/1996, art. 33, § 1º; na sentença arbitral parcial, o prazo de 90 dias corre autonomamente desde sua própria ciência — jurisprudência STJ)"
+    },
+    {
+      "id": "arb_award_enforcement_impugnation",
+      "label": "Cumprimento judicial de sentença arbitral nacional e limites da impugnação",
+      "requirements": [
+        "sentenca_arbitral_titulo_judicial_art_515",
+        "citacao_inicial_executado_estatal",
+        "prazo_pagamento_voluntario_multa",
+        "delimitacao_materias_impugnacao"
+      ],
+      "claimant_theses": [
+        {
+          "id": "arb_award_enforcement_impugnation.c1",
+          "label": "A sentença arbitral produz entre as partes e seus sucessores os mesmos efeitos da sentença proferida pelos órgãos do Poder Judiciário e, sendo condenatória, constitui título executivo judicial independentemente de homologação estatal",
+          "authority_ids": [
+            "l9307_art31",
+            "cpc_art515"
+          ]
+        },
+        {
+          "id": "arb_award_enforcement_impugnation.c2",
+          "label": "Citado o devedor para pagar no prazo de 15 dias úteis (CPC, art. 515, § 1º, c/c art. 523), incide multa de 10% e honorários de 10% em caso de inadimplemento voluntário",
+          "authority_ids": [
+            "cpc_art515",
+            "cpc_art523"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "arb_award_enforcement_impugnation.d1",
+          "label": "Arguição de nulidades do art. 32 da Lei de Arbitragem em impugnação ao cumprimento de sentença (art. 33, § 3º) somente é admissível se apresentada dentro do prazo decadencial de 90 dias da ciência da sentença arbitral — jurisprudência consolidada do STJ",
+          "authority_ids": [
+            "l9307_art33",
+            "cpc_art525"
+          ]
+        },
+        {
+          "id": "arb_award_enforcement_impugnation.d2",
+          "label": "Admissibilidade plena, a qualquer tempo na impugnação tempestiva dos 15 dias úteis após o prazo voluntário, das matérias executivas supervenientes do art. 525, § 1º, do CPC (vício da citação estatal, excesso de execução, compensação superveniente, pagamento ou prescrição)",
+          "authority_ids": [
+            "cpc_art525"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_13129_reforma_arbitragem",
+        "lei_14905_juros_civis"
+      ],
+      "typical_requests": [
+        "Citação do executado para pagamento da condenação arbitral em 15 dias úteis sob pena de multa de 10%, honorários de 10% e penhora eletrônica",
+        "Liquidação judicial prévia de capítulo ilíquido da sentença arbitral quando encerrada a jurisdição dos árbitros",
+        "Acolhimento de impugnação ao cumprimento por excesso de cálculos ou nulidade arguida dentro dos 90 dias decadenciais"
+      ],
+      "evidence": [
+        "Inteiro teor da sentença arbitral, decisão de pedidos de esclarecimentos, convenção de arbitragem e comprovante de intimação das partes na câmara",
+        "Memória discriminada e atualizada do crédito conforme os parâmetros monetários fixados no dispositivo arbitral (CPC, art. 524)",
+        "Comprovante de pagamento parcial, compensação superveniente ou apólice de seguro garantia judicial em caso de impugnação com pedido de efeito suspensivo"
+      ],
+      "piece_ids": [
+        "cumprimento_sentenca",
+        "impugnacao_cumprimento",
+        "excecao_pre_executividade",
+        "agravo_instrumento"
+      ],
+      "related_claims": [
+        "arb_annulment_arbitral_award",
+        "pciv_provisional_final_enforcement"
+      ],
+      "limitation": "15 dias úteis após a citação estatal para pagamento voluntário (CPC, arts. 515, § 1º, e 523) seguidos de 15 dias úteis para impugnação (art. 525); matérias do art. 32 da Lei 9.307/1996 decaem em 90 dias da ciência do laudo (art. 33, §§ 1º e 3º); pretensão executiva prescreve no mesmo prazo da pretensão de direito material subjacente (Súmula 150 STF)"
+    },
+    {
+      "id": "arb_foreign_award_homologation_stj",
+      "label": "Homologação de sentença arbitral estrangeira perante o STJ",
+      "requirements": [
+        "sentenca_proferida_fora_territorio_nacional",
+        "juizo_delibacao_sem_exame_merito",
+        "regularidade_citacao_e_convencao",
+        "ausencia_ofensa_manifesta_ordem_publica"
+      ],
+      "claimant_theses": [
+        {
+          "id": "arb_foreign_award_homologation_stj.c1",
+          "label": "Reconhecimento e execução no Brasil de sentença arbitral estrangeira mediante homologação única pelo Superior Tribunal de Justiça em juízo estrito de delibação formal, vedada revisão do mérito do litígio decidido no exterior",
+          "authority_ids": [
+            "cf_art105",
+            "l9307_art34",
+            "l9307_art35",
+            "d4311_ny_conv",
+            "cpc_art960"
+          ]
+        },
+        {
+          "id": "arb_foreign_award_homologation_stj.c2",
+          "label": "Admissibilidade de citação ou notificação na arbitragem estrangeira pela via postal, courier internacional ou eletrônica admitida pela lei da sede e pelo regulamento pactuado, desde que comprovada ciência inequívoca (Lei 9.307/1996, art. 39, parágrafo único)",
+          "authority_ids": [
+            "l9307_art39",
+            "d4311_ny_conv"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "arb_foreign_award_homologation_stj.d1",
+          "label": "Denegação de homologação nas hipóteses taxativas dos arts. 38 e 39 da Lei 9.307/1996 (incapacidade, invalidade da convenção segundo a lei aplicável, falta de notificação da designação do árbitro ou do procedimento violando o contraditório, sentença anulada ou suspensa pela autoridade judicial do país sede)",
+          "authority_ids": [
+            "l9307_art38",
+            "l9307_art39",
+            "d4311_ny_conv"
+          ]
+        },
+        {
+          "id": "arb_foreign_award_homologation_stj.d2",
+          "label": "Ofensa manifesta à ordem pública nacional ou inarbitrabilidade objetiva do litígio segundo a lei brasileira (ex.: violação grave da imparcialidade do árbitro ou ausência absoluta de motivação)",
+          "authority_ids": [
+            "l9307_art39"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Homologação da sentença arbitral estrangeira pela Corte Especial do STJ (ou Presidência quando não contestada) com expedição de carta de sentença para execução na Justiça Federal de 1º grau (CF, art. 109, X)",
+        "Concessão de tutela provisória de urgência pelo relator no STJ durante o processo de homologação (CPC, art. 961, § 1º; Lei 9.307/1996, art. 34)",
+        "Indeferimento da homologação com base nos arts. 38 ou 39 da Lei 9.307/1996 e art. V da Convenção de Nova Iorque"
+      ],
+      "evidence": [
+        "Original ou cópia certificada e apostilada (Convenção da Apostila da Haia) da sentença arbitral estrangeira e da convenção de arbitragem",
+        "Tradução oficial juramentada para a língua portuguesa de todos os documentos essenciais (Lei 9.307/1996, art. 37)",
+        "Comprovantes de notificação regular do requerido no procedimento arbitral estrangeiro e certidão de definitividade segundo a lei da sede"
+      ],
+      "piece_ids": [
+        "homologacao_decisao_estrangeira",
+        "contestacao",
+        "agravo_interno_civel",
+        "cumprimento_sentenca"
+      ],
+      "related_claims": [
+        "insolv_cross_border_insolvency",
+        "arb_annulment_arbitral_award"
+      ],
+      "limitation": "Contestação à homologação no STJ no prazo de 15 dias úteis (RISTJ, art. 216-H); prescrição da pretensão de homologação/execução aferida conforme o prazo aplicável à obrigação/lei de regência (decenal subsidiário no Brasil — CC, art. 205, quando não houver prazo específico menor aplicável)"
+    },
+    {
+      "id": "arb_public_administration",
+      "label": "Arbitragem envolvendo a Administração Pública direta e indireta",
+      "requirements": [
+        "direito_patrimonial_disponivel_contratual",
+        "julgamento_exclusivo_de_direito",
+        "respeito_principio_publicidade",
+        "execucao_via_precatorio_ou_rpv"
+      ],
+      "claimant_theses": [
+        {
+          "id": "arb_public_administration.c1",
+          "label": "Plena arbitrabilidade subjetiva da Administração Pública direta e indireta para dirimir conflitos relativos a direitos patrimoniais disponíveis, tais como reequilíbrio econômico-financeiro, cálculo de indenizações em extinção contratual e inadimplemento de obrigações contratuais (Lei 9.307/1996, art. 1º, § 1º; Lei 14.133/2021, art. 151)",
+          "authority_ids": [
+            "l9307_art1",
+            "l14133_art151"
+          ]
+        },
+        {
+          "id": "arb_public_administration.c2",
+          "label": "Validade do credenciamento prévio de câmaras arbitrais idôneas e de aditamento contratual posterior incluindo cláusula compromissória ou compromisso arbitral (Lei 14.133/2021, arts. 153 e 154)",
+          "authority_ids": [
+            "l14133_art153",
+            "l14133_art154"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "arb_public_administration.d1",
+          "label": "Inarbitrabilidade objetiva de atos de império, exercício do poder de polícia sancionador primário, validade de tributos ou escolhas unilaterais de interesse público em si mesmas (embora suas consequências patrimoniais indenizatórias sejam arbitráveis)",
+          "authority_ids": [
+            "l9307_art1",
+            "l14133_art151"
+          ]
+        },
+        {
+          "id": "arb_public_administration.d2",
+          "label": "Nulidade de arbitragem por equidade ou sob confidencialidade irrestrita envolvendo a Administração Pública, sendo cogentes o julgamento de direito e a publicidade ressalvados apenas segredos industriais/fiscais legais (Lei 9.307/1996, art. 2º, § 3º; Lei 14.133/2021, art. 152)",
+          "authority_ids": [
+            "l9307_art2",
+            "l14133_art152",
+            "cf_art37"
+          ]
+        },
+        {
+          "id": "arb_public_administration.d3",
+          "label": "Submissão obrigatória da condenação pecuniária proferida contra a Fazenda Pública ao regime constitucional de precatórios ou RPV (CF, art. 100; CPC, art. 534)",
+          "authority_ids": [
+            "cf_art100",
+            "cpc_art534"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_13129_reforma_arbitragem",
+        "lei_14133_licitacoes"
+      ],
+      "typical_requests": [
+        "Instauração de procedimento arbitral de direito e público contra ente concedente ou empresa estatal sobre reequilíbrio ou haveres indenizatórios",
+        "Cumprimento de sentença arbitral contra a Fazenda Pública (CPC, arts. 534 e 535) para expedição de precatório ou RPV",
+        "Exclusão de pedidos inarbitráveis (poder de polícia puro) do escopo do Termo de Arbitragem"
+      ],
+      "evidence": [
+        "Contrato administrativo ou de concessão/PPP com cláusula compromissória e ato de autoridade competente (Lei 9.307/1996, art. 1º, § 2º)",
+        "Comprovação de credenciamento/requisitos regulamentares da câmara arbitral (v.g., Decreto 10.025/2019 federal ou decreto estadual)",
+        "Sentença arbitral pública de direito e memória de cálculo adequada aos índices fazendários (EC 113/2021) quando não fixado índice contratual"
+      ],
+      "piece_ids": [
+        "requerimento_instauracao_arbitragem",
+        "cumprimento_sentenca",
+        "impugnacao_cumprimento",
+        "acao_anulatoria_sentenca_arbitral",
+        "contestacao"
+      ],
+      "related_claims": [
+        "reg_concession_rebalance_caducity",
+        "adm_contract_balance",
+        "arb_dispute_boards_infrastructure"
+      ],
+      "limitation": "Prescrição quinquenal das pretensões patrimoniais contra a Fazenda Pública (Decreto 20.910/1932, art. 1º), interrompida pela instituição da arbitragem retroagindo à data do requerimento de instauração (Lei 9.307/1996, art. 19, § 2º); 90 dias decadenciais para eventual ação anulatória (art. 33, § 1º)"
+    },
+    {
+      "id": "arb_mediation_settlement_enforcement",
+      "label": "Mediação judicial e extrajudicial, confidencialidade e eficácia executiva do acordo (Lei 13.140/2015)",
+      "requirements": [
+        "autonomia_vontade_e_imparcialidade",
+        "confidencialidade_estrita_art_30",
+        "suspensao_prescricao_instauracao",
+        "eficacia_executiva_termo_final"
+      ],
+      "claimant_theses": [
+        {
+          "id": "arb_mediation_settlement_enforcement.c1",
+          "label": "O termo final de mediação extrajudicial assinado pelas partes constitui título executivo extrajudicial independentemente de testemunhas e, quando homologado judicialmente, título executivo judicial (Lei 13.140/2015, art. 20, parágrafo único; CPC, arts. 515, III, e 784, IV)",
+          "authority_ids": [
+            "l13140_art20",
+            "cpc_art515",
+            "cpc_art784"
+          ]
+        },
+        {
+          "id": "arb_mediation_settlement_enforcement.c2",
+          "label": "Inadmissibilidade absoluta como prova em processo arbitral ou judicial de qualquer informação, proposta, reconhecimento de fato ou documento preparado unicamente para o procedimento de mediação, em resguardo ao dever legal de confidencialidade (Lei 13.140/2015, art. 30)",
+          "authority_ids": [
+            "l13140_art30",
+            "cpc_art166"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "arb_mediation_settlement_enforcement.d1",
+          "label": "A confidencialidade não afasta o dever de revelação exigido por lei tributária nem acoberta informações relativas à ocorrência de crime de ação pública, tampouco impede a produção de prova preexistente que seria obtida independentemente da mediação (art. 30, §§ 3º e 4º)",
+          "authority_ids": [
+            "l13140_art30"
+          ]
+        },
+        {
+          "id": "arb_mediation_settlement_enforcement.d2",
+          "label": "Anulação do termo de transação/acordo exclusivamente por dolo, coação, simulação ou erro essencial quanto à pessoa ou coisa controversa, vedada anulação por erro de direito sobre as questões objeto da controvérsia (CC, art. 849)",
+          "authority_ids": [
+            "cc_art849",
+            "cpc_art966"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_13140_mediacao"
+      ],
+      "typical_requests": [
+        "Execução de título extrajudicial ou cumprimento de sentença homologatória do termo de acordo de mediação",
+        "Desentranhamento imediato de atas, e-mails ou propostas confidenciais de mediação juntados indevidamente pela parte adversa nos autos",
+        "Homologação de autocomposição extrajudicial de qualquer natureza ou valor, inclusive abrangendo sujeito ou matéria mais ampla que o processo (CPC, arts. 515, § 2º, e 725, VIII)"
+      ],
+      "evidence": [
+        "Termo final de acordo de mediação assinado pelas partes, mediador e advogados/defensores (quando presentes)",
+        "Termo inicial ou convite formal de mediação comprovando a data de suspensão do prazo prescricional (Lei 13.140/2015, art. 17, parágrafo único)",
+        "Termo de confidencialidade ou comprovação de que o documento impugnado foi produzido para a negociação mediada"
+      ],
+      "piece_ids": [
+        "execucao_titulo_extrajudicial",
+        "cumprimento_sentenca",
+        "manifestacao_especifica",
+        "inicial_procedimento_comum",
+        "embargos_execucao_civil"
+      ],
+      "related_claims": [
+        "arb_multi_tier_med_arb_clause",
+        "pciv_procedural_business_agreement"
+      ],
+      "limitation": "Enquanto transcorrer o procedimento de mediação (considerado instituído na data da primeira reunião — art. 17), ficará suspenso o prazo prescricional (Lei 13.140/2015, art. 17, parágrafo único); ação anulatória de transação decai em 4 anos por vício de vontade (CC, art. 178)"
+    },
+    {
+      "id": "arb_multi_tier_med_arb_clause",
+      "label": "Cláusula escalonada (med-arb) e suspensão pela etapa prévia de mediação",
+      "requirements": [
+        "previsao_contratual_expressa_parametros_art_22",
+        "obrigatoriedade_primeira_sessao_mediacao",
+        "suspensao_processo_arbitral_ou_judicial",
+        "ressalva_medidas_urgencia"
+      ],
+      "claimant_theses": [
+        {
+          "id": "arb_multi_tier_med_arb_clause.c1",
+          "label": "Havendo previsão contratual de cláusula de mediação com os requisitos mínimos do art. 22 da Lei 13.140/2015, o árbitro ou o juiz suspenderá o curso da arbitragem ou da ação pelo prazo previamente acordado até o implemento da primeira reunião de mediação",
+          "authority_ids": [
+            "l13140_art22",
+            "l13140_art23"
+          ]
+        },
+        {
+          "id": "arb_multi_tier_med_arb_clause.c2",
+          "label": "Aplicação da penalidade contratualmente estipulada ou dedução de 50% das custas e honorários sucumbenciais contra a parte que, regularmente convidada, deixar de comparecer à primeira reunião de mediação caso venha a vencer a demanda posterior (Lei 13.140/2015, art. 22, § 2º, IV)",
+          "authority_ids": [
+            "l13140_art22",
+            "cc_art422"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "arb_multi_tier_med_arb_clause.d1",
+          "label": "Não se aplica a suspensão por cláusula escalonada às medidas de urgência em que o acesso imediato ao Poder Judiciário ou ao árbitro de emergência seja necessário para evitar o perecimento de direito (art. 23, parágrafo único)",
+          "authority_ids": [
+            "l13140_art23",
+            "l9307_art22a"
+          ]
+        },
+        {
+          "id": "arb_multi_tier_med_arb_clause.d2",
+          "label": "Inexigibilidade de permanência na mediação após o comparecimento à primeira reunião (princípio da voluntariedade — art. 2º, § 2º) ou quando a cláusula contratual for meramente exortativa e vazia dos critérios objetivos do art. 22 da Lei 13.140/2015",
+          "authority_ids": [
+            "l13140_art2",
+            "l13140_art22"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_13140_mediacao"
+      ],
+      "typical_requests": [
+        "Suspensão temporária do procedimento arbitral ou judicial até a realização da primeira sessão obrigatória de mediação prevista na cláusula escalonada, sem extinção do processo",
+        "Aplicação da penalidade contratual ou imputação de 50% das custas e honorários sucumbenciais mesmo em caso de vitória de mérito à parte que se recusou injustificadamente a comparecer à primeira reunião (Lei 13.140/2015, art. 22, § 2º, IV)",
+        "Prosseguimento imediato de medida cautelar urgente independentemente da etapa prévia de mediação"
+      ],
+      "evidence": [
+        "Contrato contendo a cláusula escalonada med-arb com prazos, local/câmara ou critérios de escolha do mediador",
+        "Convite de mediação enviado com antecedência e certidão/declaração de não comparecimento ou de frustração da primeira sessão emitida pela câmara",
+        "Prova documental do perigo iminente de perecimento de direito quando requerido exame imediato de tutela de urgência (art. 23, parágrafo único)"
+      ],
+      "piece_ids": [
+        "contestacao",
+        "manifestacao_especifica",
+        "requerimento_instauracao_arbitragem",
+        "tutela_urgencia_antecedente"
+      ],
+      "related_claims": [
+        "arb_mediation_settlement_enforcement",
+        "arb_specific_performance_kompetenz"
+      ],
+      "limitation": "Convite para iniciar mediação extrajudicial considera-se rejeitado se não respondido em 30 dias da data de seu recebimento (Lei 13.140/2015, art. 21, parágrafo único); primeira reunião deve ocorrer entre 10 dias úteis e 3 meses do recebimento do convite quando não estipulado prazo diverso no contrato (art. 22, § 2º, I)"
+    },
+    {
+      "id": "arb_dispute_boards_infrastructure",
+      "label": "Dispute boards (comitês de prevenção e solução de disputas) em contratos de infraestrutura",
+      "requirements": [
+        "previsao_contratual_ou_legal_art_151",
+        "modalidade_recomendacao_drb_ou_decisao_dab",
+        "cumprimento_imediato_decisao_vinculante",
+        "revisao_posterior_arbitral_ou_judicial"
+      ],
+      "claimant_theses": [
+        {
+          "id": "arb_dispute_boards_infrastructure.c1",
+          "label": "Reconhecimento legal expresso dos comitês de resolução de disputas (dispute boards) em contratos administrativos e privados de engenharia complexa (Lei 14.133/2021, arts. 151 e 154), sendo imediatamente exigível a decisão proferida por Dispute Adjudication Board (DAB) até eventual reforma em arbitragem ou juízo estatal",
+          "authority_ids": [
+            "l14133_art151",
+            "l14133_art154",
+            "cpc_art190",
+            "cc_art421a"
+          ]
+        },
+        {
+          "id": "arb_dispute_boards_infrastructure.c2",
+          "label": "Deferência técnica às determinações contemporâneas emitidas por painel permanente de engenheiros/especialistas que acompanharam in loco a execução física do cronograma da obra",
+          "authority_ids": [
+            "l14133_art151",
+            "cpc_art369"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "arb_dispute_boards_infrastructure.d1",
+          "label": "Natureza não jurisdicional (contratual/administrativa) das decisões de dispute board: não produzem coisa julgada material nem se submetem à ação anulatória do art. 32 da Lei de Arbitragem, podendo ser revistas amplamente pelo tribunal arbitral ou juízo competente desde que apresentada notificação tempestiva de insatisfação (Notice of Dissatisfaction — NOD)",
+          "authority_ids": [
+            "l14133_art151",
+            "l9307_art31"
+          ]
+        },
+        {
+          "id": "arb_dispute_boards_infrastructure.d2",
+          "label": "Suspensão excepcional de decisão de DAB em sede cautelar apenas diante de teratologia técnica manifesta, violação ao contraditório ou risco comprovado de irreversibilidade financeira irreparável — precedente do STJ (REsp 1.569.422 / jurisprudência especializada)",
+          "authority_ids": [
+            "cpc_art300",
+            "l9307_art22a"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14133_licitacoes"
+      ],
+      "typical_requests": [
+        "Tutela de urgência ou execução contratual compelindo a parte ao cumprimento imediato de decisão vinculante de Dispute Adjudication Board (pay now, argue later), ressalvada discussão ulterior na arbitragem",
+        "Submissão da controvérsia à arbitragem após protocolo tempestivo de Notificação de Insatisfação (NOD) contra decisão do comitê",
+        "Constituição conjunta dos membros independentes do comitê conforme regulamento contratual"
+      ],
+      "evidence": [
+        "Contrato de construção/concessão (FIDIC ou modelo nacional), regulamento do Dispute Board e termo tripartido de constituição",
+        "Decisão ou recomendação técnica fundamentada emitida pelo comitê, diários de obra e medições contemporâneas",
+        "Notificação de Insatisfação (Notice of Dissatisfaction) protocolada dentro do prazo contratual estipulado"
+      ],
+      "piece_ids": [
+        "tutela_urgencia_antecedente",
+        "requerimento_instauracao_arbitragem",
+        "inicial_procedimento_comum",
+        "contestacao"
+      ],
+      "related_claims": [
+        "arb_public_administration",
+        "reg_concession_rebalance_caducity",
+        "pciv_procedural_business_agreement"
+      ],
+      "limitation": "Notificação de Insatisfação (NOD) deve observar o prazo negocial previsto no regulamento adotado (tipicamente 28 ou 30 dias da decisão do DAB, sob pena de tornar-se contratualmente definitiva e vinculante); pretensão indenizatória/contratual segue os prazos prescricionais de 5 ou 10 anos conforme público ou privado"
+    },
+    {
+      "id": "arb_confidentiality_court_secrecy",
+      "label": "Confidencialidade arbitral e segredo de justiça no Judiciário (CPC, art. 189, IV)",
+      "requirements": [
+        "estipulacao_confidencialidade_na_arbitragem",
+        "comprovacao_documental_perante_juizo",
+        "ponderacao_publicidade_constitucional",
+        "excecao_administracao_publica"
+      ],
+      "claimant_theses": [
+        {
+          "id": "arb_confidentiality_court_secrecy.c1",
+          "label": "Tramitação em segredo de justiça dos processos judiciais que versem sobre arbitragem, inclusive sobre cumprimento de carta arbitral ou ação anulatória/execução, desde que a confidencialidade estipulada na arbitragem seja documentalmente comprovada perante o juízo (CPC, art. 189, IV)",
+          "authority_ids": [
+            "cpc_art189",
+            "cpc_art260",
+            "l9307_art22c"
+          ]
+        },
+        {
+          "id": "arb_confidentiality_court_secrecy.c2",
+          "label": "Proteção legítima do sigilo negocial, industrial e estratégico de partes privadas que pactuaram confidencialidade expressa na cláusula compromissória ou no regulamento da câmara arbitral",
+          "authority_ids": [
+            "l9307_art13",
+            "cc_art421a"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "arb_confidentiality_court_secrecy.d1",
+          "label": "A confidencialidade na arbitragem privada não é automática na lei brasileira, exigindo pactuação expressa na convenção, no termo de arbitragem ou no regulamento institucional adotado",
+          "authority_ids": [
+            "cpc_art189",
+            "l9307_art13"
+          ]
+        },
+        {
+          "id": "arb_confidentiality_court_secrecy.d2",
+          "label": "Restrição ou indeferimento de segredo de justiça integral em tribunais que exijam demonstração de interesse social ou intimidade/segredo comercial concreto à luz dos arts. 5º, LX, e 93, IX, da CF — conferir entendimento do tribunal local e do STJ/STF, sendo vedado o sigilo nas arbitragens com a Administração Pública (Lei 9.307/1996, art. 2º, § 3º)",
+          "authority_ids": [
+            "cf_art5",
+            "cf_art93",
+            "l9307_art2"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_13129_reforma_arbitragem"
+      ],
+      "typical_requests": [
+        "Decretação de tramitação em segredo de justiça nos termos do art. 189, IV, do CPC (ou, subsidiariamente, restrição de acesso público apenas aos anexos contendo a sentença, atas e documentos empresariais sigilosos)",
+        "Levantamento de segredo de justiça decretado sem comprovação de pacto arbitral de confidencialidade ou em litígio envolvendo entidade da Administração Pública"
+      ],
+      "evidence": [
+        "Cláusula compromissória, Termo de Arbitragem ou artigo específico do Regulamento da Câmara Arbitral estabelecendo o dever de confidencialidade",
+        "Demonstração da presença de dados comerciais sensíveis, fórmulas, preços estratégicos ou segredo de negócio nos documentos juntados",
+        "Certidão ou ata da câmara arbitral confirmando a vigência do regime de sigilo no procedimento"
+      ],
+      "piece_ids": [
+        "manifestacao_especifica",
+        "carta_arbitral",
+        "acao_anulatoria_sentenca_arbitral",
+        "cumprimento_sentenca",
+        "agravo_instrumento"
+      ],
+      "related_claims": [
+        "arb_pre_arbitral_relief_letter",
+        "arb_public_administration",
+        "pid_trade_secret_knowhow_nda"
+      ],
+      "limitation": "Requerimento formulado na distribuição da petição inicial, carta arbitral ou primeira manifestação nos autos; da decisão interlocutória que indefere ou revoga segredo de justiça cabe agravo de instrumento pela urgência/inutilidade do exame na apelação (Tema 988 do STJ)"
+    },
+    {
+      "id": "arb_early_evidence_without_urgency",
+      "label": "Produção antecipada de provas sem urgência em contrato com cláusula compromissória",
+      "requirements": [
+        "existencia_clausula_compromissoria_valida",
+        "ausencia_urgencia_art_381_ii_iii",
+        "exclusividade_jurisdicao_arbitral",
+        "distincao_cautelar_urgente_art_22a"
+      ],
+      "claimant_theses": [
+        {
+          "id": "arb_early_evidence_without_urgency.c1",
+          "label": "Havendo cláusula compromissória válida, compete exclusivamente ao juízo arbitral — e não ao Poder Judiciário — processar ação autônoma de produção antecipada de provas desprovida do requisito de urgência (CPC, art. 381, II e III) — entendimento firmado pela Terceira Turma do STJ (REsp 2.023.615/SP)",
+          "authority_ids": [
+            "l9307_art8",
+            "l9307_art22a",
+            "cpc_art381"
+          ]
+        },
+        {
+          "id": "arb_early_evidence_without_urgency.c2",
+          "label": "Admissibilidade perante o Poder Judiciário apenas quando demonstrado fundado receio de que venha a tornar-se impossível ou muito difícil a verificação de certos fatos na pendência da ação (CPC, art. 381, I, c/c Lei 9.307/1996, art. 22-A), sujeita ao protocolo da arbitragem em 30 dias",
+          "authority_ids": [
+            "cpc_art381",
+            "l9307_art22a"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "arb_early_evidence_without_urgency.d1",
+          "label": "Demonstração concreta de urgência probatória perecível (risco iminente de desaparecimento de vestígios, desmonte de obra ou estado grave de saúde de testemunha) antes da instituição do tribunal arbitral, atraindo a exceção do art. 22-A da Lei 9.307/1996",
+          "authority_ids": [
+            "cpc_art381",
+            "l9307_art22a"
+          ]
+        },
+        {
+          "id": "arb_early_evidence_without_urgency.d2",
+          "label": "Inaplicabilidade da restrição quando a cláusula arbitral for manifestamente ineficaz ou não alcançar as partes/objeto da prova pretendida",
+          "authority_ids": [
+            "l9307_art4",
+            "cpc_art381"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_13129_reforma_arbitragem"
+      ],
+      "typical_requests": [
+        "Extinção sem resolução do mérito da ação estatal de produção antecipada de provas sem urgência por existência de convenção de arbitragem (CPC, art. 485, VII)",
+        "Instauração de procedimento arbitral (ou árbitro de emergência/procedimento expedito de prova) perante a câmara eleita para colheita da prova autônoma",
+        "Deferimento estatal restrito à prova urgente perecível do art. 381, I, do CPC, condicionado à instauração da arbitragem em 30 dias"
+      ],
+      "evidence": [
+        "Contrato contendo a cláusula compromissória cheia ou vazia aplicável à relação jurídica",
+        "Petição inicial demonstrando se o fundamento invocado é meramente avaliativo/autocompositivo (incisos II e III) ou perecimento urgente comprovado (inciso I)",
+        "Regulamento da câmara arbitral eleita (inclusive regras sobre árbitro de emergência) e notificações pré-arbitrais"
+      ],
+      "piece_ids": [
+        "contestacao",
+        "producao_antecipada_provas",
+        "requerimento_instauracao_arbitragem",
+        "apelacao_civel",
+        "agravo_instrumento"
+      ],
+      "related_claims": [
+        "pciv_autonomous_early_evidence",
+        "arb_pre_arbitral_relief_letter",
+        "arb_specific_performance_kompetenz"
+      ],
+      "limitation": "Arguição de convenção de arbitragem pelo requerido na primeira manifestação no procedimento do art. 381 do CPC; se deferida medida urgente do inciso I antes da instituição da arbitragem, aplica-se o prazo de 30 dias do art. 22-A, parágrafo único, da Lei 9.307/1996"
+    },
+    {
+      "id": "arb_corporate_collective_extension",
+      "label": "Arbitragem societária, vinculação estatutária e extensão subjetiva da cláusula compromissória",
+      "requirements": [
+        "clausula_estatutaria_art_136a_lsa",
+        "quorum_qualificado_e_direito_recesso",
+        "consentimento_expresso_ou_implicito_grupos",
+        "contratos_coligados_rede"
+      ],
+      "claimant_theses": [
+        {
+          "id": "arb_corporate_collective_extension.c1",
+          "label": "A aprovação da inserção de convenção de arbitragem no estatuto social, observado o quórum do art. 136 da Lei 6.404/1976, obriga a todos os acionistas (inclusive dissidentes, ausentes e futuros adquirentes), assegurado ao dissidente o direito de retirar-se mediante reembolso salvo exceções de liquidez e dispersão",
+          "authority_ids": [
+            "l6404_art136a",
+            "l6404_art109"
+          ]
+        },
+        {
+          "id": "arb_corporate_collective_extension.c2",
+          "label": "Extensão excepcional da cláusula compromissória a parte formalmente não signatária integrante do mesmo grupo societário ou de contratos coligados quando demonstrada participação ativa e decisiva na negociação, execução ou inadimplemento que revele consentimento inequívoco",
+          "authority_ids": [
+            "l9307_art4",
+            "cc_art113",
+            "cc_art422"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "arb_corporate_collective_extension.d1",
+          "label": "Princípio da relatividade subjetiva e da estrita voluntariedade da arbitragem: o mero pertencimento ao mesmo grupo econômico, a qualidade de garantidor em instrumento autônomo sem cláusula arbitral ou a coligação contratual com cláusulas de foro distintas não autorizam estender forçadamente a jurisdição arbitral sem manifestação inequívoca de vontade — jurisprudência do STJ",
+          "authority_ids": [
+            "cf_art5",
+            "l9307_art4"
+          ]
+        },
+        {
+          "id": "arb_corporate_collective_extension.d2",
+          "label": "Ineficácia da cláusula estatutária de arbitragem enquanto a companhia não pagar o valor do reembolso das ações aos acionistas dissidentes que exerceram tempestivamente o direito de retirada (Lei 6.404/1976, art. 136-A, § 1º)",
+          "authority_ids": [
+            "l6404_art136a",
+            "l6404_art137"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_13129_reforma_arbitragem"
+      ],
+      "typical_requests": [
+        "Submissão de ação social/individual de responsabilidade de administradores ou anulação de assembleia ao juízo arbitral estatutário",
+        "Exclusão de parte não signatária do polo passivo/ativo da arbitragem (ou anulação parcial da sentença arbitral quanto a ela — art. 32, I e IV) por ausência de consentimento à convenção",
+        "Exercício do direito de recesso pelo acionista dissidente em 30 dias da publicação da ata da AGE que inseriu a cláusula compromissória"
+      ],
+      "evidence": [
+        "Estatuto social ou contrato social consolidado, ata da Assembleia Geral Extraordinária de inserção da cláusula compromissória e comprovação de liquidez/dispersão acionária",
+        "Cadeia de contratos principais e acessórios/garantias e troca de correspondências da negociação e execução contratual",
+        "Notificação de exercício do direito de recesso e comprovante de pagamento (ou inadimplemento) do reembolso das ações"
+      ],
+      "piece_ids": [
+        "requerimento_instauracao_arbitragem",
+        "contestacao",
+        "acao_anulatoria_sentenca_arbitral",
+        "inicial_procedimento_comum"
+      ],
+      "related_claims": [
+        "emp_admin_liability",
+        "emp_partner_dispute",
+        "arb_specific_performance_kompetenz"
+      ],
+      "limitation": "30 dias contados da publicação da ata da assembleia geral para o acionista dissidente reclamar o reembolso de suas ações na inserção de cláusula estatutária (Lei 6.404/1976, art. 137, IV, c/c art. 136-A); 90 dias decadenciais para ação anulatória de sentença arbitral que estenda indevidamente jurisdição a não signatário (Lei 9.307/1996, art. 33, § 1º)"
+    }
+  ]
+}

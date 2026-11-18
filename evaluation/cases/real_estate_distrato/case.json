@@ -1,0 +1,44 @@
+{
+  "schema_version": "2.0",
+  "synthetic": true,
+  "case_id": "real_estate_distrato",
+  "source_files": [
+    {
+      "file": "contrato.txt"
+    }
+  ],
+  "expected": {
+    "facts": [
+      {
+        "id": "G-F1",
+        "text_any": [
+          "retenção contratual de 50%"
+        ],
+        "source": {
+          "file": "contrato.txt",
+          "page": 1,
+          "quote": "retenção contratual de 50%"
+        },
+        "atoms": {
+          "date": "2022-03-14"
+        }
+      }
+    ],
+    "issues": [
+      {
+        "id": "G-I1",
+        "text_any": [
+          "limite legal de retenção",
+          "patrimônio de afetação"
+        ],
+        "analysis_status": "qualified"
+      }
+    ],
+    "requests": [],
+    "contradictions": [],
+    "catalog_id": "inicial_procedimento_comum",
+    "strategy": {
+      "domain": "imobiliario"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": "2.0",
+  "synthetic": true,
+  "case_id": "regulatory_concession_rebalance",
+  "source_files": [
+    {
+      "file": "pleito_agencia.txt"
+    }
+  ],
+  "expected": {
+    "facts": [
+      {
+        "id": "G-F1",
+        "text_any": [
+          "alocado ao poder concedente na matriz contratual de riscos"
+        ],
+        "source": {
+          "file": "pleito_agencia.txt",
+          "page": 1,
+          "quote": "alocado ao poder concedente na matriz contratual de riscos"
+        },
+        "atoms": {
+          "date": "2024-08-14"
+        }
+      }
+    ],
+    "issues": [
+      {
+        "id": "G-I1",
+        "text_any": [
+          "equilíbrio econômico-financeiro",
+          "matriz de riscos"
+        ],
+        "analysis_status": "qualified"
+      }
+    ],
+    "requests": [],
+    "contradictions": [],
+    "catalog_id": "requerimento_administrativo",
+    "strategy": {
+      "domain": "regulatorio_concorrencial"
+    }
+  }
+}

@@ -1,43 +1,677 @@
 {
-  "schema_version":"1.1",
-  "policy":"Roteiros de pesquisa, não regras prontas nem confirmação automática de regime. Confirmar os fatos, a competência e as fontes oficiais em cada caso.",
-  "modules":[
-    {"id":"trabalho_emprego","domain":"trabalhista","subdomain":"contrato_emprego","regime":"clt","reference":"labor_core_rules.md","checks":["vínculo e sujeitos","datas contratuais e legislação de cada período","jornada, intervalos e compensação","remuneração e parcelas","norma coletiva, vigência e âmbito pessoal","rescisão, prescrição, prova e liquidação"]},
-    {"id":"trabalho_relacoes","domain":"trabalhista","subdomain":"contrato_regime","regime":"conforme_relacao","reference":"labor_core_rules.md","checks":["espécie de relação e regime confirmado","sujeitos e categoria","períodos e versões normativas"]},
-    {"id":"trabalho_responsabilidade","domain":"trabalhista","subdomain":"responsabilidade","regime":"conforme_relacao","reference":"labor_core_rules.md","checks":["grupo, sucessão e terceirização","sujeitos e períodos","fundamento e prova de responsabilidade"]},
-    {"id":"trabalho_jornada","domain":"trabalhista","subdomain":"jornada","regime":"conforme_relacao","reference":"labor_evidence_rules.md","checks":["regime de controle","registros diários e intervalos","compensação e norma coletiva","parcelas pagas por competência"]},
-    {"id":"trabalho_remuneracao","domain":"trabalhista","subdomain":"remuneracao","regime":"conforme_relacao","reference":"labor_calculation_rules.md","checks":["histórico salarial","natureza e requisitos das parcelas","bases, divisores e reflexos","pagamentos e diferenças"]},
-    {"id":"trabalho_rescisao","domain":"trabalhista","subdomain":"rescisao","regime":"conforme_relacao","reference":"labor_core_rules.md","checks":["espécie de ruptura","marcos e projeções","pagamentos e prescrição"]},
-    {"id":"trabalho_garantias","domain":"trabalhista","subdomain":"garantias_emprego","regime":"conforme_relacao","reference":"labor_core_rules.md","checks":["fato gerador e período","prova dos requisitos","reintegração ou indenização e limites"]},
-    {"id":"trabalho_coletivo","domain":"trabalhista","subdomain":"coletivo","regime":"conforme_relacao","reference":"labor_collective_rules.md","checks":["categoria e sindicatos","CCT, ACT, aditivos e sentença normativa","âmbito, cláusulas e limites"]},
-    {"id":"trabalho_saude","domain":"trabalhista","subdomain":"saude_ocupacional","regime":"conforme_relacao","reference":"labor_health_rules.md","checks":["atividades e exposição","nexo e concausa","incapacidade e prova técnica","SST por período e consequências"]},
-    {"id":"trabalho_discriminacao","domain":"trabalhista","subdomain":"assedio_discriminacao","regime":"conforme_relacao","reference":"labor_health_rules.md","checks":["conduta e contexto","prova contrária","nexo e consequências","proteção e reparação"]},
-    {"id":"trabalho_procedimento","domain":"trabalhista","subdomain":"processual","regime":"conforme_relacao","reference":"labor_procedure_rules.md","checks":["ato, fase e peça","prazo e preparo","admissibilidade por capítulo","instrução e impugnação"]},
-    {"id":"trabalho_execucao","domain":"trabalhista","subdomain":"execucao","regime":"conforme_relacao","reference":"labor_procedure_rules.md","checks":["título e limites","liquidação e itens impugnados","garantia e matérias","pagamentos, encargos e responsabilidade patrimonial"]},
-    {"id":"trabalho_servidor","domain":"administrativo","subdomain":"servidor_publico","regime":"estatutario","reference":"domain_guides/administrativo.md","checks":["ente, vínculo e competência","estatuto e atos locais oficiais","cargo, posse e atos administrativos","regime previdenciário","não transpor CLT ou RGPS sem autorização normativa"]},
-    {"id":"previdencia_rgps","domain":"previdenciario","subdomain":"beneficio_contributivo","regime":"rgps","reference":"domain_guides/previdenciario.md","checks":["benefício específico e fato gerador","DER, DIB, DCB e datas de fatos","CNIS, vínculos, indicadores e concomitâncias","carência e qualidade de segurado quando exigidas","prova médica ou especial conforme benefício","versão normativa, transição e efeitos financeiros"]},
-    {"id":"previdencia_rpps","domain":"previdenciario","subdomain":"servidor","regime":"rpps","reference":"domain_guides/previdenciario.md","checks":["ente e legislação local","ingresso, cargo, contribuições e averbações","reformas constitucionais e regras de transição","compensação e contagem recíproca","não presumir fórmula do RGPS"]},
-    {"id":"assistencia_bpc","domain":"previdenciario","subdomain":"assistencia_social","regime":"bpc_loas","reference":"domain_guides/previdenciario.md","checks":["idade ou deficiência no marco pertinente","impedimento e avaliação biopsicossocial","composição familiar e renda, exclusões e despesas","cadastros e requerimento","distinguir assistência de benefício contributivo","critério legal e precedentes vigentes na data relevante"]},
-    {"id":"consumo_saude","domain":"consumidor","subdomain":"saude","regime":"contratual_regulado","reference":"domain_guides/consumidor.md","checks":["contratação e tipo de cobertura","procedimento, prescrição e negativa","urgência e risco provados","normas regulatórias e versão temporal","reembolso, rede e responsabilidade","não confundir plano privado e prestação pública"]},
-    {"id":"consumo_bancario","domain":"bancario","subdomain":"credito_fraude","regime":"contratual_regulado","reference":"domain_guides/bancario.md","checks":["sujeitos e eventual relação de consumo","contrato, autorização e transações","distribuição do ônus e acesso à prova","extratos, pagamentos e cálculo reprodutível","nexo, excludentes e dano concreto","normas do regulador e precedentes específicos"]},
-    {"id":"civil_familia","domain":"familia","subdomain":"familia","regime":"civil_especial","reference":"domain_guides/familia.md","checks":["vínculos e interesses de crianças ou incapazes","sigilo, representação e competência","renda, necessidades, guarda ou patrimônio pertinentes","violência e urgência sem exposição indevida","legislação especial e intervenção institucional"]},
-    {"id":"civil_sucessoes","domain":"familia","subdomain":"sucessoes","regime":"civil_especial","reference":"domain_guides/familia.md","checks":["óbito, domicílio e interessados","bens, dívidas, partilha e testamento","regime patrimonial e lei no marco relevante","tributação e competência locais","via judicial ou extrajudicial conforme pressupostos"]},
-    {"id":"tributario_credito","domain":"tributario","subdomain":"credito_execucao","regime":"tributario","reference":"domain_guides/tributario.md","checks":["tributo, ente e lei local oficial","fato gerador, lançamento, inscrição e citação","prescrição e decadência em linhas temporais separadas","CDA, valores, pagamentos e causas de suspensão","rito fiscal e meios de defesa próprios"]},
-    {"id":"penal_defesa","domain":"penal","subdomain":"defesa_execucao","regime":"penal","reference":"domain_guides/penal.md","checks":["tipo penal, imputação e versão no tempo","autoria, materialidade e cadeia de custódia","garantias, nulidades e medidas cautelares","ato, fase, instrumento e tribunal competentes","não aplicar analogia desfavorável nem importar rito civil sem base","pena e execução com dados e regras conferidos"]},
-    {"id":"empresarial_insolvencia","domain":"empresarial","subdomain":"insolvencia","regime":"empresarial_especial","reference":"domain_guides/empresarial.md","checks":["empresa, credor, crédito e classe","datas, sujeito, competência e legislação de transição","suspensões e juízos concorrentes","plano, garantias e atos societários","impacto financeiro e coletivo"]},
-    {"id":"ambiental_responsabilidade","domain":"ambiental","subdomain":"responsabilidade","regime":"ambiental","reference":"domain_guides/ambiental.md","checks":["esfera civil, administrativa ou penal","órgão, área, datas e competência","nexo e prova técnica","licenças, condicionantes e norma local","reparação, sanção e garantias processuais em separado"]},
-    {"id":"coletivo_tutela","domain":"constitucional","subdomain":"coletivo","regime":"coletivo","reference":"domain_guides/constitucional.md","checks":["direito e grupo atingido","legitimidade e representação adequadas","competência e limites objetivos/subjetivos","precedentes, efeitos e coisa julgada","pedidos e execução compatíveis com tutela coletiva"]},
-    {"id":"civil_obrigacoes","domain":"civil","subdomain":"obrigacoes_responsabilidade","regime":"civil","reference":"domain_guides/civil.md","checks":["relação jurídica e fonte da obrigação","inadimplemento ou ilícito e nexo","dano e quantificação","prescrição por pretensão","juros e correção por período (Lei 14.905/2024)"]},
-    {"id":"consumo_relacao","domain":"consumidor","subdomain":"relacao_consumo","regime":"cdc","reference":"domain_guides/consumidor.md","checks":["consumidor e fornecedor","fato ou vício e prazos próprios","inversão do ônus e prova","cadastros e cobranças","tutela individual ou coletiva"]},
-    {"id":"administrativo_atos","domain":"administrativo","subdomain":"atos_processo","regime":"administrativo","reference":"domain_guides/administrativo.md","checks":["ente, competência e lei local","motivação e processo","decadência e prescrição","LINDB e consequências","via (MS, ação comum, popular, ACP)"]},
-    {"id":"tributario_processo_administrativo","domain":"tributario","subdomain":"processo_administrativo_fiscal","regime":"tributario","reference":"domain_guides/tributario.md","checks":["ente e lei do processo","auto de infração e impugnação","suspensão da exigibilidade","recursos e prazos","reforma tributária por data do fato gerador"]},
-    {"id":"militar_penal","domain":"militar","subdomain":"penal_militar","regime":"penal_militar","reference":"domain_guides/militar.md","checks":["art. 9º do CPM","competência federal ou estadual","rito do CPPM","garantias e nulidades"]},
-    {"id":"eleitoral_pleito","domain":"eleitoral","subdomain":"pleito","regime":"eleitoral","reference":"domain_guides/eleitoral.md","checks":["pleito, cargo e calendário","resolução do TSE aplicável","legitimidade e prazo especial","conduta, gravidade e prova"]},
-    {"id":"previdencia_complementar_planos","domain":"previdencia_complementar","subdomain":"planos","regime":"previdencia_complementar","reference":"domain_guides/previdencia_complementar.md","checks":["entidade aberta ou fechada","regulamento vigente na elegibilidade","patrocínio público","competência e prescrição"]},
-    {"id":"saude_publica_sus","domain":"saude_publica","subdomain":"sus","regime":"sus","reference":"domain_guides/saude_publica.md","checks":["prescrição e prova médica","incorporação e alternativas","ente responsável","precedentes vinculantes atuais","urgência"]},
-    {"id":"protecao_dados_lgpd","domain":"protecao_dados","subdomain":"lgpd","regime":"lgpd","reference":"domain_guides/protecao_dados.md","checks":["agentes de tratamento","base legal e finalidade","incidente e segurança","direitos do titular","prova digital preservada"]},
-    {"id":"imobiliario_registral","domain":"imobiliario","subdomain":"registro_contratos","regime":"civil_registral","reference":"domain_guides/imobiliario.md","checks":["matrícula e cadeia dominial","contrato e pagamentos","via judicial ou extrajudicial","garantias e prazos registrais"]},
-    {"id":"agrario_contratos","domain":"agrario","subdomain":"contratos_posse","regime":"agrario","reference":"domain_guides/agrario.md","checks":["imóvel rural e documentos","contrato agrário e princípios cogentes","posse e atividade","distinção de vínculo trabalhista"]},
-    {"id":"migratorio_residencia","domain":"migratorio","subdomain":"residencia_refugio","regime":"migratorio","reference":"domain_guides/migratorio.md","checks":["condição migratória","hipótese legal","documentos e prazos","proteção contra devolução"]}
+  "schema_version": "1.1",
+  "policy": "Roteiros de pesquisa, não regras prontas nem confirmação automática de regime. Confirmar os fatos, a competência e as fontes oficiais em cada caso.",
+  "modules": [
+    {
+      "id": "trabalho_emprego",
+      "domain": "trabalhista",
+      "subdomain": "contrato_emprego",
+      "regime": "clt",
+      "reference": "labor_core_rules.md",
+      "checks": [
+        "vínculo e sujeitos",
+        "datas contratuais e legislação de cada período",
+        "jornada, intervalos e compensação",
+        "remuneração e parcelas",
+        "norma coletiva, vigência e âmbito pessoal",
+        "rescisão, prescrição, prova e liquidação"
+      ]
+    },
+    {
+      "id": "trabalho_relacoes",
+      "domain": "trabalhista",
+      "subdomain": "contrato_regime",
+      "regime": "conforme_relacao",
+      "reference": "labor_core_rules.md",
+      "checks": [
+        "espécie de relação e regime confirmado",
+        "sujeitos e categoria",
+        "períodos e versões normativas"
+      ]
+    },
+    {
+      "id": "trabalho_responsabilidade",
+      "domain": "trabalhista",
+      "subdomain": "responsabilidade",
+      "regime": "conforme_relacao",
+      "reference": "labor_core_rules.md",
+      "checks": [
+        "grupo, sucessão e terceirização",
+        "sujeitos e períodos",
+        "fundamento e prova de responsabilidade"
+      ]
+    },
+    {
+      "id": "trabalho_jornada",
+      "domain": "trabalhista",
+      "subdomain": "jornada",
+      "regime": "conforme_relacao",
+      "reference": "labor_evidence_rules.md",
+      "checks": [
+        "regime de controle",
+        "registros diários e intervalos",
+        "compensação e norma coletiva",
+        "parcelas pagas por competência"
+      ]
+    },
+    {
+      "id": "trabalho_remuneracao",
+      "domain": "trabalhista",
+      "subdomain": "remuneracao",
+      "regime": "conforme_relacao",
+      "reference": "labor_calculation_rules.md",
+      "checks": [
+        "histórico salarial",
+        "natureza e requisitos das parcelas",
+        "bases, divisores e reflexos",
+        "pagamentos e diferenças"
+      ]
+    },
+    {
+      "id": "trabalho_rescisao",
+      "domain": "trabalhista",
+      "subdomain": "rescisao",
+      "regime": "conforme_relacao",
+      "reference": "labor_core_rules.md",
+      "checks": [
+        "espécie de ruptura",
+        "marcos e projeções",
+        "pagamentos e prescrição"
+      ]
+    },
+    {
+      "id": "trabalho_garantias",
+      "domain": "trabalhista",
+      "subdomain": "garantias_emprego",
+      "regime": "conforme_relacao",
+      "reference": "labor_core_rules.md",
+      "checks": [
+        "fato gerador e período",
+        "prova dos requisitos",
+        "reintegração ou indenização e limites"
+      ]
+    },
+    {
+      "id": "trabalho_coletivo",
+      "domain": "trabalhista",
+      "subdomain": "coletivo",
+      "regime": "conforme_relacao",
+      "reference": "labor_collective_rules.md",
+      "checks": [
+        "categoria e sindicatos",
+        "CCT, ACT, aditivos e sentença normativa",
+        "âmbito, cláusulas e limites"
+      ]
+    },
+    {
+      "id": "trabalho_saude",
+      "domain": "trabalhista",
+      "subdomain": "saude_ocupacional",
+      "regime": "conforme_relacao",
+      "reference": "labor_health_rules.md",
+      "checks": [
+        "atividades e exposição",
+        "nexo e concausa",
+        "incapacidade e prova técnica",
+        "SST por período e consequências"
+      ]
+    },
+    {
+      "id": "trabalho_discriminacao",
+      "domain": "trabalhista",
+      "subdomain": "assedio_discriminacao",
+      "regime": "conforme_relacao",
+      "reference": "labor_health_rules.md",
+      "checks": [
+        "conduta e contexto",
+        "prova contrária",
+        "nexo e consequências",
+        "proteção e reparação"
+      ]
+    },
+    {
+      "id": "trabalho_procedimento",
+      "domain": "trabalhista",
+      "subdomain": "processual",
+      "regime": "conforme_relacao",
+      "reference": "labor_procedure_rules.md",
+      "checks": [
+        "ato, fase e peça",
+        "prazo e preparo",
+        "admissibilidade por capítulo",
+        "instrução e impugnação"
+      ]
+    },
+    {
+      "id": "trabalho_execucao",
+      "domain": "trabalhista",
+      "subdomain": "execucao",
+      "regime": "conforme_relacao",
+      "reference": "labor_procedure_rules.md",
+      "checks": [
+        "título e limites",
+        "liquidação e itens impugnados",
+        "garantia e matérias",
+        "pagamentos, encargos e responsabilidade patrimonial"
+      ]
+    },
+    {
+      "id": "trabalho_servidor",
+      "domain": "administrativo",
+      "subdomain": "servidor_publico",
+      "regime": "estatutario",
+      "reference": "domain_guides/administrativo.md",
+      "checks": [
+        "ente, vínculo e competência",
+        "estatuto e atos locais oficiais",
+        "cargo, posse e atos administrativos",
+        "regime previdenciário",
+        "não transpor CLT ou RGPS sem autorização normativa"
+      ]
+    },
+    {
+      "id": "previdencia_rgps",
+      "domain": "previdenciario",
+      "subdomain": "beneficio_contributivo",
+      "regime": "rgps",
+      "reference": "domain_guides/previdenciario.md",
+      "checks": [
+        "benefício específico e fato gerador",
+        "DER, DIB, DCB e datas de fatos",
+        "CNIS, vínculos, indicadores e concomitâncias",
+        "carência e qualidade de segurado quando exigidas",
+        "prova médica ou especial conforme benefício",
+        "versão normativa, transição e efeitos financeiros"
+      ]
+    },
+    {
+      "id": "previdencia_rpps",
+      "domain": "previdenciario",
+      "subdomain": "servidor",
+      "regime": "rpps",
+      "reference": "domain_guides/previdenciario.md",
+      "checks": [
+        "ente e legislação local",
+        "ingresso, cargo, contribuições e averbações",
+        "reformas constitucionais e regras de transição",
+        "compensação e contagem recíproca",
+        "não presumir fórmula do RGPS"
+      ]
+    },
+    {
+      "id": "assistencia_bpc",
+      "domain": "previdenciario",
+      "subdomain": "assistencia_social",
+      "regime": "bpc_loas",
+      "reference": "domain_guides/previdenciario.md",
+      "checks": [
+        "idade ou deficiência no marco pertinente",
+        "impedimento e avaliação biopsicossocial",
+        "composição familiar e renda, exclusões e despesas",
+        "cadastros e requerimento",
+        "distinguir assistência de benefício contributivo",
+        "critério legal e precedentes vigentes na data relevante"
+      ]
+    },
+    {
+      "id": "consumo_saude",
+      "domain": "consumidor",
+      "subdomain": "saude",
+      "regime": "contratual_regulado",
+      "reference": "domain_guides/consumidor.md",
+      "checks": [
+        "contratação e tipo de cobertura",
+        "procedimento, prescrição e negativa",
+        "urgência e risco provados",
+        "normas regulatórias e versão temporal",
+        "reembolso, rede e responsabilidade",
+        "não confundir plano privado e prestação pública"
+      ]
+    },
+    {
+      "id": "consumo_bancario",
+      "domain": "bancario",
+      "subdomain": "credito_fraude",
+      "regime": "contratual_regulado",
+      "reference": "domain_guides/bancario.md",
+      "checks": [
+        "sujeitos e eventual relação de consumo",
+        "contrato, autorização e transações",
+        "distribuição do ônus e acesso à prova",
+        "extratos, pagamentos e cálculo reprodutível",
+        "nexo, excludentes e dano concreto",
+        "normas do regulador e precedentes específicos"
+      ]
+    },
+    {
+      "id": "civil_familia",
+      "domain": "familia",
+      "subdomain": "familia",
+      "regime": "civil_especial",
+      "reference": "domain_guides/familia.md",
+      "checks": [
+        "vínculos e interesses de crianças ou incapazes",
+        "sigilo, representação e competência",
+        "renda, necessidades, guarda ou patrimônio pertinentes",
+        "violência e urgência sem exposição indevida",
+        "legislação especial e intervenção institucional"
+      ]
+    },
+    {
+      "id": "civil_sucessoes",
+      "domain": "familia",
+      "subdomain": "sucessoes",
+      "regime": "civil_especial",
+      "reference": "domain_guides/familia.md",
+      "checks": [
+        "óbito, domicílio e interessados",
+        "bens, dívidas, partilha e testamento",
+        "regime patrimonial e lei no marco relevante",
+        "tributação e competência locais",
+        "via judicial ou extrajudicial conforme pressupostos"
+      ]
+    },
+    {
+      "id": "tributario_credito",
+      "domain": "tributario",
+      "subdomain": "credito_execucao",
+      "regime": "tributario",
+      "reference": "domain_guides/tributario.md",
+      "checks": [
+        "tributo, ente e lei local oficial",
+        "fato gerador, lançamento, inscrição e citação",
+        "prescrição e decadência em linhas temporais separadas",
+        "CDA, valores, pagamentos e causas de suspensão",
+        "rito fiscal e meios de defesa próprios"
+      ]
+    },
+    {
+      "id": "penal_defesa",
+      "domain": "penal",
+      "subdomain": "defesa_execucao",
+      "regime": "penal",
+      "reference": "domain_guides/penal.md",
+      "checks": [
+        "tipo penal, imputação e versão no tempo",
+        "autoria, materialidade e cadeia de custódia",
+        "garantias, nulidades e medidas cautelares",
+        "ato, fase, instrumento e tribunal competentes",
+        "não aplicar analogia desfavorável nem importar rito civil sem base",
+        "pena e execução com dados e regras conferidos"
+      ]
+    },
+    {
+      "id": "empresarial_insolvencia",
+      "domain": "empresarial",
+      "subdomain": "insolvencia",
+      "regime": "empresarial_especial",
+      "reference": "domain_guides/empresarial.md",
+      "checks": [
+        "empresa, credor, crédito e classe",
+        "datas, sujeito, competência e legislação de transição",
+        "suspensões e juízos concorrentes",
+        "plano, garantias e atos societários",
+        "impacto financeiro e coletivo"
+      ]
+    },
+    {
+      "id": "ambiental_responsabilidade",
+      "domain": "ambiental",
+      "subdomain": "responsabilidade",
+      "regime": "ambiental",
+      "reference": "domain_guides/ambiental.md",
+      "checks": [
+        "esfera civil, administrativa ou penal",
+        "órgão, área, datas e competência",
+        "nexo e prova técnica",
+        "licenças, condicionantes e norma local",
+        "reparação, sanção e garantias processuais em separado"
+      ]
+    },
+    {
+      "id": "coletivo_tutela",
+      "domain": "constitucional",
+      "subdomain": "coletivo",
+      "regime": "coletivo",
+      "reference": "domain_guides/constitucional.md",
+      "checks": [
+        "direito e grupo atingido",
+        "legitimidade e representação adequadas",
+        "competência e limites objetivos/subjetivos",
+        "precedentes, efeitos e coisa julgada",
+        "pedidos e execução compatíveis com tutela coletiva"
+      ]
+    },
+    {
+      "id": "civil_obrigacoes",
+      "domain": "civil",
+      "subdomain": "obrigacoes_responsabilidade",
+      "regime": "civil",
+      "reference": "domain_guides/civil.md",
+      "checks": [
+        "relação jurídica e fonte da obrigação",
+        "inadimplemento ou ilícito e nexo",
+        "dano e quantificação",
+        "prescrição por pretensão",
+        "juros e correção por período (Lei 14.905/2024)"
+      ]
+    },
+    {
+      "id": "consumo_relacao",
+      "domain": "consumidor",
+      "subdomain": "relacao_consumo",
+      "regime": "cdc",
+      "reference": "domain_guides/consumidor.md",
+      "checks": [
+        "consumidor e fornecedor",
+        "fato ou vício e prazos próprios",
+        "inversão do ônus e prova",
+        "cadastros e cobranças",
+        "tutela individual ou coletiva"
+      ]
+    },
+    {
+      "id": "administrativo_atos",
+      "domain": "administrativo",
+      "subdomain": "atos_processo",
+      "regime": "administrativo",
+      "reference": "domain_guides/administrativo.md",
+      "checks": [
+        "ente, competência e lei local",
+        "motivação e processo",
+        "decadência e prescrição",
+        "LINDB e consequências",
+        "via (MS, ação comum, popular, ACP)"
+      ]
+    },
+    {
+      "id": "tributario_processo_administrativo",
+      "domain": "tributario",
+      "subdomain": "processo_administrativo_fiscal",
+      "regime": "tributario",
+      "reference": "domain_guides/tributario.md",
+      "checks": [
+        "ente e lei do processo",
+        "auto de infração e impugnação",
+        "suspensão da exigibilidade",
+        "recursos e prazos",
+        "reforma tributária por data do fato gerador"
+      ]
+    },
+    {
+      "id": "militar_penal",
+      "domain": "militar",
+      "subdomain": "penal_militar",
+      "regime": "penal_militar",
+      "reference": "domain_guides/militar.md",
+      "checks": [
+        "art. 9º do CPM",
+        "competência federal ou estadual",
+        "rito do CPPM",
+        "garantias e nulidades"
+      ]
+    },
+    {
+      "id": "eleitoral_pleito",
+      "domain": "eleitoral",
+      "subdomain": "pleito",
+      "regime": "eleitoral",
+      "reference": "domain_guides/eleitoral.md",
+      "checks": [
+        "pleito, cargo e calendário",
+        "resolução do TSE aplicável",
+        "legitimidade e prazo especial",
+        "conduta, gravidade e prova"
+      ]
+    },
+    {
+      "id": "previdencia_complementar_planos",
+      "domain": "previdencia_complementar",
+      "subdomain": "planos",
+      "regime": "previdencia_complementar",
+      "reference": "domain_guides/previdencia_complementar.md",
+      "checks": [
+        "entidade aberta ou fechada",
+        "regulamento vigente na elegibilidade",
+        "patrocínio público",
+        "competência e prescrição"
+      ]
+    },
+    {
+      "id": "saude_publica_sus",
+      "domain": "saude_publica",
+      "subdomain": "sus",
+      "regime": "sus",
+      "reference": "domain_guides/saude_publica.md",
+      "checks": [
+        "prescrição e prova médica",
+        "incorporação e alternativas",
+        "ente responsável",
+        "precedentes vinculantes atuais",
+        "urgência"
+      ]
+    },
+    {
+      "id": "protecao_dados_lgpd",
+      "domain": "protecao_dados",
+      "subdomain": "lgpd",
+      "regime": "lgpd",
+      "reference": "domain_guides/protecao_dados.md",
+      "checks": [
+        "agentes de tratamento",
+        "base legal e finalidade",
+        "incidente e segurança",
+        "direitos do titular",
+        "prova digital preservada"
+      ]
+    },
+    {
+      "id": "imobiliario_registral",
+      "domain": "imobiliario",
+      "subdomain": "registro_contratos",
+      "regime": "civil_registral",
+      "reference": "domain_guides/imobiliario.md",
+      "checks": [
+        "matrícula e cadeia dominial",
+        "contrato e pagamentos",
+        "via judicial ou extrajudicial",
+        "garantias e prazos registrais"
+      ]
+    },
+    {
+      "id": "agrario_contratos",
+      "domain": "agrario",
+      "subdomain": "contratos_posse",
+      "regime": "agrario",
+      "reference": "domain_guides/agrario.md",
+      "checks": [
+        "imóvel rural e documentos",
+        "contrato agrário e princípios cogentes",
+        "posse e atividade",
+        "distinção de vínculo trabalhista"
+      ]
+    },
+    {
+      "id": "migratorio_residencia",
+      "domain": "migratorio",
+      "subdomain": "residencia_refugio",
+      "regime": "migratorio",
+      "reference": "domain_guides/migratorio.md",
+      "checks": [
+        "condição migratória",
+        "hipótese legal",
+        "documentos e prazos",
+        "proteção contra devolução"
+      ]
+    },
+    {
+      "id": "processual_civil_recursos_precedentes",
+      "domain": "processual_civil",
+      "subdomain": "recursos_rescisoria_precedentes",
+      "regime": "cpc_2015",
+      "reference": "domain_guides/processual_civil.md",
+      "checks": [
+        "cabimento específico, taxatividade mitigada ou bifurcação arts. 1.030/1.042",
+        "tempestividade em dias úteis, feriado local e preparo",
+        "prequestionamento (inclusive art. 1.025), relevância (EC 125/2022) e repercussão geral",
+        "impugnação de todos os fundamentos autônomos e distinção fática de precedentes",
+        "biênio decadencial e depósito de 5% na ação rescisória"
+      ]
+    },
+    {
+      "id": "processual_civil_cognicao_execucao",
+      "domain": "processual_civil",
+      "subdomain": "competencia_tutelas_execucao",
+      "regime": "cpc_2015",
+      "reference": "domain_guides/processual_civil.md",
+      "checks": [
+        "pertinência territorial da cláusula de eleição de foro (Lei 14.879/2024)",
+        "requisitos de tutela provisória, reversibilidade e estabilização (arts. 300–311)",
+        "prejuízo concreto nas nulidades e proporcionalidade no Tema 1198 STJ",
+        "cumprimento provisório/definitivo, caução e faixas objetivas de honorários (Tema 1076)"
+      ]
+    },
+    {
+      "id": "insolvencia_recuperacao_empresarial",
+      "domain": "insolvencia",
+      "subdomain": "recuperacao_judicial_extrajudicial",
+      "regime": "lei_11101_reformada",
+      "reference": "domain_guides/insolvencia.md",
+      "checks": [
+        "legitimidade bienal (inclusive produtor rural — Tema 1145) e documentos do art. 51",
+        "contagem de prazos em dias corridos (art. 189, § 1º, I) e limite do stay period",
+        "data do fato gerador do crédito, garantias fiduciárias e essencialidade de bens de capital",
+        "controle de legalidade do plano, cram down, consolidação substancial e regularidade fiscal"
+      ]
+    },
+    {
+      "id": "insolvencia_falencia_transnacional",
+      "domain": "insolvencia",
+      "subdomain": "falencia_revocatoria_transnacional",
+      "regime": "lei_11101_reformada",
+      "reference": "domain_guides/insolvencia.md",
+      "checks": [
+        "ordem de classificação dos arts. 83 e 84 e atualização limitada à quebra",
+        "termo legal, ineficácia objetiva (art. 129) e decadência trienal da revocatória (art. 132)",
+        "extinção célere das obrigações por fresh start trienal (art. 158, V)",
+        "reconhecimento de processo estrangeiro principal/não principal (COMI) e proteção a credores locais"
+      ]
+    },
+    {
+      "id": "securitario_sinistros_contratos",
+      "domain": "securitario",
+      "subdomain": "seguros_dano_pessoas_grandes_riscos",
+      "regime": "cc_e_lei_15040_2024",
+      "reference": "domain_guides/securitario.md",
+      "checks": [
+        "regime intertemporal da apólice (CC/2002 vs. Lei 15.040/2024)",
+        "prazo de 30 dias da regulação, motivação vinculante e vedação de inovação na recusa",
+        "doença preexistente (Súmula 609), embriaguez (Súmula 620), suicídio (Súmula 610) e mora (Súmula 616)",
+        "sub-rogação (CC, art. 786), seguro garantia, D&O/E&O e prescrição suspensa na regulação (Súmula 229)"
+      ]
+    },
+    {
+      "id": "pi_industrial_autoral_digital",
+      "domain": "propriedade_intelectual_digital",
+      "subdomain": "propriedade_industrial_autoral_ia",
+      "regime": "lpi_lda_mci",
+      "reference": "domain_guides/propriedade_intelectual_digital.md",
+      "checks": [
+        "competência (Justiça Federal com INPI em nulidade vs. Estadual em infração/concorrência)",
+        "registro, anterioridade, especialidade, trade dress e critérios do art. 210 da LPI",
+        "software, segredo industrial (art. 206 LPI), COF com 10 dias na franquia (Lei 13.966/2019)",
+        "indicação específica de URLs no Marco Civil (Temas 987/533 STF), scraping e deepfakes"
+      ]
+    },
+    {
+      "id": "regulatorio_infraestrutura_setorial",
+      "domain": "regulatorio_concorrencial",
+      "subdomain": "concessoes_agencias_setores",
+      "regime": "regulatorio_publico",
+      "reference": "domain_guides/regulatorio_concorrencial.md",
+      "checks": [
+        "matriz contratual de alocação de riscos e cálculo por fluxo de caixa marginal/TIR",
+        "Análise de Impacto Regulatório (AIR), deferência técnica e consequencialismo (LINDB, art. 20)",
+        "regras setoriais (ANEEL/Lei 14.300, ANATEL, ANTT/ANTAQ, ANP, Saneamento/Lei 14.026 e ANM/CFEM)",
+        "prescrição punitiva quinquenal e intercorrente trienal (Lei 9.873/1999)"
+      ]
+    },
+    {
+      "id": "concorrencial_antitruste_cade",
+      "domain": "regulatorio_concorrencial",
+      "subdomain": "defesa_concorrencia_reparacao",
+      "regime": "lei_12529_e_14470",
+      "reference": "domain_guides/regulatorio_concorrencial.md",
+      "checks": [
+        "mercado relevante, conduta colusiva ou unilateral (art. 36) e ramo de faturamento na multa",
+        "controle prévio de concentração, gun jumping (art. 88, § 3º), leniência e TCC",
+        "reparação em dobro, pass-on defense provado pelo réu e prescrição suspensa (Lei 14.470/2022)"
+      ]
+    },
+    {
+      "id": "arbitragem_mediacao_dispute_boards",
+      "domain": "arbitragem_mediacao",
+      "subdomain": "arbitragem_mediacao_adrs",
+      "regime": "lei_9307_e_13140",
+      "reference": "domain_guides/arbitragem_mediacao.md",
+      "checks": [
+        "validade da convenção, destaque em adesão, Kompetenz-Kompetenz e preliminar de contestação",
+        "prazo de 30 dias na cautelar pré-arbitral (art. 22-A) e requisitos da carta arbitral",
+        "decadência de 90 dias da ação anulatória (art. 33, § 1º) e vedação de revisão de mérito",
+        "publicidade e arbitragem de direito na Administração Pública, mediação e dispute boards"
+      ]
+    },
+    {
+      "id": "eca_infancia_socioeducativo",
+      "domain": "crianca_adolescente_educacional",
+      "subdomain": "protecao_integral_ato_infracional",
+      "regime": "eca_sinase",
+      "reference": "domain_guides/crianca_adolescente_educacional.md",
+      "checks": [
+        "competência da Vara da Infância (risco do art. 98), oitiva e estudo psicossocial",
+        "vedação de perda do poder familiar por pobreza (art. 23), reavaliação trimestral e SNA",
+        "defesa técnica socioeducativa (Súmula 342), taxatividade da internação (Súmula 492) e 45 dias provisórios",
+        "prazos recursais do ECA em 10 dias corridos sem preparo (art. 198) e sigilo legal"
+      ]
+    },
+    {
+      "id": "educacional_inclusao_ensino_superior",
+      "domain": "crianca_adolescente_educacional",
+      "subdomain": "educacao_basica_superior",
+      "regime": "ldb_lbi_ensino_superior",
+      "reference": "domain_guides/crianca_adolescente_educacional.md",
+      "checks": [
+        "direito autoaplicável a creche/pré-escola (Tema 548 STF)",
+        "profissional de apoio escolar sem cobrança extra (Lei 13.146/2015; ADI 5357) e combate ao bullying (Lei 14.811/2024)",
+        "vedação de retenção de documentos escolares (Lei 9.870/1999, art. 6º)",
+        "FIES (abatimento 1% médicos/professores), Lei de Cotas (Lei 14.723/2023), heteroidentificação e Revalida"
+      ]
+    },
+    {
+      "id": "notarial_registral_extrajudicial",
+      "domain": "notarial_registral",
+      "subdomain": "registros_notas_protesto_serp",
+      "regime": "lrp_serp_cnj",
+      "reference": "domain_guides/notarial_registral.md",
+      "checks": [
+        "prenotação, nota devolutiva única e natureza administrativa da dúvida registral (art. 204 LRP)",
+        "usucapião (art. 216-A) e adjudicação compulsória (art. 216-B) extrajudiciais, SERP e atas notariais",
+        "inventário e divórcio extrajudiciais com incapazes ou testamento (Res. CNJ 571/2024)",
+        "responsabilidade objetiva do Estado e subjetiva do delegatário com prescrição trienal (Tema 777 STF)"
+      ]
+    },
+    {
+      "id": "aduaneiro_maritimo_portuario",
+      "domain": "aduaneiro_maritimo",
+      "subdomain": "aduana_navegacao_portos",
+      "regime": "aduaneiro_maritimo",
+      "reference": "domain_guides/aduaneiro_maritimo.md",
+      "checks": [
+        "distinção entre subfaturamento (multa 100% diferença) e interposição fraudulenta/falsidade (perdimento em duplo grau — Lei 14.651/2023)",
+        "ordem sequencial do AVA-GATT, NCM/art. 146 CTN, regimes especiais (drawback/REPETRO), Taxa SISCOMEX e RADAR",
+        "demurrage (prescrição quinquenal vs. anual — Tema 1035 STJ) e vedação de retenção coercitiva de carga/BL",
+        "protesto em 10 dias e prescrição ânua na avaria de carga (DL 116/1967), Tribunal Marítimo e praticagem (Lei 14.813/2024)"
+      ]
+    }
   ]
 }

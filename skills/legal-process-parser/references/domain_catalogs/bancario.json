@@ -4,16 +4,1105 @@
  "label": "Direito Bancário",
  "guide": "domain_guides/bancario.md",
  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
- "polo_labels": {"claimant_theses": "Teses do cliente", "defense_theses": "Teses da instituição financeira"},
+ "polo_labels": {
+  "claimant_theses": "Teses do cliente",
+  "defense_theses": "Teses da instituição financeira"
+ },
  "claims": [
-  {"id": "banc_fraud", "label": "Fraudes, golpes e transações não reconhecidas", "requirements": ["transacao", "autenticacao", "comunicacao_tempestiva", "fortuito_interno", "dano"], "claimant_theses": [{"id": "banc_fraud.c1", "label": "CDC aplicável às instituições financeiras", "authority_ids": ["stj_sumula_297"]}, {"id": "banc_fraud.c2", "label": "Responsabilidade objetiva por fortuito interno em fraudes de terceiros", "authority_ids": ["stj_sumula_479", "cdc_art14"]}], "defense_theses": [{"id": "banc_fraud.d1", "label": "Culpa exclusiva da vítima ou de terceiro sem falha de segurança do banco", "authority_ids": ["cdc_art14"]}], "temporal_marker_ids": [], "typical_requests": ["Restituição dos valores", "Indenização"], "evidence": ["Extratos, boletim de ocorrência e contestação no banco", "Registros de acesso e dispositivos"], "piece_ids": ["inicial_juizado", "tutela_urgencia_antecedente"], "related_claims": ["cons_defect"], "limitation": "conferir"},
-  {"id": "banc_consigned", "label": "Consignação em folha e empréstimos", "requirements": ["contrato", "autorizacao", "limite_margem", "cobranca"], "claimant_theses": [{"id": "banc_consigned.c1", "label": "Desconto sem autorização ou acima dos limites legais", "authority_ids": ["l10820_art1"]}], "defense_theses": [{"id": "banc_consigned.d1", "label": "Contratação regular com autorização expressa", "authority_ids": ["l10820_art1"]}], "temporal_marker_ids": [], "typical_requests": ["Cessação dos descontos e restituição"], "evidence": ["Contrato, holerites e extratos"], "piece_ids": ["inicial_juizado"], "related_claims": ["cons_overindebtedness"], "limitation": "conferir"},
-  {"id": "banc_contract_review", "label": "Revisão de contratos bancários", "requirements": ["contrato", "taxas_cet", "capitalizacao", "encargos_mora"], "claimant_theses": [{"id": "banc_contract_review.c1", "label": "Abusividade de encargos frente ao contrato e à média de mercado", "authority_ids": ["cdc_art51", "stj_sumula_297"]}], "defense_theses": [{"id": "banc_contract_review.d1", "label": "Taxas pactuadas e informadas; ausência de abusividade concreta", "authority_ids": ["cdc_art6"]}], "temporal_marker_ids": [], "typical_requests": ["Revisão e restituição"], "evidence": ["Contrato integral, CET e evolução da dívida"], "piece_ids": ["inicial_procedimento_comum"], "related_claims": [], "limitation": "conferir"},
-  {"id": "banc_interest_fees", "label": "Juros remuneratórios, capitalização e tarifas", "requirements": ["contrato", "taxa_contratada", "taxa_media_do_periodo", "pactuacao_expressa", "tarifas"], "claimant_theses": [{"id": "banc_interest_fees.c1", "label": "Abusividade quando a taxa supera de forma relevante a média de mercado da operação", "authority_ids": ["cdc_art51", "stj_sumula_530"]}, {"id": "banc_interest_fees.c2", "label": "Capitalização só com pactuação expressa", "authority_ids": ["stj_sumula_539", "stj_sumula_541", "l10931_art28"]}, {"id": "banc_interest_fees.c3", "label": "Tarifas sem previsão ou vedadas pela regulação", "authority_ids": ["stj_sumula_565", "stj_sumula_566", "cdc_art39"]}], "defense_theses": [{"id": "banc_interest_fees.d1", "label": "Juros acima de 12% ao ano não indicam abusividade por si", "authority_ids": ["stj_sumula_382"]}, {"id": "banc_interest_fees.d2", "label": "Taxa anual superior ao duodécuplo da mensal basta para a capitalização", "authority_ids": ["stj_sumula_541"]}, {"id": "banc_interest_fees.d3", "label": "Vedação de conhecimento de ofício de cláusulas abusivas", "authority_ids": ["stj_sumula_381"]}], "temporal_marker_ids": [], "typical_requests": ["Revisão das cláusulas", "Repetição ou compensação do excesso", "Descaracterização da mora se houver encargo abusivo no período de normalidade"], "evidence": ["Contrato e planilha de evolução", "Série da taxa média do Banco Central para a modalidade e a data", "Extratos"], "piece_ids": ["inicial_procedimento_comum", "embargos_execucao_civil", "embargos_monitorios"], "related_claims": ["banc_contract_review"], "limitation": "Dez anos para a revisão e repetição (CC, art. 205) — conferir"},
-  {"id": "banc_default_charges", "label": "Encargos de mora e comissão de permanência", "requirements": ["inadimplemento", "encargos_cobrados", "cumulacao"], "claimant_theses": [{"id": "banc_default_charges.c1", "label": "Comissão de permanência não se cumula com juros, correção e multa", "authority_ids": ["stj_sumula_472"]}, {"id": "banc_default_charges.c2", "label": "Multa moratória limitada a dois por cento", "authority_ids": ["cdc_art52"]}], "defense_theses": [{"id": "banc_default_charges.d1", "label": "Juros moratórios de até 1% ao mês nos contratos não regidos por lei específica", "authority_ids": ["stj_sumula_379"]}, {"id": "banc_default_charges.d2", "label": "Ajuizamento de revisional não inibe a mora", "authority_ids": ["stj_sumula_380"]}], "temporal_marker_ids": ["lei_14905_juros_civis"], "typical_requests": ["Exclusão de encargos cumulados", "Recálculo do saldo"], "evidence": ["Planilha de débito", "Contrato"], "piece_ids": ["inicial_procedimento_comum", "embargos_execucao_civil", "impugnacao_cumprimento"], "related_claims": ["banc_interest_fees"], "limitation": "Conferir"},
-  {"id": "banc_fiduciary_vehicle", "label": "Alienação fiduciária de veículo: busca e apreensão", "requirements": ["contrato", "mora_comprovada", "notificacao", "liminar", "pagamento_integral"], "claimant_theses": [{"id": "banc_fiduciary_vehicle.c1", "label": "Mora deve ser comprovada por notificação enviada ao endereço do contrato", "authority_ids": ["dl911_art2", "stj_sumula_72"]}, {"id": "banc_fiduciary_vehicle.c2", "label": "Restituição do bem livre de ônus com o pagamento da integralidade em cinco dias", "authority_ids": ["dl911_art3"]}, {"id": "banc_fiduciary_vehicle.c3", "label": "Encargo abusivo no período de normalidade descaracteriza a mora", "authority_ids": ["cdc_art51"]}], "defense_theses": [{"id": "banc_fiduciary_vehicle.d1", "label": "Liminar de busca e apreensão com a mora comprovada e consolidação após cinco dias", "authority_ids": ["dl911_art3"]}, {"id": "banc_fiduciary_vehicle.d2", "label": "Conversão em execução se o bem não for localizado", "authority_ids": ["dl911_art4"]}, {"id": "banc_fiduciary_vehicle.d3", "label": "Purgação exige a integralidade da dívida — conferir o Tema 722 do STJ", "authority_ids": ["dl911_art3"]}], "temporal_marker_ids": ["lei_14711_garantias"], "typical_requests": ["Revogação da liminar e restituição do bem", "Prestação de contas da venda", "Devolução de saldo"], "evidence": ["Contrato e notificação com aviso de recebimento", "Comprovantes de pagamento", "Auto de apreensão e nota de venda"], "piece_ids": ["contestacao", "agravo_instrumento", "inicial_procedimento_comum"], "related_claims": ["banc_contract_review"], "limitation": "Conferir"},
-  {"id": "banc_ccb_execution", "label": "Execução de cédula de crédito bancário", "requirements": ["titulo", "demonstrativo", "liquidez", "excesso"], "claimant_theses": [{"id": "banc_ccb_execution.c1", "label": "Título sem planilha clara ou extratos não demonstra liquidez", "authority_ids": ["l10931_art28", "l10931_art29"]}, {"id": "banc_ccb_execution.c2", "label": "Excesso de execução com memória de cálculo própria", "authority_ids": ["cpc_art917"]}, {"id": "banc_ccb_execution.c3", "label": "Impenhorabilidade de salário e de reserva até quarenta salários mínimos", "authority_ids": ["cpc_art833"]}], "defense_theses": [{"id": "banc_ccb_execution.d1", "label": "Cédula de crédito bancário é título executivo extrajudicial", "authority_ids": ["l10931_art28", "cpc_art784"]}, {"id": "banc_ccb_execution.d2", "label": "Embargos sem efeito suspensivo automático", "authority_ids": ["cpc_art919"]}], "temporal_marker_ids": [], "typical_requests": ["Extinção ou redução da execução", "Desbloqueio de valores impenhoráveis"], "evidence": ["Cédula, aditivos e planilha", "Extratos da conta", "Comprovação da natureza dos valores bloqueados"], "piece_ids": ["embargos_execucao_civil", "excecao_pre_executividade", "agravo_instrumento"], "related_claims": ["banc_interest_fees"], "limitation": "Embargos em quinze dias (CPC, art. 915) — conferir"},
-  {"id": "banc_overdraft_account", "label": "Conta corrente, cheque especial e cartão de crédito", "requirements": ["lancamentos", "contratacao_do_limite", "taxa", "informacao_previa"], "claimant_theses": [{"id": "banc_overdraft_account.c1", "label": "Ação de exigir contas para esclarecer lançamentos", "authority_ids": ["cpc_art550", "stj_sumula_259"]}, {"id": "banc_overdraft_account.c2", "label": "Envio de cartão não solicitado é prática abusiva", "authority_ids": ["stj_sumula_532", "cdc_art39"]}, {"id": "banc_overdraft_account.c3", "label": "Ausência de contrato ou de taxa pactuada: taxa média de mercado", "authority_ids": ["stj_sumula_530"]}], "defense_theses": [{"id": "banc_overdraft_account.d1", "label": "Contrato de abertura de crédito com demonstrativo autoriza monitória", "authority_ids": ["stj_sumula_247"]}, {"id": "banc_overdraft_account.d2", "label": "Extratos e faturas demonstram a utilização do crédito", "authority_ids": ["cpc_art373"]}], "temporal_marker_ids": [], "typical_requests": ["Prestação de contas", "Revisão do saldo devedor"], "evidence": ["Extratos e faturas", "Termo de adesão ao limite"], "piece_ids": ["acao_exigir_contas", "inicial_procedimento_comum", "embargos_monitorios", "inicial_juizado"], "related_claims": ["banc_interest_fees", "banc_fraud"], "limitation": "Conferir"},
-  {"id": "banc_secrecy_data", "label": "Sigilo bancário e compartilhamento de dados", "requirements": ["dado_acessado", "autorizacao_ou_ordem", "finalidade", "dano"], "claimant_theses": [{"id": "banc_secrecy_data.c1", "label": "Quebra de sigilo fora das hipóteses legais gera dever de indenizar", "authority_ids": ["lc105_art1", "cf_art5", "cc_art927"]}, {"id": "banc_secrecy_data.c2", "label": "Vazamento de dados que viabiliza fraude é fortuito interno", "authority_ids": ["stj_sumula_479", "lgpd_art42"]}], "defense_theses": [{"id": "banc_secrecy_data.d1", "label": "Compartilhamento autorizado por lei, inclusive com o Fisco", "authority_ids": ["lc105_art6", "lc105_art1"]}], "temporal_marker_ids": [], "typical_requests": ["Indenização", "Obrigação de cessar o tratamento indevido"], "evidence": ["Registros de acesso", "Comunicações recebidas de terceiros com dados bancários"], "piece_ids": ["inicial_procedimento_comum", "inicial_juizado"], "related_claims": ["banc_fraud", "dp_incident"], "limitation": "Conferir"}
+  {
+   "id": "banc_fraud",
+   "label": "Fraudes, golpes e transações não reconhecidas",
+   "requirements": [
+    "transacao",
+    "autenticacao",
+    "comunicacao_tempestiva",
+    "fortuito_interno",
+    "dano"
+   ],
+   "claimant_theses": [
+    {
+     "id": "banc_fraud.c1",
+     "label": "CDC aplicável às instituições financeiras",
+     "authority_ids": [
+      "stj_sumula_297"
+     ]
+    },
+    {
+     "id": "banc_fraud.c2",
+     "label": "Responsabilidade objetiva por fortuito interno em fraudes de terceiros",
+     "authority_ids": [
+      "stj_sumula_479",
+      "cdc_art14"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "banc_fraud.d1",
+     "label": "Culpa exclusiva da vítima ou de terceiro sem falha de segurança do banco",
+     "authority_ids": [
+      "cdc_art14"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Restituição dos valores",
+    "Indenização",
+    "Declaração de inexigibilidade de empréstimo ou compra fraudulenta e baixa de restrições cadastrais"
+   ],
+   "evidence": [
+    "Extratos, boletim de ocorrência e contestação no banco",
+    "Registros de acesso e dispositivos",
+    "Logs de IP, geolocalização, biometria facial e trilha de auditoria da autenticação bancária"
+   ],
+   "piece_ids": [
+    "inicial_juizado",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [
+    "cons_defect"
+   ],
+   "limitation": "Prescrição quinquenal nas ações indenizatórias e de inexigibilidade decorrentes de defeito de segurança do serviço bancário — fortuito interno (CDC, art. 27; Súmula 479 do STJ), contada do conhecimento do dano e de sua autoria."
+  },
+  {
+   "id": "banc_consigned",
+   "label": "Consignação em folha e empréstimos",
+   "requirements": [
+    "contrato",
+    "autorizacao",
+    "limite_margem",
+    "cobranca"
+   ],
+   "claimant_theses": [
+    {
+     "id": "banc_consigned.c1",
+     "label": "Desconto sem autorização ou acima dos limites legais",
+     "authority_ids": [
+      "l10820_art1"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "banc_consigned.d1",
+     "label": "Contratação regular com autorização expressa",
+     "authority_ids": [
+      "l10820_art1"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14181_superendividamento",
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Cessação dos descontos e restituição",
+    "Limitação das parcelas mensais à margem consignável legal (Lei 10.820/2003)",
+    "Declaração de inexistência do débito quando ausente contratação hígida com repetição do indébito"
+   ],
+   "evidence": [
+    "Contrato, holerites e extratos",
+    "Extrato histórico de empréstimos consignados (HISCON/INSS ou portal do servidor)",
+    "Comprovante de crédito (TED/DOC) na conta de titularidade do consumidor ou ausência de repasse"
+   ],
+   "piece_ids": [
+    "inicial_juizado"
+   ],
+   "related_claims": [
+    "cons_overindebtedness"
+   ],
+   "limitation": "Prescrição quinquenal pelo fato do serviço quando impugnada fraude ou desconto sem contratação (CDC, art. 27) e decenal nas ações revisionais de cláusulas contratuais cumulada com repetição de indébito (CC, art. 205)."
+  },
+  {
+   "id": "banc_contract_review",
+   "label": "Revisão de contratos bancários",
+   "requirements": [
+    "contrato",
+    "taxas_cet",
+    "capitalizacao",
+    "encargos_mora"
+   ],
+   "claimant_theses": [
+    {
+     "id": "banc_contract_review.c1",
+     "label": "Abusividade de encargos frente ao contrato e à média de mercado",
+     "authority_ids": [
+      "cdc_art51",
+      "stj_sumula_297"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "banc_contract_review.d1",
+     "label": "Taxas pactuadas e informadas; ausência de abusividade concreta",
+     "authority_ids": [
+      "cdc_art6"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Revisão e restituição",
+    "Recálculo da evolução contratual com expurgo de tarifas sem serviço efetivo ou venda casada de seguros",
+    "Compensação do indébito apurado com o saldo devedor vincendo ou restituição simples/em dobro"
+   ],
+   "evidence": [
+    "Contrato integral, CET e evolução da dívida",
+    "Séries temporais de taxas médias de mercado do Banco Central (SGS) para a mesma modalidade e época",
+    "Apólices de seguro prestamista e comprovantes de cobrança de tarifas administrativas"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [],
+   "limitation": "Prescrição decenal para a ação revisional de contrato bancário cumulada com repetição de indébito de obrigações pessoais (CC, art. 205)."
+  },
+  {
+   "id": "banc_interest_fees",
+   "label": "Juros remuneratórios, capitalização e tarifas",
+   "requirements": [
+    "contrato",
+    "taxa_contratada",
+    "taxa_media_do_periodo",
+    "pactuacao_expressa",
+    "tarifas"
+   ],
+   "claimant_theses": [
+    {
+     "id": "banc_interest_fees.c1",
+     "label": "Abusividade quando a taxa supera de forma relevante a média de mercado da operação",
+     "authority_ids": [
+      "cdc_art51",
+      "stj_sumula_530"
+     ]
+    },
+    {
+     "id": "banc_interest_fees.c2",
+     "label": "Capitalização só com pactuação expressa",
+     "authority_ids": [
+      "stj_sumula_539",
+      "stj_sumula_541",
+      "l10931_art28"
+     ]
+    },
+    {
+     "id": "banc_interest_fees.c3",
+     "label": "Tarifas sem previsão ou vedadas pela regulação",
+     "authority_ids": [
+      "stj_sumula_565",
+      "stj_sumula_566",
+      "cdc_art39"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "banc_interest_fees.d1",
+     "label": "Juros acima de 12% ao ano não indicam abusividade por si",
+     "authority_ids": [
+      "stj_sumula_382"
+     ]
+    },
+    {
+     "id": "banc_interest_fees.d2",
+     "label": "Taxa anual superior ao duodécuplo da mensal basta para a capitalização",
+     "authority_ids": [
+      "stj_sumula_541"
+     ]
+    },
+    {
+     "id": "banc_interest_fees.d3",
+     "label": "Vedação de conhecimento de ofício de cláusulas abusivas",
+     "authority_ids": [
+      "stj_sumula_381"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Revisão das cláusulas",
+    "Repetição ou compensação do excesso",
+    "Descaracterização da mora se houver encargo abusivo no período de normalidade"
+   ],
+   "evidence": [
+    "Contrato e planilha de evolução",
+    "Série da taxa média do Banco Central para a modalidade e a data",
+    "Extratos"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "embargos_execucao_civil",
+    "embargos_monitorios"
+   ],
+   "related_claims": [
+    "banc_contract_review"
+   ],
+   "limitation": "Prescrição decenal para revisão de cláusulas de juros, capitalização e tarifas bancárias com repetição de indébito (CC, art. 205)."
+  },
+  {
+   "id": "banc_default_charges",
+   "label": "Encargos de mora e comissão de permanência",
+   "requirements": [
+    "inadimplemento",
+    "encargos_cobrados",
+    "cumulacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "banc_default_charges.c1",
+     "label": "Comissão de permanência não se cumula com juros, correção e multa",
+     "authority_ids": [
+      "stj_sumula_472"
+     ]
+    },
+    {
+     "id": "banc_default_charges.c2",
+     "label": "Multa moratória limitada a dois por cento",
+     "authority_ids": [
+      "cdc_art52"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "banc_default_charges.d1",
+     "label": "Juros moratórios de até 1% ao mês nos contratos não regidos por lei específica",
+     "authority_ids": [
+      "stj_sumula_379"
+     ]
+    },
+    {
+     "id": "banc_default_charges.d2",
+     "label": "Ajuizamento de revisional não inibe a mora",
+     "authority_ids": [
+      "stj_sumula_380"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Exclusão de encargos cumulados",
+    "Recálculo do saldo",
+    "Descaracterização da mora caso comprovada cobrança de encargos abusivos no período de normalidade contratual"
+   ],
+   "evidence": [
+    "Planilha de débito",
+    "Contrato",
+    "Extratos detalhando os lançamentos a título de comissão de permanência, juros moratórios e multa"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "embargos_execucao_civil",
+    "impugnacao_cumprimento"
+   ],
+   "related_claims": [
+    "banc_interest_fees"
+   ],
+   "limitation": "Prescrição decenal para revisão contratual e repetição de encargos moratórios cobrados a maior (CC, art. 205); em embargos à execução, 15 dias úteis da juntada do mandado (CPC, art. 915)."
+  },
+  {
+   "id": "banc_fiduciary_vehicle",
+   "label": "Alienação fiduciária de veículo: busca e apreensão",
+   "requirements": [
+    "contrato",
+    "mora_comprovada",
+    "notificacao",
+    "liminar",
+    "pagamento_integral"
+   ],
+   "claimant_theses": [
+    {
+     "id": "banc_fiduciary_vehicle.c1",
+     "label": "Mora deve ser comprovada por notificação enviada ao endereço do contrato",
+     "authority_ids": [
+      "dl911_art2",
+      "stj_sumula_72"
+     ]
+    },
+    {
+     "id": "banc_fiduciary_vehicle.c2",
+     "label": "Restituição do bem livre de ônus com o pagamento da integralidade em cinco dias",
+     "authority_ids": [
+      "dl911_art3"
+     ]
+    },
+    {
+     "id": "banc_fiduciary_vehicle.c3",
+     "label": "Encargo abusivo no período de normalidade descaracteriza a mora",
+     "authority_ids": [
+      "cdc_art51"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "banc_fiduciary_vehicle.d1",
+     "label": "Liminar de busca e apreensão com a mora comprovada e consolidação após cinco dias",
+     "authority_ids": [
+      "dl911_art3"
+     ]
+    },
+    {
+     "id": "banc_fiduciary_vehicle.d2",
+     "label": "Conversão em execução se o bem não for localizado",
+     "authority_ids": [
+      "dl911_art4"
+     ]
+    },
+    {
+     "id": "banc_fiduciary_vehicle.d3",
+     "label": "Purgação exige a integralidade da dívida — conferir o Tema 722 do STJ",
+     "authority_ids": [
+      "dl911_art3"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14711_garantias"
+   ],
+   "typical_requests": [
+    "Revogação da liminar e restituição do bem",
+    "Prestação de contas da venda",
+    "Devolução de saldo"
+   ],
+   "evidence": [
+    "Contrato e notificação com aviso de recebimento",
+    "Comprovantes de pagamento",
+    "Auto de apreensão e nota de venda"
+   ],
+   "piece_ids": [
+    "contestacao",
+    "agravo_instrumento",
+    "inicial_procedimento_comum",
+    "busca_apreensao_alienacao_fiduciaria"
+   ],
+   "related_claims": [
+    "banc_contract_review"
+   ],
+   "limitation": "Purgação da mora pelo devedor em 5 dias após a execução da liminar e resposta em 15 dias (DL 911/1969, art. 3º, §§ 2º e 3º); ação de prestação de contas ou cobrança de saldo remanescente em 10 anos (CC, art. 205) ou 5 anos para execução de título extrajudicial (CC, art. 206, § 5º, I)."
+  },
+  {
+   "id": "banc_ccb_execution",
+   "label": "Execução de cédula de crédito bancário",
+   "requirements": [
+    "titulo",
+    "demonstrativo",
+    "liquidez",
+    "excesso"
+   ],
+   "claimant_theses": [
+    {
+     "id": "banc_ccb_execution.c1",
+     "label": "Título sem planilha clara ou extratos não demonstra liquidez",
+     "authority_ids": [
+      "l10931_art28",
+      "l10931_art29"
+     ]
+    },
+    {
+     "id": "banc_ccb_execution.c2",
+     "label": "Excesso de execução com memória de cálculo própria",
+     "authority_ids": [
+      "cpc_art917"
+     ]
+    },
+    {
+     "id": "banc_ccb_execution.c3",
+     "label": "Impenhorabilidade de salário e de reserva até quarenta salários mínimos",
+     "authority_ids": [
+      "cpc_art833"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "banc_ccb_execution.d1",
+     "label": "Cédula de crédito bancário é título executivo extrajudicial",
+     "authority_ids": [
+      "l10931_art28",
+      "cpc_art784"
+     ]
+    },
+    {
+     "id": "banc_ccb_execution.d2",
+     "label": "Embargos sem efeito suspensivo automático",
+     "authority_ids": [
+      "cpc_art919"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14620_titulo_eletronico",
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Extinção ou redução da execução",
+    "Desbloqueio de valores impenhoráveis",
+    "Reconhecimento de inépcia executiva na ausência de planilha clara e discriminada da evolução do débito (Lei 10.931/2004, art. 28, § 2º)"
+   ],
+   "evidence": [
+    "Cédula, aditivos e planilha",
+    "Extratos da conta",
+    "Comprovação da natureza dos valores bloqueados"
+   ],
+   "piece_ids": [
+    "embargos_execucao_civil",
+    "excecao_pre_executividade",
+    "agravo_instrumento"
+   ],
+   "related_claims": [
+    "banc_interest_fees"
+   ],
+   "limitation": "Prescrição trienal da pretensão executiva cambial da Cédula de Crédito Bancário contada do vencimento (Lei 10.931/2004, art. 44; LUG, art. 70; CC, art. 206, § 3º, VIII) e quinquenal para ação monitória após perda da força executiva (Súmula 504/CC, art. 206, § 5º, I); embargos em 15 dias úteis (CPC, art. 915)."
+  },
+  {
+   "id": "banc_overdraft_account",
+   "label": "Conta corrente, cheque especial e cartão de crédito",
+   "requirements": [
+    "lancamentos",
+    "contratacao_do_limite",
+    "taxa",
+    "informacao_previa"
+   ],
+   "claimant_theses": [
+    {
+     "id": "banc_overdraft_account.c1",
+     "label": "Ação de exigir contas para esclarecer lançamentos",
+     "authority_ids": [
+      "cpc_art550",
+      "stj_sumula_259"
+     ]
+    },
+    {
+     "id": "banc_overdraft_account.c2",
+     "label": "Envio de cartão não solicitado é prática abusiva",
+     "authority_ids": [
+      "stj_sumula_532",
+      "cdc_art39"
+     ]
+    },
+    {
+     "id": "banc_overdraft_account.c3",
+     "label": "Ausência de contrato ou de taxa pactuada: taxa média de mercado",
+     "authority_ids": [
+      "stj_sumula_530"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "banc_overdraft_account.d1",
+     "label": "Contrato de abertura de crédito com demonstrativo autoriza monitória",
+     "authority_ids": [
+      "stj_sumula_247"
+     ]
+    },
+    {
+     "id": "banc_overdraft_account.d2",
+     "label": "Extratos e faturas demonstram a utilização do crédito",
+     "authority_ids": [
+      "cpc_art373"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14181_superendividamento",
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Prestação de contas",
+    "Revisão do saldo devedor",
+    "Limitação dos juros do cheque especial e do rotativo do cartão aos tetos normativos vigentes em cada período (Res. CMN e Lei 14.690/2023)"
+   ],
+   "evidence": [
+    "Extratos e faturas",
+    "Termo de adesão ao limite",
+    "Histórico completo de movimentação e evolução dos encargos rotativos desde a abertura da conta"
+   ],
+   "piece_ids": [
+    "acao_exigir_contas",
+    "inicial_procedimento_comum",
+    "embargos_monitorios",
+    "inicial_juizado"
+   ],
+   "related_claims": [
+    "banc_interest_fees",
+    "banc_fraud"
+   ],
+   "limitation": "Prescrição decenal para ação de exigir contas (primeira fase) e revisão de lançamentos em conta-corrente ou cartão de crédito (CC, art. 205; Súmula 477 do STJ)."
+  },
+  {
+   "id": "banc_secrecy_data",
+   "label": "Sigilo bancário e compartilhamento de dados",
+   "requirements": [
+    "dado_acessado",
+    "autorizacao_ou_ordem",
+    "finalidade",
+    "dano"
+   ],
+   "claimant_theses": [
+    {
+     "id": "banc_secrecy_data.c1",
+     "label": "Quebra de sigilo fora das hipóteses legais gera dever de indenizar",
+     "authority_ids": [
+      "lc105_art1",
+      "cf_art5",
+      "cc_art927"
+     ]
+    },
+    {
+     "id": "banc_secrecy_data.c2",
+     "label": "Vazamento de dados que viabiliza fraude é fortuito interno",
+     "authority_ids": [
+      "stj_sumula_479",
+      "lgpd_art42"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "banc_secrecy_data.d1",
+     "label": "Compartilhamento autorizado por lei, inclusive com o Fisco",
+     "authority_ids": [
+      "lc105_art6",
+      "lc105_art1"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lgpd_vigencia"
+   ],
+   "typical_requests": [
+    "Indenização",
+    "Obrigação de cessar o tratamento indevido",
+    "Eliminação ou bloqueio dos dados financeiros compartilhados sem base legal idônea"
+   ],
+   "evidence": [
+    "Registros de acesso",
+    "Comunicações recebidas de terceiros com dados bancários",
+    "Relatório do Registrato/BCB e notificações de incidentes de segurança enviadas pela instituição"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado"
+   ],
+   "related_claims": [
+    "banc_fraud",
+    "dp_incident"
+   ],
+   "limitation": "Prescrição quinquenal por defeito de segurança na guarda de dados bancários e violação ao dever legal de sigilo na relação de consumo (CDC, art. 27; LC 105/2001), ou trienal quando ausente relação consumerista (CC, art. 206, § 3º, V)."
+  },
+  {
+   "id": "banc_rmc_rcc_consigned_card",
+   "label": "Cartão de crédito consignado (RMC e RCC): dever de informação e conversão em consignado comum",
+   "requirements": [
+    "reserva_margem_rmc_rcc",
+    "ausencia_uso_compras_cartao",
+    "informacao_previa_clara",
+    "desconto_minimo_infinito"
+   ],
+   "claimant_theses": [
+    {
+     "id": "banc_rmc_rcc_consigned_card.c1",
+     "label": "Violação ao dever de informação qualificada e prática abusiva quando imposto saque via cartão consignado (RMC/RCC) a consumidor que pretendia empréstimo consignado comum, gerando desconto mínimo perpétuo na folha",
+     "authority_ids": [
+      "cdc_art6",
+      "cdc_art39",
+      "cdc_art46",
+      "cdc_art54b"
+     ]
+    },
+    {
+     "id": "banc_rmc_rcc_consigned_card.c2",
+     "label": "Conversão judicial da operação em empréstimo consignado pessoal com recálculo pela taxa média do consignado comum na época da contratação e restituição/compensação do indébito",
+     "authority_ids": [
+      "cdc_art42",
+      "cdc_art51",
+      "l10820_art1"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "banc_rmc_rcc_consigned_card.d1",
+     "label": "Validade da contratação de RMC/RCC prevista em lei (Lei 10.820/2003, art. 6º) quando firmado termo específico destacado, desbloqueado o plástico ou utilizado o cartão para compras no varejo",
+     "authority_ids": [
+      "l10820_art1",
+      "l10820_art6",
+      "cc_art422"
+     ]
+    },
+    {
+     "id": "banc_rmc_rcc_consigned_card.d2",
+     "label": "Dedução obrigatória de todos os valores creditados por TED/OP na conta do mutuário a fim de vedar enriquecimento sem causa (CC, art. 884)",
+     "authority_ids": [
+      "cc_art884"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14181_superendividamento",
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Declaração de nulidade da modalidade rotativa de RMC/RCC com recálculo como empréstimo consignado padrão",
+    "Cancelamento da reserva de margem de cartão junto ao INSS/órgão pagador e amortização das parcelas já descontadas",
+    "Condenação à restituição simples ou em dobro dos valores pagos a maior e indenização por danos morais quando comprovada fraude"
+   ],
+   "evidence": [
+    "Extrato HISCON do INSS ou fichas financeiras demonstrando descontos ininterruptos de RMC/RCC",
+    "Instrumento contratual completo, termo de consentimento esclarecido e faturas mensais do cartão",
+    "Comprovante de crédito da quantia mutuada e histórico comprovando ausência ou presença de compras em estabelecimentos"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "contestacao",
+    "apelacao_civel"
+   ],
+   "related_claims": [
+    "banc_consigned",
+    "cons_overindebtedness"
+   ],
+   "limitation": "Prescrição quinquenal para reparação por fato do serviço/contratação fraudulenta contada do último desconto ou da ciência inequívoca (CDC, art. 27) e decenal para revisão contratual com repetição de indébito (CC, art. 205; conferir eventual IRDR local)."
+  },
+  {
+   "id": "banc_pix_fraud_social_engineering",
+   "label": "Fraude do Pix, falsa central telefônica, engenharia social e fortuito interno (Súmula 479 STJ)",
+   "requirements": [
+    "perfil_transacional_atipico",
+    "falha_monitoramento_antifraude",
+    "acionamento_med_tempestivo",
+    "culpa_exclusiva_ou_concorrente"
+   ],
+   "claimant_theses": [
+    {
+     "id": "banc_pix_fraud_social_engineering.c1",
+     "label": "Responsabilidade objetiva das instituições financeiras de origem e de destino (conta laranja) quando validadas transferências Pix sequenciais fora do padrão de consumo do correntista sem bloqueio preventivo de segurança (Súmula 479 do STJ)",
+     "authority_ids": [
+      "stj_sumula_479",
+      "cdc_art14"
+     ]
+    },
+    {
+     "id": "banc_pix_fraud_social_engineering.c2",
+     "label": "Falha no dever de segurança, vazamento prévio de dados cadastrais utilizados pelos estelionatários na engenharia social e demora na operacionalização do Mecanismo Especial de Devolução (MED)",
+     "authority_ids": [
+      "cdc_art14",
+      "lgpd_art42"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "banc_pix_fraud_social_engineering.d1",
+     "label": "Excludente de responsabilidade por culpa exclusiva do consumidor ou de terceiro (CDC, art. 14, § 3º, II) quando a própria vítima realiza voluntariamente a autenticação com senha pessoal/biometria em operação compatível com seu histórico e limites autoajustados",
+     "authority_ids": [
+      "cdc_art14"
+     ]
+    },
+    {
+     "id": "banc_pix_fraud_social_engineering.d2",
+     "label": "Regular acionamento do MED pela instituição, frustrado apenas pelo esvaziamento imediato da conta recebedora antes da comunicação pelo cliente",
+     "authority_ids": [
+      "cdc_art14",
+      "cc_art393"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lgpd_vigencia",
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Restituição integral dos valores subtraídos via Pix/TED e cancelamento de empréstimos contratados durante o golpe",
+    "Exibição incidental do dossiê antifraude, trilha do MED e dados cadastrais de abertura da conta destinatária",
+    "Indenização por danos morais diante da privação de verba alimentar ou negativação indevida"
+   ],
+   "evidence": [
+    "Extrato bancário dos últimos 12 meses demonstrando a discrepância entre o perfil habitual e as transações impugnadas",
+    "Boletim de ocorrência policial, prints das mensagens/ligações da falsa central e protocolo imediato do MED no banco",
+    "Logs técnicos de dispositivo (Device ID), geolocalização, horário noturno e alterações súbitas de limite Pix"
+   ],
+   "piece_ids": [
+    "inicial_juizado",
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente",
+    "contestacao"
+   ],
+   "related_claims": [
+    "banc_fraud",
+    "banc_secrecy_data"
+   ],
+   "limitation": "Prescrição quinquenal da pretensão reparatória por defeito de segurança do serviço bancário contada da ciência do evento fraudulento (CDC, art. 27)."
+  },
+  {
+   "id": "banc_inss_unauthorized_deduction",
+   "label": "Desconto indevido em benefício previdenciário sem contratação válida ou com pessoa analfabeta",
+   "requirements": [
+    "ausencia_instrumento_valido",
+    "forma_publica_analfabeto",
+    "comprovante_ted_proveito",
+    "engano_injustificavel"
+   ],
+   "claimant_theses": [
+    {
+     "id": "banc_inss_unauthorized_deduction.c1",
+     "label": "Nulidade de empréstimo consignado celebrado com pessoa analfabeta sem escritura pública ou procurador constituído por instrumento público, bem como de descontos associativos/bancários desacompanhados de autorização expressa e prévia",
+     "authority_ids": [
+      "cc_art104",
+      "cc_art166",
+      "cdc_art39",
+      "stj_sumula_479"
+     ]
+    },
+    {
+     "id": "banc_inss_unauthorized_deduction.c2",
+     "label": "Repetição em dobro dos valores indevidamente descontados em verba alimentar previdenciária por violação à boa-fé objetiva (CDC, art. 42, parágrafo único) e dano moral in re ipsa ou caracterizado",
+     "authority_ids": [
+      "cdc_art42",
+      "cdc_art14"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "banc_inss_unauthorized_deduction.d1",
+     "label": "Contratação eletrônica hígida com biometria facial, geolocalização, documento oficial e efetivo depósito do capital na conta bancária do beneficiário",
+     "authority_ids": [
+      "cpc_art784",
+      "cc_art422"
+     ]
+    },
+    {
+     "id": "banc_inss_unauthorized_deduction.d2",
+     "label": "Na declaração de nulidade formal (como vício de forma com analfabeto) em que houve efetiva disponibilização do numerário, impõe-se o retorno das partes ao status quo ante mediante compensação entre o valor creditado e as parcelas descontadas (CC, arts. 182 e 884)",
+     "authority_ids": [
+      "cc_art884",
+      "cc_art104"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Tutela de urgência para imediata suspensão dos descontos mensais no benefício previdenciário sob pena de multa",
+    "Declaração de inexistência ou nulidade do contrato com restituição em dobro dos descontos indevidos",
+    "Indenização por danos morais pelo comprometimento indevido de benefício previdenciário de caráter alimentar"
+   ],
+   "evidence": [
+    "Extrato de pagamento de benefício e histórico de consignações (HISCON/Meu INSS)",
+    "Documento de identidade comprovando condição de não alfabetizado ('não assina') quando alegado vício formal",
+    "Contrato exibido pela instituição (ou ausência dele), perícia grafotécnica/biométrica e comprovante de TED/OP",
+    "Extrato da conta bancária do aposentado no mês da suposta liberação do crédito"
+   ],
+   "piece_ids": [
+    "inicial_juizado",
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente",
+    "contestacao",
+    "impugnacao_laudo"
+   ],
+   "related_claims": [
+    "banc_consigned",
+    "banc_fraud",
+    "prev_overpayment"
+   ],
+   "limitation": "Prescrição quinquenal contada da data de cada desconto indevido ou do último desconto em benefício previdenciário por fato do serviço (CDC, art. 27)."
+  },
+  {
+   "id": "banc_fiduciary_extrajudicial_14711",
+   "label": "Busca e apreensão e execução extrajudicial de garantia fiduciária móvel pós-Lei 14.711/2023",
+   "requirements": [
+    "constituicao_em_mora",
+    "via_judicial_ou_cartorial",
+    "purgacao_integralidade_divida",
+    "venda_bem_prestacao_contas"
+   ],
+   "claimant_theses": [
+    {
+     "id": "banc_fiduciary_extrajudicial_14711.c1",
+     "label": "Nulidade da liminar judicial ou do procedimento extrajudicial perante o registro de títulos/Detran quando ausente comprovação válida da constituição em mora (Súmula 72 do STJ) ou descumprido o prazo legal de purgação",
+     "authority_ids": [
+      "stj_sumula_72",
+      "dl911_art2",
+      "dl911_art3",
+      "dl911_art8b"
+     ]
+    },
+    {
+     "id": "banc_fiduciary_extrajudicial_14711.c2",
+     "label": "Venda extrajudicial do veículo apreendido por preço vil sem avaliação idônea enseja prestação de contas, abatimento pelo valor de mercado (FIPE/laudo) e pagamento da multa de 50% do § 6º do art. 3º quando revertida a liminar",
+     "authority_ids": [
+      "dl911_art2",
+      "dl911_art3"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "banc_fiduciary_extrajudicial_14711.d1",
+     "label": "Validade da notificação enviada ao endereço contratual do devedor com aviso de recebimento, ainda que recebida por terceiro, e consolidação/apreensão extrajudicial autorizada pelos arts. 8º-B a 8º-E do DL 911/1969 (Lei 14.711/2023)",
+     "authority_ids": [
+      "dl911_art2",
+      "dl911_art3",
+      "dl911_art8b"
+     ]
+    },
+    {
+     "id": "banc_fiduciary_extrajudicial_14711.d2",
+     "label": "A purgação da mora exige o depósito da integralidade da dívida pendente (parcelas vencidas, vincendas e encargos) segundo a planilha apresentada pelo credor fiduciário na inicial (Tema Repetitivo 722 do STJ)",
+     "authority_ids": [
+      "tema_stj_722",
+      "dl911_art3"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14711_garantias"
+   ],
+   "typical_requests": [
+    "Liminar de busca e apreensão com consolidação da propriedade e posse plena em 5 dias caso não purgada a integralidade da dívida",
+    "Pelo fiduciante: revogação da liminar ou sustação da apreensão extrajudicial por ausência de mora válida, com restituição do veículo ou multa de 50% mais perdas e danos",
+    "Prestação de contas do leilão extrajudicial e entrega de eventual saldo apurado em favor do devedor"
+   ],
+   "evidence": [
+    "Cédula de crédito / contrato de financiamento com cláusula de alienação fiduciária e gravame no Detran",
+    "Notificação extrajudicial ou protesto e respectivo aviso de recebimento (AR) no endereço contratual",
+    "Planilha analítica da dívida vencida e vincenda, auto de busca e apreensão, tabela FIPE e termo de arrematação"
+   ],
+   "piece_ids": [
+    "busca_apreensao_alienacao_fiduciaria",
+    "contestacao",
+    "agravo_instrumento",
+    "acao_exigir_contas"
+   ],
+   "related_claims": [
+    "banc_fiduciary_vehicle",
+    "banc_default_charges"
+   ],
+   "limitation": "Prazo de 5 dias da execução da liminar para purgação integral da mora e 15 dias para resposta (DL 911/1969, art. 3º, §§ 2º e 3º); prescrição quinquenal para cobrança da dívida líquida constante de instrumento contratual (CC, art. 206, § 5º, I) e decenal para prestação de contas (CC, art. 205)."
+  },
+  {
+   "id": "banc_unilateral_account_closure",
+   "label": "Encerramento unilateral e bloqueio repentino de conta bancária ou de pagamento (Res. CMN 4.753/2019)",
+   "requirements": [
+    "comunicacao_previa_escrita",
+    "prazo_razoavel_migracao",
+    "indicacao_motivos_ou_ilicito_pld",
+    "retencao_saldo_licito"
+   ],
+   "claimant_theses": [
+    {
+     "id": "banc_unilateral_account_closure.c1",
+     "label": "Abusividade da rescisão abrupta ou bloqueio surpresa de conta-corrente/conta de pagamento operacional sem prévia comunicação escrita com prazo razoável para portabilidade e sem justificativa regulamentar (CDC, art. 39, IX; Res. CMN 4.753/2019)",
+     "authority_ids": [
+      "cdc_art39",
+      "res_cmn_4753_2019",
+      "cc_art422"
+     ]
+    },
+    {
+     "id": "banc_unilateral_account_closure.c2",
+     "label": "Ilicitude da retenção indefinida de saldo financeiro incontroverso de titularidade do correntista sem ordem judicial de bloqueio",
+     "authority_ids": [
+      "cc_art884",
+      "res_cmn_4753_2019"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "banc_unilateral_account_closure.d1",
+     "label": "Inexistência de obrigação perpétua de contratar (autonomia privada) quando expedida notificação prévia regular com concessão de prazo e disponibilizado o resgate integral do saldo remanescente",
+     "authority_ids": [
+      "res_cmn_4753_2019",
+      "cc_art421"
+     ]
+    },
+    {
+     "id": "banc_unilateral_account_closure.d2",
+     "label": "Dever regulatório estrito de encerramento imediato e bloqueio cautelar diante de irregularidades graves no CPF/CNPJ, suspeita fundada de lavagem de dinheiro (Lei 9.613/1998) ou fraude via MED",
+     "authority_ids": [
+      "res_cmn_4753_2019",
+      "l9613_art1"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Tutela de urgência para imediato desbloqueio e transferência do saldo lícito retido para outra instituição financeira",
+    "Manutenção provisória da conta empresarial/pessoal pelo prazo necessário à migração de folha, recebíveis e débitos automáticos",
+    "Indenização por danos materiais (lucros cessantes/multas por atraso a terceiros) e danos morais por interrupção abrupta"
+   ],
+   "evidence": [
+    "Capturas de tela do bloqueio súbito no aplicativo e protocolos de atendimento no SAC/Ouvidoria/Consumidor.gov/BCB",
+    "Comunicação de encerramento enviada pelo banco (ou ausência de aviso prévio com data comprovada)",
+    "Extratos demonstrando a origem lícita dos recursos retidos e comprovantes de compromissos financeiros frustrados"
+   ],
+   "piece_ids": [
+    "tutela_urgencia_antecedente",
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "contestacao"
+   ],
+   "related_claims": [
+    "banc_overdraft_account",
+    "cons_abusive"
+   ],
+   "limitation": "Prescrição quinquenal para reparação de danos por falha na prestação do serviço bancário (CDC, art. 27) ou trienal nas relações interempresariais não consumeristas (CC, art. 206, § 3º, V)."
+  },
+  {
+   "id": "banc_savings_exemption_40sm",
+   "label": "Impenhorabilidade da reserva de até 40 salários mínimos em poupança, conta-corrente ou aplicações (CPC, art. 833, X)",
+   "requirements": [
+    "soma_global_aplicacoes",
+    "limite_40_salarios_minimos",
+    "natureza_reserva_familiar",
+    "ausencia_ma_fe_ou_credito_alimentar"
+   ],
+   "claimant_theses": [
+    {
+     "id": "banc_savings_exemption_40sm.c1",
+     "label": "É impenhorável a quantia global de até 40 salários mínimos poupada pelo devedor pessoa física, esteja ela mantida em caderneta de poupança, conta-corrente, CDB, fundo de investimento ou papel-moeda, salvo comprovado abuso, má-fé ou fraude",
+     "authority_ids": [
+      "cpc_art833"
+     ]
+    },
+    {
+     "id": "banc_savings_exemption_40sm.c2",
+     "label": "Impenhorabilidade absoluta das verbas salariais, remuneratórias e aposentadorias destinadas ao sustento digno do executado e de sua família (CPC, art. 833, IV e § 2º)",
+     "authority_ids": [
+      "cpc_art833"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "banc_savings_exemption_40sm.d1",
+     "label": "Afastamento da impenhorabilidade para pagamento de prestação alimentícia, sobre o montante que exceder 50 salários mínimos mensais ou, excepcionalmente, quando preservado o mínimo existencial e ausente outro meio satisfativo (Corte Especial do STJ)",
+     "authority_ids": [
+      "cpc_art833"
+     ]
+    },
+    {
+     "id": "banc_savings_exemption_40sm.d2",
+     "label": "O teto de 40 salários mínimos deve ser aferido pela soma de todos os ativos financeiros do executado no SISBAJUD, e não isoladamente por conta bancária, afastando-se ainda em caso de blindagem patrimonial abusiva",
+     "authority_ids": [
+      "cpc_art833"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Desbloqueio imediato via SISBAJUD dos valores constritos até o limite global de 40 salários mínimos ou de natureza salarial",
+    "Mitigação excepcional da impenhorabilidade salarial em percentual módico que não comprometa o mínimo existencial do devedor",
+    "Exibição dos extratos integrais de todas as contas do executado para aferição do limite global e da origem dos depósitos"
+   ],
+   "evidence": [
+    "Recibo de bloqueio judicial do sistema SISBAJUD indicando todas as instituições e saldos atingidos",
+    "Extratos bancários dos últimos 3 a 6 meses demonstrando a natureza salarial/previdenciária ou de reserva de poupança",
+    "Declaração completa de Imposto de Renda e comprovantes de despesas essenciais de moradia, saúde e alimentação"
+   ],
+   "piece_ids": [
+    "impugnacao_cumprimento",
+    "embargos_execucao_civil",
+    "excecao_pre_executividade",
+    "agravo_instrumento",
+    "manifestacao_especifica"
+   ],
+   "related_claims": [
+    "banc_ccb_execution",
+    "civ_enforcement_defense"
+   ],
+   "limitation": "Impugnação à penhora de ativos via SISBAJUD em 5 dias da intimação do bloqueio (CPC, art. 854, § 3º) ou em 15 dias na impugnação ao cumprimento/embargos; como matéria de ordem pública ligada à dignidade humana, a impenhorabilidade absoluta pode ser suscitada por simples petição antes da adjudicação/levantamento."
+  },
+  {
+   "id": "banc_daily_rate_pactuation",
+   "label": "Periodicidade diária de encargos, duodécuplo da taxa mensal e transparência contratual (Súmulas 539/541 e Tema 953 STJ)",
+   "requirements": [
+    "clausula_periodicidade_diaria",
+    "divulgacao_taxa_efetiva_anual_mensal",
+    "divergencia_duodecuplo",
+    "compreensao_consumidor"
+   ],
+   "claimant_theses": [
+    {
+     "id": "banc_daily_rate_pactuation.c1",
+     "label": "Abusividade da incidência de encargos com periodicidade diária quando o contrato não informa de modo destacado a taxa diária nem permite ao consumidor compreender o ônus efetivo frente à capitalização mensal (CDC, arts. 6º, III, 46 e 54-B; Tema 953 do STJ)",
+     "authority_ids": [
+      "cdc_art6",
+      "cdc_art46",
+      "cdc_art54b",
+      "tema_stj_953"
+     ]
+    },
+    {
+     "id": "banc_daily_rate_pactuation.c2",
+     "label": "Ausente pactuação expressa de periodicidade inferior à anual (taxa anual superior ao duodécuplo da mensal apenas autoriza a mensal), deve-se afastar o cômputo composto não contratado (Súmulas 539 e 541 e Tema 247 do STJ)",
+     "authority_ids": [
+      "stj_sumula_539",
+      "stj_sumula_541",
+      "tema_stj_247"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "banc_daily_rate_pactuation.d1",
+     "label": "A previsão contratual de taxa efetiva anual superior ao duodécuplo da taxa mensal é suficiente para demonstrar a pactuação expressa da periodicidade mensal (Súmula 541 e Tema 247 do STJ)",
+     "authority_ids": [
+      "stj_sumula_539",
+      "stj_sumula_541",
+      "tema_stj_247"
+     ]
+    },
+    {
+     "id": "banc_daily_rate_pactuation.d2",
+     "label": "Regularidade da cobrança de encargos diários pro rata die quando expressamente discriminadas as taxas diária, mensal e anual e o Custo Efetivo Total no quadro-resumo assinado",
+     "authority_ids": [
+      "tema_stj_953",
+      "cdc_art54b"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Afastamento da periodicidade diária não informada claramente, limitando-se a evolução à periodicidade mensal ou anual efetivamente pactuada",
+    "Recálculo contábil do financiamento com restituição ou abatimento das diferenças apuradas",
+    "Adequação das parcelas vincendas ao fluxo recalculado"
+   ],
+   "evidence": [
+    "Quadro-resumo e cláusulas financeiras completas da CCB ou contrato de abertura de crédito indicando taxas diária, mensal, anual e CET",
+    "Parecer técnico-contábil demonstrando matematicamente a equivalência exponencial diária vs. mensal praticada no fluxo",
+    "Demonstrativo de evolução do saldo devedor fornecido pela instituição financeira"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "embargos_execucao_civil",
+    "contestacao",
+    "impugnacao_laudo"
+   ],
+   "related_claims": [
+    "banc_interest_fees",
+    "banc_contract_review"
+   ],
+   "limitation": "Prescrição decenal para a revisão de cláusulas financeiras e repetição de indébito em contratos bancários (CC, art. 205)."
+  }
  ]
 }

@@ -91,10 +91,10 @@ RPPS ou vínculo estatutário/celetista. Examine áreas concorrentes quando pert
 Fora do trabalhista, leia o guia do ramo (`references/domain_guides/<ramo>.md`) e
 o índice `references/domain_catalogs/<ramo>_index.md`; abra só as pretensões
 escolhidas (com código: `domain_catalog.py --claim ID --markdown --polo ativo|passivo|ambos`).
-São 19 ramos e 257 pretensões com teses dos dois polos, autoridades candidatas e marcos;
-o número único CNJ (segmento da Justiça e tribunal) ajuda a confirmar a área. Para achar
+São 28 ramos e 483 pretensões com teses dos dois polos, autoridades candidatas e marcos (606 pretensões com o trabalhista);
+o número único CNJ e carimbos de PJe/eproc/e-SAJ/PROJUDI/SEI ajudam a confirmar a área. Para achar
 pretensões pelos fatos sem abrir índices inteiros: `claim_search.py "palavras dos fatos"`
-(lista de partida por semelhança; confirmar ramo e cabimento antes de abrir a entrada).
+(lista de partida por BM25/sinônimos; confirmar ramo e cabimento antes de abrir a entrada). Use os motores determinísticos (`deadline_calculator.py`, `civil_monetary_engine.py`, `social_security_calc.py`, `penal_dosimetry.py`, `limitation_checker.py`) sempre que houver prazo, cálculo ou prescrição.
 
 Para cada questão, relacione fatos e provas, requisitos e exceções, normas
 vigentes à época relevante, precedentes favoráveis e contrários, subsunção,

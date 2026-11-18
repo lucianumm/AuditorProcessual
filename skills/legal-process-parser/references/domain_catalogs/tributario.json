@@ -4,27 +4,1622 @@
  "label": "Direito Tributário",
  "guide": "domain_guides/tributario.md",
  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
- "polo_labels": {"claimant_theses": "Teses do contribuinte", "defense_theses": "Teses da Fazenda"},
+ "polo_labels": {
+  "claimant_theses": "Teses do contribuinte",
+  "defense_theses": "Teses da Fazenda"
+ },
  "claims": [
-  {"id": "trib_limitation", "label": "Decadência e prescrição tributárias", "requirements": ["fato_gerador", "lancamento", "constituicao_definitiva", "interrupcoes"], "claimant_theses": [{"id": "trib_limitation.c1", "label": "Decadência do direito de lançar", "authority_ids": ["ctn_art173", "ctn_art150"]}, {"id": "trib_limitation.c2", "label": "Prescrição da cobrança e intercorrente", "authority_ids": ["ctn_art174", "stj_sumula_314", "l6830_art40"]}], "defense_theses": [{"id": "trib_limitation.d1", "label": "Declaração do contribuinte constitui o crédito", "authority_ids": ["stj_sumula_436"]}, {"id": "trib_limitation.d2", "label": "Causas de suspensão e interrupção", "authority_ids": ["ctn_art151"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["embargos_execucao_fiscal", "excecao_pre_executividade", "acao_anulatoria_debito_fiscal"], "related_claims": ["trib_enforcement_defense"], "limitation": "conferir"},
-  {"id": "trib_enforcement_defense", "label": "Defesa na execução fiscal", "requirements": ["cda", "garantia", "materias", "prova"], "claimant_theses": [{"id": "trib_enforcement_defense.c1", "label": "Exceção de pré-executividade para matérias de ordem pública sem dilação", "authority_ids": ["stj_sumula_393"]}, {"id": "trib_enforcement_defense.c2", "label": "Requisitos da CDA e presunção relativa", "authority_ids": ["ctn_art202", "ctn_art204"]}, {"id": "trib_enforcement_defense.c3", "label": "Embargos no prazo legal após a garantia", "authority_ids": ["l6830_art16"]}], "defense_theses": [{"id": "trib_enforcement_defense.d1", "label": "Substituição da CDA até a sentença dos embargos para corrigir erro material", "authority_ids": ["stj_sumula_392"]}, {"id": "trib_enforcement_defense.d2", "label": "Dívida ativa tributária e não tributária", "authority_ids": ["l6830_art2"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["embargos_execucao_fiscal", "excecao_pre_executividade"], "related_claims": [], "limitation": "conferir"},
-  {"id": "trib_partner_liability", "label": "Redirecionamento ao sócio", "requirements": ["dissolucao_irregular", "poderes_gestao", "periodo"], "claimant_theses": [{"id": "trib_partner_liability.c1", "label": "Inadimplemento, por si, não gera responsabilidade do sócio-gerente", "authority_ids": ["stj_sumula_430"]}], "defense_theses": [{"id": "trib_partner_liability.d1", "label": "Dissolução irregular presumida autoriza o redirecionamento", "authority_ids": ["stj_sumula_435"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["excecao_pre_executividade", "embargos_execucao_fiscal"], "related_claims": [], "limitation": "conferir"},
-  {"id": "trib_refund", "label": "Repetição e compensação de indébito", "requirements": ["pagamento_indevido", "prazo", "legitimidade"], "claimant_theses": [{"id": "trib_refund.c1", "label": "Restituição do tributo pago indevidamente", "authority_ids": ["ctn_art165"]}], "defense_theses": [{"id": "trib_refund.d1", "label": "Prazo quinquenal para pleitear a restituição", "authority_ids": ["ctn_art168"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["repeticao_indebito_tributario", "mandado_seguranca", "requerimento_administrativo"], "related_claims": [], "limitation": "conferir"},
-  {"id": "trib_admin_litigation", "label": "Processo administrativo fiscal", "requirements": ["auto_infracao", "impugnacao", "recurso", "suspensao"], "claimant_theses": [{"id": "trib_admin_litigation.c1", "label": "Impugnação instaura a fase litigiosa e suspende a exigibilidade", "authority_ids": ["d70235_art14", "d70235_art15", "ctn_art151"]}, {"id": "trib_admin_litigation.c2", "label": "Recurso voluntário com efeito suspensivo", "authority_ids": ["d70235_art33"]}, {"id": "trib_admin_litigation.c3", "label": "Depósito prévio para recorrer é inconstitucional", "authority_ids": ["sv_21"]}], "defense_theses": [{"id": "trib_admin_litigation.d1", "label": "Intempestividade ou matéria não impugnada", "authority_ids": ["d70235_art15"]}], "temporal_marker_ids": ["lei_14689_carf"], "typical_requests": [], "evidence": [], "piece_ids": ["impugnacao_lancamento_administrativa", "recurso_voluntario_carf"], "related_claims": [], "limitation": "conferir"},
-  {"id": "trib_limits_power", "label": "Limitações ao poder de tributar", "requirements": ["competencia", "legalidade", "anterioridade", "irretroatividade"], "claimant_theses": [{"id": "trib_limits_power.c1", "label": "Legalidade, anterioridade e irretroatividade", "authority_ids": ["cf_art150"]}, {"id": "trib_limits_power.c2", "label": "Espécies tributárias e competência", "authority_ids": ["cf_art145"]}], "defense_theses": [{"id": "trib_limits_power.d1", "label": "Exceções constitucionais à anterioridade", "authority_ids": ["cf_art150"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["mandado_seguranca", "inicial_procedimento_comum"], "related_claims": [], "limitation": "conferir"},
-  {"id": "trib_reform", "label": "Transição da reforma tributária (IBS, CBS e IS)", "requirements": ["fato_gerador_e_data", "tributo_substituido", "regra_transicao"], "claimant_theses": [{"id": "trib_reform.c1", "label": "Aplicar a regra vigente na data do fato gerador e as fases de transição", "authority_ids": ["ec132_art1", "lc214_art1", "cf_art156a"]}], "defense_theses": [{"id": "trib_reform.d1", "label": "Regras de transição e efeitos escalonados", "authority_ids": ["lc214_art1"]}], "temporal_marker_ids": ["ec132_reforma_tributaria", "lc214_ibs_cbs"], "typical_requests": [], "evidence": [], "piece_ids": ["mandado_seguranca", "requerimento_administrativo"], "related_claims": [], "limitation": "conferir"},
-  {"id": "trib_settlement", "label": "Transação tributária", "requirements": ["modalidade", "requisitos", "concessoes"], "claimant_theses": [{"id": "trib_settlement.c1", "label": "Transação nos requisitos legais", "authority_ids": ["l13988_art1"]}], "defense_theses": [{"id": "trib_settlement.d1", "label": "Rescisão por descumprimento", "authority_ids": ["l13988_art1"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["transacao_tributaria"], "related_claims": [], "limitation": "conferir"},
-  {"id": "trib_spontaneous_disclosure", "label": "Denúncia espontânea", "requirements": ["tributo", "declaracao", "pagamento"], "claimant_theses": [{"id": "trib_spontaneous_disclosure.c1", "label": "Denúncia espontânea com pagamento afasta a multa", "authority_ids": ["ctn_art138"]}], "defense_theses": [{"id": "trib_spontaneous_disclosure.d1", "label": "Não se aplica a tributo declarado e pago a destempo", "authority_ids": ["stj_sumula_360"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["mandado_seguranca", "acao_anulatoria_debito_fiscal"], "related_claims": [], "limitation": "conferir"},
-  {"id": "trib_responsibility_succession", "label": "Responsabilidade de sucessores e terceiros", "requirements": ["fato_gerador", "evento_de_sucessao", "ato_ilicito", "nome_na_cda"], "claimant_theses": [{"id": "trib_responsibility_succession.c1", "label": "Inadimplemento do tributo não gera, por si, a responsabilidade do sócio-gerente", "authority_ids": ["stj_sumula_430", "ctn_art135"]}, {"id": "trib_responsibility_succession.c2", "label": "Responsabilidade do adquirente do estabelecimento é integral ou subsidiária conforme o alienante prossiga", "authority_ids": ["ctn_art133"]}], "defense_theses": [{"id": "trib_responsibility_succession.d1", "label": "Dissolução irregular presumida autoriza o redirecionamento", "authority_ids": ["stj_sumula_435", "ctn_art135"]}, {"id": "trib_responsibility_succession.d2", "label": "Sucessão abrange as multas", "authority_ids": ["stj_sumula_554", "ctn_art133"]}, {"id": "trib_responsibility_succession.d3", "label": "Solidariedade por interesse comum no fato gerador", "authority_ids": ["ctn_art124"]}], "temporal_marker_ids": [], "typical_requests": ["Exclusão do polo passivo", "Limitação da responsabilidade"], "evidence": ["Contrato social e alterações", "Certidões da junta comercial", "CDA e processo administrativo"], "piece_ids": ["excecao_pre_executividade", "embargos_execucao_fiscal", "agravo_instrumento"], "related_claims": ["trib_partner_liability"], "limitation": "Redirecionamento: conferir o Tema 444 do STJ"},
-  {"id": "trib_assessment_nullity", "label": "Nulidade do lançamento e do auto de infração", "requirements": ["notificacao", "motivacao", "criterio_juridico", "competencia"], "claimant_theses": [{"id": "trib_assessment_nullity.c1", "label": "Lançamento é atividade vinculada e deve conter a motivação e a matéria tributável", "authority_ids": ["ctn_art142"]}, {"id": "trib_assessment_nullity.c2", "label": "Mudança de critério jurídico só vale para fatos futuros", "authority_ids": ["ctn_art146"]}, {"id": "trib_assessment_nullity.c3", "label": "Preterição do direito de defesa", "authority_ids": ["d70235_art59", "cf_art5"]}], "defense_theses": [{"id": "trib_assessment_nullity.d1", "label": "Revisão de ofício nas hipóteses legais enquanto não decaído o direito", "authority_ids": ["ctn_art149", "ctn_art145"]}, {"id": "trib_assessment_nullity.d2", "label": "Presunção de legitimidade do ato e da CDA", "authority_ids": ["ctn_art204", "l6830_art3"]}], "temporal_marker_ids": [], "typical_requests": ["Anulação do lançamento", "Cancelamento do auto"], "evidence": ["Auto de infração e termo de início", "Intimações", "Livros e documentos fiscais"], "piece_ids": ["impugnacao_lancamento_administrativa", "recurso_voluntario_carf", "acao_anulatoria_debito_fiscal", "mandado_seguranca"], "related_claims": ["trib_admin_litigation"], "limitation": "Impugnação em trinta dias (Decreto 70.235/1972, art. 15)"},
-  {"id": "trib_penalties", "label": "Multas tributárias: confisco, retroatividade benigna e mora", "requirements": ["tipo_de_multa", "percentual", "lei_posterior"], "claimant_theses": [{"id": "trib_penalties.c1", "label": "Aplicação retroativa da lei que comina penalidade menos severa", "authority_ids": ["ctn_art106"]}, {"id": "trib_penalties.c2", "label": "Interpretação mais favorável na dúvida sobre a infração", "authority_ids": ["ctn_art112"]}, {"id": "trib_penalties.c3", "label": "Multa de mora limitada", "authority_ids": ["l9430_art61"]}], "defense_theses": [{"id": "trib_penalties.d1", "label": "Responsabilidade por infração independe da intenção", "authority_ids": ["ctn_art136"]}, {"id": "trib_penalties.d2", "label": "Multas de ofício e qualificada nas hipóteses legais — conferir os limites fixados pelo STF", "authority_ids": ["l9430_art44"]}], "temporal_marker_ids": ["lei_14689_carf"], "typical_requests": ["Redução ou cancelamento da multa"], "evidence": ["Auto de infração", "Demonstrativo da multa"], "piece_ids": ["impugnacao_lancamento_administrativa", "embargos_execucao_fiscal", "acao_anulatoria_debito_fiscal"], "related_claims": ["trib_limits_power"], "limitation": "Conferir"},
-  {"id": "trib_suspension_certificate", "label": "Suspensão da exigibilidade e certidão de regularidade", "requirements": ["causa_suspensiva", "garantia", "pendencias"], "claimant_theses": [{"id": "trib_suspension_certificate.c1", "label": "Certidão positiva com efeitos de negativa com crédito suspenso ou garantido", "authority_ids": ["ctn_art206", "ctn_art151"]}, {"id": "trib_suspension_certificate.c2", "label": "Depósito integral e em dinheiro suspende a exigibilidade", "authority_ids": ["stj_sumula_112"]}, {"id": "trib_suspension_certificate.c3", "label": "Parcelamento suspende a exigibilidade e interrompe a prescrição", "authority_ids": ["ctn_art155a", "stj_sumula_653"]}], "defense_theses": [{"id": "trib_suspension_certificate.d1", "label": "Crédito declarado e não pago legitima a recusa de certidão", "authority_ids": ["stj_sumula_446"]}, {"id": "trib_suspension_certificate.d2", "label": "Garantia insuficiente ou não aceita", "authority_ids": ["l6830_art9"]}], "temporal_marker_ids": [], "typical_requests": ["Expedição da certidão", "Suspensão da exigibilidade", "Exclusão de cadastro restritivo"], "evidence": ["Relatório de situação fiscal", "Comprovantes de depósito ou garantia", "Termo de parcelamento"], "piece_ids": ["mandado_seguranca", "tutela_urgencia_antecedente", "acao_anulatoria_debito_fiscal"], "related_claims": ["trib_enforcement_defense"], "limitation": "Conferir"},
-  {"id": "trib_offset", "label": "Compensação tributária", "requirements": ["credito", "transito_em_julgado", "declaracao", "homologacao"], "claimant_theses": [{"id": "trib_offset.c1", "label": "Compensação por declaração extingue o crédito sob condição de homologação", "authority_ids": ["l9430_art74", "ctn_art170"]}, {"id": "trib_offset.c2", "label": "Mandado de segurança para declarar o direito à compensação", "authority_ids": ["stj_sumula_213"]}, {"id": "trib_offset.c3", "label": "Opção entre compensação e precatório", "authority_ids": ["stj_sumula_461"]}], "defense_theses": [{"id": "trib_offset.d1", "label": "Vedação de compensação antes do trânsito em julgado", "authority_ids": ["ctn_art170a"]}, {"id": "trib_offset.d2", "label": "Mandado de segurança não convalida compensação já realizada", "authority_ids": ["stj_sumula_460"]}, {"id": "trib_offset.d3", "label": "Pedido administrativo de compensação não interrompe a prescrição da repetição", "authority_ids": ["stj_sumula_625"]}], "temporal_marker_ids": [], "typical_requests": ["Reconhecimento do crédito", "Homologação da compensação"], "evidence": ["Comprovantes de recolhimento", "Declarações e despachos decisórios", "Certidão de trânsito em julgado"], "piece_ids": ["mandado_seguranca", "repeticao_indebito_tributario", "impugnacao_lancamento_administrativa"], "related_claims": ["trib_refund"], "limitation": "Cinco anos (CTN, art. 168)"},
-  {"id": "trib_indirect_refund", "label": "Restituição de tributos indiretos", "requirements": ["repercussao_economica", "autorizacao_do_contribuinte_de_fato", "legitimidade"], "claimant_theses": [{"id": "trib_indirect_refund.c1", "label": "Legitimidade de quem prova ter assumido o encargo ou está autorizado", "authority_ids": ["ctn_art166"]}, {"id": "trib_indirect_refund.c2", "label": "Restituição alcança juros e multas na mesma proporção; juros moratórios desde o trânsito em julgado", "authority_ids": ["ctn_art167", "stj_sumula_188"]}], "defense_theses": [{"id": "trib_indirect_refund.d1", "label": "Ausência de prova do não repasse", "authority_ids": ["ctn_art166"]}], "temporal_marker_ids": [], "typical_requests": ["Restituição ou creditamento"], "evidence": ["Notas fiscais e planilhas de preço", "Declaração do adquirente"], "piece_ids": ["repeticao_indebito_tributario", "mandado_seguranca"], "related_claims": ["trib_refund", "trib_offset"], "limitation": "Cinco anos — conferir"},
-  {"id": "trib_exemption_immunity", "label": "Isenção, imunidade e interpretação", "requirements": ["norma_exonerativa", "requisitos", "prazo_e_condicao"], "claimant_theses": [{"id": "trib_exemption_immunity.c1", "label": "Isenção onerosa e por prazo certo não pode ser revogada livremente", "authority_ids": ["ctn_art178"]}, {"id": "trib_exemption_immunity.c2", "label": "Imunidades como limitação constitucional", "authority_ids": ["cf_art150"]}, {"id": "trib_exemption_immunity.c3", "label": "Conceitos de direito privado limitam a definição da competência", "authority_ids": ["ctn_art110"]}], "defense_theses": [{"id": "trib_exemption_immunity.d1", "label": "Interpretação literal das normas de isenção", "authority_ids": ["ctn_art111"]}, {"id": "trib_exemption_immunity.d2", "label": "Requisitos legais da imunidade não demonstrados", "authority_ids": ["cf_art150", "cf_art146"]}], "temporal_marker_ids": [], "typical_requests": ["Reconhecimento da imunidade ou isenção", "Repetição"], "evidence": ["Estatuto e demonstrações", "Certificados", "Atos concessivos"], "piece_ids": ["mandado_seguranca", "acao_anulatoria_debito_fiscal", "requerimento_administrativo"], "related_claims": ["trib_limits_power"], "limitation": "Conferir"},
-  {"id": "trib_asset_freeze", "label": "Indisponibilidade de bens e fraude à execução fiscal", "requirements": ["inscricao_em_divida", "citacao", "esgotamento_de_diligencias", "data_da_alienacao"], "claimant_theses": [{"id": "trib_asset_freeze.c1", "label": "Indisponibilidade exige citação, ausência de pagamento e esgotamento das diligências", "authority_ids": ["stj_sumula_560", "ctn_art185a"]}, {"id": "trib_asset_freeze.c2", "label": "Alienação anterior à inscrição em dívida ativa", "authority_ids": ["ctn_art185"]}, {"id": "trib_asset_freeze.c3", "label": "Embargos de terceiro do adquirente de boa-fé conforme o caso", "authority_ids": ["cpc_art674"]}], "defense_theses": [{"id": "trib_asset_freeze.d1", "label": "Presunção de fraude após a inscrição, sem reserva de bens", "authority_ids": ["ctn_art185"]}, {"id": "trib_asset_freeze.d2", "label": "Preferência do crédito tributário", "authority_ids": ["ctn_art186", "ctn_art187"]}], "temporal_marker_ids": [], "typical_requests": ["Levantamento da indisponibilidade", "Reconhecimento da eficácia da alienação"], "evidence": ["Matrículas e datas de registro", "Certidão de inscrição em dívida ativa", "Prova das diligências"], "piece_ids": ["embargos_terceiro", "excecao_pre_executividade", "agravo_instrumento"], "related_claims": ["trib_enforcement_defense"], "limitation": "Conferir"},
-  {"id": "trib_simples", "label": "Simples Nacional: exclusão e vedações", "requirements": ["ato_de_exclusao", "motivo", "notificacao", "debitos"], "claimant_theses": [{"id": "trib_simples.c1", "label": "Exclusão exige notificação e contraditório", "authority_ids": ["lc123_art29", "cf_art5"]}], "defense_theses": [{"id": "trib_simples.d1", "label": "Vedações legais e exclusão por débito exigível", "authority_ids": ["lc123_art17", "lc123_art29"]}], "temporal_marker_ids": [], "typical_requests": ["Anulação da exclusão", "Reinclusão retroativa"], "evidence": ["Termo de exclusão", "Comprovantes de regularização"], "piece_ids": ["impugnacao_lancamento_administrativa", "mandado_seguranca"], "related_claims": ["trib_admin_litigation"], "limitation": "Conferir"},
-  {"id": "trib_iss_icms", "label": "ISS e ICMS: fato gerador, local e base de cálculo", "requirements": ["operacao", "lista_de_servicos", "estabelecimento", "base"], "claimant_theses": [{"id": "trib_iss_icms.c1", "label": "ISS devido no local do estabelecimento prestador, salvo exceções", "authority_ids": ["lc116_art3", "lc116_art1"]}, {"id": "trib_iss_icms.c2", "label": "Exclusão de parcelas estranhas à base de cálculo", "authority_ids": ["lc87_art13"]}, {"id": "trib_iss_icms.c3", "label": "Exclusão do ICMS da base do PIS e da Cofins conforme o Tema 69", "authority_ids": ["tema_stf_69"]}], "defense_theses": [{"id": "trib_iss_icms.d1", "label": "Serviço listado e efetivamente prestado no território", "authority_ids": ["lc116_art1", "lc116_art3"]}, {"id": "trib_iss_icms.d2", "label": "Fato gerador na saída da mercadoria", "authority_ids": ["lc87_art12"]}], "temporal_marker_ids": [], "typical_requests": ["Declaração de inexistência de relação tributária", "Repetição"], "evidence": ["Contratos e notas fiscais", "Prova do local da prestação"], "piece_ids": ["mandado_seguranca", "acao_anulatoria_debito_fiscal", "repeticao_indebito_tributario"], "related_claims": ["trib_limits_power", "trib_reform"], "limitation": "Conferir"},
-  {"id": "trib_precedent_change", "label": "Coisa julgada tributária e mudança de precedente", "requirements": ["decisao_individual", "precedente_posterior", "relacao_de_trato_sucessivo"], "claimant_theses": [{"id": "trib_precedent_change.c1", "label": "Modulação e anterioridade na cessação dos efeitos", "authority_ids": ["tema_stf_881", "tema_stf_885", "cf_art150"]}], "defense_theses": [{"id": "trib_precedent_change.d1", "label": "Decisão do STF em controle concentrado ou repercussão geral cessa automaticamente os efeitos da coisa julgada em relações de trato continuado", "authority_ids": ["tema_stf_881", "tema_stf_885"]}], "temporal_marker_ids": [], "typical_requests": ["Reconhecimento do período protegido", "Exclusão de multas"], "evidence": ["Certidão da decisão transitada", "Autos de infração posteriores"], "piece_ids": ["mandado_seguranca", "acao_anulatoria_debito_fiscal", "embargos_execucao_fiscal"], "related_claims": ["trib_limits_power"], "limitation": "Conferir"}
+  {
+   "id": "trib_limitation",
+   "label": "Decadência e prescrição tributárias",
+   "requirements": [
+    "fato_gerador",
+    "lancamento",
+    "constituicao_definitiva",
+    "interrupcoes"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_limitation.c1",
+     "label": "Decadência do direito de lançar",
+     "authority_ids": [
+      "ctn_art173",
+      "ctn_art150"
+     ]
+    },
+    {
+     "id": "trib_limitation.c2",
+     "label": "Prescrição da cobrança e intercorrente",
+     "authority_ids": [
+      "ctn_art174",
+      "stj_sumula_314",
+      "l6830_art40"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_limitation.d1",
+     "label": "Declaração do contribuinte constitui o crédito",
+     "authority_ids": [
+      "stj_sumula_436"
+     ]
+    },
+    {
+     "id": "trib_limitation.d2",
+     "label": "Causas de suspensão e interrupção",
+     "authority_ids": [
+      "ctn_art151"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Reconhecimento da decadência do direito de constituir o crédito tributário com cancelamento do lançamento e da CDA (CTN, art. 156, V)",
+    "Pronúncia de ofício ou mediante provocação da prescrição originária (CTN, art. 174) ou intercorrente na execução fiscal (LEF, art. 40, § 4º; Temas 566 a 571 do STJ)",
+    "Extinção definitiva da execução fiscal com levantamento de penhoras e sem ônus ao executado, salvo causalidade"
+   ],
+   "evidence": [
+    "Declarações fiscais (DCTF, GIA, PGDAS) comprovando constituição por declaração (Súmula 436 do STJ) ou comprovantes de pagamento parcial antecipado para aplicação do art. 150, § 4º, do CTN (Súmula 555 do STJ)",
+    "Notificação de lançamento, processo administrativo fiscal com data do trânsito administrativo definitivo e data do despacho citatório",
+    "Andamento integral da execução fiscal demonstrando a data da primeira ciência da Fazenda sobre não localização do devedor ou de bens (Tema 566 do STJ)"
+   ],
+   "piece_ids": [
+    "embargos_execucao_fiscal",
+    "excecao_pre_executividade",
+    "acao_anulatoria_debito_fiscal"
+   ],
+   "related_claims": [
+    "trib_enforcement_defense"
+   ],
+   "limitation": "Decadência quinquenal contada do fato gerador quando houver pagamento antecipado sem dolo/fraude (CTN, art. 150, § 4º) ou do 1º dia do exercício seguinte nos lançamentos de ofício/ausência total de pagamento (CTN, art. 173, I; Súmula 555 do STJ); prescrição quinquenal da cobrança contada da constituição definitiva (CTN, art. 174) e prescrição intercorrente de 1 ano de suspensão mais 5 anos na LEF (art. 40; Súmula 314 e Tema 566 do STJ)."
+  },
+  {
+   "id": "trib_enforcement_defense",
+   "label": "Defesa na execução fiscal",
+   "requirements": [
+    "cda",
+    "garantia",
+    "materias",
+    "prova"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_enforcement_defense.c1",
+     "label": "Exceção de pré-executividade para matérias de ordem pública sem dilação",
+     "authority_ids": [
+      "stj_sumula_393"
+     ]
+    },
+    {
+     "id": "trib_enforcement_defense.c2",
+     "label": "Requisitos da CDA e presunção relativa",
+     "authority_ids": [
+      "ctn_art202",
+      "ctn_art204"
+     ]
+    },
+    {
+     "id": "trib_enforcement_defense.c3",
+     "label": "Embargos no prazo legal após a garantia",
+     "authority_ids": [
+      "l6830_art16"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_enforcement_defense.d1",
+     "label": "Substituição da CDA até a sentença dos embargos para corrigir erro material",
+     "authority_ids": [
+      "stj_sumula_392"
+     ]
+    },
+    {
+     "id": "trib_enforcement_defense.d2",
+     "label": "Dívida ativa tributária e não tributária",
+     "authority_ids": [
+      "l6830_art2"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Acolhimento de exceção de pré-executividade para extinguir CDA nula de pleno direito ou crédito prescrito sem necessidade de garantia do juízo (Súmula 393 do STJ)",
+    "Atribuição de efeito suspensivo aos embargos à execução fiscal mediante garantia integral, verossimilhança e risco de dano grave (CPC, art. 919, § 1º; Tema 526 STJ)",
+    "Substituição de penhora em dinheiro por seguro-garantia ou fiança bancária acrescidos de 30% (LEF, arts. 9º, II, e 15, I; CPC, art. 835, § 2º)"
+   ],
+   "evidence": [
+    "Certidão de Dívida Ativa (CDA) e cópia integral do Processo Administrativo Tributário que lhe deu origem (LEF, art. 2º, § 5º)",
+    "Apólice de seguro-garantia judicial, carta de fiança bancária ou termo de penhora garantindo o juízo para oposição de embargos",
+    "Comprovantes de pagamento, compensação, isenção ou causa suspensiva anterior à inscrição"
+   ],
+   "piece_ids": [
+    "embargos_execucao_fiscal",
+    "excecao_pre_executividade"
+   ],
+   "related_claims": [],
+   "limitation": "Embargos à execução fiscal no prazo de 30 dias contados do depósito, da juntada da prova da fiança bancária/seguro-garantia ou da intimação da penhora (Lei 6.830/1980, art. 16); exceção de pré-executividade cabível a qualquer tempo para matérias cognoscíveis de ofício sem dilação probatória (Súmula 393 do STJ)."
+  },
+  {
+   "id": "trib_partner_liability",
+   "label": "Redirecionamento ao sócio",
+   "requirements": [
+    "dissolucao_irregular",
+    "poderes_gestao",
+    "periodo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_partner_liability.c1",
+     "label": "Inadimplemento, por si, não gera responsabilidade do sócio-gerente",
+     "authority_ids": [
+      "stj_sumula_430"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_partner_liability.d1",
+     "label": "Dissolução irregular presumida autoriza o redirecionamento",
+     "authority_ids": [
+      "stj_sumula_435"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Rejeição do pedido fazendário de redirecionamento ou exclusão do sócio do polo passivo por mero inadimplemento tributário (Súmula 430 do STJ)",
+    "Reconhecimento da prescrição quinquenal para o redirecionamento (Tema Repetitivo 444 do STJ) ou da ilegitimidade do sócio que não detinha poderes de gestão na dissolução irregular (Temas 962 e 981 do STJ)",
+    "Instauração de IDPJ quando o nome do corresponsável não constar da CDA e a imputação exigir apuração fora de presunção sumulada"
+   ],
+   "evidence": [
+    "Ficha cadastral completa e alterações contratuais arquivadas na Junta Comercial demonstrando ingresso, retirada e poderes de administração",
+    "Certidão do oficial de justiça constatando encerramento ou funcionamento regular no domicílio fiscal atualizado (Súmula 435 do STJ)",
+    "Cronologia entre a citação da pessoa jurídica, a ciência da dissolução irregular pela Fazenda e o pedido de redirecionamento"
+   ],
+   "piece_ids": [
+    "excecao_pre_executividade",
+    "embargos_execucao_fiscal"
+   ],
+   "related_claims": [],
+   "limitation": "Prescrição quinquenal para o redirecionamento da execução fiscal contra o sócio-gerente contada da citação da pessoa jurídica (quando o ato ilícito for antecedente) ou da comprovação inequívoca da dissolução irregular posterior à citação, vedada inércia fazendária (Tema Repetitivo 444 do STJ; CTN, art. 174)."
+  },
+  {
+   "id": "trib_refund",
+   "label": "Repetição e compensação de indébito",
+   "requirements": [
+    "pagamento_indevido",
+    "prazo",
+    "legitimidade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_refund.c1",
+     "label": "Restituição do tributo pago indevidamente",
+     "authority_ids": [
+      "ctn_art165"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_refund.d1",
+     "label": "Prazo quinquenal para pleitear a restituição",
+     "authority_ids": [
+      "ctn_art168"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Declaração do direito à compensação tributária na via do mandado de segurança (Súmula 213 do STJ) ou condenação à repetição em pecúnia/precatório/RPV à escolha do contribuinte após o trânsito em julgado (Súmula 461 do STJ)",
+    "Atualização integral dos valores recolhidos indevidamente exclusivamente pela taxa SELIC desde cada pagamento indevido"
+   ],
+   "evidence": [
+    "Comprovantes de arrecadação (DARFs, GPS, GNRE, DAM) ou memória de apuração fiscal demonstrando os recolhimentos nos 5 anos anteriores ao ajuizamento (Súmula 460/Tema 126 STJ: basta prova da condição de contribuinte para declaração em MS)",
+    "Escrituração fiscal digital (EFD-Contribuições, ECF, EFD-ICMS/IPI) e declarações de compensação (PER/DCOMP)",
+    "Legislação ou precedente vinculante que declara a inconstitucionalidade ou ilegalidade da exação"
+   ],
+   "piece_ids": [
+    "repeticao_indebito_tributario",
+    "mandado_seguranca",
+    "requerimento_administrativo"
+   ],
+   "related_claims": [],
+   "limitation": "Extingue-se o direito de pleitear a restituição ou compensação em 5 anos contados da data da extinção do crédito pelo pagamento antecipado/indevido, inclusive nos tributos sujeitos a lançamento por homologação (CTN, art. 168, I; LC 118/2005, art. 3º; Tema 4 do STF)."
+  },
+  {
+   "id": "trib_admin_litigation",
+   "label": "Processo administrativo fiscal",
+   "requirements": [
+    "auto_infracao",
+    "impugnacao",
+    "recurso",
+    "suspensao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_admin_litigation.c1",
+     "label": "Impugnação instaura a fase litigiosa e suspende a exigibilidade",
+     "authority_ids": [
+      "d70235_art14",
+      "d70235_art15",
+      "ctn_art151"
+     ]
+    },
+    {
+     "id": "trib_admin_litigation.c2",
+     "label": "Recurso voluntário com efeito suspensivo",
+     "authority_ids": [
+      "d70235_art33"
+     ]
+    },
+    {
+     "id": "trib_admin_litigation.c3",
+     "label": "Depósito prévio para recorrer é inconstitucional",
+     "authority_ids": [
+      "sv_21"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_admin_litigation.d1",
+     "label": "Intempestividade ou matéria não impugnada",
+     "authority_ids": [
+      "d70235_art15"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14689_carf"
+   ],
+   "typical_requests": [
+    "Recebimento da impugnação ou recurso voluntário com suspensão imediata da exigibilidade do crédito tributário (CTN, art. 151, III) independentemente de depósito ou arrolamento prévio (Súmula Vinculante 21)",
+    "Cancelamento integral do auto de infração por erro na subsunção, vício material ou observância das súmulas do CARF",
+    "Em caso de julgamento resolvido pelo voto de qualidade no CARF: exclusão das multas e cancelamento da representação fiscal para fins penais (Lei 14.689/2023)"
+   ],
+   "evidence": [
+    "Auto de infração, termo de verificação fiscal, intimações eletrônicas (DTE) e comprovante de protocolo tempestivo",
+    "Documentação contábil, notas fiscais, contratos e laudos técnicos que amparam a escrituração do contribuinte",
+    "Acórdãos paradigmas da Câmara Superior de Recursos Fiscais (CSRF) quando interposto recurso especial administrativo"
+   ],
+   "piece_ids": [
+    "impugnacao_lancamento_administrativa",
+    "recurso_voluntario_carf"
+   ],
+   "related_claims": [],
+   "limitation": "No processo administrativo fiscal federal, impugnação em 30 dias da intimação da exigência (Decreto 70.235/1972, art. 15) e recurso voluntário ao CARF em 30 dias da ciência do acórdão da DRJ (art. 33), sem prescrição intercorrente durante a suspensão regular do art. 151, III, do CTN (jurisprudência do STJ)."
+  },
+  {
+   "id": "trib_limits_power",
+   "label": "Limitações ao poder de tributar",
+   "requirements": [
+    "competencia",
+    "legalidade",
+    "anterioridade",
+    "irretroatividade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_limits_power.c1",
+     "label": "Legalidade, anterioridade e irretroatividade",
+     "authority_ids": [
+      "cf_art150"
+     ]
+    },
+    {
+     "id": "trib_limits_power.c2",
+     "label": "Espécies tributárias e competência",
+     "authority_ids": [
+      "cf_art145"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_limits_power.d1",
+     "label": "Exceções constitucionais à anterioridade",
+     "authority_ids": [
+      "cf_art150"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec132_reforma_tributaria"
+   ],
+   "typical_requests": [
+    "Concessão de segurança preventiva ou repressiva para afastar cobrança instituída ou majorada com violação à estrita legalidade, anterioridade anual/nonagesimal ou irretroatividade (CF, art. 150, I e III)",
+    "Reconhecimento de imunidade constitucional objetiva ou subjetiva (CF, art. 150, VI) interpretada teleologicamente",
+    "Restituição dos valores exigidos no período de inconstitucionalidade"
+   ],
+   "evidence": [
+    "Texto e data de publicação oficial (DOU/DOE/DOM) da lei ou decreto que instituiu/majorou o tributo ou revogou benefício",
+    "Documentos societários/contábeis demonstrando o enquadramento fático na hipótese de imunidade ou anterioridade (ex.: Tema 1108/reintegra/revogação de isenção)",
+    "Guias de recolhimento ou notificações de cobrança no mesmo exercício ou antes da noventena"
+   ],
+   "piece_ids": [
+    "mandado_seguranca",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [],
+   "limitation": "Mandado de segurança repressivo em 120 dias de cada ato concreto de exigência em prestações periódicas (Lei 12.016/2009, art. 23) ou preventivo antes do lançamento; repetição do indébito em 5 anos do pagamento (CTN, art. 168)."
+  },
+  {
+   "id": "trib_reform",
+   "label": "Transição da reforma tributária (IBS, CBS e IS)",
+   "requirements": [
+    "fato_gerador_e_data",
+    "tributo_substituido",
+    "regra_transicao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_reform.c1",
+     "label": "Aplicar a regra vigente na data do fato gerador e as fases de transição",
+     "authority_ids": [
+      "ec132_art1",
+      "lc214_art1",
+      "cf_art156a"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_reform.d1",
+     "label": "Regras de transição e efeitos escalonados",
+     "authority_ids": [
+      "lc214_art1"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec132_reforma_tributaria",
+    "lc214_ibs_cbs"
+   ],
+   "typical_requests": [
+    "Observância estrita do cronograma constitucional e complementar de transição entre ICMS/ISS/PIS/COFINS e IBS/CBS/IS (EC 132/2023 e LC 214/2025)",
+    "Garantia do direito de aproveitamento e ressarcimento tempestivo dos saldos credores acumulados dos tributos substituídos e da não cumulatividade ampla do IBS e da CBS",
+    "Afastamento de cobrança de Imposto Seletivo (IS) fora das hipóteses estritas de bens e serviços prejudiciais à saúde ou ao meio ambiente definidos em lei complementar"
+   ],
+   "evidence": [
+    "Escrituração fiscal demonstrando a data exata do fato gerador, a NCM/NBS da operação e o regime aplicável no ano-calendário da transição (2026 a 2033)",
+    "Saldos credores homologados de ICMS, PIS e COFINS acumulados até a extinção gradual dos tributos antigos",
+    "Contratos de longo prazo com cláusulas de repactuação tributária e notas fiscais eletrônicas com destaque de IBS/CBS"
+   ],
+   "piece_ids": [
+    "mandado_seguranca",
+    "requerimento_administrativo"
+   ],
+   "related_claims": [],
+   "limitation": "Decadência e prescrição quinquenais segundo as normas gerais tributárias (CTN, arts. 150, § 4º, 168, 173 e 174; CF, art. 146, III, 'b', e LC 214/2025); mandado de segurança em 120 dias do ato concreto."
+  },
+  {
+   "id": "trib_settlement",
+   "label": "Transação tributária",
+   "requirements": [
+    "modalidade",
+    "requisitos",
+    "concessoes"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_settlement.c1",
+     "label": "Transação nos requisitos legais",
+     "authority_ids": [
+      "l13988_art1"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_settlement.d1",
+     "label": "Rescisão por descumprimento",
+     "authority_ids": [
+      "l13988_art1"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Adesão a edital de transação por adesão ou processamento motivado de proposta de transação individual conforme a capacidade de pagamento (CAPAG — Lei 13.988/2020)",
+    "Concessão dos descontos legais sobre juros, multas e encargos, utilização de créditos de prejuízo fiscal/base negativa de CSLL e parcelamento alongado",
+    "Anulação de rescisão de transação operada sem prévia notificação com prazo de 30 dias para regularização ou impugnação (Lei 13.988/2020, art. 4º, §§ 1º e 2º)"
+   ],
+   "evidence": [
+    "Dossiê de capacidade de pagamento (CAPAG), demonstrações contábeis, balanços e relação de bens/garantias no portal REGULARIZE",
+    "Edital vigente da PGFN/RFB ou proposta individual protocolada e despacho administrativo fundamentado",
+    "Comprovantes de adimplemento das prestações ou impugnação administrativa contra notificação de rescisão"
+   ],
+   "piece_ids": [
+    "transacao_tributaria"
+   ],
+   "related_claims": [],
+   "limitation": "Adesão dentro do prazo fixado no respectivo edital de transação; notificação de rescisão assegura prazo de 30 dias para impugnação ou regularização do vício (Lei 13.988/2020, art. 4º, § 2º) e mandado de segurança em 120 dias."
+  },
+  {
+   "id": "trib_spontaneous_disclosure",
+   "label": "Denúncia espontânea",
+   "requirements": [
+    "tributo",
+    "declaracao",
+    "pagamento"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_spontaneous_disclosure.c1",
+     "label": "Denúncia espontânea com pagamento afasta a multa",
+     "authority_ids": [
+      "ctn_art138"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_spontaneous_disclosure.d1",
+     "label": "Não se aplica a tributo declarado e pago a destempo",
+     "authority_ids": [
+      "stj_sumula_360"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Reconhecimento da exclusão integral da multa moratória e punitiva pela denúncia espontânea acompanhada do pagamento integral do tributo devido e dos juros de mora antes de qualquer procedimento fiscalizatório (CTN, art. 138)",
+    "Restituição ou compensação de multa de mora exigida indevidamente quando houve confissão e pagamento concomitantes antes de declaração prévia e antes de fiscalização"
+   ],
+   "evidence": [
+    "Comprovante de pagamento integral do principal e juros de mora (DARF, não bastando depósito judicial — Tema 385 STJ, nem parcelamento — Súmula 208 TFR / art. 155-A, § 1º, CTN)",
+    "Prova de que o tributo não havia sido anteriormente declarado em DCTF/GIA com inadimplemento (afastando o óbice da Súmula 360 do STJ) ou retificação a maior paga concomitantemente",
+    "Termo de início de fiscalização demonstrando que a confissão e o pagamento antecederam qualquer medida fiscal relacionada à infração"
+   ],
+   "piece_ids": [
+    "mandado_seguranca",
+    "acao_anulatoria_debito_fiscal"
+   ],
+   "related_claims": [],
+   "limitation": "A denúncia espontânea deve anteceder o início de qualquer procedimento administrativo ou medida de fiscalização relacionados com a infração (CTN, art. 138, parágrafo único); repetição de multa paga indevidamente em 5 anos (CTN, art. 168)."
+  },
+  {
+   "id": "trib_responsibility_succession",
+   "label": "Responsabilidade de sucessores e terceiros",
+   "requirements": [
+    "fato_gerador",
+    "evento_de_sucessao",
+    "ato_ilicito",
+    "nome_na_cda"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_responsibility_succession.c1",
+     "label": "Inadimplemento do tributo não gera, por si, a responsabilidade do sócio-gerente",
+     "authority_ids": [
+      "stj_sumula_430",
+      "ctn_art135"
+     ]
+    },
+    {
+     "id": "trib_responsibility_succession.c2",
+     "label": "Responsabilidade do adquirente do estabelecimento é integral ou subsidiária conforme o alienante prossiga",
+     "authority_ids": [
+      "ctn_art133"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_responsibility_succession.d1",
+     "label": "Dissolução irregular presumida autoriza o redirecionamento",
+     "authority_ids": [
+      "stj_sumula_435",
+      "ctn_art135"
+     ]
+    },
+    {
+     "id": "trib_responsibility_succession.d2",
+     "label": "Sucessão abrange as multas",
+     "authority_ids": [
+      "stj_sumula_554",
+      "ctn_art133"
+     ]
+    },
+    {
+     "id": "trib_responsibility_succession.d3",
+     "label": "Solidariedade por interesse comum no fato gerador",
+     "authority_ids": [
+      "ctn_art124"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Exclusão do polo passivo",
+    "Limitação da responsabilidade"
+   ],
+   "evidence": [
+    "Contrato social e alterações",
+    "Certidões da junta comercial",
+    "CDA e processo administrativo"
+   ],
+   "piece_ids": [
+    "excecao_pre_executividade",
+    "embargos_execucao_fiscal",
+    "agravo_instrumento"
+   ],
+   "related_claims": [
+    "trib_partner_liability"
+   ],
+   "limitation": "Prescrição quinquenal para redirecionamento a terceiros e sucessores observada a teoria da actio nata (Tema Repetitivo 444 do STJ; CTN, arts. 133, 135 e 174); na alienação judicial em falência ou recuperação judicial aprovada na forma da lei, não há sucessão tributária do arrematante (CTN, art. 133, § 1º)."
+  },
+  {
+   "id": "trib_assessment_nullity",
+   "label": "Nulidade do lançamento e do auto de infração",
+   "requirements": [
+    "notificacao",
+    "motivacao",
+    "criterio_juridico",
+    "competencia"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_assessment_nullity.c1",
+     "label": "Lançamento é atividade vinculada e deve conter a motivação e a matéria tributável",
+     "authority_ids": [
+      "ctn_art142"
+     ]
+    },
+    {
+     "id": "trib_assessment_nullity.c2",
+     "label": "Mudança de critério jurídico só vale para fatos futuros",
+     "authority_ids": [
+      "ctn_art146"
+     ]
+    },
+    {
+     "id": "trib_assessment_nullity.c3",
+     "label": "Preterição do direito de defesa",
+     "authority_ids": [
+      "d70235_art59",
+      "cf_art5"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_assessment_nullity.d1",
+     "label": "Revisão de ofício nas hipóteses legais enquanto não decaído o direito",
+     "authority_ids": [
+      "ctn_art149",
+      "ctn_art145"
+     ]
+    },
+    {
+     "id": "trib_assessment_nullity.d2",
+     "label": "Presunção de legitimidade do ato e da CDA",
+     "authority_ids": [
+      "ctn_art204",
+      "l6830_art3"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13655_lindb"
+   ],
+   "typical_requests": [
+    "Anulação do lançamento",
+    "Cancelamento do auto"
+   ],
+   "evidence": [
+    "Auto de infração e termo de início",
+    "Intimações",
+    "Livros e documentos fiscais"
+   ],
+   "piece_ids": [
+    "impugnacao_lancamento_administrativa",
+    "recurso_voluntario_carf",
+    "acao_anulatoria_debito_fiscal",
+    "mandado_seguranca"
+   ],
+   "related_claims": [
+    "trib_admin_litigation"
+   ],
+   "limitation": "Impugnação administrativa federal em 30 dias (Decreto 70.235/1972, art. 15); anulação judicial do lançamento fiscal prescreve em 5 anos na regra do Decreto 20.910/1932, distinguindo-se vício formal (que abre novo prazo quinquenal do art. 173, II, do CTN) de vício material (que não reabre prazo decadencial)."
+  },
+  {
+   "id": "trib_penalties",
+   "label": "Multas tributárias: confisco, retroatividade benigna e mora",
+   "requirements": [
+    "tipo_de_multa",
+    "percentual",
+    "lei_posterior"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_penalties.c1",
+     "label": "Aplicação retroativa da lei que comina penalidade menos severa",
+     "authority_ids": [
+      "ctn_art106"
+     ]
+    },
+    {
+     "id": "trib_penalties.c2",
+     "label": "Interpretação mais favorável na dúvida sobre a infração",
+     "authority_ids": [
+      "ctn_art112"
+     ]
+    },
+    {
+     "id": "trib_penalties.c3",
+     "label": "Multa de mora limitada",
+     "authority_ids": [
+      "l9430_art61"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_penalties.d1",
+     "label": "Responsabilidade por infração independe da intenção",
+     "authority_ids": [
+      "ctn_art136"
+     ]
+    },
+    {
+     "id": "trib_penalties.d2",
+     "label": "Multas de ofício e qualificada nas hipóteses legais — conferir os limites fixados pelo STF",
+     "authority_ids": [
+      "l9430_art44"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14689_carf"
+   ],
+   "typical_requests": [
+    "Redução ou cancelamento da multa",
+    "Redução de multa punitiva confiscatória que ultrapasse o limite de razoabilidade constitucional (100% do tributo ou tetos fixados pelo STF — ex.: Tema 863 e Tema 816 para multa moratória em 20%)"
+   ],
+   "evidence": [
+    "Auto de infração",
+    "Demonstrativo da multa",
+    "Legislação superveniente mais benigna para aplicação retroativa a ato não definitivamente julgado (CTN, art. 106, II, 'c')"
+   ],
+   "piece_ids": [
+    "impugnacao_lancamento_administrativa",
+    "embargos_execucao_fiscal",
+    "acao_anulatoria_debito_fiscal"
+   ],
+   "related_claims": [
+    "trib_limits_power"
+   ],
+   "limitation": "Retroatividade da lei tributária que comine penalidade menos severa aplica-se a ato não definitivamente julgado (CTN, art. 106, II, 'c'); repetição de multa inconstitucional em 5 anos do pagamento (CTN, art. 168)."
+  },
+  {
+   "id": "trib_suspension_certificate",
+   "label": "Suspensão da exigibilidade e certidão de regularidade",
+   "requirements": [
+    "causa_suspensiva",
+    "garantia",
+    "pendencias"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_suspension_certificate.c1",
+     "label": "Certidão positiva com efeitos de negativa com crédito suspenso ou garantido",
+     "authority_ids": [
+      "ctn_art206",
+      "ctn_art151"
+     ]
+    },
+    {
+     "id": "trib_suspension_certificate.c2",
+     "label": "Depósito integral e em dinheiro suspende a exigibilidade",
+     "authority_ids": [
+      "stj_sumula_112"
+     ]
+    },
+    {
+     "id": "trib_suspension_certificate.c3",
+     "label": "Parcelamento suspende a exigibilidade e interrompe a prescrição",
+     "authority_ids": [
+      "ctn_art155a",
+      "stj_sumula_653"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_suspension_certificate.d1",
+     "label": "Crédito declarado e não pago legitima a recusa de certidão",
+     "authority_ids": [
+      "stj_sumula_446"
+     ]
+    },
+    {
+     "id": "trib_suspension_certificate.d2",
+     "label": "Garantia insuficiente ou não aceita",
+     "authority_ids": [
+      "l6830_art9"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Expedição da certidão",
+    "Suspensão da exigibilidade",
+    "Exclusão de cadastro restritivo"
+   ],
+   "evidence": [
+    "Relatório de situação fiscal",
+    "Comprovantes de depósito ou garantia",
+    "Termo de parcelamento"
+   ],
+   "piece_ids": [
+    "mandado_seguranca",
+    "tutela_urgencia_antecedente",
+    "acao_anulatoria_debito_fiscal"
+   ],
+   "related_claims": [
+    "trib_enforcement_defense"
+   ],
+   "limitation": "Mandado de segurança contra recusa indevida de expedição de CND ou CPEND (CTN, arts. 205 e 206) em 120 dias da negativa (Lei 12.016/2009, art. 23), cabendo oferta antecipada de seguro-garantia/fiança para obtenção de certidão antes do ajuizamento da execução fiscal (Tema 237/jurisprudência STJ)."
+  },
+  {
+   "id": "trib_offset",
+   "label": "Compensação tributária",
+   "requirements": [
+    "credito",
+    "transito_em_julgado",
+    "declaracao",
+    "homologacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_offset.c1",
+     "label": "Compensação por declaração extingue o crédito sob condição de homologação",
+     "authority_ids": [
+      "l9430_art74",
+      "ctn_art170"
+     ]
+    },
+    {
+     "id": "trib_offset.c2",
+     "label": "Mandado de segurança para declarar o direito à compensação",
+     "authority_ids": [
+      "stj_sumula_213"
+     ]
+    },
+    {
+     "id": "trib_offset.c3",
+     "label": "Opção entre compensação e precatório",
+     "authority_ids": [
+      "stj_sumula_461"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_offset.d1",
+     "label": "Vedação de compensação antes do trânsito em julgado",
+     "authority_ids": [
+      "ctn_art170a"
+     ]
+    },
+    {
+     "id": "trib_offset.d2",
+     "label": "Mandado de segurança não convalida compensação já realizada",
+     "authority_ids": [
+      "stj_sumula_460"
+     ]
+    },
+    {
+     "id": "trib_offset.d3",
+     "label": "Pedido administrativo de compensação não interrompe a prescrição da repetição",
+     "authority_ids": [
+      "stj_sumula_625"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Reconhecimento do crédito",
+    "Homologação da compensação"
+   ],
+   "evidence": [
+    "Comprovantes de recolhimento",
+    "Declarações e despachos decisórios",
+    "Certidão de trânsito em julgado"
+   ],
+   "piece_ids": [
+    "mandado_seguranca",
+    "repeticao_indebito_tributario",
+    "impugnacao_lancamento_administrativa"
+   ],
+   "related_claims": [
+    "trib_refund"
+   ],
+   "limitation": "Prazo de 5 anos para exercício da compensação do indébito (CTN, art. 168) e prazo decadencial de 5 anos contados da entrega da Declaração de Compensação (PER/DCOMP) para a Fazenda homologá-la expressamente, sob pena de homologação tácita (Lei 9.430/1996, art. 74, § 5º)."
+  },
+  {
+   "id": "trib_indirect_refund",
+   "label": "Restituição de tributos indiretos",
+   "requirements": [
+    "repercussao_economica",
+    "autorizacao_do_contribuinte_de_fato",
+    "legitimidade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_indirect_refund.c1",
+     "label": "Legitimidade de quem prova ter assumido o encargo ou está autorizado",
+     "authority_ids": [
+      "ctn_art166"
+     ]
+    },
+    {
+     "id": "trib_indirect_refund.c2",
+     "label": "Restituição alcança juros e multas na mesma proporção; juros moratórios desde o trânsito em julgado",
+     "authority_ids": [
+      "ctn_art167",
+      "stj_sumula_188"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_indirect_refund.d1",
+     "label": "Ausência de prova do não repasse",
+     "authority_ids": [
+      "ctn_art166"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Restituição ou creditamento",
+    "Reconhecimento da legitimidade ativa excepcional do contribuinte de fato nas tarifas/fornecimentos de energia elétrica (demanda contratada/TUST-TUSD — Tema 70/Tema 986 STJ) conforme distinção consolidada"
+   ],
+   "evidence": [
+    "Notas fiscais e planilhas de preço",
+    "Declaração do adquirente",
+    "Laudo pericial contábil atestando a não transferência do encargo econômico ao preço final ou autorização expressa do terceiro que o suportou (CTN, art. 166)"
+   ],
+   "piece_ids": [
+    "repeticao_indebito_tributario",
+    "mandado_seguranca"
+   ],
+   "related_claims": [
+    "trib_refund",
+    "trib_offset"
+   ],
+   "limitation": "Prescrição quinquenal contada de cada recolhimento indevido (CTN, arts. 166 e 168, I)."
+  },
+  {
+   "id": "trib_exemption_immunity",
+   "label": "Isenção, imunidade e interpretação",
+   "requirements": [
+    "norma_exonerativa",
+    "requisitos",
+    "prazo_e_condicao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_exemption_immunity.c1",
+     "label": "Isenção onerosa e por prazo certo não pode ser revogada livremente",
+     "authority_ids": [
+      "ctn_art178"
+     ]
+    },
+    {
+     "id": "trib_exemption_immunity.c2",
+     "label": "Imunidades como limitação constitucional",
+     "authority_ids": [
+      "cf_art150"
+     ]
+    },
+    {
+     "id": "trib_exemption_immunity.c3",
+     "label": "Conceitos de direito privado limitam a definição da competência",
+     "authority_ids": [
+      "ctn_art110"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_exemption_immunity.d1",
+     "label": "Interpretação literal das normas de isenção",
+     "authority_ids": [
+      "ctn_art111"
+     ]
+    },
+    {
+     "id": "trib_exemption_immunity.d2",
+     "label": "Requisitos legais da imunidade não demonstrados",
+     "authority_ids": [
+      "cf_art150",
+      "cf_art146"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Reconhecimento da imunidade ou isenção",
+    "Repetição"
+   ],
+   "evidence": [
+    "Estatuto e demonstrações",
+    "Certificados",
+    "Atos concessivos"
+   ],
+   "piece_ids": [
+    "mandado_seguranca",
+    "acao_anulatoria_debito_fiscal",
+    "requerimento_administrativo"
+   ],
+   "related_claims": [
+    "trib_limits_power"
+   ],
+   "limitation": "O reconhecimento de imunidade constitucional ou isenção retroage à data em que preenchidos todos os requisitos legais (efeitos declaratórios ex tunc — Súmula 612 do STJ no CEBAS), respeitada a prescrição quinquenal para restituição dos pagamentos pretéritos (CTN, art. 168)."
+  },
+  {
+   "id": "trib_asset_freeze",
+   "label": "Indisponibilidade de bens e fraude à execução fiscal",
+   "requirements": [
+    "inscricao_em_divida",
+    "citacao",
+    "esgotamento_de_diligencias",
+    "data_da_alienacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_asset_freeze.c1",
+     "label": "Indisponibilidade exige citação, ausência de pagamento e esgotamento das diligências",
+     "authority_ids": [
+      "stj_sumula_560",
+      "ctn_art185a"
+     ]
+    },
+    {
+     "id": "trib_asset_freeze.c2",
+     "label": "Alienação anterior à inscrição em dívida ativa",
+     "authority_ids": [
+      "ctn_art185"
+     ]
+    },
+    {
+     "id": "trib_asset_freeze.c3",
+     "label": "Embargos de terceiro do adquirente de boa-fé conforme o caso",
+     "authority_ids": [
+      "cpc_art674"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_asset_freeze.d1",
+     "label": "Presunção de fraude após a inscrição, sem reserva de bens",
+     "authority_ids": [
+      "ctn_art185"
+     ]
+    },
+    {
+     "id": "trib_asset_freeze.d2",
+     "label": "Preferência do crédito tributário",
+     "authority_ids": [
+      "ctn_art186",
+      "ctn_art187"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Levantamento da indisponibilidade",
+    "Reconhecimento da eficácia da alienação"
+   ],
+   "evidence": [
+    "Matrículas e datas de registro",
+    "Certidão de inscrição em dívida ativa",
+    "Prova das diligências"
+   ],
+   "piece_ids": [
+    "embargos_terceiro",
+    "excecao_pre_executividade",
+    "agravo_instrumento"
+   ],
+   "related_claims": [
+    "trib_enforcement_defense"
+   ],
+   "limitation": "A presunção absoluta de fraude à execução fiscal (CTN, art. 185, redação da LC 118/2005; Tema 290 STJ) aplica-se às alienações realizadas após a inscrição do crédito em dívida ativa (salvo reserva de bens suficientes), oponíveis embargos de terceiro no prazo do art. 675 do CPC."
+  },
+  {
+   "id": "trib_simples",
+   "label": "Simples Nacional: exclusão e vedações",
+   "requirements": [
+    "ato_de_exclusao",
+    "motivo",
+    "notificacao",
+    "debitos"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_simples.c1",
+     "label": "Exclusão exige notificação e contraditório",
+     "authority_ids": [
+      "lc123_art29",
+      "cf_art5"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_simples.d1",
+     "label": "Vedações legais e exclusão por débito exigível",
+     "authority_ids": [
+      "lc123_art17",
+      "lc123_art29"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Anulação da exclusão",
+    "Reinclusão retroativa"
+   ],
+   "evidence": [
+    "Termo de exclusão",
+    "Comprovantes de regularização",
+    "Relatório de pendências do e-CAC/Simples Nacional e protocolo de impugnação ao Termo de Exclusão"
+   ],
+   "piece_ids": [
+    "impugnacao_lancamento_administrativa",
+    "mandado_seguranca"
+   ],
+   "related_claims": [
+    "trib_admin_litigation"
+   ],
+   "limitation": "Regularização da totalidade dos débitos em até 30 dias da ciência do Termo de Exclusão afasta a exclusão do Simples Nacional (LC 123/2006, art. 31, § 2º); impugnação administrativa em 30 dias e mandado de segurança em 120 dias."
+  },
+  {
+   "id": "trib_iss_icms",
+   "label": "ISS e ICMS: fato gerador, local e base de cálculo",
+   "requirements": [
+    "operacao",
+    "lista_de_servicos",
+    "estabelecimento",
+    "base"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_iss_icms.c1",
+     "label": "ISS devido no local do estabelecimento prestador, salvo exceções",
+     "authority_ids": [
+      "lc116_art3",
+      "lc116_art1"
+     ]
+    },
+    {
+     "id": "trib_iss_icms.c2",
+     "label": "Exclusão de parcelas estranhas à base de cálculo",
+     "authority_ids": [
+      "lc87_art13"
+     ]
+    },
+    {
+     "id": "trib_iss_icms.c3",
+     "label": "Exclusão do ICMS da base do PIS e da Cofins conforme o Tema 69",
+     "authority_ids": [
+      "tema_stf_69"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_iss_icms.d1",
+     "label": "Serviço listado e efetivamente prestado no território",
+     "authority_ids": [
+      "lc116_art1",
+      "lc116_art3"
+     ]
+    },
+    {
+     "id": "trib_iss_icms.d2",
+     "label": "Fato gerador na saída da mercadoria",
+     "authority_ids": [
+      "lc87_art12"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec132_reforma_tributaria",
+    "lc214_ibs_cbs"
+   ],
+   "typical_requests": [
+    "Declaração de inexistência de relação tributária",
+    "Repetição",
+    "Consignação em pagamento quando dois Municípios ou Estado e Município exigirem tributo idêntico ou conflitante sobre o mesmo fato gerador (CTN, art. 164, III)"
+   ],
+   "evidence": [
+    "Contratos e notas fiscais",
+    "Prova do local da prestação",
+    "Descrição técnica detalhada da atividade frente à Lista Anexa da LC 116/2003 e comprovação da estrutura organizacional do estabelecimento prestador (Tema 1020/jurisprudência STJ)"
+   ],
+   "piece_ids": [
+    "mandado_seguranca",
+    "acao_anulatoria_debito_fiscal",
+    "repeticao_indebito_tributario"
+   ],
+   "related_claims": [
+    "trib_limits_power",
+    "trib_reform"
+   ],
+   "limitation": "Decadência quinquenal para lançamento (CTN, arts. 150, § 4º, e 173, I) e prescrição quinquenal para repetição do indébito (CTN, art. 168)."
+  },
+  {
+   "id": "trib_precedent_change",
+   "label": "Coisa julgada tributária e mudança de precedente",
+   "requirements": [
+    "decisao_individual",
+    "precedente_posterior",
+    "relacao_de_trato_sucessivo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_precedent_change.c1",
+     "label": "Modulação e anterioridade na cessação dos efeitos",
+     "authority_ids": [
+      "tema_stf_881",
+      "tema_stf_885",
+      "cf_art150"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_precedent_change.d1",
+     "label": "Decisão do STF em controle concentrado ou repercussão geral cessa automaticamente os efeitos da coisa julgada em relações de trato continuado",
+     "authority_ids": [
+      "tema_stf_881",
+      "tema_stf_885"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Reconhecimento do período protegido",
+    "Exclusão de multas",
+    "Respeito às anterioridades anual e nonagesimal a partir da publicação da ata do precedente vinculante do STF que superou coisa julgada pretérita em tributos a ela sujeitos (Temas 881 e 885 do STF)"
+   ],
+   "evidence": [
+    "Certidão da decisão transitada",
+    "Autos de infração posteriores",
+    "Data da publicação da ata de julgamento em controle concentrado ou repercussão geral pelo STF confrontada com os períodos autuados"
+   ],
+   "piece_ids": [
+    "mandado_seguranca",
+    "acao_anulatoria_debito_fiscal",
+    "embargos_execucao_fiscal"
+   ],
+   "related_claims": [
+    "trib_limits_power"
+   ],
+   "limitation": "A cessação automática da eficácia futura da coisa julgada em relações tributárias de trato continuado opera-se a partir do precedente vinculante do STF em controle concentrado ou repercussão geral, observadas a irretroatividade e as anterioridades anual e nonagesimal conforme a espécie tributária (Temas 881 e 885 do STF)."
+  },
+  {
+   "id": "trib_ibs_cbs_selective_transition",
+   "label": "Reforma Tributária do consumo (EC 132/2023 e LC 214/2025): não cumulatividade plena, split payment e Imposto Seletivo",
+   "requirements": [
+    "cronograma_escalonado_2026_2033",
+    "nao_cumulatividade_plena_ibs_cbs",
+    "split_payment_liquidacao_financeira",
+    "imposto_seletivo_extrafiscal"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_ibs_cbs_selective_transition.c1",
+     "label": "A não cumulatividade constitucional do IBS e da CBS é plena (crédito financeiro amplo), assegurando aproveitamento imediato de todas as aquisições de bens e serviços na atividade econômica, excetuadas exclusivamente as aquisições consideradas de uso ou consumo pessoal definidas em lei complementar (CF, art. 156-A, § 1º, VIII; LC 214/2025)",
+     "authority_ids": [
+      "cf_art156a",
+      "ec132_art1",
+      "lc214_art1"
+     ]
+    },
+    {
+     "id": "trib_ibs_cbs_selective_transition.c2",
+     "label": "No mecanismo de recolhimento na liquidação financeira (split payment), é direito do contribuinte o reconhecimento automático da extinção do débito segregado e a restituição célere de retenções em excesso ou em operações canceladas/devolvidas",
+     "authority_ids": [
+      "cf_art156a",
+      "lc214_art1"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_ibs_cbs_selective_transition.d1",
+     "label": "O aproveitamento do crédito de IBS e CBS na regra geral vincula-se à efetiva extinção/pagamento do tributo cobrado na etapa anterior (neutralizando créditos frios), e os regimes específicos, diferenciados ou favorecidos submetem-se à interpretação literal taxativa da EC 132/2023 e da LC 214/2025",
+     "authority_ids": [
+      "cf_art156a",
+      "lc214_art1",
+      "ctn_art111"
+     ]
+    },
+    {
+     "id": "trib_ibs_cbs_selective_transition.d2",
+     "label": "Constitucionalidade da incidência monofásica extrafiscal do Imposto Seletivo (CF, art. 153, VIII) sobre produção, extração, comercialização ou importação de bens e serviços prejudiciais à saúde ou ao meio ambiente, vedada incidência sobre exportações e energia elétrica/telecomunicações",
+     "authority_ids": [
+      "cf_art153",
+      "ec132_art1",
+      "lc214_art1"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec132_reforma_tributaria",
+    "lc214_ibs_cbs"
+   ],
+   "typical_requests": [
+    "Mandado de segurança para assegurar direito ao creditamento amplo de IBS/CBS sobre dispêndios operacionais glosados fora do conceito estrito de uso e consumo pessoal",
+    "Enquadramento em alíquota reduzida ou regime específico previsto na EC 132/2023 e na LC 214/2025 (saúde, educação, cesta básica, serviços profissionais, imobiliário)",
+    "Restituição imediata de valores retidos a maior via split payment"
+   ],
+   "evidence": [
+    "Documentos fiscais eletrônicos padronizados nacionalmente com destaque do IBS, da CBS e do Imposto Seletivo",
+    "Extratos do sistema de apuração assistida do Comitê Gestor do IBS / Receita Federal demonstrando a liquidação financeira na etapa anterior",
+    "Laudos técnicos de classificação fiscal (NCM/NBS) e demonstração do vínculo operacional da aquisição"
+   ],
+   "piece_ids": [
+    "mandado_seguranca",
+    "acao_anulatoria_debito_fiscal",
+    "repeticao_indebito_tributario",
+    "requerimento_administrativo"
+   ],
+   "related_claims": [
+    "trib_reform",
+    "trib_iss_icms",
+    "trib_offset"
+   ],
+   "limitation": "Prazos quinquenais de decadência e repetição do indébito (CTN, arts. 150, § 4º, 168 e 173; LC 214/2025) e prazo decadencial de 120 dias para mandado de segurança contra ato concreto."
+  },
+  {
+   "id": "trib_carf_tie_breaker_14689",
+   "label": "Voto de qualidade no CARF pós-Lei 14.689/2023: exclusão de multas, representação penal e redução de juros",
+   "requirements": [
+    "empate_julgamento_carf",
+    "solucao_voto_qualidade_pro_fazenda",
+    "exclusao_automatica_multas_e_rfp",
+    "manifestacao_pagamento_90_dias_exclusao_juros"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_carf_tie_breaker_14689.c1",
+     "label": "Nos processos administrativos fiscais decididos no CARF favoravelmente à Fazenda Pública pelo voto de qualidade a partir da Lei 14.689/2023, impõe-se por força de lei a exclusão integral das multas (de ofício, isolada ou qualificada) e o cancelamento da representação fiscal para fins penais (Decreto 70.235/1972, art. 25, § 9º-A)",
+     "authority_ids": [
+      "l14689_art1",
+      "d70235_art25",
+      "ctn_art112"
+     ]
+    },
+    {
+     "id": "trib_carf_tie_breaker_14689.c2",
+     "label": "Manifestando o contribuinte intenção de pagamento em até 90 dias do resultado proclamado por voto de qualidade, excluem-se também os juros de mora até essa data, admitido parcelamento em até 12 prestações e uso de créditos de prejuízo fiscal/base negativa de CSLL",
+     "authority_ids": [
+      "l14689_art1",
+      "d70235_art25"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_carf_tie_breaker_14689.d1",
+     "label": "Restabelecimento constitucionalmente legítimo do voto de qualidade do presidente da turma (representante da Fazenda) no CARF (Lei 14.689/2023), não se aplicando a exclusão de juros se o contribuinte optar por discutir judicialmente o principal sem efetivar a opção de pagamento em 90 dias (permanecendo porém a exclusão das multas e da representação penal, bem como dispensa de execução imediata de garantia para contribuinte com capacidade de pagamento)",
+     "authority_ids": [
+      "l14689_art1",
+      "d70235_art25",
+      "sumula_carf_1"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14689_carf"
+   ],
+   "typical_requests": [
+    "Mandado de segurança ou ação anulatória para assegurar a baixa integral das multas e da representação fiscal penal em acórdão do CARF definido por voto de qualidade",
+    "Suspensão de exigência de garantia prévia para discussão judicial do crédito mantido por voto de qualidade por contribuinte com capacidade de pagamento comprovada (Lei 14.689/2023, art. 4º)"
+   ],
+   "evidence": [
+    "Ata e inteiro teor do acórdão do CARF ou da Câmara Superior (CSRF) registrando expressamente o empate na votação e o desempate pelo voto de qualidade",
+    "Demonstrativo atualizado da cobrança discriminando principal, juros SELIC e multas lançadas",
+    "Comprovação de patrimônio líquido / capacidade de pagamento nos termos da Lei 14.689/2023"
+   ],
+   "piece_ids": [
+    "recurso_voluntario_carf",
+    "mandado_seguranca",
+    "acao_anulatoria_debito_fiscal",
+    "embargos_execucao_fiscal"
+   ],
+   "related_claims": [
+    "trib_admin_litigation",
+    "trib_penalties",
+    "pen_tax_crime"
+   ],
+   "limitation": "Prazo especial de 90 dias da ciência do acórdão resolvido por voto de qualidade para manifestar opção de pagamento sem juros moratórios (Lei 14.689/2023); mandado de segurança em 120 dias e ação anulatória em 5 anos."
+  },
+  {
+   "id": "trib_itbi_market_value_tema1113",
+   "label": "ITBI: valor declarado na compra e venda (Tema 1113 STJ) e imunidade na integralização de capital (Tema 796 STF)",
+   "requirements": [
+    "presuncao_boa_fe_valor_declarado",
+    "vedacao_valor_referencia_unilateral_iptu",
+    "processo_administrativo_arbitramento_art148",
+    "limite_capital_subscrito_tema796"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_itbi_market_value_tema1113.c1",
+     "label": "A base de cálculo do ITBI é o valor do imóvel transmitido em condições normais de mercado na operação concreta, gozando o valor da transação declarado pelo contribuinte de presunção de veracidade que não pode ser afastada unilateralmente por tabela prévia de valor de referência nem vinculada ao IPTU, exigindo-se prévio processo administrativo regular de arbitramento (CTN, arts. 38 e 148; Tema Repetitivo 1113 do STJ)",
+     "authority_ids": [
+      "tema_stj_1113",
+      "ctn_art38",
+      "ctn_art148"
+     ]
+    },
+    {
+     "id": "trib_itbi_market_value_tema1113.c2",
+     "label": "Imunidade do ITBI na transmissão de bens ou direitos incorporados ao patrimônio de pessoa jurídica em realização de capital social até o limite do capital subscrito (CF, art. 156, § 2º, I; Tema 796 do STF), sendo indevido condicionar a imunidade pura de integralização sem fusão/incorporação à inatividade imobiliária em leitura extensiva controvertida",
+     "authority_ids": [
+      "cf_art156",
+      "tema_stf_796"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_itbi_market_value_tema1113.d1",
+     "label": "A imunidade do art. 156, § 2º, I, da CF não alcança o valor dos bens que exceder o limite do capital social a ser integralizado (reserva de capital/ágio — Tema 796 do STF), nem se aplica quando a atividade preponderante do adquirente for compra e venda, locação ou arrendamento mercantil de imóveis nos termos dos §§ 1º a 3º do art. 37 do CTN",
+     "authority_ids": [
+      "tema_stf_796",
+      "cf_art156"
+     ]
+    },
+    {
+     "id": "trib_itbi_market_value_tema1113.d2",
+     "label": "Na arrematação em hasta pública judicial ou extrajudicial, a base de cálculo do ITBI corresponde ao valor da arrematação, e nas transmissões particulares subfaturadas o Fisco pode instaurar o procedimento contraditório do art. 148 do CTN",
+     "authority_ids": [
+      "ctn_art38",
+      "ctn_art148",
+      "tema_stj_1113"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Mandado de segurança preventivo para emissão de guia de ITBI calculada estritamente sobre o valor efetivo declarado no instrumento de compra e venda, autorizando a lavratura da escritura e o registro",
+    "Repetição da diferença de ITBI recolhida a maior sobre 'valor venal de referência' municipal nos últimos 5 anos",
+    "Reconhecimento de imunidade sobre o valor integralizado ao capital social e anulação de lançamento sobre ágio inexistente"
+   ],
+   "evidence": [
+    "Contrato particular / minuta de escritura pública de compra e venda ou alteração contratual de integralização de capital social",
+    "Guia de recolhimento do ITBI emitida pelo Município com pauta unilateral de valor de referência superior ao negócio",
+    "Comprovante de pagamento da diferença exigida pelo fisco municipal como condição de registro"
+   ],
+   "piece_ids": [
+    "mandado_seguranca",
+    "repeticao_indebito_tributario",
+    "acao_anulatoria_debito_fiscal",
+    "impugnacao_lancamento_administrativa"
+   ],
+   "related_claims": [
+    "trib_refund",
+    "trib_exemption_immunity",
+    "imob_registry"
+   ],
+   "limitation": "Mandado de segurança preventivo antes da lavratura ou repressivo em 120 dias da guia/notificação; repetição do ITBI pago a maior prescreve em 5 anos da data do pagamento (CTN, art. 168, I)."
+  },
+  {
+   "id": "trib_pis_cofins_icms_iss_credits",
+   "label": "PIS e COFINS: exclusão do ICMS destacado (Tema 69 STF), discussão do ISS (Tema 118 STF) e conceito de insumos (Tema 779 STJ)",
+   "requirements": [
+    "icms_destacado_nota_fiscal",
+    "modulacao_15_03_2017_tema69",
+    "essencialidade_relevancia_insumo_tema779",
+    "apuracao_escrituracao_efd"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_pis_cofins_icms_iss_credits.c1",
+     "label": "O ICMS destacado nas notas fiscais de saída não compõe a base de cálculo para a incidência do PIS e da COFINS, observada a modulação temporal a partir de 15/03/2017 salvo ações/pedidos administrativos protocolados até essa data (Tema 69 do STF); quanto ao ISS, conferir o desfecho final do Tema 118 no STF",
+     "authority_ids": [
+      "tema_stf_69",
+      "tema_stf_118",
+      "cf_art195"
+     ]
+    },
+    {
+     "id": "trib_pis_cofins_icms_iss_credits.c2",
+     "label": "No regime não cumulativo das Leis 10.637/2002 e 10.833/2003, o conceito de insumo deve ser aferido à luz dos critérios da essencialidade ou da relevância do bem ou serviço para o desenvolvimento da atividade econômica desempenhada pelo contribuinte (Tema Repetitivo 779 do STJ)",
+     "authority_ids": [
+      "tema_stj_779",
+      "cf_art195"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_pis_cofins_icms_iss_credits.d1",
+     "label": "Observância da modulação temporal do Tema 69 do STF (15/03/2017), vedação de exclusão de parcelas estranhas ao julgado (ex.: ICMS-DIFAL ou CPRB conforme teses próprias) e glosa de créditos sobre meras despesas administrativas/comerciais que não se enquadrem na essencialidade ou relevância direta do processo produtivo/prestação de serviço (Tema 779 do STJ)",
+     "authority_ids": [
+      "tema_stf_69",
+      "tema_stj_779"
+     ]
+    },
+    {
+     "id": "trib_pis_cofins_icms_iss_credits.d2",
+     "label": "A compensação de créditos reconhecidos judicialmente exige trânsito em julgado (CTN, art. 170-A) e prévia habilitação administrativa do crédito perante a Receita Federal para conferência da liquidez na EFD-Contribuições",
+     "authority_ids": [
+      "ctn_art170a",
+      "l9430_art74"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec_113_2021_selic",
+    "ec132_reforma_tributaria"
+   ],
+   "typical_requests": [
+    "Declaração do direito de excluir o ICMS destacado na nota fiscal da base de cálculo do PIS e da COFINS e compensar/repetir o indébito dos 5 anos anteriores",
+    "Anulação de despacho decisório de glosa de créditos de insumos essenciais ou relevantes (EPIs obrigatórios, tratamento de efluentes, fretes de insumos, despesas impostas por norma sanitária/ambiental — Tema 779 do STJ)"
+   ],
+   "evidence": [
+    "Arquivos SPED (EFD-Contribuições e EFD-ICMS/IPI), notas fiscais eletrônicas (XMLs) demonstrando o ICMS destacado e DARFs/PER-DCOMPs",
+    "Laudo técnico-operacional mapeando cada etapa do processo produtivo/serviço e demonstrando a essencialidade ou imposição legal de cada item creditado",
+    "Despacho decisório da RFB e acórdãos da DRJ/CARF"
+   ],
+   "piece_ids": [
+    "mandado_seguranca",
+    "repeticao_indebito_tributario",
+    "acao_anulatoria_debito_fiscal",
+    "recurso_voluntario_carf",
+    "impugnacao_laudo"
+   ],
+   "related_claims": [
+    "trib_refund",
+    "trib_offset",
+    "trib_reform"
+   ],
+   "limitation": "Prescrição quinquenal para repetição/compensação contada de cada pagamento indevido (CTN, art. 168, I), respeitado o marco modulatório de 15/03/2017 no Tema 69 do STF para ações propostas após essa data."
+  },
+  {
+   "id": "trib_irpj_csll_icms_subventions",
+   "label": "Subvenções governamentais e benefícios fiscais de ICMS no IRPJ/CSLL e PIS/COFINS (Tema 1182 STJ e Lei 14.789/2023)",
+   "requirements": [
+    "credito_presumido_vs_demais_beneficios_icms",
+    "reserva_lucros_incentivos_art30",
+    "transicao_lei_14789_2023",
+    "pacto_federativo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_irpj_csll_icms_subventions.c1",
+     "label": "Os créditos presumidos de ICMS não integram a base de cálculo do IRPJ e da CSLL sob pena de violação ao pacto federativo (EREsp 1.517.492/STJ), e os demais benefícios fiscais de ICMS (isenção, redução de base/alíquota, diferimento) também são excluíveis até 2023 quando constituída reserva de incentivos fiscais e vedada distribuição aos sócios, dispensada prova prévia de implantação/expansão (LC 160/2017; Tema Repetitivo 1182 do STJ)",
+     "authority_ids": [
+      "tema_stj_1182",
+      "cf_art150"
+     ]
+    },
+    {
+     "id": "trib_irpj_csll_icms_subventions.c2",
+     "label": "Para fatos geradores a partir de 01/01/2024, questionamento da tributação pelo regime da Lei 14.789/2023 quanto aos créditos presumidos de ICMS amparados na imunidade recíproca/pacto federativo ou direito ao crédito fiscal habilitado de subvenção para investimento",
+     "authority_ids": [
+      "l14789_art1",
+      "cf_art150"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_irpj_csll_icms_subventions.d1",
+     "label": "Nos termos do Tema Repetitivo 1182 do STJ, para benefícios negativos de ICMS diversos do crédito presumido no regime até 2023, a Receita Federal pode glosar a exclusão se não observados os requisitos do art. 30 da Lei 12.973/2014 (constituição de reserva de incentivos fiscais e não distribuição aos sócios) ou se constatado desvio da finalidade empresarial",
+     "authority_ids": [
+      "tema_stj_1182"
+     ]
+    },
+    {
+     "id": "trib_irpj_csll_icms_subventions.d2",
+     "label": "A partir de 01/01/2024, revogado o art. 30 da Lei 12.973/2014 pela Lei 14.789/2023, a sistemática foi substituída pela habilitação prévia e apuração de crédito fiscal restrita às despesas de depreciação/amortização de implantação ou expansão de empreendimento econômico",
+     "authority_ids": [
+      "l14789_art1"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Reconhecimento da não incidência de IRPJ, CSLL, PIS e COFINS sobre créditos presumidos de ICMS por força do pacto federativo",
+    "Manutenção da exclusão dos demais benefícios fiscais de ICMS até 31/12/2023 mediante comprovação contábil da Reserva de Incentivos Fiscais (Tema 1182 do STJ) ou adesão à autorregularização/transação específica",
+    "Habilitação administrativa ou discussão judicial do regime da Lei 14.789/2023 para períodos a partir de 2024"
+   ],
+   "evidence": [
+    "Legislação estadual concessiva do benefício fiscal de ICMS e registro no CONFAZ (LC 160/2017)",
+    "Escrituração Contábil Fiscal (ECF), ECD e atas societárias comprovando a destinação à Reserva de Lucros — Incentivos Fiscais e a ausência de distribuição indevida",
+    "Ato de habilitação na RFB e projetos de implantação ou expansão sob a Lei 14.789/2023"
+   ],
+   "piece_ids": [
+    "mandado_seguranca",
+    "acao_anulatoria_debito_fiscal",
+    "repeticao_indebito_tributario",
+    "recurso_voluntario_carf",
+    "transacao_tributaria"
+   ],
+   "related_claims": [
+    "trib_limits_power",
+    "trib_settlement",
+    "trib_refund"
+   ],
+   "limitation": "Decadência e prescrição quinquenais (CTN, arts. 150, § 4º, 168 e 173), separando rigorosamente os fatos geradores até 31/12/2023 (Tema 1182 STJ) e a partir de 01/01/2024 (Lei 14.789/2023)."
+  },
+  {
+   "id": "trib_small_value_execution_cnj547",
+   "label": "Extinção de execução fiscal de baixo valor, protesto prévio e conciliação (Tema 1184 STF e Res. CNJ 547/2024)",
+   "requirements": [
+    "valor_consolidado_abaixo_10000_ou_piso_local",
+    "ausencia_movimentacao_util_um_ano",
+    "exigencia_protesto_conciliacao_previa",
+    "principio_eficiencia"
+   ],
+   "claimant_theses": [
+    {
+     "id": "trib_small_value_execution_cnj547.c1",
+     "label": "É legítima a extinção de execução fiscal de baixo valor pela ausência de interesse de agir tendo em vista o princípio constitucional da eficiência administrativa, exigindo-se para o ajuizamento de novas execuções a prévia adoção de solução conciliatória e o protesto da CDA (salvo comunicação direta a órgãos de proteção/averbação ou indício de bens penhoráveis — Tema 1184 do STF e Resolução CNJ nº 547/2024)",
+     "authority_ids": [
+      "tema_stf_1184",
+      "res_cnj_547_2024",
+      "cf_art37"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "trib_small_value_execution_cnj547.d1",
+     "label": "Impossibilidade de extinção sumária quando a soma das execuções contra o mesmo devedor atingir o piso de R$ 10.000,00 (admitida reunião dos feitos — LEF, art. 28), quando demonstrada citação/constrição patrimonial útil no último ano ou quando dispensado o protesto por inscrição direta em cadastros restritivos/indicação de bens (Res. CNJ 547/2024, arts. 1º e 2º)",
+     "authority_ids": [
+      "res_cnj_547_2024",
+      "tema_stf_1184",
+      "l6830_art2"
+     ]
+    },
+    {
+     "id": "trib_small_value_execution_cnj547.d2",
+     "label": "A extinção sem resolução de mérito por falta de interesse processual não extingue o crédito tributário material, que permanece exigível extrajudicialmente (protesto, cobrança administrativa, compensação) enquanto não prescrito",
+     "authority_ids": [
+      "tema_stf_1184",
+      "ctn_art156"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Extinção sem resolução de mérito da execução fiscal de valor inferior a R$ 10.000,00 sem bens penhoráveis ou ajuizada sem prévia tentativa conciliatória/protesto, sem condenação em honorários (Tema 1184 STF e Res. CNJ 547/2024)",
+    "Pela Fazenda: reunião das execuções conexas contra o mesmo contribuinte cujo somatório supere o piso ou prosseguimento mediante indicação concreta de bem penhorável"
+   ],
+   "evidence": [
+    "Planilha atualizada do valor consolidado da execução fiscal (e eventuais execuções apensáveis contra o mesmo CPF/CNPJ)",
+    "Certidão de andamento comprovando paralisação sem localização de bens penhoráveis há mais de um ano",
+    "Comprovante de tentativa prévia de conciliação administrativa e protesto extrajudicial da CDA (ou hipótese regulamentar de dispensa)"
+   ],
+   "piece_ids": [
+    "excecao_pre_executividade",
+    "manifestacao_especifica",
+    "apelacao_civel"
+   ],
+   "related_claims": [
+    "trib_enforcement_defense",
+    "trib_limitation"
+   ],
+   "limitation": "Matéria de condição da ação (interesse processual) cognoscível de ofício a qualquer tempo nas instâncias ordinárias (CPC, art. 485, VI e § 3º; Res. CNJ 547/2024); apelação (ou embargos infringentes de alçada do art. 34 da LEF nas causas até 50 ORTN) conforme o valor da execução."
+  }
  ]
 }

@@ -349,6 +349,27 @@
         "skills/legal-process-parser/references/domain_claims_index.md"
       ],
       "when": "Ramo ainda não confirmado; escolher o ramo e as pretensões pelo índice geral."
+    },
+    {
+      "trigger": "defense_contestacao",
+      "references": [
+        "skills/legal-process-parser/references/defense_contestacao_rules.md"
+      ],
+      "when": "A medida escolhida ou solicitada é contestação, impugnação ao cumprimento, embargos à execução ou defesa administrativa."
+    },
+    {
+      "trigger": "appellate_practice",
+      "references": [
+        "skills/legal-process-parser/references/appellate_practice_rules.md"
+      ],
+      "when": "A medida escolhida ou solicitada é recurso, contrarrazões, agravo ou peça em tribunal/instância superior."
+    },
+    {
+      "trigger": "judicial_decision",
+      "references": [
+        "skills/legal-process-parser/references/judicial_decision_and_opinion_rules.md"
+      ],
+      "when": "A entrega solicitada é minuta de decisão interlocutória, sentença, voto/acórdão (apoio de gabinete) ou parecer jurídico consultivo."
     }
   ],
   "specializations": "skills/legal-process-parser/references/legal_specializations.json",
@@ -366,7 +387,8 @@
     "gemini_gem": "adapters/gemini/GEM_INSTRUCTIONS.md",
     "grok": "adapters/grok/SYSTEM_INSTRUCTIONS.md",
     "chatgpt": "adapters/chatgpt/INSTRUCTIONS.md",
-    "claude": "adapters/claude/CLAUDE_INSTRUCTIONS.md"
+    "claude": "adapters/claude/CLAUDE_INSTRUCTIONS.md",
+    "antigravity": "adapters/antigravity/INSTRUCTIONS.md"
   },
   "never_load_by_default": [
     "adapters/other_platforms",

@@ -62,6 +62,7 @@ def verify() -> None:
         assert profile["source_requirements"] and profile["expression"]
         assert set(profile.get("authority_ids", [])) <= authority_ids, profile["id"]
     claim_ids = {c["id"] for c in claims}
+    piece_entries = {e["id"]: e for e in json.loads((labor_path.parent / "procedural_catalog.json").read_text(encoding="utf-8"))["entries"]}
     for claim in claims:
         assert claim["topic_id"] in {t["id"] for t in topics}
         assert len(set(claim["requirements"])) == len(claim["requirements"])
@@ -72,15 +73,22 @@ def verify() -> None:
         assert set(claim["temporal_marker_ids"]) <= marker_ids, claim["id"]
         assert set(claim["calculation_profiles"]) <= profile_ids, claim["id"]
         assert set(claim["related_claims"]) <= claim_ids, claim["id"]
+        assert claim.get("piece_ids") and all(p in piece_entries for p in claim["piece_ids"]), f"labor piece_ids invalid: {claim['id']}"
     import sys
     sys.path.insert(0, str(skill_path.parent))
     from scripts.labor_catalog import index_markdown
     assert (labor_path.parent / "labor_claims_index.md").read_text(encoding="utf-8") == index_markdown(), "labor_claims_index.md desatualizado"
     from scripts.domain_catalog import catalogs as domain_catalogs, index_files as domain_index_files, integrity_errors as domain_errors
     domain_schema = Draft202012Validator(json.loads((schema_dir / "domain_catalog.schema.json").read_text(encoding="utf-8")), format_checker=FormatChecker())
+    assert len(domain_catalogs()) >= 28, f"expected >=28 non-labor catalogs, got {len(domain_catalogs())}"
     for key, catalog in domain_catalogs().items():
         errors = [e.message for e in domain_schema.iter_errors(catalog)]
         assert not errors, f"domain_catalogs/{key}.json: {errors[:3]}"
+        assert len(catalog["claims"]) >= 12, f"domain_catalogs/{key}.json shallow ({len(catalog['claims'])} claims)"
+        for dclaim in catalog["claims"]:
+            assert dclaim["typical_requests"], f"{dclaim['id']}: typical_requests vazio"
+            assert dclaim["evidence"], f"{dclaim['id']}: evidence vazio"
+            assert dclaim["limitation"].strip().lower() != "conferir", f"{dclaim['id']}: limitation placeholder"
     authority_schema = Draft202012Validator(json.loads((schema_dir / "domain_authorities.schema.json").read_text(encoding="utf-8")), format_checker=FormatChecker())
     errors = [e.message for e in authority_schema.iter_errors(json.loads((labor_path.parent / "domain_authorities.json").read_text(encoding="utf-8")))]
     assert not errors, f"domain_authorities.json: {errors[:3]}"
@@ -104,8 +112,9 @@ def verify() -> None:
     scenario_suite = json.loads((ROOT / "evaluation/labor_workflow_cases.json").read_text(encoding="utf-8"))
     assert len(scenario_suite["scenarios"]) == 40 and len(scenario_suite["integral_cases"]) == 10
     assert len({c["id"] for c in scenario_suite["scenarios"]}) == 40
-    for name in ("AI_ENTRYPOINT.md", "llms.txt"):
+    for name in ("AI_ENTRYPOINT.md", "llms.txt", "ROADMAP.md", ".mcp.json"):
         assert (ROOT / name).is_file(), name
+    assert "auditor-processual" in json.loads((ROOT / ".mcp.json").read_text(encoding="utf-8")).get("mcpServers", {})
     for path in schema_dir.glob("*.json"):
         from jsonschema import Draft202012Validator
         Draft202012Validator.check_schema(json.loads(path.read_text(encoding="utf-8")))

@@ -1,0 +1,44 @@
+{
+  "schema_version": "2.0",
+  "synthetic": true,
+  "case_id": "notarial_extrajudicial_inventory",
+  "source_files": [
+    {
+      "file": "minuta_escritura.txt"
+    }
+  ],
+  "expected": {
+    "facts": [
+      {
+        "id": "G-F1",
+        "text_any": [
+          "parecer favorável do Ministério Público"
+        ],
+        "source": {
+          "file": "minuta_escritura.txt",
+          "page": 1,
+          "quote": "parecer favorável do Ministério Público"
+        },
+        "atoms": {
+          "date": "2024-10-25"
+        }
+      }
+    ],
+    "issues": [
+      {
+        "id": "G-I1",
+        "text_any": [
+          "inventário extrajudicial com incapaz",
+          "quinhão ideal preservado"
+        ],
+        "analysis_status": "qualified"
+      }
+    ],
+    "requests": [],
+    "contradictions": [],
+    "catalog_id": "suscitacao_duvida_registral",
+    "strategy": {
+      "domain": "notarial_registral"
+    }
+  }
+}

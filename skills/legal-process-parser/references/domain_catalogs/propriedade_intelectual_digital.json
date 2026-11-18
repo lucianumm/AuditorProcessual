@@ -1,0 +1,947 @@
+{
+  "schema_version": "1.0",
+  "domain": "propriedade_intelectual_digital",
+  "label": "Propriedade Intelectual, Inovação e Direito Digital",
+  "guide": "domain_guides/propriedade_intelectual_digital.md",
+  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
+  "polo_labels": {
+    "claimant_theses": "Teses do titular, autor ou requerente",
+    "defense_theses": "Teses do requerido, provedor ou concorrente"
+  },
+  "claims": [
+    {
+      "id": "pid_trademark_infringement_collision",
+      "label": "Infração e colidência de registro de marca no INPI",
+      "requirements": [
+        "registro_vigente_inpi",
+        "afinidade_mercadologica_ou_alto_renome",
+        "risco_confusao_ou_associacao",
+        "uso_indevido_comercial"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pid_trademark_infringement_collision.c1",
+          "label": "Propriedade e uso exclusivo da marca em todo o território nacional pelo titular do registro, cabendo tutela inibitória e indenização por danos materiais e morais in re ipsa pela contrafação",
+          "authority_ids": [
+            "l9279_art129",
+            "l9279_art130",
+            "l9279_art209"
+          ]
+        },
+        {
+          "id": "pid_trademark_infringement_collision.c2",
+          "label": "Proibição de registro ou uso de reprodução ou imitação de marca alheia registrada para distinguir ou certificar produto ou serviço idêntico, semelhante ou afim suscetível de causar confusão ou associação",
+          "authority_ids": [
+            "l9279_art124",
+            "l9279_art125",
+            "l9279_art126"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pid_trademark_infringement_collision.d1",
+          "label": "Inexistência de colidência pelo princípio da especialidade diante da atuação em segmentos mercadológicos distintos sem possibilidade real de confusão pelo público consumidor",
+          "authority_ids": [
+            "l9279_art124",
+            "l9279_art129"
+          ]
+        },
+        {
+          "id": "pid_trademark_infringement_collision.d2",
+          "label": "Direito de precedência ao registro do usuário de boa-fé que já utilizava marca idêntica ou semelhante no País há pelo menos 6 meses antes da prioridade ou depósito (LPI, art. 129, § 1º), ou uso de expressão comum/evocativa sem exclusividade isolada",
+          "authority_ids": [
+            "l9279_art129",
+            "l9279_art124",
+            "l9279_art132"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Tutela provisória e definitiva de abstenção imediata do uso da marca colidente em produtos, fachadas, redes sociais e domínios sob multa diária",
+        "Condenação ao pagamento de lucros cessantes apurados pelo critério mais favorável do art. 210 da LPI e danos morais à pessoa jurídica titular (Súmula 227 STJ)",
+        "Busca e apreensão de produtos contrafeitos e embalagens ostentando o sinal infrator"
+      ],
+      "evidence": [
+        "Certificado de registro de marca vigente expedido pelo INPI com especificação de classes NCL e apresentação (nominativa, figurativa ou mista)",
+        "Ata notarial, notas fiscais de compra teste e capturas de tela comprovando a comercialização e o risco de confusão",
+        "Documentos históricos de uso anterior de boa-fé ou coexistência pacífica no mercado relevante"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "tutela_urgencia_antecedente",
+        "oposicao_nulidade_administrativa_inpi",
+        "contestacao"
+      ],
+      "related_claims": [
+        "emp_trademark",
+        "emp_unfair_competition",
+        "pid_trade_dress_unfair_competition"
+      ],
+      "limitation": "Prescrição em 5 anos para a ação de reparação de dano causado ao direito de propriedade industrial (Lei 9.279/1996, art. 225; Súmula 143 do STJ superada pela LPI), renovando-se a lesão enquanto persistir a infração continuada para a pretensão inibitória"
+    },
+    {
+      "id": "pid_trademark_nullity_forfeiture",
+      "label": "Nulidade administrativa/judicial e caducidade de registro de marca",
+      "requirements": [
+        "vicio_registrabilidade_ou_desuso_quinquenal",
+        "competencia_justica_federal_com_inpi",
+        "legitimo_interesse_requerente",
+        "excecao_registro_de_ma_fe"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pid_trademark_nullity_forfeiture.c1",
+          "label": "Nulidade do registro concedido em desacordo com as proibições legais da LPI, processada na Justiça Federal com intervenção obrigatória do INPI e efeitos ex tunc",
+          "authority_ids": [
+            "l9279_art165",
+            "l9279_art167",
+            "l9279_art173",
+            "l9279_art175"
+          ]
+        },
+        {
+          "id": "pid_trademark_nullity_forfeiture.c2",
+          "label": "Caducidade do registro marcário quando não iniciado o uso no Brasil ou interrompido por mais de 5 anos consecutivos sem razões legítimas comprovadas pelo titular",
+          "authority_ids": [
+            "l9279_art142",
+            "l9279_art143"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pid_trademark_nullity_forfeiture.d1",
+          "label": "Consumação da prescrição quinquenal para a ação de nulidade contada da data da concessão do registro no INPI, salvo quando comprovado que o registro foi obtido de má-fé (art. 6º bis, 3, da Convenção da União de Paris)",
+          "authority_ids": [
+            "l9279_art174",
+            "d75572_art6bis"
+          ]
+        },
+        {
+          "id": "pid_trademark_nullity_forfeiture.d2",
+          "label": "Elisão da caducidade pela comprovação documental de uso efetivo da marca no período quinquenal investigado ou de impedimento por força maior/restrição estatal alheia à vontade do titular",
+          "authority_ids": [
+            "l9279_art143",
+            "l9279_art144"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Declaração judicial de nulidade do registro marcário perante a Justiça Federal com determinação de averbação pelo INPI",
+        "Suspensão liminar dos efeitos do registro impugnado até o trânsito em julgado quando presentes os requisitos processuais (LPI, art. 173, parágrafo único)",
+        "Instauração ou revisão judicial de processo administrativo de nulidade (PAN) ou de declaração de caducidade no INPI"
+      ],
+      "evidence": [
+        "Cópia integral do processo administrativo de concessão do registro na Revista da Propriedade Industrial (RPI)",
+        "Notas fiscais datadas, catálogos, contratos e campanhas publicitárias comprovando (ou infirmando) o uso efetivo nos últimos 5 anos",
+        "Prova de ciência prévia da marca estrangeira ou nacional notoriamente conhecida para caracterizar registro de má-fé"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "oposicao_nulidade_administrativa_inpi",
+        "contestacao",
+        "apelacao_civel"
+      ],
+      "related_claims": [
+        "pid_trademark_infringement_collision",
+        "emp_trademark"
+      ],
+      "limitation": "180 dias da expedição do certificado para Processo Administrativo de Nulidade no INPI (LPI, art. 169); 5 anos da data da concessão para ação judicial de nulidade (art. 174), imprescritível quando o registro foi obtido de má-fé (CUP, art. 6º bis); caducidade requerível após 5 anos da concessão (art. 143)"
+    },
+    {
+      "id": "pid_trade_dress_unfair_competition",
+      "label": "Violação de conjunto-imagem (trade dress) e concorrência desleal ou parasitária",
+      "requirements": [
+        "distintividade_conjunto_visual",
+        "nao_funcionalidade_tecnica",
+        "confusao_consumidor_ou_parasitismo",
+        "competencia_justica_estadual"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pid_trade_dress_unfair_competition.c1",
+          "label": "Proteção jurídica do conjunto-imagem (embalagens, layout arquitetônico, cores e disposição gráfica combinados) contra imitação servil ou quase servil que empregue meio fraudulento para desviar clientela alheia ou gere aproveitamento parasitário",
+          "authority_ids": [
+            "l9279_art195",
+            "l9279_art209",
+            "cc_art187"
+          ]
+        },
+        {
+          "id": "pid_trade_dress_unfair_competition.c2",
+          "label": "Apuração dos lucros cessantes pelo critério mais favorável ao prejudicado: benefícios que teria auferido, benefícios auferidos pelo autor da violação ou remuneração de licença (royalty razoável)",
+          "authority_ids": [
+            "l9279_art210"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pid_trade_dress_unfair_competition.d1",
+          "label": "Ausência de exclusividade sobre elementos estéticos padronizados pelo mercado (tendências comuns da indústria) ou características ditadas pela funcionalidade utilitária/ergonômica do produto",
+          "authority_ids": [
+            "l9279_art124",
+            "l9279_art195"
+          ]
+        },
+        {
+          "id": "pid_trade_dress_unfair_competition.d2",
+          "label": "Suficiência das diferenças visuais, cromáticas e da aposição destacada de marca própria notória para eliminar risco de confusão pelo consumidor médio da categoria",
+          "authority_ids": [
+            "l9279_art195"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Ordem de cessação da comercialização, exposição e publicidade de produtos ou estabelecimentos que reproduzam o trade dress distintivo da autora",
+        "Alteração obrigatória da identidade visual infratora em prazo razoável sob multa diária",
+        "Indenização por danos emergentes, lucros cessantes (LPI, art. 210) e danos morais"
+      ],
+      "evidence": [
+        "Amostras físicas e fotográficas comparativas lado a lado das embalagens, rótulos ou fachadas comerciais ao longo do tempo",
+        "Laudo pericial de design/propriedade industrial e pesquisa quantitativa de percepção e confusão do consumidor",
+        "Comprovantes de investimentos históricos em marketing consolidando distintividade adquirida (secondary meaning)"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "tutela_urgencia_antecedente",
+        "impugnacao_laudo",
+        "contestacao"
+      ],
+      "related_claims": [
+        "emp_unfair_competition",
+        "pid_trademark_infringement_collision"
+      ],
+      "limitation": "Prescrição quinquenal para reparação de danos por atos de concorrência desleal (Lei 9.279/1996, art. 225)"
+    },
+    {
+      "id": "pid_patents_industrial_design",
+      "label": "Patentes de invenção, modelo de utilidade e desenho industrial",
+      "requirements": [
+        "novidade_atividade_inventiva_aplicacao",
+        "carta_patente_ou_registro_di",
+        "infracao_literal_ou_equivalencia",
+        "defesa_nulidade_incidental"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pid_patents_industrial_design.c1",
+          "label": "Direito do titular da patente de impedir terceiros de produzir, usar, colocar à venda, vender ou importar produto patenteado ou obtido por processo patenteado, por infração literal do quadro reivindicatório ou por equivalência técnica",
+          "authority_ids": [
+            "l9279_art42",
+            "l9279_art186",
+            "l9279_art209"
+          ]
+        },
+        {
+          "id": "pid_patents_industrial_design.c2",
+          "label": "Indenização retroativa pela exploração indevida ocorrida entre a data da publicação do pedido e a concessão da patente (LPI, art. 44)",
+          "authority_ids": [
+            "l9279_art44"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pid_patents_industrial_design.d1",
+          "label": "Arguição de nulidade da patente ou do registro de desenho industrial como matéria de defesa incidental na ação de infração na Justiça Estadual por ausência de novidade, atividade inventiva ou suficiência descritiva — orientação da Segunda Seção do STJ",
+          "authority_ids": [
+            "l9279_art56",
+            "l9279_art8",
+            "l9279_art24"
+          ]
+        },
+        {
+          "id": "pid_patents_industrial_design.d2",
+          "label": "Exceções legais à exclusividade patentária: uso privado não comercial, finalidade experimental, preparo de medicamento individualizado e atos destinados exclusivamente à produção de informações/testes para registro sanitário (exceção Bolar — art. 43, VII)",
+          "authority_ids": [
+            "l9279_art43"
+          ]
+        },
+        {
+          "id": "pid_patents_industrial_design.d3",
+          "label": "Extinção da patente pelo decurso do prazo de 20 anos (invenção) ou 15 anos (modelo de utilidade) do depósito, declarada inconstitucional a prorrogação automática do parágrafo único do art. 40 na ADI 5529 do STF",
+          "authority_ids": [
+            "l9279_art40",
+            "adi_5529"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "adi_5529_patentes"
+      ],
+      "typical_requests": [
+        "Abstenção imediata da fabricação, importação e comercialização do produto ou processo contrafeito",
+        "Indenização pelos lucros cessantes (LPI, art. 210) e pela exploração no período entre a publicação e a concessão (art. 44)",
+        "Nulidade da patente em ação própria na Justiça Federal com o INPI (efeitos erga omnes) ou reconhecimento incidental inter partes na defesa estadual"
+      ],
+      "evidence": [
+        "Carta-patente ou certificado de registro de desenho industrial com relatório descritivo, quadro reivindicatório, desenhos e resumo",
+        "Documentos de anterioridade do estado da técnica (patentes estrangeiras, artigos científicos) anteriores à data de prioridade",
+        "Laudo pericial de engenharia, biotecnologia, química ou farmacêutica confrontando cada elemento técnico das reivindicações independentes"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "tutela_urgencia_antecedente",
+        "producao_antecipada_provas",
+        "impugnacao_laudo",
+        "contestacao"
+      ],
+      "related_claims": [
+        "pid_trademark_nullity_forfeiture",
+        "pid_tech_transfer_inpi_royalties"
+      ],
+      "limitation": "Ação de reparação por infração prescreve em 5 anos (LPI, art. 225); ação judicial de nulidade de patente pode ser proposta a qualquer tempo da vigência da patente pelo INPI ou por qualquer pessoa com legítimo interesse (LPI, art. 56), e até 5 anos na nulidade de desenho industrial (art. 117/174)"
+    },
+    {
+      "id": "pid_copyright_plagiarism_image",
+      "label": "Direitos autorais, plágio e uso comercial indevido de obra ou imagem",
+      "requirements": [
+        "criacao_intelectual_original",
+        "titularidade_moral_e_patrimonial",
+        "uso_sem_autorizacao_expressa",
+        "inexistencia_limitacao_legal_art_46"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pid_copyright_plagiarism_image.c1",
+          "label": "Proteção da obra intelectual independentemente de registro (LDA, art. 18), exigindo-se autorização prévia e expressa do autor para qualquer modalidade de reprodução, edição, adaptação, sincronização ou distribuição, sob interpretação restritiva dos negócios jurídicos (art. 4º)",
+          "authority_ids": [
+            "l9610_art4",
+            "l9610_art18",
+            "l9610_art29",
+            "l9610_art102"
+          ]
+        },
+        {
+          "id": "pid_copyright_plagiarism_image.c2",
+          "label": "Independe de prova do prejuízo a indenização pela publicação não autorizada de imagem de pessoa com fins econômicos ou comerciais (Súmula 403 do STJ), bem como o dano moral pela omissão de crédito autoral ou usurpação de paternidade (plágio)",
+          "authority_ids": [
+            "cc_art20",
+            "stj_sumula_403",
+            "l9610_art24",
+            "l9610_art108"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pid_copyright_plagiarism_image.d1",
+          "label": "Atipicidade de violação autoral sobre ideias abstratas, sistemas, métodos, projetos ou conceitos matemáticos em si mesmos (LDA, art. 8º)",
+          "authority_ids": [
+            "l9610_art8"
+          ]
+        },
+        {
+          "id": "pid_copyright_plagiarism_image.d2",
+          "label": "Exercício legítimo das limitações aos direitos autorais: pequenos trechos para crítica ou polêmica com indicação de autoria, paráfrases e paródias que não sejam verdadeiras reproduções nem impliquem descrédito, ou representação de obras situadas permanentemente em logradouros públicos",
+          "authority_ids": [
+            "l9610_art46",
+            "l9610_art47",
+            "l9610_art48"
+          ]
+        },
+        {
+          "id": "pid_copyright_plagiarism_image.d3",
+          "label": "Obra caída em domínio público após 70 anos contados de 1º de janeiro do ano subsequente ao falecimento do autor (LDA, art. 41) ou uso estritamente informativo/biográfico desprovido de exploração comercial abusiva",
+          "authority_ids": [
+            "l9610_art41",
+            "cc_art20"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Suspensão imediata da divulgação/comercialização, apreensão dos exemplares reproduzidos fraudulentamente e divulgação pública da verdadeira autoria em destaque (LDA, arts. 102 e 108)",
+        "Indenização material pelo valor dos exemplares comercializados (ou 3.000 exemplares quando não conhecido o número — art. 103) cumulada com danos morais autorais/imagem"
+      ],
+      "evidence": [
+        "Arquivos originais datados de criação (RAW, projetos editáveis, registros opcionais na Biblioteca Nacional/Belas Artes ou blockchain/ata notarial)",
+        "Ata notarial comprovando a publicação comercial não autorizada da fotografia, texto, música, vídeo ou projeto arquitetônico",
+        "Laudo pericial musicológico, literário ou audiovisual em alegações de plágio dissimulado"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "tutela_urgencia_antecedente",
+        "ata_notarial",
+        "contestacao"
+      ],
+      "related_claims": [
+        "civ_honor_image",
+        "pid_ai_scraping_deepfake_synthetic"
+      ],
+      "limitation": "Prescrição trienal para a pretensão de reparação civil patrimonial decorrente de violação de direito autoral ou de imagem (CC, art. 206, § 3º, V — jurisprudência pacificada da Segunda Seção do STJ); direitos morais do autor são inalienáveis e irrenunciáveis (LDA, art. 27)"
+    },
+    {
+      "id": "pid_software_saas_licensing",
+      "label": "Titularidade, contrafação e licenciamento de programa de computador e SaaS",
+      "requirements": [
+        "codigo_fonte_ou_arquitetura_original",
+        "titularidade_empregador_ou_encomendante",
+        "contrafacao_ou_excesso_licencas",
+        "auditoria_vistoria_tecnica"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pid_software_saas_licensing.c1",
+          "label": "Pertencem exclusivamente ao empregador ou contratante os direitos patrimoniais relativos ao programa de computador desenvolvido e elaborado durante a vigência de contrato ou vínculo destinado à pesquisa e desenvolvimento, salvo estipulação em contrário (Lei 9.609/1998, art. 4º)",
+          "authority_ids": [
+            "l9609_art4",
+            "l9609_art2"
+          ]
+        },
+        {
+          "id": "pid_software_saas_licensing.c2",
+          "label": "Ilicitude da reprodução não autorizada de código-fonte/objeto ou da utilização de licenças de software acima do quantitativo contratado, ensejando vistoria cautelar e indenização múltipla ou pelo valor de mercado das licenças sonegadas",
+          "authority_ids": [
+            "l9609_art9",
+            "l9609_art12",
+            "l9609_art14",
+            "l9610_art102"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pid_software_saas_licensing.d1",
+          "label": "Titularidade exclusiva do desenvolvedor quando o programa for gerado sem relação com o contrato de trabalho/prestação de serviços e sem utilização de recursos, informações tecnológicas, segredos ou instalações do contratante (art. 4º, § 2º)",
+          "authority_ids": [
+            "l9609_art4"
+          ]
+        },
+        {
+          "id": "pid_software_saas_licensing.d2",
+          "label": "Ausência de contrafação na simples semelhança funcional de telas/regras de negócio desenvolvida de forma independente em linguagem ou código distinto, ou integração para interoperabilidade (Lei 9.609/1998, art. 6º, III e IV)",
+          "authority_ids": [
+            "l9609_art6",
+            "l9610_art8"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Busca, apreensão ou vistoria pericial cautelar em servidores e estações para apuração de licenças irregulares ou cópia de código-fonte, resguardado segredo empresarial",
+        "Abstenção de uso/comercialização do software derivado ilícito e condenação ao pagamento das licenças utilizadas mais indenização reparatória",
+        "Rescisão de contrato SaaS/desenvolvimento de software sob encomenda por inadimplemento de níveis de serviço (SLA) ou não entrega de escopo"
+      ],
+      "evidence": [
+        "Certificado de registro opcional de programa de computador no INPI, logs de commits em repositório Git datado e contrato de trabalho/prestação de serviços",
+        "Laudo pericial de engenharia de computação comparando árvores sintáticas, bibliotecas proprietárias e trechos idênticos de código-fonte",
+        "Relatórios de telemetria de licenciamento e contratos de licença de uso (EULA) ou SaaS"
+      ],
+      "piece_ids": [
+        "producao_antecipada_provas",
+        "tutela_urgencia_antecedente",
+        "inicial_procedimento_comum",
+        "impugnacao_laudo",
+        "contestacao"
+      ],
+      "related_claims": [
+        "pid_copyright_plagiarism_image",
+        "pid_trade_secret_knowhow_nda"
+      ],
+      "limitation": "Prescrição quinquenal para a ação civil por ofensa a direitos patrimoniais do autor ou titular de programa de computador (Lei 9.609/1998, art. 14, § 2º — conferir distinção especial frente ao prazo geral trienal do CC)"
+    },
+    {
+      "id": "pid_domain_names_saci_cybersquatting",
+      "label": "Disputa de nomes de domínio .br (SACI-Adm) e cybersquatting",
+      "requirements": [
+        "anterioridade_registro_ou_marca",
+        "identidade_ou_semelhanca_confundivel",
+        "ausencia_interesse_legitimo_titular_dominio",
+        "registro_ou_uso_de_ma_fe"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pid_domain_names_saci_cybersquatting.c1",
+          "label": "Transferência ou cancelamento de nome de domínio idêntico ou suficientemente semelhante a marca registrada, nome empresarial ou título de estabelecimento anterior quando configurado registro ou uso de má-fé (cybersquatting, desvio de clientela ou cobrança especulativa)",
+          "authority_ids": [
+            "l9279_art129",
+            "l9279_art195",
+            "cc_art422"
+          ]
+        },
+        {
+          "id": "pid_domain_names_saci_cybersquatting.c2",
+          "label": "Mitigação judicial e administrativa (SACI-Adm / NIC.br) do princípio first to file diante de parasitismo digital ou confusão deliberada com sinal distintivo alheio",
+          "authority_ids": [
+            "cc_art187",
+            "l9279_art209"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pid_domain_names_saci_cybersquatting.d1",
+          "label": "Prevalência da anterioridade do registro regular do nome de domínio (first come, first served) quando o titular detém atividade lícita própria, sobrenome ou expressão genérica sem intuito de usurpar clientela alheia",
+          "authority_ids": [
+            "cc_art422",
+            "l9279_art124"
+          ]
+        },
+        {
+          "id": "pid_domain_names_saci_cybersquatting.d2",
+          "label": "Coexistência legítima de domínios em ramos econômicos inteiramente inconfundíveis sem redirecionamento malicioso nem criação de e-mails fraudulentos",
+          "authority_ids": [
+            "l9279_art129"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Ordem ao NIC.br / Registro.br para transferência imediata da titularidade ou congelamento/cancelamento do nome de domínio '.br'",
+        "Abstenção do uso da expressão em URLs, endereços de correio eletrônico e metadados sob multa diária, cumulada com indenização"
+      ],
+      "evidence": [
+        "Consulta WHOIS do Registro.br comprovando data de criação, titularidade e servidores DNS do domínio disputado",
+        "Certificado de marca no INPI ou atos constitutivos arquivados na Junta Comercial com anterioridade",
+        "Ata notarial demonstrando página de estacionamento à venda, phishing, redirecionamento a concorrente ou confusão de consumidores"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "tutela_urgencia_antecedente",
+        "requerimento_instauracao_arbitragem",
+        "contestacao"
+      ],
+      "related_claims": [
+        "pid_trademark_infringement_collision",
+        "pid_keyword_advertising_parasitic_search"
+      ],
+      "limitation": "Procedimento SACI-Adm instaurável a qualquer tempo enquanto ativo o domínio; ação judicial de reparação por concorrência desleal sujeita à prescrição quinquenal (LPI, art. 225) e pretensão inibitória/anulatória de má-fé renovada pelo uso contínuo"
+    },
+    {
+      "id": "pid_platform_liability_content_removal",
+      "label": "Responsabilidade civil de provedores de aplicações e remoção de conteúdo (Marco Civil e Temas 987/533 STF)",
+      "requirements": [
+        "identificacao_clara_especifica_url",
+        "ordem_judicial_ou_notificacao_conforme_regime",
+        "excecao_conteudo_intimo_art_21",
+        "fornecimento_registros_acesso"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pid_platform_liability_content_removal.c1",
+          "label": "Dever de indisponibilização imediata mediante simples notificação extrajudicial nos casos de divulgação não consensual de cenas de nudez ou atos sexuais de caráter privado (art. 21) e nas hipóteses de deveres de cuidado sistêmico/ilícitos graves reconhecidas pelo STF no Tema 987",
+          "authority_ids": [
+            "l12965_art21",
+            "tema_stf_987",
+            "tema_stf_533"
+          ]
+        },
+        {
+          "id": "pid_platform_liability_content_removal.c2",
+          "label": "Responsabilização civil do provedor de aplicação que descumpre no prazo assinado ordem específica contendo indicação clara da URL localizadora do conteúdo infringente, e obrigação de fornecer registros de conexão/acesso (IP, porta lógica e timestamp) para identificação do ofensor",
+          "authority_ids": [
+            "l12965_art19",
+            "l12965_art22",
+            "l12965_art15"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pid_platform_liability_content_removal.d1",
+          "label": "Nulidade de ordem genérica de monitoramento prévio ou remoção desprovida da indicação clara e específica dos localizadores inequívocos (URLs) do conteúdo apontado como infringente (Lei 12.965/2014, art. 19, § 1º)",
+          "authority_ids": [
+            "l12965_art19"
+          ]
+        },
+        {
+          "id": "pid_platform_liability_content_removal.d2",
+          "label": "Exclusão de responsabilidade do provedor que promoveu tempestivamente a remoção após ciência válida nos limites técnicos do serviço ou impossibilidade material decorrente do decurso do prazo legal de guarda de 6 meses dos registros de acesso a aplicações (art. 15)",
+          "authority_ids": [
+            "l12965_art15",
+            "l12965_art19"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lgpd_vigencia"
+      ],
+      "typical_requests": [
+        "Tutela de urgência determinando a remoção/indisponibilização das postagens ou perfis falsos indicados por URL específica",
+        "Quebra de sigilo telemático para fornecimento dos registros de acesso (IP de origem, porta lógica de origem, data, hora e fuso GMT) e dados cadastrais do responsável",
+        "Indenização por danos morais e materiais em razão da inércia ilícita do provedor após ciência exigível pelo regime aplicável"
+      ],
+      "evidence": [
+        "Relação exata e integral das URLs específicas (links diretos) de cada postagem, vídeo ou perfil impugnado",
+        "Ata notarial ou captura preservada com código-fonte/hash e comprovante de denúncia administrativa na plataforma",
+        "Prova da falsidade imputada, discurso ilícito, golpe patrocinado ou violação de intimidade"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "tutela_urgencia_antecedente",
+        "contestacao",
+        "agravo_instrumento"
+      ],
+      "related_claims": [
+        "dp_content_removal",
+        "dp_platform_liability",
+        "dp_records_identification"
+      ],
+      "limitation": "Guarda obrigatória de registros de acesso a aplicações de internet por 6 meses (Lei 12.965/2014, art. 15) e de conexão por 1 ano (art. 13), cabendo pedido cautelar de preservação prorrogada; prescrição trienal para reparação civil (CC, art. 206, § 3º, V)"
+    },
+    {
+      "id": "pid_trade_secret_knowhow_nda",
+      "label": "Violação de segredo industrial, know-how e acordos de confidencialidade (NDA)",
+      "requirements": [
+        "informacao_nao_publica_valor_economico",
+        "medidas_razoaveis_protecao_interna",
+        "acesso_privilegiado_ex_socio_empregado_parceiro",
+        "divulgacao_ou_exploracao_desleal"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pid_trade_secret_knowhow_nda.c1",
+          "label": "Configura ato de concorrência desleal e ilícito indenizável a divulgação, exploração ou utilização, sem autorização, de conhecimentos, fórmulas, listas estratégicas precificadas, algoritmos ou dados confidenciais obtidos mediante relação contratual, societária ou empregatícia, mesmo após o término do contrato",
+          "authority_ids": [
+            "l9279_art195",
+            "l9279_art209",
+            "cc_art422"
+          ]
+        },
+        {
+          "id": "pid_trade_secret_knowhow_nda.c2",
+          "label": "Tramitação obrigatória em segredo de justiça quanto às peças e documentos que revelem segredo comercial ou industrial, vedado à outra parte utilizá-los fora dos autos (LPI, art. 206)",
+          "authority_ids": [
+            "l9279_art206",
+            "cpc_art189"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pid_trade_secret_knowhow_nda.d1",
+          "label": "Inexistência de segredo tutelável sobre informações de domínio público, estado geral da técnica ou bagagem profissional ordinária adquirida licitamente pelo trabalhador/sócio na experiência cotidiana",
+          "authority_ids": [
+            "l9279_art195",
+            "cf_art5"
+          ]
+        },
+        {
+          "id": "pid_trade_secret_knowhow_nda.d2",
+          "label": "Ausência de medidas mínimas de governança, controle de acesso ou classificação de sigilo pela própria empresa titular, descaracterizando o caráter confidencial da informação",
+          "authority_ids": [
+            "l9279_art195"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Ordem liminar de abstenção imediata do uso e divulgação do segredo de negócio, busca e apreensão/espelhamento forense de mídias e decretação do segredo de justiça do art. 206 da LPI",
+        "Cobrança de cláusula penal estipulada em NDA (Acordo de Confidencialidade) cumulada ou suplementada pelas perdas e danos dos arts. 209 e 210 da LPI"
+      ],
+      "evidence": [
+        "Instrumento de NDA, políticas internas de segurança da informação e registros de controle de acesso restrito aos arquivos estratégicos",
+        "Laudo de perícia forense computacional comprovando download massivo em pendrive/nuvem pessoal ou envio externo às vésperas do desligamento",
+        "Prova de lançamento abrupto de produto idêntico pelo concorrente sem tempo hábil de engenharia própria"
+      ],
+      "piece_ids": [
+        "tutela_urgencia_antecedente",
+        "producao_antecipada_provas",
+        "inicial_procedimento_comum",
+        "contestacao"
+      ],
+      "related_claims": [
+        "emp_unfair_competition",
+        "pid_software_saas_licensing"
+      ],
+      "limitation": "Prescrição quinquenal para reparação civil fundada em concorrência desleal por violação de segredo industrial (Lei 9.279/1996, art. 225); cobrança de multa contratual líquida em NDA segue prescrição quinquenal (CC, art. 206, § 5º, I)"
+    },
+    {
+      "id": "pid_franchising_cof_annulment",
+      "label": "Contratos de franquia empresarial e entrega da Circular de Oferta de Franquia (Lei 13.966/2019)",
+      "requirements": [
+        "entrega_cof_dez_dias_antecedencia",
+        "veracidade_informacoes_economicas_rede",
+        "inexistencia_vinculo_empregaticio_ou_consumo",
+        "clausula_nao_concorrencia_pos_contratual"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pid_franchising_cof_annulment.c1",
+          "label": "Anulabilidade ou nulidade do contrato de franquia, com restituição de todas as quantias pagas a título de filiação ou royalties devidamente corrigidas, quando a COF não for entregue com no mínimo 10 dias de antecedência da assinatura ou de qualquer pagamento, ou contiver informações falsas/omissões graves",
+          "authority_ids": [
+            "l13966_art2",
+            "l13966_art4"
+          ]
+        },
+        {
+          "id": "pid_franchising_cof_annulment.c2",
+          "label": "Exigibilidade das obrigações contratuais de padronização, pagamento de royalties, fundo de propaganda e abstenção de concorrência pós-contratual territorialmente e temporalmente delimitada em caso de rescisão culposa do franqueado",
+          "authority_ids": [
+            "l13966_art1",
+            "l13966_art2",
+            "cc_art475"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pid_franchising_cof_annulment.d1",
+          "label": "Inaplicabilidade do Código de Defesa do Consumidor ao contrato empresarial de franquia e ausência de vínculo empregatício entre franqueador e franqueado ou seus empregados, salvo fraude desvirtuadora",
+          "authority_ids": [
+            "l13966_art1",
+            "cc_art421a"
+          ]
+        },
+        {
+          "id": "pid_franchising_cof_annulment.d2",
+          "label": "Convalidação pela conduta contraditória (venire contra factum proprium / supressio) quando o franqueado explora a unidade por longo período sem prejuízo causal ligado a atraso formal de entrega da COF, ou impossibilidade de prometer rentabilidade garantida em negócio de risco empresarial",
+          "authority_ids": [
+            "cc_art422",
+            "l13966_art2"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_13966_franquia"
+      ],
+      "typical_requests": [
+        "Anulação/nulidade do contrato de franquia com devolução integral da taxa inicial de franquia e royalties pagos mais perdas e danos (Lei 13.966/2019, art. 2º, § 2º)",
+        "Resolução por inadimplemento contratual com descaracterização imediata da fachada/marca, cobrança de royalties vencidos e multa rescisória",
+        "Tutela inibitória para cumprimento da cláusula de não concorrência (non-compete) no território e prazo ajustados"
+      ],
+      "evidence": [
+        "Recibo datado e assinado de recebimento da Circular de Oferta de Franquia (COF) em confronto com a data do pré-contrato, contrato ou primeiro comprovante bancário de pagamento",
+        "COF completa (balanços da franqueadora, lista de franqueados ativos e desligados nos últimos 24 meses, estimativa de investimento inicial e regras territoriais)",
+        "Planilhas financeiras DRE da operação franqueada e notificações de auditoria de padrão"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "tutela_urgencia_antecedente",
+        "requerimento_instauracao_arbitragem",
+        "contestacao",
+        "execucao_titulo_extrajudicial"
+      ],
+      "related_claims": [
+        "emp_business_transfer",
+        "pid_trademark_infringement_collision",
+        "arb_specific_performance_kompetenz"
+      ],
+      "limitation": "Prazo decadencial de 2 anos (ou 4 anos por erro/dolo — CC, arts. 178 e 179) para pleitear anulabilidade por vício na entrega da COF segundo a jurisprudência do STJ, e 5/10 anos para cobrança e resolução por inadimplemento contratual (CC, arts. 205 e 206, § 5º, I)"
+    },
+    {
+      "id": "pid_ai_scraping_deepfake_synthetic",
+      "label": "Sistemas de IA, web scraping parasitário, voz/imagem sintética (deepfake) e ativos digitais",
+      "requirements": [
+        "clonagem_voz_imagem_ou_extracao_massiva",
+        "ausencia_consentimento_ou_base_legal",
+        "finalidade_comercial_ou_desinformacao",
+        "rastreabilidade_tecnica_sintetica"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pid_ai_scraping_deepfake_synthetic.c1",
+          "label": "Violação aos direitos da personalidade (voz, imagem, nome e identidade biométrica) e aos direitos autorais/conexos pela geração e exploração não autorizada de réplicas sintéticas (deepfakes) por sistemas de inteligência artificial",
+          "authority_ids": [
+            "cf_art5",
+            "cc_art11",
+            "cc_art12",
+            "cc_art20",
+            "stj_sumula_403",
+            "lgpd_art11"
+          ]
+        },
+        {
+          "id": "pid_ai_scraping_deepfake_synthetic.c2",
+          "label": "Ilicitude concorrencial e contratual da raspagem automatizada massiva (web scraping abusivo) que contorna barreiras tecnológicas para copiar parasitariamente bases de dados estruturadas ou acervo proprietário de concorrente em tempo real",
+          "authority_ids": [
+            "l9279_art195",
+            "l9610_art7",
+            "l9610_art87",
+            "cp_art154a"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pid_ai_scraping_deepfake_synthetic.d1",
+          "label": "Licitude da indexação pública não intrusiva de dados abertos não protegidos por direitos autorais ou segredo de negócio, sem sobrecarga de servidores e sem reprodução substancial da expressão criativa protegida",
+          "authority_ids": [
+            "l9610_art8",
+            "cf_art170"
+          ]
+        },
+        {
+          "id": "pid_ai_scraping_deepfake_synthetic.d2",
+          "label": "Uso artístico, satírico ou educacional devidamente rotulado como conteúdo sintético sem imputação falsa, descrédito pessoal ou exploração publicitária enganosa",
+          "authority_ids": [
+            "l9610_art47",
+            "cf_art5"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lgpd_vigencia"
+      ],
+      "typical_requests": [
+        "Tutela de urgência para remoção imediata de anúncios, vídeos ou áudios gerados com clonagem sintética de voz/imagem (deepfake), com identificação dos anunciantes e registros de acesso",
+        "Bloqueio técnico de bots de raspagem parasitária e abstenção de exploração comercial da base de dados extraída ilicitamente",
+        "Indenização por danos patrimoniais (valor de mercado do licenciamento de imagem/voz ou base) e danos morais"
+      ],
+      "evidence": [
+        "Ata notarial preservando o arquivo audiovisual sintético, URLs de veiculação, dados de impulsionamento publicitário e comparação acústica/biométrica",
+        "Logs de servidor (WAF/CDN), endereços IP, user-agents e termos de uso comprovando contorno de bloqueios técnicos no scraping massivo",
+        "Laudo pericial audiovisual de detecção de síntese por IA e comprovação da titularidade da base de dados original"
+      ],
+      "piece_ids": [
+        "tutela_urgencia_antecedente",
+        "inicial_procedimento_comum",
+        "ata_notarial",
+        "contestacao"
+      ],
+      "related_claims": [
+        "pid_copyright_plagiarism_image",
+        "pid_platform_liability_content_removal",
+        "dp_unlawful_processing"
+      ],
+      "limitation": "Prescrição trienal para reparação civil por violação de imagem/voz/dados pessoais (CC, art. 206, § 3º, V) e quinquenal quando caracterizada concorrência desleal parasitária entre empresas (LPI, art. 225)"
+    },
+    {
+      "id": "pid_tech_transfer_inpi_royalties",
+      "label": "Contratos de transferência de tecnologia, licenciamento de PI e averbação no INPI",
+      "requirements": [
+        "contrato_licenca_ou_fornecimento_tecnologia",
+        "averbacao_registro_inpi_efeitos_terceiros",
+        "remessa_cambial_e_dedutibilidade_royalties",
+        "aperfeicoamentos_tecnicos"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pid_tech_transfer_inpi_royalties.c1",
+          "label": "Validade e plena exigibilidade inter partes das obrigações contratuais de pagamento de royalties e transferência de know-how independentemente de averbação, produzindo a averbação/registro no INPI efeitos perante terceiros",
+          "authority_ids": [
+            "l9279_art62",
+            "l9279_art140",
+            "l9279_art211"
+          ]
+        },
+        {
+          "id": "pid_tech_transfer_inpi_royalties.c2",
+          "label": "Simplificação das remessas internacionais de royalties e assistência técnica sob o Novo Marco Cambial (Lei 14.286/2021) e apuração de dedutibilidade segundo o princípio arm's length dos preços de transferência (Lei 14.596/2023)",
+          "authority_ids": [
+            "l14286_art9",
+            "l9279_art211"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pid_tech_transfer_inpi_royalties.d1",
+          "label": "Vedação de cobrança de royalties de patente após sua extinção ou queda em domínio público, bem como de restrições abusivas pós-contratuais ao uso de know-how definitivamente absorvido e pago quando configurado abuso",
+          "authority_ids": [
+            "l9279_art42",
+            "cc_art421a"
+          ]
+        },
+        {
+          "id": "pid_tech_transfer_inpi_royalties.d2",
+          "label": "Inoponibilidade da licença exclusiva perante terceiros de boa-fé antes da publicação da averbação do contrato no INPI (LPI, arts. 62 e 140)",
+          "authority_ids": [
+            "l9279_art62",
+            "l9279_art140"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Cobrança ou execução de royalties e remuneração por transferência de tecnologia vencidos e não pagos",
+        "Anulação de exigência administrativa abusiva do INPI que extrapole as competências formais do art. 211 da LPI e interfira na liberdade de pactuação de preços entre partes privadas",
+        "Averbação do instrumento de cessão ou licença exclusiva junto ao INPI"
+      ],
+      "evidence": [
+        "Contrato internacional ou nacional de licença de patente/marca, fornecimento de tecnologia ou serviços de assistência técnica",
+        "Certificado de Averbação ou Registro emitido pelo INPI e contratos de câmbio/registros BACEN",
+        "Relatórios de auditoria de vendas líquidas que compõem a base de cálculo dos royalties"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "execucao_titulo_extrajudicial",
+        "mandado_seguranca",
+        "requerimento_instauracao_arbitragem",
+        "contestacao"
+      ],
+      "related_claims": [
+        "pid_patents_industrial_design",
+        "arb_specific_performance_kompetenz",
+        "trib_limits_power"
+      ],
+      "limitation": "Cobrança de royalties líquidos previstos em instrumento particular ou público prescreve em 5 anos (CC, art. 206, § 5º, I); mandado de segurança contra ato administrativo do INPI em 120 dias da ciência (Lei 12.016/2009, art. 23)"
+    },
+    {
+      "id": "pid_keyword_advertising_parasitic_search",
+      "label": "Uso de marca alheia como palavra-chave em links patrocinados (keyword advertising)",
+      "requirements": [
+        "marca_registrada_concorrente",
+        "contratacao_palavra_chave_patrocinada",
+        "desvio_clientela_ou_confusao_digital",
+        "responsabilidade_anunciante"
+      ],
+      "claimant_theses": [
+        {
+          "id": "pid_keyword_advertising_parasitic_search.c1",
+          "label": "Caracteriza concorrência desleal e infração marcária a contratação de marca registrada de concorrente como palavra-chave de disparo de link patrocinado em buscadores, por provocar desvio parasitário de clientela e diluição do sinal alheio — jurisprudência consolidada do STJ",
+          "authority_ids": [
+            "l9279_art129",
+            "l9279_art130",
+            "l9279_art195",
+            "l9279_art209"
+          ]
+        },
+        {
+          "id": "pid_keyword_advertising_parasitic_search.c2",
+          "label": "Condenação em obrigação de não fazer (negativação da marca alheia nas campanhas de busca paga) cumulada com danos morais in re ipsa e danos materiais apurados em liquidação",
+          "authority_ids": [
+            "l9279_art209",
+            "l9279_art210",
+            "stj_sumula_227"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "pid_keyword_advertising_parasitic_search.d1",
+          "label": "Ausência de prática desleal quando o disparo automático decorrer de correspondência ampla sobre substantivo comum/descritivo do próprio produto comercializado, sem referência à marca concorrente no texto visível do anúncio",
+          "authority_ids": [
+            "l9279_art124",
+            "l9279_art132"
+          ]
+        },
+        {
+          "id": "pid_keyword_advertising_parasitic_search.d2",
+          "label": "Ilegitimidade ou exclusão de responsabilidade do provedor da ferramenta de busca antes do descumprimento de ordem judicial específica (Lei 12.965/2014, art. 19), recaindo o dever primário sobre o anunciante concorrente",
+          "authority_ids": [
+            "l12965_art19"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Tutela de urgência obrigando o anunciante réu a cessar o uso e incluir a marca da autora na lista de palavras-chave negativas em todas as suas campanhas de links patrocinados sob multa diária",
+        "Condenação do anunciante ao pagamento de danos morais e lucros cessantes (LPI, art. 210), expedindo-se ofício à plataforma de anúncios para exibição do relatório de cliques e impressões da palavra-chave"
+      ],
+      "evidence": [
+        "Certificado de registro da marca no INPI e comprovação de concorrência no mesmo nicho mercadológico",
+        "Ata notarial demonstrando a pesquisa pelo nome exclusivo da marca da autora e a exibição destacada do anúncio patrocinado da ré no topo dos resultados",
+        "Relatórios da Central de Transparência de Anúncios e métricas de impressões/cliques requisitados da plataforma"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "tutela_urgencia_antecedente",
+        "ata_notarial",
+        "contestacao"
+      ],
+      "related_claims": [
+        "pid_trademark_infringement_collision",
+        "pid_trade_dress_unfair_competition",
+        "pid_platform_liability_content_removal"
+      ],
+      "limitation": "Prescrição quinquenal para reparação de danos por infração marcária e concorrência desleal (Lei 9.279/1996, art. 225)"
+    }
+  ]
+}

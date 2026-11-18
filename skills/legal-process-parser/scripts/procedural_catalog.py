@@ -15,7 +15,15 @@ def canonical(value: str) -> str:
             "direito_do_trabalho":"trabalhista","direito_trabalhista":"trabalhista",
             "laboral":"trabalhista","labor":"trabalhista","labour":"trabalhista","criminal":"penal","processo_penal":"penal",
             "penal_militar":"militar","previdencia_privada":"previdencia_complementar","lgpd":"protecao_dados",
-            "sus":"saude_publica","registral":"imobiliario","notarial":"imobiliario"}.get(text,text)
+            "sus":"saude_publica","registral":"imobiliario","notarial":"imobiliario",
+            "processo_civil":"processual_civil","seguros":"securitario","direito_securitario":"securitario",
+            "recuperacao_judicial":"insolvencia","falencia":"insolvencia","falimentar":"insolvencia",
+            "propriedade_intelectual":"propriedade_intelectual_digital","direito_digital":"propriedade_intelectual_digital",
+            "regulatorio":"regulatorio_concorrencial","concorrencial":"regulatorio_concorrencial",
+            "arbitragem":"arbitragem_mediacao","mediacao":"arbitragem_mediacao",
+            "eca":"crianca_adolescente_educacional","infancia_e_juventude":"crianca_adolescente_educacional","educacional":"crianca_adolescente_educacional",
+            "cartorio":"notarial_registral","registros_publicos":"notarial_registral",
+            "aduaneiro":"aduaneiro_maritimo","maritimo":"aduaneiro_maritimo"}.get(text,text)
 
 
 def _domain_matches(entry: dict, domain: str) -> bool:

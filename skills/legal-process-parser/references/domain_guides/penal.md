@@ -1,38 +1,20 @@
-# Direito Penal e Processo Penal
+# Direito Penal, Processo Penal e Execução Penal
 
-Catálogo: `domain_catalogs/penal.json`. No catálogo, `claimant_theses` são teses da defesa e `defense_theses`, da acusação.
+Catálogo: `domain_catalogs/penal.json`.
 
-## Lei penal no tempo
-- Anterioridade (CP, art. 1º) e retroatividade da lei mais benéfica (CP, art. 2º; CF, art. 5º, XL). A lógica é inversa à de outros ramos: lei posterior mais grave não alcança o fato.
-- Lei 13.964/2019 (DOU 24/12/2019, vigência 30 dias depois): ANPP (CPP, art. 28-A), cadeia de custódia (art. 158-A) e juiz das garantias (art. 3º-B; conferir a ADI 6298).
-- Lei 14.994/2024 (DOU 10/10/2024): feminicídio como crime autônomo (CP, art. 121-A).
+## 1. Regime e competência
+- Legalidade estrita, irretroatividade da lei mais gravosa e retroatividade benéfica (CF, art. 5º, XXXIX e XL; CP, art. 2º), sistema acusatório (CPP, art. 3º-A; **ADIs 6298–6305 STF**). Competência pelo lugar da consumação (CPP, art. 70, ressalvado o estelionato por depósito/transferência/cheque no domicílio da vítima — art. 70, § 4º, c/ Lei 14.155/2021) e Justiça Federal nas hipóteses taxativas do art. 109, IV a XI, da CF.
 
-## Garantias e prova
-- Elementos do inquérito não bastam para condenar (CPP, art. 155); perícia (art. 159); nulidades (arts. 563 e 564).
-- Súmulas Vinculantes conferidas na página do STF: 11 (algemas), 14 (acesso da defesa aos autos), 24 (crime material tributário e lançamento definitivo), 26 (progressão em crimes hediondos) e 56 (falta de vaga e regime mais gravoso).
+## 2. Teses da defesa técnica
+- **Nulidades, prova digital, busca e reconhecimento:** argua ilicitude de provas derivadas (CF, art. 5º, LVI; CPP, art. 157), quebra da **cadeia de custódia física ou digital** (CPP, arts. 158-A a 158-F — invalidade de meros *prints* de WhatsApp Web espelhados sem código *hash*/extração auditável — STJ), nulidade de busca pessoal ou ingresso domiciliar sem mandado e sem fundada suspeita objetiva prévia (CPP, arts. 240 e 244; Tema 280 STF) e **nulidade de reconhecimento fotográfico ou pessoal em desacordo com o rito cogente do art. 226 do CPP** (jurisprudência pacificada da 5ª e 6ª Turmas do STJ e STF).
+- **Liberdade, ANPP, mérito, dosimetria e execução:** postule relaxamento ou substituição da preventiva por cautelares diversas diante de fundamentação abstrata ou falta de contemporaneidade (CPP, arts. 282, 312, § 2º, e 319; art. 316, p.u.), **retroatividade do ANPP** aos processos sem trânsito em julgado quando não recebida a denúncia ou desclassificada a imputação (CPP, art. 28-A; **Tema 1098 STF**), extinção da punibilidade por pagamento/suspensão pelo parcelamento e falta de lançamento definitivo nos crimes tributários materiais (**SV 24**; Lei 10.684/2003, art. 9º), tráfico privilegiado sem hediondez para primário de bons antecedentes (Lei 11.343/2006, art. 33, § 4º; Tema 712 STF), vedação de pena intermediária aquém do mínimo (**Súmula 231 STJ** como limite pró-acusação a ser debatido ou respeitado) e progressão de regime pela fração vigente na data do fato (LEP, art. 112).
 
-## Prisão e liberdade
-Flagrante e audiência de custódia (CPP, art. 310), requisitos e revisão da preventiva (arts. 312, 313 e 316), liberdade provisória (art. 321).
+## 3. Teses do Ministério Público / Acusação
+- **Materialidade, autoria, cautelares e Júri:** demonstre justa causa, situação de flagrância em crimes permanentes (tráfico/posse de arma com elementos prévios concretos — Tema 280 STF), fonte independente ou descoberta inevitável (CPP, art. 157, §§ 1º e 2º), garantia da ordem pública por risco concreto de reiteração delitiva, vedação de ANPP em violência doméstica, reincidência ou habitualidade criminosa (art. 28-A, § 2º), soberania dos veredictos e **execução imediata da condenação pelo Tribunal do Júri** independentemente do *quantum* da pena (**Tema 1068 STF**) e exigência de exame criminológico favorável na progressão pós-**Lei 14.843/2024**.
 
-## Dosimetria
-Súmulas do STJ conferidas: 231 (atenuante e mínimo legal), 444 (inquéritos e ações em curso não agravam a pena-base) e 545 (confissão; redação revisada em 10/09/2025, Tema repetitivo 1194, DJEN de 02/12/2025 — aplicar a redação vigente na data relevante).
+## 4. Magistratura e gabinete (CPP, art. 387 e art. 315, § 2º)
+- Evitar iniciativa probatória substitutiva da acusação (CPP, art. 212 e ADIs 6298–6305 STF), individualizar cada vetor do art. 59 do CP sem *bis in idem* com elementares ou qualificadoras (Súmula 241 STJ), aplicar detração para fixação do regime inicial (CPP, art. 387, § 2º) e não fixar regime mais gravoso apenas pela gravidade abstrata do delito (Súmulas 718 e 719 STF; Súmula 440 STJ).
 
-## Peças
-Resposta à acusação, memoriais, apelação (CPP, art. 593), RESE (art. 581), revisão criminal (art. 621), habeas corpus (arts. 647 e 648), agravo em execução (LEP, art. 197), ANPP e institutos da Lei 9.099/1995 (arts. 61, 76 e 89).
-
-## Cuidados
-Presunção de inocência, linguagem sem afirmação de culpa, cadeia de custódia documentada e prazos contados conforme o CPP.
-
-## Roteiro das pretensões acrescentadas
-
-Dispositivos localizados no texto oficial em 10/11/2026; súmulas e temas com situação lida no portal do tribunal. A página de tema do STF não traz a tese: ler a tese antes de citar.
-
-- Defesa de mérito (`pen_typicity_defenses`): arts. 15, 17, 20, 21, 23 e 25 do CP; limites da insignificância nas Súmulas 567, 589 e 599 do STJ.
-- Denúncia e júri (`pen_charge_defects`, `pen_jury`): arts. 41, 395, 397, 413 e 414 do CPP; execução imediata da condenação do júri conforme o Tema 1068 do STF.
-- Busca e reconhecimento (`pen_search_recognition`): fundadas razões para o ingresso em domicílio (Tema 280 do STF), fundada suspeita na busca pessoal (CPP, art. 244) e formalidades do art. 226.
-- Cautelares (`pen_cautionary_alternatives`): arts. 282, 315, 316, 318 e 319; instrução encerrada supera o excesso de prazo (Súmula 52).
-- Pena (`pen_regime_substitution`, `pen_concurrence_continuity`): Súmulas 269 e 440; arts. 44 e 69 a 71 do CP.
-- Drogas (`pen_drug_privilege`): redutor do art. 33, § 4º, natureza e quantidade (art. 42), vedação de combinar leis (Súmula 501).
-- Violência doméstica (`pen_domestic`): Súmulas 536, 542, 588, 589 e 600.
-- Execução (`pen_execution_incidents`): falta grave com procedimento e defesa técnica (Súmula 533); efeitos nas Súmulas 441, 526, 534 e 535; remição (art. 126 da LEP; Súmula 562); saída temporária após a Lei 14.843/2024, que não retroage para prejudicar.
-- Crimes econômicos e interceptação: Lei 12.850/2013, arts. 1º, 3º-A e 4º; Lei 9.613/1998, art. 1º; Lei 9.296/1996, arts. 2º e 5º; Temas 661 e 990 do STF.
+## 5. Marcos intertemporais e motores
+- **06/05/2010 (Lei 12.234/2010 — prescrição mínima 3 anos e fim da retroativa pré-denúncia)** · **23/01/2020 (Lei 13.964/2019 — Pacote Anticrime: ANPP, cadeia de custódia e percentuais art. 112 LEP)** · **11/04/2024 (Lei 14.843/2024 — saída temporária e exame criminológico)** · **10/10/2024 (Lei 14.994/2024 — feminicídio autônomo art. 121-A CP e progressão em 55%)**.
+- Motores: `penal_dosimetry.py` (trifásico, prescrição e LEP), `deadline_calculator.py` (`rito="penal"`, dias corridos — CPP, art. 798) e `domain_catalog.py`.

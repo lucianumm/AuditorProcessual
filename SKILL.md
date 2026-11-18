@@ -64,8 +64,8 @@ Cálculos são demonstrados com parâmetros explícitos; lacunas ficam por quest
 
 Demais ramos: guia em `references/domain_guides/<ramo>.md`, índice em
 `references/domain_catalogs/<ramo>_index.md` e só as pretensões escolhidas do
-catálogo do ramo (19 ramos, 257 pretensões, teses dos dois polos e marcos temporais).
-`claim_search.py "fatos"` sugere pretensões candidatas nos dois catálogos. Quando o
+catálogo do ramo (28 ramos, 483 pretensões, teses dos dois polos e marcos temporais; 606 pretensões ao todo com o trabalhista).
+`claim_search.py "fatos"` sugere pretensões candidatas nos dois catálogos com busca BM25 e sinônimos coloquiais. Para prazos, atualização monetária/BCB, previdenciário, dosimetria penal e prescrição, acione os motores determinísticos em `scripts/`. Quando o
 Planalto recusar o acesso, `legislation_lookup.py` usa a via oficial do Congresso
 (normas.leg.br) e informa a vigência registrada pelo portal.
 

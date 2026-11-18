@@ -4,12 +4,889 @@
  "label": "Direito Penal e Processual Militar",
  "guide": "domain_guides/militar.md",
  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
- "polo_labels": {"claimant_theses": "Teses da defesa", "defense_theses": "Teses da acusação"},
+ "polo_labels": {
+  "claimant_theses": "Teses da defesa",
+  "defense_theses": "Teses da acusação"
+ },
  "claims": [
-  {"id": "mil_competence", "label": "Crime militar e competência", "requirements": ["agente", "local", "funcao", "tipo"], "claimant_theses": [{"id": "mil_competence.c1", "label": "Fora das hipóteses do art. 9º do CPM a competência é da Justiça comum", "authority_ids": ["cpm_art9", "cf_art124", "cf_art125"]}], "defense_theses": [{"id": "mil_competence.d1", "label": "Enquadramento nas hipóteses do art. 9º do CPM", "authority_ids": ["cpm_art9"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["habeas_corpus", "resposta_acusacao"], "related_claims": [], "limitation": "conferir"},
-  {"id": "mil_appeals", "label": "Recursos no processo penal militar", "requirements": ["decisao", "cabimento", "prazo"], "claimant_theses": [{"id": "mil_appeals.c1", "label": "Recurso em sentido estrito, apelação e revisão no CPPM", "authority_ids": ["cppm_art516", "cppm_art526", "cppm_art550"]}], "defense_theses": [{"id": "mil_appeals.d1", "label": "Hipótese não prevista no CPPM", "authority_ids": ["cppm_art516"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": [], "piece_ids": ["apelacao_criminal", "rese", "revisao_criminal"], "related_claims": [], "limitation": "conferir"},
-  {"id": "mil_desertion_drugs", "label": "Deserção e entorpecente em área militar", "requirements": ["condicao_de_militar", "prazo_de_ausencia", "local_sujeito_a_administracao_militar", "quantidade"], "claimant_theses": [{"id": "mil_desertion_drugs.c1", "label": "Condição de procedibilidade ligada ao status de militar da ativa — conferir a jurisprudência do STM", "authority_ids": ["cpm_art187"]}, {"id": "mil_desertion_drugs.c2", "label": "Atipicidade ou erro quando ausente o dolo de se ausentar", "authority_ids": ["cpm_art187", "cpm_art30"]}], "defense_theses": [{"id": "mil_desertion_drugs.d1", "label": "Hierarquia e disciplina afastam a insignificância no porte de droga em quartel", "authority_ids": ["cpm_art290"]}, {"id": "mil_desertion_drugs.d2", "label": "Consumação com a ausência por mais de oito dias", "authority_ids": ["cpm_art187"]}], "temporal_marker_ids": [], "typical_requests": ["Absolvição", "Extinção do processo", "Desclassificação"], "evidence": ["Termo de deserção e partes de ausência", "Laudo de constatação", "Assentamentos funcionais"], "piece_ids": ["resposta_acusacao", "alegacoes_finais_memoriais", "apelacao_criminal", "habeas_corpus"], "related_claims": ["mil_competence"], "limitation": "Prescrição própria do CPM (art. 125) — conferir"},
-  {"id": "mil_custody", "label": "Prisão cautelar e habeas corpus na Justiça Militar", "requirements": ["prova_do_fato", "indicios_de_autoria", "fundamento", "duracao"], "claimant_theses": [{"id": "mil_custody.c1", "label": "Preventiva exige um dos fundamentos legais demonstrado concretamente", "authority_ids": ["cppm_art254", "cppm_art255"]}, {"id": "mil_custody.c2", "label": "Habeas corpus contra ilegalidade ou abuso de poder", "authority_ids": ["cppm_art467", "cf_art5"]}], "defense_theses": [{"id": "mil_custody.d1", "label": "Manutenção das normas de hierarquia e disciplina como fundamento", "authority_ids": ["cppm_art255"]}, {"id": "mil_custody.d2", "label": "Punição disciplinar militar: controle limitado à legalidade", "authority_ids": ["cf_art142"]}], "temporal_marker_ids": [], "typical_requests": ["Liberdade provisória", "Relaxamento", "Trancamento"], "evidence": ["Decisão de prisão", "Auto de prisão em flagrante", "Folha de alterações"], "piece_ids": ["pedido_liberdade", "habeas_corpus"], "related_claims": ["mil_appeals"], "limitation": "Conferir"},
-  {"id": "mil_charge_nullities", "label": "Denúncia, nulidades e prescrição no processo penal militar", "requirements": ["descricao_do_fato", "composicao_do_conselho", "prejuizo", "marcos_interruptivos"], "claimant_theses": [{"id": "mil_charge_nullities.c1", "label": "Denúncia sem os requisitos legais", "authority_ids": ["cppm_art77"]}, {"id": "mil_charge_nullities.c2", "label": "Nulidade por incompetência ou falta de formalidade essencial", "authority_ids": ["cppm_art500"]}, {"id": "mil_charge_nullities.c3", "label": "Extinção da punibilidade pela prescrição", "authority_ids": ["cpm_art123", "cpm_art125"]}], "defense_theses": [{"id": "mil_charge_nullities.d1", "label": "Ausência de prejuízo e preclusão", "authority_ids": ["cppm_art500"]}, {"id": "mil_charge_nullities.d2", "label": "Competência monocrática do juiz federal da Justiça Militar para civis", "authority_ids": ["l8457_art30"]}], "temporal_marker_ids": [], "typical_requests": ["Rejeição da denúncia", "Anulação do processo", "Extinção da punibilidade"], "evidence": ["Denúncia e atas", "Datas do fato, do recebimento e da sentença"], "piece_ids": ["resposta_acusacao", "alegacoes_finais_memoriais", "apelacao_criminal", "revisao_criminal"], "related_claims": ["mil_competence", "mil_appeals"], "limitation": "Conferir"}
+  {
+   "id": "mil_competence",
+   "label": "Crime militar e competência",
+   "requirements": [
+    "agente",
+    "local",
+    "funcao",
+    "tipo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mil_competence.c1",
+     "label": "Fora das hipóteses do art. 9º do CPM a competência é da Justiça comum",
+     "authority_ids": [
+      "cpm_art9",
+      "cf_art124",
+      "cf_art125"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mil_competence.d1",
+     "label": "Enquadramento nas hipóteses do art. 9º do CPM",
+     "authority_ids": [
+      "cpm_art9"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime"
+   ],
+   "typical_requests": [
+    "Declaração de incompetência absoluta da Justiça Militar com remessa dos autos à Justiça Comum",
+    "Trancamento da ação penal militar por atipicidade militar da conduta",
+    "Anulação dos atos decisórios praticados pelo juízo militar incompetente"
+   ],
+   "evidence": [
+    "Assentamentos funcionais comprovando a situação de ativa, reserva, reforma ou condição civil na data do fato",
+    "Inquérito Policial Militar (IPM), boletim de ocorrência e croqui do local do evento",
+    "Escala de serviço, ordem de missão ou documento que comprove se o agente atuava em função militar"
+   ],
+   "piece_ids": [
+    "habeas_corpus",
+    "resposta_acusacao"
+   ],
+   "related_claims": [],
+   "limitation": "Incompetência absoluta cognoscível em qualquer tempo e grau de jurisdição antes do trânsito em julgado (CPPM, art. 500, I) ou revisável em habeas corpus e revisão criminal; prescrição penal regulada pelo art. 125 do CPM."
+  },
+  {
+   "id": "mil_appeals",
+   "label": "Recursos no processo penal militar",
+   "requirements": [
+    "decisao",
+    "cabimento",
+    "prazo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mil_appeals.c1",
+     "label": "Recurso em sentido estrito, apelação e revisão no CPPM",
+     "authority_ids": [
+      "cppm_art516",
+      "cppm_art526",
+      "cppm_art550"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mil_appeals.d1",
+     "label": "Hipótese não prevista no CPPM",
+     "authority_ids": [
+      "cppm_art516"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime"
+   ],
+   "typical_requests": [
+    "Conhecimento e provimento da apelação criminal militar para absolvição ou reforma da dosimetria",
+    "Reforma da decisão interlocutória mediante recurso em sentido estrito com juízo de retratação",
+    "Rescisão do trânsito em julgado condenatório em revisão criminal perante o STM ou TJME"
+   ],
+   "evidence": [
+    "Sentença ou decisão interlocutória recorrida e respectiva ata da sessão do Conselho de Justiça",
+    "Certidão de intimação da defesa técnica e do réu militar para aferição da tempestividade no CPPM",
+    "Mídias audiovisuais dos depoimentos e prova nova ou documento comprobatório de erro judiciário"
+   ],
+   "piece_ids": [
+    "apelacao_criminal",
+    "rese",
+    "revisao_criminal"
+   ],
+   "related_claims": [],
+   "limitation": "Recurso em sentido estrito em 3 dias (CPPM, art. 518) e apelação em 5 dias por petição (CPPM, art. 529); revisão criminal cabível a qualquer tempo em favor do condenado (CPPM, art. 552)."
+  },
+  {
+   "id": "mil_desertion_drugs",
+   "label": "Deserção e entorpecente em área militar",
+   "requirements": [
+    "condicao_de_militar",
+    "prazo_de_ausencia",
+    "local_sujeito_a_administracao_militar",
+    "quantidade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mil_desertion_drugs.c1",
+     "label": "Condição de procedibilidade ligada ao status de militar da ativa — conferir a jurisprudência do STM",
+     "authority_ids": [
+      "cpm_art187"
+     ]
+    },
+    {
+     "id": "mil_desertion_drugs.c2",
+     "label": "Atipicidade ou erro quando ausente o dolo de se ausentar",
+     "authority_ids": [
+      "cpm_art187",
+      "cpm_art30"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mil_desertion_drugs.d1",
+     "label": "Hierarquia e disciplina afastam a insignificância no porte de droga em quartel",
+     "authority_ids": [
+      "cpm_art290"
+     ]
+    },
+    {
+     "id": "mil_desertion_drugs.d2",
+     "label": "Consumação com a ausência por mais de oito dias",
+     "authority_ids": [
+      "cpm_art187"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime"
+   ],
+   "typical_requests": [
+    "Absolvição",
+    "Extinção do processo",
+    "Desclassificação",
+    "Reconhecimento de excludente de culpabilidade ou estado de necessidade com absolvição"
+   ],
+   "evidence": [
+    "Termo de deserção e partes de ausência",
+    "Laudo de constatação",
+    "Assentamentos funcionais",
+    "Exames médicos, prontuários familiares ou prova documental de força maior impeditiva da apresentação"
+   ],
+   "piece_ids": [
+    "resposta_acusacao",
+    "alegacoes_finais_memoriais",
+    "apelacao_criminal",
+    "habeas_corpus"
+   ],
+   "related_claims": [
+    "mil_competence"
+   ],
+   "limitation": "Prescrição penal regulada pelo art. 125 do CPM; na deserção, embora decorra o prazo do art. 125, VI, a extinção da punibilidade submete-se à regra especial de idade limite de 45 anos para praça e 60 anos para oficial (CPM, art. 132)."
+  },
+  {
+   "id": "mil_custody",
+   "label": "Prisão cautelar e habeas corpus na Justiça Militar",
+   "requirements": [
+    "prova_do_fato",
+    "indicios_de_autoria",
+    "fundamento",
+    "duracao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mil_custody.c1",
+     "label": "Preventiva exige um dos fundamentos legais demonstrado concretamente",
+     "authority_ids": [
+      "cppm_art254",
+      "cppm_art255"
+     ]
+    },
+    {
+     "id": "mil_custody.c2",
+     "label": "Habeas corpus contra ilegalidade ou abuso de poder",
+     "authority_ids": [
+      "cppm_art467",
+      "cf_art5"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mil_custody.d1",
+     "label": "Manutenção das normas de hierarquia e disciplina como fundamento",
+     "authority_ids": [
+      "cppm_art255"
+     ]
+    },
+    {
+     "id": "mil_custody.d2",
+     "label": "Punição disciplinar militar: controle limitado à legalidade",
+     "authority_ids": [
+      "cf_art142"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime"
+   ],
+   "typical_requests": [
+    "Liberdade provisória",
+    "Relaxamento",
+    "Trancamento",
+    "Concessão de menagem ou substituição por medida cautelar menos gravosa"
+   ],
+   "evidence": [
+    "Decisão de prisão",
+    "Auto de prisão em flagrante",
+    "Folha de alterações",
+    "Comprovantes de bons antecedentes militares, residência certa e apresentação espontânea"
+   ],
+   "piece_ids": [
+    "pedido_liberdade",
+    "habeas_corpus"
+   ],
+   "related_claims": [
+    "mil_appeals"
+   ],
+   "limitation": "Habeas corpus e pedido de liberdade cabíveis enquanto perdurar a coação ou ameaça à liberdade de locomoção (CF, art. 5º, LXVIII; CPPM, art. 467); instrução com réu preso sujeita ao controle de razoabilidade da duração."
+  },
+  {
+   "id": "mil_charge_nullities",
+   "label": "Denúncia, nulidades e prescrição no processo penal militar",
+   "requirements": [
+    "descricao_do_fato",
+    "composicao_do_conselho",
+    "prejuizo",
+    "marcos_interruptivos"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mil_charge_nullities.c1",
+     "label": "Denúncia sem os requisitos legais",
+     "authority_ids": [
+      "cppm_art77"
+     ]
+    },
+    {
+     "id": "mil_charge_nullities.c2",
+     "label": "Nulidade por incompetência ou falta de formalidade essencial",
+     "authority_ids": [
+      "cppm_art500"
+     ]
+    },
+    {
+     "id": "mil_charge_nullities.c3",
+     "label": "Extinção da punibilidade pela prescrição",
+     "authority_ids": [
+      "cpm_art123",
+      "cpm_art125"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mil_charge_nullities.d1",
+     "label": "Ausência de prejuízo e preclusão",
+     "authority_ids": [
+      "cppm_art500"
+     ]
+    },
+    {
+     "id": "mil_charge_nullities.d2",
+     "label": "Competência monocrática do juiz federal da Justiça Militar para civis",
+     "authority_ids": [
+      "l8457_art30"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13964_pacote_anticrime"
+   ],
+   "typical_requests": [
+    "Rejeição da denúncia",
+    "Anulação do processo",
+    "Extinção da punibilidade",
+    "Declaração de nulidade por irregularidade no sorteio ou compromisso do Conselho de Justiça"
+   ],
+   "evidence": [
+    "Denúncia e atas",
+    "Datas do fato, do recebimento e da sentença",
+    "Termos de sorteio e compromisso dos juízes militares e certidões de intimação das partes",
+    "Folha de antecedentes e cálculo detalhado dos marcos interruptivos do art. 125, § 5º, do CPM"
+   ],
+   "piece_ids": [
+    "resposta_acusacao",
+    "alegacoes_finais_memoriais",
+    "apelacao_criminal",
+    "revisao_criminal"
+   ],
+   "related_claims": [
+    "mil_competence",
+    "mil_appeals"
+   ],
+   "limitation": "Defesa escrita/alegações preliminares nos prazos do CPPM; prescrição da pretensão punitiva regulada pelos arts. 123, IV, e 125 do CPM conforme a pena máxima em abstrato ou a pena concretizada."
+  },
+  {
+   "id": "mil_temporary_medical_discharge",
+   "label": "Licenciamento ex officio de militar temporário enfermo ou acidentado (reintegração como adido)",
+   "requirements": [
+    "vinculo_temporario",
+    "incapacidade_no_desligamento",
+    "nexo_causal_ou_invalidez",
+    "necessidade_tratamento"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mil_temporary_medical_discharge.c1",
+     "label": "Ilegalidade do licenciamento ex officio de militar temporário incapaz temporariamente na data do desligamento, impondo-se reintegração como adido para tratamento médico e percepção de soldo",
+     "authority_ids": [
+      "l6880_art50",
+      "l6880_art121",
+      "cf_art5"
+     ]
+    },
+    {
+     "id": "mil_temporary_medical_discharge.c2",
+     "label": "Direito à reforma quando sobrevier incapacidade definitiva com nexo causal com o serviço militar ou invalidez total para qualquer trabalho",
+     "authority_ids": [
+      "l6880_art106",
+      "l6880_art108",
+      "l6880_art109"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mil_temporary_medical_discharge.d1",
+     "label": "Discricionariedade do licenciamento por término de prorrogação de tempo de serviço quando o militar temporário estava apto ou sem moléstia incapacitante com nexo de serviço, vedada estabilidade por mera adição",
+     "authority_ids": [
+      "l6880_art121",
+      "l13954_art1"
+     ]
+    },
+    {
+     "id": "mil_temporary_medical_discharge.d2",
+     "label": "Pós-Lei 13.954/2019, a reforma de militar temporário sem estabilidade exige nexo causal nas hipóteses legais ou invalidez permanente para todo e qualquer trabalho",
+     "authority_ids": [
+      "l6880_art109",
+      "l6880_art111",
+      "l13954_art1"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13954_protecao_militar",
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Tutela de urgência para imediata reintegração na condição de adido para tratamento médico-hospitalar",
+    "Anulação do ato de licenciamento ex officio com pagamento dos soldos e vantagens vencidos desde o desligamento indevido",
+    "Conversão em reforma militar caso a perícia judicial constate incapacidade definitiva enquadrada na Lei 6.880/1980"
+   ],
+   "evidence": [
+    "Atas de inspeção de saúde da Junta Militar na incorporação, durante o serviço e no licenciamento",
+    "Atestado de Origem (AO), Inquérito Sanitário de Origem (ISO) ou sindicância do acidente em serviço",
+    "Prontuários médicos, exames de imagem e laudo pericial judicial ortopédico ou psiquiátrico",
+    "Boletim Interno publicando o ato de licenciamento e fichas financeiras do período ativo"
+   ],
+   "piece_ids": [
+    "acao_ordinaria_militar",
+    "mandado_seguranca",
+    "requerimento_administrativo"
+   ],
+   "related_claims": [
+    "mil_disability_reform"
+   ],
+   "limitation": "Prescrição quinquenal contra a Fazenda Pública contada do ato de licenciamento ex officio (Decreto 20.910/1932, art. 1º); mandado de segurança em 120 dias da publicação do desligamento (Lei 12.016/2009, art. 23)."
+  },
+  {
+   "id": "mil_disability_reform",
+   "label": "Reforma militar por incapacidade definitiva, grau hierárquico e auxílio-invalidez",
+   "requirements": [
+    "estabilidade_ou_temporario",
+    "incapacidade_definitiva_ou_invalidez",
+    "molestia_art_108",
+    "data_da_eclosao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mil_disability_reform.c1",
+     "label": "Invalidez permanente para todo e qualquer trabalho assegura reforma com proventos integrais ou do grau hierárquico imediato conforme a lei vigente na aquisição do direito",
+     "authority_ids": [
+      "l6880_art106",
+      "l6880_art108",
+      "l6880_art110"
+     ]
+    },
+    {
+     "id": "mil_disability_reform.c2",
+     "label": "Direito ao auxílio-invalidez e à isenção de imposto de renda quando comprovada moléstia grave especificada em lei e necessidade de cuidados permanentes de enfermagem ou hospitalização",
+     "authority_ids": [
+      "l6880_art108",
+      "mp2215_art1"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mil_disability_reform.d1",
+     "label": "Incapacidade restrita às atividades castrenses, com preservação da capacidade laborativa civil, afasta proventos do posto superior e o auxílio-invalidez",
+     "authority_ids": [
+      "l6880_art109",
+      "l6880_art110",
+      "l6880_art111"
+     ]
+    },
+    {
+     "id": "mil_disability_reform.d2",
+     "label": "Aplicação imediata dos critérios da Lei 13.954/2019 quando a incapacidade definitiva eclodiu após 17/12/2019 (tempus regit actum)",
+     "authority_ids": [
+      "l13954_art1",
+      "l6880_art109",
+      "l6880_art111"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13954_protecao_militar",
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Concessão ou revisão do ato de reforma com proventos calculados nos termos dos arts. 110 e 111 da Lei 6.880/1980",
+    "Implantação do auxílio-invalidez e pagamento das diferenças pretéritas respeitada a prescrição quinquenal",
+    "Declaração de isenção de IRPF sobre os proventos de reforma por moléstia grave com repetição do indébito"
+   ],
+   "evidence": [
+    "Portaria de transferência para a reserva ou reforma e respectivas atas da Junta Superior de Saúde",
+    "Laudo pericial médico judicial especificando a data de início da incapacidade e a aptidão ou inaptidão para o trabalho civil",
+    "Atestado de Origem ou Inquérito Sanitário de Origem e histórico hospitalar completo",
+    "Contracheques de inatividade e memória de cálculo das diferenças remuneratórias"
+   ],
+   "piece_ids": [
+    "acao_ordinaria_militar",
+    "mandado_seguranca",
+    "requerimento_administrativo",
+    "impugnacao_laudo"
+   ],
+   "related_claims": [
+    "mil_temporary_medical_discharge"
+   ],
+   "limitation": "Prescrição do fundo de direito em 5 anos se negada expressamente a reforma pela Administração (Decreto 20.910/1932, art. 1º), ou prescrição quinquenal apenas das parcelas vencidas nas relações de trato sucessivo (Súmula 85 do STJ)."
+  },
+  {
+   "id": "mil_justification_discipline_council",
+   "label": "Sindicância militar, Conselho de Justificação e Conselho de Disciplina",
+   "requirements": [
+    "competencia_instauradora",
+    "libelo_acusatorio",
+    "ampla_defesa",
+    "estabilidade_ou_oficialato",
+    "proporcionalidade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mil_justification_discipline_council.c1",
+     "label": "Nulidade do processo disciplinar militar, Conselho de Justificação ou Conselho de Disciplina por cerceamento de defesa, ausência de imputação fática certa ou incompetência da autoridade instauradora",
+     "authority_ids": [
+      "cf_art5",
+      "cf_art142",
+      "l5836_art1",
+      "d71500_art1"
+     ]
+    },
+    {
+     "id": "mil_justification_discipline_council.c2",
+     "label": "Perda do posto e da patente de oficial depende de julgamento de indignidade ou incompatibilidade pelo tribunal competente",
+     "authority_ids": [
+      "cf_art142",
+      "l5836_art1"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mil_justification_discipline_council.d1",
+     "label": "Regularidade formal do Conselho, observância do contraditório substancial, independência das instâncias penal e disciplinar e não incidência de nulidade sem prejuízo demonstrado",
+     "authority_ids": [
+      "cf_art142",
+      "l5836_art1",
+      "d71500_art1",
+      "sv_5"
+     ]
+    },
+    {
+     "id": "mil_justification_discipline_council.d2",
+     "label": "Vedação de incursão judicial no mérito administrativo-militar da valoração da honra e do pundonor castrenses quando observada a legalidade e a proporcionalidade",
+     "authority_ids": [
+      "cf_art142"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Anulação da solução do Conselho de Disciplina ou Justificação e do ato de exclusão a bem da disciplina",
+    "Reintegração aos quadros da Força com contagem de tempo de serviço, promoções e ressarcimento dos soldos",
+    "Suspensão liminar dos efeitos do ato expulsório até o julgamento definitivo"
+   ],
+   "evidence": [
+    "Cópia integral dos autos da sindicância, Conselho de Disciplina ou Conselho de Justificação",
+    "Portaria de instauração, libelo acusatório, atas de inquirição e requerimentos probatórios indeferidos",
+    "Folha de alterações funcional, elogios e histórico comportamental do militar"
+   ],
+   "piece_ids": [
+    "defesa_conselho_justificacao_disciplina",
+    "acao_ordinaria_militar",
+    "mandado_seguranca"
+   ],
+   "related_claims": [
+    "mil_disciplinary_habeas_corpus"
+   ],
+   "limitation": "Prescrição administrativa da punibilidade disciplinar conforme a lei específica (ex.: 6 anos no art. 18 da Lei 5.836/1972 e Decreto 71.500/1972); ação anulatória judicial em 5 anos da publicação da exclusão (Decreto 20.910/1932, art. 1º) ou mandado de segurança em 120 dias."
+  },
+  {
+   "id": "mil_pension",
+   "label": "Pensão militar: beneficiários, dependência econômica e regime pós-Lei 13.954/2019",
+   "requirements": [
+    "data_do_obito",
+    "ordem_de_prioridade",
+    "dependencia_economica",
+    "contribuicao_adicional_1_5"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mil_pension.c1",
+     "label": "A concessão da pensão militar rege-se pela lei vigente na data do óbito do instituidor (tempus regit actum), resguardado o benefício da filha maior quando o militar optou pela contribuição adicional de 1,5% da MP 2.215-10/2001",
+     "authority_ids": [
+      "l3765_art7",
+      "mp2215_art1",
+      "stj_sumula_340"
+     ]
+    },
+    {
+     "id": "mil_pension.c2",
+     "label": "Habilitação de companheira, menor sob guarda (óbitos anteriores à restrição legal aplicável) ou genitores mediante prova idônea de dependência econômica não exclusiva",
+     "authority_ids": [
+      "l3765_art7",
+      "l3765_art10a",
+      "cf_art226"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mil_pension.d1",
+     "label": "Para óbitos posteriores à Lei 13.954/2019, aplicam-se estritamente o rol taxativo e os requisitos de comprovação de dependência econômica da nova redação dos arts. 7º e 10-A da Lei 3.765/1960",
+     "authority_ids": [
+      "l3765_art7",
+      "l3765_art10a",
+      "l13954_art1"
+     ]
+    },
+    {
+     "id": "mil_pension.d2",
+     "label": "Na habilitação tardia havendo outros pensionistas já habilitados, os efeitos financeiros contam-se apenas a partir do requerimento administrativo, vedado pagamento em duplicidade pela União",
+     "authority_ids": [
+      "l3765_art10a",
+      "d20910_art1"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13954_protecao_militar",
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Concessão ou divisão de cota-parte de pensão militar em favor do dependente habilitado",
+    "Pagamento das prestações vencidas desde o óbito ou do requerimento administrativo, observada a prescrição quinquenal",
+    "Manutenção de desconto previdenciário nos limites constitucionais e legais vigentes na época do fato gerador"
+   ],
+   "evidence": [
+    "Certidão de óbito do militar instituidor e fichas financeiras comprovando o desconto de 1,5% quando pertinente",
+    "Declaração de beneficiários nos assentamentos militares, certidão de casamento ou provas contemporâneas de união estável",
+    "Documentos fiscais, bancários e residenciais demonstrando dependência econômica",
+    "Processo administrativo de habilitação à pensão militar e decisão de indeferimento"
+   ],
+   "piece_ids": [
+    "acao_ordinaria_militar",
+    "mandado_seguranca",
+    "requerimento_administrativo"
+   ],
+   "related_claims": [
+    "mil_allowances_remuneration"
+   ],
+   "limitation": "A habilitação à pensão militar pode ser requerida a qualquer tempo, prescrevendo apenas as prestações mensais vencidas há mais de 5 anos antes do requerimento ou ajuizamento (Lei 3.765/1960, art. 28; Decreto 20.910/1932, art. 1º)."
+  },
+  {
+   "id": "mil_allowances_remuneration",
+   "label": "Adicionais militares de compensação orgânica, habilitação e disponibilidade permanente",
+   "requirements": [
+    "atividade_especial_ou_curso",
+    "incorporacao_quotas",
+    "opcao_irrevogavel_ou_cumulacao",
+    "data_inatividade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mil_allowances_remuneration.c1",
+     "label": "Direito ao cômputo integral das quotas de adicional de compensação orgânica (atividade aérea, paraquedismo, imersão, raios X) e à revisão do adicional de habilitação conforme titulação concluída",
+     "authority_ids": [
+      "mp2215_art1",
+      "l6880_art50"
+     ]
+    },
+    {
+     "id": "mil_allowances_remuneration.c2",
+     "label": "Preservação da irredutibilidade remuneratória e do direito adquirido no cálculo dos adicionais na inatividade e na pensão militar",
+     "authority_ids": [
+      "cf_art37",
+      "l13954_art1",
+      "mp2215_art1"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mil_allowances_remuneration.d1",
+     "label": "Vedação expressa de percepção cumulativa entre o adicional de tempo de serviço e o adicional de compensação por disponibilidade militar, prevalecendo o mais vantajoso (Lei 13.954/2019, art. 8º)",
+     "authority_ids": [
+      "l13954_art1",
+      "mp2215_art1"
+     ]
+    },
+    {
+     "id": "mil_allowances_remuneration.d2",
+     "label": "Inexistência de direito adquirido a regime jurídico remuneratório e exigência de equivalência regulamentar dos cursos para majoração do adicional de habilitação",
+     "authority_ids": [
+      "cf_art37",
+      "sv_37",
+      "l13954_art1"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13954_protecao_militar",
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Implantação do percentual correto do adicional de habilitação ou de compensação orgânica nos proventos/soldo",
+    "Condenação ao pagamento das diferenças vencidas nos cinco anos anteriores ao ajuizamento atualizadas pela SELIC",
+    "Cessação de descontos restitutórios sobre verba alimentar recebida de boa-fé por erro interpretativo da Administração"
+   ],
+   "evidence": [
+    "Certificados de conclusão de cursos militares ou civis equivalentes publicados em Boletim Interno",
+    "Caderneta de registro de horas de voo, saltos, mergulhos ou operação com substâncias ionizantes",
+    "Contracheques mensais e fichas financeiras históricas dos últimos cinco anos"
+   ],
+   "piece_ids": [
+    "acao_ordinaria_militar",
+    "mandado_seguranca",
+    "requerimento_administrativo"
+   ],
+   "related_claims": [
+    "mil_pension"
+   ],
+   "limitation": "Relação de trato sucessivo sujeita à prescrição quinquenal das parcelas anteriores ao quinquênio do ajuizamento (Súmula 85 do STJ; Decreto 20.910/1932, art. 1º), salvo negativa expressa do próprio direito de fundo."
+  },
+  {
+   "id": "mil_transfer_health_family",
+   "label": "Movimentação e transferência de militar por motivo de saúde ou proteção da unidade familiar",
+   "requirements": [
+    "ato_de_movimentacao",
+    "doenca_propria_ou_dependente",
+    "inexistencia_tratamento_na_origem",
+    "unidade_familiar"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mil_transfer_health_family.c1",
+     "label": "Direito subjetivo à movimentação ou permanência na localidade para tratamento de saúde do próprio militar ou de dependente quando inexistente suporte médico adequado na guarnição de destino",
+     "authority_ids": [
+      "cf_art196",
+      "cf_art226",
+      "l6880_art50"
+     ]
+    },
+    {
+     "id": "mil_transfer_health_family.c2",
+     "label": "Proteção constitucional da família nas remoções ex officio que rompem a convivência familiar sem alternativa administrativa razoável",
+     "authority_ids": [
+      "cf_art226",
+      "cf_art227"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mil_transfer_health_family.d1",
+     "label": "Mobilidade geográfica inerente à carreira das Forças Armadas, prevalência do interesse do serviço e existência de rede médica pública ou credenciada na localidade de destino",
+     "authority_ids": [
+      "cf_art142",
+      "l6880_art50"
+     ]
+    },
+    {
+     "id": "mil_transfer_health_family.d2",
+     "label": "Inaplicabilidade automática das regras da Lei 8.112/1990 aos militares, regidos por estatuto e regulamento de movimentação próprios",
+     "authority_ids": [
+      "cf_art142",
+      "l13954_art1"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13954_protecao_militar"
+   ],
+   "typical_requests": [
+    "Tutela de urgência para sustar a transferência ex officio ou determinar a lotação provisória na guarnição indicada",
+    "Confirmação definitiva da movimentação por motivo de saúde próprio ou de dependente sem prejuízo funcional",
+    "Ajuda de custo e transporte de bagagem nas movimentações no interesse do serviço"
+   ],
+   "evidence": [
+    "Laudos médicos detalhados e parecer de Junta Militar de Saúde atestando a patologia e a terapia contínua",
+    "Declaração oficial da Organização Militar sobre disponibilidade ou inexistência do tratamento especializado na guarnição",
+    "Certidões de nascimento/casamento e declaração de dependentes nos assentamentos funcionais",
+    "Requerimento administrativo de movimentação ou reconsideração e respectivo despacho denegatório"
+   ],
+   "piece_ids": [
+    "acao_ordinaria_militar",
+    "mandado_seguranca",
+    "requerimento_administrativo"
+   ],
+   "related_claims": [
+    "mil_temporary_medical_discharge"
+   ],
+   "limitation": "Mandado de segurança em 120 dias da publicação do ato de movimentação ou indeferimento (Lei 12.016/2009, art. 23); ação ordinária sujeita ao prazo quinquenal do Decreto 20.910/1932, art. 1º."
+  },
+  {
+   "id": "mil_disciplinary_habeas_corpus",
+   "label": "Habeas corpus em punição disciplinar militar: controle de legalidade e competência",
+   "requirements": [
+    "punicao_restritiva_liberdade",
+    "competencia_autoridade",
+    "previsao_regulamentar",
+    "ampla_defesa"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mil_disciplinary_habeas_corpus.c1",
+     "label": "O art. 142, § 2º, da CF veda o exame do mérito da punição disciplinar militar em habeas corpus, mas admite pleno controle jurisdicional dos pressupostos formais de legalidade (hierarquia, poder disciplinar, ato ligado à função e pena suscetível de ser aplicada)",
+     "authority_ids": [
+      "cf_art5",
+      "cf_art142",
+      "cppm_art467"
+     ]
+    },
+    {
+     "id": "mil_disciplinary_habeas_corpus.c2",
+     "label": "Ilegalidade de prisão ou detenção disciplinar aplicada sem prévia oportunização de contraditório e defesa ou fundada em regulamento inconstitucional",
+     "authority_ids": [
+      "cf_art5",
+      "sv_5"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mil_disciplinary_habeas_corpus.d1",
+     "label": "Não cabimento de habeas corpus para rediscutir justiça, conveniência ou dosimetria de transgressão disciplinar militar regularmente apurada por autoridade competente",
+     "authority_ids": [
+      "cf_art142",
+      "cppm_art467"
+     ]
+    },
+    {
+     "id": "mil_disciplinary_habeas_corpus.d2",
+     "label": "Extinção do writ por perda superveniente de objeto quando já cumprida integralmente a punição restritiva, remanescendo apenas eventual via cível anulatória",
+     "authority_ids": [
+      "cf_art5",
+      "cppm_art467"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Concessão de liminar em salvo-conduto para impedir o início da detenção ou prisão disciplinar ilegal",
+    "Relaxamento imediato do recolhimento disciplinar por incompetência da autoridade ou vício formal insanável",
+    "Cancelamento do registro da punição nula na folha de alterações funcional"
+   ],
+   "evidence": [
+    "Formulário de Apuração de Transgressão Disciplinar (FATD) e nota de punição publicada em Boletim Interno",
+    "Regulamento disciplinar aplicável à Força e quadro de competência da autoridade signatária",
+    "Comprovante de cerceamento de defesa ou intempestividade/ausência de abertura de vista para justificativa"
+   ],
+   "piece_ids": [
+    "habeas_corpus",
+    "mandado_seguranca",
+    "defesa_conselho_justificacao_disciplina"
+   ],
+   "related_claims": [
+    "mil_custody",
+    "mil_justification_discipline_council"
+   ],
+   "limitation": "Habeas corpus impetrável enquanto subsistir o cumprimento ou a iminência concreta da punição disciplinar restritiva de liberdade (CF, art. 5º, LXVIII); após o cumprimento, eventual anulação do registro sujeita-se a 120 dias em MS ou 5 anos em ação ordinária."
+  },
+  {
+   "id": "mil_promotion_preterition",
+   "label": "Promoção militar em ressarcimento de preterição e cursos de carreira",
+   "requirements": [
+    "quadro_de_acesso",
+    "requisito_objetivo",
+    "causa_da_pretericao",
+    "absolvicao_ou_anulacao_posterior"
+   ],
+   "claimant_theses": [
+    {
+     "id": "mil_promotion_preterition.c1",
+     "label": "Direito subjetivo à promoção em ressarcimento de preterição, com antiguidade e efeitos financeiros retroativos, quando cessado o impedimento indevido ou reconhecida a absolvição/nulidade",
+     "authority_ids": [
+      "l6880_art50",
+      "cf_art37"
+     ]
+    },
+    {
+     "id": "mil_promotion_preterition.c2",
+     "label": "Anulação de exclusão de quadro de acesso ou de reprovação em inspeção/teste físico destituída de motivação idônea ou previsão legal estrita",
+     "authority_ids": [
+      "cf_art5",
+      "cf_art37",
+      "l9784_art50"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "mil_promotion_preterition.d1",
+     "label": "Promoção por merecimento envolve juízo valorativo próprio da Comissão de Promoções, insuscetível de substituição pelo Poder Judiciário fora de ilegalidade objetiva",
+     "authority_ids": [
+      "cf_art142",
+      "l6880_art50"
+     ]
+    },
+    {
+     "id": "mil_promotion_preterition.d2",
+     "label": "Ausência de preenchimento tempestivo de curso ou interstício exigido em lei como condição de acesso na carreira",
+     "authority_ids": [
+      "l6880_art50",
+      "l13954_art1"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Promoção em ressarcimento de preterição a contar da data em que o militar deveria ter ascendido na escala hierárquica",
+    "Reposicionamento na escala de antiguidade e pagamento das diferenças de soldo e adicionais retroativos",
+    "Reinclusão em Quadro de Acesso ou matrícula em curso de aperfeiçoamento/altos estudos"
+   ],
+   "evidence": [
+    "Atas da Comissão de Promoções, Quadros de Acesso por Antiguidade e Merecimento e almanaque militar",
+    "Sentença absolutória transitada em julgado ou decisão administrativa que reconheceu o erro no impedimento",
+    "Ficha de alterações, conceitos funcionais e resultados de inspeções de saúde e testes de aptidão física"
+   ],
+   "piece_ids": [
+    "acao_ordinaria_militar",
+    "mandado_seguranca",
+    "requerimento_administrativo"
+   ],
+   "related_claims": [
+    "mil_allowances_remuneration"
+   ],
+   "limitation": "Prescrição quinquenal do próprio fundo de direito contada da publicação do ato de preterição ou do indeferimento administrativo (Decreto 20.910/1932, art. 1º); mandado de segurança em 120 dias."
+  }
  ]
 }

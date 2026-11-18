@@ -4,23 +4,1375 @@
  "label": "Direito de Família e Sucessões",
  "guide": "domain_guides/familia.md",
  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
- "polo_labels": {"claimant_theses": "Teses do autor ou requerente", "defense_theses": "Teses do réu ou requerido"},
+ "polo_labels": {
+  "claimant_theses": "Teses do autor ou requerente",
+  "defense_theses": "Teses do réu ou requerido"
+ },
  "claims": [
-  {"id": "fam_alimony", "label": "Alimentos", "requirements": ["vinculo", "necessidade", "possibilidade", "proporcionalidade", "provisorios"], "claimant_theses": [{"id": "fam_alimony.c1", "label": "Alimentos entre parentes, cônjuges e companheiros pelo binômio necessidade-possibilidade", "authority_ids": ["cc_art1694", "l5478_art1", "l5478_art4"]}, {"id": "fam_alimony.c2", "label": "Legitimidade do Ministério Público em favor de criança ou adolescente", "authority_ids": ["stj_sumula_594"]}], "defense_theses": [{"id": "fam_alimony.d1", "label": "Obrigação dos avós é complementar e subsidiária", "authority_ids": ["stj_sumula_596"]}, {"id": "fam_alimony.d2", "label": "Capacidade contributiva limitada", "authority_ids": ["cc_art1694"]}], "temporal_marker_ids": [], "typical_requests": ["Fixação de alimentos provisórios e definitivos"], "evidence": ["Despesas do alimentando", "Sinais exteriores de renda do alimentante"], "piece_ids": ["acao_alimentos"], "related_claims": ["fam_alimony_enforcement", "fam_alimony_review"], "limitation": "Prescrição de prestações: conferir CC, art. 206, § 2º, e causas impeditivas."},
-  {"id": "fam_alimony_enforcement", "label": "Execução de alimentos", "requirements": ["titulo", "parcelas", "rito", "justificativa"], "claimant_theses": [{"id": "fam_alimony_enforcement.c1", "label": "Prisão civil pelas três prestações anteriores ao ajuizamento e as vincendas", "authority_ids": ["stj_sumula_309", "cpc_art528"]}, {"id": "fam_alimony_enforcement.c2", "label": "Execução de título extrajudicial de alimentos", "authority_ids": ["cpc_art911"]}], "defense_theses": [{"id": "fam_alimony_enforcement.d1", "label": "Justificativa de impossibilidade absoluta e pagamento", "authority_ids": ["cpc_art528"]}], "temporal_marker_ids": [], "typical_requests": ["Pagamento sob pena de prisão ou expropriação"], "evidence": ["Título e demonstrativo das parcelas"], "piece_ids": ["execucao_alimentos", "habeas_corpus"], "related_claims": [], "limitation": "conferir"},
-  {"id": "fam_alimony_review", "label": "Revisão e exoneração de alimentos", "requirements": ["titulo", "mudanca_situacao", "maioridade"], "claimant_theses": [{"id": "fam_alimony_review.c1", "label": "Alteração da situação financeira autoriza revisão", "authority_ids": ["cc_art1699"]}, {"id": "fam_alimony_review.c2", "label": "Efeitos retroagem à citação", "authority_ids": ["stj_sumula_621"]}], "defense_theses": [{"id": "fam_alimony_review.d1", "label": "Maioridade não extingue automaticamente: exige decisão com contraditório", "authority_ids": ["stj_sumula_358"]}], "temporal_marker_ids": [], "typical_requests": ["Redução, majoração ou exoneração"], "evidence": ["Comprovantes de renda atuais", "Matrícula escolar do alimentando"], "piece_ids": ["acao_revisional_exoneracao_alimentos"], "related_claims": [], "limitation": "conferir"},
-  {"id": "fam_divorce", "label": "Divórcio e partilha", "requirements": ["casamento", "regime_bens", "bens_dividas", "filhos"], "claimant_theses": [{"id": "fam_divorce.c1", "label": "Divórcio direto, sem prazo ou separação prévia", "authority_ids": ["cf_art226", "cc_art1571"]}], "defense_theses": [{"id": "fam_divorce.d1", "label": "Partilha conforme o regime de bens e a origem dos bens", "authority_ids": ["cc_art1571"]}], "temporal_marker_ids": ["ec66_divorcio"], "typical_requests": ["Decretação do divórcio", "Partilha, guarda e alimentos cumulados"], "evidence": ["Certidão de casamento, pacto e bens"], "piece_ids": ["acao_divorcio"], "related_claims": ["fam_custody"], "limitation": "conferir"},
-  {"id": "fam_custody", "label": "Guarda, convivência e alienação parental", "requirements": ["melhor_interesse", "rotina", "violencia", "estudo_psicossocial"], "claimant_theses": [{"id": "fam_custody.c1", "label": "Guarda compartilhada como regra, salvo hipóteses legais, inclusive risco de violência doméstica", "authority_ids": ["cc_art1584", "cc_art1583", "eca_art4"]}, {"id": "fam_custody.c2", "label": "Medidas contra alienação parental", "authority_ids": ["l12318_art2", "l12318_art6"]}, {"id": "fam_custody.c3", "label": "Direito de visita e convivência", "authority_ids": ["cc_art1589"]}], "defense_theses": [{"id": "fam_custody.d1", "label": "Guarda unilateral pelo melhor interesse demonstrado", "authority_ids": ["cc_art1583", "cc_art1584"]}], "temporal_marker_ids": ["lei_14713_guarda_violencia", "lei_14340_alienacao"], "typical_requests": ["Fixação de guarda e regime de convivência", "Estudo psicossocial"], "evidence": ["Relatórios escolares e de saúde", "Mensagens e ocorrências"], "piece_ids": ["acao_guarda_convivencia", "tutela_urgencia_antecedente"], "related_claims": [], "limitation": "conferir"},
-  {"id": "fam_stable_union", "label": "União estável: reconhecimento, dissolução e sucessão", "requirements": ["convivencia_publica_continua", "objetivo_familia", "periodo", "bens"], "claimant_theses": [{"id": "fam_stable_union.c1", "label": "Reconhecimento pelos requisitos legais", "authority_ids": ["cc_art1723"]}, {"id": "fam_stable_union.c2", "label": "Sucessão do companheiro equiparada à do cônjuge — conferir Tema 809 do STF e o art. 1.790", "authority_ids": ["cc_art1790", "tema_stf_809"]}], "defense_theses": [{"id": "fam_stable_union.d1", "label": "Namoro ou convivência sem objetivo de constituir família", "authority_ids": ["cc_art1723"]}], "temporal_marker_ids": [], "typical_requests": ["Declaração da união e partilha"], "evidence": ["Contas conjuntas, fotos, endereços e testemunhas"], "piece_ids": ["inicial_procedimento_comum"], "related_claims": ["fam_succession", "prev_death_pension"], "limitation": "conferir"},
-  {"id": "fam_succession", "label": "Inventário e partilha sucessória", "requirements": ["obito", "herdeiros", "bens_dividas", "testamento", "via"], "claimant_theses": [{"id": "fam_succession.c1", "label": "Ordem de vocação hereditária e legítima", "authority_ids": ["cc_art1829", "cc_art1845"]}], "defense_theses": [{"id": "fam_succession.d1", "label": "Via extrajudicial ou arrolamento conforme os pressupostos", "authority_ids": ["cpc_art610", "cpc_art659"]}], "temporal_marker_ids": [], "typical_requests": ["Abertura do inventário e partilha"], "evidence": ["Certidões, títulos de bens e dívidas"], "piece_ids": ["inventario_arrolamento"], "related_claims": [], "limitation": "conferir"},
-  {"id": "fam_domestic_violence", "label": "Violência doméstica e medidas protetivas", "requirements": ["violencia_genero", "forma", "risco", "medidas"], "claimant_theses": [{"id": "fam_domestic_violence.c1", "label": "Violência doméstica e familiar e suas formas", "authority_ids": ["l11340_art5", "l11340_art7"]}, {"id": "fam_domestic_violence.c2", "label": "Medidas protetivas de urgência", "authority_ids": ["l11340_art22"]}], "defense_theses": [{"id": "fam_domestic_violence.d1", "label": "Ausência de situação de violência baseada no gênero", "authority_ids": ["l11340_art5"]}], "temporal_marker_ids": [], "typical_requests": ["Medidas protetivas", "Afastamento do lar e proibição de contato"], "evidence": ["Boletim de ocorrência, mensagens e laudos"], "piece_ids": ["medida_protetiva_urgencia"], "related_claims": ["fam_custody"], "limitation": "conferir"},
-  {"id": "fam_paternity", "label": "Investigação e negatória de paternidade", "requirements": ["vinculo_biologico", "vinculo_socioafetivo", "exame_genetico", "registro"], "claimant_theses": [{"id": "fam_paternity.c1", "label": "Recusa ao exame genético gera presunção relativa de paternidade", "authority_ids": ["stj_sumula_301", "l8560_art2a"]}, {"id": "fam_paternity.c2", "label": "Reconhecimento do estado de filiação e alimentos desde a citação", "authority_ids": ["cc_art1607", "stj_sumula_277"]}, {"id": "fam_paternity.c3", "label": "Multiparentalidade: vínculo socioafetivo não impede o biológico", "authority_ids": ["tema_stf_622"]}], "defense_theses": [{"id": "fam_paternity.d1", "label": "Paternidade socioafetiva consolidada impede a desconstituição do registro", "authority_ids": ["cc_art1601"]}, {"id": "fam_paternity.d2", "label": "Presunção afastada pelo conjunto probatório", "authority_ids": ["l8560_art2a"]}], "temporal_marker_ids": [], "typical_requests": ["Declaração de paternidade e retificação do registro", "Alimentos", "Inclusão de sobrenome"], "evidence": ["Exame de DNA ou prova da recusa", "Fotos, mensagens e testemunhas do relacionamento e da convivência"], "piece_ids": ["investigacao_paternidade", "acao_alimentos", "contestacao"], "related_claims": ["fam_alimony"], "limitation": "Estado de filiação é imprescritível; petição de herança prescreve — conferir"},
-  {"id": "fam_prenatal_grandparents", "label": "Alimentos gravídicos e avoengos", "requirements": ["gravidez", "indicios_de_paternidade", "impossibilidade_dos_pais", "possibilidade_dos_avos"], "claimant_theses": [{"id": "fam_prenatal_grandparents.c1", "label": "Alimentos gravídicos com indícios de paternidade, convertidos em pensão após o nascimento", "authority_ids": ["l11804_art2", "l11804_art6"]}, {"id": "fam_prenatal_grandparents.c2", "label": "Obrigação dos avós é complementar e subsidiária", "authority_ids": ["cc_art1696", "cc_art1698", "stj_sumula_596"]}], "defense_theses": [{"id": "fam_prenatal_grandparents.d1", "label": "Ausência de indícios mínimos da paternidade", "authority_ids": ["l11804_art6"]}, {"id": "fam_prenatal_grandparents.d2", "label": "Não esgotados os meios contra os genitores", "authority_ids": ["stj_sumula_596", "cc_art1698"]}], "temporal_marker_ids": [], "typical_requests": ["Fixação provisória", "Chamamento dos demais coobrigados"], "evidence": ["Exames e despesas da gestação", "Mensagens e testemunhas", "Prova da insuficiência dos pais"], "piece_ids": ["acao_alimentos", "tutela_urgencia_antecedente", "contestacao"], "related_claims": ["fam_alimony"], "limitation": "Conferir"},
-  {"id": "fam_property_regime", "label": "Regime de bens e partilha", "requirements": ["regime", "data_do_casamento_ou_uniao", "origem_dos_bens", "esforco_comum"], "claimant_theses": [{"id": "fam_property_regime.c1", "label": "Comunicação dos bens adquiridos onerosamente na constância", "authority_ids": ["cc_art1658", "cc_art1660", "cc_art1725"]}, {"id": "fam_property_regime.c2", "label": "Alteração do regime mediante autorização judicial", "authority_ids": ["cc_art1639"]}, {"id": "fam_property_regime.c3", "label": "Comunicação dos aquestos no regime de separação obrigatória — conferir a Súmula 377 do STF e a orientação atual sobre a prova do esforço comum", "authority_ids": ["cc_art1641"]}], "defense_theses": [{"id": "fam_property_regime.d1", "label": "Bens excluídos: anteriores, doados, herdados e sub-rogados", "authority_ids": ["cc_art1659"]}, {"id": "fam_property_regime.d2", "label": "Separação obrigatória pode ser afastada por pacto conforme o Tema 1236 do STF", "authority_ids": ["cc_art1641", "tema_stf_1236"]}], "temporal_marker_ids": [], "typical_requests": ["Partilha dos bens comuns", "Indenização pelo uso exclusivo", "Sobrepartilha"], "evidence": ["Certidões, matrículas e extratos com datas", "Prova da origem dos recursos", "Pacto antenupcial"], "piece_ids": ["acao_divorcio", "inicial_procedimento_comum", "contestacao"], "related_claims": ["fam_divorce", "fam_stable_union"], "limitation": "Partilha: conferir o prazo após a separação de fato"},
-  {"id": "fam_adoption", "label": "Adoção e destituição do poder familiar", "requirements": ["situacao_da_crianca", "consentimento_ou_destituicao", "habilitacao", "estagio_de_convivencia"], "claimant_theses": [{"id": "fam_adoption.c1", "label": "Adoção quando esgotada a manutenção na família natural ou extensa, no melhor interesse", "authority_ids": ["eca_art39", "eca_art42", "eca_art19"]}, {"id": "fam_adoption.c2", "label": "Perda do poder familiar por descumprimento grave dos deveres", "authority_ids": ["cc_art1638", "eca_art22", "eca_art129"]}], "defense_theses": [{"id": "fam_adoption.d1", "label": "Prioridade da família natural e ausência de consentimento válido", "authority_ids": ["eca_art45", "eca_art19"]}, {"id": "fam_adoption.d2", "label": "Ordem do cadastro de pretendentes", "authority_ids": ["eca_art50"]}], "temporal_marker_ids": [], "typical_requests": ["Destituição do poder familiar", "Adoção com novo registro", "Guarda provisória"], "evidence": ["Estudo psicossocial", "Relatórios do acolhimento e do Conselho Tutelar", "Habilitação dos pretendentes"], "piece_ids": ["inicial_procedimento_comum", "acao_guarda_convivencia", "contestacao"], "related_claims": ["fam_custody"], "limitation": "Conferir"},
-  {"id": "fam_curatorship", "label": "Curatela e tomada de decisão apoiada", "requirements": ["impedimento_de_exprimir_vontade", "atos_abrangidos", "laudo_multidisciplinar", "curador"], "claimant_theses": [{"id": "fam_curatorship.c1", "label": "Curatela proporcional, restrita a atos patrimoniais e negociais", "authority_ids": ["l13146_art84", "l13146_art85", "cc_art1767"]}, {"id": "fam_curatorship.c2", "label": "Tomada de decisão apoiada como alternativa menos restritiva", "authority_ids": ["cc_art1783a"]}], "defense_theses": [{"id": "fam_curatorship.d1", "label": "Capacidade preservada e suficiência de apoio", "authority_ids": ["l13146_art84"]}, {"id": "fam_curatorship.d2", "label": "Ilegitimidade ou conflito de interesses do requerente", "authority_ids": ["cpc_art747"]}], "temporal_marker_ids": [], "typical_requests": ["Nomeação de curador com limites definidos", "Curatela provisória", "Prestação de contas"], "evidence": ["Laudos médicos e avaliação multidisciplinar", "Entrevista", "Relação de bens e rendas"], "piece_ids": ["inicial_procedimento_comum", "tutela_urgencia_antecedente"], "related_claims": ["fam_succession"], "limitation": "Conferir"},
-  {"id": "fam_will_legitime", "label": "Testamento, legítima e colação", "requirements": ["herdeiros_necessarios", "liberalidades_em_vida", "forma_do_testamento"], "claimant_theses": [{"id": "fam_will_legitime.c1", "label": "Redução das disposições que excedem a metade disponível", "authority_ids": ["cc_art1789", "cc_art1846", "cc_art1857"]}, {"id": "fam_will_legitime.c2", "label": "Colação das doações a descendentes para igualar as legítimas", "authority_ids": ["cc_art2002", "cc_art544"]}], "defense_theses": [{"id": "fam_will_legitime.d1", "label": "Dispensa de colação e doação saída da parte disponível", "authority_ids": ["cc_art2002"]}, {"id": "fam_will_legitime.d2", "label": "Exclusão por indignidade declarada em sentença", "authority_ids": ["cc_art1814"]}], "temporal_marker_ids": [], "typical_requests": ["Anulação ou redução de disposição testamentária", "Colação", "Sonegados"], "evidence": ["Testamento e certidões", "Escrituras de doação e extratos", "Avaliações"], "piece_ids": ["inventario_arrolamento", "inicial_procedimento_comum"], "related_claims": ["fam_succession"], "limitation": "Anulação de testamento e petição de herança: conferir prazos (CC, arts. 1.859 e 205)"},
-  {"id": "fam_estate_debts", "label": "Dívidas do espólio e bem de família", "requirements": ["passivo_do_falecido", "forcas_da_heranca", "residencia_dos_herdeiros"], "claimant_theses": [{"id": "fam_estate_debts.c1", "label": "Herdeiros respondem apenas nas forças da herança", "authority_ids": ["cc_art1997", "cc_art1784"]}, {"id": "fam_estate_debts.c2", "label": "Imóvel residencial da entidade familiar é impenhorável", "authority_ids": ["l8009_art1", "stj_sumula_364"]}], "defense_theses": [{"id": "fam_estate_debts.d1", "label": "Exceções legais à impenhorabilidade", "authority_ids": ["l8009_art3", "stj_sumula_549"]}], "temporal_marker_ids": [], "typical_requests": ["Limitação da responsabilidade", "Levantamento de penhora"], "evidence": ["Formal de partilha", "Prova de residência", "Títulos dos credores"], "piece_ids": ["inventario_arrolamento", "embargos_terceiro", "impugnacao_cumprimento", "excecao_pre_executividade"], "related_claims": ["fam_succession"], "limitation": "Conferir"},
-  {"id": "fam_protective_breach", "label": "Medidas protetivas: descumprimento e efeitos cíveis", "requirements": ["medida_em_vigor", "intimacao_do_agressor", "fato_novo"], "claimant_theses": [{"id": "fam_protective_breach.c1", "label": "Medida protetiva independe de inquérito e pode afastar o agressor de imediato", "authority_ids": ["l11340_art19", "l11340_art12c", "l11340_art22"]}, {"id": "fam_protective_breach.c2", "label": "Descumprimento é crime e autoriza a preventiva", "authority_ids": ["l11340_art24a", "cpp_art313"]}], "defense_theses": [{"id": "fam_protective_breach.d1", "label": "Ausência de intimação pessoal da medida", "authority_ids": ["l11340_art24a"]}, {"id": "fam_protective_breach.d2", "label": "Aproximação consentida exige análise do caso — conferir orientação do STJ", "authority_ids": ["l11340_art24a"]}], "temporal_marker_ids": ["lei_14994_feminicidio"], "typical_requests": ["Prorrogação e ampliação das medidas", "Alimentos provisionais e guarda"], "evidence": ["Decisão e certidão de intimação", "Registros de contato e boletins", "Testemunhas"], "piece_ids": ["medida_protetiva_urgencia", "habeas_corpus"], "related_claims": ["fam_domestic_violence", "fam_custody"], "limitation": "Conferir"}
+  {
+   "id": "fam_alimony",
+   "label": "Alimentos",
+   "requirements": [
+    "vinculo",
+    "necessidade",
+    "possibilidade",
+    "proporcionalidade",
+    "provisorios"
+   ],
+   "claimant_theses": [
+    {
+     "id": "fam_alimony.c1",
+     "label": "Alimentos entre parentes, cônjuges e companheiros pelo binômio necessidade-possibilidade",
+     "authority_ids": [
+      "cc_art1694",
+      "l5478_art1",
+      "l5478_art4"
+     ]
+    },
+    {
+     "id": "fam_alimony.c2",
+     "label": "Legitimidade do Ministério Público em favor de criança ou adolescente",
+     "authority_ids": [
+      "stj_sumula_594"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "fam_alimony.d1",
+     "label": "Obrigação dos avós é complementar e subsidiária",
+     "authority_ids": [
+      "stj_sumula_596"
+     ]
+    },
+    {
+     "id": "fam_alimony.d2",
+     "label": "Capacidade contributiva limitada",
+     "authority_ids": [
+      "cc_art1694"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Fixação de alimentos provisórios e definitivos",
+    "Oficiamento ao empregador ou órgão previdenciário para desconto direto em folha de pagamento (CPC, art. 529)",
+    "Inclusão de 13º salário, férias e terço constitucional na base de incidência quando fixados em percentual dos rendimentos líquidos (Tema Repetitivo 192 do STJ)"
+   ],
+   "evidence": [
+    "Despesas do alimentando",
+    "Sinais exteriores de renda do alimentante",
+    "Declarações de IRPF, extratos bancários, faturas de cartão e pesquisa patrimonial para aferição da real capacidade contributiva"
+   ],
+   "piece_ids": [
+    "acao_alimentos"
+   ],
+   "related_claims": [
+    "fam_alimony_enforcement",
+    "fam_alimony_review"
+   ],
+   "limitation": "A pretensão ao direito a alimentos é imprescritível (CC, art. 1.707); a cobrança das prestações alimentares já fixadas/vencidas prescreve em 2 anos a partir da data em que se vencerem (CC, art. 206, § 2º), não correndo prescrição contra absolutamente incapazes (CC, art. 198, I) nem entre ascendentes e descendentes durante o poder familiar (CC, art. 197, II)."
+  },
+  {
+   "id": "fam_alimony_enforcement",
+   "label": "Execução de alimentos",
+   "requirements": [
+    "titulo",
+    "parcelas",
+    "rito",
+    "justificativa"
+   ],
+   "claimant_theses": [
+    {
+     "id": "fam_alimony_enforcement.c1",
+     "label": "Prisão civil pelas três prestações anteriores ao ajuizamento e as vincendas",
+     "authority_ids": [
+      "stj_sumula_309",
+      "cpc_art528"
+     ]
+    },
+    {
+     "id": "fam_alimony_enforcement.c2",
+     "label": "Execução de título extrajudicial de alimentos",
+     "authority_ids": [
+      "cpc_art911"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "fam_alimony_enforcement.d1",
+     "label": "Justificativa de impossibilidade absoluta e pagamento",
+     "authority_ids": [
+      "cpc_art528"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Pagamento sob pena de prisão ou expropriação",
+    "Protesto do pronunciamento judicial e inscrição do devedor nos cadastros de inadimplentes (CPC, art. 528, § 1º)",
+    "No rito expropriatório: penhora via SISBAJUD com afastamento da impenhorabilidade salarial (CPC, art. 529, § 3º, e art. 833, § 2º)"
+   ],
+   "evidence": [
+    "Título e demonstrativo das parcelas",
+    "Memória atualizada do débito discriminando mês a mês as três últimas parcelas anteriores ao ajuizamento e as vincendas no curso do processo (Súmula 309 do STJ)",
+    "Comprovantes de desemprego involuntário ou incapacidade grave superveniente quando apresentada justificativa pelo executado"
+   ],
+   "piece_ids": [
+    "execucao_alimentos",
+    "habeas_corpus"
+   ],
+   "related_claims": [],
+   "limitation": "Justificativa ou pagamento em 3 dias sob pena de prisão (alcançando até as 3 prestações anteriores ao ajuizamento e as que se vencerem no curso da lide — CPC, art. 528, §§ 3º e 7º; Súmula 309 do STJ); prescrição bienal das prestações vencidas (CC, art. 206, § 2º), suspensa durante o poder familiar e contra absolutamente incapazes (CC, arts. 197, II, e 198, I)."
+  },
+  {
+   "id": "fam_alimony_review",
+   "label": "Revisão e exoneração de alimentos",
+   "requirements": [
+    "titulo",
+    "mudanca_situacao",
+    "maioridade"
+   ],
+   "claimant_theses": [
+    {
+     "id": "fam_alimony_review.c1",
+     "label": "Alteração da situação financeira autoriza revisão",
+     "authority_ids": [
+      "cc_art1699"
+     ]
+    },
+    {
+     "id": "fam_alimony_review.c2",
+     "label": "Efeitos retroagem à citação",
+     "authority_ids": [
+      "stj_sumula_621"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "fam_alimony_review.d1",
+     "label": "Maioridade não extingue automaticamente: exige decisão com contraditório",
+     "authority_ids": [
+      "stj_sumula_358"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Redução, majoração ou exoneração",
+    "Tutela de urgência para readequação imediata do encargo diante de prova inequívoca de alteração drástica da fortuna ou necessidade",
+    "Contraditório prévio obrigatório antes de exoneração por maioridade civil (Súmula 358 do STJ)"
+   ],
+   "evidence": [
+    "Comprovantes de renda atuais",
+    "Matrícula escolar do alimentando",
+    "Termo de rescisão do contrato de trabalho, certidão de nascimento de nova prole ou laudos médicos comprovando alteração do binômio"
+   ],
+   "piece_ids": [
+    "acao_revisional_exoneracao_alimentos"
+   ],
+   "related_claims": [],
+   "limitation": "A ação revisional ou de exoneração de alimentos não se sujeita a prescrição ou decadência, podendo ser proposta a qualquer tempo diante de modificação na situação financeira de quem os supre ou de quem os recebe (CC, art. 1.699; Lei 5.478/1968, art. 15), retroagindo os efeitos da sentença à data da citação (Lei 5.478/1968, art. 13, § 2º; Súmula 621 do STJ)."
+  },
+  {
+   "id": "fam_divorce",
+   "label": "Divórcio e partilha",
+   "requirements": [
+    "casamento",
+    "regime_bens",
+    "bens_dividas",
+    "filhos"
+   ],
+   "claimant_theses": [
+    {
+     "id": "fam_divorce.c1",
+     "label": "Divórcio direto, sem prazo ou separação prévia",
+     "authority_ids": [
+      "cf_art226",
+      "cc_art1571"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "fam_divorce.d1",
+     "label": "Partilha conforme o regime de bens e a origem dos bens",
+     "authority_ids": [
+      "cc_art1571"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec66_divorcio",
+    "res_cnj_571_2024_inventario"
+   ],
+   "typical_requests": [
+    "Decretação do divórcio",
+    "Partilha, guarda e alimentos cumulados",
+    "Decretação liminar/parcial de mérito do divórcio por se tratar de direito potestativo incondicionado (CF, art. 226, § 6º; CPC, art. 356), prosseguindo o feito quanto à partilha e demais pedidos"
+   ],
+   "evidence": [
+    "Certidão de casamento, pacto e bens",
+    "Matrículas imobiliárias, CRLVs, extratos de investimentos/saldos bancários na data da separação de fato e participações societárias",
+    "Certidões de nascimento dos filhos comuns"
+   ],
+   "piece_ids": [
+    "acao_divorcio"
+   ],
+   "related_claims": [
+    "fam_custody"
+   ],
+   "limitation": "O direito potestativo ao divórcio é incondicionado e imprescritível, sem exigência de lapso prévio de separação (CF, art. 226, § 6º — EC 66/2010); quanto à pretensão de partilha de bens após a separação de fato prolongada com posse exclusiva por um dos ex-cônjuges, conferir incidência de usucapião familiar bienal (CC, art. 1.240-A) ou prescrição decenal (CC, art. 205)."
+  },
+  {
+   "id": "fam_custody",
+   "label": "Guarda, convivência e alienação parental",
+   "requirements": [
+    "melhor_interesse",
+    "rotina",
+    "violencia",
+    "estudo_psicossocial"
+   ],
+   "claimant_theses": [
+    {
+     "id": "fam_custody.c1",
+     "label": "Guarda compartilhada como regra, salvo hipóteses legais, inclusive risco de violência doméstica",
+     "authority_ids": [
+      "cc_art1584",
+      "cc_art1583",
+      "eca_art4"
+     ]
+    },
+    {
+     "id": "fam_custody.c2",
+     "label": "Medidas contra alienação parental",
+     "authority_ids": [
+      "l12318_art2",
+      "l12318_art6"
+     ]
+    },
+    {
+     "id": "fam_custody.c3",
+     "label": "Direito de visita e convivência",
+     "authority_ids": [
+      "cc_art1589"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "fam_custody.d1",
+     "label": "Guarda unilateral pelo melhor interesse demonstrado",
+     "authority_ids": [
+      "cc_art1583",
+      "cc_art1584"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14713_guarda_violencia",
+    "lei_14340_alienacao"
+   ],
+   "typical_requests": [
+    "Fixação de guarda e regime de convivência",
+    "Estudo psicossocial",
+    "Regulamentação detalhada de férias escolares, feriados alternados, datas festivas e autorizações de viagem"
+   ],
+   "evidence": [
+    "Relatórios escolares e de saúde",
+    "Mensagens e ocorrências",
+    "Laudo pericial biopsicossocial elaborado pela equipe interprofissional do juízo (CPC, art. 694; Lei 12.318/2010, art. 5º)"
+   ],
+   "piece_ids": [
+    "acao_guarda_convivencia",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [],
+   "limitation": "As decisões sobre guarda e regime de convivência não fazem coisa julgada material imutável, podendo ser revistas a qualquer tempo em atenção ao melhor interesse da criança e do adolescente (CC, art. 1.586; ECA, art. 35)."
+  },
+  {
+   "id": "fam_stable_union",
+   "label": "União estável: reconhecimento, dissolução e sucessão",
+   "requirements": [
+    "convivencia_publica_continua",
+    "objetivo_familia",
+    "periodo",
+    "bens"
+   ],
+   "claimant_theses": [
+    {
+     "id": "fam_stable_union.c1",
+     "label": "Reconhecimento pelos requisitos legais",
+     "authority_ids": [
+      "cc_art1723"
+     ]
+    },
+    {
+     "id": "fam_stable_union.c2",
+     "label": "Sucessão do companheiro equiparada à do cônjuge — conferir Tema 809 do STF e o art. 1.790",
+     "authority_ids": [
+      "cc_art1790",
+      "tema_stf_809"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "fam_stable_union.d1",
+     "label": "Namoro ou convivência sem objetivo de constituir família",
+     "authority_ids": [
+      "cc_art1723"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Declaração da união e partilha",
+    "Fixação precisa dos marcos inicial e final da convivência pública, contínua e duradoura e partilha dos aquestos sob o regime da comunhão parcial (CC, art. 1.725)",
+    "Equiparação sucessória integral ao cônjuge nos termos do art. 1.829 do CC (Temas 498 e 809 do STF)"
+   ],
+   "evidence": [
+    "Contas conjuntas, fotos, endereços e testemunhas",
+    "Planos de saúde/seguros como dependente, declarações de IRPF, escrituras públicas, correspondências no mesmo domicílio e certidões de nascimento de filhos",
+    "Comprovantes da época de aquisição onerosa dos bens durante o período de convivência"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "fam_succession",
+    "prev_death_pension"
+   ],
+   "limitation": "A ação meramente declaratória de reconhecimento e dissolução de união estável (inclusive post mortem) é imprescritível; os efeitos patrimoniais de partilha, meação ou petição de herança sujeitam-se ao prazo prescricional decenal contado da dissolução/separação de fato ou da abertura da sucessão (CC, art. 205; Súmula 149 do STF)."
+  },
+  {
+   "id": "fam_succession",
+   "label": "Inventário e partilha sucessória",
+   "requirements": [
+    "obito",
+    "herdeiros",
+    "bens_dividas",
+    "testamento",
+    "via"
+   ],
+   "claimant_theses": [
+    {
+     "id": "fam_succession.c1",
+     "label": "Ordem de vocação hereditária e legítima",
+     "authority_ids": [
+      "cc_art1829",
+      "cc_art1845"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "fam_succession.d1",
+     "label": "Via extrajudicial ou arrolamento conforme os pressupostos",
+     "authority_ids": [
+      "cpc_art610",
+      "cpc_art659"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "res_cnj_571_2024_inventario"
+   ],
+   "typical_requests": [
+    "Abertura do inventário e partilha",
+    "Nomeação de inventariante segundo a ordem legal do art. 617 do CPC e autorização por alvará para pagamento de ITCMD e despesas urgentes do espólio",
+    "Expedição de formal de partilha ou carta de adjudicação após homologação da partilha e quitação tributária"
+   ],
+   "evidence": [
+    "Certidões, títulos de bens e dívidas",
+    "Certidão de óbito, certidão negativa ou positiva de testamento (CENSEC) e documentos pessoais de todos os herdeiros e meeiro",
+    "Declaração e guia de quitação/isenção do ITCMD e certidões negativas fiscais em nome do de cujus"
+   ],
+   "piece_ids": [
+    "inventario_arrolamento",
+    "escritura_inventario_partilha_extrajudicial"
+   ],
+   "related_claims": [],
+   "limitation": "Requerimento de abertura do inventário e partilha em 2 meses a contar da abertura da sucessão, sob pena de multa fiscal estadual aplicável se houver atraso injustificado (CPC, art. 611; Súmula 542 do STF); ação de petição de herança prescreve em 10 anos da abertura da sucessão (CC, art. 205; Súmula 149 do STF)."
+  },
+  {
+   "id": "fam_domestic_violence",
+   "label": "Violência doméstica e medidas protetivas",
+   "requirements": [
+    "violencia_genero",
+    "forma",
+    "risco",
+    "medidas"
+   ],
+   "claimant_theses": [
+    {
+     "id": "fam_domestic_violence.c1",
+     "label": "Violência doméstica e familiar e suas formas",
+     "authority_ids": [
+      "l11340_art5",
+      "l11340_art7"
+     ]
+    },
+    {
+     "id": "fam_domestic_violence.c2",
+     "label": "Medidas protetivas de urgência",
+     "authority_ids": [
+      "l11340_art22"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "fam_domestic_violence.d1",
+     "label": "Ausência de situação de violência baseada no gênero",
+     "authority_ids": [
+      "l11340_art5"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14713_guarda_violencia",
+    "lei_14994_feminicidio"
+   ],
+   "typical_requests": [
+    "Medidas protetivas",
+    "Afastamento do lar e proibição de contato",
+    "Encaminhamento do agressor a programas de recuperação e reeducação e acompanhamento psicossocial (Lei 11.340/2006, art. 22, VI e VII)"
+   ],
+   "evidence": [
+    "Boletim de ocorrência, mensagens e laudos",
+    "Formulário Nacional de Avaliação de Risco (Res. Conjunta CNJ/CNMP 5/2020), prontuários médicos e depoimentos de vizinhos/familiares",
+    "Prints de ameaças, perseguição cibernética ou controle patrimonial"
+   ],
+   "piece_ids": [
+    "medida_protetiva_urgencia"
+   ],
+   "related_claims": [
+    "fam_custody"
+   ],
+   "limitation": "As medidas protetivas de urgência possuem natureza autônoma tutelar (Lei 11.340/2006, art. 19, §§ 4º a 6º — Lei 14.550/2023) e vigoram enquanto persistir o risco à integridade física, psicológica, sexual, patrimonial ou moral da ofendida ou de seus dependentes, independentemente de inquérito policial ou ação cível/penal principal (Tema Repetitivo 1249 do STJ)."
+  },
+  {
+   "id": "fam_paternity",
+   "label": "Investigação e negatória de paternidade",
+   "requirements": [
+    "vinculo_biologico",
+    "vinculo_socioafetivo",
+    "exame_genetico",
+    "registro"
+   ],
+   "claimant_theses": [
+    {
+     "id": "fam_paternity.c1",
+     "label": "Recusa ao exame genético gera presunção relativa de paternidade",
+     "authority_ids": [
+      "stj_sumula_301",
+      "l8560_art2a"
+     ]
+    },
+    {
+     "id": "fam_paternity.c2",
+     "label": "Reconhecimento do estado de filiação e alimentos desde a citação",
+     "authority_ids": [
+      "cc_art1607",
+      "stj_sumula_277"
+     ]
+    },
+    {
+     "id": "fam_paternity.c3",
+     "label": "Multiparentalidade: vínculo socioafetivo não impede o biológico",
+     "authority_ids": [
+      "tema_stf_622"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "fam_paternity.d1",
+     "label": "Paternidade socioafetiva consolidada impede a desconstituição do registro",
+     "authority_ids": [
+      "cc_art1601"
+     ]
+    },
+    {
+     "id": "fam_paternity.d2",
+     "label": "Presunção afastada pelo conjunto probatório",
+     "authority_ids": [
+      "l8560_art2a"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Declaração de paternidade e retificação do registro",
+    "Alimentos",
+    "Inclusão de sobrenome"
+   ],
+   "evidence": [
+    "Exame de DNA ou prova da recusa",
+    "Fotos, mensagens e testemunhas do relacionamento e da convivência",
+    "Certidão de nascimento impugnada e estudo social demonstrando existência ou inexistência de posse do estado de filho (socioafetividade)"
+   ],
+   "piece_ids": [
+    "investigacao_paternidade",
+    "acao_alimentos",
+    "contestacao"
+   ],
+   "related_claims": [
+    "fam_alimony"
+   ],
+   "limitation": "É imprescritível a ação de investigação de paternidade ou maternidade e de impugnação pelo filho (CC, art. 1.601; Súmula 149 do STF), enquanto a pretensão patrimonial de petição de herança prescreve em 10 anos contados da abertura da sucessão (ou da maioridade/ciência conforme o caso no STJ — CC, art. 205)."
+  },
+  {
+   "id": "fam_prenatal_grandparents",
+   "label": "Alimentos gravídicos e avoengos",
+   "requirements": [
+    "gravidez",
+    "indicios_de_paternidade",
+    "impossibilidade_dos_pais",
+    "possibilidade_dos_avos"
+   ],
+   "claimant_theses": [
+    {
+     "id": "fam_prenatal_grandparents.c1",
+     "label": "Alimentos gravídicos com indícios de paternidade, convertidos em pensão após o nascimento",
+     "authority_ids": [
+      "l11804_art2",
+      "l11804_art6"
+     ]
+    },
+    {
+     "id": "fam_prenatal_grandparents.c2",
+     "label": "Obrigação dos avós é complementar e subsidiária",
+     "authority_ids": [
+      "cc_art1696",
+      "cc_art1698",
+      "stj_sumula_596"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "fam_prenatal_grandparents.d1",
+     "label": "Ausência de indícios mínimos da paternidade",
+     "authority_ids": [
+      "l11804_art6"
+     ]
+    },
+    {
+     "id": "fam_prenatal_grandparents.d2",
+     "label": "Não esgotados os meios contra os genitores",
+     "authority_ids": [
+      "stj_sumula_596",
+      "cc_art1698"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Fixação provisória",
+    "Chamamento dos demais coobrigados",
+    "Conversão automática dos alimentos gravídicos em pensão alimentícia em favor do recém-nascido com o nascimento com vida até eventual revisão (Lei 11.804/2008, art. 6º, parágrafo único)"
+   ],
+   "evidence": [
+    "Exames e despesas da gestação",
+    "Mensagens e testemunhas",
+    "Prova da insuficiência dos pais"
+   ],
+   "piece_ids": [
+    "acao_alimentos",
+    "tutela_urgencia_antecedente",
+    "contestacao"
+   ],
+   "related_claims": [
+    "fam_alimony"
+   ],
+   "limitation": "Alimentos gravídicos cabíveis durante todo o período gestacional até o parto, convertendo-se automaticamente após o nascimento com vida (Lei 11.804/2008, art. 6º, parágrafo único); resposta em 5 dias (art. 7º)."
+  },
+  {
+   "id": "fam_property_regime",
+   "label": "Regime de bens e partilha",
+   "requirements": [
+    "regime",
+    "data_do_casamento_ou_uniao",
+    "origem_dos_bens",
+    "esforco_comum"
+   ],
+   "claimant_theses": [
+    {
+     "id": "fam_property_regime.c1",
+     "label": "Comunicação dos bens adquiridos onerosamente na constância",
+     "authority_ids": [
+      "cc_art1658",
+      "cc_art1660",
+      "cc_art1725"
+     ]
+    },
+    {
+     "id": "fam_property_regime.c2",
+     "label": "Alteração do regime mediante autorização judicial",
+     "authority_ids": [
+      "cc_art1639"
+     ]
+    },
+    {
+     "id": "fam_property_regime.c3",
+     "label": "Comunicação dos aquestos no regime de separação obrigatória — conferir a Súmula 377 do STF e a orientação atual sobre a prova do esforço comum",
+     "authority_ids": [
+      "cc_art1641"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "fam_property_regime.d1",
+     "label": "Bens excluídos: anteriores, doados, herdados e sub-rogados",
+     "authority_ids": [
+      "cc_art1659"
+     ]
+    },
+    {
+     "id": "fam_property_regime.d2",
+     "label": "Separação obrigatória pode ser afastada por pacto conforme o Tema 1236 do STF",
+     "authority_ids": [
+      "cc_art1641",
+      "tema_stf_1236"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Partilha dos bens comuns",
+    "Indenização pelo uso exclusivo",
+    "Sobrepartilha"
+   ],
+   "evidence": [
+    "Certidões, matrículas e extratos com datas",
+    "Prova da origem dos recursos",
+    "Pacto antenupcial"
+   ],
+   "piece_ids": [
+    "acao_divorcio",
+    "inicial_procedimento_comum",
+    "contestacao"
+   ],
+   "related_claims": [
+    "fam_divorce",
+    "fam_stable_union"
+   ],
+   "limitation": "A separação de fato põe fim ao regime de bens; a pretensão de partilha ou sobrepartilha submete-se ao prazo prescricional decenal (CC, art. 205) quando iniciada posse exclusiva/oposição inequívoca, sem prejuízo da usucapião familiar bienal (CC, art. 1.240-A) sobre imóvel urbano de até 250m² após abandono do lar."
+  },
+  {
+   "id": "fam_adoption",
+   "label": "Adoção e destituição do poder familiar",
+   "requirements": [
+    "situacao_da_crianca",
+    "consentimento_ou_destituicao",
+    "habilitacao",
+    "estagio_de_convivencia"
+   ],
+   "claimant_theses": [
+    {
+     "id": "fam_adoption.c1",
+     "label": "Adoção quando esgotada a manutenção na família natural ou extensa, no melhor interesse",
+     "authority_ids": [
+      "eca_art39",
+      "eca_art42",
+      "eca_art19"
+     ]
+    },
+    {
+     "id": "fam_adoption.c2",
+     "label": "Perda do poder familiar por descumprimento grave dos deveres",
+     "authority_ids": [
+      "cc_art1638",
+      "eca_art22",
+      "eca_art129"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "fam_adoption.d1",
+     "label": "Prioridade da família natural e ausência de consentimento válido",
+     "authority_ids": [
+      "eca_art45",
+      "eca_art19"
+     ]
+    },
+    {
+     "id": "fam_adoption.d2",
+     "label": "Ordem do cadastro de pretendentes",
+     "authority_ids": [
+      "eca_art50"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Destituição do poder familiar",
+    "Adoção com novo registro",
+    "Guarda provisória"
+   ],
+   "evidence": [
+    "Estudo psicossocial",
+    "Relatórios do acolhimento e do Conselho Tutelar",
+    "Habilitação dos pretendentes"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "acao_guarda_convivencia",
+    "contestacao"
+   ],
+   "related_claims": [
+    "fam_custody"
+   ],
+   "limitation": "Procedimento de destituição do poder familiar possui prazo legal máximo de conclusão de 120 dias no ECA (art. 163) e a ação de adoção de 120 dias prorrogável uma vez por igual período (ECA, art. 47, § 10); apelação no ECA em 10 dias corridos (ECA, arts. 152, § 2º, e 198, II)."
+  },
+  {
+   "id": "fam_curatorship",
+   "label": "Curatela e tomada de decisão apoiada",
+   "requirements": [
+    "impedimento_de_exprimir_vontade",
+    "atos_abrangidos",
+    "laudo_multidisciplinar",
+    "curador"
+   ],
+   "claimant_theses": [
+    {
+     "id": "fam_curatorship.c1",
+     "label": "Curatela proporcional, restrita a atos patrimoniais e negociais",
+     "authority_ids": [
+      "l13146_art84",
+      "l13146_art85",
+      "cc_art1767"
+     ]
+    },
+    {
+     "id": "fam_curatorship.c2",
+     "label": "Tomada de decisão apoiada como alternativa menos restritiva",
+     "authority_ids": [
+      "cc_art1783a"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "fam_curatorship.d1",
+     "label": "Capacidade preservada e suficiência de apoio",
+     "authority_ids": [
+      "l13146_art84"
+     ]
+    },
+    {
+     "id": "fam_curatorship.d2",
+     "label": "Ilegitimidade ou conflito de interesses do requerente",
+     "authority_ids": [
+      "cpc_art747"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Nomeação de curador com limites definidos",
+    "Curatela provisória",
+    "Prestação de contas"
+   ],
+   "evidence": [
+    "Laudos médicos e avaliação multidisciplinar",
+    "Entrevista",
+    "Relação de bens e rendas"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [
+    "fam_succession"
+   ],
+   "limitation": "A curatela restringe-se aos atos de natureza patrimonial e negocial (Lei 13.146/2015, art. 85) e pode ser requerida, modificada ou levantada a qualquer tempo enquanto durar ou quando cessar a causa que a determinou (CPC, arts. 755 e 756); impugnação pelo interditando em 15 dias úteis da entrevista (CPC, art. 752)."
+  },
+  {
+   "id": "fam_will_legitime",
+   "label": "Testamento, legítima e colação",
+   "requirements": [
+    "herdeiros_necessarios",
+    "liberalidades_em_vida",
+    "forma_do_testamento"
+   ],
+   "claimant_theses": [
+    {
+     "id": "fam_will_legitime.c1",
+     "label": "Redução das disposições que excedem a metade disponível",
+     "authority_ids": [
+      "cc_art1789",
+      "cc_art1846",
+      "cc_art1857"
+     ]
+    },
+    {
+     "id": "fam_will_legitime.c2",
+     "label": "Colação das doações a descendentes para igualar as legítimas",
+     "authority_ids": [
+      "cc_art2002",
+      "cc_art544"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "fam_will_legitime.d1",
+     "label": "Dispensa de colação e doação saída da parte disponível",
+     "authority_ids": [
+      "cc_art2002"
+     ]
+    },
+    {
+     "id": "fam_will_legitime.d2",
+     "label": "Exclusão por indignidade declarada em sentença",
+     "authority_ids": [
+      "cc_art1814"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "res_cnj_571_2024_inventario"
+   ],
+   "typical_requests": [
+    "Anulação ou redução de disposição testamentária",
+    "Colação",
+    "Sonegados"
+   ],
+   "evidence": [
+    "Testamento e certidões",
+    "Escrituras de doação e extratos",
+    "Avaliações"
+   ],
+   "piece_ids": [
+    "inventario_arrolamento",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "fam_succession"
+   ],
+   "limitation": "Extingue-se em 5 anos o direito de impugnar a validade do testamento contado o prazo da data do seu registro (CC, art. 1.859), e em 4 anos para anular disposições testamentárias eivadas de erro, dolo ou coação (CC, art. 1.909); redução de doação inoficiosa prescreve em 10 anos (CC, art. 205 — jurisprudência STJ)."
+  },
+  {
+   "id": "fam_estate_debts",
+   "label": "Dívidas do espólio e bem de família",
+   "requirements": [
+    "passivo_do_falecido",
+    "forcas_da_heranca",
+    "residencia_dos_herdeiros"
+   ],
+   "claimant_theses": [
+    {
+     "id": "fam_estate_debts.c1",
+     "label": "Herdeiros respondem apenas nas forças da herança",
+     "authority_ids": [
+      "cc_art1997",
+      "cc_art1784"
+     ]
+    },
+    {
+     "id": "fam_estate_debts.c2",
+     "label": "Imóvel residencial da entidade familiar é impenhorável",
+     "authority_ids": [
+      "l8009_art1",
+      "stj_sumula_364"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "fam_estate_debts.d1",
+     "label": "Exceções legais à impenhorabilidade",
+     "authority_ids": [
+      "l8009_art3",
+      "stj_sumula_549"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Limitação da responsabilidade",
+    "Levantamento de penhora",
+    "Habilitação de crédito no inventário ou reserva de bens suficientes nas forças da herança (CPC, arts. 642 e 643)"
+   ],
+   "evidence": [
+    "Formal de partilha",
+    "Prova de residência",
+    "Títulos dos credores"
+   ],
+   "piece_ids": [
+    "inventario_arrolamento",
+    "embargos_terceiro",
+    "impugnacao_cumprimento",
+    "excecao_pre_executividade"
+   ],
+   "related_claims": [
+    "fam_succession"
+   ],
+   "limitation": "Os herdeiros não respondem por encargos superiores às forças da herança (CC, art. 1.792), observando a cobrança da dívida do falecido o prazo prescricional próprio do respectivo título ou obrigação material (CC, arts. 205 e 206)."
+  },
+  {
+   "id": "fam_protective_breach",
+   "label": "Medidas protetivas: descumprimento e efeitos cíveis",
+   "requirements": [
+    "medida_em_vigor",
+    "intimacao_do_agressor",
+    "fato_novo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "fam_protective_breach.c1",
+     "label": "Medida protetiva independe de inquérito e pode afastar o agressor de imediato",
+     "authority_ids": [
+      "l11340_art19",
+      "l11340_art12c",
+      "l11340_art22"
+     ]
+    },
+    {
+     "id": "fam_protective_breach.c2",
+     "label": "Descumprimento é crime e autoriza a preventiva",
+     "authority_ids": [
+      "l11340_art24a",
+      "cpp_art313"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "fam_protective_breach.d1",
+     "label": "Ausência de intimação pessoal da medida",
+     "authority_ids": [
+      "l11340_art24a"
+     ]
+    },
+    {
+     "id": "fam_protective_breach.d2",
+     "label": "Aproximação consentida exige análise do caso — conferir orientação do STJ",
+     "authority_ids": [
+      "l11340_art24a"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14994_feminicidio",
+    "lei_14713_guarda_violencia"
+   ],
+   "typical_requests": [
+    "Prorrogação e ampliação das medidas",
+    "Alimentos provisionais e guarda",
+    "Comunicação imediata à autoridade policial e ao Ministério Público para apuração do crime de descumprimento de medida protetiva (Lei 11.340/2006, art. 24-A) e avaliação de prisão preventiva (CPP, art. 313, III)"
+   ],
+   "evidence": [
+    "Decisão e certidão de intimação",
+    "Registros de contato e boletins",
+    "Testemunhas"
+   ],
+   "piece_ids": [
+    "medida_protetiva_urgencia",
+    "habeas_corpus"
+   ],
+   "related_claims": [
+    "fam_domestic_violence",
+    "fam_custody"
+   ],
+   "limitation": "Requerimento de reforço protetivo ou comunicação de descumprimento cabível imediatamente a qualquer momento na vigência da medida (Lei 11.340/2006, arts. 19 e 24-A); prescrição penal do crime do art. 24-A (pena máxima de 5 anos pós-Lei 14.994/2024) em 12 anos (CP, art. 109, III)."
+  },
+  {
+   "id": "fam_extrajudicial_inventory_cnj571",
+   "label": "Inventário, partilha e divórcio consensuais extrajudiciais com incapazes ou testamento (Res. CNJ 571/2024)",
+   "requirements": [
+    "consenso_pleno_partes",
+    "preservacao_quinhao_ideal_incapaz",
+    "parecer_favoravel_ministerio_publico",
+    "autorizacao_abertura_testamento"
+   ],
+   "claimant_theses": [
+    {
+     "id": "fam_extrajudicial_inventory_cnj571.c1",
+     "label": "Nos termos da Resolução CNJ nº 571/2024 (que atualizou a Res. CNJ 35/2007), admite-se a lavratura de escritura pública de inventário e partilha consensual mesmo havendo herdeiros menores ou incapazes, desde que assegurado seu quinhão ideal em cada bem (sem pagamento desigual/prejuízo) e colhida manifestação favorável do Ministério Público",
+     "authority_ids": [
+      "res_cnj_571_2024",
+      "cpc_art610"
+     ]
+    },
+    {
+     "id": "fam_extrajudicial_inventory_cnj571.c2",
+     "label": "Existindo testamento válido e prévia autorização do juízo testamentário (ou nos termos da regulamentação do CNJ/Corregedoria Estadual com consenso pleno), é cabível o processamento do inventário pela via extrajudicial célere, bem como alvará notarial da inventariança para levantamento de valores destinados ao pagamento do ITCMD e emolumentos",
+     "authority_ids": [
+      "res_cnj_571_2024",
+      "cpc_art610"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "fam_extrajudicial_inventory_cnj571.d1",
+     "label": "Havendo impugnação do Ministério Público, conflito de interesses entre o representante legal e o incapaz (exigindo curador especial) ou partilha diferenciada/alienação desvantajosa ao menor, impõe-se a remessa obrigatória da minuta à apreciação judicial",
+     "authority_ids": [
+      "res_cnj_571_2024",
+      "cpc_art610",
+      "eca_art4"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "res_cnj_571_2024_inventario"
+   ],
+   "typical_requests": [
+    "Autorização judicial no procedimento de abertura e registro de testamento para lavratura subsequente do inventário em Tabelionato de Notas",
+    "Suspensão ou extinção sem resolução de mérito de inventário judicial consensual para conclusão imediata por escritura pública extrajudicial",
+    "Homologação judicial da minuta enviada pelo tabelião caso haja ressalva ministerial pontual sanável"
+   ],
+   "evidence": [
+    "Minuta completa da escritura pública de inventário/partilha elaborada com assistência de advogado demonstrando divisão ideal igualitária para o herdeiro incapaz",
+    "Parecer favorável do Ministério Público Estadual no procedimento administrativo notarial",
+    "Sentença de abertura, registro e cumprimento do testamento (quando houver disposição de última vontade) e guias de ITCMD"
+   ],
+   "piece_ids": [
+    "escritura_inventario_partilha_extrajudicial",
+    "inventario_arrolamento",
+    "manifestacao_especifica"
+   ],
+   "related_claims": [
+    "fam_succession",
+    "fam_divorce",
+    "fam_will_legitime"
+   ],
+   "limitation": "Prazo fiscal de 2 meses da abertura da sucessão para protocolo da nomeação de inventariante/abertura notarial a fim de afastar multa de ITCMD (CPC, art. 611; Res. CNJ 35/2007 e 571/2024)."
+  },
+  {
+   "id": "fam_domestic_violence_custody_bar",
+   "label": "Óbice legal à guarda compartilhada por risco de violência doméstica ou familiar (Lei 14.713/2023 e Res. CNJ 492/2023)",
+   "requirements": [
+    "elementos_probabilidade_risco_violencia",
+    "fixacao_guarda_unilateral",
+    "convivencia_assistida_ou_suspensa",
+    "perspectiva_de_genero"
+   ],
+   "claimant_theses": [
+    {
+     "id": "fam_domestic_violence_custody_bar.c1",
+     "label": "Não caberá guarda compartilhada quando houver elementos que evidenciem a probabilidade de risco de violência doméstica ou familiar contra um dos genitores ou contra os filhos (CC, art. 1.584, § 2º, com redação da Lei 14.713/2023; CPC, art. 699-A), impondo-se julgamento sob o Protocolo de Perspectiva de Gênero (Res. CNJ 492/2023)",
+     "authority_ids": [
+      "cc_art1584",
+      "res_cnj_492_2023",
+      "l11340_art22",
+      "eca_art4"
+     ]
+    },
+    {
+     "id": "fam_domestic_violence_custody_bar.c2",
+     "label": "Vedação de instrumentalização abusiva da Lei de Alienação Parental para descredibilizar relatos fundados de violência doméstica ou abuso infantojuvenil",
+     "authority_ids": [
+      "res_cnj_492_2023",
+      "l12318_art2",
+      "l12318_art6"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "fam_domestic_violence_custody_bar.d1",
+     "label": "Inexistência de indícios mínimos idôneos de violência doméstica ou risco à prole após instrução técnica e arquivamento penal/protetivo, prevalecendo a regra legal da corresponsabilidade parental (CC, art. 1.584, § 2º) ou convivência preservada em local seguro com intermediação de terceiros",
+     "authority_ids": [
+      "cc_art1583",
+      "cc_art1584",
+      "cc_art1589"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14713_guarda_violencia",
+    "lei_14340_alienacao"
+   ],
+   "typical_requests": [
+    "Intimação preliminar na forma do art. 699-A do CPC e fixação liminar de guarda unilateral em favor da genitora vítima de violência doméstica",
+    "Determinação de convivência assistida ou intermediação de entrega/retirada por familiar para preservar as medidas protetivas de afastamento",
+    "Realização de estudo técnico interprofissional capacitado em perspectiva de gênero e depoimento especial protegido"
+   ],
+   "evidence": [
+    "Decisão concessiva de medidas protetivas de urgência da Lei Maria da Penha, boletins de ocorrência e Formulário Nacional de Avaliação de Risco",
+    "Mensagens ameaçadoras, áudios, prontuários médicos e relatórios psicológicos/escolares da criança",
+    "Laudo psicossocial forense elaborado pelo setor técnico do juízo de família"
+   ],
+   "piece_ids": [
+    "acao_guarda_convivencia",
+    "medida_protetiva_urgencia",
+    "tutela_urgencia_antecedente",
+    "contestacao",
+    "agravo_instrumento"
+   ],
+   "related_claims": [
+    "fam_custody",
+    "fam_domestic_violence",
+    "fam_protective_breach"
+   ],
+   "limitation": "Prazo preliminar de 5 dias no art. 699-A do CPC antes da audiência de mediação para juntada de prova do risco de violência doméstica; guarda e convivência são revisáveis a qualquer tempo no interesse superior da criança (CC, art. 1.586)."
+  },
+  {
+   "id": "fam_alimony_income_tax_exemption",
+   "label": "Não incidência de Imposto de Renda sobre pensão alimentícia familiar e repetição de indébito (ADI 5422 STF)",
+   "requirements": [
+    "verba_alimentar_direito_de_familia",
+    "titulo_judicial_ou_escritura",
+    "retencao_ou_carne_leao_indevido",
+    "retificacao_dirpf"
+   ],
+   "claimant_theses": [
+    {
+     "id": "fam_alimony_income_tax_exemption.c1",
+     "label": "Valores recebidos a título de alimentos ou pensão alimentícia regidos pelo Direito de Família não configuram acréscimo patrimonial novo, sendo inconstitucional a incidência do Imposto de Renda sobre o alimentando/responsável, com direito à restituição dos últimos 5 anos (ADI 5.422 do STF)",
+     "authority_ids": [
+      "adi_5422",
+      "cf_art153",
+      "ctn_art165",
+      "ctn_art168"
+     ]
+    },
+    {
+     "id": "fam_alimony_income_tax_exemption.c2",
+     "label": "Manutenção da dedutibilidade fiscal da pensão alimentícia paga pelo alimentante em cumprimento de decisão judicial, acordo homologado ou escritura pública",
+     "authority_ids": [
+      "adi_5422",
+      "cc_art1694"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "fam_alimony_income_tax_exemption.d1",
+     "label": "A tese da ADI 5.422 alcança estritamente alimentos decorrentes do Direito de Família formalizados em título idôneo, não se estendendo a liberalidades informais sem título nem a pensões previdenciárias/indenizatórias de natureza substitutiva de renda tributável fora do escopo do julgado",
+     "authority_ids": [
+      "adi_5422",
+      "ctn_art111"
+     ]
+    },
+    {
+     "id": "fam_alimony_income_tax_exemption.d2",
+     "label": "Prescrição quinquenal das parcelas recolhidas há mais de cinco anos da data do pedido administrativo ou judicial de restituição (CTN, art. 168, I)",
+     "authority_ids": [
+      "ctn_art168"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "ec_113_2021_selic"
+   ],
+   "typical_requests": [
+    "Cessação imediata de retenção de IRRF sobre pensão alimentícia descontada em folha de pagamento do alimentante",
+    "Restituição/repetição do indébito tributário de IRPF pago sobre alimentos familiares nos cinco exercícios anteriores atualizada pela SELIC",
+    "Readequação do líquido alimentar em ação revisional quando o valor anterior havia sido majorado exclusivamente para compensar o extinto encargo de IR"
+   ],
+   "evidence": [
+    "Sentença, acordo homologado judicialmente ou escritura pública que fixou os alimentos de Direito de Família",
+    "Declarações de Ajuste Anual de IRPF (originais e retificadoras), comprovantes de DARF/Carnê-Leão ou informes de retenção na fonte",
+    "Extratos bancários ou holerites comprovando o efetivo recebimento das pensões declaradas"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "acao_revisional_exoneracao_alimentos",
+    "manifestacao_especifica"
+   ],
+   "related_claims": [
+    "fam_alimony",
+    "fam_alimony_review",
+    "trib_refund"
+   ],
+   "limitation": "Prescrição quinquenal para o pedido administrativo (PER/DCOMP) ou judicial de repetição do indébito de IRPF contada de cada pagamento indevido (CTN, art. 168, I)."
+  },
+  {
+   "id": "fam_grandparent_alimony_subsidiary",
+   "label": "Alimentos avoengos: subsidiariedade, complementaridade e chamamento dos coobrigados (CC, arts. 1.696/1.698, e Súmula 596 STJ)",
+   "requirements": [
+    "incapacidade_total_ou_parcial_ambos_genitores",
+    "esgotamento_meios_contra_pais",
+    "chamamento_avos_paternos_maternos",
+    "divisibilidade_proporcional"
+   ],
+   "claimant_theses": [
+    {
+     "id": "fam_grandparent_alimony_subsidiary.c1",
+     "label": "Comprovada a impossibilidade total ou a insuficiência financeira de ambos os genitores para prover integralmente as necessidades vitais do menor, os avós respondem subsidiária e complementarmente na exata medida de suas possibilidades (CC, arts. 1.696 e 1.698)",
+     "authority_ids": [
+      "cc_art1696",
+      "cc_art1698",
+      "stj_sumula_596"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "fam_grandparent_alimony_subsidiary.d1",
+     "label": "A obrigação alimentar dos avós tem natureza complementar e subsidiária, somente se configurando se demonstrada concretamente a incapacidade dos genitores de prestá-los, não bastando o mero inadimplemento voluntário sem esgotamento razoável dos meios executivos contra os pais (Súmula 596 do STJ)",
+     "authority_ids": [
+      "stj_sumula_596",
+      "cc_art1696",
+      "cc_art1698"
+     ]
+    },
+    {
+     "id": "fam_grandparent_alimony_subsidiary.d2",
+     "label": "Obrigação divisível e não solidária entre todos os ascendentes de mesmo grau (avós paternos e maternos), cabendo o chamamento ao processo para rateio proporcional às forças econômicas e preservação da saúde/velhice digna dos avós idosos (CC, art. 1.698; Lei 10.741/2003)",
+     "authority_ids": [
+      "cc_art1698",
+      "stj_sumula_596"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Fixação complementar e subsidiária de alimentos avoengos distribuídos proporcionalmente entre os ramos paterno e materno",
+    "Pela defesa dos avós: improcedência por ausência de prova da incapacidade laborativa/financeira dos genitores ou chamamento dos avós da outra linha ancestral",
+    "Exoneração dos alimentos avoengos tão logo restabelecida a capacidade contributiva dos genitores"
+   ],
+   "evidence": [
+    "Autos da execução de alimentos frustrada contra o genitor inadimplente ou certidão de óbito/incapacidade médica/prisão sem renda",
+    "Comprovantes de renda e despesas da genitora guardiã demonstrando insuficiência para suprir sozinha o mínimo necessário",
+    "Demonstrativos de proventos de aposentadoria e gastos médicos/medicamentosos próprios dos avós idosos"
+   ],
+   "piece_ids": [
+    "acao_alimentos",
+    "acao_revisional_exoneracao_alimentos",
+    "contestacao",
+    "apelacao_civel"
+   ],
+   "related_claims": [
+    "fam_prenatal_grandparents",
+    "fam_alimony"
+   ],
+   "limitation": "Direito imprescritível enquanto perdurar a menoridade/necessidade; prestações fixadas prescrevem em 2 anos (CC, art. 206, § 2º, ressalvado art. 198, I)."
+  },
+  {
+   "id": "fam_multiparentality_socioaffective",
+   "label": "Multiparentalidade e filiação socioafetiva concomitante à biológica (Tema 622 STF)",
+   "requirements": [
+    "posse_estado_de_filho",
+    "vinculo_socioafetivo_consolidado",
+    "concomitancia_vinculo_biologico",
+    "efeitos_juridicos_plenos"
+   ],
+   "claimant_theses": [
+    {
+     "id": "fam_multiparentality_socioaffective.c1",
+     "label": "A paternidade socioafetiva, declarada ou não em registro público, não impede o reconhecimento do vínculo de filiação concomitante baseado na origem biológica, com os efeitos jurídicos próprios — alimentos, guarda, nome e sucessão hereditária em ambas as linhas (Tema 622 do STF; CF, art. 227, § 6º; CC, art. 1.593)",
+     "authority_ids": [
+      "tema_stf_622",
+      "cf_art227",
+      "cc_art1593"
+     ]
+    },
+    {
+     "id": "fam_multiparentality_socioaffective.c2",
+     "label": "Admissibilidade de reconhecimento judicial post mortem da filiação socioafetiva quando provada de forma inequívoca a posse do estado de filho (tratamento, fama e afeto filial, e não mera afinidade de padrasto/madrasta)",
+     "authority_ids": [
+      "cc_art1593",
+      "cf_art227"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "fam_multiparentality_socioaffective.d1",
+     "label": "Distinção estrita entre relação cordial de afinidade (padrasto/madrasta, tio ou guardião solidário) e efetiva assunção voluntária e pública do lugar de pai/mãe (posse do estado de filho), bem como descabimento de multiparentalidade meramente patrimonial oportunista sem melhor interesse",
+     "authority_ids": [
+      "cc_art1593",
+      "tema_stf_622"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [],
+   "typical_requests": [
+    "Reconhecimento judicial da multiparentalidade com averbação simultânea dos ascendentes socioafetivo e biológico no assento de nascimento, sem exclusão de nenhum deles",
+    "Acréscimo do patronímico familiar e habilitação como herdeiro necessário na sucessão aberta",
+    "Fixação de alimentos e convivência conforme o melhor interesse do filho"
+   ],
+   "evidence": [
+    "Exame genético de DNA (quanto ao vínculo biológico) e estudo psicossocial forense (quanto ao vínculo socioafetivo)",
+    "Registros escolares, planos de saúde, fotografias históricas, cartões manuscritos, redes sociais e depoimentos testemunhais comprovando tratamento público de filho",
+    "Termo de consentimento do filho maior de 12 anos nos procedimentos consensuais/extrajudiciais (Provimento CNJ 149/2023)"
+   ],
+   "piece_ids": [
+    "investigacao_paternidade",
+    "inicial_procedimento_comum",
+    "contestacao",
+    "impugnacao_laudo"
+   ],
+   "related_claims": [
+    "fam_paternity",
+    "fam_succession"
+   ],
+   "limitation": "A ação declaratória de estado de filiação socioafetiva ou multiparental é imprescritível (CC, art. 1.606; Súmula 149 do STF); a pretensão patrimonial de petição de herança em face de terceiros herdeiros prescreve em 10 anos da abertura da sucessão (CC, art. 205; conferir termo inicial quando reconhecida post mortem)."
+  },
+  {
+   "id": "fam_international_child_abduction",
+   "label": "Subtração internacional de crianças, residência habitual e exceção de grave risco por violência doméstica (Decreto 3.413/2000)",
+   "requirements": [
+    "residencia_habitual_anterior",
+    "retencao_ou_transferencia_ilicita",
+    "excecao_grave_risco_art_13b",
+    "integracao_apos_um_ano"
+   ],
+   "claimant_theses": [
+    {
+     "id": "fam_international_child_abduction.c1",
+     "label": "Determinação de retorno imediato da criança ilicitamente transferida ou retida ao Estado de sua residência habitual, a quem compete decidir o mérito definitivo da guarda (Convenção da Haia de 1980 — Decreto 3.413/2000, arts. 3º e 12)",
+     "authority_ids": [
+      "d3413_art13",
+      "eca_art4"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "fam_international_child_abduction.d1",
+     "label": "Incidência da exceção de grave risco físico ou psíquico ou situação intolerável (art. 13, 'b', do Decreto 3.413/2000) interpretada sob perspectiva de gênero (Res. CNJ 492/2023 e posicionamento do STF) quando comprovada violência doméstica contra a mãe guardiã primária e ausência de medidas eficazes de proteção no país requerente",
+     "authority_ids": [
+      "d3413_art13",
+      "res_cnj_492_2023",
+      "cf_art227"
+     ]
+    },
+    {
+     "id": "fam_international_child_abduction.d2",
+     "label": "Integração plena da criança ao novo meio quando a ação for iniciada após mais de 1 ano da transferência/retenção (art. 12, segunda parte), consentimento/aquiescência posterior do outro genitor ou oposição fundamentada da criança com maturidade suficiente (art. 13)",
+     "authority_ids": [
+      "d3413_art13",
+      "cf_art227"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14713_guarda_violencia"
+   ],
+   "typical_requests": [
+    "Na Justiça Federal (CF, art. 109, III): busca e restituição internacional com medidas seguras de retorno (undertakings) ou improcedência do pedido de retorno pela exceção do art. 13, 'b', da Convenção da Haia",
+    "Proibição cautelar de saída do território nacional e retenção de passaportes durante a perícia psicossocial",
+    "Oitiva protegida da criança e perícia psicológica especializada sobre o risco de revitimização"
+   ],
+   "evidence": [
+    "Pedido de cooperação tramitado via Autoridade Central Administrativa Federal (ACAF) e legislação de guarda do país de residência habitual",
+    "Registros policiais, médicos, medidas protetivas e comunicações comprovando histórico de violência doméstica no exterior",
+    "Laudo pericial psicológico e social federal aferindo integração escolar/familiar e eventual grave risco psíquico no retorno"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "contestacao",
+    "tutela_urgencia_antecedente",
+    "impugnacao_laudo",
+    "apelacao_civel"
+   ],
+   "related_claims": [
+    "fam_domestic_violence_custody_bar",
+    "fam_custody"
+   ],
+   "limitation": "Iniciado o processo judicial/administrativo em menos de 1 ano da transferência ou retenção ilícita, aplica-se a regra de retorno imediato salvo exceções do art. 13; iniciado após 1 ano, admite-se também a prova de que a criança já se encontra integrada no seu novo meio (Decreto 3.413/2000, art. 12)."
+  }
  ]
 }

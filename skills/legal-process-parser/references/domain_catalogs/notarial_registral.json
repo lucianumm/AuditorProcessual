@@ -1,0 +1,937 @@
+{
+  "schema_version": "1.0",
+  "domain": "notarial_registral",
+  "label": "Direito Notarial e Registral",
+  "guide": "domain_guides/notarial_registral.md",
+  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
+  "polo_labels": {
+    "claimant_theses": "Teses do apresentante, interessado ou lesado",
+    "defense_theses": "Teses do oficial registrador, tabelião ou impugnante"
+  },
+  "claims": [
+    {
+      "id": "not_registral_doubt_proceeding",
+      "label": "Suscitação de dúvida registral direta e inversa (Lei 6.015/1973, arts. 198–204)",
+      "requirements": [
+        "protocolo_prenotacao_vigente",
+        "nota_devolutiva_unica_fundamentada",
+        "natureza_administrativa_decisao_art_204",
+        "exigencia_registro_stricto_sensu"
+      ],
+      "claimant_theses": [
+        {
+          "id": "not_registral_doubt_proceeding.c1",
+          "label": "Improcedência da dúvida registral quando a exigência formulada pelo oficial extrapolou os limites formais da qualificação legal, impôs requisito não previsto em lei ou reiterou exigências fracionadas fora da nota única obrigatória (LRP, art. 198)",
+          "authority_ids": [
+            "l6015_art198",
+            "l6015_art199",
+            "l6015_art203"
+          ]
+        },
+        {
+          "id": "not_registral_doubt_proceeding.c2",
+          "label": "Admissibilidade da dúvida inversa suscitada diretamente pelo interessado perante o juízo corregedor permanente mediante comprovação da prenotação vigente e da recusa/exigência escrita, prorrogando-se os efeitos da prioridade até o trânsito administrativo",
+          "authority_ids": [
+            "l6015_art198",
+            "l6015_art203"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "not_registral_doubt_proceeding.d1",
+          "label": "Procedência da dúvida em observância cogente aos princípios da legalidade, continuidade subjetiva, especialidade objetiva/subjetiva e disponibilidade registral verificados na data da apresentação (tempus regit actum)",
+          "authority_ids": [
+            "l6015_art195",
+            "l6015_art198",
+            "l6015_art225"
+          ]
+        },
+        {
+          "id": "not_registral_doubt_proceeding.d2",
+          "label": "Natureza estritamente administrativa da decisão proferida no procedimento de dúvida, não impedindo o uso do processo contencioso competente e não desafiando Recurso Especial direto ao STJ (LRP, art. 204 — jurisprudência pacífica do STJ), tampouco cabendo dúvida para atos de mera averbação nos tribunais que mantêm a distinção (cabível pedido de providências)",
+          "authority_ids": [
+            "l6015_art204"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14382_serp"
+      ],
+      "typical_requests": [
+        "Julgamento de improcedência da dúvida registral com expedição de mandado para imediato registro do título valendo a prenotação original (LRP, art. 203, II)",
+        "Manutenção da exigência legal (procedência da dúvida) com cancelamento da prenotação e restituição dos documentos ao apresentante (art. 203, I)"
+      ],
+      "evidence": [
+        "Título original apresentado a registro (escritura pública, formal de partilha, carta de arrematação ou instrumento particular com força legal)",
+        "Certidão de prenotação ativa no Livro 1 — Protocolo e Nota Devolutiva escrita, datada e fundamentada pelo Oficial",
+        "Certidão de inteiro teor da matrícula atualizada e cadeia dominial anterior"
+      ],
+      "piece_ids": [
+        "suscitacao_duvida_registral",
+        "recurso_administrativo",
+        "mandado_seguranca",
+        "inicial_procedimento_comum"
+      ],
+      "related_claims": [
+        "imob_registry",
+        "imob_registry_rectification",
+        "not_serp_electronic_extract"
+      ],
+      "limitation": "Prenotação vigora por 20 dias úteis (LRP, art. 205, redação da Lei 14.382/2022), prorrogando-se automaticamente com a suscitação tempestiva da dúvida até a decisão final (art. 203); impugnação pelo interessado em 15 dias úteis da ciência dos termos da dúvida (art. 198, § 1º, III) e apelação administrativa ao Conselho Superior da Magistratura/Corregedoria no prazo normativo (art. 202)"
+    },
+    {
+      "id": "not_area_rectification_administrative_judicial",
+      "label": "Retificação administrativa e contenciosa de área e matrícula imobiliária (LRP, arts. 212–213)",
+      "requirements": [
+        "omissao_imprecisao_ou_inveracidade_tabular",
+        "planta_memorial_georreferenciado_art",
+        "anuencia_ou_notificacao_confrontantes",
+        "respeito_divisas_sem_acrescimo_dominial"
+      ],
+      "claimant_theses": [
+        {
+          "id": "not_area_rectification_administrative_judicial.c1",
+          "label": "Retificação extrajudicial direta pelo Oficial de Registro de Imóveis para inserção ou alteração de medida perimetral e área encontrada intramuros, mediante planta e memorial assinados por profissional habilitado e anuência dos confrontantes ocupantes/proprietários — presumindo-se concordância se notificados não impugnarem em 15 dias (LRP, art. 213, II e § 4º)",
+          "authority_ids": [
+            "l6015_art212",
+            "l6015_art213"
+          ]
+        },
+        {
+          "id": "not_area_rectification_administrative_judicial.c2",
+          "label": "Ação judicial de retificação de registro (art. 213, § 6º, ou via autônoma) quando houver impugnação fundamentada não solucionada amigavelmente ou complexidade pericial sobre os limites físicos",
+          "authority_ids": [
+            "l6015_art212",
+            "l6015_art213",
+            "cc_art1247"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "not_area_rectification_administrative_judicial.d1",
+          "label": "Inadmissibilidade absoluta do procedimento retificatório (administrativo ou judicial) como sucedâneo de ação de usucapião ou reivindicatória para incorporar área contígua sem título ou avançar sobre imóveis vizinhos, áreas públicas, faixas de domínio ou reserva ambiental",
+          "authority_ids": [
+            "l6015_art213",
+            "cc_art1245"
+          ]
+        },
+        {
+          "id": "not_area_rectification_administrative_judicial.d2",
+          "label": "Necessidade de georreferenciamento certificado no SIGEF/INCRA para imóveis rurais enquadrados nos prazos regulamentares (LRP, art. 176, §§ 3º e 4º)",
+          "authority_ids": [
+            "l6015_art176"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14382_serp"
+      ],
+      "typical_requests": [
+        "Averbação administrativa da retificação descritiva e de área na matrícula imobiliária (LRP, art. 213, I ou II)",
+        "Procedência de ação judicial de retificação de área após perícia de agrimensura com citação dos confrontantes e entes públicos lindeiros",
+        "Indeferimento da retificação por caracterizar aquisição originária disfarçada sem observância do rito da usucapião"
+      ],
+      "evidence": [
+        "Planta planimétrica/georreferenciada e memorial descritivo acompanhados de ART/TRT quitada e certificação SIGEF quando imóvel rural",
+        "Declarações expressas de anuência dos confrontantes na própria planta ou comprovantes de notificação registral sem impugnação no prazo legal",
+        "Matrículas do imóvel retificando e de todos os imóveis lindeiros e levantamento histórico de transcrições anteriores"
+      ],
+      "piece_ids": [
+        "pedido_retificacao_registro",
+        "inicial_procedimento_comum",
+        "impugnacao_laudo",
+        "contestacao"
+      ],
+      "related_claims": [
+        "imob_registry_rectification",
+        "not_extrajudicial_usucapiao"
+      ],
+      "limitation": "Pretensão de retificar registro que não exprime a verdade tabular não se sujeita a prescrição ou decadência enquanto persistir a inexatidão (LRP, art. 212; CC, art. 1.247); prazo de 15 dias úteis para manifestação do confrontante notificado na via extrajudicial (LRP, art. 213, § 2º)"
+    },
+    {
+      "id": "not_extrajudicial_usucapiao",
+      "label": "Usucapião extrajudicial e silêncio qualificado como concordância (LRP, art. 216-A e Prov. CNJ 149/2023)",
+      "requirements": [
+        "posse_ad_usucapionem_pelo_prazo_modalidade",
+        "ata_notarial_tempo_e_qualidade_posse",
+        "silencio_notificados_como_concordancia",
+        "ausencia_impugnacao_fundamentada"
+      ],
+      "claimant_theses": [
+        {
+          "id": "not_extrajudicial_usucapiao.c1",
+          "label": "Reconhecimento extrajudicial da usucapião diretamente perante o Oficial de Registro de Imóveis da situação do bem, instruído com ata notarial lavrada pelo tabelião, planta/memorial com ART, certidões negativas e justo título ou prova da origem, continuidade, natureza e tempo da posse (LRP, art. 216-A; Prov. CNJ 149/2023)",
+          "authority_ids": [
+            "l6015_art216a",
+            "cc_art1238",
+            "prov_cnj_149_2023"
+          ]
+        },
+        {
+          "id": "not_extrajudicial_usucapiao.c2",
+          "label": "O silêncio do titular de direitos reais registrados na matrícula do imóvel usucapiendo ou na dos confinantes, regularmente notificados pessoalmente ou por edital nos casos cabíveis, é interpretado legalmente como concordância (LRP, art. 216-A, § 2º), sendo vedado exigir prévia tentativa judicial ou comprovação de pagamento de impostos como óbice absoluto ao registro",
+          "authority_ids": [
+            "l6015_art216a",
+            "prov_cnj_149_2023"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "not_extrajudicial_usucapiao.d1",
+          "label": "Apresentação de impugnação juridicamente fundamentada por titular registral, confrontante ou ente público (v.g., posse precária derivada de locação/comodato, área pública inusucapível ou sobreposição), impondo tentativa de conciliação e, se infrutífera, remessa dos autos ao juízo competente (art. 216-A, § 10)",
+          "authority_ids": [
+            "l6015_art216a",
+            "cc_art1196",
+            "cf_art191"
+          ]
+        },
+        {
+          "id": "not_extrajudicial_usucapiao.d2",
+          "label": "Insuficiência probatória documental da posse exclusiva com animus domini pelo lapso exigido na modalidade invocada, autorizando conversão para a via judicial sem perda do aproveitamento das provas produzidas",
+          "authority_ids": [
+            "l6015_art216a"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14382_serp"
+      ],
+      "typical_requests": [
+        "Deferimento administrativo da usucapião extrajudicial com abertura de matrícula própria ou registro da aquisição originária livre de ônus anteriores",
+        "Afastamento pelo juiz corregedor de exigência indevida do registrador ou de impugnação manifestamente infundada/genérica (Prov. CNJ 149/2023)",
+        "Remessa ao juízo cível competente em caso de litígio possessório/dominial fundado"
+      ],
+      "evidence": [
+        "Ata notarial lavrada por tabelião de notas da circunscrição do imóvel atestando tempo de posse do requerente e de seus antecessores (accessio possessionis)",
+        "Planta e memorial descritivo com ART/TRT, certidões dos distribuidores cíveis da comarca e da Justiça Federal em nome do requerente e do proprietário tabular",
+        "Justo título (compromisso de compra e venda, cessão de direitos, recibos) ou comprovantes de posse (IPTU/ITR, contas de consumo, benfeitorias)"
+      ],
+      "piece_ids": [
+        "requerimento_administrativo",
+        "ata_notarial",
+        "suscitacao_duvida_registral",
+        "usucapiao"
+      ],
+      "related_claims": [
+        "imob_usucapiao",
+        "imob_urban_usucapiao",
+        "agr_rural_usucapiao"
+      ],
+      "limitation": "Prazos materiais aquisitivos conforme a modalidade (5 anos urbana/rural especial — CF, arts. 183/191; 2 anos familiar — CC, art. 1.240-A; 10/5 anos ordinária — art. 1.242; 15/10 anos extraordinária — art. 1.238); prazo de 15 dias úteis para manifestação dos notificados e entes públicos no procedimento do art. 216-A, §§ 2º e 3º, da LRP"
+    },
+    {
+      "id": "not_extrajudicial_compulsory_adjudication",
+      "label": "Adjudicação compulsória extrajudicial pelo Oficial de Registro de Imóveis (LRP, art. 216-B)",
+      "requirements": [
+        "promessa_compra_venda_ou_cessao_sem_arrependimento",
+        "prova_quitacao_preco",
+        "ata_notarial_inadimplemento_outorga",
+        "regularidade_fiscal_itbi"
+      ],
+      "claimant_theses": [
+        {
+          "id": "not_extrajudicial_compulsory_adjudication.c1",
+          "label": "Processamento extrajudicial da adjudicação compulsória diretamente no Registro de Imóveis, requerida pelo promitente comprador/cessionário ou pelo promitente vendedor (adjudicação inversa), independentemente de prévio registro do instrumento de promessa (Súmula 239 STJ; LRP, art. 216-B, incluído pela Lei 14.382/2022)",
+          "authority_ids": [
+            "l6015_art216b",
+            "stj_sumula_239",
+            "cc_art1418",
+            "prov_cnj_149_2023"
+          ]
+        },
+        {
+          "id": "not_extrajudicial_compulsory_adjudication.c2",
+          "label": "Não acolhida impugnação ou transcorrido em branco o prazo de 15 dias úteis da notificação do requerido para outorgar a escritura, defere o oficial o registro da transmissão da propriedade",
+          "authority_ids": [
+            "l6015_art216b",
+            "prov_cnj_149_2023"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "not_extrajudicial_compulsory_adjudication.d1",
+          "label": "Inviabilidade da via extrajudicial quando ausente prova documental idônea da quitação integral do preço, quando pactuada cláusula válida e exercida de arrependimento, ou quando houver litígio substancial sobre inadimplemento contratual",
+          "authority_ids": [
+            "l6015_art216b",
+            "cc_art1417"
+          ]
+        },
+        {
+          "id": "not_extrajudicial_compulsory_adjudication.d2",
+          "label": "Indisponibilidade judicial averbada na matrícula que impeça alienação ou irregularidade de especialidade objetiva pendente de parcelamento/individualização prévia da unidade",
+          "authority_ids": [
+            "l6015_art216b",
+            "l6015_art195"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14382_serp"
+      ],
+      "typical_requests": [
+        "Deferimento da adjudicação compulsória extrajudicial e registro da propriedade em favor do adjudicatário (ou transferência para o comprador inerte na adjudicação inversa)",
+        "Suscitação de dúvida contra recusa indevida do registrador que exija requisitos além do art. 216-B da LRP e do Provimento CNJ 149/2023"
+      ],
+      "evidence": [
+        "Instrumento particular ou público de promessa de compra e venda ou de cessão/sucessão sem cláusula de arrependimento exercida",
+        "Comprovantes bancários, recibo de quitação ou prova da prescrição da pretensão de cobrança do saldo conforme regulamentação do CNJ",
+        "Ata notarial lavrada por tabelião de notas atestando a identificação do imóvel, o negócio, a prova do adimplemento e a caracterização do inadimplemento da obrigação de outorgar/receber o título definitivo, além da guia de ITBI"
+      ],
+      "piece_ids": [
+        "requerimento_administrativo",
+        "ata_notarial",
+        "suscitacao_duvida_registral",
+        "inicial_procedimento_comum"
+      ],
+      "related_claims": [
+        "imob_adjudication",
+        "not_registral_doubt_proceeding"
+      ],
+      "limitation": "Direito potestativo à adjudicação compulsória de imóvel quitado não se sujeita a prazo prescricional ou decadencial segundo a jurisprudência consolidada do STJ; no rito do art. 216-B, § 1º, II, da LRP, o requerido é notificado para suprir a outorga ou impugnar em 15 dias úteis"
+    },
+    {
+      "id": "not_real_estate_incorporation_patrimony",
+      "label": "Registro de incorporação imobiliária, patrimônio de afetação e ato único de emolumentos",
+      "requirements": [
+        "memorial_incorporacao_art_32_lei_4591",
+        "incomunicabilidade_patrimonio_afetacao",
+        "averbacao_construcao_e_instituicao_condominio",
+        "cobranca_emolumentos_ato_unico_art_237a"
+      ],
+      "claimant_theses": [
+        {
+          "id": "not_real_estate_incorporation_patrimony.c1",
+          "label": "Qualificação e registro do memorial de incorporação imobiliária no prazo reduzido da Lei 14.382/2022, vedada alienação ou negociação de unidades autônomas antes do registro (Lei 4.591/1964, art. 32)",
+          "authority_ids": [
+            "l4591_art32",
+            "l6015_art167",
+            "l6015_art188"
+          ]
+        },
+        {
+          "id": "not_real_estate_incorporation_patrimony.c2",
+          "label": "Após o registro do parcelamento ou da incorporação imobiliária até a emissão da carta de habite-se, as averbações e registros relativos à pessoa do incorporador ou referentes a quaisquer direitos reais de garantia, cessões ou demais negócios que envolvam o empreendimento são realizados na matrícula de origem como ato único para efeito de cobrança de custas e emolumentos (LRP, art. 237-A)",
+          "authority_ids": [
+            "l6015_art237a"
+          ]
+        },
+        {
+          "id": "not_real_estate_incorporation_patrimony.c3",
+          "label": "Blindagem e incomunicabilidade dos bens, direitos e recursos integrantes do patrimônio de afetação averbado, que não respondem por dívidas tributárias/cíveis estranhas ao respectivo empreendimento nem integram a massa concursal da incorporadora (Lei 4.591/1964, arts. 31-A e 31-F)",
+          "authority_ids": [
+            "l4591_art31a",
+            "l4591_art31f"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "not_real_estate_incorporation_patrimony.d1",
+          "label": "Exigibilidade de certidões fiscais/judiciais positivas devidamente esclarecidas quanto à solvência do incorporador para segurança jurídica dos futuros adquirentes (Lei 4.591/1964, art. 32, § 5º)",
+          "authority_ids": [
+            "l4591_art32"
+          ]
+        },
+        {
+          "id": "not_real_estate_incorporation_patrimony.d2",
+          "label": "Cobrança individualizada de emolumentos após a expedição do habite-se e abertura das matrículas filhas das unidades autônomas na alienação final a cada adquirente (LRP, art. 237-A, § 1º)",
+          "authority_ids": [
+            "l6015_art237a"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14382_serp"
+      ],
+      "typical_requests": [
+        "Registro do memorial de incorporação e averbação do termo de constituição do patrimônio de afetação na matrícula-mãe",
+        "Restituição de emolumentos cobrados de forma multiplicada por unidade antes do habite-se em afronta ao ato único do art. 237-A da LRP",
+        "Levantamento de penhora sobre conta/unidades de patrimônio de afetação por dívida geral alheia à obra específica"
+      ],
+      "evidence": [
+        "Memorial de incorporação completo instruído com projeto aprovado, quadros ABNT NBR 12.721, certidões negativas/esclarecedoras e minuta da convenção de condomínio (Lei 4.591/1964, art. 32)",
+        "Termo de afetação averbado na matrícula e contabilidade apartada do empreendimento",
+        "Recibos de emolumentos emitidos pela serventia imobiliária e certidão de habite-se"
+      ],
+      "piece_ids": [
+        "requerimento_administrativo",
+        "suscitacao_duvida_registral",
+        "embargos_terceiro",
+        "mandado_seguranca"
+      ],
+      "related_claims": [
+        "imob_distrato",
+        "imob_delay_delivery",
+        "not_emoluments_tax_nature_exemptions"
+      ],
+      "limitation": "Prazo de qualificação e registro da incorporação reduzido pela Lei 14.382/2022 (10 dias úteis para exame e 10 dias úteis após cumprimento de exigências — LRP, art. 188, c/c Lei 4.591/1964, art. 32, § 6º); validade do registro sujeita à concretização em 180 dias prorrogáveis (art. 33)"
+    },
+    {
+      "id": "not_civil_registry_name_gender_change",
+      "label": "Registro Civil das Pessoas Naturais: alteração extrajudicial de prenome, sobrenome e gênero",
+      "requirements": [
+        "maioridade_civil_requerente",
+        "alteracao_imotivada_unica_extrajudicial_prenome",
+        "inclusao_exclusao_sobrenomes_familiares",
+        "autodeterminacao_genero_adi_4275"
+      ],
+      "claimant_theses": [
+        {
+          "id": "not_civil_registry_name_gender_change.c1",
+          "label": "Qualquer pessoa registrada pode, após ter atingido a maioridade civil, requerer pessoalmente e imotivadamente a alteração de seu prenome diretamente no RCPN, independentemente de decisão judicial, uma única vez pela via extrajudicial (LRP, art. 56, redação da Lei 14.382/2022)",
+          "authority_ids": [
+            "l6015_art56",
+            "prov_cnj_149_2023"
+          ]
+        },
+        {
+          "id": "not_civil_registry_name_gender_change.c2",
+          "label": "Admissibilidade da alteração extrajudicial posterior de sobrenomes para inclusão de sobrenomes familiares, inclusão/exclusão em razão de casamento/união estável ou divórcio/viuvez e filiação (LRP, art. 57)",
+          "authority_ids": [
+            "l6015_art57"
+          ]
+        },
+        {
+          "id": "not_civil_registry_name_gender_change.c3",
+          "label": "Direito fundamental da pessoa transgênero à substituição de prenome e sexo diretamente no registro civil por autodeclaração, independentemente de cirurgia de transgenitalização, tratamentos hormonais ou laudos patologizantes (ADI 4275 e Tema 761 do STF; Prov. CNJ 149/2023)",
+          "authority_ids": [
+            "adi_4275",
+            "tema_stf_761",
+            "prov_cnj_149_2023"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "not_civil_registry_name_gender_change.d1",
+          "label": "Suspeita fundamentada de fraude, falsidade, má-fé, vício de vontade ou simulação (ex.: tentativa de ocultação patrimonial ou evasão penal), caso em que o oficial recusará a retificação extrajudicial em decisão motivada ou encaminhará ao juiz competente (LRP, art. 56, § 4º)",
+          "authority_ids": [
+            "l6015_art56"
+          ]
+        },
+        {
+          "id": "not_civil_registry_name_gender_change.d2",
+          "label": "Necessidade de via judicial para segunda alteração de prenome ou desconstituição da alteração imotivada já averbada (art. 56, § 1º), e obrigatoriedade de consignação do nome anterior, CPF, RG e título de eleitor na averbação para segurança de terceiros (§ 2º), salvo sigilo protetivo na redesignação de gênero",
+          "authority_ids": [
+            "l6015_art56",
+            "adi_4275"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14382_serp"
+      ],
+      "typical_requests": [
+        "Averbação extrajudicial da alteração de prenome, composição de sobrenomes ou adequação de nome e gênero no assento de nascimento e casamento, com comunicação eletrônica aos órgãos expedidores",
+        "Ação judicial de retificação de registro civil (LRP, art. 109) quando houver segunda alteração motivada, menor de idade, homonímia vexatória ou transliteração para dupla cidadania recusada administrativamente"
+      ],
+      "evidence": [
+        "Certidões atualizadas de nascimento/casamento, RG, CPF, passaporte e título de eleitor (e certidões cíveis/criminais/protesto na adequação do Prov. CNJ 149/2023 — não impeditivas por mera existência de débito, apenas comunicadas aos juízos/credores)",
+        "Certidões de ascendentes comprovando o tronco familiar para inclusão de sobrenome ancestral (art. 57, I)",
+        "Requerimento assinado pessoalmente perante o oficial do RCPN ou nota fundamentada de suspeita de fraude"
+      ],
+      "piece_ids": [
+        "requerimento_administrativo",
+        "pedido_retificacao_registro",
+        "inicial_procedimento_comum"
+      ],
+      "related_claims": [
+        "fam_divorce",
+        "dp_subject_rights"
+      ],
+      "limitation": "Direito da personalidade imprescritível exercitável a qualquer tempo após atingida a maioridade civil sem limite de 1 ano desde a Lei 14.382/2022 (LRP, arts. 56 e 57; ADI 4275 STF); para recém-nascido, oposição fundamentada ao prenome registrado por um dos genitores em até 15 dias do registro (LRP, art. 55, § 4º)"
+    },
+    {
+      "id": "not_protest_titles_cda_judicial",
+      "label": "Protesto extrajudicial de títulos, CDAs e decisões judiciais: sustação e cancelamento",
+      "requirements": [
+        "titulo_ou_documento_divida_liquido_certo_exigivel",
+        "limites_qualificacao_formal_tabeliao",
+        "constitucionalidade_protesto_cda",
+        "onus_cancelamento_apos_pagamento"
+      ],
+      "claimant_theses": [
+        {
+          "id": "not_protest_titles_cda_judicial.c1",
+          "label": "Sustação cautelar (antes da lavratura dentro do tríduo legal mediante caução/depósito) ou suspensão dos efeitos e cancelamento definitivo de protesto indevido de título sem causa, falsificado, já quitado antes do apontamento ou manifestamente prescrito, com danos morais in re ipsa",
+          "authority_ids": [
+            "l9492_art17",
+            "l9492_art26",
+            "cc_art186",
+            "stj_sumula_385"
+          ]
+        },
+        {
+          "id": "not_protest_titles_cda_judicial.c2",
+          "label": "Faculdade do exequente de levar a protesto decisão judicial transitada em julgado após o decurso do prazo de 15 dias úteis para pagamento voluntário (CPC, art. 517)",
+          "authority_ids": [
+            "cpc_art517",
+            "l9492_art1"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "not_protest_titles_cda_judicial.d1",
+          "label": "Constitucionalidade e legitimidade do protesto extrajudicial de Certidões de Dívida Ativa (CDAs) tributárias e não tributárias da Fazenda Pública como mecanismo eficiente e menos gravoso de cobrança extrajudicial (Lei 9.492/1997, art. 1º, parágrafo único; ADI 5135 do STF)",
+          "authority_ids": [
+            "l9492_art1",
+            "adi_5135"
+          ]
+        },
+        {
+          "id": "not_protest_titles_cda_judicial.d2",
+          "label": "No protesto regularmente lavrado por inadimplemento real à época, incumbe exclusivamente ao devedor — e não ao credor — promover e custear o cancelamento do registro no tabelionato após a quitação ulterior da dívida mediante carta de anuência (Lei 9.492/1997, art. 26 — Tema Repetitivo 725 do STJ), e ilegitimidade do tabelião que se limitou ao exame formal extrínseco do título sem vício aparente (art. 9º)",
+          "authority_ids": [
+            "l9492_art9",
+            "l9492_art26",
+            "tema_stj_725"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Tutela cautelar de sustação de protesto (ou suspensão de efeitos de protesto já lavrado) condicionada a caução idônea e ação declaratória de inexigibilidade com cancelamento definitivo às expensas do apresentante culpado",
+        "Expedição de certidão de teor da decisão judicial transitada em julgado para protesto no tabelionato nos termos do art. 517 do CPC",
+        "Improcedência de pedido indenizatório contra o credor pela manutenção de protesto regular quitado posteriormente sem providência de baixa pelo próprio devedor (Tema 725 STJ) ou aplicação da Súmula 385 do STJ"
+      ],
+      "evidence": [
+        "Intimação do Tabelionato de Protesto com indicação da data limite do tríduo útil (Lei 9.492/1997, art. 12) ou certidão positiva de protesto",
+        "Título apontado, comprovante de pagamento anterior ao apontamento ou demonstração de fraude/ausência de aceite e entrega de mercadoria",
+        "Carta de anuência eletrônica (CENPROT) disponibilizada pelo credor após recebimento tardio"
+      ],
+      "piece_ids": [
+        "sustacao_protesto",
+        "tutela_urgencia_antecedente",
+        "inicial_procedimento_comum",
+        "contestacao"
+      ],
+      "related_claims": [
+        "emp_credit_instruments",
+        "cons_credit_bureau",
+        "trib_enforcement_defense"
+      ],
+      "limitation": "Sustação propriamente dita somente dentro do prazo de 3 dias úteis da protocolização antes da lavratura do instrumento (Lei 9.492/1997, arts. 12 e 17; após a lavratura, cabe suspensão cautelar dos efeitos do protesto); prescrição trienal para reparação civil por protesto indevido (CC, art. 206, § 3º, V)"
+    },
+    {
+      "id": "not_notary_registrar_civil_liability",
+      "label": "Responsabilidade civil subjetiva de notários e registradores e objetiva do Estado (Tema 777 STF)",
+      "requirements": [
+        "dano_decorrente_exercicio_funcao_delegada",
+        "responsabilidade_objetiva_estado_tema_777",
+        "responsabilidade_subjetiva_delegatario_art_22",
+        "ausencia_personalidade_juridica_cartorio"
+      ],
+      "claimant_theses": [
+        {
+          "id": "not_notary_registrar_civil_liability.c1",
+          "label": "O Estado responde objetivamente pelos atos dos tabeliães e registradores oficiais que, no exercício de suas funções públicas delegadas, causem dano a terceiros, assentado o dever de regresso contra o responsável nos casos de dolo ou culpa, sob pena de improbidade administrativa (CF, art. 37, § 6º, e art. 236; Tema 777 do STF)",
+          "authority_ids": [
+            "cf_art37",
+            "cf_art236",
+            "tema_stf_777"
+          ]
+        },
+        {
+          "id": "not_notary_registrar_civil_liability.c2",
+          "label": "Responsabilidade direta e subjetiva dos notários e oficiais de registro pelos danos que eles e seus prepostos causarem a terceiros por prática de ato próprio da serventia mediante culpa (negligência na conferência de documentos/procuração falsa grosseira, erro de certidão ou omissão de ônus) ou dolo (Lei 8.935/1994, art. 22, redação da Lei 13.286/2016)",
+          "authority_ids": [
+            "l8935_art22"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "not_notary_registrar_civil_liability.d1",
+          "label": "Ilegitimidade passiva ad causam do 'Cartório' ou 'Serventia Extrajudicial' por ser desprovido de personalidade jurídica e judiciária, respondendo apenas a pessoa física do titular delegatário à época do fato danoso (inexistência de sucessão trabalhista/cível automática ao novo concursado — jurisprudência STJ) ou o Estado",
+          "authority_ids": [
+            "l8935_art22",
+            "cf_art236"
+          ]
+        },
+        {
+          "id": "not_notary_registrar_civil_liability.d2",
+          "label": "Exclusão de responsabilidade do tabelião ou registrador quando comprovada observância estrita de todas as cautelas normativas da Corregedoria diante de fraude ideológica/documental sofisticada de terceiro imperceptível à diligência notarial padrão (fortuito externo)",
+          "authority_ids": [
+            "l8935_art22",
+            "cc_art393"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Condenação do Estado (objetivamente) e/ou da pessoa natural do titular da delegação à época do ato (subjetivamente) à reparação integral dos danos materiais (perda do imóvel/preço pago) e morais",
+        "Reconhecimento de ilegitimidade passiva da serventia despersonalizada ou do novo delegatário investido por concurso público posterior ao ato"
+      ],
+      "evidence": [
+        "Escritura pública, procuração pública lavrada mediante fraude, certidão viciada ou matrícula contendo erro de transcrição/omissão de penhora",
+        "Autos de sindicância ou processo administrativo disciplinar na Corregedoria Permanente apurando falha das normas de serviço (cautelas de biometria, CENSEC, confirmação de origem)",
+        "Comprovantes do desembolso financeiro frustrado pela nulidade do negócio/registro"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "contestacao",
+        "apelacao_civel",
+        "recurso_especial"
+      ],
+      "related_claims": [
+        "adm_state_liability",
+        "civ_tort",
+        "not_administrative_block_cancellation_fraud"
+      ],
+      "limitation": "Prescreve em 3 anos a pretensão de reparação civil diretamente contra notários e oficiais de registro (e o respectivo direito de regresso do Estado), contados da data de lavratura do ato registral ou notarial — ou da ciência inequívoca da lesão conforme aplicação da actio nata pelo STJ (Lei 8.935/1994, art. 22, parágrafo único, redação da Lei 13.286/2016); contra o Estado aplica-se a prescrição quinquenal (Decreto 20.910/1932, art. 1º)"
+    },
+    {
+      "id": "not_extrajudicial_inventory_divorce_minors",
+      "label": "Inventário, partilha, divórcio e alvará extrajudiciais com incapazes ou testamento (Resolução CNJ 571/2024)",
+      "requirements": [
+        "consenso_pleno_entre_interessados",
+        "assistencia_obrigatoria_advogado_defensor",
+        "preservacao_quinhao_ideal_incapaz_parecer_mp",
+        "autorizacao_judicial_abertura_testamento"
+      ],
+      "claimant_theses": [
+        {
+          "id": "not_extrajudicial_inventory_divorce_minors.c1",
+          "label": "Admissibilidade da lavratura de escritura pública de inventário e partilha mesmo havendo herdeiros menores ou incapazes, desde que haja consenso entre todos os interessados, seja garantida a parte ideal de cada bem ao incapaz sem distinção discriminatória nem gravação de ônus e colha-se manifestação favorável do Ministério Público (CPC, art. 610; Resolução CNJ 35/2007 alterada pela Resolução CNJ 571/2024)",
+          "authority_ids": [
+            "cpc_art610",
+            "res_cnj_571_2024"
+          ]
+        },
+        {
+          "id": "not_extrajudicial_inventory_divorce_minors.c2",
+          "label": "Cabimento de inventário extrajudicial ainda que o autor da herança tenha deixado testamento válido, após o processamento judicial de abertura, registro e cumprimento (ou diante de testamento caduco/revogado), bem como de divórcio consensual extrajudicial com filhos menores quando previamente resolvidas judicialmente guarda, convivência e alimentos, e nomeação extrajudicial de inventariante para levantamento de valores destinados ao pagamento de impostos e emolumentos do espólio",
+          "authority_ids": [
+            "cpc_art610",
+            "cpc_art733",
+            "res_cnj_571_2024"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "not_extrajudicial_inventory_divorce_minors.d1",
+          "label": "Obrigatoriedade de remessa da minuta ao juízo competente se o Ministério Público oferecer impugnação/parecer desfavorável ou se a partilha atribuir bens específicos desiguais, venda direta sem avaliação judicial ou assunção desproporcional de dívidas em detrimento de menor/incapaz (Res. CNJ 571/2024)",
+          "authority_ids": [
+            "res_cnj_571_2024",
+            "cpc_art610"
+          ]
+        },
+        {
+          "id": "not_extrajudicial_inventory_divorce_minors.d2",
+          "label": "Vedação da via notarial sempre que surgir litígio entre herdeiros/cônjuges ou ausência de assistência por advogado ou defensor público regularmente habilitado (CPC, arts. 610, § 2º, e 733, § 2º)",
+          "authority_ids": [
+            "cpc_art610",
+            "cpc_art733"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "res_cnj_571_inventario_incapazes"
+      ],
+      "typical_requests": [
+        "Lavratura de escritura pública de nomeação de inventariante e de inventário/partilha consensual com remessa prévia da minuta ao Ministério Público quando figurar herdeiro menor ou incapaz",
+        "Ação judicial simples de abertura, registro e cumprimento de testamento (CPC, arts. 735–737) com pedido expresso de autorização para realização da partilha na via extrajudicial",
+        "Suscitação de dúvida registral contra recusa indevida de registro de escritura pública de inventário lavrada em estrita conformidade com a Resolução CNJ 571/2024"
+      ],
+      "evidence": [
+        "Minuta da escritura pública subscrita por advogado demonstrando atribuição estrita da fração ideal em cada bem do acervo ao herdeiro menor/incapaz e parecer favorável do Ministério Público",
+        "Certidão de óbito, certidões de estado civil dos herdeiros/meeiro, certidão da CENSEC (existência ou inexistência de testamento), matrículas/extratos de bens e guias de quitação do ITCMD",
+        "Decisão judicial homologando guarda/convivência/alimentos dos filhos menores (para divórcio extrajudicial) ou autorizando inventário extrajudicial com testamento"
+      ],
+      "piece_ids": [
+        "escritura_publica_extrajudicial",
+        "suscitacao_duvida_registral",
+        "inventario_arrolamento",
+        "requerimento_administrativo"
+      ],
+      "related_claims": [
+        "fam_succession",
+        "fam_divorce",
+        "not_registral_doubt_proceeding"
+      ],
+      "limitation": "Abertura do inventário (inclusive pela escritura de nomeação de inventariante) em até 2 meses a contar da abertura da sucessão para afastar multa fiscal estadual do ITCMD (CPC, art. 611; Súmula 542 do STF); sobrepartilha ou inventário consensual admissível a qualquer tempo"
+    },
+    {
+      "id": "not_notarial_deed_digital_evidence",
+      "label": "Ata notarial de constatação de fatos e prova digital (WhatsApp, redes sociais e e-mails)",
+      "requirements": [
+        "constatacao_direta_sensorial_tabeliao",
+        "ausencia_juizo_valor_opinativo",
+        "preservacao_metadados_cadeia_digital",
+        "fe_publica_presuncao_relativa_veracidade"
+      ],
+      "claimant_theses": [
+        {
+          "id": "not_notarial_deed_digital_evidence.c1",
+          "label": "A existência e o modo de existir de algum fato, inclusive dados representados por imagem ou som gravados em arquivos eletrônicos, conversas de aplicativos de mensageria, páginas web e vistorias físicas de imóveis, podem ser atestados mediante ata notarial dotada de fé pública e presunção juris tantum de veracidade (CPC, art. 384 e parágrafo único; Lei 8.935/1994, arts. 6º, III, e 7º, III)",
+          "authority_ids": [
+            "cpc_art384",
+            "l8935_art6",
+            "l8935_art7"
+          ]
+        },
+        {
+          "id": "not_notarial_deed_digital_evidence.c2",
+          "label": "Prevalência probatória da ata notarial sobre meras capturas de tela (prints) unilaterais facilmente manipuláveis quando a parte contrária impugna especificamente a autenticidade de mensagens digitais",
+          "authority_ids": [
+            "cpc_art384",
+            "cpc_art422"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "not_notarial_deed_digital_evidence.d1",
+          "label": "A fé pública da ata notarial comprova que determinado arquivo, mensagem ou estado físico foi exibido e constatado perante o tabelião naquela data, mas não certifica a veracidade intrínseca de declarações de terceiros ali contidas nem impede prova pericial de adulteração prévia do dispositivo antes da apresentação em cartório",
+          "authority_ids": [
+            "cpc_art384",
+            "cpc_art427"
+          ]
+        },
+        {
+          "id": "not_notarial_deed_digital_evidence.d2",
+          "label": "Ineficácia das passagens em que o tabelião extrapolar a narrativa objetiva dos sentidos para emitir conclusões jurídicas, periciais de engenharia ou juízos subjetivos de culpa, ou quando constatado ato ilícito de interceptação clandestina",
+          "authority_ids": [
+            "l8935_art6",
+            "cf_art5"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Lavratura de ata notarial física ou eletrônica (e-Notariado) com transcrição integral, imagens, códigos hash SHA-256, cabeçalhos técnicos de e-mail, números telefônicos/perfis e áudios anexados",
+        "Juntada como prova pré-constituída em mandado de segurança, tutela de urgência, usucapião/adjudicação extrajudicial ou ação indenizatória",
+        "Arguição de falsidade ou impugnação técnica delimitada à higidez prévia do arquivo apresentado ao tabelião (CPC, art. 430)"
+      ],
+      "evidence": [
+        "Traslado físico ou certidão digital assinada via ICP-Brasil/e-Notariado da ata notarial e mídias vinculadas por hash",
+        "Aparelho celular original ou código-fonte de página web submetido diretamente ao acesso e inspeção pelo tabelião/escrevente autorizado",
+        "Relatório técnico pericial de metadados ou cadeia de custódia digital em caso de incidente de falsidade"
+      ],
+      "piece_ids": [
+        "ata_notarial",
+        "inicial_procedimento_comum",
+        "mandado_seguranca",
+        "manifestacao_especifica",
+        "contestacao"
+      ],
+      "related_claims": [
+        "pciv_autonomous_early_evidence",
+        "pid_platform_liability_content_removal",
+        "not_extrajudicial_usucapiao"
+      ],
+      "limitation": "Lavratura preventiva a qualquer tempo antes do perecimento do vestígio digital; incidente de arguição de falsidade documental suscitável na contestação, na réplica ou em 15 dias úteis contados da intimação da juntada do documento aos autos (CPC, art. 430)"
+    },
+    {
+      "id": "not_administrative_block_cancellation_fraud",
+      "label": "Bloqueio e cancelamento administrativo de matrícula grilada ou nula de pleno direito (LRP, art. 214)",
+      "requirements": [
+        "nulidade_pleno_direito_intrinseca_registro",
+        "distincao_vicio_negocio_juridico_subjacente",
+        "bloqueio_cautelar_matricula_art_214_par_3",
+        "contraditorio_terceiros_atingidos"
+      ],
+      "claimant_theses": [
+        {
+          "id": "not_administrative_block_cancellation_fraud.c1",
+          "label": "Decretação administrativa de nulidade de pleno direito e cancelamento direto pelo juiz corregedor permanente quando o vício residir na própria estrutura formal/legal do ato registral (v.g., duplicidade/sobreposição matricial sem cadeia dominial, título falso materialmente inexistente ou grilagem rural da Lei 6.739/1979), ouvido os atingidos (LRP, art. 214, §§ 1º e 2º)",
+          "authority_ids": [
+            "l6015_art214",
+            "l6739_art1"
+          ]
+        },
+        {
+          "id": "not_administrative_block_cancellation_fraud.c2",
+          "label": "Determinação cautelar imediata de bloqueio da matrícula pelo juiz corregedor quando a superveniência de novos registros puder causar danos de difícil reparação, vedando novas inscrições sem autorização judicial (LRP, art. 214, §§ 3º e 4º)",
+          "authority_ids": [
+            "l6015_art214"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "not_administrative_block_cancellation_fraud.d1",
+          "label": "Incompetência absoluta da via administrativa correcional para cancelar registro quando a nulidade/anulabilidade alegada recair sobre o negócio jurídico causal subjacente (simulação, fraude contra credores, vício de consentimento ou discussão possessória/dominial), exigindo-se ação contenciosa ordinária com citação e ampla dilação probatória (LRP, art. 250; CC, art. 1.247) — jurisprudência pacífica do STJ e do CNJ",
+          "authority_ids": [
+            "l6015_art214",
+            "l6015_art250",
+            "cc_art1247"
+          ]
+        },
+        {
+          "id": "not_administrative_block_cancellation_fraud.d2",
+          "label": "Não declaração da nulidade administrativa se atingir terceiro de boa-fé que já tiver preenchido as condições de usucapião do imóvel (LRP, art. 214, § 5º)",
+          "authority_ids": [
+            "l6015_art214"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Pedido administrativo de bloqueio cautelar e cancelamento de matrícula aberta em duplicidade ou mediante falsificação material grosseira de selo/traslado (LRP, art. 214, §§ 1º e 3º; Lei 6.739/1979)",
+        "Ação anulatória contenciosa cumulada com cancelamento de registro imobiliário (CC, art. 1.247) quando o defeito atingir o título causal",
+        "Mandado de segurança contra decisão administrativa correcional que anule negócio jurídico subjacente usurpando a via jurisdicional ou viole o contraditório dos titulares inscritos"
+      ],
+      "evidence": [
+        "Cadeia dominial completa remontando à origem do destaque público ou transcrição matriz e certidões dos cartórios envolvidos",
+        "Certidão de inexistência do livro/escritura emitida pelo tabelionato falsamente indicado no título registrado",
+        "Planta de sobreposição pericial e prova de posse qualificada em defesa de terceiro adquirente de boa-fé (art. 214, § 5º)"
+      ],
+      "piece_ids": [
+        "requerimento_administrativo",
+        "inicial_procedimento_comum",
+        "mandado_seguranca",
+        "contestacao"
+      ],
+      "related_claims": [
+        "imob_registry_rectification",
+        "not_notary_registrar_civil_liability"
+      ],
+      "limitation": "Nulidade formal registral absoluta não convalesce pelo tempo (LRP, art. 214), ressalvada a consumação de usucapião por terceiro de boa-fé (§ 5º); impugnação pelos interessados intimados no procedimento administrativo em 15 dias (art. 214, § 1º); mandado de segurança contra ato correcional em 120 dias (Lei 12.016/2009, art. 23)"
+    },
+    {
+      "id": "not_serp_electronic_extract",
+      "label": "Sistema Eletrônico dos Registros Públicos (SERP), extrato eletrônico e prazos reduzidos (Lei 14.382/2022)",
+      "requirements": [
+        "interoperabilidade_eletronica_serp",
+        "extrato_eletronico_dispensa_titulo_integral",
+        "prazos_reduzidos_certidao_e_registro",
+        "vedacao_exigencias_sucessivas"
+      ],
+      "claimant_theses": [
+        {
+          "id": "not_serp_electronic_extract.c1",
+          "label": "Adesão obrigatória de todos os oficiais de registros públicos ao SERP, admitindo-se recepção de títulos natodigitais ou digitalizados e apresentação de extrato eletrônico estruturado das cláusulas essenciais de contratos de crédito/garantia com dispensa de juntada da íntegra do instrumento quando previsto (Lei 14.382/2022, arts. 3º, 4º e 6º; Prov. CNJ 149/2023)",
+          "authority_ids": [
+            "l14382_art3",
+            "l14382_art6",
+            "prov_cnj_149_2023"
+          ]
+        },
+        {
+          "id": "not_serp_electronic_extract.c2",
+          "label": "Emissão obrigatória de certidão de inteiro teor da matrícula por meio eletrônico em até 4 horas úteis e conclusão do registro imobiliário padrão em até 10 dias úteis (reduzido a 5 dias úteis para escrituras sem exigências ou garantias fiduciárias específicas — LRP, arts. 19, § 9º, e 188)",
+          "authority_ids": [
+            "l6015_art19",
+            "l6015_art188"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "not_serp_electronic_extract.d1",
+          "label": "Exigência legítima da via original ou de elementos obrigatórios omitidos quando o extrato eletrônico estruturado apresentar divergência com os dados tabulares da matrícula ou carecer de assinatura eletrônica qualificada/avançada admitida pelo ONR/CNJ",
+          "authority_ids": [
+            "l14382_art6",
+            "l6015_art17"
+          ]
+        },
+        {
+          "id": "not_serp_electronic_extract.d2",
+          "label": "Contagem dos prazos registrais reduzidos em dias e horas úteis conforme o expediente regulamentar da serventia, suspensa durante o cumprimento de nota devolutiva tempestivamente emitida (LRP, art. 9º, § 1º, e art. 188, § 1º)",
+          "authority_ids": [
+            "l6015_art9",
+            "l6015_art188"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14382_serp"
+      ],
+      "typical_requests": [
+        "Protocolo eletrônico via ONR/SAEC/e-Protocolo de extrato estruturado ou escritura digital com exigência de cumprimento dos prazos legais do art. 188 da LRP",
+        "Representação correcional / pedido de providências contra atraso injustificado na emissão de certidão eletrônica ou negativa de recepção pelo SERP"
+      ],
+      "evidence": [
+        "Comprovante de protocolo eletrônico com carimbo de data/hora na central nacional (SAEC/ONR, CRC ou CENPROT)",
+        "Arquivo XML/JSON do extrato eletrônico assinado conforme padrões técnicos da Corregedoria Nacional de Justiça",
+        "Certidão de situação jurídica atualizada do imóvel (LRP, art. 19, § 11)"
+      ],
+      "piece_ids": [
+        "requerimento_administrativo",
+        "suscitacao_duvida_registral",
+        "mandado_seguranca"
+      ],
+      "related_claims": [
+        "not_registral_doubt_proceeding",
+        "imob_fiduciary"
+      ],
+      "limitation": "Certidão eletrônica de inteiro teor da matrícula em até 4 horas (LRP, art. 19, § 9º, I) e demais certidões em até 5 dias úteis; protocolo/qualificação geral em 10 dias úteis e registro em 5 dias úteis nos títulos céleres do art. 188, § 1º, da LRP (contados em dias úteis — art. 9º, § 1º)"
+    },
+    {
+      "id": "not_emoluments_tax_nature_exemptions",
+      "label": "Emolumentos notariais e registrais: natureza tributária de taxa, tetos e gratuidade da justiça",
+      "requirements": [
+        "natureza_juridica_taxa_lei_estadual",
+        "vedacao_analogia_ou_cobranca_sem_lei",
+        "extensao_gratuidade_justica_art_98_cpc",
+        "procedimento_duvida_emolumentos"
+      ],
+      "claimant_theses": [
+        {
+          "id": "not_emoluments_tax_nature_exemptions.c1",
+          "label": "Os emolumentos notariais e registrais possuem natureza tributária de taxa de polícia/serviço público (CF, arts. 145, II, e 236, § 2º; Lei 10.169/2000), submetendo-se à reserva estrita de lei estadual, anterioridade anual/nonagesimal, teto remuneratório razoável e proibição absoluta de cobrança por analogia ou fracionamento indevido de atos",
+          "authority_ids": [
+            "cf_art145",
+            "cf_art236",
+            "l10169_art1",
+            "l10169_art3"
+          ]
+        },
+        {
+          "id": "not_emoluments_tax_nature_exemptions.c2",
+          "label": "A gratuidade da justiça concedida judicialmente compreende integralmente os emolumentos devidos a notários ou registradores em decorrência da prática de registro, averbação ou qualquer outro ato notarial necessário à efetivação de decisão judicial ou continuidade de processo, não podendo o oficial recusar ou retardar o cumprimento do ato (CPC, art. 98, § 1º, IX, e § 7º)",
+          "authority_ids": [
+            "cpc_art98"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "not_emoluments_tax_nature_exemptions.d1",
+          "label": "Havendo dúvida fundada quanto ao preenchimento atual dos pressupostos para a concessão de gratuidade, o notário ou registrador, **após praticar o ato**, pode requerer ao juízo competente para decidir questões notariais/registrais a revogação total ou parcial do benefício ou sua substituição pelo parcelamento, com citação do beneficiário (CPC, art. 98, § 8º)",
+          "authority_ids": [
+            "cpc_art98"
+          ]
+        },
+        {
+          "id": "not_emoluments_tax_nature_exemptions.d2",
+          "label": "Incidência legítima das rubricas e faixas de valor venal/declarado expressamente previstas na lei estadual de custas e emolumentos, bem como das parcelas legais destinadas a fundos de compensação da gratuidade civil (Lei 10.169/2000, art. 8º)",
+          "authority_ids": [
+            "l10169_art2",
+            "l10169_art8"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Cumprimento imediato de mandado de registro/averbação ou lavratura de escritura com isenção de emolumentos amparada na gratuidade da justiça (CPC, art. 98, § 1º, IX)",
+        "Repetição de indébito (em dobro na cobrança dolosa/culposa conforme lei estadual ou simples tributária) de emolumentos cobrados em excesso ou fora da tabela legal",
+        "Instauração pós-prática do ato da impugnação do art. 98, § 8º, do CPC pelo oficial diante de sinais objetivos de capacidade contributiva"
+      ],
+      "evidence": [
+        "Decisão judicial concessiva da gratuidade da justiça e mandado/carta de sentença encaminhado à serventia",
+        "Nota/recibo detalhado de cotação de emolumentos em confronto com os itens da Tabela Oficial da Lei Estadual do exercício vigente",
+        "Elementos patrimoniais (valor venal elevado de múltiplos bens adquiridos onerosamente, renda declarada) para o incidente posterior do art. 98, § 8º, do CPC"
+      ],
+      "piece_ids": [
+        "manifestacao_especifica",
+        "requerimento_administrativo",
+        "repeticao_indebito_tributario",
+        "mandado_seguranca"
+      ],
+      "related_claims": [
+        "trib_limits_power",
+        "not_real_estate_incorporation_patrimony",
+        "pciv_attorney_fees_equitable"
+      ],
+      "limitation": "Prescrição quinquenal para repetição de indébito de emolumentos cobrados indevidamente em razão de sua natureza tributária de taxa (CTN, art. 168); reclamação administrativa de custas perante o juiz corregedor conforme prazo da lei estadual de emolumentos"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "observed_on": "2026-11-10",
+  "observed_on": "2026-11-18",
   "policy": "Registro de portais oficiais por tipo de fonte e via de acesso. O comportamento observado orienta a rota; cada consulta registra o resultado real. Portal bloqueado não autoriza citação de memória: usar navegador da IA, arquivo oficial enviado pelo usuário ou delimitar a questão.",
   "access_tiers": {
     "http_capture": "Captura local por research_sources.py/response_research.py consult; bytes e texto preservados e reextraídos na conferência.",
@@ -624,6 +624,50 @@
         "portal": "https://www.trf{n}.jus.br/"
       },
       "verification": "Súmulas, IRDR e calendário forense do tribunal competente."
+    },
+    {
+      "id": "cjf_tnu",
+      "label": "Conselho da Justiça Federal — TNU (Súmulas e Temas) e Jornadas de Direito",
+      "hosts": [
+        "cjf.jus.br",
+        "www.cjf.jus.br",
+        "turmanacional.cjf.jus.br"
+      ],
+      "source_kinds": [
+        "sumula_tnu",
+        "tema_tnu",
+        "enunciado_cjf"
+      ],
+      "access_tier": "browser_only",
+      "observed_behavior": "Portal institucional e pesquisa de precedentes da TNU e Enunciados das Jornadas do CJF; consultar pelo navegador da IA e conferir situação atual.",
+      "url_templates": {
+        "sumulas_tnu": "https://www.cjf.jus.br/cjf/corregedoria-da-justica-federal/turma-nacional-de-uniformizacao/sumulas-da-tnu",
+        "temas_tnu": "https://www.cjf.jus.br/cjf/corregedoria-da-justica-federal/turma-nacional-de-uniformizacao/temas-representativos",
+        "enunciados_cjf": "https://www.cjf.jus.br/enunciados/"
+      },
+      "verification": "Conferir número, enunciado/tese, situação (vigente, cancelada, revisada) e data de julgamento/publicação."
+    },
+    {
+      "id": "cnj_datajud",
+      "label": "CNJ — API Pública DataJud e Banco Nacional de Precedentes (BNP / Pangea)",
+      "hosts": [
+        "api-publica.datajud.cnj.jus.br",
+        "bnp.pje.jus.br",
+        "pangeabnp.pdpj.jus.br"
+      ],
+      "source_kinds": [
+        "precedent",
+        "tema_stj",
+        "iac_stj",
+        "cnj_act"
+      ],
+      "access_tier": "http_capture",
+      "observed_behavior": "API Pública DataJud aceita POST JSON autenticado por APIKey pública do CNJ (datajud_lookup.py) com recibo SHA-256; BNP/Pangea opera como aplicação web.",
+      "url_templates": {
+        "datajud_wiki": "https://datajud-wiki.cnj.jus.br/api-publica/",
+        "bnp": "https://pangeabnp.pdpj.jus.br/"
+      },
+      "verification": "Preservar recibo JSON do DataJud (classe, assuntos TPU e movimentos) ou abrir o precedente qualificado no portal do tribunal de origem."
     }
   ],
   "kind_routes": {
@@ -717,6 +761,48 @@
     ],
     "federal_court": [
       "trf"
+    ],
+    "tema_stj": [
+      "stj",
+      "stj_scon",
+      "cnj_datajud"
+    ],
+    "iac_stj": [
+      "stj",
+      "stj_scon",
+      "cnj_datajud"
+    ],
+    "sumula_tnu": [
+      "cjf_tnu",
+      "trf"
+    ],
+    "tema_tnu": [
+      "cjf_tnu",
+      "trf"
+    ],
+    "sumula_tse": [
+      "tse"
+    ],
+    "sumula_carf": [
+      "carf"
+    ],
+    "sumula_tcu": [
+      "tcu"
+    ],
+    "resolucao_cnj": [
+      "cnj_atos",
+      "cnj"
+    ],
+    "provimento_cnj": [
+      "cnj_atos",
+      "cnj"
+    ],
+    "enunciado_cjf": [
+      "cjf_tnu"
+    ],
+    "enunciado_fonaje": [
+      "cnj",
+      "tribunais_estaduais"
     ]
   }
 }

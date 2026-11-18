@@ -2,22 +2,20 @@
 
 Catálogo: `domain_catalogs/eleitoral.json`.
 
-## Enquadramento
-- Inelegibilidades e impugnação de registro (LC 64/1990, arts. 1º e 3º), com as hipóteses da LC 135/2010 (DOU 07/06/2010). Registro de candidaturas (Lei 9.504/1997, art. 11).
-- AIJE por abuso de poder (LC 64/1990, art. 22); captação ilícita de sufrágio (Lei 9.504/1997, art. 41-A); arrecadação e gastos ilícitos (art. 30-A); condutas vedadas (art. 73); representações (art. 96); prestação de contas (art. 28).
-- Recursos: prazo geral de três dias (Código Eleitoral, art. 258) e recurso ao TRE (art. 265).
+## 1. Regime e competência
+- Competência especializada da Justiça Eleitoral (Juízes Eleitorais, TREs e TSE — CF, arts. 118–121; Código Eleitoral, Lei 4.737/1965), regida pelo princípio da celeridade, preclusão imediata por fases (registro, campanha, votação e diplomação — CE, art. 259) e prazos peremptórios contínuos no período eleitoral (LC 64/1990 e Lei 9.504/1997).
 
-## Cuidados
-Prazos exíguos e contínuos durante o período eleitoral, resolução do TSE de cada pleito (o portal do TSE recusou acesso automatizado em 02/11/2026; usar navegador ou arquivo oficial) e gravidade da conduta.
+## 2. Teses do requerente, coligação ou Ministério Público Eleitoral
+- **Registro, elegibilidade e cotas de gênero:** impugne registro em AIRC (prazo de 5 dias do edital — LC 64/1990, art. 3º) por ausência de condição de elegibilidade, desincompatibilização tempestiva ou incidência em inelegibilidade da Lei da Ficha Limpa (art. 1º, I, "d", "e", "g", "j", "l"). Em fraude à cota mínima de 30% de gênero (Lei 9.504/1997, art. 10, § 3º), aponte votação zerada/ínfima, ausência de atos de campanha e contas padronizadas (**Súmula 73 TSE** — cassação de todo o DRAP).
+- **Ilícitos de campanha e abuso de poder (AIJE, AIME, RCED):** demonstre abuso de poder econômico, político ou uso indevido dos meios de comunicação com gravidade qualitativa/quantitativa (LC 64/1990, art. 22, XVI), captação ilícita de sufrágio (Lei 9.504/1997, art. 41-A — dispensa potencialidade, bastando anuência e dolo específico), condutas vedadas a agentes públicos (arts. 73–77), propaganda antecipada com pedido explícito ou "palavras mágicas" (art. 36-A) e uso de *deepfake* ou IA sem rotulagem (**Res. TSE 23.732/2024**, art. 9º-C).
 
-## Roteiro das pretensões acrescentadas
+## 3. Teses do candidato, partido ou representado
+- **Decadência, litisconsórcio e elegibilidade superveniente:** suscite decadência estrita (AIJE e representações dos arts. 30-A, 41-A e 73 até a diplomação; AIME em 15 dias da diplomação — CF, art. 14, § 10; RCED em 3 dias — CE, art. 262), **extinção por ausência de citação de litisconsorte passivo necessário** (vice/suplentes na chapa majoritária — Súmula 38 TSE) e fato superveniente que afaste a inelegibilidade até a diplomação (Lei 9.504/1997, art. 11, § 10; Súmula 43 TSE).
+- **Mérito defensivo e contas:** oponha ausência de gravidade (art. 22, XVI), liberdade de manifestação política pré-campanha sem pedido explícito de voto (art. 36-A), irrelevância percentual/valores módicos nas contas mediante aplicação dos princípios da proporcionalidade e razoabilidade (Lei 9.504/1997, art. 30, § 2º-A) e nulidade de gravação ambiental clandestina ilícita no processo eleitoral.
 
-Dispositivos localizados no texto oficial em 10/11/2026; súmulas e temas com situação lida no portal do tribunal. A página de tema do STF não traz a tese: ler a tese antes de citar.
+## 4. Magistratura e gabinete (CPC, art. 489, § 1º)
+- Conferir formação completa do litisconsórcio passivo necessário antes da decadência, vedada inclusão ulterior após o termo final. Distinguir desaprovação de contas (que por si só não gera inelegibilidade — Súmula 41 TSE) da captação/gasto ilícito do art. 30-A. Nas eleições municipais, observar os limites de competência e os recursos eleitorais em 3 dias (CE, art. 258).
 
-- Propaganda (`ele_propaganda`): pedido explícito de voto antes do período permitido (Lei 9.504/1997, arts. 36 e 36-A); bens de uso comum (art. 37).
-- Internet e resposta (`ele_internet_response`): direito de resposta e prazos por meio (art. 58); vedação do anonimato (art. 57-D).
-- Mandato e diploma (`ele_mandate_challenge`): AIME em quinze dias da diplomação, em segredo de justiça (CF, art. 14, §§ 10 e 11); RCED (Código Eleitoral, art. 262); cota de gênero (Lei 9.504/1997, art. 10).
-- Inelegibilidade (`ele_ineligibility_relief`): suspensão cautelar pelo tribunal do recurso (LC 64/1990, art. 26-C).
-- Fidelidade e contas (`ele_party_fidelity`): justa causa para desfiliação, inclusive a janela de trinta dias antes do prazo de filiação (Lei 9.096/1995, art. 22-A).
-- Crimes (`ele_crimes`): Código Eleitoral, arts. 299 e 350.
-- Prazos eleitorais são curtos e contados conforme a resolução do pleito: conferir o calendário e a resolução do TSE do ano.
+## 5. Marcos intertemporais e motores
+- **04/06/2010 (LC 135/2010 — Ficha Limpa)** · **29/09/2015 (Lei 13.165/2015)** · **28/09/2021 (EC 111/2021 e Lei 14.211/2021 — federações e sobras eleitorais / ADIs STF)** · **27/02/2024 (Res. TSE 23.732/2024 — IA e desinformação eleitoral)**.
+- Motores: `deadline_calculator.py` (`rito="eleitoral"` em dias contínuos no período eleitoral), `domain_catalog.py`, `legislation_lookup.py` e `citation_check.py`.

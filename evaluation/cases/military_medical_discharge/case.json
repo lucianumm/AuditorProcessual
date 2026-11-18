@@ -1,0 +1,44 @@
+{
+  "schema_version": "2.0",
+  "synthetic": true,
+  "case_id": "military_medical_discharge",
+  "source_files": [
+    {
+      "file": "ata_inspecao.txt"
+    }
+  ],
+  "expected": {
+    "facts": [
+      {
+        "id": "G-F1",
+        "text_any": [
+          "incapacitado temporariamente para tratamento médico"
+        ],
+        "source": {
+          "file": "ata_inspecao.txt",
+          "page": 1,
+          "quote": "incapacitado temporariamente para tratamento médico"
+        },
+        "atoms": {
+          "date": "2025-01-10"
+        }
+      }
+    ],
+    "issues": [
+      {
+        "id": "G-I1",
+        "text_any": [
+          "reintegração como adido",
+          "assistência médico-hospitalar"
+        ],
+        "analysis_status": "qualified"
+      }
+    ],
+    "requests": [],
+    "contradictions": [],
+    "catalog_id": "inicial_procedimento_comum",
+    "strategy": {
+      "domain": "militar"
+    }
+  }
+}

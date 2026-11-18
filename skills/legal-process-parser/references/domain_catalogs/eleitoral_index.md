@@ -20,3 +20,7 @@ Guia: `domain_guides/eleitoral.md` · catálogo: `domain_catalogs/eleitoral.json
 | `ele_ineligibility_relief` | Inelegibilidade: suspensão e efeitos | 2/1 |
 | `ele_party_fidelity` | Fidelidade partidária e contas de partido | 1/2 |
 | `ele_crimes` | Crimes eleitorais | 2/2 |
+| `ele_gender_quota_fraud` | Fraude à cota de gênero por candidaturas fictícias, cassação do DRAP e inelegibilidade (Súmula 73 TSE) | 2/2 |
+| `ele_ai_deepfake_propaganda` | Inteligência artificial, deepfakes, conteúdo sintético e desinformação eleitoral | 2/2 |
+| `ele_party_federation_fefc` | Federações partidárias, financiamento público (FEFC/Fundo Partidário) e cotas raciais e femininas | 2/2 |
+| `ele_rejection_public_accounts` | Inelegibilidade por rejeição de contas públicas: competência da Câmara Municipal e ato doloso (LC 64/1990, art. 1º, I, 'g') | 1/2 |

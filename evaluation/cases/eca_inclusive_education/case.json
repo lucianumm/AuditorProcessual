@@ -1,0 +1,44 @@
+{
+  "schema_version": "2.0",
+  "synthetic": true,
+  "case_id": "eca_inclusive_education",
+  "source_files": [
+    {
+      "file": "relatorio_escolar.txt"
+    }
+  ],
+  "expected": {
+    "facts": [
+      {
+        "id": "G-F1",
+        "text_any": [
+          "taxa extra para profissional de apoio escolar"
+        ],
+        "source": {
+          "file": "relatorio_escolar.txt",
+          "page": 1,
+          "quote": "taxa extra para profissional de apoio escolar"
+        },
+        "atoms": {
+          "date": "2024-11-12"
+        }
+      }
+    ],
+    "issues": [
+      {
+        "id": "G-I1",
+        "text_any": [
+          "vedação de cobrança adicional",
+          "educação inclusiva"
+        ],
+        "analysis_status": "qualified"
+      }
+    ],
+    "requests": [],
+    "contradictions": [],
+    "catalog_id": "inicial_procedimento_comum",
+    "strategy": {
+      "domain": "crianca_adolescente_educacional"
+    }
+  }
+}

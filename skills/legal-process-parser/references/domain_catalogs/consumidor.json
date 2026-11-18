@@ -4,23 +4,1440 @@
  "label": "Direito do Consumidor",
  "guide": "domain_guides/consumidor.md",
  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
- "polo_labels": {"claimant_theses": "Teses do consumidor", "defense_theses": "Teses do fornecedor"},
+ "polo_labels": {
+  "claimant_theses": "Teses do consumidor",
+  "defense_theses": "Teses do fornecedor"
+ },
  "claims": [
-  {"id": "cons_defect", "label": "Fato do produto ou do serviço (acidente de consumo)", "requirements": ["relacao_consumo", "defeito", "dano", "nexo", "excludentes"], "claimant_theses": [{"id": "cons_defect.c1", "label": "Responsabilidade objetiva do fabricante ou do prestador pelo defeito", "authority_ids": ["cdc_art12", "cdc_art14"]}, {"id": "cons_defect.c2", "label": "Inversão do ônus da prova pela verossimilhança ou hipossuficiência", "authority_ids": ["cdc_art6"]}, {"id": "cons_defect.c3", "label": "Cumulação de danos material e moral do mesmo fato", "authority_ids": ["stj_sumula_37", "stj_sumula_362"]}], "defense_theses": [{"id": "cons_defect.d1", "label": "Culpa exclusiva do consumidor ou de terceiro e inexistência do defeito", "authority_ids": ["cdc_art12", "cdc_art14"]}, {"id": "cons_defect.d2", "label": "Prescrição quinquenal da pretensão reparatória", "authority_ids": ["cdc_art27"]}], "temporal_marker_ids": [], "typical_requests": ["Indenização por danos materiais e morais"], "evidence": ["Nota fiscal, laudos e registros do acidente", "Protocolos de atendimento"], "piece_ids": ["inicial_juizado", "inicial_procedimento_comum"], "related_claims": ["cons_vice"], "limitation": "Cinco anos do conhecimento do dano e da autoria (CDC, art. 27)."},
-  {"id": "cons_vice", "label": "Vício do produto ou do serviço", "requirements": ["vicio", "prazo_reclamacao", "prazo_saneamento", "alternativas"], "claimant_theses": [{"id": "cons_vice.c1", "label": "Vício de qualidade ou quantidade com escolha do consumidor após o prazo de saneamento", "authority_ids": ["cdc_art18", "cdc_art20"]}], "defense_theses": [{"id": "cons_vice.d1", "label": "Decadência do direito de reclamar", "authority_ids": ["cdc_art26"]}], "temporal_marker_ids": [], "typical_requests": ["Substituição, restituição ou abatimento"], "evidence": ["Ordens de serviço e protocolos de reclamação"], "piece_ids": ["inicial_juizado"], "related_claims": ["cons_defect"], "limitation": "Decadência de 30 ou 90 dias (CDC, art. 26)."},
-  {"id": "cons_undue_charge", "label": "Cobrança indevida e repetição do indébito", "requirements": ["cobranca", "pagamento", "engano_justificavel"], "claimant_theses": [{"id": "cons_undue_charge.c1", "label": "Repetição em dobro do que foi pago indevidamente, salvo engano justificável", "authority_ids": ["cdc_art42"]}], "defense_theses": [{"id": "cons_undue_charge.d1", "label": "Engano justificável ou cobrança devida", "authority_ids": ["cdc_art42"]}], "temporal_marker_ids": [], "typical_requests": ["Restituição em dobro", "Declaração de inexigibilidade"], "evidence": ["Faturas e comprovantes de pagamento"], "piece_ids": ["inicial_juizado"], "related_claims": [], "limitation": "conferir"},
-  {"id": "cons_credit_bureau", "label": "Negativação e cadastros de crédito", "requirements": ["inscricao", "notificacao_previa", "divida", "prazo"], "claimant_theses": [{"id": "cons_credit_bureau.c1", "label": "Notificação prévia pelo mantenedor do cadastro", "authority_ids": ["stj_sumula_359", "cdc_art43"]}, {"id": "cons_credit_bureau.c2", "label": "Limite temporal da inscrição", "authority_ids": ["stj_sumula_323"]}], "defense_theses": [{"id": "cons_credit_bureau.d1", "label": "Inscrição legítima preexistente afasta o dano moral", "authority_ids": ["stj_sumula_385"]}, {"id": "cons_credit_bureau.d2", "label": "Dispensa de aviso de recebimento na comunicação", "authority_ids": ["stj_sumula_404"]}], "temporal_marker_ids": [], "typical_requests": ["Exclusão da anotação", "Indenização"], "evidence": ["Extrato do cadastro com datas", "Comprovante de quitação ou contestação"], "piece_ids": ["inicial_juizado", "tutela_urgencia_antecedente"], "related_claims": [], "limitation": "conferir"},
-  {"id": "cons_abusive", "label": "Cláusulas e práticas abusivas", "requirements": ["clausula", "desequilibrio", "pratica"], "claimant_theses": [{"id": "cons_abusive.c1", "label": "Nulidade de cláusula abusiva", "authority_ids": ["cdc_art51"]}, {"id": "cons_abusive.c2", "label": "Envio de cartão sem solicitação é prática abusiva", "authority_ids": ["stj_sumula_532"]}], "defense_theses": [{"id": "cons_abusive.d1", "label": "Cláusula clara, informada e equilibrada", "authority_ids": ["cdc_art51"]}], "temporal_marker_ids": [], "typical_requests": ["Declaração de nulidade", "Indenização"], "evidence": ["Contrato e material de oferta"], "piece_ids": ["inicial_juizado", "inicial_procedimento_comum"], "related_claims": [], "limitation": "conferir"},
-  {"id": "cons_health_plan", "label": "Planos de saúde: cobertura, carência e internação", "requirements": ["contrato", "cobertura", "urgencia", "rol_e_regulacao"], "claimant_theses": [{"id": "cons_health_plan.c1", "label": "CDC aplicável ao plano, salvo autogestão", "authority_ids": ["stj_sumula_608"]}, {"id": "cons_health_plan.c2", "label": "Limitação temporal da internação é abusiva", "authority_ids": ["stj_sumula_302"]}, {"id": "cons_health_plan.c3", "label": "Carência em urgência ou emergência além do prazo legal é abusiva", "authority_ids": ["stj_sumula_597"]}], "defense_theses": [{"id": "cons_health_plan.d1", "label": "Doença preexistente omitida com exames prévios exigidos", "authority_ids": ["stj_sumula_609"]}], "temporal_marker_ids": [], "typical_requests": ["Cobertura do procedimento", "Tutela de urgência", "Indenização"], "evidence": ["Contrato, prescrição médica e negativa por escrito"], "piece_ids": ["tutela_urgencia_antecedente", "inicial_juizado", "inicial_procedimento_comum"], "related_claims": ["sus_treatment"], "limitation": "conferir"},
-  {"id": "cons_overindebtedness", "label": "Superendividamento e repactuação", "requirements": ["boa_fe", "minimo_existencial", "dividas_abrangidas", "plano"], "claimant_theses": [{"id": "cons_overindebtedness.c1", "label": "Repactuação com preservação do mínimo existencial", "authority_ids": ["cdc_art104a", "cdc_art54a", "d11150_art3"]}, {"id": "cons_overindebtedness.c2", "label": "Vedação de práticas na oferta de crédito", "authority_ids": ["cdc_art54c"]}], "defense_theses": [{"id": "cons_overindebtedness.d1", "label": "Dívidas excluídas ou má-fé do consumidor", "authority_ids": ["cdc_art54a"]}], "temporal_marker_ids": ["lei_14181_superendividamento"], "typical_requests": ["Audiência conciliatória e plano de pagamento"], "evidence": ["Relação de dívidas, renda e despesas"], "piece_ids": ["repactuacao_superendividamento"], "related_claims": ["banc_consigned"], "limitation": "conferir"},
-  {"id": "cons_collective", "label": "Tutela coletiva do consumidor", "requirements": ["legitimado", "natureza_do_interesse", "competencia"], "claimant_theses": [{"id": "cons_collective.c1", "label": "Defesa coletiva de interesses difusos, coletivos e individuais homogêneos", "authority_ids": ["cdc_art81", "l7347_art5"]}], "defense_theses": [{"id": "cons_collective.d1", "label": "Interesse meramente individual e heterogêneo", "authority_ids": ["cdc_art81"]}], "temporal_marker_ids": [], "typical_requests": [], "evidence": ["Reclamações reunidas e inquérito civil"], "piece_ids": ["acao_civil_publica"], "related_claims": [], "limitation": "conferir"},
-  {"id": "cons_offer_advertising", "label": "Oferta, publicidade enganosa e descumprimento", "requirements": ["oferta_veiculada", "elemento_enganoso", "prova_da_recusa", "opcao_do_consumidor"], "claimant_theses": [{"id": "cons_offer_advertising.c1", "label": "Oferta suficientemente precisa vincula e integra o contrato", "authority_ids": ["cdc_art30", "cdc_art31"]}, {"id": "cons_offer_advertising.c2", "label": "Cumprimento forçado, produto equivalente ou rescisão com perdas e danos", "authority_ids": ["cdc_art35", "cdc_art84"]}, {"id": "cons_offer_advertising.c3", "label": "Publicidade enganosa por ação ou omissão", "authority_ids": ["cdc_art37"]}], "defense_theses": [{"id": "cons_offer_advertising.d1", "label": "Erro grosseiro e evidente na oferta, percebido pelo homem médio", "authority_ids": ["cdc_art30", "cc_art422"]}, {"id": "cons_offer_advertising.d2", "label": "Oferta cumprida nos termos efetivamente anunciados", "authority_ids": ["cdc_art31"]}], "temporal_marker_ids": [], "typical_requests": ["Cumprimento da oferta", "Abatimento ou restituição", "Danos morais se houver lesão além do inadimplemento"], "evidence": ["Captura da oferta com data e URL", "Protocolo de atendimento", "Nota fiscal ou pedido"], "piece_ids": ["inicial_juizado", "inicial_procedimento_comum", "tutela_urgencia_antecedente"], "related_claims": ["cons_vice", "cons_abusive"], "limitation": "Reparação: cinco anos (CDC, art. 27); vício: art. 26 — conferir"},
-  {"id": "cons_distance_purchase", "label": "Compra à distância: arrependimento, entrega e estorno", "requirements": ["contratacao_fora_do_estabelecimento", "data_do_recebimento", "manifestacao_no_prazo", "devolucao"], "claimant_theses": [{"id": "cons_distance_purchase.c1", "label": "Direito de arrependimento em sete dias com devolução imediata dos valores", "authority_ids": ["cdc_art49"]}, {"id": "cons_distance_purchase.c2", "label": "Solidariedade da cadeia de fornecimento, inclusive plataforma", "authority_ids": ["cdc_art7", "cdc_art25", "cdc_art18"]}], "defense_theses": [{"id": "cons_distance_purchase.d1", "label": "Prazo esgotado ou contratação presencial", "authority_ids": ["cdc_art49"]}, {"id": "cons_distance_purchase.d2", "label": "Marketplace como mero intermediador — distinguir conforme a participação na venda", "authority_ids": ["cdc_art3", "cdc_art14"]}], "temporal_marker_ids": [], "typical_requests": ["Cancelamento e estorno", "Entrega em prazo certo", "Restituição do frete"], "evidence": ["Pedido, rastreio e comprovante de entrega", "Mensagem de arrependimento com data", "Fatura do cartão"], "piece_ids": ["inicial_juizado", "inicial_procedimento_comum"], "related_claims": ["cons_offer_advertising", "cons_vice"], "limitation": "Conferir"},
-  {"id": "cons_air_travel", "label": "Transporte aéreo: atraso, cancelamento e bagagem", "requirements": ["contrato_de_transporte", "evento", "assistencia_material", "nexo", "dano"], "claimant_theses": [{"id": "cons_air_travel.c1", "label": "Responsabilidade objetiva do transportador por falha do serviço", "authority_ids": ["cdc_art14", "cc_art927"]}, {"id": "cons_air_travel.c2", "label": "Dano moral depende da prova de lesão efetiva em voos nacionais — conferir orientação do STJ", "authority_ids": ["cdc_art6"]}], "defense_theses": [{"id": "cons_air_travel.d1", "label": "Convenções de Varsóvia e Montreal limitam o dano material em voo internacional", "authority_ids": ["tema_stf_210"]}, {"id": "cons_air_travel.d2", "label": "Fortuito externo e assistência material prestada", "authority_ids": ["cdc_art14", "cc_art393"]}], "temporal_marker_ids": [], "typical_requests": ["Dano material comprovado", "Dano moral conforme a extensão", "Reembolso"], "evidence": ["Bilhetes e cartões de embarque", "Registro de irregularidade de bagagem", "Comprovantes de despesas", "Comunicações da companhia"], "piece_ids": ["inicial_juizado", "inicial_procedimento_comum"], "related_claims": ["cons_defect"], "limitation": "Voo internacional: prazo da convenção; nacional: CDC, art. 27 — conferir"},
-  {"id": "cons_essential_service", "label": "Serviços essenciais: corte, cobrança e recuperação de consumo", "requirements": ["titularidade", "debito_atual_ou_preterito", "aviso_previo", "apuracao_unilateral"], "claimant_theses": [{"id": "cons_essential_service.c1", "label": "Corte por débito pretérito ou por fraude apurada unilateralmente é indevido — conferir repetitivos do STJ", "authority_ids": ["cdc_art22", "cdc_art42"]}, {"id": "cons_essential_service.c2", "label": "Repetição do indébito de tarifa segue o prazo do Código Civil", "authority_ids": ["stj_sumula_412", "cc_art205"]}], "defense_theses": [{"id": "cons_essential_service.d1", "label": "Interrupção por inadimplemento atual após aviso prévio", "authority_ids": ["l8987_art6"]}, {"id": "cons_essential_service.d2", "label": "Recuperação de consumo com contraditório e perícia", "authority_ids": ["l8987_art6"]}], "temporal_marker_ids": [], "typical_requests": ["Restabelecimento do serviço", "Declaração de inexigibilidade", "Repetição do indébito"], "evidence": ["Faturas e histórico de consumo", "Termo de ocorrência e inspeção", "Aviso de corte"], "piece_ids": ["inicial_juizado", "tutela_urgencia_antecedente", "inicial_procedimento_comum"], "related_claims": ["cons_undue_charge"], "limitation": "Conferir"},
-  {"id": "cons_health_adjustment", "label": "Planos de saúde: reajustes e rescisão", "requirements": ["tipo_de_plano", "clausula_de_reajuste", "indices_aplicados", "idade", "notificacao"], "claimant_theses": [{"id": "cons_health_adjustment.c1", "label": "Reajuste por faixa etária só com previsão contratual, percentuais razoáveis e normas da ANS — conferir o Tema 952 do STJ", "authority_ids": ["l9656_art15", "l9656_art16", "cdc_art51"]}, {"id": "cons_health_adjustment.c2", "label": "Vedação de rescisão unilateral do plano individual salvo fraude ou inadimplência superior a sessenta dias com notificação", "authority_ids": ["l9656_art13"]}, {"id": "cons_health_adjustment.c3", "label": "Proteção da pessoa idosa contra cobrança discriminatória", "authority_ids": ["l10741_art15"]}], "defense_theses": [{"id": "cons_health_adjustment.d1", "label": "Reajuste por sinistralidade ou faixa etária previsto, demonstrado atuarialmente", "authority_ids": ["l9656_art15", "l9656_art16"]}, {"id": "cons_health_adjustment.d2", "label": "Plano coletivo admite rescisão imotivada após o prazo mínimo, preservado o tratamento em curso — conferir o Tema 1082 do STJ", "authority_ids": ["l9656_art13"]}], "temporal_marker_ids": [], "typical_requests": ["Revisão do reajuste e devolução", "Manutenção do contrato", "Portabilidade sem carência"], "evidence": ["Contrato e aditivos", "Boletos antes e depois do reajuste", "Memória de cálculo da operadora", "Notificação de rescisão"], "piece_ids": ["inicial_procedimento_comum", "inicial_juizado", "tutela_urgencia_antecedente"], "related_claims": ["cons_health_plan", "cons_abusive"], "limitation": "Restituição de reajuste: conferir o prazo fixado pelo STJ"},
-  {"id": "cons_health_coverage_roll", "label": "Planos de saúde: rol da ANS, terapias e urgência", "requirements": ["prescricao", "previsao_no_rol", "evidencia_cientifica", "carencia", "urgencia"], "claimant_theses": [{"id": "cons_health_coverage_roll.c1", "label": "Cobertura de tratamento fora do rol quando atendidos os critérios legais", "authority_ids": ["l9656_art10"]}, {"id": "cons_health_coverage_roll.c2", "label": "Urgência e emergência com carência máxima de vinte e quatro horas", "authority_ids": ["l9656_art12", "l9656_art35c", "stj_sumula_597"]}, {"id": "cons_health_coverage_roll.c3", "label": "Abusividade da limitação de tempo de internação", "authority_ids": ["stj_sumula_302", "cdc_art51"]}], "defense_theses": [{"id": "cons_health_coverage_roll.d1", "label": "Exclusões permitidas no plano-referência", "authority_ids": ["l9656_art10"]}, {"id": "cons_health_coverage_roll.d2", "label": "Ausência de comprovação científica ou de recomendação de órgão de avaliação", "authority_ids": ["l9656_art10"]}], "temporal_marker_ids": ["lei_14454_rol_ans"], "typical_requests": ["Custeio do tratamento", "Reembolso integral diante da negativa indevida", "Dano moral conforme a gravidade"], "evidence": ["Relatório médico e negativa por escrito", "Contrato e carteirinha", "Estudos ou pareceres indicados na prescrição"], "piece_ids": ["tutela_urgencia_antecedente", "inicial_procedimento_comum", "inicial_juizado", "agravo_instrumento"], "related_claims": ["cons_health_plan", "cons_health_adjustment"], "limitation": "Conferir"},
-  {"id": "cons_burden_venue", "label": "Inversão do ônus da prova, foro e desconsideração", "requirements": ["vulnerabilidade", "verossimilhanca", "hipossuficiencia", "domicilio"], "claimant_theses": [{"id": "cons_burden_venue.c1", "label": "Inversão do ônus como direito básico quando verossímil a alegação ou hipossuficiente o consumidor", "authority_ids": ["cdc_art6", "cpc_art373"]}, {"id": "cons_burden_venue.c2", "label": "Foro do domicílio do consumidor", "authority_ids": ["cdc_art101"]}, {"id": "cons_burden_venue.c3", "label": "Interpretação mais favorável e nulidade de eleição de foro abusiva", "authority_ids": ["cdc_art47", "cdc_art51"]}], "defense_theses": [{"id": "cons_burden_venue.d1", "label": "Destinatário final não caracterizado: insumo da atividade empresarial", "authority_ids": ["cdc_art2"]}, {"id": "cons_burden_venue.d2", "label": "Inversão não dispensa prova mínima do fato constitutivo", "authority_ids": ["cpc_art373"]}], "temporal_marker_ids": [], "typical_requests": ["Reconhecimento da relação de consumo", "Inversão do ônus na decisão de saneamento"], "evidence": ["Contrato e documentos da contratação", "Elementos que demonstrem a vulnerabilidade técnica"], "piece_ids": ["inicial_procedimento_comum", "inicial_juizado", "replica", "agravo_instrumento"], "related_claims": ["cons_abusive"], "limitation": "Conferir"},
-  {"id": "cons_collective_enforcement", "label": "Liquidação e execução individual de sentença coletiva", "requirements": ["titulo_coletivo", "pertinencia_subjetiva", "prova_do_dano", "prazo"], "claimant_theses": [{"id": "cons_collective_enforcement.c1", "label": "Liquidação e execução pela vítima no foro do seu domicílio", "authority_ids": ["cdc_art97", "cdc_art95", "cdc_art101"]}, {"id": "cons_collective_enforcement.c2", "label": "Coisa julgada coletiva beneficia os titulares individuais", "authority_ids": ["cdc_art103"]}], "defense_theses": [{"id": "cons_collective_enforcement.d1", "label": "Prescrição da pretensão executiva individual — conferir o prazo fixado pelo STJ", "authority_ids": ["cdc_art27"]}, {"id": "cons_collective_enforcement.d2", "label": "Ausência de prova da condição de beneficiário do título", "authority_ids": ["cdc_art97"]}], "temporal_marker_ids": [], "typical_requests": ["Liquidação por arbitramento ou procedimento comum", "Cumprimento individual"], "evidence": ["Certidão da sentença coletiva e trânsito", "Documentos do vínculo com o fato"], "piece_ids": ["cumprimento_sentenca", "impugnacao_cumprimento"], "related_claims": ["cons_collective"], "limitation": "Conferir"}
+  {
+   "id": "cons_defect",
+   "label": "Fato do produto ou do serviço (acidente de consumo)",
+   "requirements": [
+    "relacao_consumo",
+    "defeito",
+    "dano",
+    "nexo",
+    "excludentes"
+   ],
+   "claimant_theses": [
+    {
+     "id": "cons_defect.c1",
+     "label": "Responsabilidade objetiva do fabricante ou do prestador pelo defeito",
+     "authority_ids": [
+      "cdc_art12",
+      "cdc_art14"
+     ]
+    },
+    {
+     "id": "cons_defect.c2",
+     "label": "Inversão do ônus da prova pela verossimilhança ou hipossuficiência",
+     "authority_ids": [
+      "cdc_art6"
+     ]
+    },
+    {
+     "id": "cons_defect.c3",
+     "label": "Cumulação de danos material e moral do mesmo fato",
+     "authority_ids": [
+      "stj_sumula_37",
+      "stj_sumula_362"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "cons_defect.d1",
+     "label": "Culpa exclusiva do consumidor ou de terceiro e inexistência do defeito",
+     "authority_ids": [
+      "cdc_art12",
+      "cdc_art14"
+     ]
+    },
+    {
+     "id": "cons_defect.d2",
+     "label": "Prescrição quinquenal da pretensão reparatória",
+     "authority_ids": [
+      "cdc_art27"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Indenização por danos materiais e morais",
+    "Pensão mensal ou custeio de tratamento médico quando o acidente de consumo gerar redução laborativa ou sequela"
+   ],
+   "evidence": [
+    "Nota fiscal, laudos e registros do acidente",
+    "Protocolos de atendimento",
+    "Amostra preservada do produto defeituoso, fotografias e perícia técnica de engenharia/segurança"
+   ],
+   "piece_ids": [
+    "inicial_juizado",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "cons_vice"
+   ],
+   "limitation": "Prescrição quinquenal contada a partir do conhecimento do dano e de sua autoria pelo consumidor ou vítima equiparada (CDC, arts. 17 e 27)."
+  },
+  {
+   "id": "cons_vice",
+   "label": "Vício do produto ou do serviço",
+   "requirements": [
+    "vicio",
+    "prazo_reclamacao",
+    "prazo_saneamento",
+    "alternativas"
+   ],
+   "claimant_theses": [
+    {
+     "id": "cons_vice.c1",
+     "label": "Vício de qualidade ou quantidade com escolha do consumidor após o prazo de saneamento",
+     "authority_ids": [
+      "cdc_art18",
+      "cdc_art20"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "cons_vice.d1",
+     "label": "Decadência do direito de reclamar",
+     "authority_ids": [
+      "cdc_art26"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Substituição, restituição ou abatimento",
+    "Ressarcimento de perdas e danos materiais cumulado com qualquer das três opções potestativas do § 1º do art. 18 do CDC"
+   ],
+   "evidence": [
+    "Ordens de serviço e protocolos de reclamação",
+    "Nota fiscal de compra, certificado de garantia contratual e laudo/orçamento técnico do vício",
+    "Comprovante da reclamação inequívoca formulada ao fornecedor e decurso de mais de 30 dias sem saneamento"
+   ],
+   "piece_ids": [
+    "inicial_juizado"
+   ],
+   "related_claims": [
+    "cons_defect"
+   ],
+   "limitation": "Prazo decadencial de 30 dias (não duráveis) ou 90 dias (duráveis) contados da entrega efetiva no vício aparente, ou do momento em que ficar evidenciado o defeito no vício oculto dentro da vida útil razoável do bem (CDC, art. 26, caput e § 3º), obstado pela reclamação comprovada até resposta negativa inequívoca (art. 26, § 2º, I)."
+  },
+  {
+   "id": "cons_undue_charge",
+   "label": "Cobrança indevida e repetição do indébito",
+   "requirements": [
+    "cobranca",
+    "pagamento",
+    "engano_justificavel"
+   ],
+   "claimant_theses": [
+    {
+     "id": "cons_undue_charge.c1",
+     "label": "Repetição em dobro do que foi pago indevidamente, salvo engano justificável",
+     "authority_ids": [
+      "cdc_art42"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "cons_undue_charge.d1",
+     "label": "Engano justificável ou cobrança devida",
+     "authority_ids": [
+      "cdc_art42"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Restituição em dobro",
+    "Declaração de inexigibilidade",
+    "Cessação definitiva das cobranças vincendas sob pena de multa por evento"
+   ],
+   "evidence": [
+    "Faturas e comprovantes de pagamento",
+    "Contrato ou histórico demonstrando a inexistência de contratação do serviço cobrado",
+    "Protocolos de reclamação no SAC/Consumidor.gov comprovando a resistência do fornecedor"
+   ],
+   "piece_ids": [
+    "inicial_juizado"
+   ],
+   "related_claims": [],
+   "limitation": "Prescrição decenal para a pretensão de repetição de indébito por cobrança indevida de serviços continuados/tarifas em relação de consumo (CC, art. 205; Súmula 412 e Tema 932/jurisprudência da Corte Especial do STJ; exigir má-fé ou violação à boa-fé objetiva conforme EAREsp 676.608/STJ para devolução em dobro)."
+  },
+  {
+   "id": "cons_credit_bureau",
+   "label": "Negativação e cadastros de crédito",
+   "requirements": [
+    "inscricao",
+    "notificacao_previa",
+    "divida",
+    "prazo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "cons_credit_bureau.c1",
+     "label": "Notificação prévia pelo mantenedor do cadastro",
+     "authority_ids": [
+      "stj_sumula_359",
+      "cdc_art43"
+     ]
+    },
+    {
+     "id": "cons_credit_bureau.c2",
+     "label": "Limite temporal da inscrição",
+     "authority_ids": [
+      "stj_sumula_323"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "cons_credit_bureau.d1",
+     "label": "Inscrição legítima preexistente afasta o dano moral",
+     "authority_ids": [
+      "stj_sumula_385"
+     ]
+    },
+    {
+     "id": "cons_credit_bureau.d2",
+     "label": "Dispensa de aviso de recebimento na comunicação",
+     "authority_ids": [
+      "stj_sumula_404"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lgpd_vigencia",
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Exclusão da anotação",
+    "Indenização",
+    "Tutela de urgência para baixa do apontamento em 5 dias úteis (Súmula 548 do STJ quando quitada a dívida)"
+   ],
+   "evidence": [
+    "Extrato do cadastro com datas",
+    "Comprovante de quitação ou contestação",
+    "Consulta completa aos órgãos de proteção ao crédito demonstrando a existência ou ausência de anotações preexistentes legítimas (Súmula 385 do STJ)"
+   ],
+   "piece_ids": [
+    "inicial_juizado",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [],
+   "limitation": "Prazo máximo de permanência do registro negativo de 5 anos contados da data de vencimento da obrigação, ou antes se consumada a prescrição da cobrança (CDC, art. 43, §§ 1º e 5º; Súmula 323 do STJ); pretensão indenizatória por inscrição indevida em 5 anos (CDC, art. 27) ou 3 anos contra o órgão mantenedor quando discutida falta de notificação prévia (Súmula 359 STJ; conferir enquadramento)."
+  },
+  {
+   "id": "cons_abusive",
+   "label": "Cláusulas e práticas abusivas",
+   "requirements": [
+    "clausula",
+    "desequilibrio",
+    "pratica"
+   ],
+   "claimant_theses": [
+    {
+     "id": "cons_abusive.c1",
+     "label": "Nulidade de cláusula abusiva",
+     "authority_ids": [
+      "cdc_art51"
+     ]
+    },
+    {
+     "id": "cons_abusive.c2",
+     "label": "Envio de cartão sem solicitação é prática abusiva",
+     "authority_ids": [
+      "stj_sumula_532"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "cons_abusive.d1",
+     "label": "Cláusula clara, informada e equilibrada",
+     "authority_ids": [
+      "cdc_art51"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Declaração de nulidade",
+    "Indenização",
+    "Restituição dos valores cobrados com base na cláusula nula de pleno direito"
+   ],
+   "evidence": [
+    "Contrato e material de oferta",
+    "Gravações telefônicas do SAC, e-mails promocionais e regulamentos gerais da oferta",
+    "Comparativo de equilíbrio econômico entre os direitos e deveres impostos ao consumidor"
+   ],
+   "piece_ids": [
+    "inicial_juizado",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [],
+   "limitation": "A nulidade absoluta de cláusula abusiva (CDC, art. 51) é cognoscível sem convalescimento, sujeitando-se os efeitos patrimoniais de repetição de indébito ao prazo decenal (CC, art. 205) e a reparação por danos ao prazo quinquenal (CDC, art. 27)."
+  },
+  {
+   "id": "cons_health_plan",
+   "label": "Planos de saúde: cobertura, carência e internação",
+   "requirements": [
+    "contrato",
+    "cobertura",
+    "urgencia",
+    "rol_e_regulacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "cons_health_plan.c1",
+     "label": "CDC aplicável ao plano, salvo autogestão (Súmula 608 do STJ, editada após cancelamento da Súmula 469; conferir situação no SCON)",
+     "authority_ids": [
+      "stj_sumula_608"
+     ]
+    },
+    {
+     "id": "cons_health_plan.c2",
+     "label": "Limitação temporal da internação é abusiva",
+     "authority_ids": [
+      "stj_sumula_302"
+     ]
+    },
+    {
+     "id": "cons_health_plan.c3",
+     "label": "Carência em urgência ou emergência além do prazo legal é abusiva",
+     "authority_ids": [
+      "stj_sumula_597"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "cons_health_plan.d1",
+     "label": "Doença preexistente omitida com exames prévios exigidos",
+     "authority_ids": [
+      "stj_sumula_609"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14454_rol_ans",
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Cobertura do procedimento",
+    "Tutela de urgência",
+    "Indenização"
+   ],
+   "evidence": [
+    "Contrato, prescrição médica e negativa por escrito",
+    "Comprovantes de adimplemento das mensalidades e histórico da data de adesão para contagem de carências (Lei 9.656/1998, art. 12)",
+    "Orçamentos e notas fiscais hospitalares/médicas para eventual pedido de reembolso"
+   ],
+   "piece_ids": [
+    "tutela_urgencia_antecedente",
+    "inicial_juizado",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "sus_treatment"
+   ],
+   "limitation": "Negativa de cobertura de tratamento atual renova-se enquanto perdurar a necessidade médica; pretensão condenatória de reembolso de despesas médico-hospitalares custeadas pelo beneficiário em razão de negativa indevida prescreve em 10 anos (CC, art. 205 — jurisprudência pacífica da Segunda Seção do STJ)."
+  },
+  {
+   "id": "cons_overindebtedness",
+   "label": "Superendividamento e repactuação",
+   "requirements": [
+    "boa_fe",
+    "minimo_existencial",
+    "dividas_abrangidas",
+    "plano"
+   ],
+   "claimant_theses": [
+    {
+     "id": "cons_overindebtedness.c1",
+     "label": "Repactuação com preservação do mínimo existencial",
+     "authority_ids": [
+      "cdc_art104a",
+      "cdc_art54a",
+      "d11150_art3"
+     ]
+    },
+    {
+     "id": "cons_overindebtedness.c2",
+     "label": "Vedação de práticas na oferta de crédito",
+     "authority_ids": [
+      "cdc_art54c"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "cons_overindebtedness.d1",
+     "label": "Dívidas excluídas ou má-fé do consumidor",
+     "authority_ids": [
+      "cdc_art54a"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14181_superendividamento"
+   ],
+   "typical_requests": [
+    "Audiência conciliatória e plano de pagamento",
+    "Instalação de processo por superendividamento para revisão e integração dos contratos e aprovação de plano judicial compulsório em até 5 anos preservado o mínimo existencial (CDC, arts. 104-A e 104-B)",
+    "Aplicação das sanções pedagógicas de suspensão de encargos e subordinação de crédito aos fornecedores ausentes injustificadamente à audiência conciliatória (CDC, art. 104-A, § 2º)"
+   ],
+   "evidence": [
+    "Relação de dívidas, renda e despesas",
+    "Planilha socioeconômica detalhada de todas as receitas líquidas e despesas vitais mensais (moradia, alimentação, luz, água, saúde)",
+    "Contratos, boletos e extratos de todas as dívidas de consumo vencidas e vincendas (excluídas fraudes/má-fé, crédito habitacional, rural e garantias reais — art. 54-A, § 3º)"
+   ],
+   "piece_ids": [
+    "repactuacao_superendividamento"
+   ],
+   "related_claims": [
+    "banc_consigned"
+   ],
+   "limitation": "Cabível enquanto configurado o estado atual de impossibilidade manifesta de o consumidor pessoa natural, de boa-fé, pagar a totalidade de suas dívidas de consumo sem comprometer o mínimo existencial, vedado novo pedido de repactuação antes de 2 anos da liquidação do plano anterior (CDC, art. 104-A, § 5º)."
+  },
+  {
+   "id": "cons_collective",
+   "label": "Tutela coletiva do consumidor",
+   "requirements": [
+    "legitimado",
+    "natureza_do_interesse",
+    "competencia"
+   ],
+   "claimant_theses": [
+    {
+     "id": "cons_collective.c1",
+     "label": "Defesa coletiva de interesses difusos, coletivos e individuais homogêneos",
+     "authority_ids": [
+      "cdc_art81",
+      "l7347_art5"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "cons_collective.d1",
+     "label": "Interesse meramente individual e heterogêneo",
+     "authority_ids": [
+      "cdc_art81"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Condenação genérica para reparação dos danos individuais homogêneos (CDC, art. 95) e indenização por dano moral coletivo revertida ao FDD (Lei 7.347/1985, art. 13)",
+    "Tutela inibitória nacional/erga omnes conforme a extensão do dano (Tema 1075 do STF) para cessação da prática comercial ilícita"
+   ],
+   "evidence": [
+    "Reclamações reunidas e inquérito civil",
+    "Autos de infração do Procon/Senacon, estatísticas do Consumidor.gov.br e perícias técnicas amostrais",
+    "Contratos de adesão padronizados e peças publicitárias veiculadas em massa"
+   ],
+   "piece_ids": [
+    "acao_civil_publica"
+   ],
+   "related_claims": [],
+   "limitation": "Prazo prescricional quinquenal aplicável por analogia integrativa do microssistema coletivo às ações civis públicas consumeristas patrimoniais (Lei 4.717/1965, art. 21 — jurisprudência do STJ), e 5 anos contados do trânsito em julgado da sentença coletiva para a execução individual pelos consumidores (Súmula 150 STF / Tema 515 STJ)."
+  },
+  {
+   "id": "cons_offer_advertising",
+   "label": "Oferta, publicidade enganosa e descumprimento",
+   "requirements": [
+    "oferta_veiculada",
+    "elemento_enganoso",
+    "prova_da_recusa",
+    "opcao_do_consumidor"
+   ],
+   "claimant_theses": [
+    {
+     "id": "cons_offer_advertising.c1",
+     "label": "Oferta suficientemente precisa vincula e integra o contrato",
+     "authority_ids": [
+      "cdc_art30",
+      "cdc_art31"
+     ]
+    },
+    {
+     "id": "cons_offer_advertising.c2",
+     "label": "Cumprimento forçado, produto equivalente ou rescisão com perdas e danos",
+     "authority_ids": [
+      "cdc_art35",
+      "cdc_art84"
+     ]
+    },
+    {
+     "id": "cons_offer_advertising.c3",
+     "label": "Publicidade enganosa por ação ou omissão",
+     "authority_ids": [
+      "cdc_art37"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "cons_offer_advertising.d1",
+     "label": "Erro grosseiro e evidente na oferta, percebido pelo homem médio",
+     "authority_ids": [
+      "cdc_art30",
+      "cc_art422"
+     ]
+    },
+    {
+     "id": "cons_offer_advertising.d2",
+     "label": "Oferta cumprida nos termos efetivamente anunciados",
+     "authority_ids": [
+      "cdc_art31"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Cumprimento da oferta",
+    "Abatimento ou restituição",
+    "Danos morais se houver lesão além do inadimplemento"
+   ],
+   "evidence": [
+    "Captura da oferta com data e URL",
+    "Protocolo de atendimento",
+    "Nota fiscal ou pedido"
+   ],
+   "piece_ids": [
+    "inicial_juizado",
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [
+    "cons_vice",
+    "cons_abusive"
+   ],
+   "limitation": "Exigência de cumprimento forçado da oferta (CDC, art. 35) sujeita aos prazos contratuais/decadenciais de vício (art. 26) ou prescrição quinquenal para reparação de danos (CDC, art. 27), ressalvado erro grosseiro perceptível de preço irrisório (CC, arts. 138 e 422)."
+  },
+  {
+   "id": "cons_distance_purchase",
+   "label": "Compra à distância: arrependimento, entrega e estorno",
+   "requirements": [
+    "contratacao_fora_do_estabelecimento",
+    "data_do_recebimento",
+    "manifestacao_no_prazo",
+    "devolucao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "cons_distance_purchase.c1",
+     "label": "Direito de arrependimento em sete dias com devolução imediata dos valores",
+     "authority_ids": [
+      "cdc_art49"
+     ]
+    },
+    {
+     "id": "cons_distance_purchase.c2",
+     "label": "Solidariedade da cadeia de fornecimento, inclusive plataforma",
+     "authority_ids": [
+      "cdc_art7",
+      "cdc_art25",
+      "cdc_art18"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "cons_distance_purchase.d1",
+     "label": "Prazo esgotado ou contratação presencial",
+     "authority_ids": [
+      "cdc_art49"
+     ]
+    },
+    {
+     "id": "cons_distance_purchase.d2",
+     "label": "Marketplace como mero intermediador — distinguir conforme a participação na venda",
+     "authority_ids": [
+      "cdc_art3",
+      "cdc_art14"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Cancelamento e estorno",
+    "Entrega em prazo certo",
+    "Restituição do frete"
+   ],
+   "evidence": [
+    "Pedido, rastreio e comprovante de entrega",
+    "Mensagem de arrependimento com data",
+    "Fatura do cartão"
+   ],
+   "piece_ids": [
+    "inicial_juizado",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "cons_offer_advertising",
+    "cons_vice"
+   ],
+   "limitation": "Direito formativo de arrependimento imotivado no prazo decadencial de 7 dias corridos a contar da assinatura ou do ato de recebimento do produto ou serviço (CDC, art. 49); exercido tempestivamente o arrependimento, a cobrança da restituição dos valores pagos prescreve em 10 anos (CC, art. 205) ou 5 anos para perdas e danos (CDC, art. 27)."
+  },
+  {
+   "id": "cons_air_travel",
+   "label": "Transporte aéreo: atraso, cancelamento e bagagem",
+   "requirements": [
+    "contrato_de_transporte",
+    "evento",
+    "assistencia_material",
+    "nexo",
+    "dano"
+   ],
+   "claimant_theses": [
+    {
+     "id": "cons_air_travel.c1",
+     "label": "Responsabilidade objetiva do transportador por falha do serviço",
+     "authority_ids": [
+      "cdc_art14",
+      "cc_art927"
+     ]
+    },
+    {
+     "id": "cons_air_travel.c2",
+     "label": "Dano moral depende da prova de lesão efetiva em voos nacionais — conferir orientação do STJ",
+     "authority_ids": [
+      "cdc_art6"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "cons_air_travel.d1",
+     "label": "Convenções de Varsóvia e Montreal limitam o dano material em voo internacional",
+     "authority_ids": [
+      "tema_stf_210"
+     ]
+    },
+    {
+     "id": "cons_air_travel.d2",
+     "label": "Fortuito externo e assistência material prestada",
+     "authority_ids": [
+      "cdc_art14",
+      "cc_art393"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Dano material comprovado",
+    "Dano moral conforme a extensão",
+    "Reembolso"
+   ],
+   "evidence": [
+    "Bilhetes e cartões de embarque",
+    "Registro de irregularidade de bagagem",
+    "Comprovantes de despesas",
+    "Comunicações da companhia"
+   ],
+   "piece_ids": [
+    "inicial_juizado",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "cons_defect"
+   ],
+   "limitation": "Transporte aéreo internacional: prescrição bienal para danos materiais decorrentes de atraso de voo e extravio de bagagem (Convenção de Montreal, art. 35; Tema 210 do STF), aplicando-se o prazo quinquenal do art. 27 do CDC aos danos morais e a todos os eventos em transporte aéreo doméstico."
+  },
+  {
+   "id": "cons_essential_service",
+   "label": "Serviços essenciais: corte, cobrança e recuperação de consumo",
+   "requirements": [
+    "titularidade",
+    "debito_atual_ou_preterito",
+    "aviso_previo",
+    "apuracao_unilateral"
+   ],
+   "claimant_theses": [
+    {
+     "id": "cons_essential_service.c1",
+     "label": "Corte por débito pretérito ou por fraude apurada unilateralmente é indevido — conferir repetitivos do STJ",
+     "authority_ids": [
+      "cdc_art22",
+      "cdc_art42"
+     ]
+    },
+    {
+     "id": "cons_essential_service.c2",
+     "label": "Repetição do indébito de tarifa segue o prazo do Código Civil",
+     "authority_ids": [
+      "stj_sumula_412",
+      "cc_art205"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "cons_essential_service.d1",
+     "label": "Interrupção por inadimplemento atual após aviso prévio",
+     "authority_ids": [
+      "l8987_art6"
+     ]
+    },
+    {
+     "id": "cons_essential_service.d2",
+     "label": "Recuperação de consumo com contraditório e perícia",
+     "authority_ids": [
+      "l8987_art6"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Restabelecimento do serviço",
+    "Declaração de inexigibilidade",
+    "Repetição do indébito"
+   ],
+   "evidence": [
+    "Faturas e histórico de consumo",
+    "Termo de ocorrência e inspeção",
+    "Aviso de corte"
+   ],
+   "piece_ids": [
+    "inicial_juizado",
+    "tutela_urgencia_antecedente",
+    "inicial_procedimento_comum"
+   ],
+   "related_claims": [
+    "cons_undue_charge"
+   ],
+   "limitation": "Prescrição decenal para repetição de indébito de tarifas públicas de água, esgoto e energia elétrica cobradas indevidamente (CC, art. 205; Súmula 412 e Tema 932 do STJ), vedada suspensão do fornecimento por débito pretérito superior a 90 dias (Lei 14.015/2020; jurisprudência STJ)."
+  },
+  {
+   "id": "cons_health_adjustment",
+   "label": "Planos de saúde: reajustes e rescisão",
+   "requirements": [
+    "tipo_de_plano",
+    "clausula_de_reajuste",
+    "indices_aplicados",
+    "idade",
+    "notificacao"
+   ],
+   "claimant_theses": [
+    {
+     "id": "cons_health_adjustment.c1",
+     "label": "Reajuste por faixa etária só com previsão contratual, percentuais razoáveis e normas da ANS — conferir o Tema 952 do STJ",
+     "authority_ids": [
+      "l9656_art15",
+      "l9656_art16",
+      "cdc_art51"
+     ]
+    },
+    {
+     "id": "cons_health_adjustment.c2",
+     "label": "Vedação de rescisão unilateral do plano individual salvo fraude ou inadimplência superior a sessenta dias com notificação",
+     "authority_ids": [
+      "l9656_art13"
+     ]
+    },
+    {
+     "id": "cons_health_adjustment.c3",
+     "label": "Proteção da pessoa idosa contra cobrança discriminatória",
+     "authority_ids": [
+      "l10741_art15"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "cons_health_adjustment.d1",
+     "label": "Reajuste por sinistralidade ou faixa etária previsto, demonstrado atuarialmente",
+     "authority_ids": [
+      "l9656_art15",
+      "l9656_art16"
+     ]
+    },
+    {
+     "id": "cons_health_adjustment.d2",
+     "label": "Plano coletivo admite rescisão imotivada após o prazo mínimo, preservado o tratamento em curso — conferir o Tema 1082 do STJ",
+     "authority_ids": [
+      "l9656_art13"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Revisão do reajuste e devolução",
+    "Manutenção do contrato",
+    "Portabilidade sem carência"
+   ],
+   "evidence": [
+    "Contrato e aditivos",
+    "Boletos antes e depois do reajuste",
+    "Memória de cálculo da operadora",
+    "Notificação de rescisão"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "tutela_urgencia_antecedente"
+   ],
+   "related_claims": [
+    "cons_health_plan",
+    "cons_abusive"
+   ],
+   "limitation": "Prescrição trienal para a pretensão de restituição de valores pagos a maior em decorrência de cláusula abusiva de reajuste anual ou por faixa etária em contrato de plano de saúde, podendo a nulidade da cláusula ser declarada enquanto vigente o vínculo (Tema Repetitivo 610 do STJ; CC, art. 206, § 3º, IV)."
+  },
+  {
+   "id": "cons_health_coverage_roll",
+   "label": "Planos de saúde: rol da ANS, terapias e urgência",
+   "requirements": [
+    "prescricao",
+    "previsao_no_rol",
+    "evidencia_cientifica",
+    "carencia",
+    "urgencia"
+   ],
+   "claimant_theses": [
+    {
+     "id": "cons_health_coverage_roll.c1",
+     "label": "Cobertura de tratamento fora do rol quando atendidos os critérios legais",
+     "authority_ids": [
+      "l9656_art10"
+     ]
+    },
+    {
+     "id": "cons_health_coverage_roll.c2",
+     "label": "Urgência e emergência com carência máxima de vinte e quatro horas",
+     "authority_ids": [
+      "l9656_art12",
+      "l9656_art35c",
+      "stj_sumula_597"
+     ]
+    },
+    {
+     "id": "cons_health_coverage_roll.c3",
+     "label": "Abusividade da limitação de tempo de internação",
+     "authority_ids": [
+      "stj_sumula_302",
+      "cdc_art51"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "cons_health_coverage_roll.d1",
+     "label": "Exclusões permitidas no plano-referência",
+     "authority_ids": [
+      "l9656_art10"
+     ]
+    },
+    {
+     "id": "cons_health_coverage_roll.d2",
+     "label": "Ausência de comprovação científica ou de recomendação de órgão de avaliação",
+     "authority_ids": [
+      "l9656_art10"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14454_rol_ans",
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Custeio do tratamento",
+    "Reembolso integral diante da negativa indevida",
+    "Dano moral conforme a gravidade"
+   ],
+   "evidence": [
+    "Relatório médico e negativa por escrito",
+    "Contrato e carteirinha",
+    "Estudos ou pareceres indicados na prescrição"
+   ],
+   "piece_ids": [
+    "tutela_urgencia_antecedente",
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "agravo_instrumento"
+   ],
+   "related_claims": [
+    "cons_health_plan",
+    "cons_health_adjustment"
+   ],
+   "limitation": "Cobertura exigível enquanto persistir a prescrição médica; pretensão de reembolso de despesas desembolsadas diante de recusa indevida prescreve em 10 anos (CC, art. 205) e danos morais em 3 ou 5 anos conforme a qualificação contratual/fato do serviço."
+  },
+  {
+   "id": "cons_burden_venue",
+   "label": "Inversão do ônus da prova, foro e desconsideração",
+   "requirements": [
+    "vulnerabilidade",
+    "verossimilhanca",
+    "hipossuficiencia",
+    "domicilio"
+   ],
+   "claimant_theses": [
+    {
+     "id": "cons_burden_venue.c1",
+     "label": "Inversão do ônus como direito básico quando verossímil a alegação ou hipossuficiente o consumidor",
+     "authority_ids": [
+      "cdc_art6",
+      "cpc_art373"
+     ]
+    },
+    {
+     "id": "cons_burden_venue.c2",
+     "label": "Foro do domicílio do consumidor",
+     "authority_ids": [
+      "cdc_art101"
+     ]
+    },
+    {
+     "id": "cons_burden_venue.c3",
+     "label": "Interpretação mais favorável e nulidade de eleição de foro abusiva",
+     "authority_ids": [
+      "cdc_art47",
+      "cdc_art51"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "cons_burden_venue.d1",
+     "label": "Destinatário final não caracterizado: insumo da atividade empresarial",
+     "authority_ids": [
+      "cdc_art2"
+     ]
+    },
+    {
+     "id": "cons_burden_venue.d2",
+     "label": "Inversão não dispensa prova mínima do fato constitutivo",
+     "authority_ids": [
+      "cpc_art373"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14879_foro_eleicao"
+   ],
+   "typical_requests": [
+    "Reconhecimento da relação de consumo",
+    "Inversão do ônus na decisão de saneamento",
+    "Declinação de cláusula de eleição de foro abusiva que dificulte a defesa do consumidor para o foro de seu domicílio (CDC, art. 101, I; CPC, art. 63, § 3º)"
+   ],
+   "evidence": [
+    "Contrato e documentos da contratação",
+    "Elementos que demonstrem a vulnerabilidade técnica",
+    "Comprovante atualizado de residência do consumidor e documentos financeiros/técnicos demonstrando hipossuficiência"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "replica",
+    "agravo_instrumento"
+   ],
+   "related_claims": [
+    "cons_abusive"
+   ],
+   "limitation": "A inversão do ônus da prova é regra de instrução que deve ser decidida preferencialmente no saneamento do processo (CPC, art. 357, III; EREsp 422.778/STJ), cabendo agravo de instrumento em 15 dias úteis (CPC, art. 1.015, XI)."
+  },
+  {
+   "id": "cons_collective_enforcement",
+   "label": "Liquidação e execução individual de sentença coletiva",
+   "requirements": [
+    "titulo_coletivo",
+    "pertinencia_subjetiva",
+    "prova_do_dano",
+    "prazo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "cons_collective_enforcement.c1",
+     "label": "Liquidação e execução pela vítima no foro do seu domicílio",
+     "authority_ids": [
+      "cdc_art97",
+      "cdc_art95",
+      "cdc_art101"
+     ]
+    },
+    {
+     "id": "cons_collective_enforcement.c2",
+     "label": "Coisa julgada coletiva beneficia os titulares individuais",
+     "authority_ids": [
+      "cdc_art103"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "cons_collective_enforcement.d1",
+     "label": "Prescrição da pretensão executiva individual — conferir o prazo fixado pelo STJ",
+     "authority_ids": [
+      "cdc_art27"
+     ]
+    },
+    {
+     "id": "cons_collective_enforcement.d2",
+     "label": "Ausência de prova da condição de beneficiário do título",
+     "authority_ids": [
+      "cdc_art97"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Liquidação por arbitramento ou procedimento comum",
+    "Cumprimento individual",
+    "Observância da competência concorrente do foro do domicílio do consumidor beneficiário para o cumprimento individual (CDC, arts. 98, § 2º, I, e 101, I)"
+   ],
+   "evidence": [
+    "Certidão da sentença coletiva e trânsito",
+    "Documentos do vínculo com o fato",
+    "Planilha de cálculo individualizada aderente aos parâmetros liquidatórios fixados na sentença coletiva"
+   ],
+   "piece_ids": [
+    "cumprimento_sentenca",
+    "impugnacao_cumprimento"
+   ],
+   "related_claims": [
+    "cons_collective"
+   ],
+   "limitation": "Prescrição quinquenal para a liquidação e execução individual de sentença proferida em ação civil pública, contada do trânsito em julgado da sentença coletiva condenatória (Tema Repetitivo 515 do STJ; Súmula 150 do STF)."
+  },
+  {
+   "id": "cons_tea_multidisciplinary_therapy",
+   "label": "Transtorno do Espectro Autista (TEA): terapias multidisciplinares ilimitadas e reembolso (Leis 12.764/2012 e 14.454/2022)",
+   "requirements": [
+    "laudo_medico_tea_cid",
+    "prescricao_aba_fono_to_psicologia",
+    "vedacao_limitacao_sessoes",
+    "inexistencia_rede_credenciada_apta"
+   ],
+   "claimant_theses": [
+    {
+     "id": "cons_tea_multidisciplinary_therapy.c1",
+     "label": "Obrigatoriedade de cobertura integral e sem limitação do número de sessões de psicoterapia, fonoaudiologia, terapia ocupacional e métodos baseados na Ciência ABA prescritos pelo médico assistente para beneficiário com TEA ou transtornos globais do desenvolvimento (Lei 9.656/1998, art. 10, § 13; Lei 12.764/2012, art. 3º; Res. ANS)",
+     "authority_ids": [
+      "l9656_art10",
+      "l12764_art3",
+      "cdc_art51"
+     ]
+    },
+    {
+     "id": "cons_tea_multidisciplinary_therapy.c2",
+     "label": "Reembolso integral fora da rede credenciada quando a operadora não disponibiliza clínica habilitada na metodologia prescrita no município/prazo regulamentar da ANS, configurando inexecução da obrigação assistencial",
+     "authority_ids": [
+      "l9656_art12",
+      "cdc_art14"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "cons_tea_multidisciplinary_therapy.d1",
+     "label": "Inexistência de dever de custeio de atividades estritamente pedagógicas/escolares (acompanhante escolar em sala de aula), musicoterapia recreativa ou equoterapia quando desprovidas de comprovação científica nos termos do § 13 do art. 10 da Lei 9.656/1998 (Segunda Seção do STJ)",
+     "authority_ids": [
+      "l9656_art10"
+     ]
+    },
+    {
+     "id": "cons_tea_multidisciplinary_therapy.d2",
+     "label": "Existência de rede própria ou credenciada apta a realizar a terapia multidisciplinar prescrita no prazo da ANS, limitando o reembolso voluntário à tabela contratual (Lei 9.656/1998, art. 12, VI)",
+     "authority_ids": [
+      "l9656_art12"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14454_rol_ans",
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Tutela de urgência para autorização imediata de plano terapêutico multidisciplinar (ABA, fonoaudiologia, TO, psicologia) na carga horária prescrita",
+    "Reembolso integral mensal enquanto persistir indisponibilidade comprovada de prestador habilitado na rede credenciada local",
+    "Vedação de rescisão unilateral imotivada de beneficiário em tratamento médico contínuo de TEA (Tema 1082 do STJ)"
+   ],
+   "evidence": [
+    "Laudo neuropediátrico ou psiquiátrico detalhando o diagnóstico de TEA, carga horária semanal por especialidade e justificativa clínica",
+    "Protocolos de solicitação à operadora, indicação de clínicas ofertadas e comprovação de ausência de vaga ou de habilitação técnica específica",
+    "Notas fiscais, recibos nominais e relatórios evolutivos da equipe multidisciplinar"
+   ],
+   "piece_ids": [
+    "tutela_urgencia_antecedente",
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "contestacao",
+    "agravo_instrumento"
+   ],
+   "related_claims": [
+    "cons_health_coverage_roll",
+    "cons_health_plan"
+   ],
+   "limitation": "Obrigação assistencial continuada não prescreve enquanto necessária a terapia; reembolso de mensalidades/recibos terapêuticos desembolsados por negativa indevida prescreve em 10 anos (CC, art. 205), não correndo prescrição contra menor absolutamente incapaz (CC, art. 198, I)."
+  },
+  {
+   "id": "cons_montreal_convention_air_cargo",
+   "label": "Transporte aéreo internacional vs. doméstico: Convenção de Montreal (Tema 210 STF), bagagem e danos morais",
+   "requirements": [
+    "voo_internacional_ou_nacional",
+    "dano_material_tarifado_des_vs_declaracao_especial",
+    "autonomia_cdc_dano_moral",
+    "excludente_forca_maior_meteorologica"
+   ],
+   "claimant_theses": [
+    {
+     "id": "cons_montreal_convention_air_cargo.c1",
+     "label": "A prevalência das Convenções de Varsóvia e Montreal no transporte aéreo internacional de passageiros restringe-se à indenização por danos materiais em extravio/avaria de bagagem e atraso (limitada em Direitos Especiais de Saque salvo declaração especial de valor) e à prescrição bienal, aplicando-se integralmente o CDC aos danos extrapatrimoniais (Tema 210 do STF)",
+     "authority_ids": [
+      "tema_stf_210",
+      "cdc_art6",
+      "cdc_art14"
+     ]
+    },
+    {
+     "id": "cons_montreal_convention_air_cargo.c2",
+     "label": "No transporte aéreo doméstico, aplicam-se integralmente o Código de Defesa do Consumidor e a reparação ampla sem tarifação internacional, respondendo a transportadora objetivamente por falha operacional/malha aérea (fortuito interno)",
+     "authority_ids": [
+      "cdc_art14",
+      "cdc_art27"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "cons_montreal_convention_air_cargo.d1",
+     "label": "Limitação estrita do dano material por extravio/destruição de bagagem internacional ao teto em DES da Convenção de Montreal na ausência de declaração prévia de valor com pagamento de taxa suplementar, bem como prescrição bienal extintiva (art. 35 da Convenção; Tema 210 do STF)",
+     "authority_ids": [
+      "tema_stf_210"
+     ]
+    },
+    {
+     "id": "cons_montreal_convention_air_cargo.d2",
+     "label": "Ausência de dano moral in re ipsa no simples atraso ou cancelamento de voo (jurisprudência do STJ), exigindo-se prova de lesão concreta agravada pela falta de assistência material (ANAC Res. 400), e excludente em fechamento de aeroporto por condição meteorológica severa",
+     "authority_ids": [
+      "cdc_art14",
+      "cc_art393"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Indenização dos danos materiais emergentes devidamente comprovados (ou até o teto em DES no voo internacional sem declaração especial)",
+    "Condenação em danos morais pela perda de compromisso relevante, retenção prolongada de bagagem essencial ou negativa de assistência material (alimentação, acomodação e reacomodação)"
+   ],
+   "evidence": [
+    "Bilhete eletrônico (e-ticket), cartões de embarque de todos os trechos e etiqueta de despacho de bagagem",
+    "Relatório de Irregularidade de Bagagem (RIB/PIR) lavrado no desembarque e notas fiscais de compras emergenciais",
+    "Boletins meteorológicos (METAR)/registros da ANAC e comprovantes do evento perdido no destino"
+   ],
+   "piece_ids": [
+    "inicial_juizado",
+    "inicial_procedimento_comum",
+    "contestacao",
+    "recurso_inominado"
+   ],
+   "related_claims": [
+    "cons_air_travel",
+    "cons_defect"
+   ],
+   "limitation": "No voo internacional, prazo decadencial/prescricional de 2 anos contados da chegada ao destino para danos materiais (Convenção de Montreal, art. 35; Tema 210 do STF) e protesto prévio em 7 ou 21 dias na avaria/atraso de bagagem (art. 31); para danos morais internacionais e quaisquer danos em voo nacional, 5 anos (CDC, art. 27)."
+  },
+  {
+   "id": "cons_marketplace_intermediation",
+   "label": "Comércio eletrônico e responsabilidade solidária de plataformas de marketplace e meios de pagamento",
+   "requirements": [
+    "participacao_cadeia_consumo_comissao",
+    "confianca_marca_plataforma",
+    "distincao_classificados_puros_vs_intermediacao",
+    "fraude_vendedor_parceiro"
+   ],
+   "claimant_theses": [
+    {
+     "id": "cons_marketplace_intermediation.c1",
+     "label": "Plataforma digital de marketplace que intermedeia o negócio, processa o pagamento, aufere comissão sobre a venda e empresta sua marca de confiança integra a cadeia de fornecimento e responde solidária e objetivamente pela não entrega, vício do produto ou golpe perpetrado por lojista parceiro dentro do ambiente ou por falha de segurança da plataforma (CDC, arts. 7º, parágrafo único, 14 e 18)",
+     "authority_ids": [
+      "cdc_art7",
+      "cdc_art14",
+      "cdc_art18",
+      "cdc_art30"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "cons_marketplace_intermediation.d1",
+     "label": "Mero site de anúncios classificados gratuitos que não participa da conclusão do contrato, não recebe valores nem aufere comissão sobre a transação não responde por fraude praticada diretamente entre usuários fora da plataforma (jurisprudência da Terceira e Quarta Turmas do STJ)",
+     "authority_ids": [
+      "cdc_art14"
+     ]
+    },
+    {
+     "id": "cons_marketplace_intermediation.d2",
+     "label": "Culpa exclusiva do consumidor que ignora alertas ostensivos de segurança do aplicativo e negocia/paga diretamente via Pix ou boleto falso enviado fora do ambiente seguro da plataforma",
+     "authority_ids": [
+      "cdc_art14",
+      "cdc_art12"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Restituição integral do preço pago ou entrega de produto equivalente conforme a oferta veiculada no marketplace",
+    "Indenização por danos morais em caso de retenção abusiva do estorno ou desvio produtivo severo do consumidor"
+   ],
+   "evidence": [
+    "Capturas completas do anúncio dentro da plataforma, carrinho de compras, confirmação do pedido e comprovante de pagamento ao intermediador",
+    "Histórico do chat interno do marketplace comprovando se a tratativa permaneceu ou saiu do ambiente oficial",
+    "Protocolos da garantia de compra da plataforma e rastreio logístico"
+   ],
+   "piece_ids": [
+    "inicial_juizado",
+    "inicial_procedimento_comum",
+    "contestacao",
+    "recurso_inominado"
+   ],
+   "related_claims": [
+    "cons_distance_purchase",
+    "cons_offer_advertising",
+    "banc_pix_fraud_social_engineering"
+   ],
+   "limitation": "Decadência de 30 ou 90 dias para vícios redibitórios (CDC, art. 26), 7 dias para arrependimento (art. 49) e prescrição quinquenal para reparação por fato do serviço/fraude (art. 27) ou decenal para repetição do preço pago sem entrega (CC, art. 205)."
+  },
+  {
+   "id": "cons_vehicle_recall_lemon",
+   "label": "Vício oculto grave em veículo automotor, recall e critério da vida útil do bem (CDC, arts. 10, 18 e 26, § 3º)",
+   "requirements": [
+    "vicio_oculto_fabricacao_projeto",
+    "vida_util_vs_garantia_contratual",
+    "superacao_30_dias_concessionaria",
+    "desvio_produtivo"
+   ],
+   "claimant_theses": [
+    {
+     "id": "cons_vehicle_recall_lemon.c1",
+     "label": "No vício oculto intrínseco (ex.: câmbio automatizado crônico, falha estrutural de motor ou freios), a responsabilidade solidária do fabricante e da concessionária rege-se pelo critério da vida útil razoável do bem, e não pelo término da garantia contratual, nascendo o direito à substituição do veículo ou restituição integral do valor pago quando não sanado em 30 dias (CDC, arts. 18, § 1º, e 26, § 3º)",
+     "authority_ids": [
+      "cdc_art18",
+      "cdc_art26",
+      "cdc_art10"
+     ]
+    },
+    {
+     "id": "cons_vehicle_recall_lemon.c2",
+     "label": "Cabimento de lucros cessantes (veículo de trabalho/locação substituta) e danos morais pela privação prolongada de veículo zero-quilômetro ou risco concreto à segurança viária",
+     "authority_ids": [
+      "cdc_art6",
+      "cdc_art12",
+      "cdc_art18"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "cons_vehicle_recall_lemon.d1",
+     "label": "Desgaste natural de componentes pelo uso intenso/quilometragem elevada, ausência de revisões periódicas obrigatórias ou utilização de combustível adulterado/mau uso afastam o dever de garantia",
+     "authority_ids": [
+      "cdc_art12",
+      "cdc_art18"
+     ]
+    },
+    {
+     "id": "cons_vehicle_recall_lemon.d2",
+     "label": "Consumação da decadência de 90 dias contados da data em que o defeito oculto ficou inequivocamente evidenciado em orçamento técnico sem reclamação formal tempestiva (CDC, art. 26, II e § 3º)",
+     "authority_ids": [
+      "cdc_art26"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Resolução da compra e venda com restituição integral da quantia paga corrigida monetariamente (mediante devolução do veículo) ou substituição por veículo novo da mesma espécie",
+    "Reembolso de aluguel de veículo reserva/guincho e lucros cessantes comprovados",
+    "Indenização por danos morais pelo desvio produtivo e frustração da legítima expectativa em veículo novo/seminovo"
+   ],
+   "evidence": [
+    "Nota fiscal de aquisição, manual com carimbos das revisões periódicas e ordens de serviço de entrada e saída na concessionária",
+    "Comunicados de campanha de recall na Senacon/Denatran ou boletins técnicos internos da montadora",
+    "Laudo pericial de engenharia mecânica distinguindo defeito de projeto/fabricação de desgaste natural ou mau uso"
+   ],
+   "piece_ids": [
+    "inicial_procedimento_comum",
+    "inicial_juizado",
+    "contestacao",
+    "impugnacao_laudo"
+   ],
+   "related_claims": [
+    "cons_vice",
+    "cons_defect"
+   ],
+   "limitation": "Decadência de 90 dias contados do momento em que ficar evidenciado o vício oculto (CDC, art. 26, II e § 3º), suspensa pela entrega na concessionária/reclamação formal até negativa inequívoca (art. 26, § 2º, I); acidente de consumo com risco/dano à incolumidade prescreve em 5 anos (art. 27)."
+  },
+  {
+   "id": "cons_condo_hotel_timeshare",
+   "label": "Multipropriedade imobiliária (time-sharing) e cotas de resort: venda emocional, arrependimento e retenção",
+   "requirements": [
+    "abordagem_venda_emocional",
+    "arrependimento_7_dias",
+    "rescisao_posterior_retencao_razoavel",
+    "clausula_penal"
+   ],
+   "claimant_theses": [
+    {
+     "id": "cons_condo_hotel_timeshare.c1",
+     "label": "É assegurado o direito de arrependimento imotivado em 7 dias com devolução integral e imediata de qualquer sinal quando o contrato de multipropriedade/time-sharing é celebrado mediante técnicas agressivas de abordagem emocional e brindes fora do estabelecimento comercial ordinário (CDC, arts. 6º, IV, e 49; jurisprudência do STJ)",
+     "authority_ids": [
+      "cdc_art6",
+      "cdc_art49",
+      "cc_art1358c"
+     ]
+    },
+    {
+     "id": "cons_condo_hotel_timeshare.c2",
+     "label": "Na resolução posterior por iniciativa do adquirente sem culpa do fornecedor, a retenção contratual deve limitar-se a percentual razoável sobre os valores efetivamente pagos (e não sobre o valor global do contrato), restituindo-se o saldo em parcela única (Súmula 543 do STJ; CDC, arts. 51, IV, e 53)",
+     "authority_ids": [
+      "stj_sumula_543",
+      "cdc_art51",
+      "cdc_art53"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "cons_condo_hotel_timeshare.d1",
+     "label": "Ultrapassado o prazo decadencial de 7 dias sem manifestação de arrependimento e ausente inadimplemento da incorporadora na obra/disponibilização das semanas, aplica-se a retenção legal/contratual da cláusula penal compensatória e da comissão de corretagem destacada (Lei 4.591/1964, art. 67-A; CC, arts. 413 e 1.358-C)",
+     "authority_ids": [
+      "cc_art1358c",
+      "l4591_art67a",
+      "cc_art413"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_13786_distrato",
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Reconhecimento do tempestivo exercício do direito de arrependimento com devolução de 100% dos valores pagos e cancelamento dos boletos/lançamentos no cartão",
+    "Subsidiariamente, resilição do contrato de cota imobiliária com limitação da retenção a percentual módico sobre o montante pago",
+    "Resolução com restituição integral de 100% mais multa invertida em caso de atraso injustificado na entrega do empreendimento"
+   ],
+   "evidence": [
+    "Instrumento particular de promessa de compra e venda de fração ideal em regime de multipropriedade e quadro-resumo",
+    "E-mail, mensagem ou carta com AR comprovando a data do pedido de cancelamento/arrependimento",
+    "Extrato consolidado das parcelas pagas e cronograma físico da obra/disponibilização no pool hoteleiro"
+   ],
+   "piece_ids": [
+    "inicial_juizado",
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente",
+    "contestacao"
+   ],
+   "related_claims": [
+    "cons_distance_purchase",
+    "imob_distrato",
+    "imob_delay_delivery"
+   ],
+   "limitation": "Arrependimento imotivado em 7 dias corridos da assinatura (CDC, art. 49); ação de resolução contratual com restituição de parcelas pagas prescreve no prazo decenal (CC, art. 205)."
+  },
+  {
+   "id": "cons_telecom_loyalty_bundling",
+   "label": "Telecomunicações: venda casada (SVA), multa de fidelização abusiva e cobrança pós-cancelamento",
+   "requirements": [
+    "inclusao_sva_sem_anuencia",
+    "quebra_qualidade_isencao_multa_fidelidade",
+    "protocolo_cancelamento",
+    "cobranca_indevida_posterior"
+   ],
+   "claimant_theses": [
+    {
+     "id": "cons_telecom_loyalty_bundling.c1",
+     "label": "Configura prática abusiva e venda casada a inserção unilateral de serviços de valor adicionado (SVA, aplicativos, antivírus, seguros) não solicitados, bem como a cobrança de multa de fidelização quando a rescisão decorre de má prestação/indisponibilidade técnica do serviço pela própria operadora (CDC, arts. 22 e 39, I e III)",
+     "authority_ids": [
+      "cdc_art22",
+      "cdc_art39",
+      "cdc_art42"
+     ]
+    },
+    {
+     "id": "cons_telecom_loyalty_bundling.c2",
+     "label": "Inexigibilidade absoluta de faturas geradas para períodos posteriores ao protocolo de cancelamento, ensejando repetição em dobro e danos morais em caso de inscrição nos cadastros restritivos",
+     "authority_ids": [
+      "cdc_art42",
+      "cdc_art43"
+     ]
+    }
+   ],
+   "defense_theses": [
+    {
+     "id": "cons_telecom_loyalty_bundling.d1",
+     "label": "Validade da cláusula de permanência mínima (máximo de 12 meses para pessoa natural segundo a regulamentação da ANATEL) vinculada a benefício econômico real concedido na adesão, com cobrança de multa estritamente pro rata temporis em caso de desistência imotivada",
+     "authority_ids": [
+      "cdc_art54",
+      "cc_art413"
+     ]
+    },
+    {
+     "id": "cons_telecom_loyalty_bundling.d2",
+     "label": "Distinção regulatória lícita de composição de combos quando o serviço principal também é ofertado avulso em condições equânimes",
+     "authority_ids": [
+      "cdc_art39"
+     ]
+    }
+   ],
+   "temporal_marker_ids": [
+    "lei_14905_juros_civis"
+   ],
+   "typical_requests": [
+    "Declaração de inexigibilidade de multa de fidelidade e de mensalidades posteriores ao protocolo de cancelamento",
+    "Exclusão de apontamento restritivo em órgãos de proteção ao crédito sob pena de multa",
+    "Restituição em dobro dos valores cobrados por SVAs não contratados e indenização por negativação indevida"
+   ],
+   "evidence": [
+    "Faturas analíticas discriminando telecomunicações e Serviços de Valor Adicionado (SVA), contrato de permanência e termo do benefício concedido",
+    "Números de protocolo de reclamação de queda de sinal/velocidade no SAC e na plataforma Anatel Consumidor",
+    "Gravação ou comprovante do pedido de cancelamento e extrato de negativação"
+   ],
+   "piece_ids": [
+    "inicial_juizado",
+    "inicial_procedimento_comum",
+    "tutela_urgencia_antecedente",
+    "contestacao"
+   ],
+   "related_claims": [
+    "cons_essential_service",
+    "cons_undue_charge",
+    "cons_credit_bureau"
+   ],
+   "limitation": "Prescrição decenal para repetição de indébito de faturas de telefonia/internet cobradas indevidamente (CC, art. 205; Súmula 412 do STJ) e quinquenal para reparação civil por negativação indevida (CDC, art. 27)."
+  }
  ]
 }

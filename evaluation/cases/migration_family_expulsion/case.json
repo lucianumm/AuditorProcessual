@@ -1,0 +1,44 @@
+{
+  "schema_version": "2.0",
+  "synthetic": true,
+  "case_id": "migration_family_expulsion",
+  "source_files": [
+    {
+      "file": "portaria_expulsao.txt"
+    }
+  ],
+  "expected": {
+    "facts": [
+      {
+        "id": "G-F1",
+        "text_any": [
+          "guarda e dependência econômica de filho brasileiro"
+        ],
+        "source": {
+          "file": "portaria_expulsao.txt",
+          "page": 1,
+          "quote": "guarda e dependência econômica de filho brasileiro"
+        },
+        "atoms": {
+          "date": "2025-07-15"
+        }
+      }
+    ],
+    "issues": [
+      {
+        "id": "G-I1",
+        "text_any": [
+          "impedimento de expulsão",
+          "proteção familiar"
+        ],
+        "analysis_status": "qualified"
+      }
+    ],
+    "requests": [],
+    "contradictions": [],
+    "catalog_id": "habeas_corpus",
+    "strategy": {
+      "domain": "migratorio"
+    }
+  }
+}

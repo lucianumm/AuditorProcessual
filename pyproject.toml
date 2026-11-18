@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "legal-process-parser"
-version = "0.23.0"
-description = "Pipeline local de ingestão, narrativa jurídica e rastreabilidade de processos."
+version = "1.0.0"
+description = "Pipeline local de ingestão multissistema, motores determinísticos e narrativa jurídica rastreável em 29 ramos do Direito."
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
@@ -41,8 +41,18 @@ legal-process-indices = "scripts.official_indices:main"
 legal-process-legislation = "scripts.legislation_lookup:main"
 legal-process-domain-catalog = "scripts.domain_catalog:main"
 legal-process-claim-search = "scripts.claim_search:main"
+legal-process-deadlines = "scripts.deadline_calculator:main"
+legal-process-monetary = "scripts.civil_monetary_engine:main"
+legal-process-previdenciario = "scripts.social_security_calc:main"
+legal-process-penal-calc = "scripts.penal_dosimetry:main"
+legal-process-limitation = "scripts.limitation_checker:main"
+legal-process-datajud = "scripts.datajud_lookup:main"
+legal-process-privacy = "scripts.privacy_redactor:main"
+legal-process-docx = "scripts.docx_exporter:main"
+legal-process-mcp = "scripts.mcp_server:main"
 
 [tool.setuptools]
+include-package-data = false
 package-dir = {"" = "skills/legal-process-parser", "routing" = "routing"}
 packages = ["scripts", "references", "schemas", "templates", "routing"]
 

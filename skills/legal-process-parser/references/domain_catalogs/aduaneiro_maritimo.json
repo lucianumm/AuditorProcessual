@@ -1,0 +1,941 @@
+{
+  "schema_version": "1.0",
+  "domain": "aduaneiro_maritimo",
+  "label": "Direito Aduaneiro, Marítimo e Portuário",
+  "guide": "domain_guides/aduaneiro_maritimo.md",
+  "policy": "Pautas de pesquisa por pretensão. Teses e autoridades são candidatas: conferir texto, versão do período e situação na fonte oficial da resposta.",
+  "polo_labels": {
+    "claimant_theses": "Teses do importador, embarcador ou armador credor",
+    "defense_theses": "Teses da Aduana, transportador ou devedor marítimo"
+  },
+  "claims": [
+    {
+      "id": "aduan_forfeiture_fraudulent_interposition",
+      "label": "Pena de perdimento de mercadorias, veículos e moeda: interposição fraudulenta e subfaturamento",
+      "requirements": [
+        "dano_ao_erario_tipificado_dl1455_dl37",
+        "distincao_subfaturamento_documental_vs_falsidade",
+        "ocultacao_sujeito_ou_origem_recursos",
+        "proporcionalidade_duplo_grau_lei_14651"
+      ],
+      "claimant_theses": [
+        {
+          "id": "aduan_forfeiture_fraudulent_interposition.c1",
+          "label": "Inaplicabilidade da pena de perdimento (ou multa substitutiva de 100% do valor total) na hipótese de mero subfaturamento de preços na importação desacompanhado de falsidade material ou ideológica da fatura comercial, incidindo exclusivamente a multa administrativa de 100% sobre a diferença entre o preço declarado e o valor efetivamente praticado/arbitrado (DL 37/1966, art. 108, parágrafo único — jurisprudência pacífica da Primeira Seção do STJ)",
+          "authority_ids": [
+            "dl37_art105",
+            "dl37_art108",
+            "dl1455_art23"
+          ]
+        },
+        {
+          "id": "aduan_forfeiture_fraudulent_interposition.c2",
+          "label": "Afastamento do perdimento de veículo transportador quando ausente prova da responsabilidade/concorrência do proprietário na prática do ilícito e desproporcionalidade manifesta entre o valor do veículo e o das mercadorias descaminhadas (Súmula 138 antigo TFR / jurisprudência STJ), e garantia do duplo grau administrativo perante o CEJUL (Lei 14.651/2023)",
+          "authority_ids": [
+            "dl37_art104",
+            "dl1455_art27",
+            "l14651_art1"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "aduan_forfeiture_fraudulent_interposition.d1",
+          "label": "Legitimidade da pena de perdimento (conversível em multa equivalente ao valor aduaneiro se não localizada ou consumida a mercadoria — DL 1.455/1976, art. 23, § 3º) diante de ocultação dolosa do sujeito passivo, real comprador ou responsável mediante fraude/simulação (interposição fraudulenta real ou presumida pela não comprovação da origem, disponibilidade e transferência lícita dos recursos empregados — Lei 10.637/2002, art. 59) ou fatura falsificada",
+          "authority_ids": [
+            "dl1455_art23",
+            "l10637_art59",
+            "d6759_art689"
+          ]
+        },
+        {
+          "id": "aduan_forfeiture_fraudulent_interposition.d2",
+          "label": "Perdimento administrativo de moeda nacional ou estrangeira em espécie acima do limite legal que ingresse ou saia do País sem declaração eletrônica de bens de viajante (e-DBV — Lei 9.069/1995, art. 65, e Lei 14.286/2021, art. 14)",
+          "authority_ids": [
+            "l14286_art14",
+            "d6759_art700"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14651_perdimento_duplo_grau"
+      ],
+      "typical_requests": [
+        "Impugnação e recurso administrativo ao CEJUL ou ação anulatória judicial com tutela de urgência para liberação da mercadoria mediante caução/depósito e afastamento da pena de perdimento",
+        "Reclassificação da autuação de perdimento por falsidade para multa de 100% da diferença de valor (DL 37/1966, art. 108, parágrafo único)",
+        "Liberação de caminhão/embarcação de terceiro transportador de boa-fé ou por manifesta desproporcionalidade"
+      ],
+      "evidence": [
+        "Auto de Infração e Termo de Apreensão e Guarda Fiscal (AITAGF), Declaração de Importação (DI/DUIMP), Commercial Invoice, Packing List e contratos de câmbio",
+        "Contabilidade auditada, extratos bancários, balancetes e contratos de encomenda/conta e ordem comprovando a origem lícita e capacidade financeira própria",
+        "Documentação de propriedade do veículo, CT-e e contrato de frete demonstrando boa-fé do transportador"
+      ],
+      "piece_ids": [
+        "defesa_auto_infracao_aduaneiro",
+        "recurso_administrativo",
+        "mandado_seguranca",
+        "acao_anulatoria_debito_fiscal",
+        "inicial_procedimento_comum"
+      ],
+      "related_claims": [
+        "aduan_customs_valuation_gatt",
+        "aduan_radar_siscomex_habilitation",
+        "trib_penalties"
+      ],
+      "limitation": "Impugnação administrativa ao auto de perdimento em 20 dias contados da ciência e recurso administrativo em segunda instância em 20 dias (DL 1.455/1976, art. 27, com a redação da Lei 14.651/2023); decadência quinquenal para lavratura da infração aduaneira (DL 37/1966, art. 138/139; CTN, art. 173) e prescrição quinquenal da ação anulatória (Decreto 20.910/1932)"
+    },
+    {
+      "id": "aduan_customs_retention_parametrization",
+      "label": "Retenção aduaneira em parametrização (canais vermelho e cinza) e prazo razoável de fiscalização",
+      "requirements": [
+        "selecao_parametrizacao_vermelho_ou_cinza",
+        "prazo_razoavel_conclusao_procedimento",
+        "liberacao_mediante_caucao_controversia_valor",
+        "vedacao_coercao_tributaria_sumula_323"
+      ],
+      "claimant_theses": [
+        {
+          "id": "aduan_customs_retention_parametrization.c1",
+          "label": "Ultrapassado sem motivo imputável ao importador o prazo regulamentar e razoável para conclusão da conferência aduaneira ou do Procedimento Especial de Controle Aduaneiro, impõe-se a imediata conclusão da análise ou o desembaraço provisório para evitar perecimento da carga e custos ruinosos de armazenagem/demurrage",
+          "authority_ids": [
+            "l9784_art49",
+            "d70235_art24",
+            "cf_art5"
+          ]
+        },
+        {
+          "id": "aduan_customs_retention_parametrization.c2",
+          "label": "Quando a retenção decorrer exclusivamente de exigência tributária, reclassificação fiscal ou divergência de valoração aduaneira (sem indícios fundados de infração punível com perdimento nem óbice sanitário), tem o importador direito ao desembaraço mediante prestação de garantia idônea (depósito, fiança ou seguro aduaneiro — Decreto 6.759/2009, art. 571; Súmula 323 do STF)",
+          "authority_ids": [
+            "d6759_art571",
+            "cf_art150"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "aduan_customs_retention_parametrization.d1",
+          "label": "Legitimidade da retenção cautelar das mercadorias durante o prazo regulamentar (v.g., 90 dias prorrogáveis por mais 90 dias na fiscalização antifraude de canal cinza — IN RFB 1.986/2020) quando houver indícios concretos de interposição fraudulenta, falsidade de origem ou contrafação sujeita a perdimento, hipótese em que não se aplica a Súmula 323 do STF nem caução liberatória",
+          "authority_ids": [
+            "dl1455_art23",
+            "d6759_art570"
+          ]
+        },
+        {
+          "id": "aduan_customs_retention_parametrization.d2",
+          "label": "Suspensão do prazo fiscalizatório enquanto pendente o atendimento pelo importador das intimações para apresentação de documentos comprobatórios da transação internacional",
+          "authority_ids": [
+            "d6759_art570"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Mandado de segurança determinando à autoridade aduaneira que conclua o despacho/procedimento especial em prazo improrrogável (v.g., 5 a 15 dias) após esgotado o prazo legal",
+        "Autorização liminar para desembaraço aduaneiro mediante depósito/caução da diferença tributária e multas em discussão meramente valorativa/classificatória (Decreto 6.759/2009, art. 571)"
+      ],
+      "evidence": [
+        "Extrato da DI/DUIMP no SISCOMEX comprovando a data de registro, distribuição em canal vermelho/cinza e data de entrega integral dos documentos solicitados",
+        "Termo de Início de Procedimento Especial e intimações atendidas tempestivamente pelo importador",
+        "Faturas de armazenagem portuária e demurrage demonstrando o periculum in mora diário ou perecibilidade da carga"
+      ],
+      "piece_ids": [
+        "mandado_seguranca",
+        "requerimento_administrativo",
+        "tutela_urgencia_antecedente",
+        "inicial_procedimento_comum"
+      ],
+      "related_claims": [
+        "aduan_forfeiture_fraudulent_interposition",
+        "aduan_unlawful_cargo_bl_retention",
+        "adm_silence_delay"
+      ],
+      "limitation": "120 dias da ciência do ato coator para mandado de segurança (Lei 12.016/2009, art. 23), tratando-se de omissão continuada enquanto perdurar a paralisação administrativa injustificada além dos prazos regulamentares (8 dias para despacho comum — art. 4º do Decreto 70.235/1972; 90 + 90 dias no procedimento especial antifraude da RFB)"
+    },
+    {
+      "id": "aduan_customs_valuation_gatt",
+      "label": "Valoração aduaneira e observância sequencial dos métodos do Acordo AVA-GATT",
+      "requirements": [
+        "primazia_valor_transacao_primeiro_metodo",
+        "motivacao_tecnica_descarte_sequencial",
+        "inclusao_exclusao_capatazia_thc_tema_1014",
+        "vedacao_pautas_precos_minimos"
+      ],
+      "claimant_theses": [
+        {
+          "id": "aduan_customs_valuation_gatt.c1",
+          "label": "O valor aduaneiro deve ser apurado prioritariamente pelo 1º método (valor de transação — preço efetivamente pago ou a pagar), sendo nulo o lançamento que descarta o valor declarado com base em meras médias estatísticas/pautas de preços mínimos ou que salta a ordem sequencial estrita dos seis métodos do Acordo de Valoração Aduaneira — AVA-GATT (Decreto 1.355/1994)",
+          "authority_ids": [
+            "d1355_ava_gatt",
+            "d6759_art76",
+            "ctn_art142"
+          ]
+        },
+        {
+          "id": "aduan_customs_valuation_gatt.c2",
+          "label": "Distinção da inclusão ou exclusão de despesas de capatazia (THC) ocorridas após a chegada ao porto/aeroporto alfandegado brasileiro conforme o marco normativo aplicável (Tema 1014 do STJ vs. alteração legal posterior da Lei 37/1966 e Decreto 11.090/2022 — conferir período do fato gerador)",
+          "authority_ids": [
+            "dl37_art77",
+            "tema_stj_1014",
+            "d1355_ava_gatt"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "aduan_customs_valuation_gatt.d1",
+          "label": "Legitimidade do afastamento motivado do 1º método após procedimento de dúvida fundada sobre a veracidade ou exatidão do valor declarado (Artigo 17 do AVA-GATT e Decisão 6.1) quando o importador não comprova documentalmente a formação do preço ou há vinculação societária que influenciou artificialmente o valor",
+          "authority_ids": [
+            "d1355_ava_gatt",
+            "mp2158_art88"
+          ]
+        },
+        {
+          "id": "aduan_customs_valuation_gatt.d2",
+          "label": "Arbitramento especial previsto no art. 88 da MP 2.158-35/2001 exclusivamente nas hipóteses estritas de fraude, sonegação ou conluio em que não seja possível apurar o preço efetivamente praticado nos documentos",
+          "authority_ids": [
+            "mp2158_art88"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Anulação de auto de infração aduaneiro e restituição de II, IPI, PIS/COFINS-Importação, ICMS e multas exigidos por desconsideração ilegal da ordem sequencial do AVA-GATT",
+        "Repetição de indébito tributário no período regido pelo Tema 1014 do STJ ou exclusão da multa de 100% por ausência de fraude"
+      ],
+      "evidence": [
+        "Fatura comercial (Invoice), contrato internacional de compra e venda, correspondências comerciais de cotação, transferências cambiais SWIFT e listas globais de preços do exportador",
+        "Estudo de preços de transferência / valoração demonstrando ausência de influência de vinculação societária sobre o preço (AVA-GATT, Artigo 1.2)",
+        "Auto de infração demonstrando os parâmetros e o método substituto utilizado pela fiscalização"
+      ],
+      "piece_ids": [
+        "impugnacao_lancamento_administrativa",
+        "recurso_voluntario_carf",
+        "acao_anulatoria_debito_fiscal",
+        "repeticao_indebito_tributario",
+        "mandado_seguranca"
+      ],
+      "related_claims": [
+        "aduan_forfeiture_fraudulent_interposition",
+        "trib_assessment_nullity",
+        "trib_refund"
+      ],
+      "limitation": "30 dias para impugnação administrativa fiscal federal e 30 dias para recurso voluntário ao CARF (Decreto 70.235/1972, arts. 15 e 33); 5 anos para revisão aduaneira/lançamento pelo Fisco contados do registro da DI (DL 37/1966, arts. 54 e 138; CTN, art. 173) e 5 anos para repetição de indébito (CTN, art. 168)"
+    },
+    {
+      "id": "aduan_tariff_classification_ncm",
+      "label": "Classificação fiscal de mercadorias (NCM/TEC), revisão aduaneira e proteção da confiança",
+      "requirements": [
+        "regras_gerais_interpretativas_rgi_sh",
+        "notas_explicativas_nesh_pericia_merceologica",
+        "protecao_confianca_art_146_ctn",
+        "multa_classificacao_incorreta"
+      ],
+      "claimant_theses": [
+        {
+          "id": "aduan_tariff_classification_ncm.c1",
+          "label": "Prevalência da posição específica sobre a genérica e enquadramento técnico segundo as Regras Gerais para Interpretação do Sistema Harmonizado (RGI 1 a 6) e as Notas Explicativas do Sistema Harmonizado (NESH), amparado em laudo merceológico",
+          "authority_ids": [
+            "d6759_art94",
+            "ctn_art110"
+          ]
+        },
+        {
+          "id": "aduan_tariff_classification_ncm.c2",
+          "label": "Mudança de critério jurídico pela Administração Aduaneira na classificação fiscal de mercadoria anteriormente desembaraçada em canal parametrizado com conferência física ou amparada em Solução de Consulta só pode produzir efeitos para fatos geradores futuros, vedada cobrança retroativa de diferenças ou multas/juros (CTN, arts. 100, parágrafo único, e 146)",
+          "authority_ids": [
+            "ctn_art146",
+            "ctn_art100"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "aduan_tariff_classification_ncm.d1",
+          "label": "O mero desembaraço automático em canal verde não homologa definitivamente a classificação NCM adotada pelo importador nem configura critério jurídico prévio vinculante da fiscalização, cabendo revisão aduaneira dentro do quinquênio decadencial (DL 37/1966, art. 54) — jurisprudência consolidada do STJ e da CSRF/CARF",
+          "authority_ids": [
+            "dl37_art54",
+            "ctn_art149"
+          ]
+        },
+        {
+          "id": "aduan_tariff_classification_ncm.d2",
+          "label": "Incidência da multa de 1% sobre o valor aduaneiro por classificação incorreta (MP 2.158-35/2001, art. 84) cumulada com multa de ofício de 75% sobre eventual diferença de tributo recolhido a menor (Lei 9.430/1996, art. 44)",
+          "authority_ids": [
+            "mp2158_art84",
+            "l9430_art44"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Declaração judicial ou administrativa do correto enquadramento na posição NCM/TEC e Ex-Tarifário pleiteado, com anulação do auto de infração",
+        "Exclusão de multas e juros moratórios em caso de observância de ato normativo/Solução de Consulta vigente à época (CTN, art. 100, parágrafo único) ou irretroatividade da mudança de critério jurídico (CTN, art. 146)"
+      ],
+      "evidence": [
+        "Catálogos técnicos originais do fabricante, fichas de composição química/funcionamento, amostras e laudo de engenharia/merceologia credenciado",
+        "Texto da Tarifa Externa Comum (TEC/CAMEX), Notas de Seção/Capítulo, NESH e pareceres da Organização Mundial das Alfândegas (OMA)",
+        "Soluções de Consulta COSIT/COANA e histórico de declarações anteriores submetidas à conferência física em canal vermelho"
+      ],
+      "piece_ids": [
+        "impugnacao_lancamento_administrativa",
+        "recurso_voluntario_carf",
+        "acao_anulatoria_debito_fiscal",
+        "inicial_procedimento_comum",
+        "impugnacao_laudo"
+      ],
+      "related_claims": [
+        "trib_assessment_nullity",
+        "trib_penalties",
+        "aduan_customs_valuation_gatt"
+      ],
+      "limitation": "Revisão aduaneira decai em 5 anos contados da data do registro da Declaração de Importação (DL 37/1966, arts. 54 e 138; Decreto 6.759/2009, art. 638); impugnação e recurso voluntário ao CARF em 30 dias (Decreto 70.235/1972); ação anulatória/repetitória em 5 anos"
+    },
+    {
+      "id": "aduan_special_customs_regimes",
+      "label": "Regimes aduaneiros especiais: drawback, admissão temporária, REPETRO-Sped e entreposto",
+      "requirements": [
+        "ato_concessorio_suspensao_ou_isencao",
+        "adimplemento_compromisso_exportacao_ou_reexportacao",
+        "principio_fungibilidade_ou_vinculacao_fisica",
+        "verdade_material_atraso_formal_siscomex"
+      ],
+      "claimant_theses": [
+        {
+          "id": "aduan_special_customs_regimes.c1",
+          "label": "Comprovada documentalmente a efetiva incorporação dos insumos e a exportação tempestiva dos produtos finais no regime de drawback (ou a reexportação/extinção regular na admissão temporária e aplicação na pesquisa/lavra no REPETRO-Sped), meros erros ou atrasos formais de vinculação eletrônica do Ato Concessório no SISCOMEX não autorizam a cobrança dos tributos suspensos, em respeito à verdade material — jurisprudência do STJ e do CARF",
+          "authority_ids": [
+            "dl37_art78",
+            "l11945_art12",
+            "l13586_art1"
+          ]
+        },
+        {
+          "id": "aduan_special_customs_regimes.c2",
+          "label": "Aplicação legítima do critério da fungibilidade contábil para insumos equivalentes em espécie, qualidade e valor quando admitido pela legislação de regência do drawback",
+          "authority_ids": [
+            "l11945_art12",
+            "d6759_art383"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "aduan_special_customs_regimes.d1",
+          "label": "Inadimplemento material total ou parcial do compromisso de exportar no prazo do Ato Concessório (já consideradas prorrogações legais) obriga ao recolhimento integral dos tributos suspensos com acréscimos legais desde a data do registro da importação dos insumos",
+          "authority_ids": [
+            "dl37_art78",
+            "d6759_art390"
+          ]
+        },
+        {
+          "id": "aduan_special_customs_regimes.d2",
+          "label": "Interpretação estrita dos requisitos de suspensão/isenção tributária (CTN, art. 111) e execução do Termo de Responsabilidade (TR) na admissão temporária em caso de desvio de finalidade ou permanência desautorizada no País",
+          "authority_ids": [
+            "dl37_art75",
+            "ctn_art111"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Reconhecimento da baixa regular (adimplemento) do Ato Concessório de drawback ou do regime de admissão temporária/REPETRO-Sped com cancelamento de auto de infração e execução de Termo de Responsabilidade",
+        "Prorrogação extraordinária de prazo de vigência de regime especial diante de caso fortuito comprovado ou restrição logística internacional"
+      ],
+      "evidence": [
+        "Ato Concessório de drawback (SECEX/SUEXT), Declarações de Importação (DIs), Declarações Únicas de Exportação (DU-Es / REs) e notas fiscais de entrada e saída",
+        "Laudo técnico de índice de consumo produtivo e rastreabilidade contábil de estoque comprovando o emprego dos insumos nos bens exportados",
+        "Termo de Responsabilidade (TR), contratos de afretamento/prestação de serviços offshore (REPETRO) e comprovante de reexportação/destruição/nacionalização"
+      ],
+      "piece_ids": [
+        "impugnacao_lancamento_administrativa",
+        "recurso_voluntario_carf",
+        "acao_anulatoria_debito_fiscal",
+        "mandado_seguranca",
+        "contestacao"
+      ],
+      "related_claims": [
+        "trib_exemption_immunity",
+        "reg_oil_gas_biofuels_anp"
+      ],
+      "limitation": "Prazo ordinário do drawback suspensão de 1 ano prorrogável por mais 1 ano (até 5 anos para bens de capital de longo ciclo — Lei 11.945/2009, art. 12); o prazo decadencial quinquenal do Fisco para lançar tributos pelo descumprimento do regime especial inicia-se após o termo final para cumprimento do compromisso (STJ/CARF)"
+    },
+    {
+      "id": "aduan_container_demurrage",
+      "label": "Sobre-estadia de contêineres (demurrage), natureza jurídica, prescrição (Tema 1035 STJ) e regulação ANTAQ",
+      "requirements": [
+        "pacto_free_time_e_diarias_sobre_estadia",
+        "devolucao_tardia_unidade_carga_vazia",
+        "natureza_indenizacao_pre_fixada_nao_clausula_penal",
+        "suspensao_fato_exclusivo_armador_ou_greve"
+      ],
+      "claimant_theses": [
+        {
+          "id": "aduan_container_demurrage.c1",
+          "label": "A sobre-estadia de contêineres (demurrage) tem natureza jurídica de indenização pré-fixada pelo descumprimento do prazo livre (free time) de devolução do equipamento — e não de cláusula penal —, não se sujeitando à limitação do valor da obrigação principal/contêiner do art. 412 do CC — jurisprudência consolidada do STJ",
+          "authority_ids": [
+            "cc_art402",
+            "tema_stj_1035"
+          ]
+        },
+        {
+          "id": "aduan_container_demurrage.c2",
+          "label": "A pretensão de cobrança de sobre-estadia de contêineres, fundada em contrato de transporte marítimo (unimodal), prescreve em 5 anos quando houver previsão da tarifa em cláusula contratual prévia (CC, art. 206, § 5º, I; Tema 1035 do STJ)",
+          "authority_ids": [
+            "cc_art206",
+            "tema_stj_1035"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "aduan_container_demurrage.d1",
+          "label": "Prescrição em 1 ano quando não houver prévia estipulação contratual do valor da sobre-estadia (Tema 1035 do STJ, segunda parte) ou quando caracterizado transporte multimodal regido pelo art. 22 da Lei 9.611/1998",
+          "authority_ids": [
+            "l9611_art22",
+            "tema_stj_1035"
+          ]
+        },
+        {
+          "id": "aduan_container_demurrage.d2",
+          "label": "Exclusão ou suspensão da contagem das diárias de sobre-estadia nos dias em que o atraso na devolução decorrer de fato imputável diretamente ao próprio transportador marítimo/terminal indicado (recusa de agendamento de devolução de vazio — depot) ou de caso fortuito externo/retenção aduaneira posteriormente julgada ilegal, nos termos da Resolução ANTAQ 62/2021 e da boa-fé objetiva",
+          "authority_ids": [
+            "cc_art393",
+            "cc_art422",
+            "res_antaq_62_2021"
+          ]
+        },
+        {
+          "id": "aduan_container_demurrage.d3",
+          "label": "Ilegitimidade passiva do mero agente desconsolidador/transitário quando atua estritamente como mandatário sem assumir em nome próprio a obrigação de consignatário no BL master/house — aferir função concreta nos conhecimentos",
+          "authority_ids": [
+            "cc_art663"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Ação de cobrança ou monitória pelo armador/NVOCC para recebimento das diárias de sobre-estadia incorridas entre o fim do free time e a efetiva devolução (gate-in) do contêiner vazio e limpo",
+        "Ação declaratória de inexigibilidade ou revisão de cobrança abusiva de demurrage por prescrição, ausência de ciência prévia da tabela tarifária ou culpa exclusiva do transportador/recinto"
+      ],
+      "evidence": [
+        "Conhecimento de Embarque (Bill of Lading — BL master e house) acompanhado de tradução juramentada (CPC, art. 192) e Termo de Responsabilidade de Devolução de Contêiner / tabela pública de tarifas",
+        "Comprovantes operacionais exatos da data da descarga do navio, término do período livre (free time) e recibo de devolução (EIR / gate-in) do contêiner vazio",
+        "Comunicações comprovando falta de janela de devolução no terminal vazio designado pelo armador ou paralisação grevista/aduaneira"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "acao_monitoria",
+        "embargos_monitorios",
+        "contestacao",
+        "apelacao_civel"
+      ],
+      "related_claims": [
+        "reg_ports_terminals_tariffs",
+        "aduan_unlawful_cargo_bl_retention",
+        "reg_transport_antt_antaq_freight"
+      ],
+      "limitation": "Prescrição quinquenal (5 anos — CC, art. 206, § 5º, I) quando a tarifa de sobre-estadia consta previamente do contrato de transporte marítimo unimodal, e prescrição anual (1 ano) quando inexistir previsão contratual prévia (Tema 1035 do STJ) ou tratar-se de transporte multimodal de cargas (Lei 9.611/1998, art. 22), contada da data da devolução do contêiner"
+    },
+    {
+      "id": "aduan_cargo_damage_bl_subrogation",
+      "label": "Extravio e avaria de carga marítima, Bill of Lading (BL) e ação regressiva de seguradora",
+      "requirements": [
+        "responsabilidade_objetiva_transportador",
+        "protesto_vistoria_avaria_dez_dias",
+        "ineficacia_clausula_nao_indenizar",
+        "sub_rogacao_seguradora_transporte"
+      ],
+      "claimant_theses": [
+        {
+          "id": "aduan_cargo_damage_bl_subrogation.c1",
+          "label": "Responsabilidade civil objetiva do transportador marítimo pela incolumidade da carga desde o recebimento a bordo até a efetiva entrega à entidade portuária no destino (CC, arts. 749 e 750; DL 116/1967, art. 3º), sendo inoperante cláusula de não indenizar (Súmula 161 do STF) ou limitação tarifária abusiva não negociada paritariamente",
+          "authority_ids": [
+            "cc_art749",
+            "cc_art750",
+            "dl116_art3",
+            "cc_art734"
+          ]
+        },
+        {
+          "id": "aduan_cargo_damage_bl_subrogation.c2",
+          "label": "Legitimidade ativa da seguradora de transporte internacional que indenizou o importador/exportador para demandar regressivamente o armador causador da avaria ou falta de mercadoria (CC, art. 786; Súmula 188 do STF)",
+          "authority_ids": [
+            "cc_art786"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "aduan_cargo_damage_bl_subrogation.d1",
+          "label": "Decadência do direito à reclamação por perda parcial ou avaria não perceptível à primeira vista quando o destinatário receber a mercadoria sem ressalva e não promover o protesto/vistoria em até 10 dias a contar da entrega (CC, art. 754, parágrafo único), e prescrição ânua das ações por extravio ou avaria de carga marítima contada do término da descarga do navio (DL 116/1967, art. 8º)",
+          "authority_ids": [
+            "cc_art754",
+            "dl116_art8"
+          ]
+        },
+        {
+          "id": "aduan_cargo_damage_bl_subrogation.d2",
+          "label": "Exclusão da responsabilidade do armador por fortuna do mar extraordinária e inevitável, vício intrínseco da mercadoria, insuficiência de embalagem pelo embarcador (cláusula Shipper's Load and Count em contêiner lacrado entregue intacto sem falha de refrigeração) ou avaria ocorrida após entrega regular sob custódia exclusiva do depositário portuário",
+          "authority_ids": [
+            "dl116_art3",
+            "cc_art750"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Condenação do transportador marítimo (ou solidariamente do terminal depositário conforme o momento do dano) ao ressarcimento do valor CIF da mercadoria avariada/extraviada mais frete proporcional e despesas de vistoria",
+        "Realização de vistoria cautelar conjunta ou produção antecipada de prova no recinto alfandegado logo após a descarga"
+      ],
+      "evidence": [
+        "Bill of Lading (BL limpo a bordo — Clean on Board) traduzido, Commercial Invoice, Packing List e apólice/comprovante de pagamento do seguro de transporte",
+        "Termo de Avaria / Resumo de Descarga emitido pelo terminal portuário (TFA) no ato do descarregamento do navio e protesto formalizado dentro de 10 dias",
+        "Relatório de regulação/vistoria técnica (survey report) e registros gráficos contínuos de temperatura (data loggers) em cargas refrigeradas (reefer)"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "producao_antecipada_provas",
+        "contestacao",
+        "apelacao_civel"
+      ],
+      "related_claims": [
+        "sec_insurer_subrogation_regress",
+        "aduan_maritime_tribunal_accidents"
+      ],
+      "limitation": "Prazo decadencial de 10 dias da entrega para denunciar perda parcial ou avaria não aparente (CC, art. 754, parágrafo único); prescrição em 1 ano contado do término da descarga da embarcação para ações por falta de conteúdo, diminuição, perdas e avarias ou danos à carga no transporte sobre água (Decreto-Lei 116/1967, art. 8º — norma especial vigente reconhecida pelo STJ)"
+    },
+    {
+      "id": "aduan_unlawful_cargo_bl_retention",
+      "label": "Retenção indevida de carga ou Bill of Lading (BL) para cobrança coercitiva",
+      "requirements": [
+        "bloqueio_siscarga_mercante_ou_retencao_fisica",
+        "distincao_frete_proprio_embarque_vs_demurrage_dividas",
+        "vedacao_coercao_indireta",
+        "caucao_idonea_substitutiva"
+      ],
+      "claimant_theses": [
+        {
+          "id": "aduan_unlawful_cargo_bl_retention.c1",
+          "label": "Ilicitude da retenção da carga ou da recusa de baixa de bloqueio eletrônico do Conhecimento de Embarque (BL) nos sistemas Mercante/SISCARGA pelo armador, agente desconsolidador ou terminal como meio coercitivo para cobrar sobre-estadia controvertida (demurrage), dívidas de embarques pretéritos ou taxas abusivas (Res. ANTAQ 62/2021; aplicação analógica da Súmula 323 do STF pelo STJ)",
+          "authority_ids": [
+            "res_antaq_62_2021",
+            "cc_art187",
+            "cf_art170"
+          ]
+        },
+        {
+          "id": "aduan_unlawful_cargo_bl_retention.c2",
+          "label": "Inadmissibilidade absoluta de apreensão ou retenção de mercadorias pela Fazenda Pública como meio coercitivo para pagamento de tributos ou multas não sujeitas a pena de perdimento (Súmula 323 do STF)",
+          "authority_ids": [
+            "cf_art150",
+            "cf_art5"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "aduan_unlawful_cargo_bl_retention.d1",
+          "label": "Exercício regular do direito legal de retenção/depósito judicial pelo transportador ou comissário estritamente quanto ao valor líquido e incontroverso do frete e despesas diretas daquele específico embarque ainda não quitados pelo consignatário (Código Comercial, art. 619; DL 116/1967, art. 7º; CC, art. 742)",
+          "authority_ids": [
+            "cc_art742",
+            "dl116_art7"
+          ]
+        },
+        {
+          "id": "aduan_unlawful_cargo_bl_retention.d2",
+          "label": "Necessidade de apresentação da via original endossada do Bill of Lading (título representativo da mercadoria) para liberação segura da carga, salvo emissão expressa de Sea Waybill/Telex Release ou prestação de carta de garantia idônea no extravio do original",
+          "authority_ids": [
+            "cc_art744",
+            "cc_art754"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Tutela de urgência ou mandado de segurança determinando a imediata liberação eletrônica no SISCARGA/Mercante e entrega física da carga e do BL sem exigência prévia de pagamento de demurrage controvertida ou tributo, sob multa diária",
+        "Consignação judicial em pagamento ou oferecimento de caução pelo valor controvertido do frete do embarque para liberação imediata da mercadoria",
+        "Indenização pelos custos adicionais de armazenagem portuária gerados exclusivamente pelo período de retenção ilícita do BL pelo armador/agente"
+      ],
+      "evidence": [
+        "Comprovante de pagamento integral do frete marítimo e capatazia do embarque específico",
+        "E-mails ou notificações do agente marítimo/armador condicionando o desbloqueio do CE-Mercante ou entrega do BL ao pagamento de faturas de demurrage/embarques antigos",
+        "Extrato de bloqueio no sistema Mercante/SISCOMEX Carga e planilhas diárias de armazenagem alfandegada em curso"
+      ],
+      "piece_ids": [
+        "tutela_urgencia_antecedente",
+        "inicial_procedimento_comum",
+        "mandado_seguranca",
+        "consignacao_pagamento",
+        "contestacao"
+      ],
+      "related_claims": [
+        "aduan_container_demurrage",
+        "aduan_customs_retention_parametrization",
+        "reg_ports_terminals_tariffs"
+      ],
+      "limitation": "Tutela de urgência requerível imediatamente enquanto perdurar a retenção; mandado de segurança contra autoridade aduaneira em 120 dias (Lei 12.016/2009, art. 23); prescrição trienal para ressarcimento dos prejuízos de armazenagem causados por retenção ilícita privada (CC, art. 206, § 3º, V)"
+    },
+    {
+      "id": "aduan_maritime_tribunal_accidents",
+      "label": "Acidentes e fatos da navegação perante o Tribunal Marítimo (Lei 2.180/1954)",
+      "requirements": [
+        "acidente_art_14_ou_fato_navegacao_art_15",
+        "inquerito_capitania_iafn_e_contraditorio_tm",
+        "presuncao_relativa_certeza_tecnica_acordao",
+        "inafastabilidade_controle_jurisdicional"
+      ],
+      "claimant_theses": [
+        {
+          "id": "aduan_maritime_tribunal_accidents.c1",
+          "label": "As decisões do Tribunal Marítimo quanto à matéria técnica referente aos acidentes e fatos da navegação (abalroação, naufrágio, encalhe, incêndio, avaria grossa, deficiência de equipagem) têm valor probatório e presumem-se certas, sendo suscetíveis de reexame pelo Poder Judiciário apenas diante de vício de legalidade ou prova técnica contrária robusta (Lei 2.180/1954, art. 18)",
+          "authority_ids": [
+            "l2180_art14",
+            "l2180_art15",
+            "l2180_art18"
+          ]
+        },
+        {
+          "id": "aduan_maritime_tribunal_accidents.c2",
+          "label": "Eficácia de título executivo judicial/extrajudicial das decisões definitivas do Tribunal Marítimo quanto às multas e custas processuais (CPC, arts. 515, X, e 784, XII — atento ao veto/alcance sobre acórdãos e revisão de constitucionalidade) e suspensão da ação cível indenizatória para aguardar o pronunciamento técnico especializado quando pertinente (CPC, art. 313, V, 'b')",
+          "authority_ids": [
+            "l2180_art121",
+            "cpc_art515",
+            "cpc_art313"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "aduan_maritime_tribunal_accidents.d1",
+          "label": "Natureza administrativa autônoma de órgão auxiliar do Poder Judiciário vinculado ao Comando da Marinha: os acórdãos do Tribunal Marítimo não formam coisa julgada material jurisdicional e não excluem o amplo acesso ao Poder Judiciário (CF, art. 5º, XXXV), tampouco sua pendência obsta o ajuizamento imediato da ação indenizatória (sob risco de prescrição cível/marítima!)",
+          "authority_ids": [
+            "cf_art5",
+            "l2180_art1",
+            "l2180_art18"
+          ]
+        },
+        {
+          "id": "aduan_maritime_tribunal_accidents.d2",
+          "label": "Exclusão de culpabilidade marítima do comandante ou prático quando o acidente decorrer exclusivamente de fortuna do mar imprevisível, falha mecânica oculta de estaleiro/classificadora ou alteração batimétrica súbita não sinalizada na carta náutica",
+          "authority_ids": [
+            "l2180_art14",
+            "l2180_art121"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Defesa administrativa e sustentação técnica perante o Tribunal Marítimo em representação da PEM (Procuradoria Especial da Marinha) ou de parte privada",
+        "Ação indenizatória ou regulatória de avaria grossa na Justiça Federal/Estadual instruída com o acórdão técnico do Tribunal Marítimo",
+        "Ação anulatória na Justiça Federal (CF, art. 109, I/IX) para desconstituir penalidade administrativa imposta pelo Tribunal Marítimo com cerceamento de defesa ou erro técnico demonstrado em perícia judicial naval"
+      ],
+      "evidence": [
+        "Autos completos do Inquérito Administrativo sobre Acidentes e Fatos da Navegação (IAFN) instaurado pela Capitania dos Portos",
+        "Diário de Navegação, Diário de Máquinas, registros do VDR (Voyage Data Recorder / caixa-preta do navio), cartas náuticas DHN e certificados da Sociedade Classificadora",
+        "Acórdão integral do Tribunal Marítimo e laudo de regulação de Avaria Grossa (Regras de York-Antuérpia; CPC, arts. 707–711)"
+      ],
+      "piece_ids": [
+        "defesa_tribunal_maritimo",
+        "inicial_procedimento_comum",
+        "contestacao",
+        "impugnacao_laudo",
+        "mandado_seguranca"
+      ],
+      "related_claims": [
+        "aduan_cargo_damage_bl_subrogation",
+        "aduan_charter_pilotage_maritime_mortgage"
+      ],
+      "limitation": "Defesa prévia no Tribunal Marítimo em 15 dias da citação (Lei 2.180/1954, art. 56) e embargos/agravo nos prazos regimentais; ATENÇÃO: a tramitação do IAFN ou processo no Tribunal Marítimo NÃO suspende nem interrompe automaticamente a prescrição ânua/trienal da ação cível de reparação de danos (DL 116/1967, art. 8º; CC, art. 206, § 3º, V) — ajuizar tempestivamente ou promover protesto interruptivo!"
+    },
+    {
+      "id": "aduan_charter_pilotage_maritime_mortgage",
+      "label": "Afretamento de embarcações, praticagem (Lei 14.813/2024) e hipoteca naval",
+      "requirements": [
+        "modalidade_afretamento_casco_nu_tempo_viagem",
+        "autorizacao_cabotagem_br_do_mar",
+        "preco_praticagem_livre_negociacao_lei_14813",
+        "registro_propriedade_e_hipoteca_maritima"
+      ],
+      "claimant_theses": [
+        {
+          "id": "aduan_charter_pilotage_maritime_mortgage.c1",
+          "label": "Distinção estrita de responsabilidades conforme a modalidade de afretamento (Lei 9.432/1997, art. 2º): transferência plena da posse, gestão náutica e comercial ao afretador no casco nu (bareboat charter) vs. conservação da gestão náutica pelo fretador e assunção da gestão comercial pelo afretador no afretamento por tempo (time charter) ou por viagem (voyage charter)",
+          "authority_ids": [
+            "l9432_art2",
+            "l9432_art9"
+          ]
+        },
+        {
+          "id": "aduan_charter_pilotage_maritime_mortgage.c2",
+          "label": "No serviço essencial de praticagem (LESTA — Lei 9.537/1997 com as alterações da Lei 14.813/2024), o preço é livremente negociado entre tomadores e prestadores, sendo vedada à Autoridade Marítima a fixação ordinária de tabela máxima permanente fora da hipótese excepcional e temporária de abuso comprovado de poder econômico ou defasagem que ameace a continuidade do serviço (art. 12, § 2º, e art. 13-A)",
+          "authority_ids": [
+            "l9537_art12",
+            "l9537_art13a",
+            "l14813_art1"
+          ]
+        },
+        {
+          "id": "aduan_charter_pilotage_maritime_mortgage.c3",
+          "label": "Validade e preferência real erga omnes da hipoteca naval registrada no Tribunal Marítimo (Lei 7.652/1988, arts. 12 e 13; CC, art. 1.473, VI), admitindo arresto cautelar da embarcação para garantia de crédito marítimo privilegiado",
+          "authority_ids": [
+            "l7652_art12",
+            "cc_art1473"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "aduan_charter_pilotage_maritime_mortgage.d1",
+          "label": "Observância dos requisitos regulatórios da ANTAQ para circularização/afretamento de embarcação estrangeira na navegação de cabotagem e apoio marítimo quando inexistente embarcação de bandeira brasileira disponível ou sob as hipóteses de flexibilização do Programa BR do Mar (Lei 9.432/1997, art. 9º; Lei 14.301/2022)",
+          "authority_ids": [
+            "l9432_art9",
+            "l14301_art4"
+          ]
+        },
+        {
+          "id": "aduan_charter_pilotage_maritime_mortgage.d2",
+          "label": "Obrigatoriedade ininterrupta da prestação do serviço de praticagem, vedada recusa de atendimento a navio sob alegação de litígio sobre preço (Lei 9.537/1997, art. 14, I), e observância da escala única de rodízio para evitar fadiga e preservar a segurança aquaviária",
+          "authority_ids": [
+            "l9537_art14",
+            "l9537_art13"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [
+        "lei_14813_praticagem"
+      ],
+      "typical_requests": [
+        "Cobrança de taxas de afretamento (hire/freight), off-hire ou remuneração de serviços de praticagem efetivamente prestados",
+        "Execução de hipoteca naval ou medida cautelar de arresto/embargo de saída de embarcação (embargo de passe) por crédito privilegiado",
+        "Impugnação judicial/administrativa a intervenção de preços de praticagem fora dos estritos limites da Lei 14.813/2024 ou a bloqueio de circularização na ANTAQ"
+      ],
+      "evidence": [
+        "Contrato de afretamento (Charter Party — BIMCO BARECON, NYPE ou GENCON) traduzido, Certificado de Autorização de Afretamento (CAA/SAMA-ANTAQ) e Registro Especial Brasileiro (REB)",
+        "Comprovantes de manobras de praticagem assinados pelos comandantes, contratos coletivos/individuais de praticagem e pareceres da Autoridade Marítima (DPC)",
+        "Certidão de registro de propriedade marítima e escritura pública de hipoteca naval inscrita no Tribunal Marítimo"
+      ],
+      "piece_ids": [
+        "inicial_procedimento_comum",
+        "execucao_titulo_extrajudicial",
+        "tutela_urgencia_antecedente",
+        "requerimento_instauracao_arbitragem",
+        "mandado_seguranca",
+        "contestacao"
+      ],
+      "related_claims": [
+        "reg_ports_terminals_tariffs",
+        "aduan_maritime_tribunal_accidents",
+        "arb_foreign_award_homologation_stj"
+      ],
+      "limitation": "Prescrição das ações derivadas de contratos de fretamento/afretamento em 1 ano contado do término da viagem na regra histórica comercial (Código Comercial, art. 449, III) ou 5 anos para dívida líquida constante de instrumento escrito segundo enquadramento civil contemporâneo — conferir cláusula de lei aplicável/arbitragem e entendimento do STJ; 5 anos contra atos da ANTAQ/União (Decreto 20.910/1932)"
+    },
+    {
+      "id": "aduan_siscomex_fee_afrmm",
+      "label": "Taxa de Utilização do SISCOMEX (Tema 1085 STF) e AFRMM (Lei 10.893/2004)",
+      "requirements": [
+        "legalidade_tributaria_reajuste_taxa_siscomex",
+        "limite_correcao_inflacionaria_oficial",
+        "fato_gerador_afrmm_descarregamento",
+        "isencoes_acordos_internacionais_drawback_cabotagem"
+      ],
+      "claimant_theses": [
+        {
+          "id": "aduan_siscomex_fee_afrmm.c1",
+          "label": "Inconstitucionalidade da majoração excessiva da Taxa de Utilização do SISCOMEX promovida por ato infralegal fazendário (Portaria MF 257/2011) naquilo que ultrapassou a recomposição da inflação oficial acumulada desde a instituição pela Lei 9.716/1998, assegurado o direito à repetição do excedente (Tema 1085 do STF)",
+          "authority_ids": [
+            "l9716_art3",
+            "tema_stf_1085",
+            "cf_art150"
+          ]
+        },
+        {
+          "id": "aduan_siscomex_fee_afrmm.c2",
+          "label": "Não incidência, suspensão ou isenção do Adicional ao Frete para a Renovação da Marinha Mercante (AFRMM — CIDE portuária da Lei 10.893/2004, com alíquotas reduzidas pela Lei 14.301/2022) nas mercadorias submetidas a regimes aduaneiros especiais que retornem ao exterior, acordos internacionais com cláusula expressa (ALADI/ACE) e operações incentivadas na Amazônia/Nordeste nos marcos legais",
+          "authority_ids": [
+            "l10893_art4",
+            "l10893_art14",
+            "l10893_art17"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "aduan_siscomex_fee_afrmm.d1",
+          "label": "Constitucionalidade da delegação legal ao Poder Executivo para atualizar monetariamente a Taxa SISCOMEX até o teto dos índices oficiais de inflação do período (INPC/IPCA — Tema 1085 do STF), mantendo-se devida a parcela original corrigida",
+          "authority_ids": [
+            "l9716_art3",
+            "tema_stf_1085"
+          ]
+        },
+        {
+          "id": "aduan_siscomex_fee_afrmm.d2",
+          "label": "Interpretação estrita das hipóteses de isenção do AFRMM (CTN, art. 111) e exigência de requerimento tempestivo no sistema Mercante antes do registro/pagamento nos casos exigidos pelo art. 14 da Lei 10.893/2004",
+          "authority_ids": [
+            "l10893_art14",
+            "ctn_art111"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Mandado de segurança ou ação de repetição/compensação tributária dos valores recolhidos a maior na Taxa SISCOMEX no quinquênio anterior ao ajuizamento além do índice inflacionário admitido no Tema 1085 do STF, corrigidos pela SELIC",
+        "Reconhecimento de isenção, suspensão ou alíquota reduzida de 8% de AFRMM e liberação do CE-Mercante sem cobrança indevida"
+      ],
+      "evidence": [
+        "Extratos completos das Declarações de Importação (DIs) e adições registradas nos últimos 5 anos com comprovantes de débito automático da Taxa SISCOMEX no DARF",
+        "Planilha aritmética demonstrando o valor original da Lei 9.716/1998 corrigido pelo índice oficial vs. o valor efetivamente debitado por adição",
+        "Conhecimento de Embarque (BL), CE-Mercante, Certificado de Origem (ALADI/Mercosul) ou Ato Concessório de regime especial para o AFRMM"
+      ],
+      "piece_ids": [
+        "mandado_seguranca",
+        "repeticao_indebito_tributario",
+        "acao_anulatoria_debito_fiscal",
+        "contestacao"
+      ],
+      "related_claims": [
+        "trib_refund",
+        "trib_limits_power",
+        "aduan_special_customs_regimes"
+      ],
+      "limitation": "Prescrição quinquenal para repetição de indébito ou compensação da Taxa SISCOMEX e do AFRMM recolhidos indevidamente, contada de cada pagamento antecipado/débito automático no registro da DI ou Mercante (CTN, art. 168, I); 120 dias do ato concreto para mandado de segurança repressivo individual (Lei 12.016/2009, art. 23)"
+    },
+    {
+      "id": "aduan_radar_siscomex_habilitation",
+      "label": "Habilitação no RADAR/SISCOMEX, revisão de capacidade financeira e desbloqueio",
+      "requirements": [
+        "modalidade_limitada_ou_ilimitada",
+        "comprovacao_origem_licita_recursos_disponibilidade",
+        "insuficiencia_formula_automatica_tributos",
+        "devido_processo_suspensao_desabilitacao"
+      ],
+      "claimant_theses": [
+        {
+          "id": "aduan_radar_siscomex_habilitation.c1",
+          "label": "Direito líquido e certo à revisão de estimativa da capacidade financeira (elevação para submodalidade até US$ 150 mil ou ilimitada) quando a empresa comprova disponibilidade financeira imediata de origem lícita — integralização efetiva de capital social, caixa/aplicações livres, contratos de mútuo idôneos ou receitas desoneradas de exportação — ainda que não refletida na fórmula automática de tributos/FGTS recolhidos nos últimos 5 anos",
+          "authority_ids": [
+            "l9430_art64",
+            "cf_art170",
+            "l9784_art2"
+          ]
+        },
+        {
+          "id": "aduan_radar_siscomex_habilitation.c2",
+          "label": "Ilegalidade de bloqueio cautelar sumário ou desabilitação automática no RADAR/SISCOMEX sem prévia intimação para esclarecimentos, decisão motivada ou por mera pendência fiscal sem indícios de fraude/inexistência de fato da empresa",
+          "authority_ids": [
+            "l9784_art50",
+            "cf_art5"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "aduan_radar_siscomex_habilitation.d1",
+          "label": "Legitimidade do controle aduaneiro preventivo da capacidade operacional e financeira dos intervenientes no comércio exterior para coibir empresas de fachada ('laranjas') e interposição fraudulenta (Lei 9.430/1996, art. 64; MP 2.158-35/2001; IN RFB 1.984/2020 e Portaria RFB 143/2022)",
+          "authority_ids": [
+            "l9430_art64",
+            "l10637_art59"
+          ]
+        },
+        {
+          "id": "aduan_radar_siscomex_habilitation.d2",
+          "label": "Indeferimento da revisão de estimativa quando o requerente apresenta apenas aumento nominal de capital social sem comprovação bancária do efetivo trânsito e origem lícita dos recursos dos sócios ou mútuos simulados sem lastro",
+          "authority_ids": [
+            "l9430_art64",
+            "l10637_art59"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Mandado de segurança com pedido liminar para análise conclusiva de requerimento de revisão de estimativa no Portal Habilita/e-CAC ou concessão imediata da modalidade ilimitada/150 mil diante da prova pré-constituída de liquidez lícita",
+        "Restabelecimento imediato da habilitação no SISCOMEX suspensa sem contraditório ou por erro cadastral"
+      ],
+      "evidence": [
+        "Requerimento eletrônico protocolado no sistema Habilita/e-CAC e despacho decisório de indeferimento ou comprovação de omissão acima do prazo regulamentar (10 dias)",
+        "Alteração contratual registrada na Junta Comercial, comprovantes bancários de TED/PIX de integralização, DIRPF dos sócios comprovando lastro patrimonial, extratos de liquidez livre e balancetes assinados",
+        "Comprovante de sede física operacional (contrato de locação, contas de energia, fotos e folha de empregados/eSocial)"
+      ],
+      "piece_ids": [
+        "mandado_seguranca",
+        "requerimento_administrativo",
+        "recurso_administrativo",
+        "inicial_procedimento_comum"
+      ],
+      "related_claims": [
+        "aduan_forfeiture_fraudulent_interposition",
+        "adm_silence_delay"
+      ],
+      "limitation": "Prazo regulamentar de 10 dias para apreciação do pedido de revisão de estimativa ou recurso pela RFB (IN RFB 1.984/2020); 120 dias da ciência do indeferimento ou suspensão para impetração de mandado de segurança (Lei 12.016/2009, art. 23)"
+    },
+    {
+      "id": "aduan_antidumping_trade_remedies",
+      "label": "Defesa comercial: direitos antidumping, medidas compensatórias, salvaguardas e anticircunvenção",
+      "requirements": [
+        "pratica_dumping_dano_industria_domestica_nexo",
+        "devido_processo_investigacao_decom_secex",
+        "escopo_estrito_produto_objeto",
+        "clausula_interesse_publico_suspensao"
+      ],
+      "claimant_theses": [
+        {
+          "id": "aduan_antidumping_trade_remedies.c1",
+          "label": "Não incidência de direito antidumping sobre mercadoria cujas características técnicas, físico-químicas ou destinação não se amoldem estritamente à definição do produto objeto fixada na resolução CAMEX/GECEX, prevalecendo a descrição específica da resolução sobre a simples coincidência do código NCM residual",
+          "authority_ids": [
+            "l9019_art1",
+            "d8058_art1",
+            "ctn_art97"
+          ]
+        },
+        {
+          "id": "aduan_antidumping_trade_remedies.c2",
+          "label": "Suspensão ou alteração de direito antidumping definitivo por razões de interesse público nacional (desabastecimento interno, impacto inflacionário difuso a jusante ou concentração monopolística) apuradas em avaliação técnica de interesse público (Decreto 8.058/2013, art. 3º)",
+          "authority_ids": [
+            "d8058_art3",
+            "l9019_art3"
+          ]
+        }
+      ],
+      "defense_theses": [
+        {
+          "id": "aduan_antidumping_trade_remedies.d1",
+          "label": "Higidez e natureza jurídica não tributária/regulatória (ou extrafiscal de defesa comercial) dos direitos antidumping provisórios e definitivos fixados pela CAMEX após regular investigação administrativa do DECOM/SECEX comprovando margem de dumping, dano material à indústria doméstica e nexo causal, nos termos do Acordo Antidumping da OMC e do Decreto 8.058/2013",
+          "authority_ids": [
+            "l9019_art1",
+            "l9019_art7",
+            "d8058_art1"
+          ]
+        },
+        {
+          "id": "aduan_antidumping_trade_remedies.d2",
+          "label": "Extensão legítima do direito antidumping a partes, peças ou terceiros países exportadores quando comprovada prática elisiva de circunvenção (modificação marginal ou montagem sem agregação substancial de valor para frustrar a medida — Decreto 8.058/2013, arts. 120–123)",
+          "authority_ids": [
+            "d8058_art120"
+          ]
+        }
+      ],
+      "temporal_marker_ids": [],
+      "typical_requests": [
+        "Ação declaratória/anulatória ou mandado de segurança para afastar cobrança de direito antidumping sobre produto tecnicamente excluído do escopo da resolução CAMEX, com liberação da DI e restituição de valores recolhidos",
+        "Petição administrativa de Avaliação de Interesse Público, Revisão de Escopo ou Revisão de Final de Período (sunset review) perante a SECEX/CAMEX"
+      ],
+      "evidence": [
+        "Resolução GECEX/CAMEX instituidora da medida antidumping e Parecer Público do DECOM delimitando detalhadamente o produto objeto e as exclusões de escopo",
+        "Laudo técnico laboratorial/engenharia comparando as especificações do bem importado com os parâmetros da investigação comercial",
+        "Certificado de Origem Não Preferencial autêntico comprovando fabricação efetiva em país não gravado pela medida"
+      ],
+      "piece_ids": [
+        "acao_anulatoria_debito_fiscal",
+        "mandado_seguranca",
+        "requerimento_administrativo",
+        "impugnacao_lancamento_administrativa",
+        "inicial_procedimento_comum"
+      ],
+      "related_claims": [
+        "aduan_tariff_classification_ncm",
+        "reg_agency_sanction_air"
+      ],
+      "limitation": "Direitos antidumping definitivos extinguem-se em 5 anos de sua aplicação ou última revisão, salvo revisão de final de período iniciada antes do termo final (Lei 9.019/1995, art. 10; Decreto 8.058/2013, art. 92); 5 anos para anulação de cobrança ou repetição de recolhimento indevido (Lei 9.019/1995, art. 7º; CTN, art. 168 / Decreto 20.910/1932)"
+    }
+  ]
+}

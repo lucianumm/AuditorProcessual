@@ -20,3 +20,7 @@ Guia: `domain_guides/protecao_dados.md` · catálogo: `domain_catalogs/protecao_
 | `dp_records_identification` | Identificação de usuário e guarda de registros | 2/2 |
 | `dp_platform_liability` | Responsabilidade de plataformas por conteúdo de terceiros | 2/2 |
 | `dp_public_sector` | Tratamento de dados pelo poder público e transferência internacional | 2/1 |
+| `dp_biometrics_facial_recognition` | Dados biométricos, reconhecimento facial e prevenção à fraude (LGPD, arts. 5º, II, e 11, II, 'g') | 2/2 |
+| `dp_ai_training_copyright_scraping` | Raspagem de dados (web scraping) e treinamento de modelos de inteligência artificial com dados pessoais | 2/2 |
+| `dp_dpo_governance_ripd` | Governança em privacidade, atuação do Encarregado (DPO) e Relatório de Impacto (RIPD — Res. ANPD 18/2024) | 2/2 |
+| `dp_international_transfer_clauses` | Transferência internacional de dados pessoais, cláusulas-padrão contratuais e adequação (LGPD, arts. 33–36, e Res. ANPD 19/2024) | 2/2 |

@@ -1,39 +1,21 @@
-# Direito Previdenciário (RGPS e assistência social)
+# Direito Previdenciário (RGPS, RPPS e Assistência Social — BPC)
 
-Catálogo: `domain_catalogs/previdenciario.json` (`domain_catalog.py --domain previdenciario`).
+Catálogo: `domain_catalogs/previdenciario.json`.
 
-## Regime e enquadramento
-- Separar RGPS (Lei 8.213/1991), assistência social (BPC/LOAS, Lei 8.742/1993, CF art. 203) e regime próprio do servidor (RPPS, lei do ente). Não aplicar a regra de um regime ao outro.
-- Benefício por benefício: fato gerador, qualidade de segurado (art. 15), carência (arts. 25 e 26), DER, DIB, DCB e data de início da incapacidade.
-- Prova médica e técnica: perícia, prontuários, PPP e LTCAT (arts. 57 e 58).
+## 1. Regime e competência
+- **Justiça Federal (CF, art. 109, I e § 3º):** julga benefícios comuns do RGPS e BPC/LOAS contra o INSS (JEF até o teto absoluto de 60 SM — Lei 10.259/2001, art. 3º; delegada estadual apenas se a comarca distar mais de 70 km de Vara Federal — EC 103/2019). **Justiça Estadual:** competência exclusiva para benefícios **acidentários** contra o INSS (CF, art. 109, I; Súmula 501 STF e Súmula 15 STJ). Exige-se prévio requerimento administrativo negado ou excedido o prazo de 45 dias (**Tema 350 STF**) e petição inicial específica nas ações por incapacidade (Lei 8.213/1991, art. 129-A).
 
-## Marcos temporais conferidos
-- EC 103/2019 (DOU 13/11/2019): vigência na publicação, salvo arts. 11, 28 e 32 e regras que dependem de lei local nos RPPS (art. 36). Direito adquirido (art. 3º) e transições (arts. 15 a 17 e 20); cálculo provisório (art. 26).
-- Lei 9.876/1999, art. 3º: regra de transição do cálculo; situação a conferir nas ADIs 2110 e 2111.
-- Lei 14.176/2021 (DOU 23/06/2021): alterações no BPC.
-- Súmula 111 do STJ (redação de 2006): honorários não incidem sobre prestações vencidas após a sentença.
+## 2. Teses do segurado, dependente ou requerente do BPC
+- **Aposentadorias, regras de transição e reafirmação da DER:** confronte o CNIS com CTPS (presunção relativa — Súmula 75 TNU), fichas financeiras e recolhimentos sob responsabilidade do tomador PJ desde 04/2003 (Lei 10.666/2003), simule direito adquirido até 13/11/2019 e todas as transições da EC 103/2019 (arts. 15–20 e 26) e requeira subsidiariamente a **reafirmação da DER** para computar tempo até a segunda instância (**Tema 995 STJ**).
+- **Tempo especial, rural/híbrida, incapacidade, pensão e BPC:** no tempo especial, aplique o enquadramento profissional até 28/04/1995, limites históricos de ruído (80 dB até 05/03/1997; 90 dB até 18/11/2003; 85 dB a partir de 19/11/2003 — Tema 694 STJ), ineficácia absoluta do EPI para ruído (**Tema 555 STF**), vedação de média aritmética simples no ruído variável (**Tema 1083 STJ**), impugnação motivada do EPI (**Tema 1090 STJ**) e vigilante armado/desarmado (**Tema 1031 STJ**), convertendo em comum até 13/11/2019. Some tempo rural remoto ao urbano na **aposentadoria híbrida** (**Tema 1007 STJ**), prorrogue o período de graça por prova ampla do desemprego involuntário (art. 15; Súmula 27 TNU) e, no BPC, exclua benefícios de até 1 SM de outro idoso/PCD e gastos extraordinários de saúde (Lei 8.742/1993, art. 20, §§ 11-A e 14).
 
-## Procedimento
-- Requerimento administrativo e recurso ao CRPS (Decreto 3.048/1999, art. 305) antes ou ao lado da via judicial; conferir o Tema 350 do STF (pendente no catálogo) sobre o interesse de agir.
-- Juizado Especial Federal até 60 salários mínimos (Lei 10.259/2001, art. 3º); acima disso, procedimento comum.
-- Decadência decenal da revisão (art. 103) e prescrição quinquenal das parcelas.
+## 3. Teses do INSS ou ente gestor de RPPS
+- **Preliminares, decadência e carência:** oponha falta de interesse de agir (Tema 350 STF), perda da qualidade de segurado, vedação de cômputo para carência de recolhimento em atraso anterior à primeira contribuição em dia do contribuinte individual (Lei 8.213/1991, art. 27, II), **decadência decenal** para revisão do ato concessório (art. 103, *caput*) e prescrição quinquenal das parcelas (Súmula 85 STJ).
+- **Teses vinculantes restritivas:** invoque a cogência da regra de transição do art. 3º da Lei 9.876/1999 que afastou a **Revisão da Vida Toda** (**ADIs 2110 e 2111 STF**), a proibição de conversão de tempo especial pós-13/11/2019 (EC 103/2019, art. 25, § 2º), a restrição do adicional de 25% à incapacidade permanente (**Tema 1095 STF**), a exigência de 2 documentos recentes (24 meses) para união estável pós-Lei 13.846/2019 (art. 16, § 5º) e irrepetibilidade restrita à boa-fé em erro interpretativo (Temas 692 e 979 STJ).
 
-## Prova típica
-CNIS, CTPS, carnês, requerimento e decisão do INSS, laudos e exames, PPP/LTCAT, CadÚnico e composição familiar, certidões de óbito, nascimento e união.
+## 4. Magistratura e gabinete (CPC, art. 489, § 1º)
+- Não aplicar decadência sobre indeferimento ou cessação (**ADI 6096 STF**; Súmula 81 TNU) nem sobre matéria não apreciada na concessão (**Tema 975 STJ**). Fixar expressamente DII, DID, DER, DIB e DCB, avaliando condições pessoais e sociais na incapacidade (Súmula 47 TNU) e observando a Súmula 111/Tema 1105 STJ nos honorários.
 
-## Armadilhas
-- Data da incapacidade anterior à filiação; perda da qualidade de segurado.
-- BPC tratado como benefício contributivo; renda per capita sem considerar exclusões legais.
-- Reafirmação da DER e escolha da regra de transição mais vantajosa exigem cálculo demonstrado.
-
-## Roteiro das pretensões acrescentadas
-
-Dispositivos localizados no texto oficial em 10/11/2026; súmulas e temas com situação lida no portal do tribunal. A página de tema do STF não traz a tese: ler a tese antes de citar.
-
-- Rural e híbrida (`prev_rural`): início de prova material mais testemunhas (Lei 8.213/1991, arts. 55 e 106; Súmulas 149 e 577 do STJ). Prova só testemunhal não basta.
-- Pensão e união estável (`prev_dependents_union`): lei da data do óbito (Súmula 340 do STJ); termo inicial pelo prazo do requerimento (art. 74: 180 dias para filhos menores de 16 anos e 90 dias para os demais); duração da cota no art. 77; cotas e acumulação nos arts. 23 e 24 da EC 103/2019.
-- Pessoa com deficiência (`prev_disability_retirement`): grau e data de início definidos em avaliação médica e funcional (LC 142/2013, art. 3º).
-- Acréscimo de 25% (`prev_caregiver_addition`): restrito à aposentadoria por incapacidade permanente (art. 45); o Tema 1095 do STF tratou da extensão às demais.
-- Devolução e descontos (`prev_overpayment`): separar erro administrativo com boa-fé de tutela revogada (art. 115) e conferir os repetitivos do STJ sobre cada hipótese.
-- Ação de incapacidade (`prev_judicial_incapacity_procedure`): a inicial segue o art. 129-A (descrição da doença, atividade e inconsistências da perícia).
-- Outros temas com situação lida no portal: 503 (desaposentação), 709 (aposentadoria especial e permanência na atividade) e 1102 (regra definitiva do art. 29) — ler as teses.
+## 5. Marcos intertemporais e motores
+- **29/11/1999 (Lei 9.876/1999 e ADIs 2110/2111 STF)** · **18/06/2019 (Lei 13.846/2019)** · **13/11/2019 (EC 103/2019 — Reforma da Previdência)** · **09/12/2021 (EC 113/2021 — SELIC única nos atrasados)**.
+- Motores: `social_security_calc.py` (vínculos concomitantes, conversão até 13/11/2019, transições e decadência), `civil_monetary_engine.py` (`fazenda_ec113`), `deadline_calculator.py` e `domain_catalog.py`.
