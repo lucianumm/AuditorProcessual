@@ -1,13 +1,60 @@
 """Check skill metadata, routing and JSON schemas on Windows and Linux."""
 from __future__ import annotations
 
+import ast
+import io
 import json
 import re
-import ast
+import tokenize
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+PY311_ONLY_ATTRS = frozenset({
+    "UTC", "file_digest", "TaskGroup", "chdir", "StrEnum",
+    "batched", "is_junction", "full_match", "add_note",
+    "Self", "Never", "LiteralString", "ExceptionGroup", "BaseExceptionGroup",
+})
+
+
+def _check_py310_compatibility(path: Path, source: str, tree: ast.AST) -> None:
+    """Reject Python 3.11+/PEP 701 constructs so Python 3.10 remains supported."""
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Attribute) and node.attr in PY311_ONLY_ATTRS:
+            raise AssertionError(f"Python 3.11+ attribute .{node.attr} at {path}:{node.lineno}")
+        if isinstance(node, ast.Import):
+            for alias in node.names:
+                assert alias.name != "tomllib", f"Python 3.11+ import tomllib at {path}:{node.lineno}"
+        if isinstance(node, ast.ImportFrom) and node.module == "tomllib":
+            raise AssertionError(f"Python 3.11+ import tomllib at {path}:{node.lineno}")
+    fstart = getattr(tokenize, "FSTRING_START", None)
+    fend = getattr(tokenize, "FSTRING_END", None)
+    fmid = getattr(tokenize, "FSTRING_MIDDLE", None)
+    if fstart is not None and fend is not None:
+        fstack: list[list] = []
+        for tok in tokenize.generate_tokens(io.StringIO(source).readline):
+            if tok.type == fstart:
+                fstack.append([tok.string.lstrip("fFrRuU"), 0])
+            elif tok.type == fend:
+                fstack.pop()
+            elif tok.type == fmid:
+                continue
+            elif fstack:
+                if tok.type == tokenize.OP and tok.string == "{":
+                    fstack[-1][1] += 1
+                elif tok.type == tokenize.OP and tok.string == "}":
+                    fstack[-1][1] -= 1
+                elif fstack[-1][1] > 0:
+                    assert "\\" not in tok.string, (
+                        f"PEP 701 backslash inside f-string expression at {path}:{tok.start[0]}"
+                    )
+                    if tok.type == tokenize.STRING:
+                        outer_q = fstack[-1][0]
+                        inner_q = tok.string.lstrip("bBrRuU")[0]
+                        if len(outer_q) == 1:
+                            assert inner_q != outer_q, (
+                                f"PEP 701 matching quote inside f-string expression at {path}:{tok.start[0]}"
+                            )
 
 
 def verify() -> None:
@@ -118,9 +165,11 @@ def verify() -> None:
     for path in schema_dir.glob("*.json"):
         from jsonschema import Draft202012Validator
         Draft202012Validator.check_schema(json.loads(path.read_text(encoding="utf-8")))
-    for directory in (ROOT / "scripts", skill_path.parent / "scripts"):
+    for directory in (ROOT / "scripts", skill_path.parent / "scripts", skill_path.parent / "tests"):
         for path in directory.glob("*.py"):
-            ast.parse(path.read_text(encoding="utf-8-sig"),filename=str(path))
+            source = path.read_text(encoding="utf-8-sig")
+            tree = ast.parse(source, filename=str(path))
+            _check_py310_compatibility(path, source, tree)
     version = re.search(r'^version = "([^"]+)"', (ROOT / "pyproject.toml").read_text(encoding="utf-8"), re.M).group(1)
     extension_path = ROOT / "gemini-extension.json"
     assert json.loads(extension_path.read_text(encoding="utf-8"))["version"] == version, f"version mismatch: {extension_path.name}"

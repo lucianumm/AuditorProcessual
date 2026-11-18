@@ -268,8 +268,9 @@ def extract_court_stamp(text: str) -> dict[str, Any]:
         proc = EPROC_PROCESS_RE.search(text)
         sig = EPROC_SIGNER_RE.search(text)
         crc = VERIFIER_CRC_RE.search(text)
+        ev_doc = re.sub(r"\s+", "", ev.group(2)).upper() if ev else ""
         doc_id = (
-            f"E{ev.group(1)}-{re.sub(r'\s+', '', ev.group(2)).upper()}"
+            f"E{ev.group(1)}-{ev_doc}"
             if ev
             else (crc.group(1) if crc else None)
         )
