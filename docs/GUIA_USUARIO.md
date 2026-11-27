@@ -91,8 +91,8 @@ inexistentes geram alerta, não bloqueio.
   e o bloco diz isso.
 - **Usa outra IA?** Só com sua autorização expressa, caso a caso, para o passe
   adversarial.
-- **Posso usar no escritório?** O uso em atividade profissional remunerada é
-  comercial e exige licença comercial do titular
-  ([COMMERCIAL_LICENSE.md](../COMMERCIAL_LICENSE.md)). Estudo, pesquisa e uso
-  pessoal sem fim comercial são livres pela PolyForm Noncommercial 1.0.0.
+- **Posso usar no escritório?** Sim: a permissão adicional do titular libera o
+  uso interno na sua própria atividade profissional, inclusive nos casos de
+  clientes. Vender, oferecer como serviço a terceiros ou incluir em produtos e
+  sistemas exige licença comercial ([COMMERCIAL_LICENSE.md](../COMMERCIAL_LICENSE.md)).
 

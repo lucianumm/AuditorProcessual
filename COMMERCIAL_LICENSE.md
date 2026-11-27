@@ -7,7 +7,7 @@ A partir da versão **1.1.0**, o AuditorProcessual é distribuído sob a
 
 ## Uso livre (sem custo)
 
-A licença permite usar, estudar, modificar e redistribuir o projeto para
+A licença pública permite usar, estudar, modificar e redistribuir o projeto para
 **finalidade não comercial**, por exemplo:
 
 - estudo pessoal, pesquisa, testes e experimentação em benefício do conhecimento público;
@@ -18,17 +18,31 @@ A licença permite usar, estudar, modificar e redistribuir o projeto para
 Quem redistribuir precisa entregar junto o texto da licença (ou a URL) e as
 linhas `Required Notice:` do arquivo `LICENSE`.
 
+## Permissão adicional do titular (uso profissional próprio)
+
+Além da licença pública, o titular concede a qualquer pessoa física ou jurídica,
+sem custo, licença para **usar e modificar o software internamente na sua
+própria atividade profissional, inclusive remunerada** — por exemplo, a
+advogada ou o escritório que o usa para analisar autos e preparar peças dos
+seus clientes, ou o departamento jurídico que o usa nos casos da própria
+empresa. O resultado desse uso (análises, minutas, peças) pertence a quem o
+produziu.
+
+Essa permissão vale nas mesmas condições da licença pública e **não inclui**:
+
+- vender, revender, alugar, sublicenciar ou cobrar pelo software, por pacotes
+  dele ou por obras derivadas;
+- oferecê-lo, ou uma obra derivada, como serviço a terceiros (SaaS, API,
+  assistente, plataforma ou serviço de processamento para clientes de outros);
+- incluí-lo, no todo ou em parte, em produtos, sistemas ou plataformas
+  distribuídos ou disponibilizados a terceiros, ou integrá-lo a sistemas de
+  *legal techs*, integradores ou fornecedores de software.
+
 ## Uso que exige licença comercial
 
-Qualquer finalidade comercial fica fora da licença pública e depende de
-**licença comercial por escrito** do titular, por exemplo:
-
-- vender, revender ou cobrar pelo software, por pacotes dele ou por obras derivadas;
-- oferecê-lo como serviço (SaaS, API, assistente ou plataforma) a terceiros;
-- incluí-lo, no todo ou em parte, em produtos, sistemas ou plataformas de
-  empresas, escritórios, *legal techs* ou integradores;
-- usá-lo em atividade profissional remunerada, como o atendimento de clientes
-  por escritório de advocacia ou departamento jurídico de empresa.
+Tudo o que a permissão adicional exclui depende de **licença comercial por
+escrito** do titular: venda e revenda, oferta como serviço e inclusão ou
+integração em produtos, sistemas e plataformas.
 
 **Contato para licença comercial:**
 [contato@lumenaxis.dev.br](mailto:contato@lumenaxis.dev.br) — titular: Lucianum
