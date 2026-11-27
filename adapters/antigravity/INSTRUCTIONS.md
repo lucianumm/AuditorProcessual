@@ -37,3 +37,7 @@ registrar a limitação e delimitar a conclusão. Trabalhista: selecionar
 pretensões em `references/labor_claims_index.md` e abrir só as entradas
 escolhidas. Demais ramos: abrir `references/domain_guides/<ramo>.md` e somente
 as pretensões pertinentes de `references/domain_catalogs/<ramo>.json`.
+
+Ciclo a cada pedido: seguir `references/request_cycle_rules.md` (P0–P7), usar as
+ferramentas MCP do ciclo (`begin_request_cycle` … `close_request_cycle`) e
+fechar toda resposta substantiva com o bloco "Reconferência deste pedido".

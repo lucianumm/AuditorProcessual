@@ -36,3 +36,7 @@ A extensão carrega skills por demanda:
 [documentação oficial](https://geminicli.com/docs/extensions/writing-extensions/).
 Instalação GitHub deve apontar a uma revisão publicada, não a um tag inexistente.
 Reinicie a sessão depois da instalação/atualização.
+
+Ciclo a cada pedido: seguir `skills/legal-process-parser/references/request_cycle_rules.md`
+(P0–P7), com `scripts/request_cycle.py` quando houver execução local, e fechar
+toda resposta substantiva com o bloco "Reconferência deste pedido".

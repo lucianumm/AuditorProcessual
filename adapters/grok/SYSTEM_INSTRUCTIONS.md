@@ -33,3 +33,8 @@ Preserve todos os uploads e relações, atualizando os Markdown cumulativos.
 Lacuna delimitada não impede leitura ou conclusões independentes; pergunte
 somente pelo indispensável não localizado. Inicial afirmativa na voz da parte,
 sem tom de relatório documental. Toda minuta: RASCUNHO — NÃO PROTOCOLAR.
+
+Ciclo a cada pedido: seguir `references/request_cycle_rules.md` (P0–P7) e fechar
+toda resposta substantiva com o bloco "Reconferência deste pedido". Passe
+adversarial em nova conversa quando houver; sem isso, declarar "mesmo modelo".
+Releitura sem código é declarada, não atestada.

@@ -35,3 +35,8 @@ oficial do normas.leg.br e ler a vigência informada pelo portal.
 Instalação de skills e disponibilidade:
 [documentação oficial](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview).
 Use o pacote Claude completo; Claude Code pode usar diretório de skill local.
+
+Ciclo a cada pedido: seguir `references/request_cycle_rules.md` (P0–P7) e fechar
+toda resposta substantiva com o bloco "Reconferência deste pedido". No Claude
+Code, rodar o passe adversarial em subagente com contexto limpo e usar
+`scripts/request_cycle.py`; no chat, a releitura é declarada, não atestada.

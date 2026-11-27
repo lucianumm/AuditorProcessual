@@ -153,6 +153,10 @@ def verify() -> None:
     assert (labor_path.parent / "local_response_workflow.md").is_file()
     for task in ("analyze", "petition", "audit", "evidence", "deadlines"):
         assert "response_research" in router["tasks"][task]["automatic_triggers"]
+    assert (labor_path.parent / "request_cycle_rules.md").is_file() and (labor_path.parent / "request_cycle_details.md").is_file()
+    assert "request_cycle_details" in router["tasks"]["petition"]["automatic_triggers"]
+    for task in ("analyze", "petition", "evidence", "audit"):
+        assert "request_cycle" in router["tasks"][task]["automatic_triggers"], f"{task}: ciclo de reanálise ausente"
     for sector in sectors:
         assert (labor_path.parent / sector["reference"]).is_file(), sector["reference"]
         assert set(sector["claim_ids"]) <= {c["id"] for c in claims}
