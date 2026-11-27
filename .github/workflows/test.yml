@@ -56,7 +56,7 @@ jobs:
           python -m pip wheel . --no-deps --wheel-dir .ci-artifacts
           python scripts/verify_wheel.py .ci-artifacts
       - name: Upload local validation evidence
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: validation-${{ matrix.os }}-${{ matrix.python }}
           path: .ci-artifacts/platform_validation.json
