@@ -195,6 +195,14 @@ def global_check(output: Path, chapters: list[dict], review: dict, sections: set
     return check_consistency(chapters, review, extra_texts=memory_texts(output), sections=sections)
 
 
+def cycle_check(output: Path, reference, content: dict, kind: str) -> list[str]:
+    try:
+        from .request_cycle import validate_cycle
+    except ImportError:
+        from request_cycle import validate_cycle
+    return validate_cycle(output, reference, content, kind=kind)
+
+
 def consistency_summary(report: dict) -> str:
     try:
         from .global_consistency import summary
@@ -429,6 +437,8 @@ def save_chapter(output: Path, record: dict, *, require_response: bool = True) -
         errors.extend(research["errors"])
         if research["status"] == "partial":
             errors.append("Fundamento atual pendente: delimitar o capítulo e prosseguir nas teses independentes")
+    cycle_errors = cycle_check(output, record.get("request_cycle"), record, "chapter") if record.get("request_cycle") else []
+    errors.extend(cycle_errors)
     if errors:
         raise ValueError("; ".join(errors))
     cid = safe_id(record["id"])
@@ -445,6 +455,8 @@ def save_chapter(output: Path, record: dict, *, require_response: bool = True) -
                "approvals": (prior or {}).get("approvals", []),
                "version_bases": dict((prior or {}).get("version_bases", {}))}
     chapter["response_policy"] = "per_response" if require_response else "legacy_not_per_response"
+    chapter["cycle_policy"] = "cycle_closed" if record.get("request_cycle") else "no_cycle"
+    chapter["cycle_id"] = (record.get("request_cycle") or {}).get("cycle_id")
     try:
         from .prose_review import prose_warnings
     except ImportError:
@@ -473,15 +485,22 @@ def set_status(output: Path, cid: str, status: str, reference: str) -> dict:
 
 
 def assemble(output: Path, order: list[str], *, allow_drafts: bool = False,
-             response: dict | None = None, require_response: bool = True, preview: bool = False) -> dict:
+             response: dict | None = None, require_response: bool = True, preview: bool = False,
+             cycle: str | None = None, require_cycle: bool | None = None) -> dict:
     state, review = load_workspace(output)
+    require_cycle = require_response if require_cycle is None else require_cycle
     if not order or len(order) != len(set(order)):
         raise ValueError("Indicar os capítulos na ordem desejada, sem duplicação")
     if base_pending(output, state):
         raise ValueError("Conferir a análise-base atualizada antes de consolidar")
-    selected, request_owners = [], {}
+    selected, request_owners, legacy = [], {}, []
     for cid in order:
         chapter = state["chapters"][safe_id(cid)]
+        policy = chapter.get("cycle_policy")
+        if policy is None:
+            legacy.append(cid)
+        elif require_cycle and policy == "no_cycle" and not preview:
+            raise ValueError("Capítulo salvo sem ciclo de reanálise encerrado: " + cid + "; executar request_cycle.py e salvar de novo")
         record = chapter_record(output, chapter)
         if chapter["status"] == "needs_review" or chapter["dependency_hash"] != identity(dependencies(review, record["issue_ids"])):
             raise ValueError("Capítulo desatualizado: " + cid)
@@ -510,6 +529,10 @@ def assemble(output: Path, order: list[str], *, allow_drafts: bool = False,
                 "consistency": consistency}
     if preview:
         return artifact
+    if require_cycle:
+        cycle_errors = cycle_check(output, cycle, artifact, "assembly")
+        if cycle_errors:
+            raise ValueError("; ".join(cycle_errors))
     if require_response:
         try:
             from .response_research import validate_response
@@ -528,6 +551,9 @@ def assemble(output: Path, order: list[str], *, allow_drafts: bool = False,
               "consistency": {"status": consistency["status"],
                               "warnings": [f["detail"] for f in consistency["findings"] if f["severity"] != "blocking"]}}
     result["response_policy"] = "per_response" if require_response else "legacy_not_per_response"
+    result["cycle_policy"] = "cycle_closed" if require_cycle else "not_required"
+    result["cycle_id"] = cycle if require_cycle else None
+    result["legacy_no_cycle"] = legacy
     state["assemblies"].append(result)
     persist(output, state, review)
     track_artifacts(output, archived_names + ["peticao_consolidada.md"], bundle=True)
@@ -549,6 +575,7 @@ def main() -> int:
     parser.add_argument("--expected-revision")
     parser.add_argument("--research-response", type=Path)
     parser.add_argument("--save-preview", default="")
+    parser.add_argument("--cycle", help="ciclo de reanálise encerrado para a consolidação (request_cycle.py close --artifact)")
     args = parser.parse_args()
     output = args.output.resolve()
     try:
@@ -569,7 +596,7 @@ def main() -> int:
         elif args.command in {"assemble", "preview"}:
             result = assemble(output, args.chapter, allow_drafts=args.allow_drafts,
                               response=read_json(args.research_response) if args.research_response else None,
-                              preview=args.command == "preview")
+                              preview=args.command == "preview", cycle=args.cycle)
             if args.save_preview and args.command == "preview":
                 atomic_json(inside(output, args.save_preview), result)
         else:

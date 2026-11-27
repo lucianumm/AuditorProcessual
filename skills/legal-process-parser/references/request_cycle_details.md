@@ -60,15 +60,28 @@ art. 852-B, I, da CLT; sem quantificação, o pedido é bloqueado, não estimado
 ## Execução local
 
 ```text
-python scripts/request_cycle.py saida begin --request "texto do pedido" --issue I1 --issue I3 [--depth integral]
-python scripts/request_cycle.py saida scope --cycle C-0001
-python scripts/request_cycle.py saida reread --cycle C-0001 --offset 0
+python scripts/request_cycle.py saida begin --request "texto do pedido" --issue I1 --issue I3 [--depth integral|focado|rapido] [--statement "manifestação"]
+python scripts/request_cycle.py saida scope --cycle C-0001 [--max-pages 60 --max-total-chars 120000]
+python scripts/request_cycle.py saida reread --cycle C-0001 --offset 0 --max-chars 12000   # repetir até next_offset null
 python scripts/request_cycle.py saida sweep --cycle C-0001
-python scripts/request_cycle.py saida close --cycle C-0001 --atoms atomos.json --findings objecoes.json [--chapter-file capitulo.json]
+python scripts/request_cycle.py saida close --cycle C-0001 --atoms atomos.json --findings objecoes.json \
+    --sweep-review varredura.json --response-id <id da pesquisa> --chapter-file capitulo.json   # ou --artifact preview.json
+python scripts/petition_workspace.py saida save --chapter-file capitulo.json   # capítulo com "request_cycle": {"cycle_id": "C-0001"}
+python scripts/petition_workspace.py saida assemble --chapter capitulo --research-response resposta.json --cycle C-0002
 ```
 
-`close` executa a reconferência factual, a validade das citações, a coerência
-global e o diferencial, e grava o ciclo. `petition_workspace.py save` e
-`assemble` registram o ciclo fechado ligado ao conteúdo; capítulos anteriores à
-v1.1 aparecem como `legacy_no_cycle` até serem salvos de novo. Controles
-executados não certificam mérito; a minuta continua RASCUNHO — NÃO PROTOCOLAR.
+`atomos.json`: `[{"fact_id", "atoms": {...}, "source_page", "treatment"}]`, extraídos
+da página relida; divergência ou fato novo exige `treatment`. `objecoes.json`:
+`[{"id", "severity": "critical|material|minor", "reviewer":
+"same_model_clean_context|separate_context|other_model_authorized", "objection",
+"resolution"}]`. `varredura.json`: `[{"page_id", "assessment":
+"irrelevant|context|supports|contrary", "treatment"}]` para cada página fora do
+perímetro apontada pela varredura.
+
+`close` executa a reconferência factual, a reconferência das citações na
+consulta oficial desta resposta, a coerência global e o diferencial, gera
+`request_cycles/<id>/ciclo.md` e acrescenta o "Histórico de ciclos". O ciclo
+fica ligado ao hash do conteúdo: qualquer alteração posterior exige novo ciclo.
+`assemble` recusa consolidação sem ciclo encerrado e capítulo salvo sem ciclo;
+capítulos anteriores à v1.1 aparecem em `legacy_no_cycle`. Controles executados
+não certificam mérito; a minuta continua RASCUNHO — NÃO PROTOCOLAR.

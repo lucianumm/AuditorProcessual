@@ -255,7 +255,8 @@ class ResponseResearch(unittest.TestCase):
             assemble(self.output, ["salary"], allow_drafts=True)
         preview = assemble(self.output, ["salary"], allow_drafts=True, preview=True)
         payload = bind_response(self.output, self.researched(artifact=preview), self.review, preview)
-        result = assemble(self.output, ["salary"], allow_drafts=True, response=payload)
+        # The request cycle has its own end-to-end test (test_request_cycle.py).
+        result = assemble(self.output, ["salary"], allow_drafts=True, response=payload, require_cycle=False)
         self.assertEqual(result["response_policy"], "per_response")
         self.assertEqual(validate_links(self.output), [])
 
