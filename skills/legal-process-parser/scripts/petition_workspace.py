@@ -176,6 +176,33 @@ def dependencies(review: dict, issue_ids: list[str]) -> dict:
     return result
 
 
+def memory_texts(output: Path) -> list[str]:
+    """Page texts of the received records: identifiers in the prose must exist in a source."""
+    path = inside(output, "case_memory.json")
+    if not path.is_file():
+        return []
+    memory = read_json(path)
+    texts = [p.get("text", "") for d in memory.get("documents", []) for p in d.get("pages", [])]
+    texts += [str(d.get("process_id") or "") for d in memory.get("documents", [])]
+    return texts + [json.dumps(memory.get("client_records", []), ensure_ascii=False)]
+
+
+def global_check(output: Path, chapters: list[dict], review: dict, sections: set[str] | None = None) -> dict:
+    try:
+        from .global_consistency import check_consistency
+    except ImportError:
+        from global_consistency import check_consistency
+    return check_consistency(chapters, review, extra_texts=memory_texts(output), sections=sections)
+
+
+def consistency_summary(report: dict) -> str:
+    try:
+        from .global_consistency import summary
+    except ImportError:
+        from global_consistency import summary
+    return summary(report)
+
+
 def chapter_record(output: Path, chapter: dict) -> dict:
     return read_json(inside(output, chapter["path"]))
 
@@ -418,6 +445,11 @@ def save_chapter(output: Path, record: dict, *, require_response: bool = True) -
                "approvals": (prior or {}).get("approvals", []),
                "version_bases": dict((prior or {}).get("version_bases", {}))}
     chapter["response_policy"] = "per_response" if require_response else "legacy_not_per_response"
+    try:
+        from .prose_review import prose_warnings
+    except ImportError:
+        from prose_review import prose_warnings
+    chapter["prose_warnings"] = [p["id"] + ": " + w for p in record["paragraphs"] for w in prose_warnings(p, review)]
     chapter["version_bases"][path] = {"baseline_path": state["baseline_path"], "dependency_hash": dependency_hash}
     state["chapters"][cid] = chapter
     invalidate_assembly(output)
@@ -466,12 +498,16 @@ def assemble(output: Path, order: list[str], *, allow_drafts: bool = False,
     for option in selected_options:
         if set(option.get("exclusive_with", [])) & {o["id"] for o in selected_options if o.get("scenario_id") == option.get("scenario_id")}:
             raise ValueError("Teses incompatíveis no mesmo cenário; delimitar hipóteses subsidiárias")
+    consistency = global_check(output, selected, review)
+    if consistency["blocking_count"] and not preview:
+        raise ValueError("Coerência entre capítulos: " + consistency_summary(consistency))
     text = "# CONSOLIDAÇÃO DOS CAPÍTULOS SELECIONADOS\n\nRASCUNHO — NÃO PROTOCOLAR\n\n"
     text += "\n\n".join("## " + c["title"].replace("\n", " ") + "\n\n" + "\n\n".join(p["text"] for p in c["paragraphs"]) for c in selected) + "\n"
     artifact = {"issue_ids": sorted({i for c in selected for i in c["issue_ids"]}),
                 "request_ids": sorted(request_owners),
                 "paragraphs": [{**p, "id": c["id"] + "--" + p["id"]} for c in selected for p in c["paragraphs"]],
-                "chapter_hashes": [state["chapters"][cid]["hash"] for cid in order], "text": text}
+                "chapter_hashes": [state["chapters"][cid]["hash"] for cid in order], "text": text,
+                "consistency": consistency}
     if preview:
         return artifact
     if require_response:
@@ -488,7 +524,9 @@ def assemble(output: Path, order: list[str], *, allow_drafts: bool = False,
     atomic_text(inside(output, "peticao_consolidada.md"), text)
     result = {"id": digest, "chapter_ids": order, "chapter_hashes": [state["chapters"][cid]["hash"] for cid in order],
               "path": archive, "uncovered_request_ids": sorted({r["id"] for r in review["requests"]} - set(request_owners)),
-              "scope": "selected_chapters_only", "legal_status": "professional_review_required"}
+              "scope": "selected_chapters_only", "legal_status": "professional_review_required",
+              "consistency": {"status": consistency["status"],
+                              "warnings": [f["detail"] for f in consistency["findings"] if f["severity"] != "blocking"]}}
     result["response_policy"] = "per_response" if require_response else "legacy_not_per_response"
     state["assemblies"].append(result)
     persist(output, state, review)

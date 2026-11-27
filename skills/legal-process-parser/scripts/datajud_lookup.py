@@ -10,7 +10,6 @@ import hashlib
 import json
 import os
 import re
-import sys
 from datetime import datetime, timezone
 from http.client import HTTPException
 from pathlib import Path

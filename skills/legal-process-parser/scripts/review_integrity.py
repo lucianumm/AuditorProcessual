@@ -25,6 +25,38 @@ def opposite_polarity(left: str, right: str) -> bool:
     return bool(set(a) & negative) != bool(set(b) & negative) and [x for x in a if x not in negative] == [x for x in b if x not in negative]
 
 
+NEGATION = r"(?:nao|nunca|jamais|sem|nenhum[a]?|deixou de|deixaram de)"
+
+
+def verb_stem(word: str) -> str:
+    """Root shared by a Portuguese infinitive and its inflections ("pagar" → "pag")."""
+    word = normalized(word)
+    root = word[:-2] if re.search(r"(?:ar|er|ir|or)$", word) else word[:-1]
+    return root if len(root) >= 3 else word
+
+
+def atom_polarity_conflict(text: str, atoms: dict) -> bool:
+    """Sentence naming the fact's action and object with the opposite polarity of its atoms.
+
+    Requires both the action stem and the object's first significant word in the same
+    sentence, so unrelated sentences never trigger it; not a general entailment check."""
+    polarity = atoms.get("polarity")
+    action = [w for w in re.findall(r"\w+", normalized(atoms.get("action", ""))) if len(w) >= 4]
+    obj = [w for w in re.findall(r"\w+", normalized(atoms.get("object", ""))) if len(w) >= 4]
+    if polarity not in {"affirmed", "negated"} or not action or not obj:
+        return False
+    stem, target = verb_stem(action[0]), obj[0][:max(4, len(obj[0]) - 2)]
+    for sentence in re.split(r"(?<=[.;!?])\s+", normalized(text)):
+        found = re.search(r"\b" + re.escape(stem), sentence)
+        if not found or target not in sentence:
+            continue
+        position = found.start()
+        negated = bool(re.search(r"\b" + NEGATION + r"\b(?:\s+\w+){0,2}\s*$", sentence[:position]))
+        if negated != (polarity == "negated"):
+            return True
+    return False
+
+
 def check_support(review: dict, memory: dict) -> list[str]:
     errors = []
     readiness = evaluate_readiness(review, memory, normalize_findings(review))

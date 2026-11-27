@@ -13,6 +13,19 @@ from pathlib import Path
 CORE = Path(__file__).resolve().parents[1]
 REFS = CORE / "references"
 CATALOG_DIR = REFS / "domain_catalogs"
+
+
+FRESHNESS_LABELS = {"fresh": "conferência dentro da validade", "expired": "conferência vencida — consultar de novo",
+                    "never_verified": "nunca conferida no portal"}
+
+
+def with_freshness(authorities: list[dict]) -> list[dict]:
+    """Catalogue entries with the age of their check; expired entries require a new consultation."""
+    try:
+        from .catalog_status import annotate
+    except ImportError:
+        from catalog_status import annotate
+    return annotate(authorities)
 AUTHORITIES = REFS / "domain_authorities.json"
 POLOS = {"ativo": ("claimant_theses",), "passivo": ("defense_theses",), "ambos": ("claimant_theses", "defense_theses")}
 STATUS_LABELS = {"localizado_no_texto_oficial": "texto oficial localizado", "revogado": "revogado", "vigente": "sem cancelamento na fonte oficial",
@@ -62,7 +75,7 @@ def claim_brief(identifiers: list[str], polo: str = "ambos", domain: str | None 
         row = {k: claim[k] for k in ("id", "domain", "label", "requirements", "typical_requests", "evidence", "piece_ids", "related_claims", "limitation")}
         for field in POLOS[polo]:
             row[field] = {"label": labels[field],
-                          "theses": [{**t, "authorities": [refs["authorities"][a] for a in t["authority_ids"]]} for t in claim[field]]}
+                          "theses": [{**t, "authorities": with_freshness([refs["authorities"][a] for a in t["authority_ids"]])} for t in claim[field]]}
         row["temporal_markers"] = [refs["markers"][m] for m in claim["temporal_marker_ids"]]
         out.append(row)
     return {"claims": out, "polo": polo, "policy": refs["policy"], "legal_status": "candidate_authorities_require_current_verification"}
@@ -82,7 +95,7 @@ def thesis_map_markdown(identifiers: list[str], polo: str = "ambos", domain: str
         for field in POLOS[polo]:
             lines += ["### " + safe_text(claim[field]["label"]), ""]
             for thesis in claim[field]["theses"]:
-                cites = "; ".join(f"[{safe_text(a['label'])}]({a['official_url']}) — {STATUS_LABELS.get(a['status'], a['status'])} (catálogo {a['verified']['on']})"
+                cites = "; ".join(f"[{safe_text(a['label'])}]({a['official_url']}) — {STATUS_LABELS.get(a['status'], a['status'])} (catálogo {a['verified']['on']}; {FRESHNESS_LABELS[a['freshness']['state']]})"
                                   for a in thesis["authorities"])
                 lines.append("- " + safe_text(thesis["label"]) + (" · " + cites if cites else " · pesquisar fonte própria"))
             lines.append("")

@@ -61,3 +61,18 @@ references = ["*.json", "*.md", "labor_sectors/*.md", "labor_details/*.md", "dom
 schemas = ["*.json"]
 templates = ["*.json", "*.md"]
 routing = ["*.json"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 160
+extend-exclude = [".ci-artifacts", "dist", "build"]
+
+[tool.ruff.lint]
+# Correctness first (syntax, undefined names, unused imports/variables); style rules come later.
+select = ["E9", "F63", "F7", "F82", "F401", "F811", "F841"]
+
+[tool.ruff.lint.per-file-ignores]
+# helpers.py is the compatibility facade: it re-exports names moved to smaller modules.
+"skills/legal-process-parser/scripts/helpers.py" = ["F401"]
+"skills/legal-process-parser/tests/*" = ["F401", "F841"]
+"scripts/*" = []
