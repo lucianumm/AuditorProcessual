@@ -259,7 +259,7 @@ A avaliação profissional segue [evaluation/PROTOCOL.md](evaluation/PROTOCOL.md
 
 ## Documentação, licença e créditos
 
-**Licença:** a partir da v1.1.0, [PolyForm Noncommercial License 1.0.0](LICENSE). O uso não comercial (estudo, pesquisa, projetos pessoais, ensino, entidades sem fins lucrativos e órgãos públicos) é livre, e uma [permissão adicional do titular](COMMERCIAL_LICENSE.md) libera também o uso interno na própria atividade profissional, inclusive remunerada (advogados, escritórios e departamentos jurídicos nos seus casos). Venda, revenda, oferta como serviço a terceiros e inclusão em produtos, sistemas ou plataformas exigem [licença comercial](COMMERCIAL_LICENSE.md) com o titular ([contato@lumenaxis.dev.br](mailto:contato@lumenaxis.dev.br)). As versões até a 1.0.0 continuam sob a MIT.
+**Licença:** a partir da v1.1.0, [PolyForm Noncommercial License 1.0.0](LICENSE). O uso não comercial (estudo, pesquisa, projetos pessoais, ensino, entidades sem fins lucrativos e órgãos públicos) é livre, e uma [permissão adicional do titular](COMMERCIAL_LICENSE.md) libera também o uso interno na própria atividade profissional, inclusive remunerada, para profissionais autônomos e organizações com até 5 pessoas. Organizações maiores, venda, revenda, oferta como serviço a terceiros e inclusão em produtos, sistemas ou plataformas exigem [licença comercial](COMMERCIAL_LICENSE.md) com o titular ([contato@lumenaxis.dev.br](mailto:contato@lumenaxis.dev.br)). As versões até a 1.0.0 continuam sob a MIT.
 
 [Guia técnico completo](docs/TECHNICAL_GUIDE.md) · [Guia do advogado](docs/GUIA_USUARIO.md) · [Alterações](CHANGELOG.md) · [Roteador](routing/task-router.json) · [Licença PolyForm Noncommercial 1.0.0](LICENSE) · [Licença comercial](COMMERCIAL_LICENSE.md)
 

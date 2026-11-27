@@ -91,8 +91,10 @@ inexistentes geram alerta, não bloqueio.
   e o bloco diz isso.
 - **Usa outra IA?** Só com sua autorização expressa, caso a caso, para o passe
   adversarial.
-- **Posso usar no escritório?** Sim: a permissão adicional do titular libera o
-  uso interno na sua própria atividade profissional, inclusive nos casos de
-  clientes. Vender, oferecer como serviço a terceiros ou incluir em produtos e
-  sistemas exige licença comercial ([COMMERCIAL_LICENSE.md](../COMMERCIAL_LICENSE.md)).
+- **Posso usar no escritório?** Sim, se você atua como autônomo ou se a
+  organização inteira (sócios, associados, empregados, estagiários e
+  prestadores contínuos) tem até 5 pessoas: a permissão adicional do titular
+  libera o uso interno, inclusive nos casos de clientes. Acima de 5 pessoas, ou
+  para vender, oferecer como serviço a terceiros ou incluir em produtos e
+  sistemas, é preciso licença comercial ([COMMERCIAL_LICENSE.md](../COMMERCIAL_LICENSE.md)).
 
