@@ -1,6 +1,6 @@
-# Arquitetura e Plano Diretor — AuditorProcessual (`v1.0.0`)
+# Arquitetura e Plano Diretor — AuditorProcessual (`v1.1.0`)
 
-Este documento registra a arquitetura consolidada na versão `1.0.0` do **AuditorProcessual (`legal-process-parser`)** e as diretrizes contínuas de evolução, verificação oficial e governança ética para análise de autos e elaboração de peças jurídicas rastreáveis no Direito brasileiro.
+Este documento registra a arquitetura consolidada nas versões `1.0.0` e `1.1.0` do **AuditorProcessual (`legal-process-parser`)** e as diretrizes contínuas de evolução, verificação oficial e governança ética para análise de autos e elaboração de peças jurídicas rastreáveis no Direito brasileiro.
 
 ---
 
@@ -49,7 +49,26 @@ Este documento registra a arquitetura consolidada na versão `1.0.0` do **Audito
 
 ---
 
-## 3. Próximas Frentes Evolutivas (`v1.1+`)
+## 2-A. Eixos Implementados na `v1.1.0` — reanálise integral a cada pedido
+
+* **Ciclo de Reanálise Integral por Pedido (CRIP, P0–P7):** `references/request_cycle_rules.md` (núcleo, automático em analyze/petition/evidence/audit) e `request_cycle_details.md` (Ficha de Pedido, gatilhos, orçamento); `scripts/request_cycle.py` com perímetro por fatos compartilhados, releitura integral com recibo e orçamento declarado, varredura de contraprova, reconferência factual, reconferência das citações na consulta oficial da resposta, passe adversarial, coerência global, Fichas de Pedido, diferencial e "Histórico de ciclos". O ciclo é ligado ao hash do capítulo ou da consolidação; `assemble` exige ciclo encerrado e marca capítulos anteriores como `legacy_no_cycle`. Sem execução local, a releitura é declarada pelo modelo, não atestada.
+* **Coerência entre capítulos (`global_consistency.py`):** parâmetros (salário, jornada, divisor, adicionais) por período, datas de admissão/dispensa, CPF/CNPJ/CNJ sem fonte, pedido × causa de pedir, *bis in idem* no conjunto de cálculo, peças reativas (contestação, recurso, réplica), glossário e remissões.
+* **Prosa (`prose_dates.py`, `prose_review.py`, `review_integrity.py`):** datas e períodos sem suporte, data aproximada tornada exata, período invertido ou além do apurado, polaridade dos átomos; alertas de sujeito, legibilidade e citação extensa.
+* **Consolidação estruturada (`piece_assembly.py`):** numeração, Dos Pedidos com natureza e condição, valor da causa `[CONFIRMAR]` (principais calculados e estimativas registradas), provas, documentos referidos e matriz de rastreabilidade em anexo; inicial trabalhista sem indicação de valor é bloqueada no fluxo com ciclo; DOCX com sumário e anexo.
+* **Fontes:** validade (TTL) por tipo sobre `verified.on` (`catalog_status.py`), briefs anotados com `freshness`, reconferência das leis pendentes no texto oficial (`scripts/catalog_recheck.py`) e relatório mensal (`.github/workflows/catalog-freshness.yml`).
+* **Segurança e qualidade:** `injection.py` (PT/EN, marcas de papel, bidi/Unicode *tag*, texto espaçado) com corpus adversarial; ruff no CI; cobertura com piso de 75% nos motores e validadores; testes de propriedade com sementes fixas; `metrics.json` como fonte única das contagens; Dependabot.
+* **MCP:** 28 ferramentas, inclusive o ciclo, a coerência, o workspace da peça, a pesquisa por resposta, a revisão jurídica e a validade do catálogo.
+
+### Deliberadamente adiado na `v1.1.0` (com motivo)
+
+* **Namespace do wheel (`legal_process_parser.*`):** quebra `from scripts...` de quem instalou o wheel e não altera a precisão; fica para versão maior, com nota de migração.
+* **Divisão do `helpers.py`:** feita de forma incremental (primeiro módulo extraído: `injection.py`); o restante segue um módulo por PR.
+* **`SKILL.md` ≤ 8 KB:** o ciclo obrigatório foi para o topo; reduzir o núcleo sem perder regras exige teste de importação real em cada plataforma, ainda não executado.
+* **Avaliação com casos reais e PJe-Calc:** dependem de autos autorizados e anonimizados e de arquivos `.PJC`; `evaluation/PROTOCOL.md` segue como roteiro. Os erros plantados (`evaluation/planted_errors.json`) medem regressão, não precisão em autos reais.
+* **Comparação OCR × visão × texto, extração de tabelas e transcrição de audiência:** exigem dependências opcionais e material real para calibrar.
+* **Portais que bloqueiam robôs (TST, STF, TSE):** temas, ações de controle e súmulas desses portais continuam pendentes até leitura pelo navegador, listados no relatório mensal.
+
+## 3. Próximas Frentes Evolutivas (`v1.2+`)
 
 1. **Validação criptográfica local ICP-Brasil (cadeia ITI/AC-Raiz):** verificação offline opcional de assinaturas `.p7s` e PDFs assinados (`PAdES`/`CAdES`) quando bibliotecas criptográficas forem autorizadas no ambiente.
 2. **Importação/comparação nativa de arquivos `.PJC` (PJe-Calc Cidadão):** parser dedicado para confronto parcela a parcela contra memórias exportadas do PJe-Calc.

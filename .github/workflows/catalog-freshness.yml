@@ -1,0 +1,44 @@
+name: catalog-freshness
+
+# Monthly report of expired or never-verified catalogue authorities.
+# Portals that block robots (TST, STF, TSE) stay in the manual browser checklist.
+on:
+  schedule:
+    - cron: "17 9 3 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Freshness report (TTL by source type)
+        run: |
+          python skills/legal-process-parser/scripts/catalog_status.py --pending --by-usage --limit 200 > freshness.json
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          data = json.load(open("freshness.json"))
+          print("## Validade das conferências do catálogo")
+          for name, row in data["summary"].items():
+              print(f"- {name}: {row['fresh']} válidas, {row['expired']} vencidas, {row['never_verified']} nunca conferidas de {row['total']}")
+          browser = [r["id"] for r in data["authorities"] if r["kind"] in {"tema_stf", "adi", "adc", "adpf", "sumula_tst", "oj_tst", "sumula_tse"}]
+          print("\n### Conferência manual pelo navegador (portais que bloqueiam robôs)")
+          print(", ".join(browser[:80]) or "nenhuma")
+          PY
+      - name: Recheck pending legislation in the official text (normas.leg.br)
+        continue-on-error: true
+        run: |
+          python -m pip install jsonschema
+          python scripts/catalog_recheck.py --cache .intake-cache --report recheck.json --limit 120
+      - uses: actions/upload-artifact@v4
+        with:
+          name: catalog-freshness
+          path: |
+            freshness.json
+            recheck.json

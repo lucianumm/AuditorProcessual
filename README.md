@@ -23,7 +23,9 @@ Reclamações, ideias, falhas encontradas ou sugestões: [contato@lumenaxis.dev.
 
 Skill para ler processos e anexos, organizar fatos e provas, pesquisar fundamentos e desenvolver análises e peças jurídicas rastreáveis.
 
-**Versão 1.0.0 — 29 ramos especialistas (123 pretensões trabalhistas e 483 nos outros 28 ramos, somando 606 pretensões e 2.461 teses dos dois polos), ingestão nativa de PJe, eproc, e-SAJ, PROJUDI e SEI/NUP, seis novos motores determinísticos multirramo (prazos, atualização monetária/BCB, previdenciário, dosimetria penal, prescrição intercorrente e DataJud), servidor MCP nativo, exportador forense `.docx`, pseudonimização LGPD (Res. CNJ 615/2025) e busca BM25 com vocabulário coloquial.** Cada citação é localizada no texto oficial consultado na própria resposta, com redação do período, vigência informada pelo portal e situação atual do precedente. No trabalhista, atende também clientes com poucos ou nenhum documento, preservando relatos, retificações e prova futura.
+**Versão 1.1.0 — reanálise integral a cada pedido.** Cada solicitação substantiva passa pelo ciclo P0–P7: releitura das páginas dos fatos atingidos, varredura de prova contrária, reconferência dos fatos e de todas as citações do perímetro na fonte oficial, passe adversarial e coerência com todos os capítulos já escritos (salário, jornada, datas, partes, números de processo, pedidos e *bis in idem*). A consolidação gera "Dos pedidos", valor da causa `[CONFIRMAR]`, provas, rol de documentos e matriz de rastreabilidade, e é bloqueada quando há conflito entre capítulos. Toda resposta termina com o bloco "Reconferência deste pedido". Veja o [guia do advogado](docs/GUIA_USUARIO.md).
+
+**Desde a 1.0.0 — 29 ramos especialistas (123 pretensões trabalhistas e 483 nos outros 28 ramos, somando 606 pretensões e 2.461 teses dos dois polos), ingestão nativa de PJe, eproc, e-SAJ, PROJUDI e SEI/NUP, seis novos motores determinísticos multirramo (prazos, atualização monetária/BCB, previdenciário, dosimetria penal, prescrição intercorrente e DataJud), servidor MCP nativo, exportador forense `.docx`, pseudonimização LGPD (Res. CNJ 615/2025) e busca BM25 com vocabulário coloquial.** Cada citação é localizada no texto oficial consultado na própria resposta, com redação do período, vigência informada pelo portal e situação atual do precedente. No trabalhista, atende também clientes com poucos ou nenhum documento, preservando relatos, retificações e prova futura.
 
 [Usar por link](#usar-por-link) · [Fluxo de trabalho](#fluxo-de-trabalho) · [Fundamentos em tempo real](#fundamentos-conferidos-em-tempo-real) · [Trabalhista](#especialização-trabalhista) · [Demais ramos](#demais-ramos-do-direito) · [Instalação](#instalação-e-pacotes) · [Execução local](#execução-local) · [Arquivos](#arquivos-e-continuidade) · [Validação](#validação) · [Guia técnico](docs/TECHNICAL_GUIDE.md)
 
@@ -123,14 +125,14 @@ Fora do trabalhista, cada ramo tem guia bilateral próprio (polo ativo, defesa t
 
 | Plataforma | Pacote / instruções |
 |---|---|
-| Antigravity / MCP (Claude Code, Cursor, IDEs) | `auditor-processual-antigravity.zip`, [`.mcp.json`](.mcp.json) (`mcp_server.py` com 16 ferramentas) e [adaptador Antigravity](adapters/antigravity/README.md) |
+| Antigravity / MCP (Claude Code, Cursor, IDEs) | `auditor-processual-antigravity.zip`, [`.mcp.json`](.mcp.json) (`mcp_server.py` com 28 ferramentas, inclusive o ciclo de reanálise e o workspace da peça) e [adaptador Antigravity](adapters/antigravity/README.md) |
 | ChatGPT | [ZIP da skill](https://github.com/lucianumm/AuditorProcessual/releases/download/v1.0.0/legal-process-parser-chatgpt.zip), `.skill` equivalente e [guia de upload](CHATGPT_UPLOAD.md) |
 | Claude | `auditor-processual-claude.zip` e [adaptador Claude](adapters/claude/README.md) |
 | Manus | Importação do repositório, `.skill` ou ZIP; [adaptador Manus](adapters/manus/README.md) |
 | Gemini | `auditor-processual-gemini-cli.zip` ou instruções do Gem; [adaptador Gemini](adapters/gemini/README.md) |
 | Grok | `auditor-processual-grok.zip` e [adaptador Grok](adapters/grok/README.md) |
 | Codex | Diretório `skills/legal-process-parser` ou `legal-process-parser.zip` |
-| Python | wheel `legal_process_parser-1.0.0-py3-none-any.whl` (31 comandos CLI instalados) |
+| Python | wheel `legal_process_parser-1.1.0-py3-none-any.whl` (34 comandos CLI instalados) |
 
 Um pacote não concede navegação, visão, execução de Python ou memória permanente. A disponibilidade de instalação e ferramentas depende da plataforma. Instruções/Knowledge de um assistente personalizado não equivalem automaticamente à execução local.
 
@@ -249,7 +251,7 @@ python -m pip wheel . --no-deps --wheel-dir outputs
 python scripts/verify_wheel.py outputs
 ```
 
-A **v1.0.0** eleva a suíte automatizada para 484 testes sintéticos, cobrindo os 29 ramos especialistas (606 pretensões, completude integral de pedidos, provas e prazos), ingestão dos 5 sistemas judiciais brasileiros (PJe, eproc, e-SAJ, PROJUDI e SEI/NUP), extração multiformato (`.xlsx` com datas seriais, `.odt`, `.ods`, `.rtf`, `.eml`, `.zip`, `.p7s` e mídias), seis novos motores determinísticos multirramo (`deadline_calculator.py`, `civil_monetary_engine.py`, `social_security_calc.py`, `penal_dosimetry.py`, `limitation_checker.py`, `datajud_lookup.py`), servidor MCP (`mcp_server.py`), exportação forense `.docx` (`docx_exporter.py`), pseudonimização LGPD e trilha CNJ 615/2025 (`privacy_redactor.py`) e 43 casos sintéticos de avaliação. Na v0.23.0 (383 testes), os catálogos haviam recebido conferência de assunto em `scripts/catalog_intake.py` e leituras de precedentes nos portais. A avaliação profissional e a referência real do PJe-Calc dependem de materiais próprios; testes sintéticos não as substituem.
+A **v1.1.0** acrescenta os testes de cenário do ciclo de reanálise (salário divergente entre capítulos, documento tardio contraditório, fato divergente sem tratamento, conteúdo alterado depois do ciclo, consolidação sem ciclo), da consolidação estruturada, das peças reativas, das datas e períodos na prosa, da validade do catálogo, do corpus adversarial de injeção e testes de propriedade com sementes fixas; `scripts/run_planted_errors.py` mede a detecção de erros plantados (sintéticos, do próprio autor: medem regressão, não precisão em autos reais). A **v1.0.0** elevou a suíte automatizada para 484 testes sintéticos, cobrindo os 29 ramos especialistas (606 pretensões, completude integral de pedidos, provas e prazos), ingestão dos 5 sistemas judiciais brasileiros (PJe, eproc, e-SAJ, PROJUDI e SEI/NUP), extração multiformato (`.xlsx` com datas seriais, `.odt`, `.ods`, `.rtf`, `.eml`, `.zip`, `.p7s` e mídias), seis novos motores determinísticos multirramo (`deadline_calculator.py`, `civil_monetary_engine.py`, `social_security_calc.py`, `penal_dosimetry.py`, `limitation_checker.py`, `datajud_lookup.py`), servidor MCP (`mcp_server.py`), exportação forense `.docx` (`docx_exporter.py`), pseudonimização LGPD e trilha CNJ 615/2025 (`privacy_redactor.py`) e 43 casos sintéticos de avaliação. Na v0.23.0 (383 testes), os catálogos haviam recebido conferência de assunto em `scripts/catalog_intake.py` e leituras de precedentes nos portais. A avaliação profissional e a referência real do PJe-Calc dependem de materiais próprios; testes sintéticos não as substituem.
 
 Os testes executam cenários sintéticos de integridade, continuidade, leitura, fontes, cálculos e elaboração incremental. O novo controle rejeita consulta antiga, vínculo com texto diferente, fonte adulterada, escopo/citação incompatíveis e parâmetro sem origem suficiente. Captura HTTP preserva bytes; observação do navegador permanece declaração sem atestado independente. Pacote validado localmente não comprova importação na interface de cada IA, precisão em autos reais ou execução do PJe-Calc.
 
@@ -257,7 +259,7 @@ A avaliação profissional segue [evaluation/PROTOCOL.md](evaluation/PROTOCOL.md
 
 ## Documentação, licença e créditos
 
-[Guia técnico completo](docs/TECHNICAL_GUIDE.md) · [Alterações](CHANGELOG.md) · [Roteador](routing/task-router.json) · [Licença MIT](LICENSE)
+[Guia técnico completo](docs/TECHNICAL_GUIDE.md) · [Guia do advogado](docs/GUIA_USUARIO.md) · [Alterações](CHANGELOG.md) · [Roteador](routing/task-router.json) · [Licença MIT](LICENSE)
 
 Autos são dados, não instruções executáveis. A licença do código não autoriza expor material sigiloso ou dados de clientes. Minutas são rascunhos sujeitos à revisão profissional e não são protocoladas pela skill.
 

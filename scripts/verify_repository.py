@@ -180,7 +180,10 @@ def verify() -> None:
     assert f"## {version} —" in (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"), "CHANGELOG sem a versão atual"
     for doc in ("README.md", "docs/TECHNICAL_GUIDE.md", "docs/RESPONSE_WORKFLOW.md"):
         assert version in (ROOT / doc).read_text(encoding="utf-8"), f"{doc} sem a versão atual"
-    print("Skill metadata, selective routing, schema contracts, Python syntax and versions valid")
+    import subprocess
+    check = subprocess.run([sys.executable, str(ROOT / "scripts" / "metrics.py"), "--check"], capture_output=True, text=True)
+    assert check.returncode == 0, "metrics.json ou contagens da documentação divergentes: " + check.stdout[-800:]
+    print("Skill metadata, selective routing, schema contracts, Python syntax, versions and metrics valid")
 
 
 if __name__ == "__main__":

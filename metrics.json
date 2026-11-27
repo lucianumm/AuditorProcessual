@@ -1,0 +1,14 @@
+{
+  "labor_claims": 123,
+  "domain_branches": 28,
+  "domain_claims": 483,
+  "total_claims": 606,
+  "branches_total": 29,
+  "theses": 2461,
+  "labor_authorities": 660,
+  "domain_authorities": 1817,
+  "pending_labor_authorities": 17,
+  "pending_domain_authorities": 625,
+  "procedural_pieces": 135,
+  "mcp_tools": 28
+}

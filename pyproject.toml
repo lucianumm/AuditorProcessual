@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "legal-process-parser"
-version = "1.0.0"
+version = "1.1.0"
 description = "Pipeline local de ingestão multissistema, motores determinísticos e narrativa jurídica rastreável em 29 ramos do Direito."
 readme = "README.md"
 license = "MIT"
@@ -50,6 +50,9 @@ legal-process-datajud = "scripts.datajud_lookup:main"
 legal-process-privacy = "scripts.privacy_redactor:main"
 legal-process-docx = "scripts.docx_exporter:main"
 legal-process-mcp = "scripts.mcp_server:main"
+legal-process-cycle = "scripts.request_cycle:main"
+legal-process-consistency = "scripts.global_consistency:main"
+legal-process-catalog-status = "scripts.catalog_status:main"
 
 [tool.setuptools]
 include-package-data = false
