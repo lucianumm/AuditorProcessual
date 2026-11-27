@@ -319,6 +319,8 @@ def _tool_export_forensic_docx(args: dict[str, Any]) -> dict[str, Any]:
         title=title,
         draft_banner=draft_banner,
         metadata=metadata,
+        toc=bool(args.get("toc", False)),
+        annex=_safe_path(args["annex_path"], must_exist=True) if args.get("annex_path") else None,
     )
 
 
@@ -396,6 +398,154 @@ def _tool_pseudonymize_lgpd(args: dict[str, Any]) -> Any:
         "counts": vault_out.get("counts", {}),
         "vault": vault_out,
     }
+
+
+def _case_dir(args: dict[str, Any]) -> Path:
+    return _safe_path(args.get("output_dir"), must_exist=True, expect_dir=True)
+
+
+def _json_arg(args: dict[str, Any], key: str, path_key: str | None = None) -> Any:
+    """Inline JSON object/list, or a JSON file path inside the case directory."""
+    if args.get(key) is not None:
+        return args[key]
+    if path_key and args.get(path_key):
+        return json.loads(_safe_path(args[path_key], must_exist=True).read_text(encoding="utf-8-sig"))
+    return None
+
+
+def _tool_begin_request_cycle(args: dict[str, Any]) -> dict[str, Any]:
+    mod = _load_script_module("request_cycle")
+    review = _safe_path(args["review_path"], must_exist=True) if args.get("review_path") else None
+    return mod.begin_cycle(_case_dir(args), str(args.get("request", "")), list(args.get("issue_ids") or []),
+                           depth=str(args.get("depth", "integral")), review_path=review,
+                           statements=list(args.get("statements") or []), cycle_id=args.get("cycle_id"))
+
+
+def _tool_get_cycle_scope(args: dict[str, Any]) -> dict[str, Any]:
+    mod = _load_script_module("request_cycle")
+    return mod.compute_scope(_case_dir(args), str(args.get("cycle_id")), max_pages=int(args.get("max_pages", 60)),
+                             max_chars=int(args.get("max_total_chars", 120000)))
+
+
+def _tool_read_cycle_batch(args: dict[str, Any]) -> dict[str, Any]:
+    mod = _load_script_module("request_cycle")
+    return mod.reread_batch(_case_dir(args), str(args.get("cycle_id")), offset=int(args.get("offset", 0)),
+                            max_chars=int(args.get("max_chars", 12000)))
+
+
+def _tool_run_counter_evidence_sweep(args: dict[str, Any]) -> dict[str, Any]:
+    return _load_script_module("request_cycle").sweep(_case_dir(args), str(args.get("cycle_id")))
+
+
+def _tool_diff_fact_atoms(args: dict[str, Any]) -> dict[str, Any]:
+    mod = _load_script_module("request_cycle")
+    output = _case_dir(args)
+    cycle = mod.load_cycle(output, str(args.get("cycle_id")))
+    review = mod._review(output, cycle)
+    fact_ids = list(args.get("fact_ids") or (cycle.get("scope") or {}).get("fact_ids", []))
+    rows, errors = mod.fact_diff(review, _json_arg(args, "atoms", "atoms_path") or [], fact_ids)
+    return {"fact_diff": rows, "errors": errors}
+
+
+def _tool_recheck_citations(args: dict[str, Any]) -> dict[str, Any]:
+    mod = _load_script_module("request_cycle")
+    output = _case_dir(args)
+    cycle = mod.load_cycle(output, str(args.get("cycle_id")))
+    review = mod._review(output, cycle)
+    norm_ids = list(args.get("norm_ids") or (cycle.get("scope") or {}).get("norm_ids", []))
+    rows, errors = mod.citation_recheck(output, review, args.get("response_id"), norm_ids)
+    return {"citation_recheck": rows, "errors": errors}
+
+
+def _tool_close_request_cycle(args: dict[str, Any]) -> dict[str, Any]:
+    mod = _load_script_module("request_cycle")
+    cycle = mod.close_cycle(_case_dir(args), str(args.get("cycle_id")),
+                            atoms=_json_arg(args, "atoms", "atoms_path"), findings=_json_arg(args, "findings", "findings_path"),
+                            sweep_review=_json_arg(args, "sweep_review", "sweep_review_path"),
+                            chapter=_json_arg(args, "chapter", "chapter_path"), artifact=_json_arg(args, "artifact", "artifact_path"),
+                            response_id=args.get("response_id"), not_executed=list(args.get("not_executed") or []))
+    return {"cycle_id": cycle["cycle_id"], "status": cycle["status"], "content_hash": cycle["content_hash"],
+            "block": mod.cycle_markdown(cycle), "request_cards": cycle["request_cards"]}
+
+
+def _tool_check_global_consistency(args: dict[str, Any]) -> dict[str, Any]:
+    workspace = _load_script_module("petition_workspace")
+    output = _case_dir(args)
+    state, review = workspace.load_workspace(output)
+    ids = list(args.get("chapter_ids") or sorted(state["chapters"]))
+    chapters = [workspace.chapter_record(output, state["chapters"][cid]) for cid in ids]
+    extra = _json_arg(args, "chapter")
+    if isinstance(extra, dict):
+        chapters = [c for c in chapters if c["id"] != extra.get("id")] + [extra]
+    return workspace.global_check(output, chapters, review, reactive=bool(args.get("assembly", False)))
+
+
+def _tool_validate_legal_review(args: dict[str, Any]) -> dict[str, Any]:
+    return _load_script_module("legal_review").finalize(_case_dir(args), _safe_path(args.get("review_path"), must_exist=True))
+
+
+def _tool_petition_workspace(args: dict[str, Any]) -> Any:
+    mod = _load_script_module("petition_workspace")
+    output = _case_dir(args)
+    action = args.get("action")
+    if action in {"init", "refresh"}:
+        review = _json_arg(args, "review", "review_path")
+        return (mod.initialize if action == "init" else mod.refresh)(output, review)
+    if action == "context":
+        return mod.context_batch(output, list(args.get("issue_ids") or []), int(args.get("offset", 0)),
+                                 int(args.get("max_chars", 12000)), args.get("expected_revision"))
+    if action == "save":
+        return mod.save_chapter(output, _json_arg(args, "chapter", "chapter_path"))
+    if action in {"review", "approve"}:
+        return mod.set_status(output, str(args.get("chapter_id")), "approved" if action == "approve" else "reviewed", str(args.get("reference", "")))
+    if action in {"preview", "assemble"}:
+        return mod.assemble(output, list(args.get("chapter_ids") or []), allow_drafts=bool(args.get("allow_drafts", False)),
+                            response=_json_arg(args, "response", "response_path"), preview=action == "preview",
+                            cycle=args.get("cycle_id"), declared_value=args.get("declared_value"))
+    if action == "status":
+        mod.sync_updates(output)
+        return mod.load_workspace(output)[0]
+    raise ValueError("Ação inválida para petition_workspace")
+
+
+def _tool_response_research(args: dict[str, Any]) -> Any:
+    mod = _load_script_module("response_research")
+    output = _case_dir(args)
+    action = args.get("action")
+    issue_ids = list(args.get("issue_ids") or [])
+    if action == "begin":
+        return mod.begin_response(output, issue_ids, str(args.get("request_reference", "")), response_id=args.get("response_id"))
+    if action in {"consult", "browser", "unavailable"} and len(issue_ids) != 1:
+        raise ValueError("Indicar exatamente uma questão em issue_ids para a consulta")
+    if action == "consult":
+        return mod.consult_http(output, str(args.get("response_id")), issue_ids[0], str(args.get("norm_id", "")), str(args.get("url", "")),
+                                alternatives=list(args.get("alternatives") or []), purpose=str(args.get("purpose", "")))
+    if action == "browser":
+        return mod.consult_browser(output, str(args.get("response_id")), issue_ids[0], str(args.get("norm_id", "")),
+                                   purpose=str(args.get("purpose", "")), **(_json_arg(args, "observation") or {}))
+    if action == "unavailable":
+        return mod.record_unavailable_attempt(output, str(args.get("response_id")), issue_ids[0], str(args.get("norm_id", "")),
+                                              url=str(args.get("url", "")), reason=str(args.get("reason", "")),
+                                              attempt_reference=str(args.get("attempt_reference", "")), purpose=str(args.get("purpose", "")))
+    review = _json_arg(args, "review", "review_path")
+    if action == "verify":
+        return {"checks": mod.verify_session(output, str(args.get("response_id")), review)}
+    if action in {"bind", "validate"}:
+        payload, artifact = _json_arg(args, "payload", "payload_path"), _json_arg(args, "artifact", "artifact_path")
+        return (mod.bind_response if action == "bind" else mod.validate_response)(output, payload, review, artifact)
+    raise ValueError("Ação inválida para response_research")
+
+
+def _tool_catalog_freshness(args: dict[str, Any]) -> dict[str, Any]:
+    mod = _load_script_module("catalog_status")
+    if args.get("authority_id"):
+        for name in mod.CATALOGS:
+            match = [a for a in mod.load(name) if a["id"] == args["authority_id"]]
+            if match:
+                return dict(mod.freshness(match[0]), catalog=name)
+        raise ValueError("Autoridade não catalogada: " + str(args["authority_id"]))
+    return mod.report(pending_only=bool(args.get("pending", False)), by_usage=bool(args.get("by_usage", False)),
+                      limit=int(args["limit"]) if args.get("limit") else 50)
 
 
 TOOL_SPECS: tuple[dict[str, Any], ...] = (
@@ -559,6 +709,8 @@ TOOL_SPECS: tuple[dict[str, Any], ...] = (
                 "title": {"type": "string", "default": "Minuta Jurídica"},
                 "draft_banner": {"type": "boolean", "default": True},
                 "metadata": {"type": "object"},
+                "toc": {"type": "boolean", "default": False, "description": "Inserir sumário (campo TOC)"},
+                "annex_path": {"type": "string", "description": "Anexo técnico Markdown em nova página (ex.: matriz de rastreabilidade)"},
             },
             "required": ["output_path"],
         },
@@ -655,6 +807,114 @@ TOOL_SPECS: tuple[dict[str, Any], ...] = (
             },
         },
         "handler": _tool_pseudonymize_lgpd,
+    },
+    {
+        "name": "begin_request_cycle",
+        "description": "P0 do ciclo de reanálise por pedido (CRIP): abre o ciclo do pedido do usuário, registra o que mudou desde o último ciclo e o modo (integral, focado, rapido).",
+        "inputSchema": {"type": "object", "properties": {
+            "output_dir": {"type": "string", "description": "Diretório do caso"}, "request": {"type": "string", "description": "Texto ou referência do pedido recebido"},
+            "issue_ids": {"type": "array", "items": {"type": "string"}}, "depth": {"type": "string", "enum": ["integral", "focado", "rapido"], "default": "integral"},
+            "review_path": {"type": "string", "description": "Análise usada quando ainda não há workspace de peça"},
+            "statements": {"type": "array", "items": {"type": "string"}, "description": "Manifestações do usuário desde o último ciclo"},
+            "cycle_id": {"type": "string"}}, "required": ["output_dir", "request", "issue_ids"]},
+        "handler": _tool_begin_request_cycle,
+    },
+    {
+        "name": "get_cycle_scope",
+        "description": "Calcula o perímetro do ciclo: questões e capítulos atingidos por fatos compartilhados, normas, pedidos e plano de releitura (citadas, novas, entidades, relevantes) com orçamento.",
+        "inputSchema": {"type": "object", "properties": {"output_dir": {"type": "string", "description": "Diretório do caso"}, "cycle_id": {"type": "string"},
+            "max_pages": {"type": "integer", "default": 60}, "max_total_chars": {"type": "integer", "default": 120000}},
+            "required": ["output_dir", "cycle_id"]},
+        "handler": _tool_get_cycle_scope,
+    },
+    {
+        "name": "read_cycle_batch",
+        "description": "P1: entrega por inteiro as páginas do perímetro em lotes com recibo; avançar next_offset até null. Recibo não prova compreensão.",
+        "inputSchema": {"type": "object", "properties": {"output_dir": {"type": "string", "description": "Diretório do caso"}, "cycle_id": {"type": "string"},
+            "offset": {"type": "integer", "default": 0, "minimum": 0}, "max_chars": {"type": "integer", "default": 12000, "minimum": 512, "maximum": 64000}},
+            "required": ["output_dir", "cycle_id"]},
+        "handler": _tool_read_cycle_batch,
+    },
+    {
+        "name": "run_counter_evidence_sweep",
+        "description": "P1: varredura de contraprova no corpus inteiro (pagamento, quitação, negação, datas e valores dos fatos do perímetro); páginas fora do perímetro precisam de avaliação no fechamento.",
+        "inputSchema": {"type": "object", "properties": {"output_dir": {"type": "string", "description": "Diretório do caso"}, "cycle_id": {"type": "string"}}, "required": ["output_dir", "cycle_id"]},
+        "handler": _tool_run_counter_evidence_sweep,
+    },
+    {
+        "name": "diff_fact_atoms",
+        "description": "P2: compara os átomos reextraídos da fonte relida (sujeito, ação, objeto, polaridade, datas, valor) com a análise-base: igual, divergente, novo ou contraditado.",
+        "inputSchema": {"type": "object", "properties": {"output_dir": {"type": "string", "description": "Diretório do caso"}, "cycle_id": {"type": "string"},
+            "atoms": {"type": "array", "items": {"type": "object"}}, "atoms_path": {"type": "string"},
+            "fact_ids": {"type": "array", "items": {"type": "string"}}}, "required": ["output_dir", "cycle_id"]},
+        "handler": _tool_diff_fact_atoms,
+    },
+    {
+        "name": "recheck_citations",
+        "description": "P3: reconfere as citações do perímetro (inclusive as de capítulos antigos) na consulta oficial desta resposta; acusa citação sem consulta atual ou com problema na fonte.",
+        "inputSchema": {"type": "object", "properties": {"output_dir": {"type": "string", "description": "Diretório do caso"}, "cycle_id": {"type": "string"}, "response_id": {"type": "string"},
+            "norm_ids": {"type": "array", "items": {"type": "string"}}}, "required": ["output_dir", "cycle_id"]},
+        "handler": _tool_recheck_citations,
+    },
+    {
+        "name": "check_global_consistency",
+        "description": "P6: coerência material entre todos os capítulos (salário, jornada, divisor, adicionais, datas de admissão/dispensa, CPF/CNPJ/CNJ, pedido x causa de pedir, bis in idem, glossário, remissões, peças reativas).",
+        "inputSchema": {"type": "object", "properties": {"output_dir": {"type": "string", "description": "Diretório do caso"}, "chapter_ids": {"type": "array", "items": {"type": "string"}},
+            "chapter": {"type": "object", "description": "Capítulo em redação a comparar com os já salvos"},
+            "assembly": {"type": "boolean", "default": False, "description": "Incluir conferências próprias da consolidação"}},
+            "required": ["output_dir"]},
+        "handler": _tool_check_global_consistency,
+    },
+    {
+        "name": "close_request_cycle",
+        "description": "Encerra o ciclo: exige releitura integral do perímetro, varredura avaliada, factdiff tratado, citações reconferidas, objeções resolvidas e coerência global; liga o ciclo ao hash do capítulo ou da consolidação e devolve o bloco 'Reconferência deste pedido'.",
+        "inputSchema": {"type": "object", "properties": {"output_dir": {"type": "string", "description": "Diretório do caso"}, "cycle_id": {"type": "string"},
+            "atoms": {"type": "array", "items": {"type": "object"}}, "atoms_path": {"type": "string"},
+            "findings": {"type": "array", "items": {"type": "object"}}, "findings_path": {"type": "string"},
+            "sweep_review": {"type": "array", "items": {"type": "object"}}, "sweep_review_path": {"type": "string"},
+            "chapter": {"type": "object"}, "chapter_path": {"type": "string"}, "artifact": {"type": "object"}, "artifact_path": {"type": "string"},
+            "response_id": {"type": "string"}, "not_executed": {"type": "array", "items": {"type": "string"}}},
+            "required": ["output_dir", "cycle_id"]},
+        "handler": _tool_close_request_cycle,
+    },
+    {
+        "name": "validate_legal_review",
+        "description": "Valida a revisão jurídica estruturada v4 contra o corpus e gera os entregáveis da análise (mesmo fluxo de legal_review.py).",
+        "inputSchema": {"type": "object", "properties": {"output_dir": {"type": "string", "description": "Diretório do caso"}, "review_path": {"type": "string"}}, "required": ["output_dir", "review_path"]},
+        "handler": _tool_validate_legal_review,
+    },
+    {
+        "name": "petition_workspace",
+        "description": "Workspace da peça por capítulos: init, refresh, context, save, review, approve, preview, assemble, status. Consolidação exige ciclo encerrado (cycle_id) e pesquisa da resposta.",
+        "inputSchema": {"type": "object", "properties": {"output_dir": {"type": "string", "description": "Diretório do caso"},
+            "action": {"type": "string", "enum": ["init", "refresh", "context", "save", "review", "approve", "preview", "assemble", "status"]},
+            "review": {"type": "object"}, "review_path": {"type": "string"}, "chapter": {"type": "object"}, "chapter_path": {"type": "string"},
+            "chapter_id": {"type": "string"}, "chapter_ids": {"type": "array", "items": {"type": "string"}}, "issue_ids": {"type": "array", "items": {"type": "string"}},
+            "reference": {"type": "string"}, "allow_drafts": {"type": "boolean", "default": False}, "response": {"type": "object"}, "response_path": {"type": "string"},
+            "cycle_id": {"type": "string"}, "declared_value": {"type": "string"}, "offset": {"type": "integer", "default": 0},
+            "max_chars": {"type": "integer", "default": 12000}, "expected_revision": {"type": "string"}},
+            "required": ["output_dir", "action"]},
+        "handler": _tool_petition_workspace,
+    },
+    {
+        "name": "response_research",
+        "description": "Pesquisa oficial nova por resposta: begin, consult (captura HTTP), browser (observação não atestada), unavailable, verify, bind, validate.",
+        "inputSchema": {"type": "object", "properties": {"output_dir": {"type": "string", "description": "Diretório do caso"},
+            "action": {"type": "string", "enum": ["begin", "consult", "browser", "unavailable", "verify", "bind", "validate"]},
+            "response_id": {"type": "string"}, "issue_ids": {"type": "array", "items": {"type": "string"}}, "request_reference": {"type": "string"},
+            "norm_id": {"type": "string"}, "url": {"type": "string"}, "alternatives": {"type": "array", "items": {"type": "string"}},
+            "purpose": {"type": "string"}, "observation": {"type": "object"}, "reason": {"type": "string"}, "attempt_reference": {"type": "string"},
+            "review": {"type": "object"}, "review_path": {"type": "string"}, "payload": {"type": "object"}, "payload_path": {"type": "string"},
+            "artifact": {"type": "object"}, "artifact_path": {"type": "string"}},
+            "required": ["output_dir", "action"]},
+        "handler": _tool_response_research,
+    },
+    {
+        "name": "catalog_freshness",
+        "description": "Validade (TTL) da conferência das autoridades catalogadas e fila de pendentes por uso × risco; vencida ou nunca conferida exige consulta oficial nova.",
+        "inputSchema": {"type": "object", "properties": {"authority_id": {"type": "string"}, "pending": {"type": "boolean", "default": False},
+            "by_usage": {"type": "boolean", "default": False}, "limit": {"type": "integer", "default": 50}}},
+        "handler": _tool_catalog_freshness,
     },
 )
 
@@ -786,7 +1046,8 @@ class MCPServer:
                     "version": self.version,
                 },
                 "instructions": (
-                    "AuditorProcessual MCP: ferramentas determinísticas de ingestão documental, busca processual, "
+                    "AuditorProcessual MCP: ciclo de reanálise por pedido (begin_request_cycle … close_request_cycle), "
+                    "workspace da peça, pesquisa oficial por resposta, ferramentas determinísticas de ingestão documental, busca processual, "
                     "catálogos de pretensões e peças, conferência de citações em texto oficial, cálculos forenses, "
                     "pseudonimização LGPD e exportação forense DOCX. Toda saída exige revisão advocatícia humana "
                     "(Res. CNJ 332/2020 e 615/2025)."
@@ -950,7 +1211,7 @@ def run_self_test() -> dict[str, Any]:
 
     tools_resp = mcp.handle_request({"jsonrpc": "2.0", "id": 2, "method": "tools/list"})
     tools = tools_resp["result"]["tools"] if tools_resp else []
-    assert len(tools) >= 16
+    assert len(tools) >= 28
 
     res_list = mcp.handle_request({"jsonrpc": "2.0", "id": 3, "method": "resources/list"})
     resources = res_list["result"]["resources"] if res_list else []

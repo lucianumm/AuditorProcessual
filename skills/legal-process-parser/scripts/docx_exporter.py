@@ -24,6 +24,8 @@ SAFETY_NOTICE = (
     "(RES. CNJ 332/2020 E 615/2025)"
 )
 
+PAGE_BREAK = "<!-- quebra-de-pagina -->"
+
 NS_W = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
 NS_R = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
 NS_PKG_REL = "http://schemas.openxmlformats.org/package/2006/relationships"
@@ -439,9 +441,17 @@ def export_markdown_to_docx(
     title: str = "Minuta Jurídica",
     draft_banner: bool = True,
     metadata: dict | None = None,
+    toc: bool = False,
+    annex: str | Path | None = None,
 ) -> dict:
-    """Converte Markdown forense em arquivo OOXML `.docx` válido e retorna recibo estruturado."""
+    """Converte Markdown forense em arquivo OOXML `.docx` válido e retorna recibo estruturado.
+
+    `toc` insere campo de sumário (atualizado pelo editor); `annex` acrescenta, em nova página,
+    um anexo técnico em Markdown (ex.: matriz de rastreabilidade da consolidação).
+    """
     markdown_text = _resolve_markdown_source(markdown_path_or_text)
+    if annex is not None:
+        markdown_text = markdown_text.rstrip() + "\n\n" + PAGE_BREAK + "\n\n" + _resolve_markdown_source(annex)
     destination = Path(output_docx).resolve()
     if destination.suffix.lower() != ".docx":
         raise ValueError("O arquivo de destino deve ter extensão .docx")
@@ -467,6 +477,13 @@ def export_markdown_to_docx(
         _append_text_run(banner_p, SAFETY_NOTICE, bold=True, size_half_pts="18", color="8B0000")
         paragraph_count += 1
 
+    if toc:
+        toc_title = ET.SubElement(body, _w("p"))
+        _append_text_run(toc_title, "Sumário", bold=True)
+        toc_p = ET.SubElement(body, _w("p"))
+        _append_field_code(toc_p, 'TOC \\o "1-3" \\h \\z \\u', "Atualize o sumário no editor (campo TOC).")
+        paragraph_count += 2
+
     lines = markdown_text.replace("\r\n", "\n").replace("\r", "\n").split("\n")
     idx = 0
     n = len(lines)
@@ -476,6 +493,11 @@ def export_markdown_to_docx(
         stripped = line.strip()
 
         if not stripped:
+            idx += 1
+            continue
+
+        if stripped == PAGE_BREAK:
+            ET.SubElement(ET.SubElement(ET.SubElement(body, _w("p")), _w("r")), _w("br"), {_w("type"): "page"})
             idx += 1
             continue
 
@@ -701,6 +723,8 @@ def main() -> int:
     parser.add_argument("--output", "-o", type=Path, required=True, help="Caminho de saída (.docx)")
     parser.add_argument("--title", default="Minuta Jurídica", help="Título nos metadados do documento")
     parser.add_argument("--no-draft-banner", action="store_true", help="Suprime a tarja visual adicional no corpo (mantendo cabeçalho de título)")
+    parser.add_argument("--toc", action="store_true", help="Insere sumário (campo TOC atualizado pelo editor)")
+    parser.add_argument("--annex", type=Path, help="Anexo técnico em Markdown, em nova página (ex.: matriz de rastreabilidade)")
     args = parser.parse_args()
     try:
         if not args.input.is_file():
@@ -710,6 +734,8 @@ def main() -> int:
             args.output,
             title=args.title,
             draft_banner=not args.no_draft_banner,
+            toc=args.toc,
+            annex=args.annex,
         )
         print(json.dumps(receipt, ensure_ascii=False, indent=2))
         return 0

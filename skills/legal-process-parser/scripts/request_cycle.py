@@ -452,7 +452,7 @@ def request_cards(review: dict, chapters: dict, request_ids: list[str]) -> list[
         fids = request.get("fact_ids") or sorted({f for cid, c in chapters.items() for p in c["paragraphs"]
                                                   if rid in p.get("request_ids", []) for f in p.get("fact_ids", [])})
         evidence = {f: assertions.get(f, {}).get("evidence_status", "unreviewed") for f in fids}
-        quantified = [i["id"] for i in items if rid in i.get("request_ids", [])]
+        quantified = [i.get("id", "linha") for i in items if rid in i.get("request_ids", [])] or ([("estimativa " + str(request["estimated_value"]))] if request.get("estimated_value") else [])
         gaps = []
         if not paragraphs:
             gaps.append("sem parágrafo que desenvolva o pedido")
@@ -555,7 +555,7 @@ def close_cycle(output: Path, cycle_id: str, *, atoms: list[dict] | None = None,
         except ImportError:
             from petition_workspace import memory_texts
         selected = [merged[c] for c in sorted(merged)]
-        consistency = check_consistency(selected, review, extra_texts=memory_texts(output))
+        consistency = check_consistency(selected, review, extra_texts=memory_texts(output), reactive=artifact is not None)
         # Coverage of requests is checked on the consolidated piece; per chapter only the material conflicts block.
         blocking = [f for f in consistency["findings"] if f["severity"] == "blocking" and (artifact is not None or f["kind"] != "coverage")]
         errors += ["P6: " + f["detail"] for f in blocking]

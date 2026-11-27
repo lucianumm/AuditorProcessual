@@ -241,18 +241,46 @@ def cross_reference_findings(chapters: list[dict], sections: set[str] | None) ->
     return findings
 
 
+REACTIVE = {"contestacao": ("contested_claims", "alegação ou pedido da inicial", BLOCKING,
+                            "sem impugnação específica na peça (risco de presunção de veracidade)"),
+            "recurso": ("decision_grounds", "fundamento da decisão", BLOCKING,
+                        "não atacado na peça (fundamento autônomo mantém a decisão)"),
+            "replica": ("defense_points", "defesa ou documento novo", WARNING, "sem resposta na réplica")}
+
+
+def reactive_findings(chapters: list[dict], review: dict) -> list[dict]:
+    """Opposing allegations, defenses or decision grounds left without a response in the assembled piece."""
+    spec = REACTIVE.get(review.get("piece_type"))
+    if not spec:
+        return []
+    inventory, label, severity, problem = spec
+    issues = {i for c in chapters for i in c["issue_ids"]}
+    findings = []
+    for record in review.get(inventory, []):
+        if not isinstance(record, dict):
+            continue
+        disposition = record.get("disposition", "answered" if record.get("response_issue_id") else "unanswered")
+        if disposition in {"admitted", "accepted", "outside_scope", "irrelevant", "not_challenged"}:
+            continue
+        if disposition == "unanswered" or record.get("response_issue_id") not in issues:
+            findings.append(_finding("reactive", severity, label.capitalize() + " " + str(record.get("id")) + " " + problem +
+                                     ". Enfrentar em capítulo ou registrar na análise a aceitação fundamentada.",
+                                     [(c["id"], "-") for c in chapters], [record.get("id")]))
+    return findings
+
+
 def check_consistency(chapters: list[dict], review: dict, *, extra_texts: list[str] | None = None,
-                      sections: set[str] | None = None) -> dict:
+                      sections: set[str] | None = None, reactive: bool = False) -> dict:
     findings = (parameter_findings(chapters, review) + event_findings(chapters, review) +
                 identifier_findings(chapters, review, extra_texts) + coverage_findings(chapters, review) +
                 bis_in_idem_findings(chapters, review) + glossary_findings(chapters) +
-                cross_reference_findings(chapters, sections))
+                cross_reference_findings(chapters, sections) + (reactive_findings(chapters, review) if reactive else []))
     blocking = [f for f in findings if f["severity"] == BLOCKING]
     return {"status": "blocked" if blocking else "warnings" if findings else "consistent",
             "findings": findings, "blocking_count": len(blocking),
             "controls": ["consistency.parameters", "consistency.event_dates", "consistency.entities",
                          "consistency.request_coverage", "consistency.bis_in_idem", "consistency.glossary",
-                         "consistency.cross_refs"],
+                         "consistency.cross_refs"] + (["consistency.reactive"] if reactive else []),
             "scope": "Divergências observáveis na prosa e nos vínculos; não certifica a correção jurídica nem a prova."}
 
 

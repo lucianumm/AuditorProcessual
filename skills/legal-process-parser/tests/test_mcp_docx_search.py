@@ -343,6 +343,19 @@ class MCPServerAndAdapterTests(unittest.TestCase):
             "calculate_penal_dosimetry",
             "check_limitation_timeline",
             "pseudonymize_lgpd",
+            # v1.1: request cycle, petition workspace, response research and catalogue freshness.
+            "begin_request_cycle",
+            "get_cycle_scope",
+            "read_cycle_batch",
+            "run_counter_evidence_sweep",
+            "diff_fact_atoms",
+            "recheck_citations",
+            "check_global_consistency",
+            "close_request_cycle",
+            "validate_legal_review",
+            "petition_workspace",
+            "response_research",
+            "catalog_freshness",
         }
         self.assertEqual(tool_names, expected_tools)
 

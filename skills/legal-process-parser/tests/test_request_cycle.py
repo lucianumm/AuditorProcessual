@@ -36,6 +36,8 @@ class RequestCycle(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
         self.output, self.review, _ = synthetic_case(self.root, documents=1, document_text=DOCUMENT)
+        # Labor initial: the request indicates a value (estimate recorded in the analysis).
+        self.review["requests"][0]["estimated_value"] = "2200.00"
         initialize(self.output, self.review)
         norm = self.review["norms"][0]
         self.original = json.loads((self.output / "research_sources" / (norm["capture_id"] + ".json")).read_text(encoding="utf-8"))
@@ -188,6 +190,33 @@ class RequestCycle(unittest.TestCase):
         closed = close_cycle(self.output, cycle["cycle_id"], response_id=self.response())
         self.assertEqual(closed["content_kind"], "analysis")
         self.assertIn("passe P5 (modo rapido)", closed["not_executed"])
+
+    def test_cycle_through_mcp_tools(self):
+        from scripts.mcp_server import MCPServer
+        server = MCPServer()
+
+        def call(name, **arguments):
+            reply = server.handle_request({"jsonrpc": "2.0", "id": 1, "method": "tools/call",
+                                           "params": {"name": name, "arguments": dict(arguments, output_dir=str(self.output))}})
+            self.assertFalse(reply["result"]["isError"], reply["result"]["content"][0]["text"])
+            return json.loads(reply["result"]["content"][0]["text"])
+
+        cycle = call("begin_request_cycle", request="Desenvolva diferenças salariais", issue_ids=["I1"])
+        call("get_cycle_scope", cycle_id=cycle["cycle_id"])
+        batch = call("read_cycle_batch", cycle_id=cycle["cycle_id"], max_chars=2000)
+        while batch["next_offset"] is not None:
+            batch = call("read_cycle_batch", cycle_id=cycle["cycle_id"], offset=batch["next_offset"], max_chars=2000)
+        call("run_counter_evidence_sweep", cycle_id=cycle["cycle_id"])
+        self.assertEqual(call("diff_fact_atoms", cycle_id=cycle["cycle_id"], atoms=self.atoms())["errors"], [])
+        record = self.chapter()
+        self.assertEqual(call("check_global_consistency", chapter=record)["blocking_count"], 0)
+        closed = call("close_request_cycle", cycle_id=cycle["cycle_id"], atoms=self.atoms(), findings=FINDINGS,
+                      chapter=record, response_id=self.response())
+        self.assertEqual(closed["status"], "closed")
+        self.assertIn("Reconferência deste pedido", closed["block"])
+        record["request_cycle"] = {"cycle_id": closed["cycle_id"]}
+        self.assertEqual(call("petition_workspace", action="status")["chapters"], {})
+        self.assertIn("summary", call("catalog_freshness", pending=True, limit=3))
 
     def test_tampered_cycle_is_rejected(self):
         cycle = begin_cycle(self.output, "Analise", ["I1"], depth="rapido")
