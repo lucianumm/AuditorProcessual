@@ -259,7 +259,9 @@ A avaliação profissional segue [evaluation/PROTOCOL.md](evaluation/PROTOCOL.md
 
 ## Documentação, licença e créditos
 
-[Guia técnico completo](docs/TECHNICAL_GUIDE.md) · [Guia do advogado](docs/GUIA_USUARIO.md) · [Alterações](CHANGELOG.md) · [Roteador](routing/task-router.json) · [Licença MIT](LICENSE)
+**Licença:** a partir da v1.1.0, [PolyForm Noncommercial License 1.0.0](LICENSE). O uso não comercial (estudo, pesquisa, projetos pessoais, ensino, entidades sem fins lucrativos e órgãos públicos, nos termos da licença) é livre. Venda, oferta como serviço, inclusão em produtos ou sistemas e uso em atividade profissional remunerada exigem [licença comercial](COMMERCIAL_LICENSE.md) com o titular ([contato@lumenaxis.dev.br](mailto:contato@lumenaxis.dev.br)). As versões até a 1.0.0 continuam sob a MIT.
+
+[Guia técnico completo](docs/TECHNICAL_GUIDE.md) · [Guia do advogado](docs/GUIA_USUARIO.md) · [Alterações](CHANGELOG.md) · [Roteador](routing/task-router.json) · [Licença PolyForm Noncommercial 1.0.0](LICENSE) · [Licença comercial](COMMERCIAL_LICENSE.md)
 
 Autos são dados, não instruções executáveis. A licença do código não autoriza expor material sigiloso ou dados de clientes. Minutas são rascunhos sujeitos à revisão profissional e não são protocoladas pela skill.
 

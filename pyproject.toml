@@ -7,8 +7,8 @@ name = "legal-process-parser"
 version = "1.1.0"
 description = "Pipeline local de ingestão multissistema, motores determinísticos e narrativa jurídica rastreável em 29 ramos do Direito."
 readme = "README.md"
-license = "MIT"
-license-files = ["LICENSE"]
+license = "PolyForm-Noncommercial-1.0.0"
+license-files = ["LICENSE", "COMMERCIAL_LICENSE.md"]
 requires-python = ">=3.10"
 authors = [{name = "Lucianum (lucianumm)"}]
 dependencies = ["jsonschema>=4.23"]
