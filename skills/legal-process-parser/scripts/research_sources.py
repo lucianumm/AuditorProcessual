@@ -5,7 +5,6 @@ import argparse
 import hashlib
 import json
 import io
-import re
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 from http.client import HTTPException

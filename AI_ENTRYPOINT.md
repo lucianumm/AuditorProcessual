@@ -31,6 +31,12 @@ Atualize `relatorio_processual.md`, `memoria_processual.md` e
 `indice_juridico.md`. Preserve originais e todas as versões; relações entre
 arquivos são explícitas. Não presumir persistência fora dos arquivos preservados.
 
+A cada pedido substantivo, seguir request_cycle_rules.md no núcleo: reanálise
+integral P0–P7 (releitura das páginas dos fatos do perímetro, contraprova,
+reconferência factual e de citações, passe adversarial e coerência com todos os
+capítulos) e bloco "Reconferência deste pedido" ao final; sem código, a
+releitura é declarada, não atestada.
+
 Na construção tese por tese, usar incremental_petition_rules.md no núcleo:
 análise integral, mapa de candidatos, capítulo escolhido, revisões preservadas
 e consolidação solicitada. A aprovação registra manifestação real do usuário.

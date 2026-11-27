@@ -196,7 +196,8 @@ class PrecisionV4(unittest.TestCase):
         self.assertFalse(any("chatgpt" in item["path"] for item in context["references"]))
         self.assertEqual(context["capabilities"]["vision"],"not_tested")
         # Inclui o guia e o índice do ramo previdenciário (ampliados na v0.23.0), sem carregar outros ramos.
-        self.assertLess(context["reference_characters"],30000)
+        # v1.1: o núcleo do ciclo de reanálise por pedido (~4 mil caracteres) entra em toda análise.
+        self.assertLess(context["reference_characters"],34000)
         self.assertTrue(any(item["path"].endswith("domain_guides/previdenciario.md") for item in context["references"]))
         self.assertFalse(any(item["path"].endswith("domain_guides/penal.md") for item in context["references"]))
         with self.assertRaises(ValueError):

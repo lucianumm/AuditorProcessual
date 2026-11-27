@@ -33,7 +33,8 @@
       "automatic_triggers": [
         "official_research",
         "source_verification",
-        "response_research"
+        "response_research",
+        "request_cycle"
       ],
       "artifacts": [
         "analise_juridica.md",
@@ -53,7 +54,9 @@
         "source_verification",
         "measure",
         "incremental_petition",
-        "response_research"
+        "response_research",
+        "request_cycle",
+        "request_cycle_details"
       ],
       "artifacts": [
         "minuta_peca.md",
@@ -91,7 +94,8 @@
       "automatic_triggers": [
         "official_research",
         "source_verification",
-        "response_research"
+        "response_research",
+        "request_cycle"
       ]
     },
     "audit": {
@@ -104,7 +108,8 @@
       "automatic_triggers": [
         "official_research",
         "source_verification",
-        "response_research"
+        "response_research",
+        "request_cycle"
       ],
       "artifacts": [
         "all_requested_artifacts"
@@ -370,6 +375,20 @@
         "skills/legal-process-parser/references/judicial_decision_and_opinion_rules.md"
       ],
       "when": "A entrega solicitada é minuta de decisão interlocutória, sentença, voto/acórdão (apoio de gabinete) ou parecer jurídico consultivo."
+    },
+    {
+      "trigger": "request_cycle",
+      "references": [
+        "skills/legal-process-parser/references/request_cycle_rules.md"
+      ],
+      "when": "Toda solicitação substantiva de análise, prova, auditoria, capítulo, revisão ou consolidação: reanálise integral por pedido (P0–P7), Ficha de Pedido e bloco \"Reconferência deste pedido\"; automático em analyze, petition, evidence e audit."
+    },
+    {
+      "trigger": "request_cycle_details",
+      "references": [
+        "skills/legal-process-parser/references/request_cycle_details.md"
+      ],
+      "when": "Redigir, revisar ou consolidar peça, ou executar o ciclo localmente: Ficha de Pedido, gatilhos de reabertura, orçamento de releitura, checklist e comandos; automático em petition."
     }
   ],
   "specializations": "skills/legal-process-parser/references/legal_specializations.json",

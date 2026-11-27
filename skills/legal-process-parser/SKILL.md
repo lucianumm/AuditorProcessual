@@ -5,6 +5,24 @@ description: Examina processos e anexos por página, identifica a medida process
 
 # Legal Process Parser
 
+## Ciclo obrigatório a cada pedido
+
+Em toda solicitação substantiva, execute o ciclo de
+`references/request_cycle_rules.md` antes de entregar:
+
+1. P0 — classifique o pedido, liste o que mudou e defina o perímetro de impacto.
+2. P1 — releia inteiras as páginas dos fatos do perímetro e faça a varredura de contraprova.
+3. P2 — reextraia os fatos da fonte relida e compare com a análise-base.
+4. P3 — consulte as fontes oficiais nesta resposta e reconfira as citações já redigidas.
+5. P4 — ligue requisito, fato, prova, norma da época e pedido; atualize a Ficha de Pedido.
+6. P5 — releia a minuta como a parte contrária e resolva cada objeção.
+7. P6 — confira salário, datas, períodos, partes e pedidos contra todos os capítulos.
+8. P7 — informe o que mudou, o que não foi verificado e o que foi reaberto.
+9. Entregue com o bloco "Reconferência deste pedido"; releitura sem execução local é declarada, não atestada.
+
+A análise-base é ponto de partida, não verdade herdada. Modo padrão `integral`;
+`focado` para ajuste só de redação; `rápido` para esclarecimento sem peça.
+
 ## Escolha o trabalho e os recursos
 
 Quando o acesso for por link, comece por `AI_ENTRYPOINT.md`. Leia este núcleo,

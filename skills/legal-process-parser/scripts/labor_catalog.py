@@ -13,6 +13,16 @@ STATUS_LABELS = {"localizado_no_texto_oficial": "texto oficial localizado", "rev
                  "julgado_com_modulacao": "julgado com modulação", "merito_pendente": "mérito pendente",
                  "pendente_conferencia_oficial": "pendente de conferência no portal oficial", "sem_vigencia": "sem vigência no portal oficial"}
 
+FRESHNESS_LABELS = {"fresh": "conferência dentro da validade", "expired": "conferência vencida — consultar de novo", "never_verified": "nunca conferida no portal"}
+
+def with_freshness(authorities: list[dict]) -> list[dict]:
+    """Catalogue entries with the age of their check; expired entries require a new consultation."""
+    try:
+        from .catalog_status import annotate
+    except ImportError:
+        from catalog_status import annotate
+    return annotate(authorities)
+
 def catalog(name: str, field: str) -> dict:
     return {item["id"]: item for item in json.loads((CORE / "references" / name).read_text(encoding="utf-8"))[field]}
 
@@ -50,7 +60,7 @@ def claim_brief(identifiers: list[str], polo: str = "ambos") -> dict:
         row = {k: claim[k] for k in ("id", "label", "topic_id", "requirements", "typical_requests", "evidence",
                                      "calculation_profiles", "related_claims", "prescription") if k in claim}
         for field in POLOS[polo]:
-            row[field] = [{**t, "authorities": [refs["authorities"][a] for a in t["authority_ids"]]} for t in claim.get(field, [])]
+            row[field] = [{**t, "authorities": with_freshness([refs["authorities"][a] for a in t["authority_ids"]])} for t in claim.get(field, [])]
         row["temporal_markers"] = [refs["markers"][m] for m in claim.get("temporal_marker_ids", [])]
         claims.append(row)
     return {"claims": claims, "polo": polo, "policy": refs["policy"], "legal_status": "candidate_authorities_require_current_verification"}
@@ -72,7 +82,7 @@ def thesis_map_markdown(identifiers: list[str], polo: str = "ambos") -> str:
             lines += ["### " + titles[field], ""]
             for thesis in claim.get(field, []):
                 cites = "; ".join(f"[{safe_text(a['label'])}]({a['official_url']}) — {STATUS_LABELS.get(a['status'], a['status'])} "
-                                  f"(catálogo {a['verified']['on']})" for a in thesis["authorities"])
+                                  f"(catálogo {a['verified']['on']}; {FRESHNESS_LABELS[a['freshness']['state']]})" for a in thesis["authorities"])
                 lines.append("- " + safe_text(thesis["label"]) + (" · " + cites if cites else " · pesquisar fonte própria"))
             lines.append("")
         if claim["temporal_markers"]:

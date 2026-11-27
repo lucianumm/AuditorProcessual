@@ -99,3 +99,12 @@ next_offset null, usando --expected-revision na continuação. Cada parágrafo
 factual declara assertions com campos reconferidos na análise-base. O validador
 detecta divergências nos campos declarados e algumas inversões de negação;
 não prova que todas as afirmações da prosa foram identificadas ou sustentadas.
+
+Cada capítulo, revisão e consolidação passa pelo ciclo de
+`request_cycle_rules.md`. Ao salvar um capítulo novo, repetir P6 sobre todos os
+capítulos já salvos (coerência retroativa). O `assemble` recusa parâmetros com
+valores diferentes (salário, jornada, divisor, adicional), datas de admissão ou
+dispensa divergentes, CPF/CNPJ/processo sem fonte, pedido sem causa de pedir,
+causa de pedir sem o pedido da análise e a mesma rubrica e competência em
+pedidos principais distintos; glossário de partes e remissões internas geram
+alerta. Com código: `global_consistency.py saida` antes do preview.

@@ -13,7 +13,6 @@ import unicodedata
 from datetime import date
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
-from urllib.parse import urlsplit
 
 try:
     from .case_memory import atomic_bytes, atomic_json, atomic_text, identity

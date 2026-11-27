@@ -23,11 +23,24 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
+      - name: Lint (correctness rules)
+        run: |
+          python -m pip install ruff
+          ruff check scripts skills/legal-process-parser
       - name: Run unit tests
         working-directory: skills/legal-process-parser
         run: |
           python -m pip install jsonschema pypdf
           python -m unittest discover -s tests -v
+      - name: Planted-error detection (synthetic regression)
+        run: python scripts/run_planted_errors.py
+      - name: Coverage of engines and validators
+        if: matrix.os == 'ubuntu-latest' && matrix.python == '3.12'
+        working-directory: skills/legal-process-parser
+        run: |
+          python -m pip install coverage
+          python -m coverage run --source=scripts -m unittest discover -s tests -q
+          python -m coverage report --fail-under=75 --include="scripts/deadline_calculator.py,scripts/civil_monetary_engine.py,scripts/social_security_calc.py,scripts/penal_dosimetry.py,scripts/limitation_checker.py,scripts/labor_calculations.py,scripts/global_consistency.py,scripts/request_cycle.py,scripts/prose_review.py,scripts/prose_dates.py,scripts/piece_assembly.py,scripts/catalog_status.py,scripts/injection.py,scripts/citation_check.py"
       - name: Validate metadata, routing and schemas
         run: python scripts/verify_repository.py
       - name: Self-test MCP server protocol and bindings

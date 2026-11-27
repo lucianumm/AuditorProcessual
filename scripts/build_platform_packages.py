@@ -53,8 +53,9 @@ def write_zip(destination: Path, files: list[tuple[Path, str]]) -> None:
     destination.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(destination, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         add_file(archive,REPO_ROOT / "LICENSE", "LICENSE")
+        add_file(archive,REPO_ROOT / "COMMERCIAL_LICENSE.md", "COMMERCIAL_LICENSE.md")
         for source, target in sorted(files, key=lambda item: item[1]):
-            if target == "LICENSE":
+            if target in {"LICENSE", "COMMERCIAL_LICENSE.md"}:
                 continue
             normalized_core = any(t == "scripts/legal_review.py" for _, t in files) or target == "legal-process-parser/routing/task-router.json"
             if target.endswith("routing/task-router.json") and normalized_core:
@@ -96,6 +97,7 @@ def build_packages(output: Path) -> list[Path]:
 
     generic = [(path, f"legal-process-parser/{path.relative_to(CORE_ROOT).as_posix()}") for path in core_files()]
     generic.append((REPO_ROOT / "LICENSE", "legal-process-parser/LICENSE"))
+    generic.append((REPO_ROOT / "COMMERCIAL_LICENSE.md", "legal-process-parser/COMMERCIAL_LICENSE.md"))
     generic.append((REPO_ROOT / "routing/task-router.json", "legal-process-parser/routing/task-router.json"))
     generic_destination = output / "legal-process-parser.zip"
     write_zip(generic_destination, generic)

@@ -34,3 +34,8 @@ Inicial afirmativa na voz da parte, sem linguagem de relatório de documentos;
 fontes por arquivo/página/folha/região. Atualizar relatório, memória e índice
 jurídico Markdown sem apagar versões. Perguntar só por ambiguidade material ou
 dado indispensável não localizado. Minuta sempre RASCUNHO — NÃO PROTOCOLAR.
+
+Ciclo a cada pedido: seguir `references/request_cycle_rules.md` (P0–P7) e fechar
+toda resposta substantiva com o bloco "Reconferência deste pedido". Passe
+adversarial em Gem revisor ou nova conversa quando houver; sem isso, declarar
+"mesmo modelo". Releitura sem código é declarada, não atestada.

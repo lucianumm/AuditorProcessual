@@ -348,7 +348,6 @@ def evaluate_rgps_eligibility(spec: dict) -> dict:
         ctx.prec = 50
         days_at_ec103 = sum((s["converted_days_exact"] for s in segs_ec103), Decimal("0"))
         days_at_der = sum((s["converted_days_exact"] for s in segs_der), Decimal("0"))
-        years_at_ec103 = days_at_ec103 / DAYS_PER_YEAR
         years_at_der = days_at_der / DAYS_PER_YEAR
 
         age_years_int, _, age_exact_der = _exact_age(birth_d, der_d)

@@ -43,7 +43,7 @@ def timestamp(value: str) -> datetime:
 
 
 def target_hash(artifact: dict) -> str:
-    return identity({k: v for k, v in artifact.items() if k != "response_research"})
+    return identity({k: v for k, v in artifact.items() if k not in {"response_research", "request_cycle"}})
 
 
 def session_path(output: Path, response_id: str) -> Path:

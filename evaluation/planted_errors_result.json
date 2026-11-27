@@ -1,0 +1,142 @@
+{
+  "foreseen_total": 20,
+  "foreseen_detected": 20,
+  "foreseen_rate": 1.0,
+  "unforeseen_total": 2,
+  "unforeseen_detected": 0,
+  "rows": [
+    {
+      "id": "E01",
+      "kind": "parameter",
+      "control": "consistency",
+      "detected": true
+    },
+    {
+      "id": "E02",
+      "kind": "parameter",
+      "control": "consistency",
+      "detected": true
+    },
+    {
+      "id": "E03",
+      "kind": "parameter",
+      "control": "consistency",
+      "detected": true
+    },
+    {
+      "id": "E04",
+      "kind": "parameter",
+      "control": "consistency",
+      "detected": true
+    },
+    {
+      "id": "E05",
+      "kind": "event_date",
+      "control": "consistency",
+      "detected": true
+    },
+    {
+      "id": "E06",
+      "kind": "event_date",
+      "control": "consistency",
+      "detected": true
+    },
+    {
+      "id": "E07",
+      "kind": "entity",
+      "control": "consistency",
+      "detected": true
+    },
+    {
+      "id": "E08",
+      "kind": "entity",
+      "control": "consistency",
+      "detected": true
+    },
+    {
+      "id": "E09",
+      "kind": "coverage",
+      "control": "consistency",
+      "detected": true
+    },
+    {
+      "id": "E10",
+      "kind": "prose_date",
+      "control": "prose",
+      "detected": true
+    },
+    {
+      "id": "E11",
+      "kind": "approximate_date",
+      "control": "prose",
+      "detected": true
+    },
+    {
+      "id": "E12",
+      "kind": "inverted_period",
+      "control": "prose",
+      "detected": true
+    },
+    {
+      "id": "E13",
+      "kind": "polarity",
+      "control": "prose",
+      "detected": true
+    },
+    {
+      "id": "E14",
+      "kind": "amount",
+      "control": "prose",
+      "detected": true
+    },
+    {
+      "id": "E15",
+      "kind": "overclaim",
+      "control": "prose",
+      "detected": true
+    },
+    {
+      "id": "E16",
+      "kind": "injection",
+      "control": "injection",
+      "detected": true
+    },
+    {
+      "id": "E17",
+      "kind": "injection",
+      "control": "injection",
+      "detected": true
+    },
+    {
+      "id": "E18",
+      "kind": "stale_authority",
+      "control": "freshness",
+      "detected": true
+    },
+    {
+      "id": "E19",
+      "kind": "pending_authority",
+      "control": "freshness",
+      "detected": true
+    },
+    {
+      "id": "E20",
+      "kind": "bis_in_idem",
+      "control": "bis_in_idem",
+      "detected": true
+    },
+    {
+      "id": "U01",
+      "kind": "unforeseen",
+      "control": "none",
+      "detected": false
+    },
+    {
+      "id": "U02",
+      "kind": "unforeseen",
+      "control": "none",
+      "detected": false
+    }
+  ],
+  "meaning": "Casos sintéticos do próprio autor: regressão e limite declarado, não precisão em autos reais."
+}

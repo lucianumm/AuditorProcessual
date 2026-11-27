@@ -195,6 +195,20 @@
     },
     "response_research": {
       "type": "object"
+    },
+    "request_cycle": {
+      "type": "object",
+      "required": [
+        "cycle_id"
+      ],
+      "properties": {
+        "cycle_id": {
+          "type": "string",
+          "pattern": "^C-\\d{4,6}$"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Ciclo de reanálise encerrado e vinculado a este conteúdo (request_cycle.py)."
     }
   },
   "$defs": {

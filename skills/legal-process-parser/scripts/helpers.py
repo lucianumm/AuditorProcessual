@@ -88,16 +88,10 @@ except ImportError:
 
 
 # ASCII-safe regex patterns keep matching reliable across platforms and locales.
-INJECTION_PATTERNS = [
-    r"ignore\s+(?:todas\s+as\s+|all\s+|previous\s+|suas\s+|as\s+)*(?:previous\s+)?instru(?:\u00e7\u00f5es|ctions)(?:\s+anteriores)?",
-    r"reveal\s+(?:your|internal)|reveal\s+informa",
-    r"execute\s+(?:este|this)\s+comando",
-    r"envie\s+(?:os|these|the)\s+documentos",
-    r"system\s+prompt|developer\s+message",
-    r"[\u200b\u200c\u200d\ufeff]{3,}",
-    r"!\[[^\]]*\]\(https?://",
-    r"<\s*script\b|javascript\s*:",
-]
+try:
+    from .injection import PATTERNS as INJECTION_PATTERNS, detect_injection
+except ImportError:
+    from injection import PATTERNS as INJECTION_PATTERNS, detect_injection  # type: ignore
 
 DATE_RE = re.compile(r"\b(?:[0-3]?\d)[/.-](?:0?[1-9]|1[0-2])[/.-](?:\d{2}|\d{4})\b")
 IMAGE_MARKDOWN_RE = re.compile(r"!\[([^]]*)\]\(([^)]+)\)")
@@ -287,14 +281,6 @@ def normalise_spaces(value: str) -> str:
     value = value.replace("\x00", "")
     value = unicodedata.normalize("NFC", value)
     return re.sub(r"[ \t]+", " ", value).strip()
-
-
-def detect_injection(text: str) -> list[str]:
-    findings: list[str] = []
-    for pattern in INJECTION_PATTERNS:
-        if re.search(pattern, text, flags=re.I):
-            findings.append(pattern)
-    return findings
 
 
 def page_quality(text: str) -> tuple[str, list[str]]:

@@ -38,3 +38,8 @@ Upload e disponibilidade: guia `CHATGPT_UPLOAD.md` e
 [documentação oficial](https://help.openai.com/pt-br/articles/20001066-skills-in-chatgpt).
 Na tela de Habilidades habilitada, carregar o ZIP/SKILL com SKILL.md na raiz.
 A disponibilidade varia por conta e workspace; upload não certifica mérito.
+
+Ciclo a cada pedido: seguir `references/request_cycle_rules.md` (P0–P7) e fechar
+toda resposta substantiva com o bloco "Reconferência deste pedido". Passe
+adversarial em nova conversa ou GPT revisor quando houver; sem isso, declarar
+"mesmo modelo". Releitura sem código é declarada, não atestada.

@@ -29,7 +29,7 @@ def verify(wheel):
                          "references/labor_sectors/railway.md", "schemas/domain_catalog.schema.json", "scripts/legislation_lookup.py"):
             assert (target / resource).is_file(), resource
         for resource in ("scripts/response_research.py", "scripts/labor_parameters.py",
-                         "scripts/numeric_criteria.py", "scripts/labor_case_state.py", "scripts/prose_review.py", "scripts/research_locator.py",
+                         "scripts/numeric_criteria.py", "scripts/labor_case_state.py", "scripts/prose_review.py", "scripts/request_cycle.py", "scripts/global_consistency.py", "scripts/prose_dates.py", "scripts/piece_assembly.py", "scripts/catalog_status.py", "scripts/injection.py", "references/request_cycle_rules.md", "references/request_cycle_details.md", "scripts/research_locator.py",
                          "schemas/response_research.schema.json", "schemas/labor_parameters.schema.json",
                          "references/response_research_rules.md", "references/local_response_workflow.md",
                          "references/labor_parameter_profiles.json", "references/labor_details/career_and_variable_pay_rules.md",

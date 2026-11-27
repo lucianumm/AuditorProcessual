@@ -15,7 +15,7 @@ import re
 import struct
 import tempfile
 import zipfile
-from datetime import date, datetime, timedelta
+from datetime import date, timedelta
 from pathlib import Path
 from typing import Any
 from xml.etree import ElementTree as ET

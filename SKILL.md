@@ -15,6 +15,9 @@ listadas para essa tarefa.
 
 Em análise, petição ou auditoria, use
 `skills/legal-process-parser/references/precision_review_rules.md`.
+A cada pedido substantivo, execute o ciclo de reanálise de
+`skills/legal-process-parser/references/request_cycle_rules.md` (P0–P7) e feche
+a resposta com o bloco "Reconferência deste pedido".
 Antes de cada resposta jurídica substancial, executar pesquisa oficial nova, conforme
 `skills/legal-process-parser/references/response_research_rules.md`:
 fonte, requisitos/exceções, interpretação, fatos, consequência e pedido;

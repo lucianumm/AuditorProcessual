@@ -22,6 +22,7 @@ def verify(directory):
             with zipfile.ZipFile(package) as archive:
                 names = archive.namelist()
                 assert "LICENSE" in names, package.name
+                assert "COMMERCIAL_LICENSE.md" in names, package.name
                 assert len(set(names)) == len(names), "duplicate package entry"
                 assert all(not n.startswith("/") and ".." not in Path(n).parts for n in names), "unsafe archive entry"
                 assert not any(".ci-artifacts/" in n or "/outputs/" in n or n.endswith(".pyc") for n in names)

@@ -1,6 +1,6 @@
 {
   "name": "auditor-processual",
-  "version": "1.0.0",
-  "description": "Legal Process Parser v1.0.0 com 29 ramos especialistas, motores determinísticos, servidor MCP e narrativa jurídica rastreável.",
+  "version": "1.1.0",
+  "description": "Legal Process Parser v1.1.0: ciclo de reanálise integral por pedido, coerência entre capítulos, consolidação estruturada, 29 ramos especialistas, motores determinísticos e servidor MCP.",
   "contextFileName": "GEMINI.md"
 }

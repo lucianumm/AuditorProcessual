@@ -176,6 +176,42 @@ def dependencies(review: dict, issue_ids: list[str]) -> dict:
     return result
 
 
+def memory_texts(output: Path) -> list[str]:
+    """Page texts of the received records: identifiers in the prose must exist in a source."""
+    path = inside(output, "case_memory.json")
+    if not path.is_file():
+        return []
+    memory = read_json(path)
+    texts = [p.get("text", "") for d in memory.get("documents", []) for p in d.get("pages", [])]
+    texts += [str(d.get("process_id") or "") for d in memory.get("documents", [])]
+    return texts + [json.dumps(memory.get("client_records", []), ensure_ascii=False)]
+
+
+def global_check(output: Path, chapters: list[dict], review: dict, sections: set[str] | None = None,
+                 reactive: bool = False) -> dict:
+    try:
+        from .global_consistency import check_consistency
+    except ImportError:
+        from global_consistency import check_consistency
+    return check_consistency(chapters, review, extra_texts=memory_texts(output), sections=sections, reactive=reactive)
+
+
+def cycle_check(output: Path, reference, content: dict, kind: str) -> list[str]:
+    try:
+        from .request_cycle import validate_cycle
+    except ImportError:
+        from request_cycle import validate_cycle
+    return validate_cycle(output, reference, content, kind=kind)
+
+
+def consistency_summary(report: dict) -> str:
+    try:
+        from .global_consistency import summary
+    except ImportError:
+        from global_consistency import summary
+    return summary(report)
+
+
 def chapter_record(output: Path, chapter: dict) -> dict:
     return read_json(inside(output, chapter["path"]))
 
@@ -402,6 +438,8 @@ def save_chapter(output: Path, record: dict, *, require_response: bool = True) -
         errors.extend(research["errors"])
         if research["status"] == "partial":
             errors.append("Fundamento atual pendente: delimitar o capítulo e prosseguir nas teses independentes")
+    cycle_errors = cycle_check(output, record.get("request_cycle"), record, "chapter") if record.get("request_cycle") else []
+    errors.extend(cycle_errors)
     if errors:
         raise ValueError("; ".join(errors))
     cid = safe_id(record["id"])
@@ -418,6 +456,13 @@ def save_chapter(output: Path, record: dict, *, require_response: bool = True) -
                "approvals": (prior or {}).get("approvals", []),
                "version_bases": dict((prior or {}).get("version_bases", {}))}
     chapter["response_policy"] = "per_response" if require_response else "legacy_not_per_response"
+    chapter["cycle_policy"] = "cycle_closed" if record.get("request_cycle") else "no_cycle"
+    chapter["cycle_id"] = (record.get("request_cycle") or {}).get("cycle_id")
+    try:
+        from .prose_review import prose_warnings
+    except ImportError:
+        from prose_review import prose_warnings
+    chapter["prose_warnings"] = [p["id"] + ": " + w for p in record["paragraphs"] for w in prose_warnings(p, review)]
     chapter["version_bases"][path] = {"baseline_path": state["baseline_path"], "dependency_hash": dependency_hash}
     state["chapters"][cid] = chapter
     invalidate_assembly(output)
@@ -441,15 +486,22 @@ def set_status(output: Path, cid: str, status: str, reference: str) -> dict:
 
 
 def assemble(output: Path, order: list[str], *, allow_drafts: bool = False,
-             response: dict | None = None, require_response: bool = True, preview: bool = False) -> dict:
+             response: dict | None = None, require_response: bool = True, preview: bool = False,
+             cycle: str | None = None, require_cycle: bool | None = None, declared_value: str | None = None) -> dict:
     state, review = load_workspace(output)
+    require_cycle = require_response if require_cycle is None else require_cycle
     if not order or len(order) != len(set(order)):
         raise ValueError("Indicar os capítulos na ordem desejada, sem duplicação")
     if base_pending(output, state):
         raise ValueError("Conferir a análise-base atualizada antes de consolidar")
-    selected, request_owners = [], {}
+    selected, request_owners, legacy = [], {}, []
     for cid in order:
         chapter = state["chapters"][safe_id(cid)]
+        policy = chapter.get("cycle_policy")
+        if policy is None:
+            legacy.append(cid)
+        elif require_cycle and policy == "no_cycle" and not preview:
+            raise ValueError("Capítulo salvo sem ciclo de reanálise encerrado: " + cid + "; executar request_cycle.py e salvar de novo")
         record = chapter_record(output, chapter)
         if chapter["status"] == "needs_review" or chapter["dependency_hash"] != identity(dependencies(review, record["issue_ids"])):
             raise ValueError("Capítulo desatualizado: " + cid)
@@ -466,14 +518,37 @@ def assemble(output: Path, order: list[str], *, allow_drafts: bool = False,
     for option in selected_options:
         if set(option.get("exclusive_with", [])) & {o["id"] for o in selected_options if o.get("scenario_id") == option.get("scenario_id")}:
             raise ValueError("Teses incompatíveis no mesmo cenário; delimitar hipóteses subsidiárias")
-    text = "# CONSOLIDAÇÃO DOS CAPÍTULOS SELECIONADOS\n\nRASCUNHO — NÃO PROTOCOLAR\n\n"
-    text += "\n\n".join("## " + c["title"].replace("\n", " ") + "\n\n" + "\n\n".join(p["text"] for p in c["paragraphs"]) for c in selected) + "\n"
+    try:
+        from .piece_assembly import compose, traceability_matrix
+        from .request_cycle import request_cards
+    except ImportError:
+        from piece_assembly import compose, traceability_matrix
+        from request_cycle import request_cards
+    memory_path = inside(output, "case_memory.json")
+    memory = read_json(memory_path) if memory_path.is_file() else {}
+    composed = compose(selected, review, request_owners, memory, declared_value)
+    consistency = global_check(output, selected, review, sections=composed["sections"], reactive=True)
+    if consistency["blocking_count"] and not preview:
+        raise ValueError("Coerência entre capítulos: " + consistency_summary(consistency))
+    text = composed["text"]
+    cards = request_cards(review, {c["id"]: c for c in selected}, list(request_owners))
+    matrix = traceability_matrix(selected, review, cards, composed["numbering"], memory)
     artifact = {"issue_ids": sorted({i for c in selected for i in c["issue_ids"]}),
                 "request_ids": sorted(request_owners),
                 "paragraphs": [{**p, "id": c["id"] + "--" + p["id"]} for c in selected for p in c["paragraphs"]],
-                "chapter_hashes": [state["chapters"][cid]["hash"] for cid in order], "text": text}
+                "chapter_hashes": [state["chapters"][cid]["hash"] for cid in order], "text": text,
+                "consistency": consistency, "claim_value": composed["claim_value"], "request_cards": cards,
+                "traceability_matrix": matrix}
     if preview:
         return artifact
+    if require_cycle:
+        try:
+            from .piece_assembly import labor_value_findings
+        except ImportError:
+            from piece_assembly import labor_value_findings
+        cycle_errors = labor_value_findings(review, composed["claim_value"]) + cycle_check(output, cycle, artifact, "assembly")
+        if cycle_errors:
+            raise ValueError("; ".join(cycle_errors))
     if require_response:
         try:
             from .response_research import validate_response
@@ -485,11 +560,21 @@ def assemble(output: Path, order: list[str], *, allow_drafts: bool = False,
     digest = identity(text, [state["chapters"][cid]["hash"] for cid in order])
     archive = "petition_workspace/assemblies/" + digest + ".md"
     archived_names = archive_markdown(output, archive, text)
+    matrix_path = "petition_workspace/assemblies/" + digest + "-matriz.md"
+    atomic_text(inside(output, matrix_path), matrix)
+    archived_names.append(matrix_path)
     atomic_text(inside(output, "peticao_consolidada.md"), text)
     result = {"id": digest, "chapter_ids": order, "chapter_hashes": [state["chapters"][cid]["hash"] for cid in order],
               "path": archive, "uncovered_request_ids": sorted({r["id"] for r in review["requests"]} - set(request_owners)),
-              "scope": "selected_chapters_only", "legal_status": "professional_review_required"}
+              "scope": "selected_chapters_only", "legal_status": "professional_review_required",
+              "consistency": {"status": consistency["status"],
+                              "warnings": [f["detail"] for f in consistency["findings"] if f["severity"] != "blocking"]}}
     result["response_policy"] = "per_response" if require_response else "legacy_not_per_response"
+    result.update(claim_value=composed["claim_value"], traceability_matrix=matrix_path,
+                  request_states={c["request_id"]: c["status"] for c in cards})
+    result["cycle_policy"] = "cycle_closed" if require_cycle else "not_required"
+    result["cycle_id"] = cycle if require_cycle else None
+    result["legacy_no_cycle"] = legacy
     state["assemblies"].append(result)
     persist(output, state, review)
     track_artifacts(output, archived_names + ["peticao_consolidada.md"], bundle=True)
@@ -511,6 +596,8 @@ def main() -> int:
     parser.add_argument("--expected-revision")
     parser.add_argument("--research-response", type=Path)
     parser.add_argument("--save-preview", default="")
+    parser.add_argument("--declared-value", help="valor da causa informado pelo usuário, para conferência com a soma calculada")
+    parser.add_argument("--cycle", help="ciclo de reanálise encerrado para a consolidação (request_cycle.py close --artifact)")
     args = parser.parse_args()
     output = args.output.resolve()
     try:
@@ -531,7 +618,7 @@ def main() -> int:
         elif args.command in {"assemble", "preview"}:
             result = assemble(output, args.chapter, allow_drafts=args.allow_drafts,
                               response=read_json(args.research_response) if args.research_response else None,
-                              preview=args.command == "preview")
+                              preview=args.command == "preview", cycle=args.cycle, declared_value=args.declared_value)
             if args.save_preview and args.command == "preview":
                 atomic_json(inside(output, args.save_preview), result)
         else:
