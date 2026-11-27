@@ -1,5 +1,9 @@
 # AuditorProcessual · Legal Process Parser
 
+[![Licença: PolyForm Noncommercial 1.0.0](https://img.shields.io/badge/licen%C3%A7a-PolyForm%20Noncommercial%201.0.0-blue)](LICENSE)
+[![Uso profissional: até 5 pessoas](https://img.shields.io/badge/uso%20profissional-at%C3%A9%205%20pessoas-green)](COMMERCIAL_LICENSE.md)
+[![Licença comercial](https://img.shields.io/badge/licen%C3%A7a%20comercial-sob%20consulta-orange)](COMMERCIAL_LICENSE.md)
+
 ## Apoie o projeto
 
 <p align="center">
