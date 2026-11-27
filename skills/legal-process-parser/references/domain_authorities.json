@@ -27987,72 +27987,134 @@
       "kind": "statute",
       "label": "CPC, art. 63",
       "subject": "Eleição de foro vinculada ao domicílio das partes ou local da obrigação e declinação de ofício de foro aleatório (Lei 14.879/2024).",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105compilada.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2015-03-16;13105",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/8da1a79d-4bec-481e-abe1-575aca2125e6/texto",
+        "capture_text_hash": "2c0f25b60f64700ce614aaff1932d66d37182b441a1e49b5dbcb8cc7c2af4560",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "eleic",
+          "vincul",
+          "domici",
+          "parte",
+          "local",
+          "obriga",
+          "declina",
+          "ofici",
+          "aleato"
+        ]
       },
       "law": "Código de Processo Civil",
-      "provision": "art. 63"
+      "provision": "art. 63",
+      "recent_wording_markers": [
+        "(Parágrafo com redação dada pela Lei nº 14.879, de 4/6/2024",
+        "(Parágrafo acrescido pela Lei nº 14.879, de 4/6/2024"
+      ]
     },
     {
       "id": "cdc_art10",
       "kind": "statute",
       "label": "CDC, art. 10",
       "subject": "Vedação de produto ou serviço com alto grau de nocividade e dever de comunicação imediata de risco (recall).",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1990-09-11;8078",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/1cc33b77-e5a0-4723-b7fa-ec501fd65c46/texto",
+        "capture_text_hash": "bca38f497c975df5c3b0244dc1731b8dcc492eeba87f2f30e27526708011e00b",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "produ",
+          "servi",
+          "nocivid",
+          "dever",
+          "comunica",
+          "imedi"
+        ]
       },
       "law": "Código de Defesa do Consumidor",
-      "provision": "art. 10"
+      "provision": "art. 10",
+      "recent_wording_markers": []
     },
     {
       "id": "cdc_art54b",
       "kind": "statute",
       "label": "CDC, art. 54-B",
       "subject": "Dever de informação prévia e adequada sobre custo efetivo total, taxa mensal efetiva e encargos na oferta de crédito.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1990-09-11;8078",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/1cc33b77-e5a0-4723-b7fa-ec501fd65c46/texto",
+        "capture_text_hash": "bca38f497c975df5c3b0244dc1731b8dcc492eeba87f2f30e27526708011e00b",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "dever",
+          "informa",
+          "previ",
+          "adequ",
+          "custo",
+          "efeti",
+          "total",
+          "mensa",
+          "encar",
+          "ofert",
+          "credi"
+        ]
       },
       "law": "Código de Defesa do Consumidor",
-      "provision": "art. 54-B"
+      "provision": "art. 54-B",
+      "recent_wording_markers": [
+        "(Artigo acrescido pela Lei nº 14.181, de 1º/7/2021"
+      ]
     },
     {
       "id": "ctn_art38",
       "kind": "statute",
       "label": "CTN, art. 38",
       "subject": "Base de cálculo do ITBI correspondente ao valor venal dos bens ou direitos transmitidos.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l5172compilado.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1966-10-25;5172",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/ef1d040f-caf4-4afc-b17d-f0348291549e/texto",
+        "capture_text_hash": "17c87d051ac265ee72c9fe2d53cca68788d74c33bfd628fd071777374b5b2895",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "calcu",
+          "valor",
+          "venal",
+          "direi",
+          "transmiti"
+        ]
       },
       "law": "Código Tributário Nacional",
-      "provision": "art. 38"
+      "provision": "art. 38",
+      "recent_wording_markers": [
+        "(Parágrafo acrescido pela Lei Complementar nº 227, de 13/1/2026"
+      ]
     },
     {
       "id": "ctn_art148",
@@ -28185,18 +28247,26 @@
       "kind": "statute",
       "label": "Decreto-Lei 911/1969, art. 8º-B",
       "subject": "Consolidação da propriedade e busca e apreensão extrajudicial de bem móvel em alienação fiduciária (Lei 14.711/2023).",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/1965-1988/del0911.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:decreto.lei:1969-10-01;911",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/7aaca5ab-464f-43c0-a7ba-cbae232100bc/texto",
+        "capture_text_hash": "22dafabe53e9a8d79c8427f8eb6f4e38bc46aad7e3ff572018d229a4e0bea2a4",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "aliena",
+          "fiducia"
+        ]
       },
       "law": "Decreto-Lei 911/1969",
-      "provision": "art. 8º-B"
+      "provision": "art. 8º-B",
+      "recent_wording_markers": []
     },
     {
       "id": "l3765_art7",
@@ -28257,36 +28327,59 @@
       "kind": "statute",
       "label": "Lei 4.591/1964, art. 31-A",
       "subject": "Patrimônio de afetação na incorporação imobiliária e incomunicabilidade com dívidas estranhas ao empreendimento.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l4591.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1964-12-16;4591",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/6c431b1c-8e7a-45ea-98bc-16265dfb1f9c/texto",
+        "capture_text_hash": "8267ebf49b47013fb94880a449bd3d82be7c3f40c9aa830b3fe3feab267c4ed1",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "patrimo",
+          "afeta",
+          "incorpora",
+          "imobilia",
+          "divid"
+        ]
       },
       "law": "Lei 4.591/1964",
-      "provision": "art. 31-A"
+      "provision": "art. 31-A",
+      "recent_wording_markers": []
     },
     {
       "id": "l4886_art27",
       "kind": "statute",
       "label": "Lei 4.886/1965, art. 27",
       "subject": "Cláusulas obrigatórias e indenização mínima de 1/12 do total das comissões na rescisão imotivada de representação comercial.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l4886.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1965-12-09;4886",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/633828a9-520f-485f-af7b-08f7f520ad96/texto",
+        "capture_text_hash": "f066fae1cac106e8bcbe831300429be05b09eb5d9300ea67a06eb3fb778aa0ba",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "obrigator",
+          "indeniza",
+          "total",
+          "resci",
+          "representa",
+          "comerc"
+        ]
       },
       "law": "Lei 4.886/1965",
-      "provision": "art. 27"
+      "provision": "art. 27",
+      "recent_wording_markers": []
     },
     {
       "id": "l5836_art1",
@@ -28326,36 +28419,62 @@
       "kind": "statute",
       "label": "Lei 6.015/1973, art. 176",
       "subject": "Especialidade objetiva da matrícula e georreferenciamento obrigatório de imóveis rurais (§§ 3º a 5º).",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1973-12-31;6015",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/d59d07fc-4e2f-44bc-96c3-aa01f3931450/texto",
+        "capture_text_hash": "25f32aee6894db8d108021ff252f3da87c4c17377d45fa3cf77029c9eb12de0e",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "especialid",
+          "objet",
+          "matric",
+          "obrigato",
+          "imove",
+          "rurai"
+        ]
       },
       "law": "Lei 6.015/1973",
-      "provision": "art. 176"
+      "provision": "art. 176",
+      "recent_wording_markers": [
+        "(Inciso com redação dada pela Lei nº 14.382, de 27/6/2022",
+        "(Item acrescido pela Lei nº 13.777, de 20/12/2018",
+        "(Parágrafo acrescido pela Lei nº 13.465, de 11/7/2017",
+        "(Parágrafo acrescido pela Lei nº 13.777, de 20/12/2018"
+      ]
     },
     {
       "id": "l6437_art10",
       "kind": "statute",
       "label": "Lei 6.437/1977, art. 10",
       "subject": "Tipificação das infrações à legislação sanitária federal e sanções administrativas cabíveis.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l6437.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1977-08-20;6437",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/56b1a1d6-f8ed-435c-a48f-c5233b994fdd/texto",
+        "capture_text_hash": "bd1273e3bf986b0f7c8bcdc44ddc6b2d949f76c92ae9157a6771f3957481bfeb",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "infrac",
+          "legisla",
+          "sanita"
+        ]
       },
       "law": "Lei 6.437/1977",
-      "provision": "art. 10"
+      "provision": "art. 10",
+      "recent_wording_markers": []
     },
     {
       "id": "l6880_art109",
@@ -28552,18 +28671,29 @@
       "kind": "statute",
       "label": "Lei 8.245/1991, art. 54-A",
       "subject": "Locação não residencial built to suit, prevalência das condições livremente pactuadas e limite da cláusula penal.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l8245.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1991-10-18;8245",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/e27b713c-78cf-4364-9758-56fee53a579c/texto",
+        "capture_text_hash": "66fe49ff851b0314bb4707d5acc91ef5b0639b919fb2f53773a65c63cbfd975a",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "locac",
+          "residenc",
+          "condic",
+          "livreme",
+          "pactua"
+        ]
       },
       "law": "Lei 8.245/1991",
-      "provision": "art. 54-A"
+      "provision": "art. 54-A",
+      "recent_wording_markers": []
     },
     {
       "id": "l9096_art11a",
@@ -29166,54 +29296,94 @@
       "kind": "statute",
       "label": "LGPD, art. 38",
       "subject": "Relatório de Impacto à Proteção de Dados Pessoais (RIPD) e descrição de riscos e salvaguardas.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2018-08-14;13709",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/8ea729ac-a1ea-43ca-af58-5422a6b0d459/texto",
+        "capture_text_hash": "841818fa522745673b511129ef0c520174adbe28c4f1751c22efbdf73e63aa5a",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "relato",
+          "impac",
+          "prote",
+          "dados",
+          "pesso",
+          "descri",
+          "risco",
+          "salvaguar"
+        ]
       },
       "law": "Lei 13.709/2018 (LGPD)",
-      "provision": "art. 38"
+      "provision": "art. 38",
+      "recent_wording_markers": []
     },
     {
       "id": "l13954_art1",
       "kind": "statute",
       "label": "Lei 13.954/2019, art. 1º",
       "subject": "Reestruturação da carreira militar e do Sistema de Proteção Social dos Militares.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13954.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2019-12-16;13954",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": "Conferido na publicação original (normas.leg.br): alterações posteriores não aparecem no texto; conferir a compilação atual.",
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/1160f0a3-4ace-48b9-b2f3-8cd86200c4aa/texto",
+        "capture_text_hash": "2db960278fa479ff8785b9a8894ade37f4b601b8ee5245564bf980879669ffca",
+        "legal_force": null,
+        "text_version": "Original",
+        "subject_terms_matched": [
+          "reestrutura",
+          "carre",
+          "milit",
+          "siste",
+          "prote",
+          "socia",
+          "milita"
+        ]
       },
       "law": "Lei 13.954/2019",
-      "provision": "art. 1º"
+      "provision": "art. 1º",
+      "recent_wording_markers": []
     },
     {
       "id": "l13966_art2",
       "kind": "statute",
       "label": "Lei 13.966/2019, art. 2º",
       "subject": "Requisitos obrigatórios da Circular de Oferta de Franquia (COF), antecedência mínima de dez dias e anulabilidade por omissão ou falsidade.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13966.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2019-12-26;13966",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": "Conferido na publicação original (normas.leg.br): alterações posteriores não aparecem no texto; conferir a compilação atual.",
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/83f7d2d0-ae3d-43c6-bf8c-653ce8fc169e/texto",
+        "capture_text_hash": "7bd5b85fe7fa35d8e4a2a354800d0d360be96ecc9f73bec5431a8e9de1103486",
+        "legal_force": null,
+        "text_version": "Original",
+        "subject_terms_matched": [
+          "requisi",
+          "obrigator",
+          "circu",
+          "ofert",
+          "franq",
+          "minim",
+          "anulabilid"
+        ]
       },
       "law": "Lei 13.966/2019",
-      "provision": "art. 2º"
+      "provision": "art. 2º",
+      "recent_wording_markers": []
     },
     {
       "id": "l13986_art7",
@@ -29266,36 +29436,56 @@
       "kind": "statute",
       "label": "Lei 14.701/2023, art. 4º",
       "subject": "Disposições legais sobre demarcação de terras indígenas (objeto de controle concentrado no STF — conferir eficácia vigente).",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14701.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2023-10-20;14701",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "revogado",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/87abfdda-afd4-4807-a673-1955cc0aeb06/texto",
+        "capture_text_hash": "f47409e08574e105465b267906ed530c8130b0e7073638b815a76d6f17f42c20",
+        "legal_force": null,
+        "text_version": "Original",
+        "subject_terms_matched": [
+          "demarca",
+          "terra",
+          "indige"
+        ]
       },
       "law": "Lei 14.701/2023",
-      "provision": "art. 4º"
+      "provision": "art. 4º",
+      "recent_wording_markers": []
     },
     {
       "id": "l14789_art1",
       "kind": "statute",
       "label": "Lei 14.789/2023, art. 1º",
       "subject": "Regime tributário de crédito fiscal decorrente de subvenção governamental para investimento.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14789.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2023-12-29;14789",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": "Conferido na publicação original (normas.leg.br): alterações posteriores não aparecem no texto; conferir a compilação atual.",
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/c89af8d7-5f92-4ecc-b5f9-7e87a58a371f/texto",
+        "capture_text_hash": "ffe2dc79f8d41789754b28eba46b80478be17eb631cff9adcddbad4e7bd12902",
+        "legal_force": null,
+        "text_version": "Original",
+        "subject_terms_matched": [
+          "tributa",
+          "credi",
+          "fisca",
+          "subven",
+          "investime"
+        ]
       },
       "law": "Lei 14.789/2023",
-      "provision": "art. 1º"
+      "provision": "art. 1º",
+      "recent_wording_markers": []
     },
     {
       "id": "l14905_art2",
@@ -30538,16 +30728,30 @@
       "provision": "art. 1.003",
       "law": "Código de Processo Civil (Lei 13.105/2015)",
       "subject": "Termo inicial, prazo geral de quinze dias úteis dos recursos e comprovação de feriado local (§ 6º).",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105compilada.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2015-03-16;13105",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/8da1a79d-4bec-481e-abe1-575aca2125e6/texto",
+        "capture_text_hash": "2c0f25b60f64700ce614aaff1932d66d37182b441a1e49b5dbcb8cc7c2af4560",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "prazo",
+          "quinz",
+          "recur",
+          "comprova",
+          "feria",
+          "local"
+        ]
+      },
+      "recent_wording_markers": [
+        "(Parágrafo com redação dada pela Lei nº 14.939, de 30/7/2024"
+      ]
     },
     {
       "id": "cpc_art1016",
@@ -30556,16 +30760,26 @@
       "provision": "art. 1.016",
       "law": "Código de Processo Civil (Lei 13.105/2015)",
       "subject": "Requisitos da petição do agravo de instrumento.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105compilada.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2015-03-16;13105",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/8da1a79d-4bec-481e-abe1-575aca2125e6/texto",
+        "capture_text_hash": "2c0f25b60f64700ce614aaff1932d66d37182b441a1e49b5dbcb8cc7c2af4560",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "requisi",
+          "petic",
+          "agrav",
+          "instrume"
+        ]
+      },
+      "recent_wording_markers": []
     },
     {
       "id": "cpc_art1017",
@@ -30574,16 +30788,30 @@
       "provision": "art. 1.017",
       "law": "Código de Processo Civil (Lei 13.105/2015)",
       "subject": "Instrução do agravo de instrumento e dispensa de peças obrigatórias em autos eletrônicos (§ 5º).",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105compilada.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2015-03-16;13105",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/8da1a79d-4bec-481e-abe1-575aca2125e6/texto",
+        "capture_text_hash": "2c0f25b60f64700ce614aaff1932d66d37182b441a1e49b5dbcb8cc7c2af4560",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "instru",
+          "agrav",
+          "instrume",
+          "dispe",
+          "pecas",
+          "obrigator",
+          "autos",
+          "eletroni"
+        ]
+      },
+      "recent_wording_markers": []
     },
     {
       "id": "cpc_art1019",
@@ -30592,16 +30820,30 @@
       "provision": "art. 1.019",
       "law": "Código de Processo Civil (Lei 13.105/2015)",
       "subject": "Providências do relator no agravo de instrumento, incluindo atribuição de efeito suspensivo ou tutela antecipada recursal.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105compilada.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2015-03-16;13105",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/8da1a79d-4bec-481e-abe1-575aca2125e6/texto",
+        "capture_text_hash": "2c0f25b60f64700ce614aaff1932d66d37182b441a1e49b5dbcb8cc7c2af4560",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "relat",
+          "agrav",
+          "instrume",
+          "atribui",
+          "suspens",
+          "tutel",
+          "antecip",
+          "recur"
+        ]
+      },
+      "recent_wording_markers": []
     },
     {
       "id": "cpc_art1025",
@@ -30610,16 +30852,28 @@
       "provision": "art. 1.025",
       "law": "Código de Processo Civil (Lei 13.105/2015)",
       "subject": "Prequestionamento ficto dos elementos suscitados nos embargos de declaração caso reconhecido erro, omissão, contradição ou obscuridade.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105compilada.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2015-03-16;13105",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/8da1a79d-4bec-481e-abe1-575aca2125e6/texto",
+        "capture_text_hash": "2c0f25b60f64700ce614aaff1932d66d37182b441a1e49b5dbcb8cc7c2af4560",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "elemen",
+          "embar",
+          "declara",
+          "omiss",
+          "contradi",
+          "obscurid"
+        ]
+      },
+      "recent_wording_markers": []
     },
     {
       "id": "cpc_art1030",
@@ -30628,16 +30882,27 @@
       "provision": "art. 1.030",
       "law": "Código de Processo Civil (Lei 13.105/2015)",
       "subject": "Juízo de admissibilidade de RE e REsp na origem, negativa de seguimento por precedente vinculante e cabimento exclusivo de agravo interno (§ 2º).",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105compilada.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2015-03-16;13105",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/8da1a79d-4bec-481e-abe1-575aca2125e6/texto",
+        "capture_text_hash": "2c0f25b60f64700ce614aaff1932d66d37182b441a1e49b5dbcb8cc7c2af4560",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "juizo",
+          "admissibilid",
+          "seguime",
+          "agrav",
+          "inter"
+        ]
+      },
+      "recent_wording_markers": []
     },
     {
       "id": "cpc_art1042",
@@ -35943,16 +36208,33 @@
       "provision": "art. 10-B",
       "law": "Lei Nacional de Saneamento Básico (Lei 11.445/2007)",
       "subject": "Condicionamento dos contratos de saneamento básico à comprovação da capacidade econômico-financeira da contratada para universalização.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/l11445.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2007-01-05;11445",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/767ca5c4-4fab-4907-baa4-daa27d350afe/texto",
+        "capture_text_hash": "8bf5517d448b20f95ac24d50a3b111108d22d9efc175d056213bc5d55330edb7",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "contra",
+          "saneame",
+          "basic",
+          "comprova",
+          "capacid",
+          "econom",
+          "finance",
+          "contrat",
+          "universaliza"
+        ]
+      },
+      "recent_wording_markers": [
+        "(Artigo acrescido pela Lei nº 14.026, de 15/7/2020"
+      ]
     },
     {
       "id": "l11445_art11b",
@@ -36167,16 +36449,30 @@
       "provision": "art. 36",
       "law": "Lei de Defesa da Concorrência — SBDC (Lei 12.529/2011)",
       "subject": "Tipificação das infrações da ordem econômica independentemente de culpa, por objeto ou efeitos, incluindo cartel e abuso de posição dominante.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12529.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2011-11-30;12529",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/80459789-c5d2-478f-91ed-9f00aa25550f/texto",
+        "capture_text_hash": "caf00ee2fae58c43f4b3d7fef9ea216a99270928dddeb0c431697de5162fd6c3",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "infrac",
+          "ordem",
+          "econom",
+          "independenteme",
+          "culpa",
+          "objet",
+          "posic",
+          "domina"
+        ]
+      },
+      "recent_wording_markers": []
     },
     {
       "id": "l12529_art37",
@@ -36928,16 +37224,32 @@
       "provision": "art. 27",
       "law": "Lei Brasileira de Inclusão da Pessoa com Deficiência (Lei 13.146/2015)",
       "subject": "Direito da pessoa com deficiência a sistema educacional inclusivo em todos os níveis e aprendizado ao longo de toda a vida.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2015-07-06;13146",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/3ac166cd-0151-4ff7-9c73-f8328089a4a7/texto",
+        "capture_text_hash": "040d967ef828d55bb73f59d825e5755052fd831b2e776d8663257eaf33029ee0",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "direi",
+          "pesso",
+          "deficien",
+          "siste",
+          "educacio",
+          "inclus",
+          "todos",
+          "nivei",
+          "aprendiz",
+          "longo"
+        ]
+      },
+      "recent_wording_markers": []
     },
     {
       "id": "l13146_art28",
@@ -36946,16 +37258,36 @@
       "provision": "art. 28",
       "law": "Lei Brasileira de Inclusão da Pessoa com Deficiência (Lei 13.146/2015)",
       "subject": "Deveres do poder público e obrigatoriedade de cumprimento pelas instituições privadas de ensino de qualquer nível, vedada cobrança de valores adicionais (§ 1º).",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2015-07-06;13146",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/3ac166cd-0151-4ff7-9c73-f8328089a4a7/texto",
+        "capture_text_hash": "040d967ef828d55bb73f59d825e5755052fd831b2e776d8663257eaf33029ee0",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "poder",
+          "publi",
+          "cumprime",
+          "instituic",
+          "priva",
+          "ensin",
+          "qualq",
+          "nivel",
+          "vedad",
+          "cobra",
+          "valor",
+          "adicion"
+        ]
+      },
+      "recent_wording_markers": [
+        "(Inciso acrescido pela Lei nº 15.249, de 3/11/2025"
+      ]
     },
     {
       "id": "l13146_art3",
@@ -36964,16 +37296,33 @@
       "provision": "art. 3º",
       "law": "Lei Brasileira de Inclusão da Pessoa com Deficiência (Lei 13.146/2015)",
       "subject": "Definições legais, incluindo adaptações razoáveis, desenho universal e profissional de apoio escolar (inciso XIII).",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2015-07-06;13146",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/3ac166cd-0151-4ff7-9c73-f8328089a4a7/texto",
+        "capture_text_hash": "040d967ef828d55bb73f59d825e5755052fd831b2e776d8663257eaf33029ee0",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "inclui",
+          "adaptac",
+          "razoav",
+          "desen",
+          "univer",
+          "profissio",
+          "apoio",
+          "escol",
+          "incis"
+        ]
+      },
+      "recent_wording_markers": [
+        "(Inciso acrescido pela Lei nº 15.249, de 3/11/2025"
+      ]
     },
     {
       "id": "l13185_art2",
@@ -37416,16 +37765,33 @@
       "provision": "art. 5º",
       "law": "Política Nacional de Pisos Mínimos do Transporte Rodoviário de Cargas (Lei 13.703/2018)",
       "subject": "Vinculação cogente aos pisos mínimos de frete rodoviário publicados pela ANTT e indenização ao transportador em valor equivalente ao dobro da diferença (§ 4º).",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13703.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2018-08-08;13703",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": "Conferido na publicação original (normas.leg.br): alterações posteriores não aparecem no texto; conferir a compilação atual.",
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/4b016d53-cb57-4d70-8376-92e7f18f8220/texto",
+        "capture_text_hash": "191ba419c51f9fa82b4af808fac2227a4c4c97820f7244bf7e0973d58c9975ac",
+        "legal_force": null,
+        "text_version": "Original",
+        "subject_terms_matched": [
+          "vincula",
+          "pisos",
+          "minim",
+          "frete",
+          "rodovia",
+          "publica",
+          "indeniza",
+          "transporta",
+          "valor",
+          "equivale",
+          "difere"
+        ]
+      },
+      "recent_wording_markers": []
     },
     {
       "id": "l13848_art3",
@@ -37434,16 +37800,33 @@
       "provision": "art. 3º",
       "law": "Lei Geral das Agências Reguladoras (Lei 13.848/2019)",
       "subject": "Natureza especial das agências reguladoras caracterizada por ausência de tutela ou subordinação hierárquica e autonomia decisória e técnica.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13848.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2019-06-25;13848",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": "Conferido na publicação original (normas.leg.br): alterações posteriores não aparecem no texto; conferir a compilação atual.",
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/eb09125a-7f4c-49c5-a028-9260b7eebb19/texto",
+        "capture_text_hash": "f14baa71c685d66ea2f4b23d8cca1d30fd990e9154b206b133876463aa6dad7d",
+        "legal_force": null,
+        "text_version": "Original",
+        "subject_terms_matched": [
+          "natur",
+          "espec",
+          "agenc",
+          "regulado",
+          "caracteriz",
+          "ausen",
+          "tutel",
+          "subordina",
+          "hierarqu",
+          "autono",
+          "deciso"
+        ]
+      },
+      "recent_wording_markers": []
     },
     {
       "id": "l13848_art6",
@@ -37452,16 +37835,32 @@
       "provision": "art. 6º",
       "law": "Lei Geral das Agências Reguladoras (Lei 13.848/2019)",
       "subject": "Obrigatoriedade de prévia Análise de Impacto Regulatório (AIR) para adoção e propostas de alteração de atos normativos de interesse geral pelas agências reguladoras.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13848.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2019-06-25;13848",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": "Conferido na publicação original (normas.leg.br): alterações posteriores não aparecem no texto; conferir a compilação atual.",
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/eb09125a-7f4c-49c5-a028-9260b7eebb19/texto",
+        "capture_text_hash": "f14baa71c685d66ea2f4b23d8cca1d30fd990e9154b206b133876463aa6dad7d",
+        "legal_force": null,
+        "text_version": "Original",
+        "subject_terms_matched": [
+          "anali",
+          "impac",
+          "regulato",
+          "adoca",
+          "propos",
+          "altera",
+          "normati",
+          "intere",
+          "geral",
+          "agenc"
+        ]
+      },
+      "recent_wording_markers": []
     },
     {
       "id": "l13848_art9",
@@ -38058,16 +38457,26 @@
       "provision": "art. 4º",
       "law": "Programa de Estímulo ao Transporte por Cabotagem — BR do Mar (Lei 14.301/2022)",
       "subject": "Hipóteses de afretamento de embarcações por empresa brasileira de navegação habilitada no Programa BR do Mar.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/l14301.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2022-01-07;14301",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": "Conferido na publicação original (normas.leg.br): alterações posteriores não aparecem no texto; conferir a compilação atual.",
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/7765ab9f-4582-4176-930a-8ddf399739bf/texto",
+        "capture_text_hash": "2b725d4d16b244e162599f3ebbb4a089a53c292aaf5a7504aa477be3b1822abf",
+        "legal_force": null,
+        "text_version": "Original",
+        "subject_terms_matched": [
+          "afretame",
+          "embarcac",
+          "empre",
+          "habilit"
+        ]
+      },
+      "recent_wording_markers": []
     },
     {
       "id": "l14365_art2",
@@ -38189,16 +38598,26 @@
       "provision": "art. 1º",
       "law": "Lei 14.651/2023 (Duplo Grau Administrativo no Perdimento Aduaneiro)",
       "subject": "Alteração do art. 27 do Decreto-Lei 1.455/1976 instituindo duplo grau de jurisdição administrativa no rito da pena de perdimento aduaneiro.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14651.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2023-08-23;14651",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": "Conferido na publicação original (normas.leg.br): alterações posteriores não aparecem no texto; conferir a compilação atual.",
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/3634561f-1c54-4708-b361-9c9b4c80fc11/texto",
+        "capture_text_hash": "f6b1edc07dd343fa7ba6ee861a8b31abab3919404d109d286d2c1070ff916996",
+        "legal_force": null,
+        "text_version": "Original",
+        "subject_terms_matched": [
+          "altera",
+          "decre",
+          "administrat",
+          "perdime"
+        ]
+      },
+      "recent_wording_markers": []
     },
     {
       "id": "l14723_art1",
@@ -38207,16 +38626,30 @@
       "provision": "art. 1º",
       "law": "Lei 14.723/2023 (Atualização da Lei de Cotas no Ensino Federal)",
       "subject": "Reformulação do programa especial de acesso às instituições federais de educação superior e técnica (Lei 12.711/2012).",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14723.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:2023-11-13;14723",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": "Conferido na publicação original (normas.leg.br): alterações posteriores não aparecem no texto; conferir a compilação atual.",
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/ebb643cd-7724-46d7-8285-13951cc9f113/texto",
+        "capture_text_hash": "55a10899598708e869a93ea95ca9f75f5c8e6d0da07511a18d36e38cc2abadbc",
+        "legal_force": null,
+        "text_version": "Original",
+        "subject_terms_matched": [
+          "progr",
+          "espec",
+          "acess",
+          "instituic",
+          "feder",
+          "educa",
+          "super",
+          "tecni"
+        ]
+      },
+      "recent_wording_markers": []
     },
     {
       "id": "l14811_art1",
@@ -39224,16 +39657,29 @@
       "provision": "art. 31-F",
       "law": "Lei de Condomínios e Incorporações (Lei 4.591/1964)",
       "subject": "Efeitos da decretação de falência ou insolvência civil do incorporador sobre o patrimônio de afetação segregado.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l4591compilado.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1964-12-16;4591",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/6c431b1c-8e7a-45ea-98bc-16265dfb1f9c/texto",
+        "capture_text_hash": "8267ebf49b47013fb94880a449bd3d82be7c3f40c9aa830b3fe3feab267c4ed1",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "decreta",
+          "falen",
+          "insolven",
+          "civil",
+          "incorpora",
+          "patrimo",
+          "afeta"
+        ]
+      },
+      "recent_wording_markers": []
     },
     {
       "id": "l6015_art17",
@@ -39242,16 +39688,27 @@
       "provision": "art. 17",
       "law": "Lei de Registros Públicos (Lei 6.015/1973)",
       "subject": "Publicidade registral, acesso eletrônico às certidões e recepção de títulos natodigitais ou digitalizados via SERP.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1973-12-31;6015",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/d59d07fc-4e2f-44bc-96c3-aa01f3931450/texto",
+        "capture_text_hash": "25f32aee6894db8d108021ff252f3da87c4c17377d45fa3cf77029c9eb12de0e",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "regist",
+          "acess",
+          "certid"
+        ]
+      },
+      "recent_wording_markers": [
+        "(Parágrafo acrescido pela Medida Provisória nº 1.085, de 27/12/2021"
+      ]
     },
     {
       "id": "l6015_art188",
@@ -39260,16 +39717,27 @@
       "provision": "art. 188",
       "law": "Lei de Registros Públicos (Lei 6.015/1973)",
       "subject": "Prazos reduzidos para qualificação e prática dos atos de registro imobiliário (10 dias úteis em regra e 5 dias úteis em hipóteses céleres).",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1973-12-31;6015",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/d59d07fc-4e2f-44bc-96c3-aa01f3931450/texto",
+        "capture_text_hash": "25f32aee6894db8d108021ff252f3da87c4c17377d45fa3cf77029c9eb12de0e",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "prazo",
+          "regis"
+        ]
+      },
+      "recent_wording_markers": [
+        "(“Caput” do artigo com redação dada pela Lei nº 14.382, de 27/6/2022",
+        "(Parágrafo acrescido pela Medida Provisória nº 1.085, de 27/12/2021"
+      ]
     },
     {
       "id": "l6015_art19",
@@ -39922,16 +40390,29 @@
       "provision": "art. 10",
       "law": "Lei de Concessões (Lei 8.987/1995)",
       "subject": "Manutenção do equilíbrio econômico-financeiro do contrato sempre que atendidas as condições da proposta.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l8987cons.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1995-02-13;8987",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/6de88f02-14fc-4d54-b8fe-9f2116f52261/texto",
+        "capture_text_hash": "5710899bfd73ead9b3a9f47b4d46653f036a20ee5116decf5f153af8f312ebba",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "equilib",
+          "econom",
+          "finance",
+          "contr",
+          "sempr",
+          "atendi",
+          "condic"
+        ]
+      },
+      "recent_wording_markers": []
     },
     {
       "id": "l8987_art2",
@@ -41455,16 +41936,38 @@
       "provision": "art. 4º",
       "law": "Lei de Diretrizes e Bases da Educação Nacional (Lei 9.394/1996)",
       "subject": "Dever do Estado com a educação escolar pública, incluindo educação infantil gratuita às crianças de até cinco anos de idade (inciso II).",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l9394.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1996-12-20;9394",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/0c0c977a-58eb-41d9-8160-3d1192cd8a23/texto",
+        "capture_text_hash": "5d0700ec6d2c5906eefd21e5e0bedd1b8f9969588113adf1561f5ea455f794a6",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "dever",
+          "estad",
+          "educa",
+          "escol",
+          "publi",
+          "infan",
+          "gratu",
+          "crian",
+          "cinco",
+          "idade",
+          "incis"
+        ]
+      },
+      "recent_wording_markers": [
+        "(Inciso com redação dada pela Lei nº 14.333, de 4/5/2022",
+        "(Inciso acrescido pela Lei nº 14.407, de 12/7/2022",
+        "(Inciso acrescido pela Lei nº 14.533, de 11/1/2023",
+        "(Inciso acrescido pela Lei nº 15.276, de 28/11/2025"
+      ]
     },
     {
       "id": "l9394_art48",
@@ -41593,16 +42096,30 @@
       "provision": "art. 2º",
       "law": "Lei de Ordenação do Transporte Aquaviário (Lei 9.432/1997)",
       "subject": "Definições de afretamento a casco nu, afretamento por tempo e afretamento por viagem.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l9432.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1997-01-08;9432",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/5d204781-99fa-4c69-9875-d2e204d75b93/texto",
+        "capture_text_hash": "524920661ca9ff85986359427b484ef0167e638b282ddb75b2a80aa9e35f2423",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "definic",
+          "afretame",
+          "casco",
+          "tempo",
+          "viage"
+        ]
+      },
+      "recent_wording_markers": [
+        "(Inciso com redação dada pela Lei nº 14.301, de 7/1/2022",
+        "(Inciso acrescido pela Lei nº 14.301, de 7/1/2022"
+      ]
     },
     {
       "id": "l9432_art9",
@@ -41645,16 +42162,26 @@
       "provision": "art. 173",
       "law": "Lei Geral de Telecomunicações (Lei 9.472/1997)",
       "subject": "Sanções administrativas aplicáveis pela ANATEL e parâmetros de proporcionalidade na dosimetria.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l9472.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1997-07-16;9472",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/a6a26d9e-28db-4964-883a-55d2b28e5186/texto",
+        "capture_text_hash": "71956b1cbc022bd71f376e2b869c081a9aad0908de452f23882b10beefa1b64a",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "sanco",
+          "aplicav"
+        ]
+      },
+      "recent_wording_markers": [
+        "(Parágrafo único acrescido pela Lei nº 15.181, de 28/7/2025"
+      ]
     },
     {
       "id": "l9472_art73",
@@ -41699,16 +42226,34 @@
       "provision": "art. 8º",
       "law": "Lei do Petróleo (Lei 9.478/1997)",
       "subject": "Finalidade e competências regulatórias da Agência Nacional do Petróleo, Gás Natural e Biocombustíveis (ANP).",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l9478.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1997-08-06;9478",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/9a1fa9a6-e8d5-4e02-8371-b4c2011d8a80/texto",
+        "capture_text_hash": "26247d7630a84cda9253e92b53857df27213f007102111f18c4c7a2d69ea592f",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "finalid",
+          "competenc",
+          "agenc",
+          "nacio",
+          "petro",
+          "natur",
+          "biocombustiv"
+        ]
+      },
+      "recent_wording_markers": [
+        "(Inciso acrescido pela Lei nº 11.909, de 4/3/2009 e revogado pela Lei nº 14.134, de 8/4/2021",
+        "(“Caput” do artigo com redação dada pela Lei nº 15.103, de 22/1/2025",
+        "(Inciso com redação dada pela Lei nº 14.993, de 8/10/2024",
+        "(Inciso com redação dada pela Lei nº 14.948, de 2/8/2024"
+      ]
     },
     {
       "id": "l9492_art1",
@@ -41968,16 +42513,27 @@
       "provision": "art. 12",
       "law": "Lei do Software (Lei 9.609/1998)",
       "subject": "Violação de direitos de autor de programa de computador e penalidades.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l9609.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1998-02-19;9609",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": "Conferido na publicação original (normas.leg.br): alterações posteriores não aparecem no texto; conferir a compilação atual.",
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/b6d38f69-ef5e-47a7-9d39-7b64b6c35e30/texto",
+        "capture_text_hash": "d2b62e0de64113cea4940cbb6cbf270435300ee77addf46dc8aeb6a8bb997bc8",
+        "legal_force": null,
+        "text_version": "Original",
+        "subject_terms_matched": [
+          "viola",
+          "direi",
+          "autor",
+          "progr",
+          "computa"
+        ]
+      },
+      "recent_wording_markers": []
     },
     {
       "id": "l9609_art14",
@@ -41986,16 +42542,27 @@
       "provision": "art. 14",
       "law": "Lei do Software (Lei 9.609/1998)",
       "subject": "Ação civil de abstenção/perdas e danos em matéria de software, vistoria cautelar e prescrição quinquenal (§ 2º).",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l9609.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1998-02-19;9609",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": "Conferido na publicação original (normas.leg.br): alterações posteriores não aparecem no texto; conferir a compilação atual.",
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/b6d38f69-ef5e-47a7-9d39-7b64b6c35e30/texto",
+        "capture_text_hash": "d2b62e0de64113cea4940cbb6cbf270435300ee77addf46dc8aeb6a8bb997bc8",
+        "legal_force": null,
+        "text_version": "Original",
+        "subject_terms_matched": [
+          "civil",
+          "absten",
+          "perda",
+          "danos",
+          "caute"
+        ]
+      },
+      "recent_wording_markers": []
     },
     {
       "id": "l9609_art2",
@@ -42004,16 +42571,31 @@
       "provision": "art. 2º",
       "law": "Lei do Software (Lei 9.609/1998)",
       "subject": "Regime de proteção à propriedade intelectual de programa de computador idêntico ao conferido às obras literárias.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l9609.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1998-02-19;9609",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": "Conferido na publicação original (normas.leg.br): alterações posteriores não aparecem no texto; conferir a compilação atual.",
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/b6d38f69-ef5e-47a7-9d39-7b64b6c35e30/texto",
+        "capture_text_hash": "d2b62e0de64113cea4940cbb6cbf270435300ee77addf46dc8aeb6a8bb997bc8",
+        "legal_force": null,
+        "text_version": "Original",
+        "subject_terms_matched": [
+          "regim",
+          "prote",
+          "propried",
+          "intelect",
+          "progr",
+          "computa",
+          "confer",
+          "obras",
+          "literar"
+        ]
+      },
+      "recent_wording_markers": []
     },
     {
       "id": "l9609_art4",
@@ -42588,16 +43170,30 @@
       "provision": "art. 3º",
       "law": "Lei 9.716/1998",
       "subject": "Instituição da Taxa de Utilização do Sistema Integrado de Comércio Exterior (SISCOMEX) e parâmetros de reajuste.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l9716.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1998-11-26;9716",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/83a423ab-7bdc-4def-a8ea-3e87778c12f8/texto",
+        "capture_text_hash": "3abed93881832fed3994097ecb9794c17b9c99f896382d38aec84528dbe03d8b",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "institui",
+          "utiliza",
+          "siste",
+          "integr",
+          "comer",
+          "exter",
+          "sisco",
+          "reaju"
+        ]
+      },
+      "recent_wording_markers": []
     },
     {
       "id": "l9847_art10",
@@ -42797,16 +43393,29 @@
       "provision": "art. 1º",
       "law": "Lei de Prescrição da Ação Punitiva Federal (Lei 9.873/1999)",
       "subject": "Prescrição quinquenal da ação punitiva da Administração Pública Federal e prescrição intercorrente no procedimento paralisado por mais de três anos (§ 1º).",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l9873.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei:1999-11-23;9873",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/597f2d6e-33b2-482f-954c-cfafa85ce5a0/texto",
+        "capture_text_hash": "6d7b3c315be8fffcf0250b0b9d72eb003845bd9dad6d2f93021113b39000fa63",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "prescri",
+          "punit",
+          "administra",
+          "publi",
+          "feder",
+          "procedime",
+          "paralis"
+        ]
+      },
+      "recent_wording_markers": []
     },
     {
       "id": "l9873_art2",
@@ -42842,16 +43451,32 @@
       "provision": "art. 14",
       "law": "Lei Complementar 126/2007 (Resseguro e Cosseguro)",
       "subject": "Ausência de responsabilidade direta dos resseguradores perante o segurado, salvo insolvência/liquidação da cedente e contratos com cláusula de pagamento direto.",
-      "official_url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp126.htm",
+      "official_url": "https://normas.leg.br/?urn=urn:lex:br:federal:lei.complementar:2007-01-15;126",
       "access_tier": "http_capture",
-      "status": "pendente_conferencia_oficial",
-      "status_note": "Autoridade candidata curada no catálogo; abrir e conferir o inteiro teor e a vigência no portal oficial na própria resposta.",
+      "status": "localizado_no_texto_oficial",
+      "status_note": null,
       "verified": {
-        "method": "curated_pending_official_check",
-        "on": "2026-11-18",
-        "confidence": "alta",
-        "note": "Candidata curada; exige conferência no portal oficial na resposta."
-      }
+        "method": "normas_leg_br_http_capture",
+        "on": "2026-11-27",
+        "located": true,
+        "source_url": "https://normas.leg.br/api/public/binario/0884b24b-7294-4816-a737-e449fe6f55bc/texto",
+        "capture_text_hash": "fffc91356a0600ea53a531523452228baf085b4b5ab11dec433fb9c519ba7d8e",
+        "legal_force": null,
+        "text_version": "Current",
+        "subject_terms_matched": [
+          "diret",
+          "ressegurado",
+          "peran",
+          "segur",
+          "insolven",
+          "liquida",
+          "ceden",
+          "contra",
+          "claus",
+          "pagame"
+        ]
+      },
+      "recent_wording_markers": []
     },
     {
       "id": "mp2158_art84",
